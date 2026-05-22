@@ -1,0 +1,43 @@
+{
+  "atualizado_em": "2026-05-22T12:00:00-03:00",
+  "resumo": {
+    "municipios_alerta": 7,
+    "rios_em_atencao": 4,
+    "focos_calor_24h": 128,
+    "area_queimada_ano_ha": 245000,
+    "chuva_24h_mm": 18.4,
+    "estacoes_operando": 32
+  },
+  "status": [
+    {
+      "icon": "cloud-rain",
+      "label": "Chuvas",
+      "description": "18,4 mm acumulados nas ultimas 24h",
+      "value": "Monitoramento"
+    },
+    {
+      "icon": "waves",
+      "label": "Rios",
+      "description": "4 pontos hidrologicos em nivel de atencao",
+      "value": "Atencao"
+    },
+    {
+      "icon": "flame",
+      "label": "Focos de calor",
+      "description": "128 focos registrados nas ultimas 24h",
+      "value": "Ativo"
+    },
+    {
+      "icon": "radio-tower",
+      "label": "Rede operacional",
+      "description": "32 estacoes ou pontos em acompanhamento",
+      "value": "24h"
+    }
+  ],
+  "fontes": {
+    "chuva": "INMET / CEMADEN",
+    "rios": "ANA / SNIRH",
+    "focos": "INPE Queimadas",
+    "area_queimada": "MapBiomas Fogo / INPE AQ"
+  }
+}
