@@ -3,21 +3,467 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="0; url=https://jade-pudding-8a7f18.netlify.app/" />
     <title>Centro de Monitoramento | Defesa Civil do Tocantins</title>
+    <meta
+      name="description"
+      content="Portal tecnico-operacional do Centro de Monitoramento da Defesa Civil do Tocantins."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <style>
-      body { font-family: Inter, Arial, sans-serif; margin: 0; background: #071b3a; color: white; }
-      main { min-height: 100vh; display: grid; place-items: center; padding: 32px; text-align: center; }
-      a { color: #f59a23; font-weight: 800; }
+      :root {
+        --navy: #071b3a;
+        --blue: #1e5a8a;
+        --light-blue: #eaf3f8;
+        --orange: #f59a23;
+        --white: #ffffff;
+        --ink: #2f3a45;
+        --muted: #657386;
+        --line: #d8e3ec;
+        --red: #d73027;
+        --surface: #ffffff;
+        --shadow: 0 18px 48px rgba(7, 27, 58, 0.12);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; background: #f7fafc; color: var(--ink); font-family: Inter, Arial, sans-serif; }
+      a { color: inherit; }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        display: grid;
+        grid-template-columns: minmax(260px, 1fr) auto auto;
+        gap: 20px;
+        align-items: center;
+        padding: 12px clamp(18px, 4vw, 56px);
+        border-bottom: 1px solid rgba(216, 227, 236, 0.9);
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(14px);
+      }
+
+      .brand { display: flex; align-items: center; gap: 12px; min-width: 0; text-decoration: none; }
+      .brand-seal {
+        display: grid;
+        width: 56px;
+        height: 56px;
+        place-items: center;
+        border: 3px solid var(--navy);
+        border-radius: 999px;
+        background: radial-gradient(circle at 58% 45%, var(--orange) 0 20%, white 21% 42%, var(--light-blue) 43% 100%);
+        color: var(--navy);
+        font-size: 0.7rem;
+        font-weight: 900;
+      }
+      .brand span, .brand strong, .brand small { display: block; }
+      .brand strong { color: var(--navy); font-size: 1rem; }
+      .brand small { margin-top: 2px; color: var(--muted); font-weight: 700; }
+
+      .main-nav, .header-actions, .hero-actions, .report-actions, .footer-links, .filter-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+      }
+      .main-nav a {
+        padding: 9px 10px;
+        border-radius: 6px;
+        color: var(--ink);
+        font-size: 0.9rem;
+        font-weight: 800;
+        text-decoration: none;
+      }
+      .main-nav a:hover { background: var(--light-blue); color: var(--navy); }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 42px;
+        padding: 10px 14px;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        font-weight: 800;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .button svg { width: 18px; height: 18px; }
+      .button.primary { background: var(--navy); color: var(--white); }
+      .button.secondary { background: var(--orange); color: var(--navy); }
+      .button.ghost { border-color: var(--line); background: var(--white); color: var(--navy); }
+      .button.light { border-color: rgba(255,255,255,.34); background: rgba(255,255,255,.12); color: var(--white); }
+
+      .hero-section {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 390px;
+        gap: 34px;
+        overflow: hidden;
+        min-height: 540px;
+        padding: clamp(42px, 7vw, 76px) clamp(18px, 4vw, 56px) 36px;
+        background: var(--navy);
+        color: var(--white);
+      }
+      .hero-section::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        background-image:
+          linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+        background-size: 44px 44px;
+      }
+      .radar {
+        position: absolute;
+        right: -110px;
+        top: 44px;
+        width: 430px;
+        height: 430px;
+        border: 1px solid rgba(234,243,248,.22);
+        border-radius: 999px;
+      }
+      .radar::before, .radar::after {
+        position: absolute;
+        content: "";
+        inset: 18%;
+        border: 1px solid rgba(245,154,35,.25);
+        border-radius: inherit;
+      }
+      .radar::after { inset: 35%; }
+      .tocantins-shape {
+        position: absolute;
+        right: 22%;
+        bottom: 72px;
+        width: 160px;
+        height: 260px;
+        background: var(--orange);
+        clip-path: polygon(52% 0,70% 12%,61% 29%,76% 43%,58% 57%,64% 75%,48% 100%,28% 78%,36% 59%,21% 43%,36% 25%,31% 9%);
+        opacity: .18;
+      }
+      .hero-content, .current-panel { position: relative; z-index: 1; }
+      .hero-content { align-self: center; max-width: 860px; }
+      .eyebrow { margin: 0 0 12px; color: var(--orange); font-size: .78rem; font-weight: 800; letter-spacing: 0; text-transform: uppercase; }
+      h1, h2, h3, p { margin-top: 0; }
+      h1 { margin-bottom: 18px; max-width: 900px; font-size: clamp(2.45rem, 5.6vw, 5.1rem); line-height: .98; letter-spacing: 0; }
+      h2 { margin-bottom: 0; color: var(--navy); font-size: clamp(1.65rem, 3vw, 2.45rem); line-height: 1.1; }
+      h3 { color: var(--navy); font-size: 1.08rem; }
+      .hero-lede { max-width: 760px; color: #d8e6f3; font-size: 1.12rem; line-height: 1.65; }
+      .hero-actions { margin-top: 28px; }
+
+      .current-panel {
+        align-self: end;
+        padding: 22px;
+        border: 1px solid rgba(255,255,255,.18);
+        border-radius: 8px;
+        background: rgba(255,255,255,.08);
+        box-shadow: 0 20px 50px rgba(0,0,0,.18);
+        backdrop-filter: blur(12px);
+      }
+      .panel-topline { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 16px; color: #d8e6f3; font-size: .9rem; }
+      .status-list { display: grid; gap: 10px; }
+      .status-row {
+        display: grid;
+        grid-template-columns: 22px minmax(0,1fr) auto;
+        gap: 10px;
+        align-items: center;
+        padding: 10px;
+        border-radius: 7px;
+        background: rgba(255,255,255,.09);
+      }
+      .status-row svg { width: 18px; height: 18px; color: var(--orange); }
+      .status-row strong, .status-row small { display: block; }
+      .status-row small { margin-top: 2px; color: #bad0e5; }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 27px;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: rgba(255,255,255,.14);
+        color: var(--white);
+        font-size: .78rem;
+        font-weight: 800;
+      }
+
+      .indicator-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0,1fr));
+        gap: 14px;
+        padding: 22px clamp(18px, 4vw, 56px);
+        background: var(--white);
+        box-shadow: var(--shadow);
+      }
+      .indicator-strip article { min-height: 120px; padding: 20px; border-left: 4px solid var(--orange); background: #fbfdff; }
+      .indicator-strip span, .indicator-strip small { display: block; color: var(--muted); }
+      .indicator-strip strong { display: block; margin: 10px 0 7px; color: var(--navy); font-size: 2.2rem; line-height: 1; }
+
+      .section { padding: 58px clamp(18px, 4vw, 56px); }
+      .section-muted { background: var(--light-blue); }
+      .section-heading { max-width: 760px; margin-bottom: 26px; }
+      .section-heading.split { display: flex; justify-content: space-between; gap: 24px; max-width: none; }
+      .monitor-grid, .cards-grid, .panel-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
+      .monitor-card, .bulletin-card, .panel-card, .alert-card, .about-list article {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: 0 12px 30px rgba(7,27,58,.08);
+      }
+      .monitor-card, .bulletin-card, .panel-card { display: grid; gap: 12px; align-content: start; padding: 20px; }
+      .icon-box { display: grid; width: 42px; height: 42px; place-items: center; border-radius: 8px; background: var(--light-blue); color: var(--blue); }
+      .icon-box svg { width: 21px; height: 21px; }
+      .monitor-card p, .bulletin-card p, .panel-card p, .alert-card p, .alert-card li { margin-bottom: 0; color: var(--muted); line-height: 1.55; }
+      .featured-report { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 28px; align-items: center; background: var(--navy); }
+      .featured-report h2, .featured-report p { color: var(--white); }
+      .featured-report p { max-width: 850px; margin: 16px 0 0; color: #d8e6f3; line-height: 1.6; }
+      .bulletin-card { min-height: 230px; }
+      .tag { display: inline-flex; align-items: center; min-height: 26px; padding: 4px 8px; border-radius: 999px; background: #f2f6fa; color: var(--blue); font-size: .78rem; font-weight: 800; }
+      .card-actions, .bulletin-meta, .panel-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+      .card-actions a, .text-link { color: var(--blue); font-weight: 800; text-decoration: none; }
+      .map-dashboard { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(320px,.8fr); gap: 18px; align-items: stretch; }
+      .map-visual {
+        min-height: 540px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background:
+          radial-gradient(circle at 55% 48%, rgba(245,154,35,.14), transparent 34%),
+          linear-gradient(135deg, #f2f6fa, #fff);
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+      .map-visual::before {
+        content: "";
+        position: absolute;
+        inset: 70px 28%;
+        background: var(--orange);
+        clip-path: polygon(52% 0,70% 12%,61% 29%,76% 43%,58% 57%,64% 75%,48% 100%,28% 78%,36% 59%,21% 43%,36% 25%,31% 9%);
+        opacity: .82;
+      }
+      .map-visual::after {
+        content: "Mapa tecnico do Tocantins";
+        position: absolute;
+        left: 28px;
+        bottom: 26px;
+        color: var(--navy);
+        font-weight: 900;
+      }
+      .panel-grid { grid-template-columns: 1fr; }
+      .alert-layout, .about-layout { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(300px,.85fr); gap: 18px; }
+      .alert-card { padding: 24px; }
+      .alert-header { display: flex; gap: 10px; align-items: center; margin-bottom: 16px; color: var(--red); font-weight: 800; }
+      .about-list { display: grid; gap: 14px; }
+      .about-list article { display: grid; grid-template-columns: 38px minmax(0,1fr); gap: 4px 14px; padding: 18px; }
+      .about-list svg { grid-row: span 2; width: 24px; height: 24px; color: var(--orange); }
+      .about-list span, .about-layout p { color: var(--muted); line-height: 1.6; }
+      .site-footer { display: flex; justify-content: space-between; gap: 24px; padding: 28px clamp(18px, 4vw, 56px); background: var(--navy); color: var(--white); }
+      .site-footer strong, .site-footer span { display: block; }
+      .site-footer span { margin-top: 6px; color: #c6d7e8; }
+
+      @media (max-width: 1120px) {
+        .site-header { grid-template-columns: 1fr; }
+        .monitor-grid, .cards-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      }
+      @media (max-width: 900px) {
+        .hero-section, .featured-report, .map-dashboard, .alert-layout, .about-layout, .section-heading.split { grid-template-columns: 1fr; }
+        .hero-section { min-height: 0; }
+        .indicator-strip { grid-template-columns: repeat(2, minmax(0,1fr)); }
+        .section-heading.split { display: grid; }
+      }
+      @media (max-width: 620px) {
+        .header-actions, .hero-actions, .report-actions { align-items: stretch; flex-direction: column; }
+        .button { width: 100%; white-space: normal; }
+        .monitor-grid, .cards-grid, .indicator-strip { grid-template-columns: 1fr; }
+        h1 { font-size: 2.35rem; }
+        .current-panel, .alert-card { padding: 18px; }
+        .status-row { grid-template-columns: 22px minmax(0,1fr); }
+        .status-row .badge { grid-column: 2; justify-self: start; }
+        .site-footer { flex-direction: column; }
+      }
     </style>
   </head>
   <body>
-    <main>
-      <div>
-        <h1>Centro de Monitoramento da Defesa Civil do Tocantins</h1>
-        <p>Redirecionando para o portal publicado.</p>
-        <p><a href="https://jade-pudding-8a7f18.netlify.app/">Acessar o portal</a></p>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Inicio">
+        <span class="brand-seal">TO</span>
+        <span><strong>Centro de Monitoramento</strong><small>Defesa Civil do Tocantins</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegacao principal">
+        <a href="#monitoramento">Monitoramento</a>
+        <a href="#boletins">Boletins</a>
+        <a href="#mapas">Mapas</a>
+        <a href="#alertas">Alertas</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+      <div class="header-actions">
+        <a class="button ghost" href="#boletins">Boletins</a>
+        <a class="button primary" href="#alertas">Alertas</a>
       </div>
+    </header>
+
+    <main id="inicio">
+      <section class="hero-section">
+        <span class="radar" aria-hidden="true"></span>
+        <span class="tocantins-shape" aria-hidden="true"></span>
+        <div class="hero-content">
+          <p class="eyebrow">Monitorar para prevenir. Informar para proteger.</p>
+          <h1>Centro de Monitoramento da Defesa Civil do Tocantins</h1>
+          <p class="hero-lede">Monitoramento hidrometeorologico, ambiental e operacional para apoio a prevencao, preparacao e resposta a desastres.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#boletins"><i data-lucide="file-text"></i>Acessar boletins</a>
+            <a class="button secondary" href="#mapas"><i data-lucide="map"></i>Ver mapas e paineis</a>
+            <a class="button light" href="#alertas"><i data-lucide="triangle-alert"></i>Consultar alertas</a>
+          </div>
+        </div>
+        <aside class="current-panel" aria-label="Situacao atual do monitoramento">
+          <div class="panel-topline"><span>Situacao atual</span><strong id="updatedAt">Carregando</strong></div>
+          <div class="status-list" id="statusList"></div>
+        </aside>
+      </section>
+
+      <section class="indicator-strip" aria-label="Indicadores operacionais">
+        <article><span>Municipios com alerta</span><strong id="municipiosAlerta">--</strong><small id="municipiosAlertaFonte">monitoramento integrado</small></article>
+        <article><span>Rios em atencao</span><strong id="riosAtencao">--</strong><small id="riosAtencaoFonte">ANA / SNIRH</small></article>
+        <article><span>Focos recentes</span><strong id="focosCalor">--</strong><small id="focosCalorFonte">INPE Queimadas</small></article>
+        <article><span>Area queimada</span><strong id="areaQueimada">--</strong><small id="areaQueimadaFonte">MapBiomas / INPE</small></article>
+      </section>
+
+      <section class="section" id="monitoramento">
+        <div class="section-heading"><p class="eyebrow">O que monitoramos</p><h2>Leitura integrada de risco no territorio</h2></div>
+        <div class="monitor-grid" id="monitorGrid"></div>
+      </section>
+
+      <section class="section featured-report">
+        <div>
+          <p class="eyebrow">Boletim em destaque</p>
+          <h2>Relatorio Tecnico: Incendios Florestais no Tocantins - 2025</h2>
+          <p>Panorama ambiental e operacional do fogo no estado, com analise de areas queimadas, emissoes estimadas, atendimento operacional do CBMTO, demanda reprimida e cobertura territorial de resposta.</p>
+        </div>
+        <div class="report-actions">
+          <a class="button primary" href="#boletins"><i data-lucide="eye"></i>Visualizar relatorio</a>
+          <a class="button secondary" href="#boletins"><i data-lucide="download"></i>Baixar PDF</a>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="boletins">
+        <div class="section-heading split">
+          <div><p class="eyebrow">Boletins recentes</p><h2>Produtos tecnicos disponiveis</h2></div>
+          <div class="filter-pills" aria-label="Filtros de boletins"><span class="tag">Todos</span><span class="tag">Fogo</span><span class="tag">Chuvas</span><span class="tag">Rios</span></div>
+        </div>
+        <div class="cards-grid" id="bulletinGrid"></div>
+      </section>
+
+      <section class="section" id="mapas">
+        <div class="section-heading split">
+          <div><p class="eyebrow">Mapas e paineis</p><h2>Visualizacao territorial para decisao rapida</h2></div>
+          <a class="text-link" href="#mapas">Mapa prioritario</a>
+        </div>
+        <div class="map-dashboard"><div class="map-visual" aria-label="Mapa tecnico do Tocantins"></div><div class="panel-grid" id="panelGrid"></div></div>
+      </section>
+
+      <section class="section" id="alertas">
+        <div class="section-heading"><p class="eyebrow">Alertas e situacao atual</p><h2>Monitoramento operacional em acompanhamento</h2></div>
+        <div class="alert-layout">
+          <article class="alert-card"><div class="alert-header"><i data-lucide="triangle-alert"></i><span>Alerta ativo</span></div><h3>Baixa umidade e risco de incendio florestal</h3><p>Municipios do centro-sul em acompanhamento preventivo. Situacao baseada em monitoramento tecnico e sujeita a validacao pelos canais oficiais de alerta.</p></article>
+          <article class="alert-card"><h3>Recomendacoes a populacao</h3><ul><li>Evite uso de fogo em areas de vegetacao.</li><li>Comunique focos de incendio aos canais oficiais.</li><li>Nao atravesse trechos alagados durante chuva intensa.</li><li>Acione a Defesa Civil pelo 199 em situacoes de risco.</li></ul></article>
+        </div>
+      </section>
+
+      <section class="section" id="sobre">
+        <div class="about-layout">
+          <div><p class="eyebrow">Sobre o Centro</p><h2>Informacao tecnica para prevencao, alerta e resposta</h2><p>O Centro de Monitoramento da Defesa Civil Estadual do Tocantins atua no acompanhamento permanente de dados ambientais, meteorologicos, hidrologicos e operacionais, produzindo informacoes tecnicas para apoiar a protecao e defesa civil.</p></div>
+          <div class="about-list">
+            <article><i data-lucide="target"></i><strong>Missao</strong><span>Converter dados em decisao tecnica e comunicacao de risco.</span></article>
+            <article><i data-lucide="database"></i><strong>Fontes de dados</strong><span>INMET, ANA, INPE Queimadas, MapBiomas, CIGMA, CBMTO e bases oficiais.</span></article>
+            <article><i data-lucide="radio-tower"></i><strong>Produtos gerados</strong><span>Boletins, mapas, relatorios, notas tecnicas, paineis e alertas.</span></article>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer"><div><strong>Centro de Monitoramento da Defesa Civil do Tocantins</strong><span>Dados, mapas e alertas para apoio a protecao e defesa civil.</span></div><div class="footer-links"><span>Emergencia: 199</span></div></footer>
+
+    <script>
+      const fallbackData = {
+        atualizado_em: "2026-05-22T12:00:00-03:00",
+        resumo: { municipios_alerta: 7, rios_em_atencao: 4, focos_calor_24h: 204, area_queimada_ano_ha: 245000, chuva_24h_mm: 18.4, estacoes_operando: 32 },
+        fontes: { chuva: "INMET / CEMADEN", rios: "ANA / SNIRH", focos: "INPE Queimadas", area_queimada: "MapBiomas Fogo / INPE AQ" }
+      };
+      let statuses = [];
+      const monitoringAreas = [
+        ["cloud-lightning", "Chuvas e tempestades", "Acompanhamento de acumulados, previsao e risco de eventos severos."],
+        ["waves", "Niveis dos rios", "Monitoramento hidrologico de pontos criticos e municipios vulneraveis."],
+        ["flame", "Focos de calor", "Deteccao por sensoriamento remoto e leitura territorial do fogo."],
+        ["scan-line", "Areas queimadas", "Analise de cicatrizes de fogo, recorrencia e territorios prioritarios."],
+        ["landmark", "Risco de inundacao", "Apoio tecnico a respostas preventivas em areas suscetiveis."],
+        ["trees", "Incendio florestal", "Indicadores de estiagem, baixa umidade e risco operacional."],
+        ["triangle-alert", "Alertas publicos", "Subsidio tecnico para comunicacao de risco e orientacoes a populacao."],
+        ["map-pinned", "Apoio operacional", "Mapas, notas tecnicas e relatorios para decisao em campo."]
+      ];
+      const bulletins = [
+        ["Fogo", "Dezembro/2025", "Boletim de Incendios Florestais - 2025", "Areas queimadas, emissoes estimadas, atendimento operacional e cobertura territorial de resposta."],
+        ["Rios", "Atualizacao semanal", "Boletim Hidrologico", "Niveis de rios, tendencia hidrologica e municipios em atencao."],
+        ["Chuvas", "Atualizacao diaria", "Boletim de Chuvas", "Acumulados observados, previsao de 72h e pontos com risco de alagamento."],
+        ["Fogo", "Serie historica", "Monitoramento de Areas Queimadas", "Mapas de recorrencia, territorios prioritarios e cruzamentos com bases oficiais."]
+      ];
+      const panels = [
+        ["flame", "Painel do Fogo", "Focos de calor, area queimada, municipios criticos e cobertura operacional.", ["INPE", "MapBiomas", "CBMTO"]],
+        ["waves", "Monitoramento de Rios", "Estacoes hidrologicas, variacao de nivel e alertas por bacia.", ["ANA", "SNIRH"]],
+        ["cloud-sun-rain", "Previsao de Chuva 72h", "Cenarios de chuva intensa, acumulados e risco de eventos severos.", ["INMET", "CEMADEN"]],
+        ["map", "Mapas de Risco", "Municipios criticos, unidades de conservacao, terras indigenas e areas prioritarias.", ["Bases oficiais", "SIG"]]
+      ];
+      const icon = (name) => `<i data-lucide="${name}"></i>`;
+      const number = (value) => new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 1 }).format(value);
+      const area = (value) => Number(value) >= 1000 ? `${number(Number(value) / 1000)} mil ha` : `${number(value)} ha`;
+      const dateTime = (value) => new Intl.DateTimeFormat("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date(value));
+      const setText = (selector, value) => { const element = document.querySelector(selector); if (element) element.textContent = value; };
+      function buildStatuses(data) {
+        const s = data.resumo;
+        return [
+          { icon: "cloud-rain", label: "Chuvas", description: `${String(s.chuva_24h_mm).replace(".", ",")} mm acumulados nas ultimas 24h`, value: "Monitoramento" },
+          { icon: "waves", label: "Rios", description: `${s.rios_em_atencao} pontos hidrologicos em nivel de atencao`, value: "Atencao" },
+          { icon: "flame", label: "Focos de calor", description: `${s.focos_calor_24h} focos registrados no ultimo boletim`, value: "Ativo" },
+          { icon: "radio-tower", label: "Rede operacional", description: `${s.estacoes_operando} estacoes ou pontos em acompanhamento`, value: "24h" }
+        ];
+      }
+      function renderStatuses() {
+        document.querySelector("#statusList").innerHTML = statuses.map((item) => `<article class="status-row">${icon(item.icon)}<span><strong>${item.label}</strong><small>${item.description}</small></span><span class="badge">${item.value}</span></article>`).join("");
+        if (window.lucide) window.lucide.createIcons();
+      }
+      function renderCards() {
+        document.querySelector("#monitorGrid").innerHTML = monitoringAreas.map(([i,t,d]) => `<article class="monitor-card"><span class="icon-box">${icon(i)}</span><h3>${t}</h3><p>${d}</p></article>`).join("");
+        document.querySelector("#bulletinGrid").innerHTML = bulletins.map(([tag,date,title,text]) => `<article class="bulletin-card"><div class="bulletin-meta"><span class="tag">${tag}</span><span class="tag">${date}</span></div><h3>${title}</h3><p>${text}</p><div class="card-actions"><a href="#boletins">Visualizar</a><a href="#boletins">Baixar arquivo</a></div></article>`).join("");
+        document.querySelector("#panelGrid").innerHTML = panels.map(([i,t,d,tags]) => `<article class="panel-card"><span class="icon-box">${icon(i)}</span><h3>${t}</h3><p>${d}</p><div class="panel-meta">${tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}</div></article>`).join("");
+      }
+      async function loadMonitoringData() {
+        let data = fallbackData;
+        try {
+          const response = await fetch("dados-monitoramento.json", { cache: "no-store" });
+          if (response.ok) data = await response.json();
+        } catch {}
+        statuses = data.status && data.status.length ? data.status : buildStatuses(data);
+        const s = data.resumo || fallbackData.resumo;
+        const f = data.fontes || fallbackData.fontes;
+        setText("#updatedAt", dateTime(data.atualizado_em));
+        setText("#municipiosAlerta", number(s.municipios_alerta));
+        setText("#riosAtencao", number(s.rios_em_atencao));
+        setText("#focosCalor", number(s.focos_calor_24h));
+        setText("#areaQueimada", area(s.area_queimada_ano_ha));
+        setText("#riosAtencaoFonte", f.rios || "ANA / SNIRH");
+        setText("#focosCalorFonte", f.focos || "INPE Queimadas");
+        setText("#areaQueimadaFonte", f.area_queimada || "MapBiomas / INPE");
+        renderStatuses();
+      }
+      renderCards();
+      loadMonitoringData();
+      if (window.lucide) window.lucide.createIcons();
+    </script>
   </body>
 </html>
