@@ -1,9 +1,9 @@
 {
-  "atualizado_em": "2026-05-22T12:00:00-03:00",
+  "atualizado_em": "2026-05-22T15:53:56.457Z",
   "resumo": {
     "municipios_alerta": 7,
     "rios_em_atencao": 4,
-    "focos_calor_24h": 128,
+    "focos_calor_24h": 204,
     "area_queimada_ano_ha": 245000,
     "chuva_24h_mm": 18.4,
     "estacoes_operando": 32
@@ -24,7 +24,7 @@
     {
       "icon": "flame",
       "label": "Focos de calor",
-      "description": "128 focos registrados nas ultimas 24h",
+      "description": "204 focos registrados no arquivo diario do INPE",
       "value": "Ativo"
     },
     {
@@ -39,5 +39,11 @@
     "rios": "ANA / SNIRH",
     "focos": "INPE Queimadas",
     "area_queimada": "MapBiomas Fogo / INPE AQ"
+  },
+  "automacao": {
+    "focos_calor": "automatico_inpe_diario",
+    "chuva": "manual",
+    "rios": "manual",
+    "area_queimada": "manual"
   }
 }
