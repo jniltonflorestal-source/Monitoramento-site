@@ -3395,20 +3395,11 @@ function renderDroughtLayer(layerKey = "seca") {
     `;
   }
   if (layerKey === "focos") {
-    droughtMarkerLayer = L.layerGroup(
-      mapLayers.fogo.items.map((item) => L.circleMarker([item.lat, item.lon], {
-        radius: 9,
-        color: "#ffffff",
-        weight: 2,
-        fillColor: "#d73027",
-        fillOpacity: 0.9
-      }).bindPopup(`<strong>${escapeHtml(item.city)}</strong><br>${escapeHtml(item.value)}<br><small>Camada indicativa; consulte INPE para dados atuais.</small>`))
-    ).addTo(droughtMap);
     if (detail) {
       detail.innerHTML = `
-        <p class="eyebrow">Período seco e fogo</p>
-        <h3>Focos de calor associados</h3>
-        <p>A camada sinaliza áreas de acompanhamento do fogo. Para contagem diária atual, consulte o indicador INPE no painel.</p>
+        <p class="eyebrow">INPE Queimadas</p>
+        <h3>Focos de calor</h3>
+        <p>A contagem diária oficial está exibida nos cartões da situação atual. A espacialização municipal será ativada quando houver integração geográfica oficial validada para esta camada.</p>
       `;
     }
   }
