@@ -2,6 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 
 const INPE_DAILY_DIR = "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/";
 const CEMADEN_ALERTS_URL = "https://painelalertas.cemaden.gov.br/wsAlertas2";
+const INMET_WARNINGS_URL = "https://apiprevmet3.inmet.gov.br/avisos/ativos";
 const DATA_FILE = new URL("../dados-monitoramento.json", import.meta.url);
 
 function parseCsv(text) {
@@ -55,6 +56,36 @@ async function fetchTocantinsAlerts() {
   return { count: alerts.length, highest };
 }
 
+function tocantinsMunicipalities(value) {
+  const towns = String(value || "").split(",").filter((town) => / - TO \(/.test(town));
+  if (!towns.length) return "Area do Tocantins indicada no poligono oficial.";
+  const names = towns.slice(0, 6).map((town) => town.split(" - TO")[0].trim());
+  return `${names.join(", ")}${towns.length > names.length ? ` e mais ${towns.length - names.length} municipio(s)` : ""}.`;
+}
+
+async function fetchTocantinsWeatherWarnings() {
+  const response = await fetch(INMET_WARNINGS_URL);
+  if (!response.ok) throw new Error("Avisos meteorologicos do INMET indisponiveis");
+
+  const body = await response.json();
+  const containsTocantins = (warning) => String(warning.estados || "").split(",").includes("Tocantins");
+  const today = (body.hoje || []).filter(containsTocantins);
+  const future = (body.futuro || []).filter(containsTocantins);
+  const severityRank = { "Perigo Potencial": 1, Perigo: 2, "Grande Perigo": 3 };
+  const highest = today.reduce(
+    (current, warning) => (severityRank[warning.severidade] || 0) > (severityRank[current] || 0) ? warning.severidade : current,
+    "Sem aviso vigente"
+  );
+  const details = [...today.map((warning) => ({ warning, phase: "Vigente hoje" })), ...future.map((warning) => ({ warning, phase: "Previsto" }))]
+    .map(({ warning, phase }) => ({
+      title: `${phase}: ${warning.descricao}`,
+      detail: `${warning.severidade} | ${warning.inicio} ate ${warning.fim}`,
+      location: tocantinsMunicipalities(warning.municipios)
+    }));
+
+  return { todayCount: today.length, futureCount: future.length, highest, details };
+}
+
 function buildStatuses(data) {
   const summary = data.resumo;
   return [
@@ -90,10 +121,18 @@ data.resumo.focos_calor_24h = await countTocantinsFires();
 const alertSummary = await fetchTocantinsAlerts();
 data.resumo.alertas_cemaden_to = alertSummary.count;
 data.resumo.alertas_cemaden_to_nivel_maximo = alertSummary.highest;
+const warningSummary = await fetchTocantinsWeatherWarnings();
+data.resumo.avisos_inmet_to_hoje = warningSummary.todayCount;
+data.resumo.avisos_inmet_to_futuro = warningSummary.futureCount;
+data.resumo.avisos_inmet_to_severidade_maxima = warningSummary.highest;
+data.resumo.avisos_inmet_detalhes = warningSummary.details;
 data.atualizado_em = new Date().toISOString();
 data.status = buildStatuses(data);
+data.fontes.alertas_geo = "Cemaden";
+data.fontes.avisos_meteorologicos = "INMET";
 data.automacao = {
   alertas_cemaden: "automatico_horario",
+  avisos_inmet: "automatico_horario",
   focos_calor: "automatico_inpe_diario",
   chuva: "manual",
   rios: "automatico_ana_sob_demanda",

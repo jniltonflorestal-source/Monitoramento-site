@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-05-25T17:11:17.009Z",
+  "atualizado_em": "2026-05-25T17:11:56.102Z",
   "resumo": {
     "alertas_cemaden_to": 0,
     "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
@@ -7,7 +7,22 @@
     "focos_calor_24h": 98,
     "area_queimada_ano_ha": 245000,
     "chuva_24h_mm": 18.4,
-    "estacoes_operando": 32
+    "estacoes_operando": 32,
+    "avisos_inmet_to_hoje": 1,
+    "avisos_inmet_to_futuro": 1,
+    "avisos_inmet_to_severidade_maxima": "Perigo Potencial",
+    "avisos_inmet_detalhes": [
+      {
+        "title": "Vigente hoje: Baixa Umidade",
+        "detail": "Perigo Potencial | 2026-05-25 12:00 ate 2026-05-25 18:00",
+        "location": "Abreulândia, Aguiarnópolis, Ananás, Angico, Aragominas, Araguacema e mais 44 municipio(s)."
+      },
+      {
+        "title": "Previsto: Baixa Umidade",
+        "detail": "Perigo Potencial | 2026-05-26 12:00 ate 2026-05-26 18:00",
+        "location": "Abreulândia, Araguacema, Arapoema, Caseara, Couto Magalhães, Juarina e mais 4 municipio(s)."
+      }
+    ]
   },
   "status": [
     {
@@ -40,10 +55,13 @@
     "chuva": "INMET / CEMADEN",
     "rios": "ANA / Telemetria",
     "focos": "INPE Queimadas",
-    "area_queimada": "MapBiomas Fogo / INPE AQ"
+    "area_queimada": "MapBiomas Fogo / INPE AQ",
+    "alertas_geo": "Cemaden",
+    "avisos_meteorologicos": "INMET"
   },
   "automacao": {
     "alertas_cemaden": "automatico_horario",
+    "avisos_inmet": "automatico_horario",
     "focos_calor": "automatico_inpe_diario",
     "chuva": "manual",
     "rios": "automatico_ana_sob_demanda",
