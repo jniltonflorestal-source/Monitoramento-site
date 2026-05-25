@@ -321,6 +321,47 @@ h3 {
   backdrop-filter: blur(12px);
 }
 
+.state-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.general-state {
+  width: fit-content;
+  padding: 9px 16px;
+  border-radius: 6px;
+  color: var(--white);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.general-state.loading {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.general-state.normal {
+  background: #157347;
+}
+
+.general-state.attention {
+  background: var(--orange);
+}
+
+.general-state.danger {
+  background: var(--red);
+}
+
+.general-state-message {
+  margin: 0;
+  color: #d8e6f3;
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.panel-emergency {
+  width: 100%;
+}
+
 .hero-alert {
   display: grid;
   gap: 9px;
@@ -480,6 +521,83 @@ h3 {
   background: var(--white);
 }
 
+.current-alerts-section {
+  padding-top: 42px;
+  padding-bottom: 34px;
+  background: #f7fafc;
+}
+
+.alert-update {
+  align-self: end;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.alert-update strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--navy);
+}
+
+.current-alerts-band {
+  display: grid;
+  gap: 16px;
+}
+
+.priority-alert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.official-access-section {
+  padding-top: 32px;
+  padding-bottom: 38px;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+
+.official-access-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.official-access-grid a,
+.receive-alerts-link {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  min-height: 46px;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--navy);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.official-access-grid svg,
+.receive-alerts-link svg {
+  width: 17px;
+  height: 17px;
+}
+
+.official-access-grid a:hover {
+  border-color: var(--blue);
+  background: var(--light-blue);
+}
+
+.receive-alerts-link {
+  margin-top: 16px;
+  border-color: var(--orange);
+  background: #fff8ee;
+}
+
+.receive-alerts-link svg {
+  color: var(--orange);
+}
+
 .public-heading {
   max-width: none;
 }
@@ -547,6 +665,40 @@ h3 {
   line-height: 1.4;
 }
 
+.administrative-status {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.15fr) minmax(430px, 1.5fr) auto;
+  gap: 20px;
+  align-items: center;
+  margin-top: 18px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--blue);
+  border-radius: 8px;
+  background: #f7fafc;
+}
+
+.administrative-status h3 {
+  margin: 6px 0;
+}
+
+.administrative-status p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.administrative-metrics {
+  margin: 0;
+  grid-template-columns: repeat(3, minmax(140px, 1fr));
+}
+
+.administrative-metrics dd {
+  color: var(--blue);
+  font-size: 0.9rem;
+}
+
 .today-section {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
@@ -578,7 +730,7 @@ h3 {
 .recommendation-grid,
 .explain-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -1781,6 +1933,11 @@ h3 {
   color: var(--red);
 }
 
+.official-live-status.manual {
+  background: #f3f6f9;
+  color: var(--muted);
+}
+
 .agency-alert-detail {
   display: grid;
   gap: 12px;
@@ -1993,6 +2150,10 @@ dd {
   .drought-city-detail {
     grid-column: 1 / -1;
   }
+
+  .administrative-status {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 900px) {
@@ -2019,6 +2180,10 @@ dd {
 
   .section-heading.split {
     display: grid;
+  }
+
+  .administrative-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -2062,6 +2227,14 @@ dd {
   .current-panel,
   .alert-card {
     padding: 18px;
+  }
+
+  .administrative-status {
+    padding: 18px;
+  }
+
+  .administrative-metrics {
+    grid-template-columns: 1fr;
   }
 
   .status-row {
@@ -2172,11 +2345,10 @@ dd {
       </a>
 
       <nav class="main-nav" aria-label="Navegação principal">
-        <a href="#situacao">Situação atual</a>
-        <a href="#seca">Seca</a>
         <a href="#alertas">Alertas</a>
+        <a href="#situacao">Situação atual</a>
         <a href="#boletins">Boletins</a>
-        <a href="#mapas">Mapas</a>
+        <a href="#mapas">Mapas e painéis</a>
       </nav>
 
       <div class="header-actions">
@@ -2221,32 +2393,60 @@ dd {
           </div>
         </div>
 
-        <aside class="current-panel" aria-label="Alertas e avisos oficiais">
-          <section class="hero-alert" id="heroAgencyAlerts" aria-label="Alertas e avisos oficiais no Tocantins">
-            <span class="hero-alert-kicker">
-              <i data-lucide="triangle-alert"></i>
-              Alertas e avisos no Tocantins
-            </span>
-            <a class="hero-alert-source" href="#alertas" data-alert-source="cemaden">
-              <span>
-                <b>Risco geo-hidrológico</b>
-                <small id="heroCemadenStatus">Consultando Cemaden</small>
-              </span>
-              <strong id="heroCemadenCount">--</strong>
-            </a>
-            <a class="hero-alert-source meteorological" href="#alertas" data-alert-source="inmet">
-              <span>
-                <b>Aviso meteorológico</b>
-                <small id="heroInmetStatus">Consultando INMET</small>
-              </span>
-              <strong id="heroInmetCount">--</strong>
-            </a>
-          </section>
+        <aside class="current-panel state-panel" aria-label="Situação geral do Tocantins">
+          <p class="hero-alert-kicker">
+            <i data-lucide="activity"></i>
+            Situação geral do Tocantins
+          </p>
+          <strong class="general-state loading" id="generalState">Carregando dados...</strong>
+          <p class="general-state-message" id="generalStateMessage">
+            Consultando avisos oficiais e variáveis monitoradas.
+          </p>
           <div class="panel-topline">
             <span>Última atualização</span>
-            <strong id="updatedAt">Carregando</strong>
+            <strong id="updatedAt">Carregando dados...</strong>
           </div>
+          <a class="button emergency-solid panel-emergency" href="tel:199">Ligar 199</a>
         </aside>
+      </section>
+
+      <section class="section current-alerts-section" id="alertas">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Prioridade pública</p>
+            <h2>Avisos e alertas vigentes</h2>
+            <p class="section-description">Verifique se existe orientação oficial ativa para sua localidade antes de consultar os demais indicadores.</p>
+          </div>
+          <span class="alert-update">Atualização: <strong id="alertsUpdatedAt">Carregando dados...</strong></span>
+        </div>
+        <div class="current-alerts-band" id="currentAlertsBand">
+          <div class="official-alert-grid priority-alert-grid" id="officialAlertGrid"></div>
+          <section class="agency-alert-detail" id="agencyAlertDetail" aria-live="polite">
+            <h3>Carregando dados...</h3>
+            <p>Consultando avisos vigentes nos órgãos emissores.</p>
+          </section>
+        </div>
+      </section>
+
+      <section class="section official-access-section" id="officialAccess">
+        <div class="section-heading compact-heading">
+          <p class="eyebrow">Fontes oficiais</p>
+          <h2>Consultar avisos oficiais</h2>
+          <p class="official-guidance">
+            Os avisos devem ser confirmados nos canais oficiais dos órgãos emissores. Este portal organiza as informações para facilitar a leitura pública.
+          </p>
+        </div>
+        <div class="official-access-grid">
+          <a href="https://avisos.inmet.gov.br/" target="_blank" rel="noopener">Consultar INMET <i data-lucide="external-link"></i></a>
+          <a href="https://painelalertas.cemaden.gov.br/" target="_blank" rel="noopener">Consultar CEMADEN <i data-lucide="external-link"></i></a>
+          <a href="https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/defesa-civil-alerta" target="_blank" rel="noopener">Defesa Civil Alerta / IDAP <i data-lucide="external-link"></i></a>
+          <a href="https://s2id.mi.gov.br/paginas/series/" target="_blank" rel="noopener">Consultar S2ID <i data-lucide="external-link"></i></a>
+          <a href="https://www.to.gov.br/defesacivil/boletins-informativos-2026/1879973eka9p" target="_blank" rel="noopener">Boletins da Defesa Civil <i data-lucide="external-link"></i></a>
+        </div>
+        <a class="receive-alerts-link" href="https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/defesa-civil-alerta" target="_blank" rel="noopener">
+          <i data-lucide="bell-ring"></i>
+          Como receber alertas da Defesa Civil
+        </a>
       </section>
 
       <section class="section public-status" id="situacao">
@@ -2256,6 +2456,19 @@ dd {
           <p class="section-description">Leitura rápida das condições acompanhadas pelo Centro de Monitoramento.</p>
         </div>
         <div class="situation-grid" id="situationGrid" aria-live="polite"></div>
+        <article class="administrative-status" id="administrativeStatus" aria-live="polite">
+          <div>
+            <p class="eyebrow">Situação administrativa</p>
+            <h3>Emergência e calamidade no S2ID</h3>
+            <p>O S2ID é o sistema oficial onde municípios registram desastres e solicitam reconhecimento de emergência ou calamidade.</p>
+          </div>
+          <dl class="administrative-metrics">
+            <div><dt>Situação de Emergência</dt><dd id="s2idEmergency">Consulta oficial necessária</dd></div>
+            <div><dt>Estado de Calamidade Pública</dt><dd id="s2idCalamity">Consulta oficial necessária</dd></div>
+            <div><dt>Reconhecimento federal vigente</dt><dd id="s2idRecognition">Consulta oficial necessária</dd></div>
+          </dl>
+          <a class="official-action" href="https://s2id.mi.gov.br/paginas/series/" target="_blank" rel="noopener">Consultar S2ID <i data-lucide="external-link"></i></a>
+        </article>
       </section>
 
       <section class="section today-section">
@@ -2278,76 +2491,6 @@ dd {
           <h2>Recomendações à população</h2>
         </div>
         <div class="recommendation-grid" id="recommendationGrid"></div>
-      </section>
-
-      <section class="section drought-section" id="seca">
-        <div class="section-heading split">
-          <div>
-            <p class="eyebrow">Seca no Tocantins</p>
-            <h2>Condição de seca por município</h2>
-            <p class="section-description">Acompanhamento mensal do Índice Integrado de Seca (IIS3) do Cemaden.</p>
-          </div>
-          <a class="text-link" href="https://mapasecas.cemaden.gov.br/" target="_blank" rel="noopener">Abrir Alerta-Secas oficial</a>
-        </div>
-        <div class="drought-layout">
-          <article class="drought-summary-card">
-            <div class="drought-state">
-              <span>Situação geral</span>
-              <strong id="droughtGeneral">Consultando</strong>
-              <small id="droughtReference">Referência mensal</small>
-            </div>
-            <div class="drought-metrics">
-              <div><strong id="droughtAny">--</strong><span>municípios com seca</span></div>
-              <div><strong id="droughtModerate">--</strong><span>moderada ou superior</span></div>
-              <div><strong id="droughtSevere">--</strong><span>severa ou extrema</span></div>
-            </div>
-            <dl class="drought-facts">
-              <div><dt>Mais críticos</dt><dd id="droughtCritical">--</dd></div>
-              <div><dt>Tendência</dt><dd id="droughtTrend">--</dd></div>
-              <div><dt>Fonte</dt><dd id="droughtSource">Cemaden / Alerta-Secas</dd></div>
-            </dl>
-          </article>
-          <div class="drought-map-card">
-            <div class="drought-layer-switcher" id="droughtLayerSwitcher" aria-label="Camadas do mapa de seca">
-              <button class="active" type="button" data-drought-layer="seca">Severidade da seca</button>
-              <button type="button" data-drought-layer="s2id">SE/ECP - S2ID</button>
-              <button type="button" data-drought-layer="focos">Focos de calor</button>
-            </div>
-            <div class="drought-map" id="droughtMap" aria-label="Mapa municipal da seca no Tocantins"></div>
-            <div class="drought-legend" id="droughtLegend">
-              <span><i class="drought-none"></i>Sem seca</span>
-              <span><i class="drought-weak"></i>Fraca</span>
-              <span><i class="drought-moderate"></i>Moderada</span>
-              <span><i class="drought-severe"></i>Severa</span>
-              <span><i class="drought-extreme"></i>Extrema</span>
-            </div>
-          </div>
-          <article class="drought-city-detail" id="droughtMunicipalityDetail" aria-live="polite">
-            <h3>Selecione um município</h3>
-            <p>Clique no mapa para consultar o grau de seca e a situação administrativa disponível.</p>
-          </article>
-        </div>
-        <p class="drought-explanation">
-          A seca monitorada por índices técnicos e a situação de emergência registrada no S2ID são informações complementares.
-          Um município pode apresentar condição de seca sem ter decreto registrado, assim como pode haver decreto vigente ainda
-          relacionado a evento anterior.
-        </p>
-      </section>
-
-      <section class="section explain-section">
-        <div class="section-heading">
-          <p class="eyebrow">Entenda os dados</p>
-          <h2>Informações para interpretar o monitoramento</h2>
-        </div>
-        <div class="explain-grid" id="explainGrid"></div>
-      </section>
-
-      <section class="section technical-section" id="monitoramento">
-        <div class="section-heading">
-          <p class="eyebrow">Para gestores e equipes técnicas</p>
-          <h2>Monitoramento, produtos e análises</h2>
-        </div>
-        <div class="monitor-grid" id="monitorGrid"></div>
       </section>
 
       <section class="section featured-report">
@@ -2401,7 +2544,7 @@ dd {
       <section class="section" id="mapas">
         <div class="section-heading split">
           <div>
-            <p class="eyebrow">Mapas e painéis técnicos</p>
+            <p class="eyebrow">Mapas e painéis</p>
             <h2>Visualização territorial para decisão rápida</h2>
           </div>
           <a class="text-link" href="#mapas">Ver mapa prioritário</a>
@@ -2473,37 +2616,74 @@ dd {
         </div>
       </section>
 
-      <section class="section alert-section" id="alertas">
-        <div class="section-heading">
-          <p class="eyebrow">Alertas oficiais</p>
-          <h2>Consulte avisos vigentes nos órgãos emissores</h2>
+      <section class="section drought-section" id="seca">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Mapa técnico</p>
+            <h2>Seca no Tocantins</h2>
+            <p class="section-description">Condição municipal acompanhada pelo Índice Integrado de Seca (IIS3) do Cemaden.</p>
+          </div>
+          <a class="text-link" href="https://mapasecas.cemaden.gov.br/" target="_blank" rel="noopener">Abrir Alerta-Secas oficial</a>
         </div>
-        <p class="official-guidance">
-          Os avisos devem ser confirmados diretamente no canal do órgão emissor. Este portal
-          organiza os acessos técnicos e não substitui comunicados oficiais à população.
-        </p>
-        <div class="official-alert-grid" id="officialAlertGrid"></div>
-        <section class="agency-alert-detail" id="agencyAlertDetail" aria-live="polite"></section>
-        <div class="alert-layout guidance-layout">
-          <article class="alert-card contact-card">
-            <div class="alert-header">
-              <i data-lucide="phone-call"></i>
-              <span>Canais de emergência</span>
+        <div class="drought-layout">
+          <article class="drought-summary-card">
+            <div class="drought-state">
+              <span>Situação geral</span>
+              <strong id="droughtGeneral">Carregando dados...</strong>
+              <small id="droughtReference">Referência mensal</small>
             </div>
-            <h3>Defesa Civil e Corpo de Bombeiros</h3>
-            <p>Em risco imediato, utilize os canais de atendimento, não apenas os painéis de consulta.</p>
-            <dl>
-              <div>
-                <dt>Defesa Civil</dt>
-                <dd>199</dd>
-              </div>
-              <div>
-                <dt>Bombeiros</dt>
-                <dd>193</dd>
-              </div>
+            <div class="drought-metrics">
+              <div><strong id="droughtAny">--</strong><span>municípios com seca</span></div>
+              <div><strong id="droughtModerate">--</strong><span>moderada ou superior</span></div>
+              <div><strong id="droughtSevere">--</strong><span>severa ou extrema</span></div>
+            </div>
+            <dl class="drought-facts">
+              <div><dt>Mais críticos</dt><dd id="droughtCritical">Carregando dados...</dd></div>
+              <div><dt>Tendência</dt><dd id="droughtTrend">Carregando dados...</dd></div>
+              <div><dt>Fonte</dt><dd id="droughtSource">Cemaden / Alerta-Secas</dd></div>
             </dl>
           </article>
+          <div class="drought-map-card">
+            <div class="drought-layer-switcher" id="droughtLayerSwitcher" aria-label="Camadas do mapa de seca">
+              <button class="active" type="button" data-drought-layer="seca">Severidade da seca</button>
+              <button type="button" data-drought-layer="s2id">SE/ECP - S2ID</button>
+              <button type="button" data-drought-layer="focos">Focos de calor</button>
+            </div>
+            <div class="drought-map" id="droughtMap" aria-label="Mapa municipal da seca no Tocantins"></div>
+            <div class="drought-legend" id="droughtLegend">
+              <span><i class="drought-none"></i>Sem seca</span>
+              <span><i class="drought-weak"></i>Fraca</span>
+              <span><i class="drought-moderate"></i>Moderada</span>
+              <span><i class="drought-severe"></i>Severa</span>
+              <span><i class="drought-extreme"></i>Extrema</span>
+            </div>
+          </div>
+          <article class="drought-city-detail" id="droughtMunicipalityDetail" aria-live="polite">
+            <h3>Selecione um município</h3>
+            <p>Clique no mapa para consultar o grau de seca e a situação administrativa disponível.</p>
+          </article>
         </div>
+        <p class="drought-explanation">
+          A seca monitorada por índices técnicos e a situação de emergência registrada no S2ID são informações complementares.
+          Um município pode apresentar condição de seca sem ter decreto registrado, assim como pode haver decreto vigente ainda
+          relacionado a evento anterior.
+        </p>
+      </section>
+
+      <section class="section explain-section">
+        <div class="section-heading">
+          <p class="eyebrow">Entenda os dados</p>
+          <h2>Informações para interpretar o monitoramento</h2>
+        </div>
+        <div class="explain-grid" id="explainGrid"></div>
+      </section>
+
+      <section class="section technical-section" id="monitoramento">
+        <div class="section-heading">
+          <p class="eyebrow">Para gestores municipais e equipes técnicas</p>
+          <h2>Produtos, mapas e apoio à gestão</h2>
+        </div>
+        <div class="monitor-grid" id="monitorGrid"></div>
       </section>
 
       <section class="section" id="sobre">
@@ -2616,8 +2796,13 @@ const publicRecommendations = [
   },
   {
     icon: "waves",
-    title: "Rios e córregos",
-    text: "Não atravesse pontes ou passagens molhadas durante cheia."
+    title: "Alagamentos",
+    text: "Não atravesse ruas, pontes ou passagens cobertas pela água."
+  },
+  {
+    icon: "sun",
+    title: "Baixa umidade e calor",
+    text: "Beba água, evite esforço nos horários mais quentes e não use fogo."
   },
   {
     icon: "phone-call",
@@ -2629,7 +2814,7 @@ const publicRecommendations = [
 const explainedIndicators = [
   {
     title: "Foco de calor",
-    text: "Ponto detectado por satélite que indica calor na superfície. Nem todo foco é incêndio confirmado."
+    text: "Ponto detectado por satélite que pode indicar fogo em vegetação. Nem todo foco é incêndio confirmado."
   },
   {
     title: "Alerta meteorológico",
@@ -2748,7 +2933,7 @@ const officialAlerts = [
   {
     icon: "landmark",
     title: "Cemaden",
-    text: "Alertas vigentes de riscos geo-hidrológicos, com mapa e tabela oficial.",
+    text: "Risco de alagamento, enxurrada ou deslizamento acompanhado pelo órgão oficial.",
     label: "Abrir painel de alertas",
     href: "https://painelalertas.cemaden.gov.br/",
     liveKey: "cemaden"
@@ -2756,17 +2941,18 @@ const officialAlerts = [
   {
     icon: "cloud-lightning",
     title: "INMET",
-    text: "Avisos meteorológicos severos emitidos pelo Instituto Nacional de Meteorologia.",
+    text: "Aviso de chuva forte, vento, baixa umidade ou tempestade emitido pelo órgão oficial.",
     label: "Consultar avisos",
     href: "https://avisos.inmet.gov.br/",
     liveKey: "inmet"
   },
   {
     icon: "shield-alert",
-    title: "Defesa Civil TO",
-    text: "Boletins, orientações e publicações da Defesa Civil Estadual do Tocantins.",
-    label: "Acessar portal oficial",
-    href: "https://www.to.gov.br/defesacivil"
+    title: "Defesa Civil Alerta / IDAP",
+    text: "Emissão de alertas da Defesa Civil por canais como SMS, WhatsApp, Telegram e alerta celular.",
+    label: "Consultar serviço oficial",
+    href: "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/defesa-civil-alerta",
+    manualStatus: "Consulta oficial necessária"
   }
 ];
 
@@ -2920,17 +3106,19 @@ function renderPublicSituation(summary = {}, sources = {}) {
   const target = document.querySelector("#situationGrid");
   if (!target) return;
   const rain = simpleRainStatus();
+  const automaticAvailable = Object.keys(summary).length > 0;
   const cemaden = Number(summary.alertas_cemaden_to || 0);
   const inmet = Number(summary.avisos_inmet_to_hoje || 0);
   const officialAlertsCount = cemaden + inmet;
   const drought = droughtData?.situacao_geral || "Consultando";
   const publicCards = [
-    { icon: "triangle-alert", label: "Alertas oficiais", value: officialAlertsCount ? `${officialAlertsCount} ativo(s)` : "Sem alerta vigente", detail: "Cemaden e INMET", state: officialAlertsCount ? "attention" : "normal" },
+    { icon: "triangle-alert", label: "Alertas oficiais", value: automaticAvailable ? (officialAlertsCount ? `${officialAlertsCount} ativo(s)` : "Sem alerta vigente") : "Dados indisponíveis", detail: "Cemaden e INMET", state: officialAlertsCount ? "attention" : automaticAvailable ? "normal" : "neutral" },
     { icon: "cloud-rain", label: "Chuva acumulada 24h", value: rain.value, detail: rain.detail, state: rain.value === "Chuva intensa" ? "danger" : rain.value === "Atenção" ? "attention" : "normal" },
-    { icon: "waves", label: "Rios monitorados", value: Number.isFinite(anaStationCount) ? `${anaStationCount} estações` : "Consultando", detail: "Consulte a tendência no mapa", state: "normal" },
-    { icon: "sun-dim", label: "Seca no Tocantins", value: drought, detail: droughtData ? `${droughtData.resumo.moderada_ou_superior} municípios em moderada ou superior` : "IIS3 / Cemaden", state: drought === "Severa" || drought === "Extrema" ? "danger" : "attention" },
-    { icon: "flame", label: "Focos de calor", value: `${formatNumber(summary.focos_calor_24h || 0)} registros`, detail: sources.focos || "INPE Queimadas", state: Number(summary.focos_calor_24h) ? "attention" : "normal" },
-    { icon: "landmark", label: "Emergência ou calamidade", value: "Consultar S2ID", detail: "Reconhecimentos oficiais vigentes", state: "neutral" }
+    { icon: "waves", label: "Rios monitorados", value: Number.isFinite(anaStationCount) ? `${anaStationCount} estações` : "Consultando dados...", detail: "Consulte a tendência no mapa", state: "normal" },
+    { icon: "flame", label: "Focos de calor 24h", value: automaticAvailable ? `${formatNumber(summary.focos_calor_24h || 0)} registros` : "Dados indisponíveis", detail: "Pontos detectados por satélite - INPE", state: Number(summary.focos_calor_24h) ? "attention" : automaticAvailable ? "normal" : "neutral" },
+    { icon: "sun-dim", label: "Seca no Tocantins", value: drought, detail: "Consultar mapa técnico abaixo", state: drought === "Severa" || drought === "Extrema" ? "danger" : "attention" },
+    { icon: "landmark", label: "Situação de Emergência", value: "Consultar S2ID", detail: "Fonte administrativa oficial", state: "neutral" },
+    { icon: "building-2", label: "Calamidade Pública", value: "Consultar S2ID", detail: "Fonte administrativa oficial", state: "neutral" }
   ];
   target.innerHTML = publicCards.map((card) => `
     <article class="situation-card ${card.state}">
@@ -2944,12 +3132,51 @@ function renderPublicSituation(summary = {}, sources = {}) {
 
 function renderTodaySummary(summary = {}) {
   const count = Number(summary.alertas_cemaden_to || 0) + Number(summary.avisos_inmet_to_hoje || 0);
-  const headline = count ? "Atenção: há aviso oficial vigente" : "Sem alerta oficial vigente neste momento";
-  const droughtText = droughtData
-    ? ` A seca está classificada como ${droughtData.situacao_geral.toLowerCase()} na referência de ${formatMonthYear(droughtData.referencia)}, com tendência de ${droughtData.tendencia.toLowerCase()}.`
-    : "";
+  const futureCount = Number(summary.avisos_inmet_to_futuro || 0);
+  const headline = count ? "Atenção: há aviso oficial vigente" : futureCount ? "Há aviso previsto: acompanhe a atualização" : "Sem alerta automático vigente neste momento";
+  const warningText = count
+    ? "Siga as orientações do órgão emissor e evite áreas de risco."
+    : futureCount
+      ? `O INMET indica ${futureCount} aviso(s) previsto(s) para período futuro no Tocantins.`
+      : "Continue acompanhando os canais oficiais.";
   setText("#todayHeadline", headline);
-  setText("#todaySummary", `O Centro acompanha chuva, rios, focos de calor e avisos oficiais para apoiar prevenção e resposta.${droughtText} Em risco imediato, ligue 199 ou 193.`);
+  setText("#todaySummary", `${warningText} Alertas da Defesa Civil via IDAP devem ser confirmados no canal oficial. Em risco imediato, ligue 199 ou 193.`);
+}
+
+function renderGeneralState(summary = null) {
+  const state = document.querySelector("#generalState");
+  const message = document.querySelector("#generalStateMessage");
+  if (!state || !message) return;
+  state.classList.remove("loading", "normal", "attention", "danger");
+  if (!summary) {
+    state.textContent = "Dados indisponíveis";
+    state.classList.add("attention");
+    message.textContent = "Não foi possível atualizar os avisos automáticos neste momento. Consulte os canais oficiais.";
+    return;
+  }
+  const activeCount = Number(summary.alertas_cemaden_to || 0) + Number(summary.avisos_inmet_to_hoje || 0);
+  const futureCount = Number(summary.avisos_inmet_to_futuro || 0);
+  if (activeCount > 0) {
+    state.textContent = "Atenção";
+    state.classList.add("danger");
+    message.textContent = `${activeCount} aviso(s) automático(s) vigente(s). Consulte a orientação oficial abaixo.`;
+  } else if (futureCount > 0) {
+    state.textContent = "Atenção";
+    state.classList.add("attention");
+    message.textContent = `${futureCount} aviso(s) meteorológico(s) previsto(s). Acompanhe as próximas atualizações.`;
+  } else {
+    state.textContent = "Normal";
+    state.classList.add("normal");
+    message.textContent = "Sem alerta vigente identificado nas consultas automáticas a Cemaden e INMET. Confirme avisos da Defesa Civil no canal oficial.";
+  }
+}
+
+function renderAdministrativeStatus(data) {
+  const values = data?.seca?.s2id || {};
+  const hasCounts = Number.isInteger(values.situacao_emergencia) && Number.isInteger(values.calamidade) && Number.isInteger(values.reconhecimento_federal);
+  setText("#s2idEmergency", hasCounts ? `${values.situacao_emergencia} município(s)` : "Consulta oficial necessária");
+  setText("#s2idCalamity", hasCounts ? `${values.calamidade} município(s)` : "Consulta oficial necessária");
+  setText("#s2idRecognition", hasCounts ? `${values.reconhecimento_federal} município(s)` : "Consulta oficial necessária");
 }
 
 function renderRecommendations() {
@@ -3071,7 +3298,8 @@ function applyOfficialAlertStatus(summary, sources) {
     }
   };
   renderOfficialAlerts();
-  renderAgencyAlertDetail(inmetCount ? "inmet" : "cemaden");
+  renderAgencyAlertDetail(inmetCount || Number(summary.avisos_inmet_to_futuro || 0) ? "inmet" : "cemaden");
+  renderGeneralState(summary);
 }
 
 function applyDroughtSummary(data) {
@@ -3194,6 +3422,7 @@ async function loadMonitoringData() {
     renderStatuses();
 
     setText("#updatedAt", formatDateTime(data.atualizado_em));
+    setText("#alertsUpdatedAt", formatDateTime(data.atualizado_em));
     setText("#riosAtencao", "--");
     setText("#focosCalor", formatNumber(summary.focos_calor_24h ?? 0));
     setText("#areaQueimada", formatArea(summary.area_queimada_ano_ha));
@@ -3204,14 +3433,18 @@ async function loadMonitoringData() {
     applyAnaStatus();
     applyOfficialAlertStatus(summary, sources);
     applyDroughtSummary(data.seca);
+    renderAdministrativeStatus(data);
     renderPublicSituation(summary, sources);
     renderTodaySummary(summary);
   } catch (error) {
-    setText("#updatedAt", "Dados locais");
+    setText("#updatedAt", "Dados indisponíveis");
+    setText("#alertsUpdatedAt", "Dados indisponíveis no momento");
     renderStatuses();
     applyCemadenStatus();
     applyAnaStatus();
     renderPublicSituation();
+    renderGeneralState();
+    renderAdministrativeStatus();
   }
 }
 
@@ -3282,7 +3515,7 @@ function renderOfficialAlerts() {
         const current = item.liveKey ? officialAlertData[item.liveKey] : null;
         const status = current && Number.isFinite(current.count)
           ? `<button class="official-live-status ${current.count ? "active" : ""}" type="button" data-agency-detail="${item.liveKey}">${current.count ? `${current.count} vigente(s) - ver dados` : "Sem registro vigente - ver dados"}</button>`
-          : "";
+          : item.manualStatus ? `<span class="official-live-status manual">${item.manualStatus}</span>` : "";
         return `
         <article class="official-alert-card">
           <div class="alert-header">
