@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-05-25T21:17:20.141Z",
+  "atualizado_em": "2026-05-25T21:38:44.948Z",
   "resumo": {
     "alertas_cemaden_to": 0,
     "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
@@ -14,7 +14,7 @@
     "avisos_inmet_detalhes": [
       {
         "title": "Previsto: Baixa Umidade",
-        "detail": "Perigo Potencial | 2026-05-26 12:00 ate 2026-05-26 18:00",
+        "detail": "Perigo Potencial | 2026-05-26 12:00 até 2026-05-26 18:00",
         "location": "Abreulândia, Araguacema, Arapoema, Caseara, Couto Magalhães, Juarina e mais 4 municipio(s)."
       }
     ]
@@ -23,19 +23,19 @@
     {
       "icon": "cloud-rain",
       "label": "Chuvas",
-      "description": "18,4 mm acumulados nas ultimas 24h",
+      "description": "18,4 mm acumulados nas últimas 24h",
       "value": "Monitoramento"
     },
     {
       "icon": "waves",
       "label": "Rios",
-      "description": "Cotas consultaveis na rede telemetrica ANA",
+      "description": "Cotas consultáveis na rede telemétrica ANA",
       "value": "Consulta"
     },
     {
       "icon": "flame",
       "label": "Focos de calor",
-      "description": "526 focos registrados no arquivo diario do INPE",
+      "description": "526 focos registrados no arquivo diário do INPE",
       "value": "Ativo"
     },
     {
@@ -52,14 +52,1715 @@
     "focos": "INPE Queimadas",
     "area_queimada": "MapBiomas Fogo / INPE AQ",
     "alertas_geo": "Cemaden",
-    "avisos_meteorologicos": "INMET"
+    "avisos_meteorologicos": "INMET",
+    "seca": "Cemaden / Alerta-Secas - IIS3",
+    "s2id": "S2ID / SEDEC-MIDR"
   },
   "automacao": {
     "alertas_cemaden": "automatico_horario",
     "avisos_inmet": "automatico_horario",
+    "seca_iis3": "automatico_mensal_consultado_horariamente",
+    "s2id": "estrutura_preparada_consulta_oficial",
     "focos_calor": "automatico_inpe_diario",
     "chuva": "manual",
     "rios": "automatico_ana_sob_demanda",
     "area_queimada": "manual"
+  },
+  "seca": {
+    "produto": "IIS3",
+    "fonte": "Cemaden / Alerta-Secas - IIS3",
+    "referencia": "2026-04-01T00:00:00",
+    "referencia_anterior": "2026-03-01T00:00:00",
+    "situacao_geral": "Severa",
+    "tendencia": "Melhora",
+    "resumo": {
+      "com_seca": 114,
+      "moderada_ou_superior": 49,
+      "severa_ou_extrema": 2,
+      "municipios_criticos": [
+        "Lagoa da Confusão",
+        "Santa Rita do Tocantins"
+      ],
+      "melhoraram": 59,
+      "agravaram": 1,
+      "estaveis": 79
+    },
+    "municipios": [
+      {
+        "nome": "Abreulândia",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Aguiarnópolis",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Aliança do Tocantins",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Almas",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Alvorada",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Ananás",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Angico",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Aparecida do Rio Negro",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Aragominas",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Araguacema",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Araguaçu",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Araguaína",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Araguanã",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Araguatins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Arapoema",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Arraias",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Augustinópolis",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Aurora do Tocantins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Axixá do Tocantins",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Babaçulândia",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Bandeirantes do Tocantins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Barra do Ouro",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Barrolândia",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Bernardo Sayão",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Bom Jesus do Tocantins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Brasilândia do Tocantins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Brejinho de Nazaré",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Buriti do Tocantins",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Cachoeirinha",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Campos Lindos",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Cariri do Tocantins",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Carmolândia",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Carrasco Bonito",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Caseara",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Centenário",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Chapada de Areia",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Chapada da Natividade",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Colinas do Tocantins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Combinado",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Conceição do Tocantins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Couto Magalhães",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Cristalândia",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Crixás do Tocantins",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Darcinópolis",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Dianópolis",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Divinópolis do Tocantins",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Dois Irmãos do Tocantins",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Dueré",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Esperantina",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Fátima",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Figueirópolis",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Filadélfia",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Formoso do Araguaia",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Tabocão",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Goianorte",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Goiatins",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Guaraí",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Gurupi",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Ipueiras",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Itacajá",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Itaguatins",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Itapiratins",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Itaporã do Tocantins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Jaú do Tocantins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Juarina",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Lagoa da Confusão",
+        "nivel": 3,
+        "classe": "Severa",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Lagoa do Tocantins",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Lajeado",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Lavandeira",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Lizarda",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Luzinópolis",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Marianópolis do Tocantins",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Mateiros",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Maurilândia do Tocantins",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Miracema do Tocantins",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Miranorte",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Monte do Carmo",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Monte Santo do Tocantins",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Palmeiras do Tocantins",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Muricilândia",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Natividade",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Nazaré",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Nova Olinda",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Nova Rosalândia",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Novo Acordo",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Novo Alegre",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Novo Jardim",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Oliveira de Fátima",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Palmeirante",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Palmeirópolis",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Paraíso do Tocantins",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Paranã",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Pau D'Arco",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Pedro Afonso",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Peixe",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Pequizeiro",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Colméia",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Pindorama do Tocantins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Piraquê",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Pium",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Ponte Alta do Bom Jesus",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Ponte Alta do Tocantins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Porto Alegre do Tocantins",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Porto Nacional",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Praia Norte",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Presidente Kennedy",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Pugmil",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Recursolândia",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Riachinho",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Rio da Conceição",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Rio dos Bois",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Rio Sono",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Sampaio",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Sandolândia",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Santa Fé do Araguaia",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Santa Maria do Tocantins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Santa Rita do Tocantins",
+        "nivel": 3,
+        "classe": "Severa",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Santa Rosa do Tocantins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Santa Tereza do Tocantins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Santa Terezinha do Tocantins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "São Bento do Tocantins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "São Félix do Tocantins",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "São Miguel do Tocantins",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "São Salvador do Tocantins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "São Sebastião do Tocantins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "São Valério",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Silvanópolis",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Sítio Novo do Tocantins",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Sucupira",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Taguatinga",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Taipas do Tocantins",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Talismã",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Palmas",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Tocantínia",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Tocantinópolis",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Tupirama",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Tupiratins",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Wanderlândia",
+        "nivel": 5,
+        "classe": "Fraca",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      },
+      {
+        "nome": "Xambioá",
+        "nivel": 4,
+        "classe": "Moderada",
+        "referencia": "2026-04-01T03:00:00Z",
+        "s2id": {
+          "situacao": "Consultar S2ID",
+          "desastre": null,
+          "cobrade": null,
+          "decreto": null
+        }
+      }
+    ],
+    "s2id": {
+      "fonte": "S2ID / SEDEC-MIDR",
+      "vigentes": null,
+      "ultima_base_aberta_identificada": "2022",
+      "status": "Consulta oficial necessária para reconhecimentos vigentes",
+      "url": "https://s2id.mi.gov.br/paginas/series/"
+    }
   }
 }

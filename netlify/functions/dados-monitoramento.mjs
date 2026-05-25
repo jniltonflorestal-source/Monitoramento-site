@@ -1,11 +1,36 @@
-import { readFile, writeFile } from "node:fs/promises";
-
 const INPE_DAILY_DIR = "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/";
 const CEMADEN_ALERTS_URL = "https://painelalertas.cemaden.gov.br/wsAlertas2";
 const INMET_WARNINGS_URL = "https://apiprevmet3.inmet.gov.br/avisos/ativos";
 const CEMADEN_DROUGHT_META_URL = "https://mapasecas.cemaden.gov.br/rest/product/meta/iis3";
 const CEMADEN_DROUGHT_WFS_URL = "https://secaswms.cemaden.gov.br/produtos/wfs";
-const DATA_FILE = new URL("../dados-monitoramento.json", import.meta.url);
+
+const baseData = {
+  atualizado_em: new Date().toISOString(),
+  resumo: {
+    alertas_cemaden_to: 0,
+    alertas_cemaden_to_nivel_maximo: "Sem alerta vigente",
+    avisos_inmet_to_hoje: 0,
+    avisos_inmet_to_futuro: 0,
+    avisos_inmet_to_severidade_maxima: "Sem aviso vigente",
+    avisos_inmet_detalhes: [],
+    estacoes_fluviometricas_ana: null,
+    focos_calor_24h: 128,
+    area_queimada_ano_ha: 245000,
+    chuva_24h_mm: 18.4,
+    estacoes_operando: 32
+  },
+  fontes: {
+    alertas: "CEMADEN",
+    alertas_geo: "Cemaden",
+    avisos_meteorologicos: "INMET",
+    seca: "Cemaden / Alerta-Secas - IIS3",
+    s2id: "S2ID / SEDEC-MIDR",
+    chuva: "INMET / CEMADEN",
+    rios: "ANA / Telemetria",
+    focos: "INPE Queimadas",
+    area_queimada: "MapBiomas Fogo / INPE AQ"
+  }
+};
 
 function parseCsv(text) {
   const lines = text.trim().split(/\r?\n/);
@@ -54,7 +79,6 @@ async function fetchTocantinsAlerts() {
     (current, alert) => levels[alert.nivel] > levels[current] ? alert.nivel : current,
     "Sem alerta vigente"
   );
-
   return { count: alerts.length, highest };
 }
 
@@ -68,14 +92,13 @@ function tocantinsMunicipalities(value) {
 async function fetchTocantinsWeatherWarnings() {
   const response = await fetch(INMET_WARNINGS_URL);
   if (!response.ok) throw new Error("Avisos meteorologicos do INMET indisponiveis");
-
   const body = await response.json();
-  const containsTocantins = (warning) => String(warning.estados || "").split(",").includes("Tocantins");
-  const today = (body.hoje || []).filter(containsTocantins);
-  const future = (body.futuro || []).filter(containsTocantins);
-  const severityRank = { "Perigo Potencial": 1, Perigo: 2, "Grande Perigo": 3 };
+  const includesState = (warning) => String(warning.estados || "").split(",").includes("Tocantins");
+  const today = (body.hoje || []).filter(includesState);
+  const future = (body.futuro || []).filter(includesState);
+  const rank = { "Perigo Potencial": 1, Perigo: 2, "Grande Perigo": 3 };
   const highest = today.reduce(
-    (current, warning) => (severityRank[warning.severidade] || 0) > (severityRank[current] || 0) ? warning.severidade : current,
+    (current, warning) => (rank[warning.severidade] || 0) > (rank[current] || 0) ? warning.severidade : current,
     "Sem aviso vigente"
   );
   const details = [...today.map((warning) => ({ warning, phase: "Vigente hoje" })), ...future.map((warning) => ({ warning, phase: "Previsto" }))]
@@ -84,7 +107,6 @@ async function fetchTocantinsWeatherWarnings() {
       detail: `${warning.severidade} | ${warning.inicio} até ${warning.fim}`,
       location: tocantinsMunicipalities(warning.municipios)
     }));
-
   return { todayCount: today.length, futureCount: future.length, highest, details };
 }
 
@@ -115,12 +137,7 @@ async function fetchDroughtMonth(viewparams) {
     nivel: Number(feature.properties.nivel),
     classe: droughtClassification(Number(feature.properties.nivel)),
     referencia: feature.properties.referencia,
-    s2id: {
-      situacao: "Consultar S2ID",
-      desastre: null,
-      cobrade: null,
-      decreto: null
-    }
+    s2id: { situacao: "Consultar S2ID", desastre: null, cobrade: null, decreto: null }
   }));
 }
 
@@ -129,43 +146,30 @@ async function fetchTocantinsDrought() {
   if (!response.ok) throw new Error("Metadados do Alerta-Secas indisponiveis");
   const metadata = await response.json();
   const dates = Object.keys(metadata.timesteps || {}).sort().reverse();
-  if (dates.length < 2) throw new Error("Serie IIS3 sem referencias suficientes");
-
-  const currentDate = dates[0];
-  const previousDate = dates[1];
-  const current = await fetchDroughtMonth(metadata.timesteps[currentDate].viewparams);
-  const previous = await fetchDroughtMonth(metadata.timesteps[previousDate].viewparams);
-  const previousByName = new Map(previous.map((city) => [city.nome, city.nivel]));
-  let improved = 0;
-  let worsened = 0;
-  let stable = 0;
-
-  current.forEach((city) => {
-    const oldLevel = previousByName.get(city.nome);
-    if (!Number.isFinite(oldLevel) || oldLevel === city.nivel) stable += 1;
-    else if (city.nivel > oldLevel) improved += 1;
-    else worsened += 1;
-  });
-
+  const current = await fetchDroughtMonth(metadata.timesteps[dates[0]].viewparams);
+  const previous = await fetchDroughtMonth(metadata.timesteps[dates[1]].viewparams);
+  const prior = new Map(previous.map((city) => [city.nome, city.nivel]));
+  const changes = current.reduce((result, city) => {
+    const oldLevel = prior.get(city.nome);
+    if (city.nivel > oldLevel) result.melhoraram += 1;
+    else if (city.nivel < oldLevel) result.agravaram += 1;
+    else result.estaveis += 1;
+    return result;
+  }, { melhoraram: 0, agravaram: 0, estaveis: 0 });
   const worstLevel = Math.min(...current.map((city) => city.nivel));
-  const critical = current.filter((city) => city.nivel === worstLevel).map((city) => city.nome);
-  const trend = improved > worsened ? "Melhora" : worsened > improved ? "Agravamento" : "Estabilidade";
-
   return {
     produto: "IIS3",
     fonte: "Cemaden / Alerta-Secas - IIS3",
-    referencia: currentDate,
-    referencia_anterior: previousDate,
+    referencia: dates[0],
+    referencia_anterior: dates[1],
     situacao_geral: droughtClassification(worstLevel),
-    tendencia: trend,
+    tendencia: changes.melhoraram > changes.agravaram ? "Melhora" : changes.agravaram > changes.melhoraram ? "Agravamento" : "Estabilidade",
     resumo: {
       com_seca: current.filter((city) => city.nivel <= 5).length,
       moderada_ou_superior: current.filter((city) => city.nivel <= 4).length,
       severa_ou_extrema: current.filter((city) => city.nivel <= 3).length,
-      municipios_criticos: critical,
-      melhoraram: improved,
-      agravaram: worsened,
-      estaveis: stable
+      municipios_criticos: current.filter((city) => city.nivel === worstLevel).map((city) => city.nome),
+      ...changes
     },
     municipios: current,
     s2id: {
@@ -208,32 +212,49 @@ function buildStatuses(data) {
   ];
 }
 
-const data = JSON.parse(await readFile(DATA_FILE, "utf8"));
-data.resumo.focos_calor_24h = await countTocantinsFires();
-const alertSummary = await fetchTocantinsAlerts();
-data.resumo.alertas_cemaden_to = alertSummary.count;
-data.resumo.alertas_cemaden_to_nivel_maximo = alertSummary.highest;
-const warningSummary = await fetchTocantinsWeatherWarnings();
-data.resumo.avisos_inmet_to_hoje = warningSummary.todayCount;
-data.resumo.avisos_inmet_to_futuro = warningSummary.futureCount;
-data.resumo.avisos_inmet_to_severidade_maxima = warningSummary.highest;
-data.resumo.avisos_inmet_detalhes = warningSummary.details;
-data.seca = await fetchTocantinsDrought();
-data.atualizado_em = new Date().toISOString();
-data.status = buildStatuses(data);
-data.fontes.alertas_geo = "Cemaden";
-data.fontes.avisos_meteorologicos = "INMET";
-data.fontes.seca = "Cemaden / Alerta-Secas - IIS3";
-data.fontes.s2id = "S2ID / SEDEC-MIDR";
-data.automacao = {
-  alertas_cemaden: "automatico_horario",
-  avisos_inmet: "automatico_horario",
-  seca_iis3: "automatico_mensal_consultado_horariamente",
-  s2id: "estrutura_preparada_consulta_oficial",
-  focos_calor: "automatico_inpe_diario",
-  chuva: "manual",
-  rios: "automatico_ana_sob_demanda",
-  area_queimada: "manual"
-};
+export default async () => {
+  const data = structuredClone(baseData);
 
-await writeFile(DATA_FILE, `${JSON.stringify(data, null, 2)}\n`, "utf8");
+  try {
+    data.resumo.focos_calor_24h = await countTocantinsFires();
+    const alertSummary = await fetchTocantinsAlerts();
+    data.resumo.alertas_cemaden_to = alertSummary.count;
+    data.resumo.alertas_cemaden_to_nivel_maximo = alertSummary.highest;
+    const warningSummary = await fetchTocantinsWeatherWarnings();
+    data.resumo.avisos_inmet_to_hoje = warningSummary.todayCount;
+    data.resumo.avisos_inmet_to_futuro = warningSummary.futureCount;
+    data.resumo.avisos_inmet_to_severidade_maxima = warningSummary.highest;
+    data.resumo.avisos_inmet_detalhes = warningSummary.details;
+    data.seca = await fetchTocantinsDrought();
+    data.atualizado_em = new Date().toISOString();
+    data.status = buildStatuses(data);
+    data.automacao = {
+      alertas_cemaden: "automatico_horario",
+      avisos_inmet: "automatico_horario",
+      seca_iis3: "automatico_mensal_consultado_horariamente",
+      s2id: "estrutura_preparada_consulta_oficial",
+      focos_calor: "automatico",
+      chuva: "manual",
+      rios: "automatico_ana_sob_demanda",
+      area_queimada: "manual"
+    };
+  } catch (error) {
+    data.status = buildStatuses(data);
+    data.automacao = {
+      alertas_cemaden: "fallback",
+      avisos_inmet: "fallback",
+      focos_calor: "falha_fallback_json",
+      chuva: "manual",
+      rios: "automatico_ana_sob_demanda",
+      area_queimada: "manual"
+    };
+    data.erro = error.message;
+  }
+
+  return new Response(JSON.stringify(data), {
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+      "cache-control": "public, max-age=900"
+    }
+  });
+};
