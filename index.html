@@ -665,6 +665,19 @@ h3 {
   line-height: 1.4;
 }
 
+.situation-action {
+  width: fit-content;
+  margin-top: auto;
+  color: var(--blue);
+  font-size: 0.87rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.situation-action:hover {
+  text-decoration: underline;
+}
+
 .administrative-status {
   display: grid;
   grid-template-columns: minmax(220px, 1.15fr) minmax(430px, 1.5fr) auto;
@@ -1991,6 +2004,19 @@ h3 {
   color: var(--navy);
 }
 
+.official-alert-fields {
+  display: grid;
+  gap: 5px;
+  padding: 10px;
+  border-radius: 6px;
+  background: #f7fafc;
+}
+
+.official-alert-fields small {
+  color: var(--muted);
+  line-height: 1.35;
+}
+
 .alert-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
@@ -2398,13 +2424,13 @@ dd {
             <i data-lucide="activity"></i>
             Situação geral do Tocantins
           </p>
-          <strong class="general-state loading" id="generalState">Carregando dados...</strong>
+          <strong class="general-state loading" id="generalState">Atualizando dados...</strong>
           <p class="general-state-message" id="generalStateMessage">
-            Consultando avisos oficiais e variáveis monitoradas.
+            Atualizando avisos oficiais e variáveis monitoradas.
           </p>
           <div class="panel-topline">
             <span>Última atualização</span>
-            <strong id="updatedAt">Carregando dados...</strong>
+            <strong id="updatedAt">Atualizando dados...</strong>
           </div>
           <a class="button emergency-solid panel-emergency" href="tel:199">Ligar 199</a>
         </aside>
@@ -2417,13 +2443,17 @@ dd {
             <h2>Avisos e alertas vigentes</h2>
             <p class="section-description">Verifique se existe orientação oficial ativa para sua localidade antes de consultar os demais indicadores.</p>
           </div>
-          <span class="alert-update">Atualização: <strong id="alertsUpdatedAt">Carregando dados...</strong></span>
+          <span class="alert-update">Atualização: <strong id="alertsUpdatedAt">Atualizando dados...</strong></span>
         </div>
         <div class="current-alerts-band" id="currentAlertsBand">
-          <div class="official-alert-grid priority-alert-grid" id="officialAlertGrid"></div>
+          <div class="official-alert-grid priority-alert-grid" id="officialAlertGrid">
+            <article class="official-alert-card"><div class="alert-header"><i data-lucide="landmark"></i><span>Cemaden</span></div><p>Risco de alagamento, enxurrada ou deslizamento.</p><span class="official-live-status">Atualizando dados...</span></article>
+            <article class="official-alert-card"><div class="alert-header"><i data-lucide="cloud-lightning"></i><span>INMET</span></div><p>Aviso de chuva forte, vento, baixa umidade ou tempestade.</p><span class="official-live-status">Atualizando dados...</span></article>
+            <article class="official-alert-card"><div class="alert-header"><i data-lucide="shield-alert"></i><span>Defesa Civil Alerta / IDAP</span></div><p>Alertas emitidos pela Defesa Civil para orientação da população.</p><span class="official-live-status manual">Consulta oficial necessária</span></article>
+          </div>
           <section class="agency-alert-detail" id="agencyAlertDetail" aria-live="polite">
-            <h3>Carregando dados...</h3>
-            <p>Consultando avisos vigentes nos órgãos emissores.</p>
+            <h3>Atualizando dados...</h3>
+            <p>Atualizando avisos vigentes nos órgãos emissores.</p>
           </section>
         </div>
       </section>
@@ -2455,7 +2485,13 @@ dd {
           <h2>Situação do Tocantins agora</h2>
           <p class="section-description">Leitura rápida das condições acompanhadas pelo Centro de Monitoramento.</p>
         </div>
-        <div class="situation-grid" id="situationGrid" aria-live="polite"></div>
+        <div class="situation-grid" id="situationGrid" aria-live="polite">
+          <article class="situation-card neutral"><div class="situation-label"><i data-lucide="triangle-alert"></i><span>Alertas oficiais</span></div><strong>Atualizando dados...</strong><small>Cemaden e INMET</small></article>
+          <article class="situation-card neutral"><div class="situation-label"><i data-lucide="cloud-rain"></i><span>Chuva acumulada 24h</span></div><strong>Atualizando dados...</strong><small>Redes oficiais</small></article>
+          <article class="situation-card neutral"><div class="situation-label"><i data-lucide="waves"></i><span>Rios monitorados</span></div><strong>Atualizando dados...</strong><small>ANA / Telemetria</small></article>
+          <article class="situation-card neutral"><div class="situation-label"><i data-lucide="flame"></i><span>Focos de calor 24h</span></div><strong>Atualizando dados...</strong><small>INPE Queimadas</small></article>
+          <article class="situation-card neutral"><div class="situation-label"><i data-lucide="sun-dim"></i><span>Seca no Tocantins</span></div><strong>Atualizando dados...</strong><small>Acompanhe a condição de seca por município no mapa técnico.</small><a class="situation-action" href="#seca">Ver mapa de seca</a></article>
+        </div>
         <article class="administrative-status" id="administrativeStatus" aria-live="polite">
           <div>
             <p class="eyebrow">Situação administrativa</p>
@@ -2475,7 +2511,7 @@ dd {
         <div class="today-copy">
           <p class="eyebrow">O que você precisa saber hoje</p>
           <h2 id="todayHeadline">Acompanhamento ativo no Estado</h2>
-          <p id="todaySummary">Consultando chuva, rios, seca e alertas oficiais para apresentar a situação atual do Tocantins.</p>
+          <p id="todaySummary">No momento, o Centro de Monitoramento acompanha as condições de chuva, rios, seca, focos de calor e alertas oficiais no Tocantins. Em caso de risco imediato, acione a Defesa Civil pelo 199 ou o Corpo de Bombeiros pelo 193.</p>
         </div>
         <div class="quick-actions" aria-label="Ações rápidas">
           <a class="button primary" href="#boletins">Consultar boletins</a>
@@ -2490,7 +2526,13 @@ dd {
           <p class="eyebrow">Proteja-se</p>
           <h2>Recomendações à população</h2>
         </div>
-        <div class="recommendation-grid" id="recommendationGrid"></div>
+        <div class="recommendation-grid" id="recommendationGrid">
+          <article class="recommendation-card"><span class="icon-box"><i data-lucide="cloud-rain"></i></span><h3>Chuva forte</h3><p>Evite áreas alagadas e não atravesse enxurradas.</p></article>
+          <article class="recommendation-card"><span class="icon-box"><i data-lucide="flame"></i></span><h3>Incêndio em vegetação</h3><p>Ao ver fumaça ou chamas, acione o Corpo de Bombeiros pelo 193.</p></article>
+          <article class="recommendation-card"><span class="icon-box"><i data-lucide="sun"></i></span><h3>Baixa umidade e calor</h3><p>Beba água e evite exposição prolongada ao sol.</p></article>
+          <article class="recommendation-card"><span class="icon-box"><i data-lucide="waves"></i></span><h3>Rios e córregos</h3><p>Não atravesse pontes ou passagens molhadas durante cheia.</p></article>
+          <article class="recommendation-card"><span class="icon-box"><i data-lucide="phone-call"></i></span><h3>Emergência</h3><p>Defesa Civil: 199 | Corpo de Bombeiros: 193.</p></article>
+        </div>
       </section>
 
       <section class="section featured-report">
@@ -2545,7 +2587,7 @@ dd {
         <div class="section-heading split">
           <div>
             <p class="eyebrow">Mapas e painéis</p>
-            <h2>Visualização territorial para decisão rápida</h2>
+            <h2>Mapas e painéis para consulta territorial</h2>
           </div>
           <a class="text-link" href="#mapas">Ver mapa prioritário</a>
         </div>
@@ -2554,10 +2596,10 @@ dd {
           <div class="map-visual" aria-label="Painel territorial do Tocantins">
             <div class="map-toolbar">
               <span>
-                <small class="map-source-pill" id="mapSourcePill">CEMADEN</small>
-                <span id="mapLayerTitle">Pluviometros Cemaden - 24h</span>
+                <small class="map-source-pill" id="mapSourcePill">REDES OFICIAIS</small>
+                <span id="mapLayerTitle">Chuva acumulada — redes de monitoramento</span>
               </span>
-              <strong id="mapLayerTotal">Carregando</strong>
+              <strong id="mapLayerTotal">Atualizando dados...</strong>
             </div>
             <div class="map-tools" aria-label="Ferramentas do mapa">
               <div class="basemap-toggle" aria-label="Mapa de fundo">
@@ -2576,7 +2618,7 @@ dd {
               </button>
             </div>
             <div class="tocantins-map" id="tocantinsMap" aria-label="Mapa interativo do estado do Tocantins com fundo de satelite"></div>
-            <div class="map-caption" id="mapCaption">Carregando dados oficiais de chuva do Cemaden.</div>
+            <div class="map-caption" id="mapCaption">O painel poderá reunir dados de CEMADEN, INMET, ANA, SEMARH/TO e estimativas por satélite. Fonte atualmente integrada: CEMADEN.</div>
           </div>
           <aside class="map-layer-panel" aria-label="Camadas do painel territorial">
             <div class="layer-switcher" id="layerSwitcher"></div>
@@ -2600,8 +2642,8 @@ dd {
                 </select>
               </label>
               <div class="cemaden-meta" id="cemadenMeta">
-                <strong>Rede Cemaden</strong>
-                <span id="cemadenUpdated">Consultando dados...</span>
+                <strong>Redes de monitoramento</strong>
+                <span id="cemadenUpdated">Fonte atualmente integrada: CEMADEN. Atualizando dados...</span>
               </div>
               <div class="rain-legend" aria-label="Legenda de acumulado de chuva">
                 <span><i class="legend-dot dry"></i>Sem chuva</span>
@@ -2614,7 +2656,6 @@ dd {
             <div class="layer-details" id="layerDetails"></div>
           </aside>
         </div>
-      </section>
 
       <section class="section drought-section" id="seca">
         <div class="section-heading split">
@@ -2629,17 +2670,17 @@ dd {
           <article class="drought-summary-card">
             <div class="drought-state">
               <span>Situação geral</span>
-              <strong id="droughtGeneral">Carregando dados...</strong>
+              <strong id="droughtGeneral">Atualizando dados...</strong>
               <small id="droughtReference">Referência mensal</small>
             </div>
             <div class="drought-metrics">
-              <div><strong id="droughtAny">--</strong><span>municípios com seca</span></div>
-              <div><strong id="droughtModerate">--</strong><span>moderada ou superior</span></div>
-              <div><strong id="droughtSevere">--</strong><span>severa ou extrema</span></div>
+              <div><strong id="droughtAny">Atualizando...</strong><span>municípios com seca</span></div>
+              <div><strong id="droughtModerate">Atualizando...</strong><span>moderada ou superior</span></div>
+              <div><strong id="droughtSevere">Atualizando...</strong><span>severa ou extrema</span></div>
             </div>
             <dl class="drought-facts">
-              <div><dt>Mais críticos</dt><dd id="droughtCritical">Carregando dados...</dd></div>
-              <div><dt>Tendência</dt><dd id="droughtTrend">Carregando dados...</dd></div>
+              <div><dt>Mais críticos</dt><dd id="droughtCritical">Atualizando dados...</dd></div>
+              <div><dt>Tendência</dt><dd id="droughtTrend">Atualizando dados...</dd></div>
               <div><dt>Fonte</dt><dd id="droughtSource">Cemaden / Alerta-Secas</dd></div>
             </dl>
           </article>
@@ -2668,6 +2709,7 @@ dd {
           Um município pode apresentar condição de seca sem ter decreto registrado, assim como pode haver decreto vigente ainda
           relacionado a evento anterior.
         </p>
+      </section>
       </section>
 
       <section class="section explain-section">
@@ -2785,24 +2827,24 @@ let activeDroughtLayer = "seca";
 
 const publicRecommendations = [
   {
-    icon: "flame",
-    title: "Incêndio em vegetação",
-    text: "Evite o uso de fogo. Ao ver fumaça ou chamas, acione os canais oficiais."
-  },
-  {
     icon: "cloud-rain",
     title: "Chuva forte",
     text: "Evite áreas alagadas, enxurradas e travessias de risco."
   },
   {
-    icon: "waves",
-    title: "Alagamentos",
-    text: "Não atravesse ruas, pontes ou passagens cobertas pela água."
+    icon: "flame",
+    title: "Incêndio em vegetação",
+    text: "Ao ver fumaça ou chamas, acione o Corpo de Bombeiros pelo 193."
   },
   {
     icon: "sun",
     title: "Baixa umidade e calor",
-    text: "Beba água, evite esforço nos horários mais quentes e não use fogo."
+    text: "Beba água, evite exposição prolongada ao sol e não use fogo."
+  },
+  {
+    icon: "waves",
+    title: "Rios e córregos",
+    text: "Não atravesse pontes ou passagens molhadas durante cheia."
   },
   {
     icon: "phone-call",
@@ -2952,7 +2994,13 @@ const officialAlerts = [
     text: "Emissão de alertas da Defesa Civil por canais como SMS, WhatsApp, Telegram e alerta celular.",
     label: "Consultar serviço oficial",
     href: "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/defesa-civil-alerta",
-    manualStatus: "Consulta oficial necessária"
+    manualStatus: "Consulta oficial necessária",
+    fields: [
+      "Município ou região: consultar órgão emissor",
+      "Risco e severidade: consultar alerta emitido",
+      "Emissão e validade: consultar alerta emitido",
+      "Canal e orientação: consultar Defesa Civil"
+    ]
   }
 ];
 
@@ -2986,11 +3034,11 @@ const panels = [
 const mapLayers = {
   cemaden: {
     icon: "cloud-rain",
-    title: "Pluviômetros Cemaden - 24h",
-    total: "Carregando",
-    caption: "Consultando pluviômetros automáticos do Cemaden no estado do Tocantins.",
+    title: "Chuva acumulada — redes de monitoramento",
+    total: "Atualizando dados...",
+    caption: "O painel poderá reunir dados de CEMADEN, INMET, ANA, SEMARH/TO e estimativas por satélite. Fonte atualmente integrada: CEMADEN.",
     markerClass: "cemaden-dry",
-    source: "CEMADEN",
+    source: "REDES OFICIAIS",
     updatedAt: "",
     items: []
   },
@@ -3011,8 +3059,8 @@ const mapLayers = {
   rios: {
     icon: "waves",
     title: "Estações fluviométricas ANA",
-    total: "Carregando",
-    caption: "Consultando inventário de estações telemétricas fluviométricas da ANA no Tocantins.",
+    total: "Atualizando dados...",
+    caption: "Atualizando inventário de estações telemétricas fluviométricas da ANA no Tocantins.",
     markerClass: "river",
     source: "ANA",
     items: []
@@ -3096,7 +3144,7 @@ function formatMonthYear(value) {
 
 function simpleRainStatus() {
   const maximum = Number(cemadenSummary?.maximum);
-  if (!Number.isFinite(maximum)) return { value: "Consultando", detail: "Chuva nas últimas 24h" };
+  if (!Number.isFinite(maximum)) return { value: "Atualizando dados...", detail: "Chuva nas últimas 24h" };
   if (maximum >= 30) return { value: "Chuva intensa", detail: `${formatNumber(maximum)} mm máximos em 24h` };
   if (maximum >= 10) return { value: "Atenção", detail: `${formatNumber(maximum)} mm máximos em 24h` };
   return { value: "Sem chuva relevante", detail: `${formatNumber(maximum)} mm máximos em 24h` };
@@ -3110,13 +3158,13 @@ function renderPublicSituation(summary = {}, sources = {}) {
   const cemaden = Number(summary.alertas_cemaden_to || 0);
   const inmet = Number(summary.avisos_inmet_to_hoje || 0);
   const officialAlertsCount = cemaden + inmet;
-  const drought = droughtData?.situacao_geral || "Consultando";
+  const drought = droughtData?.situacao_geral || "Atualizando dados...";
   const publicCards = [
     { icon: "triangle-alert", label: "Alertas oficiais", value: automaticAvailable ? (officialAlertsCount ? `${officialAlertsCount} ativo(s)` : "Sem alerta vigente") : "Dados indisponíveis", detail: "Cemaden e INMET", state: officialAlertsCount ? "attention" : automaticAvailable ? "normal" : "neutral" },
     { icon: "cloud-rain", label: "Chuva acumulada 24h", value: rain.value, detail: rain.detail, state: rain.value === "Chuva intensa" ? "danger" : rain.value === "Atenção" ? "attention" : "normal" },
-    { icon: "waves", label: "Rios monitorados", value: Number.isFinite(anaStationCount) ? `${anaStationCount} estações` : "Consultando dados...", detail: "Consulte a tendência no mapa", state: "normal" },
+    { icon: "waves", label: "Rios monitorados", value: Number.isFinite(anaStationCount) ? `${anaStationCount} estações` : "Atualizando dados...", detail: "Consulte a tendência no mapa", state: "normal" },
     { icon: "flame", label: "Focos de calor 24h", value: automaticAvailable ? `${formatNumber(summary.focos_calor_24h || 0)} registros` : "Dados indisponíveis", detail: "Pontos detectados por satélite - INPE", state: Number(summary.focos_calor_24h) ? "attention" : automaticAvailable ? "normal" : "neutral" },
-    { icon: "sun-dim", label: "Seca no Tocantins", value: drought, detail: "Consultar mapa técnico abaixo", state: drought === "Severa" || drought === "Extrema" ? "danger" : "attention" },
+    { icon: "sun-dim", label: "Seca no Tocantins", value: drought, detail: "Acompanhe a condição por município no mapa técnico.", state: drought === "Severa" || drought === "Extrema" ? "danger" : "attention", action: { label: "Ver mapa de seca", href: "#seca" } },
     { icon: "landmark", label: "Situação de Emergência", value: "Consultar S2ID", detail: "Fonte administrativa oficial", state: "neutral" },
     { icon: "building-2", label: "Calamidade Pública", value: "Consultar S2ID", detail: "Fonte administrativa oficial", state: "neutral" }
   ];
@@ -3125,6 +3173,7 @@ function renderPublicSituation(summary = {}, sources = {}) {
       <div class="situation-label">${icon(card.icon)}<span>${card.label}</span></div>
       <strong>${escapeHtml(card.value)}</strong>
       <small>${escapeHtml(card.detail)}</small>
+      ${card.action ? `<a class="situation-action" href="${card.action.href}">${card.action.label}</a>` : ""}
     </article>
   `).join("");
   if (window.lucide) window.lucide.createIcons();
@@ -3524,6 +3573,7 @@ function renderOfficialAlerts() {
           </div>
           <p>${item.text}</p>
           ${status}
+          ${item.fields ? `<div class="official-alert-fields">${item.fields.map((field) => `<small>${field}</small>`).join("")}</div>` : ""}
           <a class="official-action" href="${item.href}" target="_blank" rel="noopener">
             ${item.label}
             ${icon("external-link")}
@@ -3884,14 +3934,14 @@ function loadCemadenLayer() {
       const layer = mapLayers.cemaden;
       layer.items = stations;
       layer.updatedAt = record?.atualizado || "";
-      layer.total = `${stations.length} estacoes`;
+      layer.total = `${stations.length} estações`;
       layer.caption = stations.length
-        ? `Acumulado de chuva em 24h em ${stations.length} pluviômetros automáticos do Cemaden no Tocantins.`
-        : "Não foram identificadas estações automáticas ativas do Cemaden no Tocantins nesta consulta.";
+        ? `Acumulado de chuva em 24h em ${stations.length} pluviômetros automáticos. Fonte atualmente integrada: CEMADEN. O painel está preparado para ampliar a leitura com outras redes oficiais.`
+        : "Não foram identificadas estações automáticas ativas nesta consulta à fonte atualmente integrada: CEMADEN.";
 
       const maximum = stations.length ? stations[0].amount : 0;
       cemadenSummary = { maximum, stations: stations.length };
-      setText("#cemadenUpdated", `Atualizado: ${formatCemadenDate(layer.updatedAt)} | Máximo: ${formatNumber(maximum)} mm`);
+      setText("#cemadenUpdated", `Fonte atualmente integrada: CEMADEN | Atualizado: ${formatCemadenDate(layer.updatedAt)} | Máximo: ${formatNumber(maximum)} mm`);
       const buttonTotal = document.querySelector('[data-layer="cemaden"] span');
       if (buttonTotal) buttonTotal.textContent = layer.total;
       applyCemadenStatus();
@@ -3901,8 +3951,8 @@ function loadCemadenLayer() {
       resolve(stations);
     };
     script.onerror = () => {
-      mapLayers.cemaden.caption = "Não foi possível carregar os dados do Cemaden neste momento.";
-      setText("#cemadenUpdated", "Dados indisponíveis. Consulte o Mapa Interativo Cemaden.");
+      mapLayers.cemaden.caption = "Dados indisponíveis no momento. Consulte a fonte oficial CEMADEN.";
+      setText("#cemadenUpdated", "Dados indisponíveis no momento. Consulte a fonte oficial CEMADEN.");
       if (currentMapLayer === "cemaden") renderMapLayer("cemaden");
       delete window.estacoes;
       script.remove();
@@ -3958,7 +4008,7 @@ async function loadAnaStationReading(stationCode, button) {
   renderAnaStationDetail(item);
   if (button) {
     button.disabled = true;
-    button.textContent = "Consultando...";
+    button.textContent = "Atualizando...";
   }
 
   const end = new Date();
