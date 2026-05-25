@@ -6,15 +6,14 @@ Reorganizar a pagina inicial do Centro de Monitoramento para que o cidadao ident
 
 ## Decisao de Produto
 
-O topo da pagina tera um semaforo geral e uma faixa `Avisos e alertas vigentes`, antes dos indicadores ambientais. A faixa reunira Cemaden e INMET com resultados automatizados e IDAP / Defesa Civil Alerta com acesso oficial destacado. Como nao foi identificada API publica consultavel para alertas IDAP vigentes no Tocantins, o portal nao declarara ausencia de alerta IDAP; mostrara `Consulta oficial necessaria`.
+O topo da pagina manterá um painel compacto `Alertas e avisos no Tocantins` dentro do proprio banner, reunindo Cemaden e INMET com resultados automatizados e acesso IDAP / Defesa Civil Alerta. A leitura `Situacao do Tocantins agora` aparece imediatamente apos o banner, sem ser empurrada pela consulta detalhada. Como nao foi identificada API publica consultavel para alertas IDAP vigentes no Tocantins, o portal nao declarara ausencia de alerta IDAP; mostrara `Consulta oficial necessaria`.
 
 ## Ordem da Pagina
 
-1. Cabecalho e hero `Situacao atual do Tocantins`, com semaforo geral.
-2. `Avisos e alertas vigentes`, incluindo Cemaden, INMET e IDAP.
-3. `Consultar avisos oficiais`, com botoes para INMET, Cemaden, IDAP, S2ID e boletins.
-4. `Situacao do Tocantins agora`, com indicadores de leitura rapida.
-5. `O que voce precisa saber agora`, produzido a partir dos avisos integrados.
+1. Cabecalho e hero `Situacao atual do Tocantins`, com resumo compacto de Cemaden, INMET e IDAP.
+2. `Situacao do Tocantins agora`, com indicadores de leitura rapida.
+3. `O que voce precisa saber agora`, produzido a partir dos avisos integrados.
+4. Detalhamento de alertas e `Consultar avisos oficiais`, com botoes para INMET, Cemaden, IDAP, S2ID e boletins.
 6. Recomendacoes a populacao.
 7. Boletins e relatorios.
 8. `Mapas e paineis`, contendo o mapa territorial e o modulo completo `Seca no Tocantins`.
@@ -30,7 +29,7 @@ O card administrativo separara:
 - Estado de Calamidade Publica: `Consultar S2ID`.
 - Reconhecimento federal vigente: `Consultar S2ID`.
 
-No mapa territorial publico, somente camadas espaciais de fonte integrada e verificavel serao oferecidas como dados observados. Nesta versao, chuva utiliza a rede Cemaden e rios utiliza a rede ANA; focos de calor permanecem como contagem oficial nos indicadores ate haver camada geografica validada.
+No mapa territorial publico, somente camadas espaciais de fonte integrada e verificavel serao oferecidas como dados observados. Nesta versao, chuva utiliza a rede Cemaden e rios utiliza a rede ANA; focos de calor permanecem como contagem oficial nos indicadores ate haver camada geografica validada. O mapa de seca aparece no inicio da secao de mapas, antes da listagem extensa de estacoes de chuva.
 
 ## Linguagem e Acessibilidade
 

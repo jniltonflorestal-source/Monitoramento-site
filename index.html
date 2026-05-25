@@ -431,6 +431,23 @@ h3 {
   color: var(--orange);
 }
 
+.hero-idap-link {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding-top: 7px;
+  color: #f7d69c;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero-idap-link svg {
+  width: 16px;
+  height: 16px;
+  color: var(--orange);
+}
+
 .panel-topline {
   display: flex;
   justify-content: space-between;
@@ -767,7 +784,20 @@ h3 {
 }
 
 .drought-section {
+  margin-bottom: 42px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
   background: #f7fafc;
+}
+
+.subpanel-heading {
+  margin: 10px 0 22px;
+}
+
+.subpanel-heading h3 {
+  margin: 7px 0 0;
+  font-size: 1.35rem;
 }
 
 .drought-layout {
@@ -2208,6 +2238,10 @@ dd {
     display: grid;
   }
 
+  .drought-section {
+    padding: 20px;
+  }
+
   .administrative-metrics {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -2419,64 +2453,36 @@ dd {
           </div>
         </div>
 
-        <aside class="current-panel state-panel" aria-label="Situação geral do Tocantins">
-          <p class="hero-alert-kicker">
-            <i data-lucide="activity"></i>
-            Situação geral do Tocantins
-          </p>
-          <strong class="general-state loading" id="generalState">Atualizando dados...</strong>
-          <p class="general-state-message" id="generalStateMessage">
-            Atualizando avisos oficiais e variáveis monitoradas.
-          </p>
+        <aside class="current-panel" aria-label="Alertas e avisos oficiais no Tocantins">
+          <section class="hero-alert" id="heroAgencyAlerts">
+            <span class="hero-alert-kicker">
+              <i data-lucide="triangle-alert"></i>
+              Alertas e avisos no Tocantins
+            </span>
+            <a class="hero-alert-source" href="#alertas" data-alert-source="cemaden">
+              <span>
+                <b>Risco de alagamento e enxurrada</b>
+                <small id="heroCemadenStatus">Atualizando dados...</small>
+              </span>
+              <strong id="heroCemadenCount">...</strong>
+            </a>
+            <a class="hero-alert-source meteorological" href="#alertas" data-alert-source="inmet">
+              <span>
+                <b>Aviso meteorológico</b>
+                <small id="heroInmetStatus">Atualizando dados...</small>
+              </span>
+              <strong id="heroInmetCount">...</strong>
+            </a>
+            <a class="hero-idap-link" href="#alertas">
+              <i data-lucide="shield-alert"></i>
+              IDAP / Defesa Civil Alerta: consultar canal oficial
+            </a>
+          </section>
           <div class="panel-topline">
             <span>Última atualização</span>
             <strong id="updatedAt">Atualizando dados...</strong>
           </div>
-          <a class="button emergency-solid panel-emergency" href="tel:199">Ligar 199</a>
         </aside>
-      </section>
-
-      <section class="section current-alerts-section" id="alertas">
-        <div class="section-heading split">
-          <div>
-            <p class="eyebrow">Prioridade pública</p>
-            <h2>Avisos e alertas vigentes</h2>
-            <p class="section-description">Verifique se existe orientação oficial ativa para sua localidade antes de consultar os demais indicadores.</p>
-          </div>
-          <span class="alert-update">Atualização: <strong id="alertsUpdatedAt">Atualizando dados...</strong></span>
-        </div>
-        <div class="current-alerts-band" id="currentAlertsBand">
-          <div class="official-alert-grid priority-alert-grid" id="officialAlertGrid">
-            <article class="official-alert-card"><div class="alert-header"><i data-lucide="landmark"></i><span>Cemaden</span></div><p>Risco de alagamento, enxurrada ou deslizamento.</p><span class="official-live-status">Atualizando dados...</span></article>
-            <article class="official-alert-card"><div class="alert-header"><i data-lucide="cloud-lightning"></i><span>INMET</span></div><p>Aviso de chuva forte, vento, baixa umidade ou tempestade.</p><span class="official-live-status">Atualizando dados...</span></article>
-            <article class="official-alert-card"><div class="alert-header"><i data-lucide="shield-alert"></i><span>Defesa Civil Alerta / IDAP</span></div><p>Alertas emitidos pela Defesa Civil para orientação da população.</p><span class="official-live-status manual">Consulta oficial necessária</span></article>
-          </div>
-          <section class="agency-alert-detail" id="agencyAlertDetail" aria-live="polite">
-            <h3>Atualizando dados...</h3>
-            <p>Atualizando avisos vigentes nos órgãos emissores.</p>
-          </section>
-        </div>
-      </section>
-
-      <section class="section official-access-section" id="officialAccess">
-        <div class="section-heading compact-heading">
-          <p class="eyebrow">Fontes oficiais</p>
-          <h2>Consultar avisos oficiais</h2>
-          <p class="official-guidance">
-            Os avisos devem ser confirmados nos canais oficiais dos órgãos emissores. Este portal organiza as informações para facilitar a leitura pública.
-          </p>
-        </div>
-        <div class="official-access-grid">
-          <a href="https://avisos.inmet.gov.br/" target="_blank" rel="noopener">Consultar INMET <i data-lucide="external-link"></i></a>
-          <a href="https://painelalertas.cemaden.gov.br/" target="_blank" rel="noopener">Consultar CEMADEN <i data-lucide="external-link"></i></a>
-          <a href="https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/defesa-civil-alerta" target="_blank" rel="noopener">Defesa Civil Alerta / IDAP <i data-lucide="external-link"></i></a>
-          <a href="https://s2id.mi.gov.br/paginas/series/" target="_blank" rel="noopener">Consultar S2ID <i data-lucide="external-link"></i></a>
-          <a href="https://www.to.gov.br/defesacivil/boletins-informativos-2026/1879973eka9p" target="_blank" rel="noopener">Boletins da Defesa Civil <i data-lucide="external-link"></i></a>
-        </div>
-        <a class="receive-alerts-link" href="https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/defesa-civil-alerta" target="_blank" rel="noopener">
-          <i data-lucide="bell-ring"></i>
-          Como receber alertas da Defesa Civil
-        </a>
       </section>
 
       <section class="section public-status" id="situacao">
@@ -2519,6 +2525,49 @@ dd {
           <a class="button ghost" href="#alertas">Alertas e recomendações</a>
           <a class="button emergency-solid" href="tel:199">Defesa Civil: 199</a>
         </div>
+      </section>
+
+      <section class="section current-alerts-section" id="alertas">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Avisos oficiais</p>
+            <h2>Consultar alertas e orientações</h2>
+            <p class="section-description">O resumo do topo facilita a leitura; confirme os avisos e as orientações nos canais emissores.</p>
+          </div>
+          <span class="alert-update">Atualização: <strong id="alertsUpdatedAt">Atualizando dados...</strong></span>
+        </div>
+        <div class="current-alerts-band" id="currentAlertsBand">
+          <div class="official-alert-grid priority-alert-grid" id="officialAlertGrid">
+            <article class="official-alert-card"><div class="alert-header"><i data-lucide="landmark"></i><span>Cemaden</span></div><p>Risco de alagamento, enxurrada ou deslizamento.</p><span class="official-live-status">Atualizando dados...</span></article>
+            <article class="official-alert-card"><div class="alert-header"><i data-lucide="cloud-lightning"></i><span>INMET</span></div><p>Aviso de chuva forte, vento, baixa umidade ou tempestade.</p><span class="official-live-status">Atualizando dados...</span></article>
+            <article class="official-alert-card"><div class="alert-header"><i data-lucide="shield-alert"></i><span>Defesa Civil Alerta / IDAP</span></div><p>Alertas emitidos pela Defesa Civil para orientação da população.</p><span class="official-live-status manual">Consulta oficial necessária</span></article>
+          </div>
+          <section class="agency-alert-detail" id="agencyAlertDetail" aria-live="polite">
+            <h3>Atualizando dados...</h3>
+            <p>Atualizando avisos vigentes nos órgãos emissores.</p>
+          </section>
+        </div>
+      </section>
+
+      <section class="section official-access-section" id="officialAccess">
+        <div class="section-heading compact-heading">
+          <p class="eyebrow">Fontes oficiais</p>
+          <h2>Consultar avisos oficiais</h2>
+          <p class="official-guidance">
+            Os avisos devem ser confirmados nos canais oficiais dos órgãos emissores. Este portal organiza as informações para facilitar a leitura pública.
+          </p>
+        </div>
+        <div class="official-access-grid">
+          <a href="https://avisos.inmet.gov.br/" target="_blank" rel="noopener">Consultar INMET <i data-lucide="external-link"></i></a>
+          <a href="https://painelalertas.cemaden.gov.br/" target="_blank" rel="noopener">Consultar CEMADEN <i data-lucide="external-link"></i></a>
+          <a href="https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/defesa-civil-alerta" target="_blank" rel="noopener">Defesa Civil Alerta / IDAP <i data-lucide="external-link"></i></a>
+          <a href="https://s2id.mi.gov.br/paginas/series/" target="_blank" rel="noopener">Consultar S2ID <i data-lucide="external-link"></i></a>
+          <a href="https://www.to.gov.br/defesacivil/boletins-informativos-2026/1879973eka9p" target="_blank" rel="noopener">Boletins da Defesa Civil <i data-lucide="external-link"></i></a>
+        </div>
+        <a class="receive-alerts-link" href="https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/defesa-civil-alerta" target="_blank" rel="noopener">
+          <i data-lucide="bell-ring"></i>
+          Como receber alertas da Defesa Civil
+        </a>
       </section>
 
       <section class="section recommendations-section" id="recomendacoes">
@@ -2592,6 +2641,64 @@ dd {
           <a class="text-link" href="#mapas">Ver mapa prioritário</a>
         </div>
 
+        <section class="drought-section" id="seca">
+          <div class="section-heading split">
+            <div>
+              <p class="eyebrow">Mapa técnico em destaque</p>
+              <h2>Seca no Tocantins</h2>
+              <p class="section-description">Condição municipal acompanhada pelo Índice Integrado de Seca (IIS3) do Cemaden.</p>
+            </div>
+            <a class="text-link" href="https://mapasecas.cemaden.gov.br/" target="_blank" rel="noopener">Abrir Alerta-Secas oficial</a>
+          </div>
+          <div class="drought-layout">
+            <article class="drought-summary-card">
+              <div class="drought-state">
+                <span>Situação geral</span>
+                <strong id="droughtGeneral">Atualizando dados...</strong>
+                <small id="droughtReference">Referência mensal</small>
+              </div>
+              <div class="drought-metrics">
+                <div><strong id="droughtAny">Atualizando...</strong><span>municípios com seca</span></div>
+                <div><strong id="droughtModerate">Atualizando...</strong><span>moderada ou superior</span></div>
+                <div><strong id="droughtSevere">Atualizando...</strong><span>severa ou extrema</span></div>
+              </div>
+              <dl class="drought-facts">
+                <div><dt>Mais críticos</dt><dd id="droughtCritical">Atualizando dados...</dd></div>
+                <div><dt>Tendência</dt><dd id="droughtTrend">Atualizando dados...</dd></div>
+                <div><dt>Fonte</dt><dd id="droughtSource">Cemaden / Alerta-Secas</dd></div>
+              </dl>
+            </article>
+            <div class="drought-map-card">
+              <div class="drought-layer-switcher" id="droughtLayerSwitcher" aria-label="Camadas do mapa de seca">
+                <button class="active" type="button" data-drought-layer="seca">Severidade da seca</button>
+                <button type="button" data-drought-layer="s2id">SE/ECP - S2ID</button>
+                <button type="button" data-drought-layer="focos">Focos de calor</button>
+              </div>
+              <div class="drought-map" id="droughtMap" aria-label="Mapa municipal da seca no Tocantins"></div>
+              <div class="drought-legend" id="droughtLegend">
+                <span><i class="drought-none"></i>Sem seca</span>
+                <span><i class="drought-weak"></i>Fraca</span>
+                <span><i class="drought-moderate"></i>Moderada</span>
+                <span><i class="drought-severe"></i>Severa</span>
+                <span><i class="drought-extreme"></i>Extrema</span>
+              </div>
+            </div>
+            <article class="drought-city-detail" id="droughtMunicipalityDetail" aria-live="polite">
+              <h3>Selecione um município</h3>
+              <p>Clique no mapa para consultar o grau de seca e a situação administrativa disponível.</p>
+            </article>
+          </div>
+          <p class="drought-explanation">
+            A seca monitorada por índices técnicos e a situação de emergência registrada no S2ID são informações complementares.
+            Um município pode apresentar condição de seca sem ter decreto registrado, assim como pode haver decreto vigente ainda
+            relacionado a evento anterior.
+          </p>
+        </section>
+
+        <div class="subpanel-heading">
+          <p class="eyebrow">Chuva e rios</p>
+          <h3>Redes de monitoramento em tempo recente</h3>
+        </div>
         <div class="map-dashboard">
           <div class="map-visual" aria-label="Painel territorial do Tocantins">
             <div class="map-toolbar">
@@ -2656,60 +2763,6 @@ dd {
             <div class="layer-details" id="layerDetails"></div>
           </aside>
         </div>
-
-      <section class="section drought-section" id="seca">
-        <div class="section-heading split">
-          <div>
-            <p class="eyebrow">Mapa técnico</p>
-            <h2>Seca no Tocantins</h2>
-            <p class="section-description">Condição municipal acompanhada pelo Índice Integrado de Seca (IIS3) do Cemaden.</p>
-          </div>
-          <a class="text-link" href="https://mapasecas.cemaden.gov.br/" target="_blank" rel="noopener">Abrir Alerta-Secas oficial</a>
-        </div>
-        <div class="drought-layout">
-          <article class="drought-summary-card">
-            <div class="drought-state">
-              <span>Situação geral</span>
-              <strong id="droughtGeneral">Atualizando dados...</strong>
-              <small id="droughtReference">Referência mensal</small>
-            </div>
-            <div class="drought-metrics">
-              <div><strong id="droughtAny">Atualizando...</strong><span>municípios com seca</span></div>
-              <div><strong id="droughtModerate">Atualizando...</strong><span>moderada ou superior</span></div>
-              <div><strong id="droughtSevere">Atualizando...</strong><span>severa ou extrema</span></div>
-            </div>
-            <dl class="drought-facts">
-              <div><dt>Mais críticos</dt><dd id="droughtCritical">Atualizando dados...</dd></div>
-              <div><dt>Tendência</dt><dd id="droughtTrend">Atualizando dados...</dd></div>
-              <div><dt>Fonte</dt><dd id="droughtSource">Cemaden / Alerta-Secas</dd></div>
-            </dl>
-          </article>
-          <div class="drought-map-card">
-            <div class="drought-layer-switcher" id="droughtLayerSwitcher" aria-label="Camadas do mapa de seca">
-              <button class="active" type="button" data-drought-layer="seca">Severidade da seca</button>
-              <button type="button" data-drought-layer="s2id">SE/ECP - S2ID</button>
-              <button type="button" data-drought-layer="focos">Focos de calor</button>
-            </div>
-            <div class="drought-map" id="droughtMap" aria-label="Mapa municipal da seca no Tocantins"></div>
-            <div class="drought-legend" id="droughtLegend">
-              <span><i class="drought-none"></i>Sem seca</span>
-              <span><i class="drought-weak"></i>Fraca</span>
-              <span><i class="drought-moderate"></i>Moderada</span>
-              <span><i class="drought-severe"></i>Severa</span>
-              <span><i class="drought-extreme"></i>Extrema</span>
-            </div>
-          </div>
-          <article class="drought-city-detail" id="droughtMunicipalityDetail" aria-live="polite">
-            <h3>Selecione um município</h3>
-            <p>Clique no mapa para consultar o grau de seca e a situação administrativa disponível.</p>
-          </article>
-        </div>
-        <p class="drought-explanation">
-          A seca monitorada por índices técnicos e a situação de emergência registrada no S2ID são informações complementares.
-          Um município pode apresentar condição de seca sem ter decreto registrado, assim como pode haver decreto vigente ainda
-          relacionado a evento anterior.
-        </p>
-      </section>
       </section>
 
       <section class="section explain-section">
