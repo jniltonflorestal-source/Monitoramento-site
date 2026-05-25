@@ -1,9 +1,10 @@
 {
-  "atualizado_em": "2026-05-25T14:14:11.237Z",
+  "atualizado_em": "2026-05-25T16:52:30.546Z",
   "resumo": {
-    "municipios_alerta": 7,
-    "rios_em_atencao": 4,
-    "focos_calor_24h": 84,
+    "alertas_cemaden_to": 0,
+    "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
+    "estacoes_fluviometricas_ana": null,
+    "focos_calor_24h": 95,
     "area_queimada_ano_ha": 245000,
     "chuva_24h_mm": 18.4,
     "estacoes_operando": 32
@@ -18,13 +19,13 @@
     {
       "icon": "waves",
       "label": "Rios",
-      "description": "4 pontos hidrologicos em nivel de atencao",
-      "value": "Atencao"
+      "description": "Cotas consultaveis na rede telemetrica ANA",
+      "value": "Consulta"
     },
     {
       "icon": "flame",
       "label": "Focos de calor",
-      "description": "84 focos registrados no arquivo diario do INPE",
+      "description": "95 focos registrados no arquivo diario do INPE",
       "value": "Ativo"
     },
     {
@@ -35,15 +36,17 @@
     }
   ],
   "fontes": {
+    "alertas": "CEMADEN",
     "chuva": "INMET / CEMADEN",
-    "rios": "ANA / SNIRH",
+    "rios": "ANA / Telemetria",
     "focos": "INPE Queimadas",
     "area_queimada": "MapBiomas Fogo / INPE AQ"
   },
   "automacao": {
+    "alertas_cemaden": "automatico_horario",
     "focos_calor": "automatico_inpe_diario",
     "chuva": "manual",
-    "rios": "manual",
+    "rios": "automatico_ana_sob_demanda",
     "area_queimada": "manual"
   }
 }

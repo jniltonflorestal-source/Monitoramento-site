@@ -1,6 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 
 const INPE_DAILY_DIR = "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/";
+const CEMADEN_ALERTS_URL = "https://painelalertas.cemaden.gov.br/wsAlertas2";
 const DATA_FILE = new URL("../dados-monitoramento.json", import.meta.url);
 
 function parseCsv(text) {
@@ -39,6 +40,21 @@ async function countTocantinsFires() {
   }).length;
 }
 
+async function fetchTocantinsAlerts() {
+  const response = await fetch(CEMADEN_ALERTS_URL);
+  if (!response.ok) throw new Error("Painel de alertas do CEMADEN indisponivel");
+
+  const body = await response.json();
+  const alerts = (body.alertas || []).filter((alert) => alert.status === 1 && alert.uf === "TO");
+  const levels = { "Muito Alto": 3, Alto: 2, Moderado: 1 };
+  const highest = alerts.reduce(
+    (current, alert) => levels[alert.nivel] > levels[current] ? alert.nivel : current,
+    "Sem alerta vigente"
+  );
+
+  return { count: alerts.length, highest };
+}
+
 function buildStatuses(data) {
   const summary = data.resumo;
   return [
@@ -51,8 +67,8 @@ function buildStatuses(data) {
     {
       icon: "waves",
       label: "Rios",
-      description: `${summary.rios_em_atencao} pontos hidrologicos em nivel de atencao`,
-      value: summary.rios_em_atencao > 0 ? "Atencao" : "Normal"
+      description: "Cotas consultaveis na rede telemetrica ANA",
+      value: "Consulta"
     },
     {
       icon: "flame",
@@ -71,12 +87,16 @@ function buildStatuses(data) {
 
 const data = JSON.parse(await readFile(DATA_FILE, "utf8"));
 data.resumo.focos_calor_24h = await countTocantinsFires();
+const alertSummary = await fetchTocantinsAlerts();
+data.resumo.alertas_cemaden_to = alertSummary.count;
+data.resumo.alertas_cemaden_to_nivel_maximo = alertSummary.highest;
 data.atualizado_em = new Date().toISOString();
 data.status = buildStatuses(data);
 data.automacao = {
+  alertas_cemaden: "automatico_horario",
   focos_calor: "automatico_inpe_diario",
   chuva: "manual",
-  rios: "manual",
+  rios: "automatico_ana_sob_demanda",
   area_queimada: "manual"
 };
 

@@ -234,13 +234,13 @@ a {
 
 .tocantins-shape {
   position: absolute;
-  right: 21%;
-  bottom: 72px;
-  width: 160px;
-  height: 260px;
-  background: var(--orange);
-  clip-path: polygon(52% 0, 70% 12%, 61% 29%, 76% 43%, 58% 57%, 64% 75%, 48% 100%, 28% 78%, 36% 59%, 21% 43%, 36% 25%, 31% 9%);
-  opacity: 0.18;
+  right: 20.5%;
+  bottom: 36px;
+  width: 174px;
+  height: 286px;
+  object-fit: contain;
+  opacity: 0.25;
+  filter: drop-shadow(0 10px 22px rgba(245, 154, 35, 0.2));
 }
 
 .hero-content,
@@ -309,6 +309,65 @@ h3 {
   background: rgba(255, 255, 255, 0.08);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(12px);
+}
+
+.hero-alert {
+  display: grid;
+  gap: 13px;
+  margin-bottom: 18px;
+  padding: 16px;
+  border: 1px solid rgba(245, 154, 35, 0.5);
+  border-radius: 7px;
+  background: linear-gradient(110deg, rgba(245, 154, 35, 0.22), rgba(215, 48, 39, 0.14));
+  color: var(--white);
+  text-decoration: none;
+}
+
+.hero-alert:hover {
+  border-color: var(--orange);
+  background: linear-gradient(110deg, rgba(245, 154, 35, 0.3), rgba(215, 48, 39, 0.2));
+}
+
+.hero-alert-kicker {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--orange);
+  font-size: 0.77rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.hero-alert-kicker svg {
+  width: 17px;
+  height: 17px;
+}
+
+.hero-alert-result {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.hero-alert-result strong {
+  color: var(--white);
+  font-size: 3rem;
+  line-height: 0.9;
+}
+
+.hero-alert-result span {
+  display: grid;
+  gap: 4px;
+}
+
+.hero-alert-result b {
+  color: var(--white);
+  font-size: 1.05rem;
+}
+
+.hero-alert-result small {
+  color: #d8e6f3;
+  font-size: 0.78rem;
 }
 
 .panel-topline {
@@ -1581,7 +1640,7 @@ dd {
           <span class="grid-lines"></span>
           <span class="radar radar-one"></span>
           <span class="radar radar-two"></span>
-          <span class="tocantins-shape"></span>
+          <img class="tocantins-shape" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNjkxIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlNpbGh1ZXRhIG9maWNpYWwgZG8gZXN0YWRvIGRvIFRvY2FudGlucyBiYXNlYWRhIG5hIG1hbGhhIGRvIElCR0UiPgogIDxwYXRoIGQ9Ik0yNzUuOCwxMDQuNCBMMjgwLjMsOTEuNCBMMjc1LjgsODAuMSBMMjc2LjAsNzIuNSBMMjc0LjQsNjguOSBMMjc1LjcsNTguMSBMMjcwLjYsNDYuOCBMMjcyLjIsNDEuMSBMMjcxLjQsMzMuMCBMMjY2LjAsMjUuMiBMMjYwLjEsMjQuMyBMMjQ5LjcsMTcuNiBMMjQyLjcsMTguMiBMMjM5LjQsMTQuNSBMMjM5LjAsOC43IEwyMzQuNCw2LjEgTDIyOC4zLDUuNSBMMjIxLjksOC43IEwyMTUuNyw4LjAgTDE5OC4xLDAuMCBMMTg0LjMsMi4zIEwxNzcuOSwxNC4wIEwxNzEuOCwxMS40IEwxNjkuMSwxNS40IEwxNjUuNSwxNS4xIEwxNjcuMCwxNy4xIEwxNzQuMiwxOC4wIEwxNzguNywyMS4yIEwxODUuNiwyMS44IEwxOTYuMywxOC44IEwxOTkuNSwyMi4yIEwyMDEuMSwyNy4zIEwyMDUuMiwzMS4wIEwyMTUuNiwzNS4yIEwyMTcuMiwzOC45IEwyMTMuNyw0NS4zIEwyMDUuNCw0Ni41IEwyMDMuNiw0OS43IEwyMDQuMSw1NS42IEwyMDkuMyw2My40IEwyMDguNiw2NS4zIEwyMDIuMiw2Ny41IEwyMDAuNSw2OS42IEwyMDAuOSw3Mi41IEwyMDQuNSw3NC43IEwyMDMuNiw3OC40IEwxOTQuNCw4Mi4wIEwxOTIuMSw4NC45IEwxOTMuNiw5NC4xIEwxOTYuOSw5Ny4wIEwxOTYuNSwxMDAuOCBMMTkxLjEsOTguNSBMMTg1LjgsOTguOSBMMTc0LjYsMTExLjYgTDE3My4wLDExNi41IEwxNzQuMSwxMjIuNSBMMTcxLjUsMTI1LjcgTDE2Ny4wLDEyNi45IEwxNjAuNiwxMzEuOCBMMTQzLjUsMTM0LjUgTDEyNy42LDE0Ni4zIEwxMjkuNywxNzIuMSBMMTI1LjYsMTc5LjkgTDExMy42LDE5My44IEwxMTMuMSwxOTcuNyBMMTE3LjIsMjA4LjIgTDEzMi42LDIxOS4zIEwxMjkuOSwyMzMuOCBMMTMwLjQsMjQwLjkgTDEyOC41LDI0My4wIEwxMjcuNiwyNTAuNCBMMTIyLjEsMjY2LjAgTDExMy43LDI3My43IEwxMTEuMCwyODQuMCBMMTA3LjUsMjg2LjcgTDk1LjgsMzA1LjYgTDg4LjEsMzA3LjEgTDgzLjAsMzExLjIgTDc0LjksMzIxLjMgTDY5LjcsMzMzLjEgTDU4LjcsMzQzLjEgTDU3LjQsMzUwLjAgTDUzLjAsMzU4LjYgTDU0LjMsMzY0LjQgTDUyLjksMzY4LjUgTDUwLjMsMzcxLjAgTDQ5LjMsMzc2LjcgTDQwLjUsMzkzLjAgTDM2LjYsNDA1LjIgTDI5LjIsNDEzLjQgTDMwLjAsNDIwLjUgTDI3LjAsNDMxLjggTDIyLjQsNDM2LjAgTDIxLjYsNDQzLjAgTDE4LjgsNDQ0LjMgTDE3LjIsNDUyLjQgTDExLjYsNDU3LjIgTDE0LjMsNDY0LjkgTDEwLjAsNDcyLjEgTDExLjgsNDc1LjcgTDkuMSw0NzkuOCBMMTEuMCw0OTEuMSBMNi44LDQ5Ni43IEw2LjksNTA2LjcgTDIuOSw1MTIuOCBMMC4wLDUyMy44IEwwLjMsNTMwLjggTDIuMiw1MzMuNyBMNy4wLDUzNC45IEw2LjUsNTQxLjkgTDEuNyw1NDcuMSBMNC42LDU1Ny4wIEw4LjYsNTU5LjIgTDYuMiw1NjIuOSBMNy4xLDU2Ni4wIEw1LjAsNTY4LjAgTDQuNiw1NzIuNSBMNi4yLDU3NS42IEw0LjYsNTg1LjUgTDguMiw1ODcuMyBMOS4yLDU5Mi41IEw3LjgsNTkzLjcgTDguMSw1OTcuNiBMMTAuMyw2MDQuNSBMOS45LDYwNi43IEw3LjQsNjA3LjEgTDcuOSw2MDkuMiBMNC42LDYxNi4yIEw2LjIsNjE4LjQgTDMuMCw2MTkuNSBMMy44LDYyMi45IEw3LjksNjIzLjAgTDcuMyw2MjUuMyBMOS45LDYyOS45IEw4LjgsNjMzLjAgTDEwLjksNjMzLjQgTDkuOSw2MzcuMCBMMTMuMyw2MzUuMyBMMTEuOCw2MzcuNCBMMTQuNiw2MzkuMCBMMTguMyw2MzguNSBMMTkuMiw2NDAuNCBMMjIuMiw2MzMuMCBMMjEuMiw2MzAuNyBMMjMuMSw2MjkuNiBMMjEuOSw2MjguMSBMMjUuNCw2MjYuNyBMMjUuNiw2MjMuNSBMMzEuMyw2MTYuNiBMMzEuMyw2MTQuMyBMNTAuMCw2MDEuNyBMNDMuNiw2MDkuNyBMNDIuNyw2MTMuMCBMNDUuNyw2MTUuNyBMNDIuMCw2MTcuMCBMNDIuMSw2MjAuNyBMNDAuNiw2MjAuOCBMMzkuMyw2MjUuMiBMMzYuOSw2MjUuNCBMMzguMiw2MjguNSBMMzYuMiw2MzYuOCBMNDYuNCw2NDMuMiBMNTUuMiw2NDQuMSBMNTguNiw2NDYuNyBMNjguMyw2NDguOCBMMTE0LjQsNjc0LjcgTDExNy4wLDY3Mi42IEwxMTUuOCw2NTkuOCBMMTIxLjgsNjUxLjEgTDEyNS4zLDY0Mi4zIEwxMzUuMyw2MzQuNSBMMTM2LjQsNjM4LjMgTDEzOS41LDYzOS4xIEwxMzcuOCw2NDIuOSBMMTQxLjAsNjQ0LjggTDE0My4zLDY0NC4yIEwxNDcuMSw2NDguNCBMMTU3LjAsNjM1LjcgTDE1OC40LDYzOS4wIEwxNjcuMSw2NDUuNSBMMTY4LjYsNjUyLjEgTDE3Mi42LDY1MS43IEwxNzUuMyw2NTMuNCBMMTc2LjEsNjU2LjMgTDE3OC40LDY1Ni45IEwxODAuNCw2NjIuNCBMMTc5LjAsNjY1LjEgTDE4MC4zLDY2OC4yIEwxNzguNSw2NzIuMCBMMTc5LjgsNjc4LjUgTDE4Mi4yLDY3Ny4zIEwxODIuMyw2NjkuMCBMMTg0LjIsNjY4LjAgTDE4NS40LDY2My42IEwxODkuMiw2NjQuMiBMMTg4LjgsNjcxLjEgTDE5MC4zLDY3Mi42IEwxODkuOSw2NzQuOSBMMTkyLjAsNjc1LjcgTDE5OS45LDY3MS4zIEwyMDIuMiw2NzEuNiBMMjA4LjgsNjY2LjcgTDIxNi40LDY2NC43IEwyMTQuNiw2NjcuOCBMMjE1LjYsNjc1LjMgTDIxNC4yLDY3Ny4wIEwyMjEuOCw2NzUuOCBMMjIzLjIsNjcxLjYgTDIyNS44LDY3My40IEwyMjUuNiw2NzQuOSBMMjI5LjMsNjc1LjAgTDIzMS4yLDY3OC4xIEwyMzMuNiw2NzYuMiBMMjM3LjksNjc4LjcgTDI0My4xLDY3OC4wIEwyNTUuMSw2OTEuMCBMMjU5LjcsNjgzLjMgTDI1Ny4wLDY3OC45IEwyNTguNCw2NzQuMCBMMjU2LjAsNjY1LjggTDI2MC4zLDY2MC42IEwyNjQuOSw2NjIuNCBMMjY1LjIsNjY3LjYgTDI3MS4zLDY2Ny4yIEwyNzEuNCw2NzAuNiBMMjc1LjAsNjcwLjYgTDI3NS42LDY3MS45IEwyNzMuOSw2NzMuMCBMMjc1LjYsNjc2LjAgTDI4MC4wLDY3MS4yIEwyODguMiw2NzQuMSBMMjkyLjksNjY4LjEgTDI5Ni40LDY2Ny42IEwyOTYuNCw2NjkuMSBMMjk4LjgsNjY5LjUgTDMwMC42LDY2Ni44IEwzMDQuMiw2NjcuMSBMMzExLjYsNjYyLjEgTDMxMy40LDY2Mi45IEwzMjAuNSw2NTYuNSBMMzIzLjgsNjU3LjYgTDMyNi40LDY1Mi42IEwzMzIuNCw2NDkuNSBMMzU3LjEsNjQ5LjYgTDM2MC4xLDYzNy4yIEwzNjQuNSw2NDAuNyBMMzY0LjEsNjUxLjAgTDM3OC40LDY0OC41IEwzODUuNSw2NDUuMiBMMzc4LjMsNjQ3LjYgTDM3Mi45LDY0Ny4wIEwzNjguMyw2NDguNCBMMzY5LjAsNjQ0LjUgTDM3MS4wLDY0My4xIEwzNjkuOSw2NDAuMSBMMzcyLjIsNjM2LjcgTDM2OS4xLDYzNS4wIEwzNzIuNiw2MjguNCBMMzY5LjYsNjI2LjcgTDM3Mi42LDYyNC4yIEwzNzIuMSw2MjIuNCBMMzY5LjQsNjIxLjggTDM3Mi4wLDYxOC4zIEwzNzAuMiw2MTYuNyBMMzc4LjQsNjEwLjcgTDM3Mi4zLDYxMS41IEwzNzMuMiw2MDguMiBMMzcwLjgsNjAzLjUgTDM2OC42LDYwNy40IEwzNjYuNiw2MDYuNCBMMzcwLjgsNjAwLjIgTDM2NC4xLDU5Ny43IEwzNjUuOSw1OTMuNyBMMzYyLjksNTkzLjIgTDM2NC4xLDU5MS4zIEwzNjIuNiw1ODkuNSBMMzY0LjQsNTg2LjcgTDM2MS45LDU4NC42IEwzNjMuMiw1ODMuOSBMMzYxLjYsNTgxLjggTDM2NC4xLDU3OC4wIEwzNjEuOCw1NzYuMiBMMzYyLjksNTczLjMgTDM1NS4xLDU3Mi4zIEwzNjIuNSw1NjkuNiBMMzY4LjYsNTY0LjAgTDM3NS42LDU2My41IEwzODAuMCw1NjEuMCBMMzcxLjUsNTYxLjkgTDM2NC4zLDU1OS41IEwzNjMuMiw1NTUuNSBMMzY1LjgsNTU1LjEgTDM2Ny42LDU0OS45IEwzNjUuMyw1NDkuOSBMMzY1LjUsNTQ4LjYgTDM2My44LDU0OS41IEwzNjMuNiw1NDcuOCBMMzY2LjUsNTQ2LjkgTDM2OS4zLDU0Mi43IEwzNjYuOCw1NDEuMSBMMzY2LjgsNTM5LjAgTDM2Mi45LDUzOS4zIEwzNjIuOSw1MzcuNyBMMzc0LjYsNTM1LjkgTDM3Ny4wLDUzOS4wIEwzODIuMCw1MzkuNiBMMzgyLjksNTM3LjUgTDM4OC4yLDUzNy41IEwzNzcuNSw1MzQuMiBMMzc0LjEsNTMwLjIgTDM2Ny45LDUyOC4zIEwzNTguNCw1MjguOSBMMzUxLjMsNTI0LjEgTDM1MC43LDUxNi45IEwzNDcuNiw1MTYuNCBMMzQ2LjksNTE0LjAgTDM0OS4wLDUwNy40IEwzNjYuNSw0ODAuNCBMMzcyLjcsNDgwLjEgTDM3My4zLDQ2OS45IEwzNzYuMSw0NjcuNCBMMzc3LjgsNDY4LjcgTDM3OC45LDQ2NC4xIEwzODIuNCw0NTkuOCBMMzgyLjUsNDU1LjIgTDQwNS43LDQ0NC4yIEw0MDkuOCw0NDAuNCBMNDExLjgsNDI5LjIgTDQxNy43LDQyOC4zIEw0MjAuMCw0MjMuOCBMNDE5LjgsNDE3LjIgTDQxNy40LDQxNS43IEw0MTcuMSw0MjEuMyBMNDEyLjEsNDI0LjUgTDQwNS43LDQyMy4xIEw0MDMuNiw0MjQuMyBMNDAyLjAsNDI4LjMgTDQwNC40LDQzMC42IEw0MDIuNCw0MzMuMiBMMzk3LjQsNDMyLjEgTDM5NS4wLDQyNy4wIEwzOTMuMSw0MjYuMSBMMzkzLjksNDIzLjEgTDM5Mi42LDQxNy4wIEwzODcuMiw0MTkuNyBMMzgxLjQsNDIwLjAgTDM3Ny40LDQxNi40IEwzNjcuOSw0MTcuNSBMMzY0LjMsNDE2LjMgTDM2My4wLDQxMi4zIEwzNTcuOSw0MDguNyBMMzU2LjksNDA2LjEgTDM1NS4yLDQwMS40IEwzNTUuNiwzOTIuMCBMMzU0LjAsMzkxLjQgTDM1My44LDM4Ny44IEwzNTIuMiwzODUuNCBMMzQ2LjksMzg2LjAgTDM0Ni45LDM4Mi4wIEwzNDEuMCwzNzkuOCBMMzQwLjUsMzc2LjcgTDM0My45LDM3NC40IEwzNDUuNiwzNjcuOSBMMzUwLjAsMzY1LjYgTDM0Ny4xLDM2Mi40IEwzNDguMiwzNTkuMyBMMzQxLjcsMzU3LjEgTDM0MS4wLDM1NC42IEwzNDIuMywzNTMuMyBMMzM5LjUsMzUxLjYgTDMzMS40LDM1My4xIEwzMzEuMSwzNDkuNiBMMzI3LjUsMzQ0LjcgTDMyNC40LDM0My4zIEwzMjYuNywzNDAuNCBMMzI2LjQsMzM1LjYgTDMyNC4xLDMzNS4wIEwzMjQuMCwzMzEuOSBMMzIwLjksMzMwLjggTDMyMC4zLDMyOS4yIEwzMTcuMywzMjkuNyBMMzE4LjIsMzI0LjYgTDMxMS4xLDMyNS44IEwzMDUuOSwzMjQuMyBMMzA4LjAsMzIwLjkgTDMwNi41LDMxOS42IEwzMDkuOSwzMTguMCBMMzEwLjcsMzE0LjYgTDMxNC4xLDMxMS45IEwzMTIuMywzMDguOSBMMzE4LjksMzA2LjMgTDMxOS42LDMwMC4zIEwzMTcuOCwyOTcuMCBMMzIxLjEsMjkyLjkgTDMxOC42LDI4OC40IEwzMTkuOCwyODQuNiBMMzI0LjUsMjgwLjIgTDMyNC4yLDI3NS4zIEwzMjguMywyNzMuNiBMMzI4LjEsMjY5LjYgTDMzMC4yLDI2Ni40IEwzMzMuOCwyNjcuOCBMMzM4LjgsMjYzLjYgTDM0OC40LDI2Mi42IEwzNTEuNywyNjAuMCBMMzU0LjMsMjUyLjMgTDM1Mi4yLDI0OS41IEwzNTYuMiwyNDEuOCBMMzUzLjIsMjMzLjUgTDM0NC42LDIyNy4xIEwzMjEuNCwyMzIuOCBMMzIwLjEsMjM0LjcgTDMxNi42LDIzNS42IEwzMTEuOSwyNDEuMiBMMzA3LjksMjQwLjEgTDMwNi40LDIzNi4xIEwzMDMuNCwyMzQuNSBMMjk5LjQsMjI3LjIgTDI5MS42LDIyMC4yIEwyOTAuMCwyMTQuNCBMMjg1LjYsMjEzLjQgTDI4Ni4zLDIwOS44IEwyODQuMCwyMDkuNiBMMjgzLjYsMjA3LjggTDI4NS40LDIwNy42IEwyODEuOSwyMDMuOCBMMjgwLjUsMjA0LjIgTDI4Mi4yLDIwNi41IEwyNzkuOCwyMDcuMCBMMjc4LjMsMTk5LjggTDI3NS4wLDE5OC43IEwyNzYuMywxOTYuNiBMMjczLjIsMTk1LjcgTDI3Mi4xLDE5Ny4wIEwyNjkuOCwxODkuMCBMMjYyLjQsMTg5LjEgTDI3MS40LDE4Mi45IEwyNzAuMCwxNzcuMCBMMjY2LjUsMTc0LjYgTDI2Mi40LDE3NC41IEwyNTcuOSwxNzcuOSBMMjU0LjEsMTcyLjMgTDI1MC4yLDE3MC41IEwyNDkuNiwxNjYuMCBMMjUyLjUsMTY0LjAgTDI1OC4wLDE2NC40IEwyNjcuNSwxNTAuOCBMMjY5LjYsMTQyLjkgTDI2Ny42LDEzOC4yIEwyNzAuNSwxMzEuOCBMMjcwLjEsMTI1LjEgTDI3My4xLDExOS4zIEwyNzMuNiwxMTQuMSBMMjc3LjAsMTA5LjUgTDI3NS41LDEwNS4xIFoiIGZpbGw9IiNmNTlhMjMiLz4KPC9zdmc+Cg==" alt="" />
         </div>
 
         <div class="hero-content">
@@ -1608,6 +1667,19 @@ dd {
         </div>
 
         <aside class="current-panel" aria-label="Situacao atual do monitoramento">
+          <a class="hero-alert" href="#alertas" aria-label="Consultar alertas oficiais vigentes no Tocantins">
+            <span class="hero-alert-kicker">
+              <i data-lucide="triangle-alert"></i>
+              Alertas do Estado do Tocantins
+            </span>
+            <span class="hero-alert-result">
+              <strong id="heroAlertCount">--</strong>
+              <span>
+                <b id="heroAlertLabel">alertas vigentes</b>
+                <small id="heroAlertUpdated">Consultando fonte oficial</small>
+              </span>
+            </span>
+          </a>
           <div class="panel-topline">
             <span>Situacao atual</span>
             <strong id="updatedAt">Carregando</strong>
@@ -2204,6 +2276,17 @@ function applyAnaStatus() {
   setText("#riosAtencaoFonte", "ANA / Telemetria");
 }
 
+function applyOfficialAlertStatus(summary, sources) {
+  const count = Number(summary.alertas_cemaden_to);
+  if (!Number.isFinite(count)) return;
+  const level = summary.alertas_cemaden_to_nivel_maximo || (count ? "Vigente" : "Sem alerta vigente");
+  setText("#heroAlertCount", formatNumber(count));
+  setText("#heroAlertLabel", count === 1 ? "alerta vigente" : "alertas vigentes");
+  setText("#heroAlertUpdated", `${sources.alertas || "CEMADEN"} | ${level}`);
+  setText("#municipiosAlerta", formatNumber(count));
+  setText("#municipiosAlertaFonte", sources.alertas || "CEMADEN");
+}
+
 function normalizeText(value) {
   return String(value || "")
     .normalize("NFD")
@@ -2259,16 +2342,15 @@ async function loadMonitoringData() {
     renderStatuses();
 
     setText("#updatedAt", formatDateTime(data.atualizado_em));
-    setText("#municipiosAlerta", "Consultar");
     setText("#riosAtencao", "--");
     setText("#focosCalor", formatNumber(summary.focos_calor_24h ?? 0));
     setText("#areaQueimada", formatArea(summary.area_queimada_ano_ha));
-    setText("#municipiosAlertaFonte", "alertas e monitoramento");
     setText("#riosAtencaoFonte", "ANA / Telemetria");
     setText("#focosCalorFonte", sources.focos || "INPE Queimadas");
     setText("#areaQueimadaFonte", sources.area_queimada || "MapBiomas / INPE");
     applyCemadenStatus();
     applyAnaStatus();
+    applyOfficialAlertStatus(summary, sources);
   } catch (error) {
     setText("#updatedAt", "Dados locais");
     renderStatuses();
