@@ -4048,8 +4048,10 @@ async function loadAnaStationReading(stationCode, button) {
 function renderMapDashboard() {
   const switcher = document.querySelector("#layerSwitcher");
   if (!switcher) return;
+  const verifiedMapLayers = ["cemaden", "rios"];
 
   switcher.innerHTML = Object.entries(mapLayers)
+    .filter(([key]) => verifiedMapLayers.includes(key))
     .map(
       ([key, layer]) => `
         <button class="layer-button" type="button" data-layer="${key}">

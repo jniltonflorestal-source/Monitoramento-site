@@ -30,6 +30,8 @@ O card administrativo separara:
 - Estado de Calamidade Publica: `Consultar S2ID`.
 - Reconhecimento federal vigente: `Consultar S2ID`.
 
+No mapa territorial publico, somente camadas espaciais de fonte integrada e verificavel serao oferecidas como dados observados. Nesta versao, chuva utiliza a rede Cemaden e rios utiliza a rede ANA; focos de calor permanecem como contagem oficial nos indicadores ate haver camada geografica validada.
+
 ## Linguagem e Acessibilidade
 
 Os rotulos traduzem termos tecnicos: Cemaden aparece como risco de alagamento, enxurrada ou deslizamento; INMET como aviso de chuva, vento, baixa umidade ou tempestade; focos de calor recebem explicacao por satelite. A barra fixa para celular mantem `199` e `193` permanentemente visiveis.
