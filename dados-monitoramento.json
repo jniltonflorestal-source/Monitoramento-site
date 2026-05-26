@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-05-26T10:51:43.002Z",
+  "atualizado_em": "2026-05-26T11:14:54.937Z",
   "resumo": {
     "alertas_cemaden_to": 0,
     "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
@@ -67,7 +67,7 @@
     "focos_calor": "automatico_inpe_diario",
     "chuva": "manual",
     "rios": "automatico_ana_sob_demanda",
-    "area_queimada": "referencia_consolidada_mapbiomas_colecao_3_2023"
+    "area_queimada": "automatico_monitor_do_fogo"
   },
   "seca": {
     "produto": "IIS3",
@@ -2879,10 +2879,14 @@
     }
   },
   "area_queimada": {
-    "fonte": "MapBiomas Fogo - Coleção 3",
-    "ano_referencia": 2023,
-    "area_queimada_ha": 1427011,
+    "fonte": "MapBiomas Monitor do Fogo",
+    "fonte_url": "https://plataforma.monitorfogo.mapbiomas.org/api/docs/",
+    "ano_referencia": 2026,
+    "mes_final": 4,
+    "periodo": "Janeiro a abril de 2026",
+    "area_queimada_ha": 13035.81,
+    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/41d77b1f4b3dcf5dc8e0d61c22834073-7d734c4a370e094b4f0eef88e5d8ff5b/tiles/{z}/{x}/{y}",
     "unidade": "ha",
-    "natureza": "Dado anual consolidado, diferente dos focos recentes do INPE."
+    "natureza": "Cicatrizes de área queimada mapeadas pelo Monitor do Fogo."
   }
 }

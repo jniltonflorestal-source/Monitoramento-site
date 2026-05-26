@@ -8,14 +8,8 @@ const CEMADEN_DROUGHT_WFS_URL = "https://secaswms.cemaden.gov.br/produtos/wfs";
 const S2ID_PORTAL_URL = "https://s2id.mi.gov.br/paginas/index.xhtml";
 const S2ID_RECOGNITIONS_URL = "https://s2id.mi.gov.br/rest/portal/reconhecimentos";
 const S2ID_DETAIL_URL = "https://s2id.mi.gov.br/rest/portal/detalhareconhecimento";
+const MAPBIOMAS_FIRE_API = "https://plataforma.monitorfogo.mapbiomas.org/api";
 const DATA_FILE = new URL("../dados-monitoramento.json", import.meta.url);
-const MAPBIOMAS_BURNED_AREA = {
-  fonte: "MapBiomas Fogo - Coleção 3",
-  ano_referencia: 2023,
-  area_queimada_ha: 1427011,
-  unidade: "ha",
-  natureza: "Dado anual consolidado, diferente dos focos recentes do INPE."
-};
 
 function parseCsv(text) {
   const lines = text.trim().split(/\r?\n/);
@@ -245,6 +239,45 @@ async function fetchTocantinsS2id() {
   };
 }
 
+function monthName(month) {
+  const names = [
+    "janeiro", "fevereiro", "março", "abril", "maio", "junho",
+    "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
+  ];
+  return names[month - 1] || String(month);
+}
+
+async function fetchTocantinsBurnedArea() {
+  const yearsResponse = await fetch(`${MAPBIOMAS_FIRE_API}/statistics/years`);
+  if (!yearsResponse.ok) throw new Error("Anos do Monitor do Fogo indisponiveis");
+  const years = await yearsResponse.json();
+  const latestYear = Math.max(...years);
+  const monthsResponse = await fetch(`${MAPBIOMAS_FIRE_API}/statistics/${latestYear}/months`);
+  if (!monthsResponse.ok) throw new Error("Meses do Monitor do Fogo indisponiveis");
+  const months = await monthsResponse.json();
+  const latestMonth = Math.max(...months);
+  const query = `year=${latestYear}&monthStart=1&monthEnd=${latestMonth}`;
+  const [areaResponse, rasterResponse] = await Promise.all([
+    fetch(`${MAPBIOMAS_FIRE_API}/statistics/area/state/17/city?${query}`),
+    fetch(`${MAPBIOMAS_FIRE_API}/maps/fire/monthly?territoryType=state&territoryCode=17&${query}`)
+  ]);
+  if (!areaResponse.ok || !rasterResponse.ok) throw new Error("Area queimada do Monitor do Fogo indisponivel");
+  const area = await areaResponse.json();
+  const raster = await rasterResponse.json();
+
+  return {
+    fonte: "MapBiomas Monitor do Fogo",
+    fonte_url: "https://plataforma.monitorfogo.mapbiomas.org/api/docs/",
+    ano_referencia: latestYear,
+    mes_final: latestMonth,
+    periodo: `Janeiro a ${monthName(latestMonth)} de ${latestYear}`,
+    area_queimada_ha: Number(area.areaHa),
+    raster_url: raster.url,
+    unidade: "ha",
+    natureza: "Cicatrizes de área queimada mapeadas pelo Monitor do Fogo."
+  };
+}
+
 function buildStatuses(data) {
   const summary = data.resumo;
   return [
@@ -315,7 +348,9 @@ await updateAvailableSource("s2id", fetchTocantinsS2id, (s2id) => {
   data.resumo.municipios_s2id_se = s2id.resumo.se;
   data.resumo.municipios_s2id_ecp = s2id.resumo.ecp;
 });
-data.area_queimada = MAPBIOMAS_BURNED_AREA;
+await updateAvailableSource("area_queimada_mapbiomas", fetchTocantinsBurnedArea, (burnedArea) => {
+  data.area_queimada = burnedArea;
+});
 data.atualizado_em = new Date().toISOString();
 data.status = buildStatuses(data);
 data.fontes.alertas_geo = "Cemaden";
@@ -330,7 +365,7 @@ data.automacao = {
   focos_calor: "automatico_inpe_diario",
   chuva: "manual",
   rios: "automatico_ana_sob_demanda",
-  area_queimada: "referencia_consolidada_mapbiomas_colecao_3_2023"
+  area_queimada: "automatico_monitor_do_fogo"
 };
 
 await writeFile(DATA_FILE, `${JSON.stringify(data, null, 2)}\n`, "utf8");
