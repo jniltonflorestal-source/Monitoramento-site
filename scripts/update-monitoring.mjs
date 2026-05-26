@@ -5,7 +5,17 @@ const CEMADEN_ALERTS_URL = "https://painelalertas.cemaden.gov.br/wsAlertas2";
 const INMET_WARNINGS_URL = "https://apiprevmet3.inmet.gov.br/avisos/ativos";
 const CEMADEN_DROUGHT_META_URL = "https://mapasecas.cemaden.gov.br/rest/product/meta/iis3";
 const CEMADEN_DROUGHT_WFS_URL = "https://secaswms.cemaden.gov.br/produtos/wfs";
+const S2ID_PORTAL_URL = "https://s2id.mi.gov.br/paginas/index.xhtml";
+const S2ID_RECOGNITIONS_URL = "https://s2id.mi.gov.br/rest/portal/reconhecimentos";
+const S2ID_DETAIL_URL = "https://s2id.mi.gov.br/rest/portal/detalhareconhecimento";
 const DATA_FILE = new URL("../dados-monitoramento.json", import.meta.url);
+const MAPBIOMAS_BURNED_AREA = {
+  fonte: "MapBiomas Fogo - Coleção 3",
+  ano_referencia: 2023,
+  area_queimada_ha: 1427011,
+  unidade: "ha",
+  natureza: "Dado anual consolidado, diferente dos focos recentes do INPE."
+};
 
 function parseCsv(text) {
   const lines = text.trim().split(/\r?\n/);
@@ -190,6 +200,51 @@ async function fetchTocantinsDrought() {
   };
 }
 
+async function fetchTocantinsS2id() {
+  const portalResponse = await fetch(S2ID_PORTAL_URL);
+  if (!portalResponse.ok) throw new Error("Portal S2ID indisponivel");
+  const portalHtml = await portalResponse.text();
+  const token = portalHtml.match(/var token = "([^"]+)"/)?.[1];
+  if (!token) throw new Error("Token publico do S2ID nao encontrado");
+
+  const headers = { "auth-token": token };
+  const response = await fetch(S2ID_RECOGNITIONS_URL, { headers });
+  if (!response.ok) throw new Error("Reconhecimentos do S2ID indisponiveis");
+  const collection = await response.json();
+  const features = (collection.features || []).filter((feature) => feature.properties?.uf === "TO");
+  const records = await Promise.all(features.map(async (feature) => {
+    const protocol = feature.properties.protocolo;
+    const detailResponse = await fetch(`${S2ID_DETAIL_URL}?protocolo=${encodeURIComponent(protocol)}`, { headers });
+    const details = detailResponse.ok ? await detailResponse.json() : {};
+    return {
+      municipio: feature.properties.municipio,
+      geocodigo: feature.properties.geocodigo,
+      protocolo: protocol,
+      cobrade: String(details.cobrade?.cobrade || feature.properties.cobrade || ""),
+      desastre: details.cobrade?.tipo || null,
+      situacao: details.seEcp || "Reconhecimento federal vigente",
+      decreto: details.numeroDecreto || null,
+      data_decreto: details.dataDecreto || null,
+      portaria: details.numeroPortaria || null,
+      vigencia: details.vigenciaPortaria || null,
+      latitude: Number(feature.geometry?.coordinates?.[1]),
+      longitude: Number(feature.geometry?.coordinates?.[0])
+    };
+  }));
+  const isCalamity = (record) => /calamidade/i.test(record.situacao);
+
+  return {
+    fonte: "S2ID / SEDEC-MIDR",
+    consulta: S2ID_RECOGNITIONS_URL,
+    reconhecimentos_vigentes: records,
+    resumo: {
+      se: records.filter((record) => !isCalamity(record)).length,
+      ecp: records.filter(isCalamity).length,
+      federal: records.length
+    }
+  };
+}
+
 function buildStatuses(data) {
   const summary = data.resumo;
   return [
@@ -221,22 +276,46 @@ function buildStatuses(data) {
 }
 
 const data = JSON.parse(await readFile(DATA_FILE, "utf8"));
-const fireSummary = await fetchTocantinsFires();
-data.resumo.focos_calor_24h = fireSummary.count;
-data.focos_calor = {
-  fonte: "INPE Queimadas",
-  csv_url: fireSummary.csvUrl,
-  pontos_24h: fireSummary.points
-};
-const alertSummary = await fetchTocantinsAlerts();
-data.resumo.alertas_cemaden_to = alertSummary.count;
-data.resumo.alertas_cemaden_to_nivel_maximo = alertSummary.highest;
-const warningSummary = await fetchTocantinsWeatherWarnings();
-data.resumo.avisos_inmet_to_hoje = warningSummary.todayCount;
-data.resumo.avisos_inmet_to_futuro = warningSummary.futureCount;
-data.resumo.avisos_inmet_to_severidade_maxima = warningSummary.highest;
-data.resumo.avisos_inmet_detalhes = warningSummary.details;
-data.seca = await fetchTocantinsDrought();
+data.erros_atualizacao = {};
+
+async function updateAvailableSource(label, fetcher, applyResult) {
+  try {
+    const result = await fetcher();
+    applyResult(result);
+  } catch (error) {
+    data.erros_atualizacao[label] = error.message;
+    console.warn(`[${label}] ${error.message}. Mantendo ultimo dado valido quando disponivel.`);
+  }
+}
+
+await updateAvailableSource("focos_calor_inpe", fetchTocantinsFires, (fireSummary) => {
+  data.resumo.focos_calor_24h = fireSummary.count;
+  data.focos_calor = {
+    fonte: "INPE Queimadas",
+    csv_url: fireSummary.csvUrl,
+    pontos_24h: fireSummary.points
+  };
+});
+await updateAvailableSource("alertas_cemaden", fetchTocantinsAlerts, (alertSummary) => {
+  data.resumo.alertas_cemaden_to = alertSummary.count;
+  data.resumo.alertas_cemaden_to_nivel_maximo = alertSummary.highest;
+});
+await updateAvailableSource("avisos_inmet", fetchTocantinsWeatherWarnings, (warningSummary) => {
+  data.resumo.avisos_inmet_to_hoje = warningSummary.todayCount;
+  data.resumo.avisos_inmet_to_futuro = warningSummary.futureCount;
+  data.resumo.avisos_inmet_to_severidade_maxima = warningSummary.highest;
+  data.resumo.avisos_inmet_detalhes = warningSummary.details;
+});
+await updateAvailableSource("seca_iis3", fetchTocantinsDrought, (drought) => {
+  data.seca = drought;
+});
+await updateAvailableSource("s2id", fetchTocantinsS2id, (s2id) => {
+  data.s2id = s2id;
+  data.resumo.municipios_s2id_vigentes = s2id.resumo.federal;
+  data.resumo.municipios_s2id_se = s2id.resumo.se;
+  data.resumo.municipios_s2id_ecp = s2id.resumo.ecp;
+});
+data.area_queimada = MAPBIOMAS_BURNED_AREA;
 data.atualizado_em = new Date().toISOString();
 data.status = buildStatuses(data);
 data.fontes.alertas_geo = "Cemaden";
@@ -247,11 +326,11 @@ data.automacao = {
   alertas_cemaden: "automatico_horario",
   avisos_inmet: "automatico_horario",
   seca_iis3: "automatico_mensal_consultado_horariamente",
-  s2id: "estrutura_preparada_consulta_oficial",
+  s2id: "automatico_portal_publico",
   focos_calor: "automatico_inpe_diario",
   chuva: "manual",
   rios: "automatico_ana_sob_demanda",
-  area_queimada: "manual"
+  area_queimada: "referencia_consolidada_mapbiomas_colecao_3_2023"
 };
 
 await writeFile(DATA_FILE, `${JSON.stringify(data, null, 2)}\n`, "utf8");

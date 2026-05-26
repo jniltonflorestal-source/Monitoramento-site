@@ -1,10 +1,10 @@
 {
-  "atualizado_em": "2026-05-26T08:37:52.975Z",
+  "atualizado_em": "2026-05-26T10:51:43.002Z",
   "resumo": {
     "alertas_cemaden_to": 0,
     "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
     "estacoes_fluviometricas_ana": null,
-    "focos_calor_24h": 61,
+    "focos_calor_24h": 128,
     "area_queimada_ano_ha": 245000,
     "chuva_24h_mm": 18.4,
     "estacoes_operando": 32,
@@ -17,7 +17,10 @@
         "detail": "Perigo Potencial | 2026-05-26 12:00 até 2026-05-26 18:00",
         "location": "Abreulândia, Araguacema, Arapoema, Caseara, Couto Magalhães, Juarina e mais 4 municipio(s)."
       }
-    ]
+    ],
+    "municipios_s2id_vigentes": 5,
+    "municipios_s2id_se": 5,
+    "municipios_s2id_ecp": 0
   },
   "status": [
     {
@@ -35,7 +38,7 @@
     {
       "icon": "flame",
       "label": "Focos de calor",
-      "description": "61 focos registrados no arquivo diário do INPE",
+      "description": "128 focos registrados no arquivo diário do INPE",
       "value": "Ativo"
     },
     {
@@ -60,11 +63,11 @@
     "alertas_cemaden": "automatico_horario",
     "avisos_inmet": "automatico_horario",
     "seca_iis3": "automatico_mensal_consultado_horariamente",
-    "s2id": "estrutura_preparada_consulta_oficial",
+    "s2id": "automatico_portal_publico",
     "focos_calor": "automatico_inpe_diario",
     "chuva": "manual",
     "rios": "automatico_ana_sob_demanda",
-    "area_queimada": "manual"
+    "area_queimada": "referencia_consolidada_mapbiomas_colecao_3_2023"
   },
   "seca": {
     "produto": "IIS3",
@@ -2254,7 +2257,632 @@
         "satelite": "NPP-375D",
         "data_hora_gmt": "2026-05-26 04:12:00",
         "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.78904,
+        "longitude": -46.47499,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.21984,
+        "longitude": -47.54173,
+        "municipio": "CENTENÁRIO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.71504,
+        "longitude": -47.91392,
+        "municipio": "ITACAJÁ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.23255,
+        "longitude": -48.09927,
+        "municipio": "PARANÃ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.61489,
+        "longitude": -47.90395,
+        "municipio": "CHAPADA DA NATIVIDADE",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.04144,
+        "longitude": -47.3349,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.97535,
+        "longitude": -47.98216,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.30159,
+        "longitude": -48.58557,
+        "municipio": "RIO DOS BOIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.72174,
+        "longitude": -47.91501,
+        "municipio": "ITACAJÁ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.98205,
+        "longitude": -47.98324,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.44658,
+        "longitude": -47.29138,
+        "municipio": "RIO SONO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.17611,
+        "longitude": -46.83535,
+        "municipio": "ALMAS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.63238,
+        "longitude": -48.33252,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.23293,
+        "longitude": -46.6071,
+        "municipio": "TAGUATINGA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.49211,
+        "longitude": -48.66145,
+        "municipio": "MIRANORTE",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.9787,
+        "longitude": -47.9827,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.47646,
+        "longitude": -48.90895,
+        "municipio": "PUGMIL",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.53499,
+        "longitude": -48.24536,
+        "municipio": "TOCANTÍNIA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.71839,
+        "longitude": -47.91446,
+        "municipio": "ITACAJÁ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.66094,
+        "longitude": -49.72377,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.97812,
+        "longitude": -47.98628,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.63295,
+        "longitude": -48.32892,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.50525,
+        "longitude": -48.92523,
+        "municipio": "PUGMIL",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.63572,
+        "longitude": -48.33308,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.45665,
+        "longitude": -47.82298,
+        "municipio": "RIO SONO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.03813,
+        "longitude": -47.33435,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.97099,
+        "longitude": -47.87751,
+        "municipio": "APARECIDA DO RIO NEGRO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2296,
+        "longitude": -46.60656,
+        "municipio": "TAGUATINGA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.23198,
+        "longitude": -48.10282,
+        "municipio": "PARANÃ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.67863,
+        "longitude": -47.04956,
+        "municipio": "LIZARDA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.62903,
+        "longitude": -48.33195,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.2948,
+        "longitude": -48.58444,
+        "municipio": "RIO DOS BOIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.97021,
+        "longitude": -46.7916,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.3022,
+        "longitude": -48.58189,
+        "municipio": "RIO DOS BOIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.29202,
+        "longitude": -48.58018,
+        "municipio": "RIO DOS BOIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.78849,
+        "longitude": -46.47854,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.04019,
+        "longitude": -48.68233,
+        "municipio": "MIRACEMA DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.97028,
+        "longitude": -47.37748,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6363,
+        "longitude": -48.32948,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.55544,
+        "longitude": -48.35307,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.04806,
+        "longitude": -47.33597,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.47707,
+        "longitude": -48.90524,
+        "municipio": "PUGMIL",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.45982,
+        "longitude": -46.5212,
+        "municipio": "TAGUATINGA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.30559,
+        "longitude": -48.58245,
+        "municipio": "RIO DOS BOIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.29541,
+        "longitude": -48.58075,
+        "municipio": "RIO DOS BOIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.45927,
+        "longitude": -46.5248,
+        "municipio": "TAGUATINGA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.44358,
+        "longitude": -47.88407,
+        "municipio": "PARANÃ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.30499,
+        "longitude": -48.58614,
+        "municipio": "RIO DOS BOIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.972,
+        "longitude": -47.98162,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.96727,
+        "longitude": -46.79095,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.16174,
+        "longitude": -46.8186,
+        "municipio": "ALMAS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-05-26 04:29:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.63856,
+        "longitude": -48.33292,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-05-26 05:18:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6324,
+        "longitude": -48.32763,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-05-26 05:18:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.63805,
+        "longitude": -48.33308,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-05-26 05:18:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.98252,
+        "longitude": -47.98895,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-05-26 05:18:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0383,
+        "longitude": -47.3373,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-05-26 05:18:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.97694,
+        "longitude": -47.98317,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-05-26 05:18:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.61689,
+        "longitude": -47.9054,
+        "municipio": "CHAPADA DA NATIVIDADE",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-05-26 05:18:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.63186,
+        "longitude": -48.33236,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-05-26 05:18:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.63238,
+        "longitude": -48.33221,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-05-26 05:18:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.97717,
+        "longitude": -47.986,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-05-26 05:18:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.98333,
+        "longitude": -47.98699,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-05-26 05:18:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.9831,
+        "longitude": -47.98418,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-05-26 05:18:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.29604,
+        "longitude": -48.58281,
+        "municipio": "RIO DOS BOIS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-05-26 05:18:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.63295,
+        "longitude": -48.32749,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-05-26 05:18:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.30201,
+        "longitude": -48.58361,
+        "municipio": "RIO DOS BOIS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-05-26 05:18:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.30801,
+        "longitude": -48.58429,
+        "municipio": "RIO DOS BOIS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-05-26 05:18:00",
+        "bioma": "Cerrado"
       }
     ]
+  },
+  "erros_atualizacao": {},
+  "s2id": {
+    "fonte": "S2ID / SEDEC-MIDR",
+    "consulta": "https://s2id.mi.gov.br/rest/portal/reconhecimentos",
+    "reconhecimentos_vigentes": [
+      {
+        "municipio": "Esperantina",
+        "geocodigo": "1707405",
+        "protocolo": "TO-F-1707405-13214-20260316",
+        "cobrade": "13214",
+        "desastre": "Tempestade Local/Convectiva - Chuvas Intensas",
+        "situacao": "Situação de Emergência (SE)",
+        "decreto": "035/2026",
+        "data_decreto": "16/03/2026",
+        "portaria": "1260",
+        "vigencia": "12/09/2026",
+        "latitude": -5.343,
+        "longitude": -48.511
+      },
+      {
+        "municipio": "Monte do Carmo",
+        "geocodigo": "1713601",
+        "protocolo": "TO-F-1713601-13214-20260305",
+        "cobrade": "13214",
+        "desastre": "Tempestade Local/Convectiva - Chuvas Intensas",
+        "situacao": "Situação de Emergência (SE)",
+        "decreto": "29/2026",
+        "data_decreto": "11/03/2026",
+        "portaria": "1095",
+        "vigencia": "07/09/2026",
+        "latitude": -10.763,
+        "longitude": -48.109
+      },
+      {
+        "municipio": "Palmas",
+        "geocodigo": "1721000",
+        "protocolo": "TO-F-1721000-13215-20260108",
+        "cobrade": "13215",
+        "desastre": "Tempestade Local/Convectiva - Vendaval",
+        "situacao": "Situação de Emergência (SE)",
+        "decreto": "2.840",
+        "data_decreto": "10/01/2026",
+        "portaria": "323",
+        "vigencia": "09/07/2026",
+        "latitude": -10.167,
+        "longitude": -48.333
+      },
+      {
+        "municipio": "Sandolândia",
+        "geocodigo": "1718840",
+        "protocolo": "TO-F-1718840-12200-20260301",
+        "cobrade": "12200",
+        "desastre": "Enxurradas",
+        "situacao": "Situação de Emergência (SE)",
+        "decreto": "46/2026",
+        "data_decreto": "10/03/2026",
+        "portaria": "911",
+        "vigencia": "06/09/2026",
+        "latitude": -12.537,
+        "longitude": -49.925
+      },
+      {
+        "municipio": "Talismã",
+        "geocodigo": "1720978",
+        "protocolo": "TO-F-1720978-13214-20260301",
+        "cobrade": "13214",
+        "desastre": "Tempestade Local/Convectiva - Chuvas Intensas",
+        "situacao": "Situação de Emergência (SE)",
+        "decreto": "  012/2026",
+        "data_decreto": "23/03/2026",
+        "portaria": "1128",
+        "vigencia": "19/09/2026",
+        "latitude": -12.795,
+        "longitude": -49.093
+      }
+    ],
+    "resumo": {
+      "se": 5,
+      "ecp": 0,
+      "federal": 5
+    }
+  },
+  "area_queimada": {
+    "fonte": "MapBiomas Fogo - Coleção 3",
+    "ano_referencia": 2023,
+    "area_queimada_ha": 1427011,
+    "unidade": "ha",
+    "natureza": "Dado anual consolidado, diferente dos focos recentes do INPE."
   }
 }
