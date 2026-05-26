@@ -31,16 +31,28 @@ async function findLatestInpeCsv() {
   return `${INPE_DAILY_DIR}${files[files.length - 1]}`;
 }
 
-async function countTocantinsFires() {
+async function fetchTocantinsFires() {
   const csvUrl = await findLatestInpeCsv();
   const response = await fetch(csvUrl);
   if (!response.ok) throw new Error("CSV diario do INPE indisponivel");
 
   const rows = parseCsv(await response.text());
-  return rows.filter((row) => {
-    const state = String(row.estado || row.Estado || row.uf || row.UF || "").toUpperCase();
-    return state === "TOCANTINS" || state === "TO";
-  }).length;
+  const points = rows
+    .filter((row) => {
+      const state = String(row.estado || row.Estado || row.uf || row.UF || "").toUpperCase();
+      return state === "TOCANTINS" || state === "TO";
+    })
+    .map((row) => ({
+      latitude: Number(row.lat),
+      longitude: Number(row.lon),
+      municipio: row.municipio,
+      satelite: row.satelite,
+      data_hora_gmt: row.data_hora_gmt,
+      bioma: row.bioma
+    }))
+    .filter((point) => Number.isFinite(point.latitude) && Number.isFinite(point.longitude));
+
+  return { count: points.length, points, csvUrl };
 }
 
 async function fetchTocantinsAlerts() {
@@ -209,7 +221,13 @@ function buildStatuses(data) {
 }
 
 const data = JSON.parse(await readFile(DATA_FILE, "utf8"));
-data.resumo.focos_calor_24h = await countTocantinsFires();
+const fireSummary = await fetchTocantinsFires();
+data.resumo.focos_calor_24h = fireSummary.count;
+data.focos_calor = {
+  fonte: "INPE Queimadas",
+  csv_url: fireSummary.csvUrl,
+  pontos_24h: fireSummary.points
+};
 const alertSummary = await fetchTocantinsAlerts();
 data.resumo.alertas_cemaden_to = alertSummary.count;
 data.resumo.alertas_cemaden_to_nivel_maximo = alertSummary.highest;
