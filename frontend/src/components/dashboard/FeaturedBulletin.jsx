@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Download, FileText } from "lucide-react";
+import { ArrowRight, Download, ExternalLink, FileText } from "lucide-react";
 import { checkPublicationFile, getPublicacoes, resolvePublicPath } from "../../services/publications";
 
 export function FeaturedBulletin() {
@@ -21,6 +21,7 @@ export function FeaturedBulletin() {
 
   const fileHref = resolvePublicPath(publication?.arquivo);
   const mapsHref = publication?.mapasHref || "#mapa-prioritario";
+  const isPdf = String(fileHref || "").toLowerCase().includes(".pdf");
 
   return (
     <section className="featured-bulletin" id="boletins">
@@ -34,11 +35,14 @@ export function FeaturedBulletin() {
         {fileAvailable && fileHref ? (
           <>
             <a className="primary-button" href={fileHref} target="_blank" rel="noreferrer">
-              <FileText aria-hidden="true" /> Ler relatório
+              {isPdf ? <FileText aria-hidden="true" /> : <ExternalLink aria-hidden="true" />}
+              {isPdf ? "Ler relatório" : "Abrir notícia oficial"}
             </a>
-            <a href={fileHref} download>
-              <Download aria-hidden="true" /> Baixar PDF
-            </a>
+            {isPdf && (
+              <a href={fileHref} download>
+                <Download aria-hidden="true" /> Baixar PDF
+              </a>
+            )}
           </>
         ) : (
           <span className="publication-disabled">Arquivo ainda não disponível</span>

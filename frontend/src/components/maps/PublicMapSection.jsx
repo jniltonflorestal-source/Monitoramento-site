@@ -70,7 +70,7 @@ function buildRainStats(stations, summary) {
     maxLabel: maxStation ? `${maxStation.city} | ${maxStation.name}` : "Sem estação de destaque",
     sourceBreakdown: summary?.sourceBreakdown || {},
     topSource: Object.entries(summary?.sourceBreakdown || {})
-      .sort((first, second) => (second[1].count || 0) - (first[1].count || 0))[0]?.[0] || "Fonte em integração",
+      .sort((first, second) => ((second[1].count || 0) || (second[1].registeredCount || 0)) - ((first[1].count || 0) || (first[1].registeredCount || 0)))[0]?.[0] || "Fonte em integração",
     withRain: stations.filter((station) => Number(station.amount || 0) > 0).length,
     above10: stations.filter((station) => Number(station.amount || 0) >= 10).length,
     above30: stations.filter((station) => Number(station.amount || 0) >= 30).length,
@@ -290,15 +290,24 @@ export function PublicMapSection({
                 <div><dt>Acima de 50 mm</dt><dd>{rainStats.above50}</dd></div>
               </dl>
               {rainSummary?.updatedAt && <small>Atualização: {rainSummary.updatedAt}</small>}
-              <small>Fonte integrada: CEMADEN. Heatmap observacional baseado nos pontos consultados.</small>
+              <small>Fonte integrada: CEMADEN, INMET e ANA quando houver leitura 24h disponível. Heatmap observacional baseado nos pontos consultados. SEMARH em estrutura de integração.</small>
               <div className="rain-source-breakdown" aria-label="Estações por fonte">
                 <strong>Por fonte</strong>
                 {["CEMADEN", "INMET", "ANA", "SEMARH"].map((source) => {
                   const item = rainStats.sourceBreakdown[source];
+                  const count = item?.count || 0;
+                  const registered = item?.registeredCount || 0;
+                  const label = item?.status === "ready"
+                    ? `${count} estação${count === 1 ? "" : "ões"} com leitura`
+                    : item?.status === "catalog"
+                      ? `${registered} estação${registered === 1 ? "" : "ões"} cadastradas; leitura indisponível`
+                      : item?.status === "error"
+                        ? "Consulta indisponível"
+                        : item?.message || "Fonte em integração";
                   return (
                     <span key={source}>
                       <b>{source}</b>
-                      {item?.status === "ready" ? `${item.count} estação${item.count === 1 ? "" : "ões"}` : "Fonte em integração"}
+                      {label}
                     </span>
                   );
                 })}
