@@ -19,6 +19,17 @@ const legends = {
       ["alert", "Alerta"],
       ["danger", "Emergência"]
     ]
+  },
+  drought: {
+    title: "Seca municipal",
+    note: "Índice Integrado de Seca",
+    items: [
+      ["normal", "Sem seca"],
+      ["attention", "Fraca"],
+      ["alert", "Moderada"],
+      ["danger", "Severa"],
+      ["drought-extreme", "Extrema"]
+    ]
   }
 };
 

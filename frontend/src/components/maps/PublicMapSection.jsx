@@ -3,6 +3,7 @@ import { Flame, Layers3, MapPinned, Waves } from "lucide-react";
 import { CircleMarker, GeoJSON, MapContainer, Popup, TileLayer } from "react-leaflet";
 import { getAnaStationReading } from "../../services/ana";
 import { buildMapSearchResults } from "../../services/mapSearch";
+import { getRainForecastPoints } from "../../services/rainForecast";
 import { FloatingMapLegend } from "./FloatingMapLegend";
 import { LayerSelector } from "./LayerSelector";
 import { MapBiomasFireOverlay } from "./MapBiomasFireOverlay";
@@ -12,12 +13,14 @@ import { MapViewportController } from "./MapViewportController";
 import { RainModeTabs } from "./RainModeTabs";
 
 const priorityLayers = [
+  { id: "drought", label: "Seca" },
   { id: "rain", label: "Chuva" },
   { id: "rivers", label: "Rios" },
   { id: "fire", label: "Focos de calor" },
   { id: "emergency", label: "SE / ECP" }
 ];
 const priorityLayerAnchors = {
+  drought: "seca",
   rain: "chuva",
   rivers: "rios",
   fire: "fogo",
@@ -80,6 +83,42 @@ function trendText(readingState, riverReading) {
   return "Classificação oficial em integração";
 }
 
+function normalizeName(value) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase("pt-BR");
+}
+
+const droughtColors = {
+  "Sem seca": "#dceee4",
+  Fraca: "#ffe66d",
+  Moderada: "#f59a23",
+  Severa: "#d73027",
+  Extrema: "#7a1d45",
+  Excepcional: "#4d1630"
+};
+
+function droughtTone(classe) {
+  return droughtColors[classe] || "#c8d4df";
+}
+
+function buildDroughtCounts(municipalities = []) {
+  return municipalities.reduce((counts, city) => {
+    const key = city.classe || "Sem informação";
+    counts[key] = (counts[key] || 0) + 1;
+    return counts;
+  }, {});
+}
+
+function formatDate(value) {
+  if (!value) return "Sem data";
+  return new Date(value).toLocaleString("pt-BR", { dateStyle: "short" });
+}
+
+const satelliteTime = "default";
+const satelliteUrl = `https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/GOES-East_ABI_GeoColor/default/${satelliteTime}/GoogleMapsCompatible_Level7/{z}/{y}/{x}.png`;
+
 function SelectedSearchMarker({ result }) {
   const markerRef = useRef(null);
 
@@ -120,7 +159,8 @@ export function PublicMapSection({
   droughtSummary = null
 }) {
   const [tocantinsBoundary, setTocantinsBoundary] = useState(null);
-  const [activeLayer, setActiveLayer] = useState("rain");
+  const [municipalBoundary, setMunicipalBoundary] = useState(null);
+  const [activeLayer, setActiveLayer] = useState("drought");
   const [selectedRiver, setSelectedRiver] = useState(null);
   const [readingState, setReadingState] = useState("idle");
   const [riverReading, setRiverReading] = useState(null);
@@ -129,14 +169,25 @@ export function PublicMapSection({
   const [centerRequest, setCenterRequest] = useState(0);
   const [showBurnedArea, setShowBurnedArea] = useState(false);
   const [rainMode, setRainMode] = useState("observed");
+  const [forecastState, setForecastState] = useState({ state: "idle", points: [] });
 
   const searchResults = useMemo(() => buildMapSearchResults(activeLayer, {
     rainStations,
     riverStations,
     firePoints,
-    emergencyPoints
-  }, searchQuery), [activeLayer, emergencyPoints, firePoints, rainStations, riverStations, searchQuery]);
+    emergencyPoints,
+    droughtMunicipalities: droughtSummary?.municipalities || []
+  }, searchQuery), [activeLayer, droughtSummary, emergencyPoints, firePoints, rainStations, riverStations, searchQuery]);
   const rainStats = useMemo(() => buildRainStats(rainStations, rainSummary), [rainStations, rainSummary]);
+  const forecastPoints = forecastState.points || [];
+  const droughtByName = useMemo(() => {
+    const entries = droughtSummary?.municipalities || [];
+    return new Map(entries.map((city) => [normalizeName(city.nome), city]));
+  }, [droughtSummary]);
+  const droughtCounts = useMemo(
+    () => buildDroughtCounts(droughtSummary?.municipalities || []),
+    [droughtSummary]
+  );
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/tocantins_ibge.geojson`)
@@ -144,6 +195,35 @@ export function PublicMapSection({
       .then(setTocantinsBoundary)
       .catch(() => setTocantinsBoundary(null));
   }, []);
+
+  useEffect(() => {
+    if (variant !== "priority") return;
+    fetch(`${import.meta.env.BASE_URL}data/tocantins_municipios.geojson`)
+      .then((response) => (response.ok ? response.json() : null))
+      .then(setMunicipalBoundary)
+      .catch(() => setMunicipalBoundary(null));
+  }, [variant]);
+
+  useEffect(() => {
+    if (activeLayer !== "rain" || !["forecast24", "forecast48"].includes(rainMode)) return undefined;
+    let active = true;
+    setForecastState({ state: "loading", points: [] });
+    getRainForecastPoints(rainMode)
+      .then((result) => {
+        if (active) setForecastState(result);
+      })
+      .catch(() => {
+        if (active) setForecastState({
+          state: "error",
+          points: [],
+          message: "Não foi possível carregar a previsão no momento.",
+          updatedAt: new Date().toISOString()
+        });
+      });
+    return () => {
+      active = false;
+    };
+  }, [activeLayer, rainMode]);
 
   useEffect(() => {
     if (variant !== "priority") return undefined;
@@ -208,11 +288,52 @@ export function PublicMapSection({
               {rainSummary?.updatedAt && <small>Atualização: {rainSummary.updatedAt}</small>}
               <small>Fonte integrada: CEMADEN. Heatmap observacional baseado nos pontos consultados.</small>
             </>
+          ) : ["forecast24", "forecast48"].includes(rainMode) ? (
+            <>
+              <h4>{rainMode === "forecast24" ? "Previsão 24h" : "Previsão 48h"}</h4>
+              <span className="forecast-status">{forecastState.state === "ready" ? "Camada ativa" : "Atualizando"}</span>
+              {forecastState.state === "loading" && <p>Carregando previsão...</p>}
+              {forecastState.state === "error" && <p>Não foi possível carregar a previsão no momento.</p>}
+              {forecastState.state === "ready" && (
+                <dl>
+                  <div><dt>Maior previsão</dt><dd>{formatNumber(forecastState.maximum?.amount || 0, " mm")}</dd></div>
+                  <div><dt>Ponto de destaque</dt><dd>{forecastState.maximum?.city || "Sem destaque"}</dd></div>
+                  <div><dt>Acima de 10 mm</dt><dd>{forecastState.above10}</dd></div>
+                  <div><dt>Acima de 30 mm</dt><dd>{forecastState.above30}</dd></div>
+                  <div><dt>Acima de 50 mm</dt><dd>{forecastState.above50}</dd></div>
+                  <div><dt>Período</dt><dd>{forecastState.period}</dd></div>
+                </dl>
+              )}
+              <small>Fonte: Open-Meteo. Confirme alertas e avisos nos canais oficiais.</small>
+            </>
           ) : (
             <>
-              <h4>{rainMode === "forecast24" ? "Previsão 24h em integração" : rainMode === "forecast48" ? "Previsão 48h em integração" : "Satélite em integração"}</h4>
-              <p>Esta camada está preparada para receber fonte oficial. Até a integração, use o observado 24h como dado disponível.</p>
+              <h4>Satélite GOES-East</h4>
+              <p>Camada visual de apoio para nebulosidade/condição atmosférica. Não substitui aviso oficial.</p>
+              <small className="satellite-credit">Fonte: NASA GIBS / GOES-East ABI GeoColor.</small>
             </>
+          )}
+        </div>
+      )}
+      {activeLayer === "drought" && (
+        <div className="map-summary-card drought-map-summary">
+          <p className="eyebrow">Resumo da seca</p>
+          <h4>{droughtSummary?.value || "Camada municipal de seca em integração"}</h4>
+          {droughtSummary?.state === "ready" ? (
+            <>
+              <dl>
+                <div><dt>Total analisado</dt><dd>{droughtSummary.municipalities?.length || 0}</dd></div>
+                <div><dt>Sem seca</dt><dd>{droughtCounts["Sem seca"] || 0}</dd></div>
+                <div><dt>Seca fraca</dt><dd>{droughtCounts.Fraca || 0}</dd></div>
+                <div><dt>Seca moderada</dt><dd>{droughtCounts.Moderada || 0}</dd></div>
+                <div><dt>Seca grave</dt><dd>{droughtCounts.Severa || 0}</dd></div>
+                <div><dt>Seca extrema</dt><dd>{droughtCounts.Extrema || 0}</dd></div>
+              </dl>
+              <small>Mais severos: {droughtSummary.summary?.municipios_criticos?.join(", ") || "Sem destaque"}</small>
+              <small>Fonte: {droughtSummary.source} | referência {formatDate(droughtSummary.reference)}</small>
+            </>
+          ) : (
+            <p>Dados municipais de seca ainda não disponíveis.</p>
           )}
         </div>
       )}
@@ -354,7 +475,15 @@ export function PublicMapSection({
             />
           )}
           <TileLayer attribution="&copy; OpenStreetMap" url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-          {tocantinsBoundary && (
+          {variant === "priority" && activeLayer === "rain" && rainMode === "satellite" && (
+            <TileLayer
+              attribution="NASA GIBS / GOES-East"
+              url={satelliteUrl}
+              opacity={0.72}
+              maxZoom={7}
+            />
+          )}
+          {tocantinsBoundary && activeLayer !== "drought" && (
             <GeoJSON
               data={tocantinsBoundary}
               style={{
@@ -364,6 +493,39 @@ export function PublicMapSection({
                 weight: 2.4
               }}
             />
+          )}
+          {variant === "priority" && activeLayer === "drought" && municipalBoundary && (
+            <GeoJSON
+              key={`drought-${droughtSummary?.reference || "fallback"}`}
+              data={municipalBoundary}
+              style={(feature) => {
+                const city = droughtByName.get(normalizeName(feature?.properties?.nome || feature?.properties?.name));
+                return {
+                  color: "#ffffff",
+                  fillColor: droughtTone(city?.classe),
+                  fillOpacity: city ? 0.72 : 0.2,
+                  weight: 0.8
+                };
+              }}
+              onEachFeature={(feature, layer) => {
+                const city = droughtByName.get(normalizeName(feature?.properties?.nome || feature?.properties?.name));
+                const code = feature?.properties?.codarea;
+                const title = city?.nome || `Município IBGE ${code}`;
+                layer.bindPopup(`
+                  <strong>${title}</strong><br/>
+                  Grau de seca: ${city?.classe || "Dados municipais de seca ainda não disponíveis"}<br/>
+                  Tendência: ${droughtSummary?.summary?.agravaram ? "Consultar resumo estadual" : "Não informada"}<br/>
+                  Referência: ${city?.referencia ? formatDate(city.referencia) : formatDate(droughtSummary?.reference)}<br/>
+                  Fonte: ${droughtSummary?.source || "Monitor de Secas / CEMADEN"}
+                `);
+              }}
+            />
+          )}
+          {variant === "priority" && activeLayer === "drought" && !municipalBoundary && (
+            <div className="map-mode-placeholder">
+              <strong>Camada municipal de seca em integração</strong>
+              <span>Não foi possível carregar a malha municipal neste momento.</span>
+            </div>
           )}
           {variant === "priority" && activeLayer === "rain" && rainMode === "observed" && rainStations.map((station) => (
             <CircleMarker
@@ -378,6 +540,22 @@ export function PublicMapSection({
           {variant === "priority" && activeLayer === "rain" && rainMode === "observed" && rainStations.map((station) => (
             <CircleMarker key={station.code} center={[station.latitude, station.longitude]} radius={station.amount >= 30 ? 9 : station.amount >= 10 ? 7 : 5} pathOptions={{ color: station.amount >= 30 ? "#d73027" : station.amount >= 10 ? "#f59a23" : "#1e5a8a", fillOpacity: 0.84, weight: 2 }}>
               <Popup><strong>{station.city}</strong><br />{station.name}<br />Acumulado 24h: {formatNumber(station.amount, " mm")}<br />Faixa: {rainTone(station.amount)}</Popup>
+            </CircleMarker>
+          ))}
+          {variant === "priority" && activeLayer === "rain" && ["forecast24", "forecast48"].includes(rainMode) && forecastPoints.map((point) => (
+            <CircleMarker
+              key={point.id}
+              center={[point.latitude, point.longitude]}
+              radius={point.amount >= 30 ? 10 : point.amount >= 10 ? 8 : 6}
+              pathOptions={{ color: rainColor(point.amount), fillColor: rainColor(point.amount), fillOpacity: 0.86, weight: 2 }}
+            >
+              <Popup>
+                <strong>{point.city}</strong><br />
+                {point.region}<br />
+                Previsão: {formatNumber(point.amount, " mm")}<br />
+                Período: {point.period}<br />
+                Fonte: {point.source}
+              </Popup>
             </CircleMarker>
           ))}
           {variant === "priority" && activeLayer === "rivers" && riverStations.map((station) => (
@@ -420,10 +598,10 @@ export function PublicMapSection({
           )}
         </MapContainer>
           <FloatingMapLegend activeLayer={activeLayer} rainMode={rainMode} />
-          {activeLayer === "rain" && rainMode !== "observed" && (
+          {activeLayer === "rain" && ["forecast24", "forecast48"].includes(rainMode) && forecastState.state !== "ready" && (
             <div className="map-mode-placeholder">
-              <strong>{rainMode === "forecast24" ? "Previsão 24h" : rainMode === "forecast48" ? "Previsão 48h" : "Satélite"}</strong>
-              <span>{rainMode === "satellite" ? "Imagem de satélite em integração" : "Camada de previsão em desenvolvimento"}</span>
+              <strong>{rainMode === "forecast24" ? "Previsão 24h" : "Previsão 48h"}</strong>
+              <span>{forecastState.state === "loading" ? "Carregando previsão..." : "Não foi possível carregar a previsão no momento."}</span>
             </div>
           )}
         </div>

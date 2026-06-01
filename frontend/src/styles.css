@@ -1164,6 +1164,27 @@ h1 {
   color: #40566b;
   font-size: .82rem;
 }
+.drought-map-summary {
+  border-left-color: #7a1d45;
+}
+.forecast-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  background: #eaf3f8;
+  color: var(--blue);
+  font-size: .72rem;
+  font-weight: 800;
+}
+.satellite-credit {
+  display: block;
+  padding: 8px;
+  border-radius: 5px;
+  background: #edf4fa;
+  color: var(--blue);
+}
 .map-search {
   position: relative;
   display: grid;
@@ -1278,6 +1299,7 @@ h1 {
 .legend-swatch.alert,
 .legend-swatch.fire { background: var(--orange); }
 .legend-swatch.danger { background: var(--red); }
+.legend-swatch.drought-extreme { background: #7a1d45; }
 .legend-swatch.burned-area {
   border-radius: 3px;
   background: #742b35;
@@ -1441,6 +1463,34 @@ h1 {
   color: var(--muted);
   line-height: 1.52;
 }
+.technical-map-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--orange);
+  border-radius: 7px;
+  background: #ffffff;
+}
+.technical-map-link h3 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 1.2rem;
+}
+.technical-map-link p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.48;
+}
+.technical-map-link small {
+  display: block;
+  margin-top: 9px;
+  color: var(--blue);
+  font-weight: 700;
+}
 
 .guidance-grid {
   display: grid;
@@ -1571,6 +1621,10 @@ footer a { color: #ffffff; text-decoration: none; font-weight: 700; }
   .publication-grid .publication-card { grid-template-columns: auto 1fr; }
   .publication-grid article a,
   .publication-grid .publication-link { grid-column: 2; }
+  .technical-map-link {
+    display: grid;
+    gap: 14px;
+  }
   footer {
     flex-direction: column;
     align-items: start;

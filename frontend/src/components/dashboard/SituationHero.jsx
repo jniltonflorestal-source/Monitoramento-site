@@ -25,10 +25,10 @@ export function SituationHero({ snapshot }) {
       </p>
       <div className="cards-grid hero-cards">
         <AlertasVigentesCard data={snapshot.alerts} />
-        <EmergenciaCalamidadeCard data={snapshot.emergency} />
+        <FogoCard data={snapshot.fire} />
         <Chuva24hCard data={snapshot.rain} />
         <RiosMonitoradosCard data={snapshot.rivers} />
-        <FogoCard data={snapshot.fire} />
+        <EmergenciaCalamidadeCard data={snapshot.emergency} />
         <SecaCard data={snapshot.drought} />
       </div>
     </section>
