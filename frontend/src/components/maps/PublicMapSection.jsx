@@ -68,6 +68,9 @@ function buildRainStats(stations, summary) {
     total: stations.length,
     maximum,
     maxLabel: maxStation ? `${maxStation.city} | ${maxStation.name}` : "Sem estação de destaque",
+    sourceBreakdown: summary?.sourceBreakdown || {},
+    topSource: Object.entries(summary?.sourceBreakdown || {})
+      .sort((first, second) => (second[1].count || 0) - (first[1].count || 0))[0]?.[0] || "Fonte em integração",
     withRain: stations.filter((station) => Number(station.amount || 0) > 0).length,
     above10: stations.filter((station) => Number(station.amount || 0) >= 10).length,
     above30: stations.filter((station) => Number(station.amount || 0) >= 30).length,
@@ -280,6 +283,7 @@ export function PublicMapSection({
                 <div><dt>Estações consultadas</dt><dd>{rainStats.total}</dd></div>
                 <div><dt>Maior acumulado</dt><dd>{rainStats.value}</dd></div>
                 <div><dt>Destaque</dt><dd>{rainStats.maxLabel}</dd></div>
+                <div><dt>Maior fonte integrada</dt><dd>{rainStats.topSource}</dd></div>
                 <div><dt>Com chuva</dt><dd>{rainStats.withRain}</dd></div>
                 <div><dt>Acima de 10 mm</dt><dd>{rainStats.above10}</dd></div>
                 <div><dt>Acima de 30 mm</dt><dd>{rainStats.above30}</dd></div>
@@ -287,6 +291,18 @@ export function PublicMapSection({
               </dl>
               {rainSummary?.updatedAt && <small>Atualização: {rainSummary.updatedAt}</small>}
               <small>Fonte integrada: CEMADEN. Heatmap observacional baseado nos pontos consultados.</small>
+              <div className="rain-source-breakdown" aria-label="Estações por fonte">
+                <strong>Por fonte</strong>
+                {["CEMADEN", "INMET", "ANA", "SEMARH"].map((source) => {
+                  const item = rainStats.sourceBreakdown[source];
+                  return (
+                    <span key={source}>
+                      <b>{source}</b>
+                      {item?.status === "ready" ? `${item.count} estação${item.count === 1 ? "" : "ões"}` : "Fonte em integração"}
+                    </span>
+                  );
+                })}
+              </div>
             </>
           ) : ["forecast24", "forecast48"].includes(rainMode) ? (
             <>
@@ -539,7 +555,7 @@ export function PublicMapSection({
           ))}
           {variant === "priority" && activeLayer === "rain" && rainMode === "observed" && rainStations.map((station) => (
             <CircleMarker key={station.code} center={[station.latitude, station.longitude]} radius={station.amount >= 30 ? 9 : station.amount >= 10 ? 7 : 5} pathOptions={{ color: station.amount >= 30 ? "#d73027" : station.amount >= 10 ? "#f59a23" : "#1e5a8a", fillOpacity: 0.84, weight: 2 }}>
-              <Popup><strong>{station.city}</strong><br />{station.name}<br />Acumulado 24h: {formatNumber(station.amount, " mm")}<br />Faixa: {rainTone(station.amount)}</Popup>
+              <Popup><strong>{station.city}</strong><br />{station.name}<br />Acumulado 24h: {formatNumber(station.amount, " mm")}<br />Fonte: {station.fonte || station.source || "CEMADEN"}<br />Faixa: {rainTone(station.amount)}</Popup>
             </CircleMarker>
           ))}
           {variant === "priority" && activeLayer === "rain" && ["forecast24", "forecast48"].includes(rainMode) && forecastPoints.map((point) => (

@@ -4,7 +4,6 @@ import { SituationHero } from "./SituationHero";
 import { OfficialAlertsSection } from "./OfficialAlertsSection";
 import { FeaturedBulletin } from "./FeaturedBulletin";
 import { RecentBulletins } from "./RecentBulletins";
-import { TechnicalPanelsSection } from "./TechnicalPanelsSection";
 import { RecommendationsSection } from "./RecommendationsSection";
 import { OfficialSourcesSection } from "./OfficialSourcesSection";
 import { AboutCenterSection } from "./AboutCenterSection";
@@ -47,7 +46,6 @@ export function SituationDashboard() {
       </Suspense>
       <FeaturedBulletin />
       <RecentBulletins />
-      <TechnicalPanelsSection drought={snapshot.drought} />
       <RecommendationsSection />
       <OfficialSourcesSection />
       <AboutCenterSection />
