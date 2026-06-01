@@ -1,10 +1,10 @@
 {
-  "atualizado_em": "2026-06-01T00:11:47.876Z",
+  "atualizado_em": "2026-06-01T06:10:28.088Z",
   "resumo": {
     "alertas_cemaden_to": 0,
     "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
     "estacoes_fluviometricas_ana": null,
-    "focos_calor_24h": 0,
+    "focos_calor_24h": 4,
     "area_queimada_ano_ha": 245000,
     "chuva_24h_mm": 18.4,
     "estacoes_operando": 32,
@@ -32,8 +32,8 @@
     {
       "icon": "flame",
       "label": "Focos de calor",
-      "description": "0 focos registrados no arquivo diário do INPE",
-      "value": "Sem foco"
+      "description": "4 focos registrados no arquivo diário do INPE",
+      "value": "Ativo"
     },
     {
       "icon": "radio-tower",
@@ -1763,7 +1763,40 @@
   "focos_calor": {
     "fonte": "INPE Queimadas",
     "csv_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/focos_diario_br_20260601.csv",
-    "pontos_24h": []
+    "pontos_24h": [
+      {
+        "latitude": -8.7262,
+        "longitude": -48.311699,
+        "municipio": "GUARAÍ",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-06-01 00:15:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.7286,
+        "longitude": -48.3232,
+        "municipio": "GUARAÍ",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-06-01 00:15:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.7311,
+        "longitude": -48.334702,
+        "municipio": "GUARAÍ",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-06-01 00:15:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.7384,
+        "longitude": -48.321098,
+        "municipio": "GUARAÍ",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-06-01 00:15:00",
+        "bioma": "Cerrado"
+      }
+    ]
   },
   "erros_atualizacao": {
     "s2id": "Portal S2ID indisponivel"
@@ -1856,7 +1889,7 @@
     "mes_final": 4,
     "periodo": "Janeiro a abril de 2026",
     "area_queimada_ha": 13035.81,
-    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/41d77b1f4b3dcf5dc8e0d61c22834073-5907b8c7fb08ea89590899a1bb6c8baf/tiles/{z}/{x}/{y}",
+    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/41d77b1f4b3dcf5dc8e0d61c22834073-d66cce375b53da7f04440987a044967f/tiles/{z}/{x}/{y}",
     "unidade": "ha",
     "natureza": "Cicatrizes de área queimada mapeadas pelo Monitor do Fogo."
   }
