@@ -40,6 +40,7 @@ async function fetchTocantinsFires() {
   const response = await fetch(csvUrl);
   if (!response.ok) throw new Error("CSV diario do INPE indisponivel");
 
+  const referenciaArquivo = csvUrl.match(/focos_diario_br_(\d{8})\.csv/)?.[1] || null;
   const rows = parseCsv(await response.text());
   const points = rows
     .filter((row) => {
@@ -56,7 +57,7 @@ async function fetchTocantinsFires() {
     }))
     .filter((point) => Number.isFinite(point.latitude) && Number.isFinite(point.longitude));
 
-  return { count: points.length, points, csvUrl };
+  return { count: points.length, points, csvUrl, referenciaArquivo };
 }
 
 async function fetchTocantinsAlerts() {
@@ -311,22 +312,46 @@ function buildStatuses(data) {
 const data = JSON.parse(await readFile(DATA_FILE, "utf8"));
 data.erros_atualizacao = {};
 
-async function updateAvailableSource(label, fetcher, applyResult) {
+async function updateAvailableSource(label, fetcher, applyResult, applyError = null) {
   try {
     const result = await fetcher();
     applyResult(result);
   } catch (error) {
     data.erros_atualizacao[label] = error.message;
+    if (applyError) applyError(error);
     console.warn(`[${label}] ${error.message}. Mantendo ultimo dado valido quando disponivel.`);
   }
 }
 
 await updateAvailableSource("focos_calor_inpe", fetchTocantinsFires, (fireSummary) => {
+  const updatedAt = new Date().toISOString();
   data.resumo.focos_calor_24h = fireSummary.count;
   data.focos_calor = {
+    status: "ok",
+    quantidade24h: fireSummary.count,
+    quantidadeMapa: fireSummary.points.length,
+    periodo: "Arquivo diario INPE",
     fonte: "INPE Queimadas",
+    atualizadoEm: updatedAt,
+    referenciaArquivo: fireSummary.referenciaArquivo,
     csv_url: fireSummary.csvUrl,
-    pontos_24h: fireSummary.points
+    observacao: "Dados filtrados para o Tocantins a partir do arquivo diario Brasil do INPE Queimadas.",
+    pontos_24h: fireSummary.points,
+    features: fireSummary.points.map((point) => ({
+      type: "Feature",
+      geometry: {
+        type: "Point",
+        coordinates: [point.longitude, point.latitude]
+      },
+      properties: point
+    }))
+  };
+}, (error) => {
+  data.focos_calor = {
+    ...(data.focos_calor || {}),
+    status: "erro",
+    erro: error.message,
+    observacao: "Nao foi possivel atualizar o arquivo diario do INPE nesta execucao."
   };
 });
 await updateAvailableSource("alertas_cemaden", fetchTocantinsAlerts, (alertSummary) => {

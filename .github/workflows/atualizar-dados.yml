@@ -7,10 +7,15 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   atualizar-dados:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Baixar repositorio
         uses: actions/checkout@v4
@@ -20,7 +25,7 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Atualizar dados do INPE
+      - name: Atualizar dados do INPE e alertas CEMADEN
         run: node scripts/update-monitoring.mjs
 
       - name: Publicar alteracoes
@@ -30,3 +35,21 @@ jobs:
           git add dados-monitoramento.json
           git diff --cached --quiet || git commit -m "Atualizar dados automaticos de monitoramento"
           git push
+
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+
+      - name: Preparar arquivos publicados
+        run: |
+          mkdir site
+          cp .nojekyll index.html manifest.webmanifest registerSW.js sw.js workbox-9c191d2f.js dados-monitoramento.json boletim_serie_historica_infografico.pdf site/
+          cp -r assets data icons site/
+
+      - name: Enviar artefato do Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Publicar GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
