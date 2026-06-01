@@ -1,0 +1,41 @@
+name: Gerar boletim diario
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "0 11 * * *"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  gerar-boletim:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Gerar boletim como rascunho
+        run: node scripts/generate-boletim.js
+
+      - name: Publicar rascunho para revisao
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add frontend/public/data/boletim-atual.json frontend/public/data/boletins.json frontend/public/data/publicacoes.json frontend/public/docs/boletins
+          git diff --cached --quiet || git commit -m "Gerar rascunho do boletim diario"
+          git push
+
+      # Etapas futuras:
+      # - buscar dados de fontes oficiais;
+      # - gerar PDF;
+      # - adicionar boletim ao historico;
+      # - atualizar publicacoes.json;
+      # - publicar no GitHub Pages apos validacao humana.

@@ -1,74 +1,35 @@
 {
-  "destaque": {
-    "id": "relatorio-incendios-florestais-oficial",
-    "titulo": "Relatório técnico contra incêndios florestais",
-    "descricao": "Publicação oficial da Defesa Civil do Tocantins para subsidiar planejamento e ações integradas contra incêndios florestais.",
-    "tipo": "Relatório técnico",
-    "categoria": "Relatórios técnicos",
-    "data": "2026-05-27",
-    "periodoReferencia": "2025/2026",
-    "status": "publicado",
-    "fonteDados": "Defesa Civil do Tocantins",
-    "arquivoPdf": "",
-    "rota": "https://www.to.gov.br/defesacivil/noticias/defesa-civil-do-tocantins-divulga-relatorio-tecnico-para-subsidiar-planejamento-e-acoes-integradas-contra-incendios-florestais/5barcdp80apo",
-    "tags": ["incêndios florestais", "áreas queimadas", "focos de calor", "planejamento"]
-  },
-  "publicacoes": [
+  "relatoriosTecnicos": [
+    {
+      "id": "relatorio-incendios-florestais-2025",
+      "titulo": "Incêndios Florestais no Tocantins - 2025",
+      "descricao": "Panorama técnico sobre áreas queimadas, focos de calor, resposta operacional e impactos ambientais no Estado.",
+      "tipo": "Relatório Técnico",
+      "categoria": "Incêndios florestais",
+      "dataPublicacao": "2026-05-27",
+      "periodoReferencia": "2025",
+      "arquivoPdf": "",
+      "rota": "https://www.to.gov.br/defesacivil/noticias/defesa-civil-do-tocantins-divulga-relatorio-tecnico-para-subsidiar-planejamento-e-acoes-integradas-contra-incendios-florestais/5barcdp80apo",
+      "responsavel": "Centro de Monitoramento da Defesa Civil do Tocantins",
+      "status": "publicado",
+      "tags": ["incêndios florestais", "áreas queimadas", "focos de calor", "resposta operacional"]
+    }
+  ],
+  "boletinsDefesaCivil": [
     {
       "id": "boletim-hidrometeorologico-atual",
-      "titulo": "Boletim Hidrometeorológico",
-      "descricao": "Panorama de chuva, rios, previsão, alertas, focos de calor, seca e recomendações para o Tocantins.",
-      "tipo": "Boletim digital",
-      "categoria": "Boletins hidrometeorológicos",
-      "data": "2026-06-01",
+      "titulo": "Boletim Hidrometeorológico de Hoje",
+      "numero": "001/2026",
+      "descricao": "Panorama diário de chuva, rios, previsão meteorológica, alertas, focos de calor, seca e recomendações à população.",
+      "tipo": "Boletim da Defesa Civil",
+      "subtipo": "Boletim Hidrometeorológico",
+      "dataEmissao": "2026-06-01",
       "periodoReferencia": "Monitoramento em atualização contínua",
-      "status": "em atualização",
-      "fonteDados": "CEMADEN / INMET / ANA / INPE / S2ID / IDAP",
       "arquivoPdf": "",
       "rota": "#boletim-hidrometeorologico",
-      "tags": ["chuva", "rios", "alertas", "previsão", "seca"]
-    },
-    {
-      "id": "boletins-informativos-defesa-civil",
-      "titulo": "Boletins informativos da Defesa Civil",
-      "descricao": "Publicações oficiais para acompanhamento das condições de risco e ações de proteção e defesa civil no Estado.",
-      "tipo": "Boletim informativo",
-      "categoria": "Boletins informativos",
-      "data": "2026-05-27",
-      "periodoReferencia": "2026",
-      "status": "publicado",
-      "fonteDados": "Defesa Civil do Tocantins",
-      "arquivoPdf": "",
-      "rota": "https://www.to.gov.br/defesacivil/boletins-informativos-2026/1879973eka9p",
-      "tags": ["defesa civil", "monitoramento", "boletins"]
-    },
-    {
-      "id": "relatorios-tecnicos-defesa-civil",
-      "titulo": "Relatórios técnicos",
-      "descricao": "Análises, mapas e informações técnicas para gestores municipais e equipes de resposta.",
-      "tipo": "Relatório técnico",
-      "categoria": "Relatórios técnicos",
-      "data": "2026-05-27",
-      "periodoReferencia": "2026",
-      "status": "publicado",
-      "fonteDados": "Defesa Civil do Tocantins",
-      "arquivoPdf": "",
-      "rota": "https://www.to.gov.br/defesacivil/relatorios-tecnicos/qsp8mdxm2db",
-      "tags": ["relatórios", "gestão de risco", "planejamento"]
-    },
-    {
-      "id": "mapas-produtos-geoespaciais",
-      "titulo": "Mapas e produtos geoespaciais",
-      "descricao": "Produtos cartográficos, mapas de risco e painéis territoriais do Centro de Monitoramento.",
-      "tipo": "Mapa técnico",
-      "categoria": "Mapas e produtos geoespaciais",
-      "data": "2026-06-01",
-      "periodoReferencia": "Atualização contínua",
       "status": "em atualização",
-      "fonteDados": "Centro de Monitoramento / fontes oficiais integradas",
-      "arquivoPdf": "",
-      "rota": "#mapa-prioritario",
-      "tags": ["mapas", "território", "painéis", "geoprocessamento"]
+      "fontes": ["INMET", "CEMADEN", "ANA", "INPE Queimadas", "S2ID", "IDAP"],
+      "tags": ["chuva", "rios", "previsão", "alertas", "hidrometeorologia", "seca"]
     }
   ]
 }

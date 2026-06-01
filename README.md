@@ -2,16 +2,44 @@
 
 Site público para acompanhamento de alertas, chuva, rios, focos de calor, seca, boletins e relatórios técnicos.
 
-## Como adicionar novo relatório ou boletim
+## Biblioteca de publicações
 
-1. Coloque o PDF na pasta adequada:
-   - Relatórios: `frontend/public/docs/relatorios/`
-   - Boletins: `frontend/public/docs/boletins/`
-   - Mapas ou produtos geoespaciais: `frontend/public/docs/mapas/`
-2. Atualize `frontend/public/data/publicacoes.json`.
-3. Faça commit e push para o GitHub.
-4. Aguarde o GitHub Pages publicar.
-5. Confira no site se os links funcionam.
+A seção `#boletins` funciona como uma biblioteca pública da Defesa Civil, separando dois tipos de documentos:
+
+- **Relatórios Técnicos**: documentos analíticos produzidos sob demanda para subsidiar gestão de riscos, resposta a desastres, monitoramento ambiental e tomada de decisão institucional.
+- **Boletins da Defesa Civil**: publicações periódicas, especialmente o Boletim Hidrometeorológico, com dados monitorados e histórico por data.
+
+Arquivos principais:
+
+- `frontend/public/data/publicacoes.json`: índice público usado pela biblioteca da home.
+- `frontend/public/data/relatorios-tecnicos.json`: acervo separado de relatórios.
+- `frontend/public/data/boletins.json`: histórico de boletins publicados ou em atualização.
+- `frontend/public/data/boletim-atual.json`: dados estruturados do boletim hidrometeorológico digital.
+
+Pastas de documentos:
+
+- `frontend/public/docs/relatorios/`
+- `frontend/public/docs/boletins/`
+- `frontend/public/docs/mapas/`
+- `frontend/public/docs/anexos/`
+
+## Como adicionar novo relatório técnico
+
+1. Coloque o PDF em `frontend/public/docs/relatorios/`.
+2. Cadastre o documento em `frontend/public/data/publicacoes.json`, dentro de `relatoriosTecnicos`.
+3. Se quiser manter um acervo separado, replique ou sincronize o item em `frontend/public/data/relatorios-tecnicos.json`.
+4. Informe `tipo: "Relatório Técnico"` e uma categoria, como `Incêndios florestais`, `Estiagem e seca`, `Chuvas intensas`, `Recursos hídricos`, `Áreas de risco`, `Geoprocessamento` ou `Resposta operacional`.
+5. Faça commit e push.
+6. Aguarde o GitHub Pages publicar e confira a seção `#boletins`.
+
+## Como adicionar boletim da Defesa Civil
+
+1. Coloque o PDF em `frontend/public/docs/boletins/`.
+2. Cadastre o boletim em `frontend/public/data/publicacoes.json`, dentro de `boletinsDefesaCivil`.
+3. Atualize também `frontend/public/data/boletins.json` para manter o histórico.
+4. Informe `tipo: "Boletim da Defesa Civil"` e, quando for o caso, `subtipo: "Boletim Hidrometeorológico"`.
+5. Use status `rascunho`, `em revisão`, `em atualização` ou `publicado`.
+6. Faça commit e push.
 
 ## Padrão de nome de arquivo
 
@@ -19,63 +47,37 @@ Use nomes curtos, sem espaços e com ano/data:
 
 ```text
 relatorio-incendios-florestais-tocantins-2025.pdf
-boletim-defesa-civil-2026-05-27.pdf
+boletim-hidrometeorologico-2026-05-27.pdf
 mapa-seca-tocantins-2026-04.pdf
 ```
 
-## Estrutura da central de publicações
-
-O arquivo `frontend/public/data/publicacoes.json` controla a central **Publicações do Centro de Monitoramento**.
-
-Estrutura principal:
-
-- `destaque`: publicação principal exibida em maior evidência.
-- `publicacoes`: lista de boletins digitais, PDFs, relatórios e mapas.
-
-Categorias usadas na página:
-
-- Boletins informativos
-- Boletins hidrometeorológicos
-- Relatórios técnicos
-- Mapas e produtos geoespaciais
-
-Cada publicação pode conter:
-
-- `titulo`
-- `descricao`
-- `tipo`
-- `categoria`
-- `data`
-- `periodoReferencia`
-- `status`
-- `fonteDados`
-- `rota`
-- `arquivoPdf`
-- `tags`
-
-Quando não houver PDF, deixe `arquivoPdf` vazio. O site exibirá `PDF ainda não disponível` e usará `rota` para o botão **Ler**.
-
-## Como atualizar o Boletim Hidrometeorológico manualmente
+## Como atualizar o Boletim Hidrometeorológico digital
 
 1. Edite `frontend/public/data/boletim-atual.json`.
 2. Atualize `numero`, `dataEmissao`, `periodoReferencia`, `resumoExecutivo` e os blocos temáticos.
 3. Revise dados, fontes e recomendações.
-4. Use `status: "rascunho"` enquanto o conteúdo ainda estiver em validação.
-5. Altere para `status: "publicado"` apenas após revisão institucional.
-6. Faça commit e push.
-7. Confira a seção `#boletim-hidrometeorologico` no site publicado.
+4. Use `status: "rascunho"` enquanto o conteúdo estiver em validação.
+5. Use `status: "em revisão"` quando estiver pronto para conferência institucional.
+6. Altere para `status: "publicado"` apenas após validação.
+7. Faça commit e push.
+8. Confira a seção `#boletim-hidrometeorologico` no site publicado.
 
-## Como adicionar PDF do boletim
+## Publicações sem PDF
 
-1. Coloque o PDF em `frontend/public/docs/boletins/`.
-2. Atualize `frontend/public/data/publicacoes.json` com título, data, tags e caminho do arquivo.
-3. Confira se o botão do boletim abre o arquivo no site.
+Quando um PDF ainda não existir, deixe `arquivoPdf` vazio. O site mostrará `PDF ainda não disponível` e usará `rota` para o botão **Ler**, quando houver uma página digital ou notícia oficial.
 
-## Automação futura do boletim
+## Automação futura dos boletins
 
-O esboço `scripts/update-boletim-data.js` prepara o fluxo para buscar dados oficiais e atualizar `frontend/public/data/boletim-atual.json` como rascunho.
+O arquivo `scripts/generate-boletim.js` prepara o fluxo futuro de geração automática ou semiautomática do boletim diário:
 
-O workflow `.github/workflows/update-boletim.yml` pode ser acionado manualmente e está documentado para uma agenda futura. A regra institucional é: a automação prepara dados, mas boletins oficiais precisam de revisão humana antes de publicação.
+1. Coletar dados de fontes oficiais.
+2. Atualizar `frontend/public/data/boletim-atual.json`.
+3. Gerar PDF em `frontend/public/docs/boletins/`.
+4. Adicionar o boletim ao histórico em `frontend/public/data/boletins.json`.
+5. Atualizar `frontend/public/data/publicacoes.json`.
+6. Criar um rascunho para revisão humana.
+
+O workflow `.github/workflows/generate-boletim.yml` pode ser acionado manualmente e está preparado para agendamento futuro. Como boletins são publicações oficiais, a regra é: automação gera rascunho, mas publicação exige revisão humana.
 
 Fontes previstas para integração:
 
@@ -88,3 +90,5 @@ Fontes previstas para integração:
 - IDAP
 - Monitor de Secas
 - MapBiomas Fogo
+
+Também existe o fluxo auxiliar `scripts/update-boletim-data.js` com o workflow `.github/workflows/update-boletim.yml`, voltado a atualizar o JSON do boletim atual como rascunho.

@@ -1,21 +1,39 @@
 const officialReportUrl = "https://www.to.gov.br/defesacivil/noticias/defesa-civil-do-tocantins-divulga-relatorio-tecnico-para-subsidiar-planejamento-e-acoes-integradas-contra-incendios-florestais/5barcdp80apo";
 
 const fallbackPublications = {
-  destaque: {
-    id: "relatorio-incendios-florestais-oficial",
-    titulo: "Relatório técnico contra incêndios florestais",
-    descricao: "Publicação oficial da Defesa Civil do Tocantins para subsidiar planejamento e ações integradas contra incêndios florestais.",
-    tipo: "Relatório técnico",
-    categoria: "Relatórios técnicos",
-    data: "2026-05-27",
-    periodoReferencia: "2025/2026",
-    status: "publicado",
-    fonteDados: "Defesa Civil do Tocantins",
-    arquivoPdf: "",
-    rota: officialReportUrl,
-    tags: ["incêndios florestais", "relatório técnico", "Defesa Civil"]
-  },
-  publicacoes: []
+  relatoriosTecnicos: [
+    {
+      id: "relatorio-incendios-florestais-2025",
+      titulo: "Incêndios Florestais no Tocantins - 2025",
+      descricao: "Panorama técnico sobre áreas queimadas, focos de calor, resposta operacional e impactos ambientais no Estado.",
+      tipo: "Relatório Técnico",
+      categoria: "Incêndios florestais",
+      dataPublicacao: "2026-05-27",
+      periodoReferencia: "2025",
+      arquivoPdf: "",
+      rota: officialReportUrl,
+      responsavel: "Centro de Monitoramento da Defesa Civil do Tocantins",
+      status: "publicado",
+      tags: ["incêndios florestais", "áreas queimadas", "focos de calor"]
+    }
+  ],
+  boletinsDefesaCivil: [
+    {
+      id: "boletim-hidrometeorologico-atual",
+      titulo: "Boletim Hidrometeorológico de Hoje",
+      numero: "001/2026",
+      descricao: "Panorama diário de chuva, rios, previsão meteorológica, alertas, focos de calor, seca e recomendações à população.",
+      tipo: "Boletim da Defesa Civil",
+      subtipo: "Boletim Hidrometeorológico",
+      dataEmissao: "2026-06-01",
+      periodoReferencia: "Monitoramento em atualização contínua",
+      arquivoPdf: "",
+      rota: "#boletim-hidrometeorologico",
+      status: "em atualização",
+      fontes: ["INMET", "CEMADEN", "ANA", "INPE Queimadas", "S2ID", "IDAP"],
+      tags: ["chuva", "rios", "previsão", "alertas", "hidrometeorologia"]
+    }
+  ]
 };
 
 export function resolvePublicPath(path) {
@@ -43,39 +61,60 @@ export async function checkPublicationFile(path) {
   }
 }
 
-function fromLegacy(data) {
-  const publicacoes = [
-    ...(data.boletins || []).map((item) => ({ ...item, categoria: item.categoria || "Boletins informativos", rota: item.arquivo })),
-    ...(data.relatorios || []).map((item) => ({ ...item, categoria: item.categoria || "Relatórios técnicos", rota: item.arquivo })),
-    ...(data.mapas || []).map((item) => ({ ...item, categoria: item.categoria || "Mapas e produtos geoespaciais", rota: item.arquivo }))
-  ];
+function normalizeLegacyPublication(item, kind) {
+  if (kind === "relatorio") {
+    return {
+      id: item.id || item.titulo,
+      titulo: item.titulo,
+      descricao: item.descricao || item.subtitulo,
+      tipo: "Relatório Técnico",
+      categoria: item.categoria || "Relatórios técnicos",
+      dataPublicacao: item.data,
+      periodoReferencia: item.periodoReferencia || item.ano || "",
+      arquivoPdf: String(item.arquivo || "").toLowerCase().endsWith(".pdf") ? item.arquivo : "",
+      rota: item.rota || item.arquivo,
+      responsavel: item.responsavel || "Centro de Monitoramento da Defesa Civil do Tocantins",
+      status: item.status || "publicado",
+      tags: item.tags || []
+    };
+  }
+
   return {
-    destaque: data.destaque || {
-      id: "relatorio-destaque",
-      titulo: data.relatorioDestaque?.titulo,
-      descricao: data.relatorioDestaque?.subtitulo,
-      tipo: data.relatorioDestaque?.tipo,
-      categoria: "Relatórios técnicos",
-      data: data.relatorioDestaque?.data,
-      periodoReferencia: data.relatorioDestaque?.ano,
-      status: "publicado",
-      fonteDados: "Defesa Civil do Tocantins",
-      arquivoPdf: String(data.relatorioDestaque?.arquivo || "").toLowerCase().endsWith(".pdf") ? data.relatorioDestaque.arquivo : "",
-      rota: data.relatorioDestaque?.arquivo || officialReportUrl,
-      tags: data.relatorioDestaque?.tags || []
-    },
-    publicacoes
+    id: item.id || item.titulo,
+    titulo: item.titulo,
+    numero: item.numero || "",
+    descricao: item.descricao,
+    tipo: "Boletim da Defesa Civil",
+    subtipo: item.subtipo || item.tipo || "Boletim informativo",
+    dataEmissao: item.data,
+    periodoReferencia: item.periodoReferencia || "",
+    arquivoPdf: String(item.arquivo || "").toLowerCase().endsWith(".pdf") ? item.arquivo : "",
+    rota: item.rota || item.arquivo,
+    status: item.status || "publicado",
+    fontes: item.fontes || [item.fonteDados || "Defesa Civil do Tocantins"],
+    tags: item.tags || []
   };
 }
 
 export function normalizePublicacoes(data) {
-  if (Array.isArray(data?.publicacoes)) {
+  if (Array.isArray(data?.relatoriosTecnicos) || Array.isArray(data?.boletinsDefesaCivil)) {
     return {
-      destaque: data.destaque || fallbackPublications.destaque,
-      publicacoes: data.publicacoes
+      relatoriosTecnicos: data.relatoriosTecnicos || [],
+      boletinsDefesaCivil: data.boletinsDefesaCivil || []
     };
   }
-  return fromLegacy(data || fallbackPublications);
+
+  if (Array.isArray(data?.publicacoes)) {
+    return {
+      relatoriosTecnicos: [
+        ...(data.destaque ? [normalizeLegacyPublication(data.destaque, "relatorio")] : []),
+        ...data.publicacoes.filter((item) => String(item.tipo || "").toLowerCase().includes("relat")).map((item) => normalizeLegacyPublication(item, "relatorio"))
+      ],
+      boletinsDefesaCivil: data.publicacoes.filter((item) => !String(item.tipo || "").toLowerCase().includes("relat")).map((item) => normalizeLegacyPublication(item, "boletim"))
+    };
+  }
+
+  return fallbackPublications;
 }
 
 export async function getPublicacoes() {

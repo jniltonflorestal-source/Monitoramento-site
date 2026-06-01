@@ -5,6 +5,8 @@ const root = new URL("../", import.meta.url);
 const read = (path) => readFile(new URL(path, root), "utf8");
 
 await access(new URL("frontend/public/data/boletim-atual.json", root));
+await access(new URL("frontend/public/data/boletins.json", root));
+await access(new URL("frontend/public/data/relatorios-tecnicos.json", root));
 const boletim = JSON.parse(await read("frontend/public/data/boletim-atual.json"));
 
 for (const field of [
@@ -47,7 +49,8 @@ const dashboard = await read("frontend/src/components/dashboard/SituationDashboa
 assert.match(dashboard, /HydrometeorologicalBulletin/);
 
 const publications = JSON.parse(await read("frontend/public/data/publicacoes.json"));
-assert.ok(publications.publicacoes.some((item) => item.rota === "#boletim-hidrometeorologico"));
+assert.ok(publications.boletinsDefesaCivil.some((item) => item.rota === "#boletim-hidrometeorologico"));
+assert.ok(publications.relatoriosTecnicos.some((item) => item.tipo === "Relatório Técnico"));
 
 const styles = await read("frontend/src/styles.css");
 for (const snippet of [".hydro-bulletin", ".bulletin-paper", "@media print", ".bulletin-metrics"]) {
@@ -62,8 +65,17 @@ const workflow = await read(".github/workflows/update-boletim.yml");
 assert.match(workflow, /Preparar boletim hidrometeorologico/);
 assert.match(workflow, /revisao humana/);
 
+const generateScript = await read("scripts/generate-boletim.js");
+assert.match(generateScript, /boletim-atual\.json/);
+assert.match(generateScript, /rascunho/);
+
+const generateWorkflow = await read(".github/workflows/generate-boletim.yml");
+assert.match(generateWorkflow, /Gerar boletim diario/);
+assert.match(generateWorkflow, /revisao|validacao humana/);
+
 const readme = await read("README.md");
-assert.match(readme, /Como atualizar o Boletim Hidrometeorológico manualmente/);
+assert.match(readme, /Como atualizar o Boletim Hidrometeorológico digital/);
 assert.match(readme, /scripts\/update-boletim-data\.js/);
+assert.match(readme, /scripts\/generate-boletim\.js/);
 
 console.log("Boletim Hidrometeorológico digital validado.");
