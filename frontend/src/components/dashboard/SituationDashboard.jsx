@@ -2,9 +2,8 @@ import { lazy, Suspense, useEffect, useState } from "react";
 import { QuickActions } from "../layout/QuickActions";
 import { SituationHero } from "./SituationHero";
 import { OfficialAlertsSection } from "./OfficialAlertsSection";
-import { FeaturedBulletin } from "./FeaturedBulletin";
 import { HydrometeorologicalBulletin } from "./HydrometeorologicalBulletin";
-import { RecentBulletins } from "./RecentBulletins";
+import { PublicationsCenter } from "./PublicationsCenter";
 import { RecommendationsSection } from "./RecommendationsSection";
 import { OfficialSourcesSection } from "./OfficialSourcesSection";
 import { AboutCenterSection } from "./AboutCenterSection";
@@ -45,9 +44,8 @@ export function SituationDashboard() {
           droughtSummary={snapshot.drought}
         />
       </Suspense>
-      <FeaturedBulletin />
+      <PublicationsCenter />
       <HydrometeorologicalBulletin />
-      <RecentBulletins />
       <RecommendationsSection />
       <OfficialSourcesSection />
       <AboutCenterSection />

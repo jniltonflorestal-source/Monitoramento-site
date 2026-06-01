@@ -38,13 +38,13 @@ assert.match(map, /sourceBreakdown/);
 assert.match(map, /Por fonte/);
 assert.match(map, /leitura indisponível|Rede estadual em integração|Fonte em integração/);
 
-const featured = await read("frontend/src/components/dashboard/FeaturedBulletin.jsx");
-const recent = await read("frontend/src/components/dashboard/RecentBulletins.jsx");
-assert.match(featured, /Arquivo ainda não disponível/);
-assert.match(featured, /Abrir notícia oficial/);
-assert.match(recent, /Boletins informativos/);
-assert.match(recent, /RelatÃ³rios tÃ©cnicos|Relatórios técnicos/);
-assert.match(recent, /Mapas e produtos geoespaciais/);
+const center = await read("frontend/src/components/dashboard/PublicationsCenter.jsx");
+assert.match(center, /Publicações do Centro de Monitoramento/);
+assert.match(center, /Boletins informativos/);
+assert.match(center, /Boletins hidrometeorológicos/);
+assert.match(center, /Relatórios técnicos/);
+assert.match(center, /Mapas e produtos geoespaciais/);
+assert.match(center, /PDF ainda não disponível/);
 const publicationsService = await read("frontend/src/services/publications.js");
 assert.match(publicationsService, /publicacoes\.json/);
 
@@ -54,10 +54,9 @@ await access(new URL("frontend/public/docs/boletins", root));
 await access(new URL("frontend/public/docs/mapas", root));
 
 const publications = JSON.parse(await read("frontend/public/data/publicacoes.json"));
-assert.ok(publications.relatorioDestaque?.arquivo?.includes("www.to.gov.br/defesacivil/noticias/defesa-civil-do-tocantins-divulga-relatorio-tecnico"));
-assert.ok(Array.isArray(publications.boletins));
-assert.ok(Array.isArray(publications.relatorios));
-assert.ok(Array.isArray(publications.mapas));
+assert.ok(publications.destaque?.rota?.includes("www.to.gov.br/defesacivil/noticias/defesa-civil-do-tocantins-divulga-relatorio-tecnico"));
+assert.ok(Array.isArray(publications.publicacoes));
+assert.ok(publications.publicacoes.some((item) => item.categoria === "Boletins hidrometeorológicos"));
 
 const readme = await read("README.md");
 assert.match(readme, /Como adicionar novo relatÃ³rio ou boletim|Como adicionar novo relatório ou boletim/);

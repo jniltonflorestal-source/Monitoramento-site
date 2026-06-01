@@ -23,9 +23,37 @@ boletim-defesa-civil-2026-05-27.pdf
 mapa-seca-tocantins-2026-04.pdf
 ```
 
-## Estrutura de publicações
+## Estrutura da central de publicações
 
-O arquivo `frontend/public/data/publicacoes.json` controla o relatório em destaque, boletins, relatórios e mapas exibidos na página inicial. Assim, novas publicações podem ser adicionadas sem alterar componentes React.
+O arquivo `frontend/public/data/publicacoes.json` controla a central **Publicações do Centro de Monitoramento**.
+
+Estrutura principal:
+
+- `destaque`: publicação principal exibida em maior evidência.
+- `publicacoes`: lista de boletins digitais, PDFs, relatórios e mapas.
+
+Categorias usadas na página:
+
+- Boletins informativos
+- Boletins hidrometeorológicos
+- Relatórios técnicos
+- Mapas e produtos geoespaciais
+
+Cada publicação pode conter:
+
+- `titulo`
+- `descricao`
+- `tipo`
+- `categoria`
+- `data`
+- `periodoReferencia`
+- `status`
+- `fonteDados`
+- `rota`
+- `arquivoPdf`
+- `tags`
+
+Quando não houver PDF, deixe `arquivoPdf` vazio. O site exibirá `PDF ainda não disponível` e usará `rota` para o botão **Ler**.
 
 ## Como atualizar o Boletim Hidrometeorológico manualmente
 

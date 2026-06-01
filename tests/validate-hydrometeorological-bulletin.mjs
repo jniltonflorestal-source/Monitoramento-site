@@ -47,7 +47,7 @@ const dashboard = await read("frontend/src/components/dashboard/SituationDashboa
 assert.match(dashboard, /HydrometeorologicalBulletin/);
 
 const publications = JSON.parse(await read("frontend/public/data/publicacoes.json"));
-assert.ok(publications.boletins.some((item) => item.arquivo === "#boletim-hidrometeorologico"));
+assert.ok(publications.publicacoes.some((item) => item.rota === "#boletim-hidrometeorologico"));
 
 const styles = await read("frontend/src/styles.css");
 for (const snippet of [".hydro-bulletin", ".bulletin-paper", "@media print", ".bulletin-metrics"]) {
