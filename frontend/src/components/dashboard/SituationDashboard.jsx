@@ -3,6 +3,7 @@ import { QuickActions } from "../layout/QuickActions";
 import { SituationHero } from "./SituationHero";
 import { OfficialAlertsSection } from "./OfficialAlertsSection";
 import { FeaturedBulletin } from "./FeaturedBulletin";
+import { HydrometeorologicalBulletin } from "./HydrometeorologicalBulletin";
 import { RecentBulletins } from "./RecentBulletins";
 import { RecommendationsSection } from "./RecommendationsSection";
 import { OfficialSourcesSection } from "./OfficialSourcesSection";
@@ -45,6 +46,7 @@ export function SituationDashboard() {
         />
       </Suspense>
       <FeaturedBulletin />
+      <HydrometeorologicalBulletin />
       <RecentBulletins />
       <RecommendationsSection />
       <OfficialSourcesSection />

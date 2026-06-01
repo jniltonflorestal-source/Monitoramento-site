@@ -1,0 +1,96 @@
+{
+  "numero": "001/2026",
+  "dataEmissao": "2026-06-01T09:00:00-03:00",
+  "periodoReferencia": "Monitoramento hidrometeorológico em atualização contínua",
+  "status": "rascunho",
+  "responsavel": "Centro de Monitoramento da Defesa Civil do Tocantins",
+  "resumoExecutivo": "Boletim digital estruturado para acompanhamento público das condições de chuva, rios, fogo, seca e alertas oficiais no Tocantins. Alguns dados ainda dependem de integração automática e validação institucional.",
+  "situacaoGeral": {
+    "status": "atencao",
+    "texto": "Condições monitoradas sem indicação de situação crítica geral no boletim. Recomenda-se acompanhar os avisos oficiais e os canais da Defesa Civil."
+  },
+  "alertas": {
+    "status": "atencao",
+    "quantidade": 0,
+    "descricao": "Avisos oficiais devem ser confirmados nos canais emissores. Integração automática em revisão para IDAP, INMET e CEMADEN.",
+    "fonte": "IDAP / INMET / CEMADEN"
+  },
+  "previsaoTempo": {
+    "status": "integracao",
+    "descricao": "Previsão por municípios estratégicos em integração com fontes meteorológicas públicas.",
+    "fonte": "INMET / CPTEC-INPE / Open-Meteo"
+  },
+  "chuva": {
+    "estacoesConsultadas": 0,
+    "maiorAcumulado": "Dado em integração",
+    "municipioMaiorAcumulado": "Dado em integração",
+    "fonte": "CEMADEN / INMET / ANA / SEMARH",
+    "atualizadoEm": ""
+  },
+  "rios": {
+    "estacoesMonitoradas": 0,
+    "normal": 0,
+    "atencao": 0,
+    "alerta": 0,
+    "emergencia": 0,
+    "tendenciaPredominante": "Dado em integração",
+    "fonte": "ANA / Telemetria",
+    "atualizadoEm": ""
+  },
+  "usinas": [
+    {
+      "nome": "Usinas hidrelétricas do Tocantins",
+      "rio": "Dado em integração",
+      "vazaoDefluente": "Dado em integração",
+      "atualizadoEm": "",
+      "fonte": "Operadores / ONS / ANA"
+    }
+  ],
+  "focosCalor": {
+    "quantidade24h": 0,
+    "quantidadePeriodo": 0,
+    "periodo": "Últimas 24h",
+    "fonte": "INPE Queimadas",
+    "atualizadoEm": ""
+  },
+  "riscoFogo": {
+    "status": "integracao",
+    "descricao": "Risco de fogo em integração com bases oficiais e produtos de monitoramento ambiental.",
+    "fonte": "INPE / MapBiomas Fogo / CEMADEN"
+  },
+  "seca": {
+    "situacao": "Dado em integração",
+    "municipiosAfetados": 0,
+    "fonte": "Monitor de Secas / CEMADEN",
+    "atualizadoEm": ""
+  },
+  "recomendacoes": [
+    {
+      "tema": "Chuva forte e alagamentos",
+      "texto": "Evite atravessar áreas alagadas, enxurradas, pontes baixas ou passagens molhadas."
+    },
+    {
+      "tema": "Estiagem e baixa umidade",
+      "texto": "Beba água, evite exposição prolongada ao sol e redobre a atenção com crianças, idosos e pessoas vulneráveis."
+    },
+    {
+      "tema": "Incêndios florestais",
+      "texto": "Não utilize fogo em vegetação. Ao identificar fumaça ou chamas, acione o Corpo de Bombeiros pelo 193."
+    },
+    {
+      "tema": "Emergência",
+      "texto": "Em situação de risco imediato, acione a Defesa Civil pelo 199 ou o Corpo de Bombeiros pelo 193."
+    }
+  ],
+  "fontes": [
+    "INMET",
+    "CEMADEN",
+    "ANA",
+    "INPE Queimadas",
+    "CPTEC/INPE",
+    "S2ID",
+    "IDAP",
+    "Monitor de Secas",
+    "MapBiomas Fogo"
+  ]
+}

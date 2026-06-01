@@ -26,3 +26,37 @@ mapa-seca-tocantins-2026-04.pdf
 ## Estrutura de publicações
 
 O arquivo `frontend/public/data/publicacoes.json` controla o relatório em destaque, boletins, relatórios e mapas exibidos na página inicial. Assim, novas publicações podem ser adicionadas sem alterar componentes React.
+
+## Como atualizar o Boletim Hidrometeorológico manualmente
+
+1. Edite `frontend/public/data/boletim-atual.json`.
+2. Atualize `numero`, `dataEmissao`, `periodoReferencia`, `resumoExecutivo` e os blocos temáticos.
+3. Revise dados, fontes e recomendações.
+4. Use `status: "rascunho"` enquanto o conteúdo ainda estiver em validação.
+5. Altere para `status: "publicado"` apenas após revisão institucional.
+6. Faça commit e push.
+7. Confira a seção `#boletim-hidrometeorologico` no site publicado.
+
+## Como adicionar PDF do boletim
+
+1. Coloque o PDF em `frontend/public/docs/boletins/`.
+2. Atualize `frontend/public/data/publicacoes.json` com título, data, tags e caminho do arquivo.
+3. Confira se o botão do boletim abre o arquivo no site.
+
+## Automação futura do boletim
+
+O esboço `scripts/update-boletim-data.js` prepara o fluxo para buscar dados oficiais e atualizar `frontend/public/data/boletim-atual.json` como rascunho.
+
+O workflow `.github/workflows/update-boletim.yml` pode ser acionado manualmente e está documentado para uma agenda futura. A regra institucional é: a automação prepara dados, mas boletins oficiais precisam de revisão humana antes de publicação.
+
+Fontes previstas para integração:
+
+- INMET
+- CEMADEN
+- ANA
+- INPE Queimadas
+- CPTEC/INPE
+- S2ID
+- IDAP
+- Monitor de Secas
+- MapBiomas Fogo

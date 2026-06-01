@@ -1,0 +1,36 @@
+name: Preparar boletim hidrometeorologico
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "30 10 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  preparar-rascunho:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Atualizar JSON do boletim como rascunho
+        run: node scripts/update-boletim-data.js
+
+      - name: Publicar rascunho para revisao humana
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add frontend/public/data/boletim-atual.json
+          git diff --cached --quiet || git commit -m "Preparar rascunho do boletim hidrometeorologico"
+          git push
+
+      # Importante: boletins oficiais devem ser revisados pela equipe antes de
+      # alterar o campo "status" para "publicado". Este workflow prepara o
+      # rascunho, mas não substitui validação humana institucional.

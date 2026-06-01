@@ -43,7 +43,7 @@ jobs:
         run: |
           mkdir site
           cp .nojekyll index.html manifest.webmanifest registerSW.js sw.js workbox-9c191d2f.js dados-monitoramento.json boletim_serie_historica_infografico.pdf site/
-          cp -r assets data icons site/
+          cp -r assets data docs icons site/
 
       - name: Enviar artefato do Pages
         uses: actions/upload-pages-artifact@v3
