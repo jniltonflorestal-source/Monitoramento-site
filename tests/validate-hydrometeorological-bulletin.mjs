@@ -7,6 +7,7 @@ const read = (path) => readFile(new URL(path, root), "utf8");
 await access(new URL("frontend/public/data/boletim-atual.json", root));
 await access(new URL("frontend/public/data/boletins.json", root));
 await access(new URL("frontend/public/data/relatorios-tecnicos.json", root));
+await access(new URL("frontend/public/data/tocantins_municipios.geojson", root));
 const boletim = JSON.parse(await read("frontend/public/data/boletim-atual.json"));
 
 for (const field of [
@@ -38,8 +39,16 @@ for (const snippet of [
   "Boletim Hidrometeorológico",
   "Gerar Boletim Hidrometeorológico em PDF",
   "Resumo executivo",
-  "Meteorologia",
+  "Mapa de chuva observada 24h",
+  "Mapa de rios monitorados",
+  "Mapa de focos de calor",
+  "Mapa de seca",
+  "Maiores acumulados",
+  "Meteorologia por municípios estratégicos",
   "Fontes oficiais consultadas",
+  "TocantinsMiniMap",
+  "BulletinMapCard",
+  "tocantins_municipios.geojson",
   "getBoletimAtual",
   "window.print"
 ]) {
@@ -56,7 +65,18 @@ assert.ok(publications.boletinsDefesaCivil.every((item) => item.rota !== "#bolet
 assert.ok(publications.relatoriosTecnicos.some((item) => item.tipo === "Relatório Técnico"));
 
 const styles = await read("frontend/src/styles.css");
-for (const snippet of [".bulletin-generator-panel", ".generated-bulletin-root", "@media print", ".generated-bulletin-grid"]) {
+for (const snippet of [
+  ".bulletin-generator-panel",
+  ".generated-bulletin-root",
+  "@media print",
+  "size: A4",
+  ".generated-bulletin-grid",
+  ".generated-map-card",
+  ".generated-mini-map",
+  ".generated-map-legend",
+  ".generated-table",
+  ".page-break-before"
+]) {
   assert.ok(styles.includes(snippet), `styles.css precisa conter ${snippet}`);
 }
 
