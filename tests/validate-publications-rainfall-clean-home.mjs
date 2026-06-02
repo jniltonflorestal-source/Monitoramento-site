@@ -24,8 +24,10 @@ for (const snippet of [
   "SEMARH",
   "sourceBreakdown",
   "deduplicateRainStations",
-  "Estações cadastradas",
-  "Rede estadual em integração"
+  "Fonte em integração",
+  "Sem leitura válida",
+  "validCount",
+  "registeredCount"
 ]) {
   assert.ok(rainfall.includes(snippet), `rainfall.js precisa conter ${snippet}`);
 }
@@ -36,7 +38,7 @@ assert.match(cemaden, /getChuvaObservada24h/);
 const map = await read("frontend/src/components/maps/PublicMapSection.jsx");
 assert.match(map, /sourceBreakdown/);
 assert.match(map, /Por fonte/);
-assert.match(map, /leitura indisponível|Rede estadual em integração|Fonte em integração/);
+assert.match(map, /com leitura válida|Sem leitura válida|Fonte em integração/);
 
 const center = await read("frontend/src/components/dashboard/PublicationsCenter.jsx");
 assert.match(center, /Publicações da Defesa Civil/);

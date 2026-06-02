@@ -2,7 +2,11 @@ import { readFile, writeFile } from "node:fs/promises";
 
 const INPE_DAILY_DIR = "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/";
 const CEMADEN_ALERTS_URL = "https://painelalertas.cemaden.gov.br/wsAlertas2";
+const CEMADEN_RAIN_URL = "https://resources.cemaden.gov.br/dados/311_24.json";
 const INMET_WARNINGS_URL = "https://apiprevmet3.inmet.gov.br/avisos/ativos";
+const INMET_STATIONS_URL = "https://apitempo.inmet.gov.br/estacoes/T";
+const ANA_RAIN_INVENTORY_URL = "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroInventario?codEstDE=&codEstATE=&tpEst=2&nmEst=&nmRio=&codSubBacia=&codBacia=&nmMunicipio=&nmEstado=Tocantins&sgResp=&sgOper=&telemetrica=1";
+const ANA_READINGS_URL = "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/DadosHidrometeorologicos";
 const CEMADEN_DROUGHT_META_URL = "https://mapasecas.cemaden.gov.br/rest/product/meta/iis3";
 const CEMADEN_DROUGHT_WFS_URL = "https://secaswms.cemaden.gov.br/produtos/wfs";
 const S2ID_PORTAL_URL = "https://s2id.mi.gov.br/paginas/index.xhtml";
@@ -22,6 +26,51 @@ function parseCsv(text) {
       return row;
     }, {});
   });
+}
+
+function asNumber(value) {
+  const parsed = Number(String(value ?? "").replace(",", "."));
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+function normalizeRainStatus(amount) {
+  if (amount >= 50) return "intensa";
+  if (amount >= 30) return "forte";
+  if (amount >= 10) return "moderada";
+  if (amount > 0) return "fraca";
+  return "sem_chuva";
+}
+
+function normalizeRainStation(station, source, updatedAt) {
+  const amount = asNumber(station.amount ?? station.chuva24h) ?? 0;
+  return {
+    id: `${source}-${station.code || station.id || station.name || station.nome}`,
+    codigo: String(station.code || station.id || ""),
+    nome: String(station.nome || station.name || "Estacao de chuva"),
+    municipio: String(station.municipio || station.city || "Municipio nao informado"),
+    fonte: source,
+    latitude: Number(station.latitude),
+    longitude: Number(station.longitude),
+    chuva24h: amount,
+    atualizadoEm: station.atualizadoEm || updatedAt || null,
+    status: normalizeRainStatus(amount),
+    observacao: station.observacao || ""
+  };
+}
+
+function parseCemadenJsonp(text) {
+  const match = text.match(/^[^(]+\((.*)\)\s*;?$/s);
+  if (!match) throw new Error("Formato CEMADEN inesperado");
+  return JSON.parse(match[1]);
+}
+
+function xmlText(node, selector) {
+  const match = node.match(new RegExp(`<${selector}[^>]*>(.*?)</${selector}>`, "is"));
+  return match ? match[1].trim() : "";
+}
+
+function xmlTables(xmlTextValue) {
+  return [...xmlTextValue.matchAll(/<Table\b[^>]*>([\s\S]*?)<\/Table>/gi)].map((match) => match[1]);
 }
 
 async function findLatestInpeCsv() {
@@ -103,6 +152,227 @@ async function fetchTocantinsWeatherWarnings() {
     }));
 
   return { todayCount: today.length, futureCount: future.length, highest, details };
+}
+
+async function fetchCemadenRain24h() {
+  const response = await fetch(CEMADEN_RAIN_URL);
+  if (!response.ok) throw new Error("Chuva CEMADEN indisponivel");
+  const payload = parseCemadenJsonp(await response.text());
+  const record = Array.isArray(payload) ? payload[0] : null;
+  const stations = (record?.estacao || [])
+    .filter((station) =>
+      station.uf === "TO"
+      && station.status === 0
+      && station.idtipoestacao === 1
+      && Number.isFinite(Number(station.latitude))
+      && Number.isFinite(Number(station.longitude))
+    )
+    .map((station) => normalizeRainStation({
+      code: station.codestacao,
+      name: station.nomeestacao,
+      city: station.cidade,
+      latitude: station.latitude,
+      longitude: station.longitude,
+      amount: station.acumulado,
+      observacao: "Acumulado 24h informado pelo CEMADEN."
+    }, "CEMADEN", record?.atualizado || null));
+
+  return {
+    source: "CEMADEN",
+    status: "ready",
+    label: "Operando",
+    observacao: "Fonte operacional principal para chuva observada 24h.",
+    estacoesCadastradas: stations.length,
+    estacoesConsultadas: stations.length,
+    estacoesComLeitura: stations.length,
+    atualizadoEm: record?.atualizado || null,
+    estacoes: stations
+  };
+}
+
+function recentIsoDates(days = 3) {
+  return Array.from({ length: days }, (_, index) => {
+    const date = new Date();
+    date.setUTCDate(date.getUTCDate() - index);
+    return date.toISOString().slice(0, 10);
+  });
+}
+
+async function fetchInmetStationRain(station) {
+  const cutoff = Date.now() - 24 * 60 * 60 * 1000;
+  const allRows = [];
+  for (const date of recentIsoDates(3)) {
+    const response = await fetch(`https://apitempo.inmet.gov.br/estacao/dados/${date}/${station.code}`);
+    if (!response.ok) continue;
+    const rows = await response.json();
+    if (Array.isArray(rows)) allRows.push(...rows);
+  }
+  if (!allRows.length) return null;
+  const recentRows = allRows.filter((row) => {
+    const hour = String(row.HR_MEDICAO || "0000").padStart(4, "0");
+    const timestamp = new Date(`${row.DT_MEDICAO}T${hour.slice(0, 2)}:${hour.slice(2, 4)}:00Z`).getTime();
+    return Number.isFinite(timestamp) && timestamp >= cutoff;
+  });
+  if (!recentRows.length) return null;
+  const amount = recentRows.reduce((sum, row) => sum + (asNumber(row.CHUVA ?? row.chuva) ?? 0), 0);
+  const latest = recentRows[recentRows.length - 1];
+  return normalizeRainStation({
+    ...station,
+    amount,
+    atualizadoEm: [latest.DT_MEDICAO, latest.HR_MEDICAO].filter(Boolean).join(" "),
+    observacao: "Somatorio de precipitacao horaria nas ultimas 24h."
+  }, "INMET", [latest.DT_MEDICAO, latest.HR_MEDICAO].filter(Boolean).join(" "));
+}
+
+async function fetchInmetRain24h() {
+  const response = await fetch(INMET_STATIONS_URL);
+  if (!response.ok) throw new Error("Catalogo de estacoes INMET indisponivel");
+  const stations = (await response.json())
+    .filter((station) => station.SG_ESTADO === "TO" && station.CD_ESTACAO)
+    .map((station) => ({
+      code: station.CD_ESTACAO,
+      name: station.DC_NOME,
+      city: station.DC_NOME,
+      latitude: Number(station.VL_LATITUDE),
+      longitude: Number(station.VL_LONGITUDE)
+    }))
+    .filter((station) => Number.isFinite(station.latitude) && Number.isFinite(station.longitude));
+
+  const settled = await Promise.allSettled(stations.map(fetchInmetStationRain));
+  const observed = settled.map((item) => item.value).filter(Boolean);
+  return {
+    source: "INMET",
+    status: observed.length ? "ready" : "catalog",
+    label: observed.length ? "Operando" : "Sem leitura valida",
+    observacao: observed.length ? "Consulta server-side realizada pelo workflow." : "Fonte sem leituras validas nas ultimas 24h.",
+    estacoesCadastradas: stations.length,
+    estacoesConsultadas: stations.length,
+    estacoesComLeitura: observed.length,
+    atualizadoEm: observed[0]?.atualizadoEm || null,
+    estacoes: observed
+  };
+}
+
+function formatAnaDate(date) {
+  const day = String(date.getUTCDate()).padStart(2, "0");
+  const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+  return `${day}/${month}/${date.getUTCFullYear()}`;
+}
+
+function recentAnaPeriod() {
+  const end = new Date();
+  const start = new Date();
+  start.setUTCDate(end.getUTCDate() - 1);
+  return { start: formatAnaDate(start), end: formatAnaDate(end) };
+}
+
+async function fetchAnaRain24h() {
+  const response = await fetch(ANA_RAIN_INVENTORY_URL);
+  if (!response.ok) throw new Error("Inventario ANA indisponivel");
+  const inventoryXml = await response.text();
+  const stations = xmlTables(inventoryXml)
+    .map((node) => ({
+      code: xmlText(node, "Codigo"),
+      name: xmlText(node, "Nome") || "Estacao ANA",
+      city: xmlText(node, "nmMunicipio") || "Municipio nao informado",
+      latitude: asNumber(xmlText(node, "Latitude")),
+      longitude: asNumber(xmlText(node, "Longitude"))
+    }))
+    .filter((station) => station.code && station.latitude !== null && station.longitude !== null);
+
+  const { start, end } = recentAnaPeriod();
+  const settled = await Promise.allSettled(stations.map(async (station) => {
+    const params = new URLSearchParams({ codEstacao: station.code, dataInicio: start, dataFim: end });
+    const readingResponse = await fetch(`${ANA_READINGS_URL}?${params}`);
+    if (!readingResponse.ok) return null;
+    const rows = xmlTables(await readingResponse.text());
+    const amount = rows
+      .map((node) => asNumber(xmlText(node, "Chuva") || xmlText(node, "Precipitacao") || xmlText(node, "PrecipitacaoTotal")))
+      .filter((value) => value !== null)
+      .reduce((sum, value) => sum + value, 0);
+    if (!Number.isFinite(amount)) return null;
+    return normalizeRainStation({
+      ...station,
+      amount,
+      atualizadoEm: `${start} a ${end}`,
+      observacao: "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+    }, "ANA", `${start} a ${end}`);
+  }));
+  const observed = settled.map((item) => item.value).filter(Boolean);
+
+  return {
+    source: "ANA",
+    status: observed.length ? "ready" : "catalog",
+    label: observed.length ? "Operando" : "Sem leitura valida",
+    observacao: observed.length ? "Consulta server-side realizada pelo workflow." : "Estacoes cadastradas, mas sem leitura operacional de chuva nas ultimas 24h.",
+    estacoesCadastradas: stations.length,
+    estacoesConsultadas: stations.length,
+    estacoesComLeitura: observed.length,
+    atualizadoEm: observed[0]?.atualizadoEm || null,
+    estacoes: observed
+  };
+}
+
+async function fetchTocantinsRain24h() {
+  const sources = {};
+  const errors = {};
+  const collectors = [
+    ["CEMADEN", fetchCemadenRain24h],
+    ["INMET", fetchInmetRain24h],
+    ["ANA", fetchAnaRain24h]
+  ];
+
+  for (const [source, collector] of collectors) {
+    try {
+      sources[source] = await collector();
+    } catch (error) {
+      errors[source] = error.message;
+      sources[source] = {
+        source,
+        status: "error",
+        label: "Erro de consulta",
+        observacao: `Falha ao consultar a fonte no workflow: ${error.message}`,
+        estacoesCadastradas: 0,
+        estacoesConsultadas: 0,
+        estacoesComLeitura: 0,
+        atualizadoEm: null,
+        estacoes: []
+      };
+    }
+  }
+
+  sources.SEMARH = {
+    source: "SEMARH",
+    status: "integration",
+    label: "Fonte em integracao",
+    observacao: "Acesso/API nao configurado para consulta automatica publica.",
+    estacoesCadastradas: 0,
+    estacoesConsultadas: 0,
+    estacoesComLeitura: 0,
+    atualizadoEm: null,
+    estacoes: []
+  };
+
+  const allStations = Object.values(sources).flatMap((source) => source.estacoes || []);
+  const sorted = [...allStations].sort((a, b) => b.chuva24h - a.chuva24h);
+  const maximum = sorted[0];
+  return {
+    status: allStations.length ? "ok" : "sem_dado",
+    periodo: "ultimas 24h",
+    fonte: Object.values(sources).filter((source) => source.estacoesComLeitura > 0).map((source) => source.source).join(" / ") || "CEMADEN / INMET / ANA / SEMARH",
+    atualizadoEm: new Date().toISOString(),
+    maiorAcumulado: maximum?.chuva24h ?? 0,
+    estacaoMaiorAcumulado: maximum?.nome || null,
+    municipioMaiorAcumulado: maximum?.municipio || null,
+    estacoesCadastradas: Object.values(sources).reduce((sum, source) => sum + (source.estacoesCadastradas || 0), 0),
+    estacoesConsultadas: Object.values(sources).reduce((sum, source) => sum + (source.estacoesConsultadas || 0), 0),
+    estacoesComLeitura: allStations.length,
+    acima10: allStations.filter((station) => station.chuva24h >= 10).length,
+    acima30: allStations.filter((station) => station.chuva24h >= 30).length,
+    acima50: allStations.filter((station) => station.chuva24h >= 50).length,
+    fontes: sources,
+    erros: errors
+  };
 }
 
 function droughtClassification(level) {
@@ -364,6 +634,18 @@ await updateAvailableSource("avisos_inmet", fetchTocantinsWeatherWarnings, (warn
   data.resumo.avisos_inmet_to_severidade_maxima = warningSummary.highest;
   data.resumo.avisos_inmet_detalhes = warningSummary.details;
 });
+await updateAvailableSource("chuva_observada", fetchTocantinsRain24h, (rainSummary) => {
+  data.chuva_observada = rainSummary;
+  data.resumo.chuva_24h_mm = rainSummary.maiorAcumulado;
+  data.resumo.estacoes_operando = rainSummary.estacoesComLeitura;
+  data.fontes.chuva = rainSummary.fonte;
+}, (error) => {
+  data.chuva_observada = {
+    ...(data.chuva_observada || {}),
+    status: "erro",
+    observacao: `Nao foi possivel atualizar chuva observada nesta execucao: ${error.message}`
+  };
+});
 await updateAvailableSource("seca_iis3", fetchTocantinsDrought, (drought) => {
   data.seca = drought;
 });
@@ -388,7 +670,7 @@ data.automacao = {
   seca_iis3: "automatico_mensal_consultado_horariamente",
   s2id: "automatico_portal_publico",
   focos_calor: "automatico_inpe_diario",
-  chuva: "manual",
+  chuva: "automatico_cemaden_inmet_ana_com_fallback",
   rios: "automatico_ana_sob_demanda",
   area_queimada: "automatico_monitor_do_fogo"
 };

@@ -290,24 +290,34 @@ export function PublicMapSection({
                 <div><dt>Acima de 50 mm</dt><dd>{rainStats.above50}</dd></div>
               </dl>
               {rainSummary?.updatedAt && <small>Atualização: {rainSummary.updatedAt}</small>}
-              <small>Fonte integrada: CEMADEN, INMET e ANA quando houver leitura 24h disponível. Heatmap observacional baseado nos pontos consultados. SEMARH em estrutura de integração.</small>
+              <small>Fonte operacional principal: CEMADEN. INMET e ANA entram como fontes complementares quando houver leitura 24h válida ou base consolidada publicada. SEMARH permanece em estrutura de integração.</small>
               <div className="rain-source-breakdown" aria-label="Estações por fonte">
                 <strong>Por fonte</strong>
                 {["CEMADEN", "INMET", "ANA", "SEMARH"].map((source) => {
                   const item = rainStats.sourceBreakdown[source];
-                  const count = item?.count || 0;
+                  const count = item?.validCount ?? item?.count ?? 0;
                   const registered = item?.registeredCount || 0;
-                  const label = item?.status === "ready"
-                    ? `${count} estação${count === 1 ? "" : "ões"} com leitura`
-                    : item?.status === "catalog"
-                      ? `${registered} estação${registered === 1 ? "" : "ões"} cadastradas; leitura indisponível`
-                      : item?.status === "error"
-                        ? "Consulta indisponível"
-                        : item?.message || "Fonte em integração";
+                  const queried = item?.queriedCount;
+                  const status = item?.label || (
+                    item?.status === "ready" ? "Operando" :
+                    item?.status === "catalog" ? "Sem leitura válida" :
+                    item?.status === "error" ? "Erro de consulta" :
+                    item?.status === "integration" ? "Fonte em integração" :
+                    "Fonte indisponível no momento"
+                  );
                   return (
                     <span key={source}>
                       <b>{source}</b>
-                      {label}
+                      <em>{status}</em>
+                      {item ? (
+                        <>
+                          <small>{registered} cadastrada{registered === 1 ? "" : "s"} | {queried !== null && queried !== undefined ? `${queried} consultada${queried === 1 ? "" : "s"} | ` : ""}{count} com leitura válida</small>
+                          {item.updatedAt && <small>Atualização: {item.updatedAt}</small>}
+                          {item.message && <small>{item.message}</small>}
+                        </>
+                      ) : (
+                        <small>Fonte em integração</small>
+                      )}
                     </span>
                   );
                 })}
@@ -389,7 +399,7 @@ export function PublicMapSection({
             <div><dt>Estações consultadas</dt><dd>{rainStations.length}</dd></div>
             <div><dt>Maior acumulado</dt><dd>{rainSummary?.value || "Sem dados"}</dd></div>
           </dl>
-          <strong>Fonte integrada: CEMADEN</strong>
+          <strong>Fonte integrada: {rainSummary?.source || "CEMADEN / INMET / ANA / SEMARH"}</strong>
           {rainSummary?.updatedAt && <small>Atualização da fonte: {rainSummary.updatedAt}</small>}
         </>
       )}

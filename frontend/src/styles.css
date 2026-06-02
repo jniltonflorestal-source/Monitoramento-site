@@ -1197,14 +1197,32 @@ h1 {
   font-size: .78rem;
 }
 .rain-source-breakdown span {
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
+  display: grid;
+  gap: 3px;
+  padding: 8px;
+  border: 1px solid #e1e9f1;
+  border-left: 3px solid var(--blue);
+  border-radius: 6px;
   color: var(--muted);
   font-size: .74rem;
 }
 .rain-source-breakdown b {
   color: var(--blue);
+}
+.rain-source-breakdown em {
+  justify-self: start;
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: #eaf3f8;
+  color: var(--navy);
+  font-size: .66rem;
+  font-style: normal;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.rain-source-breakdown small {
+  color: #526b80;
+  line-height: 1.32;
 }
 .map-search {
   position: relative;
