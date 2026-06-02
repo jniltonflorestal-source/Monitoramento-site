@@ -34,7 +34,6 @@ export default function App() {
           <a href="#situacao">Situação atual</a>
           <a href="#alertas">Alertas</a>
           <a href="#boletins">Boletins</a>
-          <a href="#boletim-hidrometeorologico">Boletim hidro</a>
           <a href="#mapa-prioritario">Mapas e painéis</a>
         </nav>
         <div className="header-emergency" aria-label="Emergência: Defesa Civil 199 | Bombeiros 193">
@@ -52,7 +51,6 @@ export default function App() {
         <span>Dados, mapas e alertas para apoio à proteção e defesa civil.</span>
         <nav aria-label="Links do rodapé">
           <a href="#boletins">Boletins</a>
-          <a href="#boletim-hidrometeorologico">Boletim hidro</a>
           <a href="#mapa-prioritario">Mapas</a>
           <a href="#alertas">Alertas</a>
         </nav>

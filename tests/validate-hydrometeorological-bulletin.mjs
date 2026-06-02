@@ -33,27 +33,30 @@ assert.ok(Array.isArray(boletim.usinas));
 assert.ok(Array.isArray(boletim.recomendacoes));
 assert.ok(Array.isArray(boletim.fontes));
 
-const component = await read("frontend/src/components/dashboard/HydrometeorologicalBulletin.jsx");
+const component = await read("frontend/src/components/dashboard/HydroBulletinPdfGenerator.jsx");
 for (const snippet of [
   "Boletim Hidrometeorológico",
-  "Imprimir / Salvar PDF",
+  "Gerar Boletim Hidrometeorológico em PDF",
   "Resumo executivo",
-  "Usinas e vazões",
+  "Meteorologia",
   "Fontes oficiais consultadas",
-  "getBoletimAtual"
+  "getBoletimAtual",
+  "window.print"
 ]) {
   assert.ok(component.includes(snippet), `Componente precisa conter ${snippet}`);
 }
 
 const dashboard = await read("frontend/src/components/dashboard/SituationDashboard.jsx");
-assert.match(dashboard, /HydrometeorologicalBulletin/);
+assert.doesNotMatch(dashboard, /HydrometeorologicalBulletin/);
+assert.match(dashboard, /PublicationsCenter/);
 
 const publications = JSON.parse(await read("frontend/public/data/publicacoes.json"));
-assert.ok(publications.boletinsDefesaCivil.some((item) => item.rota === "#boletim-hidrometeorologico"));
+assert.ok(publications.boletinsDefesaCivil.some((item) => item.subtipo === "Boletim Hidrometeorológico"));
+assert.ok(publications.boletinsDefesaCivil.every((item) => item.rota !== "#boletim-hidrometeorologico"));
 assert.ok(publications.relatoriosTecnicos.some((item) => item.tipo === "Relatório Técnico"));
 
 const styles = await read("frontend/src/styles.css");
-for (const snippet of [".hydro-bulletin", ".bulletin-paper", "@media print", ".bulletin-metrics"]) {
+for (const snippet of [".bulletin-generator-panel", ".generated-bulletin-root", "@media print", ".generated-bulletin-grid"]) {
   assert.ok(styles.includes(snippet), `styles.css precisa conter ${snippet}`);
 }
 
@@ -75,6 +78,8 @@ assert.match(generateWorkflow, /revisao|validacao humana/);
 
 const readme = await read("README.md");
 assert.match(readme, /Como atualizar o Boletim Hidrometeorológico digital/);
+assert.match(readme, /Gerar Boletim Hidrometeorológico em PDF/);
+assert.match(readme, /Salvar como PDF/);
 assert.match(readme, /scripts\/update-boletim-data\.js/);
 assert.match(readme, /scripts\/generate-boletim\.js/);
 

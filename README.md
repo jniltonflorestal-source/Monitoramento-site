@@ -60,7 +60,38 @@ mapa-seca-tocantins-2026-04.pdf
 5. Use `status: "em revisão"` quando estiver pronto para conferência institucional.
 6. Altere para `status: "publicado"` apenas após validação.
 7. Faça commit e push.
-8. Confira a seção `#boletim-hidrometeorologico` no site publicado.
+8. Confira a seção `#boletins` no site publicado.
+
+## Como funciona o botão "Gerar Boletim Hidrometeorológico em PDF"
+
+Na seção **Publicações da Defesa Civil**, o bloco **Boletins da Defesa Civil** possui o botão **Gerar Boletim Hidrometeorológico em PDF**.
+
+Ao clicar, o site:
+
+1. Consulta os dados estruturados de `frontend/public/data/boletim-atual.json`.
+2. Consulta o retrato atual do painel, incluindo alertas, chuva, rios, focos de calor, seca e S2ID.
+3. Consulta `frontend/public/data/meteorologia-tocantins.json` e tenta atualizar os pontos meteorológicos disponíveis.
+4. Monta um template institucional em A4 no próprio navegador.
+5. Abre a janela de impressão para o usuário selecionar **Salvar como PDF**.
+
+Como o site roda no GitHub Pages, essa geração é feita no navegador, sem backend e sem salvar automaticamente arquivos no repositório.
+
+Se alguma fonte estiver indisponível no momento da geração, o PDF indica `Dado em integração` ou `Não disponível no momento da geração`, em vez de inventar valores.
+
+Dados usados pelo boletim:
+
+- `frontend/public/data/boletim-atual.json`
+- `frontend/public/data/meteorologia-tocantins.json`
+- `dados-monitoramento.json`, publicado na raiz do site pelo fluxo automático de monitoramento
+- serviços em `frontend/src/services/`, como `monitoringService`, `boletim` e `weather`
+
+Para futuramente salvar PDFs gerados:
+
+1. Gere o PDF pelo navegador ou por automação.
+2. Salve o arquivo em `frontend/public/docs/boletins/`.
+3. Registre o boletim em `frontend/public/data/boletins.json`.
+4. Atualize `frontend/public/data/publicacoes.json`.
+5. Publique com commit e push.
 
 ## Publicações sem PDF
 

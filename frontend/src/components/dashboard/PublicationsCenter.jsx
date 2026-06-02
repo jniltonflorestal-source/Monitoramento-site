@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import {
   ArrowRight,
-  CalendarDays,
   Download,
   FileBarChart,
   FileText,
@@ -15,6 +14,7 @@ import {
   getPublicationReadHref,
   getPublicacoes
 } from "../../services/publications";
+import { HydroBulletinPdfGenerator } from "./HydroBulletinPdfGenerator";
 
 const tabs = [
   { id: "todos", label: "Todos" },
@@ -178,7 +178,6 @@ export function PublicationsCenter() {
     });
   }, [activeTab, cards, category, dateEnd, dateStart, query]);
 
-  const todayBulletin = (data.boletinsDefesaCivil || [])[0];
   const featuredReport = (data.relatoriosTecnicos || [])[0];
 
   return (
@@ -188,7 +187,7 @@ export function PublicationsCenter() {
         <h2>Publicações da Defesa Civil</h2>
         <p>
           Acervo público do Centro de Monitoramento, separando relatórios técnicos produzidos sob demanda
-          e boletins periódicos da Defesa Civil.
+          e boletins periódicos gerados a partir dos dados monitorados.
         </p>
       </div>
 
@@ -201,7 +200,7 @@ export function PublicationsCenter() {
         <article>
           <FileText aria-hidden="true" />
           <h3>Boletins da Defesa Civil</h3>
-          <p>Publicações periódicas com dados atualizados de monitoramento para acompanhamento da situação no Estado.</p>
+          <p>Publicações periódicas geradas a partir dos dados monitorados pelo Centro de Monitoramento.</p>
         </article>
       </div>
 
@@ -214,25 +213,7 @@ export function PublicationsCenter() {
             <PublicationActions publication={featuredReport} />
           </article>
         )}
-        {todayBulletin && (
-          <article className="library-highlight bulletin">
-            <span>Boletim Hidrometeorológico de Hoje</span>
-            <h3>{todayBulletin.titulo}</h3>
-            <p>{todayBulletin.descricao}</p>
-            <dl>
-              <div>
-                <dt>Status</dt>
-                <dd>{todayBulletin.status}</dd>
-              </div>
-              <div>
-                <dt>Atualização</dt>
-                <dd>{formatDate(todayBulletin.dataEmissao)}</dd>
-              </div>
-            </dl>
-            <PublicationActions publication={todayBulletin} />
-            <a className="library-history-link" href="#boletins">Ver histórico</a>
-          </article>
-        )}
+        <HydroBulletinPdfGenerator />
       </div>
 
       <div className="library-toolbar" aria-label="Filtros da biblioteca">

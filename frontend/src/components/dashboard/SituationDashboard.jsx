@@ -2,7 +2,6 @@ import { lazy, Suspense, useEffect, useState } from "react";
 import { QuickActions } from "../layout/QuickActions";
 import { SituationHero } from "./SituationHero";
 import { OfficialAlertsSection } from "./OfficialAlertsSection";
-import { HydrometeorologicalBulletin } from "./HydrometeorologicalBulletin";
 import { PublicationsCenter } from "./PublicationsCenter";
 import { RecommendationsSection } from "./RecommendationsSection";
 import { OfficialSourcesSection } from "./OfficialSourcesSection";
@@ -45,7 +44,6 @@ export function SituationDashboard() {
         />
       </Suspense>
       <PublicationsCenter />
-      <HydrometeorologicalBulletin />
       <RecommendationsSection />
       <OfficialSourcesSection />
       <AboutCenterSection />

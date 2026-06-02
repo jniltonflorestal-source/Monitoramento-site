@@ -42,11 +42,18 @@ const center = await read("frontend/src/components/dashboard/PublicationsCenter.
 assert.match(center, /Publicações da Defesa Civil/);
 assert.match(center, /Relatórios Técnicos/);
 assert.match(center, /Boletins da Defesa Civil/);
-assert.match(center, /Boletim Hidrometeorológico de Hoje/);
+assert.match(center, /HydroBulletinPdfGenerator/);
 assert.match(center, /Pesquisar por título, tema ou tag/);
 assert.match(center, /Grid/);
 assert.match(center, /Lista/);
 assert.match(center, /PDF ainda não disponível/);
+
+const generator = await read("frontend/src/components/dashboard/HydroBulletinPdfGenerator.jsx");
+assert.match(generator, /Gerar Boletim Hidrometeorológico em PDF/);
+assert.match(generator, /window\.print/);
+assert.match(generator, /fetchMonitoringSnapshot/);
+assert.match(generator, /getMeteorologiaTocantins/);
+assert.match(generator, /Não disponível no momento da geração/);
 
 const publicationsService = await read("frontend/src/services/publications.js");
 assert.match(publicationsService, /relatoriosTecnicos/);
@@ -64,6 +71,7 @@ assert.ok(Array.isArray(publications.relatoriosTecnicos));
 assert.ok(Array.isArray(publications.boletinsDefesaCivil));
 assert.ok(publications.relatoriosTecnicos.some((item) => item.rota?.includes("www.to.gov.br/defesacivil/noticias/defesa-civil-do-tocantins-divulga-relatorio-tecnico")));
 assert.ok(publications.boletinsDefesaCivil.some((item) => item.subtipo === "Boletim Hidrometeorológico"));
+assert.ok(publications.boletinsDefesaCivil.every((item) => item.rota !== "#boletim-hidrometeorologico"));
 
 const readme = await read("README.md");
 assert.match(readme, /Como adicionar novo relatório técnico/);
