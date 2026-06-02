@@ -173,6 +173,35 @@ function BulletinBlock({ icon: Icon, title, value, description, source, updatedA
   );
 }
 
+function SectionHeader({ eyebrow, title, subtitle, tone = "navy" }) {
+  return (
+    <div className={`generated-section-heading theme-${tone}`}>
+      <small>{eyebrow}</small>
+      <h2>{title}</h2>
+      {subtitle && <p>{subtitle}</p>}
+    </div>
+  );
+}
+
+function BulletinPage({ eyebrow, title, subtitle, tone = "navy", children, className = "" }) {
+  return (
+    <section className={`generated-bulletin-section generated-editorial-page theme-${tone} ${className}`}>
+      <SectionHeader eyebrow={eyebrow} title={title} subtitle={subtitle} tone={tone} />
+      {children}
+    </section>
+  );
+}
+
+function EditorialCallout({ label, value, text: description, tone = "navy" }) {
+  return (
+    <aside className={`generated-editorial-callout theme-${tone}`}>
+      <small>{label}</small>
+      <strong>{value}</strong>
+      <p>{description}</p>
+    </aside>
+  );
+}
+
 function MapLegend({ items }) {
   return (
     <div className="generated-map-legend">
@@ -420,6 +449,11 @@ function GeneratedBulletinTemplate({ payload }) {
       tone: statusTone(emergency.tone)
     }
   ];
+  const overviewTiles = blocks.map((block) => ({
+    title: block.title,
+    value: block.value,
+    tone: block.tone
+  }));
 
   return (
     <section className="generated-bulletin-print" aria-label="Boletim Hidrometeorológico para impressão">
@@ -442,34 +476,49 @@ function GeneratedBulletinTemplate({ payload }) {
           <InfoRow label="Número" value={text(boletim.numero, "Sob demanda")} />
           <InfoRow label="Emergência" value="Defesa Civil 199 | Bombeiros 193" />
         </dl>
+        <article className={`generated-bulletin-summary generated-cover-panorama tone-${statusTone(snapshot.generalStatus?.tone || boletim.situacaoGeral?.status)}`}>
+          <div>
+            <small>Panorama Atual | Resumo executivo</small>
+            <h2>{text(boletim.situacaoGeral?.texto || snapshot.generalStatus?.label, "Monitoramento em andamento")}</h2>
+          </div>
+          <p>{text(boletim.resumoExecutivo || snapshot.generalStatus?.note)}</p>
+        </article>
+        <div className="generated-cover-indicators">
+          {overviewTiles.map((item) => (
+            <div key={item.title} className={`tone-${item.tone}`}>
+              <span>{item.title}</span>
+              <strong>{item.value}</strong>
+            </div>
+          ))}
+        </div>
       </header>
 
       <main className="generated-bulletin-body">
-        <article className={`generated-bulletin-summary tone-${statusTone(snapshot.generalStatus?.tone || boletim.situacaoGeral?.status)}`}>
-          <div>
-            <small>Resumo executivo</small>
-            <h2>Panorama atual do Tocantins</h2>
-          </div>
-          <p>{text(boletim.resumoExecutivo || snapshot.generalStatus?.note)}</p>
-          <span>{text(boletim.situacaoGeral?.texto || snapshot.generalStatus?.label)}</span>
-        </article>
-
-        <section className="generated-bulletin-section">
-          <div className="generated-section-heading">
-            <small>Quadro-resumo</small>
-            <h2>Dados principais do monitoramento</h2>
-          </div>
+        <BulletinPage
+          eyebrow="Situação monitorada"
+          title="Indicadores principais"
+          subtitle="Leitura integrada das condições acompanhadas pelo Centro de Monitoramento para orientar a população e apoiar decisões operacionais."
+          tone="navy"
+          className="page-break-before"
+        >
           <div className="generated-bulletin-grid">
             {blocks.map((block) => <BulletinBlock key={block.title} {...block} />)}
           </div>
-        </section>
+          <EditorialCallout
+            label="Destaque operacional"
+            value={text(snapshot.generalStatus?.label || boletim.situacaoGeral?.status, "Monitoramento ativo")}
+            text="Os indicadores devem ser lidos em conjunto com os mapas temáticos das páginas seguintes e confirmados nas fontes oficiais."
+            tone="navy"
+          />
+        </BulletinPage>
 
-        <section className="generated-bulletin-section page-break-before">
-          <div className="generated-section-heading">
-            <small>Chuva observada</small>
-            <h2>Precipitação acumulada nas últimas 24h</h2>
-            <p>Mapa de chuva observada 24h com pontos de estações e leitura por faixa de precipitação.</p>
-          </div>
+        <BulletinPage
+          eyebrow="Chuva observada"
+          title="Precipitação acumulada nas últimas 24h"
+          subtitle="Mapa de chuva observada 24h com pontos de estações, maiores acumulados e leitura rápida da distribuição espacial no Estado."
+          tone="rain"
+          className="page-break-before"
+        >
           <div className="generated-map-page">
             <BulletinMapCard
               title="Mapa de chuva observada 24h"
@@ -487,7 +536,7 @@ function GeneratedBulletinTemplate({ payload }) {
             >
               <div className="generated-map-summary">
                 <strong>{text(rain.value || boletim.chuva?.maiorAcumulado)}</strong>
-                <span>Maior acumulado observado no período de referência.</span>
+                <span>{text(rain.description, "Maior acumulado observado no período de referência.")}</span>
               </div>
             </BulletinMapCard>
             <article className="generated-map-detail">
@@ -502,15 +551,23 @@ function GeneratedBulletinTemplate({ payload }) {
                 rows={data.topRain}
                 emptyMessage="Sem estações com leitura disponível no momento da geração."
               />
+              <EditorialCallout
+                label="Comentário operacional"
+                value={text(rain.value || boletim.chuva?.maiorAcumulado)}
+                text="Valores baixos não eliminam a necessidade de acompanhamento de avisos meteorológicos, especialmente em eventos localizados."
+                tone="rain"
+              />
             </article>
           </div>
-        </section>
+        </BulletinPage>
 
-        <section className="generated-bulletin-section page-break-before">
-          <div className="generated-section-heading">
-            <small>Rios e meteorologia</small>
-            <h2>Situação hidrológica e condições meteorológicas</h2>
-          </div>
+        <BulletinPage
+          eyebrow="Rios monitorados"
+          title="Situação hidrológica"
+          subtitle="Estações fluviométricas monitoradas por status, resumo hidrológico e tendência predominante para leitura operacional."
+          tone="river"
+          className="page-break-before"
+        >
           <div className="generated-map-page">
             <BulletinMapCard
               title="Mapa de rios monitorados"
@@ -535,7 +592,14 @@ function GeneratedBulletinTemplate({ payload }) {
               </dl>
             </BulletinMapCard>
             <article className="generated-map-detail">
-              <h3>Meteorologia por municípios estratégicos</h3>
+              <h3>Destaque operacional</h3>
+              <EditorialCallout
+                label="Leitura rápida"
+                value={text(river.value || `${boletim.rios?.estacoesMonitoradas ?? 0} estação(ões)`)}
+                text={text(river.description || `Tendência predominante: ${text(boletim.rios?.tendenciaPredominante)}.`)}
+                tone="river"
+              />
+              <h3>Meteorologia por regiões estratégicas</h3>
               <CompactTable
                 columns={[
                   { key: "municipio", label: "Município" },
@@ -550,13 +614,15 @@ function GeneratedBulletinTemplate({ payload }) {
               />
             </article>
           </div>
-        </section>
+        </BulletinPage>
 
-        <section className="generated-bulletin-section page-break-before">
-          <div className="generated-section-heading">
-            <small>Fogo, queimadas e seca</small>
-            <h2>Monitoramento ambiental</h2>
-          </div>
+        <BulletinPage
+          eyebrow="Fogo, queimadas e seca"
+          title="Monitoramento ambiental"
+          subtitle="Síntese espacial dos focos de calor e da condição de seca para apoiar prevenção, resposta e planejamento municipal."
+          tone="fire"
+          className="page-break-before"
+        >
           <div className="generated-map-grid">
             <BulletinMapCard
               title="Mapa de focos de calor"
@@ -604,13 +670,15 @@ function GeneratedBulletinTemplate({ payload }) {
               )}
             </BulletinMapCard>
           </div>
-        </section>
+        </BulletinPage>
 
-        <section className="generated-bulletin-section page-break-before">
-          <div className="generated-section-heading">
-            <small>Orientações públicas</small>
-            <h2>Recomendações à população</h2>
-          </div>
+        <BulletinPage
+          eyebrow="Orientações públicas"
+          title="Recomendações à população"
+          subtitle="Medidas simples para reduzir risco em situações de chuva intensa, estiagem, baixa umidade, incêndios florestais e emergência."
+          tone="guidance"
+          className="page-break-before"
+        >
           <div className="generated-recommendations">
             {(boletim.recomendacoes || []).length ? boletim.recomendacoes.map((item) => (
               <article key={item.tema}>
@@ -629,7 +697,7 @@ function GeneratedBulletinTemplate({ payload }) {
               <p>Defesa Civil 199 | Corpo de Bombeiros 193.</p>
             </article>
           </div>
-        </section>
+        </BulletinPage>
       </main>
 
       <footer className="generated-bulletin-footer">
