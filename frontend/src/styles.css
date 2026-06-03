@@ -2467,6 +2467,7 @@ h1 {
 .generated-section-heading.theme-rain { --section-accent: #1e5a8a; --section-soft: #eaf3f8; }
 .generated-section-heading.theme-river { --section-accent: #128275; --section-soft: #e8f7f5; }
 .generated-section-heading.theme-fire { --section-accent: #d73027; --section-soft: #fff0ea; }
+.generated-section-heading.theme-drought { --section-accent: #b7791f; --section-soft: #fff7df; }
 .generated-section-heading.theme-guidance { --section-accent: #16734c; --section-soft: #edf8f2; }
 .generated-editorial-page {
   --section-accent: var(--orange);
@@ -2475,6 +2476,7 @@ h1 {
 .generated-editorial-page.theme-rain { --section-accent: #1e5a8a; --section-soft: #eaf3f8; }
 .generated-editorial-page.theme-river { --section-accent: #128275; --section-soft: #e8f7f5; }
 .generated-editorial-page.theme-fire { --section-accent: #d73027; --section-soft: #fff0ea; }
+.generated-editorial-page.theme-drought { --section-accent: #b7791f; --section-soft: #fff7df; }
 .generated-editorial-page.theme-guidance { --section-accent: #16734c; --section-soft: #edf8f2; }
 .generated-bulletin-grid {
   display: grid;
@@ -2590,6 +2592,7 @@ h1 {
 .generated-editorial-callout.theme-rain { --section-accent: #1e5a8a; --section-soft: #eaf3f8; }
 .generated-editorial-callout.theme-river { --section-accent: #128275; --section-soft: #e8f7f5; }
 .generated-editorial-callout.theme-fire { --section-accent: #d73027; --section-soft: #fff0ea; }
+.generated-editorial-callout.theme-drought { --section-accent: #b7791f; --section-soft: #fff7df; }
 .generated-editorial-callout.theme-guidance { --section-accent: #16734c; --section-soft: #edf8f2; }
 .generated-editorial-callout small {
   color: var(--section-accent);
@@ -2634,6 +2637,9 @@ h1 {
   grid-template-columns: minmax(0, .96fr) minmax(260px, .72fr);
   align-items: start;
 }
+.generated-map-page-wide {
+  grid-template-columns: minmax(0, 1.12fr) minmax(245px, .64fr);
+}
 .generated-map-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -2677,6 +2683,9 @@ h1 {
   border: 1px solid #dbe5ef;
   border-radius: 8px;
   background: #f8fafc;
+}
+.generated-map-page-wide .generated-mini-map {
+  max-height: 390px;
 }
 .generated-map-placeholder {
   min-height: 230px;
@@ -2774,6 +2783,25 @@ h1 {
   padding: 7px 6px;
   border-bottom: 1px solid #e7eef5;
   vertical-align: top;
+}
+.generated-weather-panel {
+  grid-column: span 1;
+}
+.generated-weather-panel .generated-table {
+  font-size: .72rem;
+}
+.generated-weather-panel .generated-table th,
+.generated-weather-panel .generated-table td {
+  padding: 6px 5px;
+}
+.generated-method-note,
+.generated-source-list {
+  border-left-color: var(--blue) !important;
+  background: #f3f8fc !important;
+}
+.generated-source-list p,
+.generated-method-note p {
+  font-size: .82rem;
 }
 
 @media (max-width: 760px) {
