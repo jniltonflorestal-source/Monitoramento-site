@@ -220,7 +220,7 @@ export function PublicMapSection({
   const [centerRequest, setCenterRequest] = useState(0);
   const [showBurnedArea, setShowBurnedArea] = useState(false);
   const [rainMode, setRainMode] = useState("observed");
-  const [forecastState, setForecastState] = useState({ state: "idle", points: [] });
+  const [forecastState, setForecastState] = useState({ state: "idle", points: [], refreshKey: 0 });
   const [selectedRainSource, setSelectedRainSource] = useState("TODAS");
   const [selectedRainStatus, setSelectedRainStatus] = useState("todos");
 
@@ -267,23 +267,24 @@ export function PublicMapSection({
   useEffect(() => {
     if (activeLayer !== "rain" || !["forecast24", "forecast48"].includes(rainMode)) return undefined;
     let active = true;
-    setForecastState({ state: "loading", points: [] });
-    getRainForecastPoints(rainMode)
+    setForecastState((current) => ({ ...current, state: "loading", points: [] }));
+    getRainForecastPoints(rainMode, { forceRefresh: forecastState.refreshKey > 0 })
       .then((result) => {
-        if (active) setForecastState(result);
+        if (active) setForecastState((current) => ({ ...result, refreshKey: current.refreshKey }));
       })
       .catch(() => {
         if (active) setForecastState({
           state: "error",
           points: [],
           message: "Não foi possível carregar a previsão no momento.",
-          updatedAt: new Date().toISOString()
+          updatedAt: new Date().toISOString(),
+          refreshKey: forecastState.refreshKey
         });
       });
     return () => {
       active = false;
     };
-  }, [activeLayer, rainMode]);
+  }, [activeLayer, rainMode, forecastState.refreshKey]);
 
   useEffect(() => {
     if (variant !== "priority") return undefined;
@@ -348,7 +349,9 @@ export function PublicMapSection({
               </dl>
               {rainSummary?.updatedAt && <small>Atualização: {rainSummary.updatedAt}</small>}
               <small>Fonte operacional principal: CEMADEN. INMET e ANA entram como fontes complementares quando houver leitura 24h válida ou base consolidada publicada. SEMARH permanece em estrutura de integração.</small>
-              <div className="rain-source-breakdown" aria-label="Estações por fonte">
+              <details className="rain-diagnostics">
+                <summary>Diagnóstico das fontes</summary>
+                <div className="rain-source-breakdown" aria-label="Estações por fonte">
                 <strong>Por fonte</strong>
                 {["CEMADEN", "INMET", "ANA", "SEMARH"].map((source) => {
                   const item = rainStats.sourceBreakdown[source];
@@ -360,7 +363,7 @@ export function PublicMapSection({
                     item?.status === "catalog" ? "Sem leitura válida" :
                     item?.status === "error" ? "Erro de consulta" :
                     item?.status === "integration" ? "Fonte em integração" :
-                    "Fonte indispon?vel no momento"
+                    "Fonte indisponível no momento"
                   );
                   return (
                     <span key={source} className={selectedRainSource === source ? "rain-source-filter active" : "rain-source-filter"}>
@@ -389,7 +392,7 @@ export function PublicMapSection({
                 )}
               </div>
               <p className="rain-network-note">
-                As estações cadastradas sem leitura aparecem no mapa com símbolo cinza. Elas indicam pontos da rede que não retornaram acumulado válido de chuva nas últimas 24h ou ainda dependem de integração.
+                As estações cadastradas sem leitura ficam neste diagnóstico técnico. O mapa principal mostra apenas leituras válidas de chuva observada nas últimas 24h.
               </p>
               <div className="rain-status-legend" aria-label="Legenda de status das estações de chuva">
                 <span><i className="status-valid" /> leitura válida</span>
@@ -413,25 +416,35 @@ export function PublicMapSection({
                   {!rainStationRows.length && <p>Nenhuma estação encontrada neste filtro.</p>}
                 </div>
               </details>
+              </details>
             </>
           ) : ["forecast24", "forecast48"].includes(rainMode) ? (
             <>
-              <h4>{rainMode === "forecast24" ? "Previsão 24h" : "Previsão 48h"}</h4>
+              <h4>{rainMode === "forecast24" ? "Previsão INMET 24h" : "Previsão INMET 48h"}</h4>
               <span className="forecast-status">{forecastState.state === "ready" ? "Camada ativa" : "Atualizando"}</span>
-              {forecastState.state === "loading" && <p>Carregando previsão...</p>}
-              {forecastState.state === "error" && <p>Não foi possível carregar a previsão no momento.</p>}
+              <button type="button" className="forecast-refresh-button" onClick={() => setForecastState((current) => ({ ...current, refreshKey: (current.refreshKey || 0) + 1 }))}>
+                Atualizar previsão
+              </button>
+              {forecastState.state === "loading" && <p>Carregando previsão INMET...</p>}
+              {forecastState.state === "error" && <p>Previsão INMET indisponível no momento.</p>}
               {forecastState.state === "ready" && (
-                <dl>
-                  <div><dt>Maior previsão</dt><dd>{formatNumber(forecastState.maximum?.amount || 0, " mm")}</dd></div>
-                  <div><dt>Ponto de destaque</dt><dd>{forecastState.maximum?.city || "Sem destaque"}</dd></div>
-                  <div><dt>Acima de 10 mm</dt><dd>{forecastState.above10}</dd></div>
-                  <div><dt>Acima de 30 mm</dt><dd>{forecastState.above30}</dd></div>
-                  <div><dt>Acima de 50 mm</dt><dd>{forecastState.above50}</dd></div>
-                  <div><dt>Período</dt><dd>{forecastState.period}</dd></div>
-                </dl>
+                <>
+                  <dl>
+                    <div><dt>Municípios consultados</dt><dd>{forecastState.municipiosConsultados || forecastPoints.length}</dd></div>
+                    <div><dt>Condição predominante</dt><dd>{forecastState.condicaoPredominante || "Não informado"}</dd></div>
+                    <div><dt>Com possibilidade de chuva</dt><dd>{forecastState.comPossibilidadeChuva || 0}</dd></div>
+                    <div><dt>Período</dt><dd>{forecastState.period}</dd></div>
+                  </dl>
+                  {!!forecastState.rainyCities?.length && (
+                    <div className="forecast-condition-list">
+                      <strong>Municípios com indicação de chuva</strong>
+                      <span>{forecastState.rainyCities.join(", ")}</span>
+                    </div>
+                  )}
+                  <p>{forecastState.note}</p>
+                </>
               )}
-              <small>Fonte: Open-Meteo. Confirme alertas e avisos nos canais oficiais.</small>
-            </>
+              <small>Fonte: INMET. Confirme alertas e avisos nos canais oficiais.</small>            </>
           ) : (
             <>
               <h4>Satélite GOES-East</h4>
@@ -653,7 +666,7 @@ export function PublicMapSection({
               <span>Não foi possível carregar a malha municipal neste momento.</span>
             </div>
           )}
-          {variant === "priority" && activeLayer === "rain" && rainMode === "observed" && visibleRainStations.filter((station) => station.statusLeitura === "valida").map((station) => (
+          {variant === "priority" && activeLayer === "rain" && rainMode === "observed" && rainStations.map((station) => (
             <CircleMarker
               key={`heat-${station.code}`}
               center={[station.latitude, station.longitude]}
@@ -663,7 +676,7 @@ export function PublicMapSection({
               className="rain-heat-point"
             />
           ))}
-          {variant === "priority" && activeLayer === "rain" && rainMode === "observed" && visibleRainStations.map((station) => (
+          {variant === "priority" && activeLayer === "rain" && rainMode === "observed" && rainStations.map((station) => (
             <CircleMarker
               key={`${station.fonte || station.source}-${station.code || station.id || station.name}`}
               center={[station.latitude, station.longitude]}
@@ -687,15 +700,19 @@ export function PublicMapSection({
             <CircleMarker
               key={point.id}
               center={[point.latitude, point.longitude]}
-              radius={point.amount >= 30 ? 10 : point.amount >= 10 ? 8 : 6}
-              pathOptions={{ color: rainColor(point.amount), fillColor: rainColor(point.amount), fillOpacity: 0.86, weight: 2 }}
+              radius={point.hasRain ? 9 : 6}
+              pathOptions={{ color: point.hasRain ? "#f59a23" : "#1e5a8a", fillColor: point.hasRain ? "#f59a23" : "#77b6d8", fillOpacity: point.hasRain ? 0.86 : 0.62, weight: 2 }}
             >
               <Popup>
                 <strong>{point.city}</strong><br />
                 {point.region}<br />
-                Previsão: {formatNumber(point.amount, " mm")}<br />
+                {point.period}<br />
+                Condição: {point.condition || "Não informado"}<br />
+                Temperatura mínima/máxima: {point.tempMin ?? "Não informado"} / {point.tempMax ?? "Não informado"} °C<br />
+                Vento: {point.vento || point.wind || "Não informado"}<br />
+                Possibilidade de chuva: {point.hasRain ? "Sim" : "Não identificada"}<br />
                 Período: {point.period}<br />
-                Fonte: {point.source}
+                Fonte: INMET
               </Popup>
             </CircleMarker>
           ))}

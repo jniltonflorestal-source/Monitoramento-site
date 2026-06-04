@@ -1178,6 +1178,30 @@ h1 {
   font-size: .72rem;
   font-weight: 800;
 }
+.forecast-refresh-button {
+  width: fit-content;
+  min-height: 34px;
+  margin: 2px 0 6px;
+  padding: 0 12px;
+  border: 1px solid rgba(30, 90, 138, .24);
+  border-radius: 7px;
+  background: #ffffff;
+  color: var(--blue);
+  cursor: pointer;
+  font-weight: 900;
+}
+.forecast-condition-list {
+  display: grid;
+  gap: 4px;
+  padding: 9px 10px;
+  border-left: 4px solid var(--orange);
+  border-radius: 7px;
+  background: #fff8ec;
+  color: #43566a;
+}
+.forecast-condition-list strong {
+  color: var(--navy);
+}
 .satellite-credit {
   display: block;
   padding: 8px;
@@ -1191,6 +1215,28 @@ h1 {
   padding: 9px;
   border-radius: 6px;
   background: #ffffff;
+}
+.rain-diagnostics {
+  margin-top: 10px;
+  border: 1px solid #dce6ee;
+  border-radius: 8px;
+  background: #f8fbfd;
+}
+.rain-diagnostics > summary {
+  padding: 10px 12px;
+  color: var(--navy);
+  cursor: pointer;
+  font-weight: 900;
+}
+.rain-diagnostics[open] {
+  padding-bottom: 10px;
+}
+.rain-diagnostics[open] .rain-source-breakdown,
+.rain-diagnostics[open] .rain-network-note,
+.rain-diagnostics[open] .rain-status-legend,
+.rain-diagnostics[open] .rain-stations-panel {
+  margin-left: 9px;
+  margin-right: 9px;
 }
 .rain-source-breakdown strong {
   color: var(--navy);

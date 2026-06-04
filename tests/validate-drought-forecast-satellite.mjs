@@ -40,8 +40,15 @@ for (const snippet of [
 
 const forecast = await read("frontend/src/services/rainForecast.js");
 assert.match(forecast, /getRainForecastPoints/);
-assert.match(forecast, /precipitation/);
-assert.match(forecast, /Open-Meteo/);
+assert.match(forecast, /getPrevisao24hTocantins/);
+assert.match(forecast, /getPrevisao48hTocantins/);
+assert.match(forecast, /INMET/);
+assert.doesNotMatch(forecast, /Open-Meteo/);
+
+const inmetForecast = await read("frontend/src/services/inmetPrevisao.js");
+assert.match(inmetForecast, /apiprevmet3\.inmet\.gov\.br\/previsao/);
+assert.match(inmetForecast, /MUNICIPIOS_ESTRATEGICOS_TO/);
+assert.match(inmetForecast, /localStorage/);
 
 await access(new URL("frontend/public/data/tocantins_municipios.geojson", root));
 
