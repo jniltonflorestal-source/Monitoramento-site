@@ -18,28 +18,55 @@ function formatMillimeters(value) {
   return `${value.toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 })} mm`;
 }
 
-function normalizeRainStation(station, source, updatedAt) {
-  const amount = Number(station.amount ?? station.chuva24h ?? 0);
+function readingStatusLabel(status) {
+  if (status === "valida") return "Leitura v?lida";
+  if (status === "sem_leitura") return "Sem leitura 24h";
+  if (status === "erro") return "Erro de consulta";
+  if (status === "integracao") return "Fonte em integra??o";
+  return "Status n?o informado";
+}
+
+function normalizeRainStation(station, source, updatedAt, options = {}) {
+  const rawAmount = station.amount ?? station.chuva24h;
+  const amount = rawAmount === null || rawAmount === undefined || rawAmount === "" ? null : Number(rawAmount);
   const latitude = Number(station.latitude);
   const longitude = Number(station.longitude);
+  const statusLeitura = options.statusLeitura || station.statusLeitura || (Number.isFinite(amount) ? "valida" : "sem_leitura");
+  const validAmount = statusLeitura === "valida" && Number.isFinite(amount);
   return {
     id: `${source}-${station.code || station.id || station.name || station.nome}`,
     code: String(station.code || station.id || ""),
-    nome: String(station.nome || station.name || "Estação de chuva"),
-    name: String(station.name || station.nome || "Estação de chuva"),
-    municipio: String(station.municipio || station.city || "Município não informado"),
-    city: String(station.city || station.municipio || "Município não informado"),
+    nome: String(station.nome || station.name || "Esta??o de chuva"),
+    name: String(station.name || station.nome || "Esta??o de chuva"),
+    municipio: String(station.municipio || station.city || "Munic?pio n?o informado"),
+    city: String(station.city || station.municipio || "Munic?pio n?o informado"),
     fonte: source,
     source,
     latitude,
     longitude,
-    chuva24h: Number.isFinite(amount) ? amount : 0,
-    amount: Number.isFinite(amount) ? amount : 0,
+    chuva24h: validAmount ? amount : null,
+    amount: validAmount ? amount : null,
     atualizadoEm: station.atualizadoEm || updatedAt || null,
     updatedAt: station.updatedAt || updatedAt || null,
-    status: station.status || classifyRain(Number.isFinite(amount) ? amount : 0),
+    status: station.status || (validAmount ? classifyRain(amount) : statusLeitura),
+    statusLeitura,
+    statusLeituraLabel: readingStatusLabel(statusLeitura),
+    motivoIndisponibilidade: station.motivoIndisponibilidade || options.motivoIndisponibilidade || (statusLeitura === "sem_leitura" ? "Sem leitura v?lida nas ?ltimas 24h" : ""),
+    ultimaTentativa: station.ultimaTentativa || options.ultimaTentativa || updatedAt || new Date().toISOString(),
+    consultada: station.consultada ?? options.consultada ?? true,
     observacao: station.observacao || ""
   };
+}
+
+function normalizeUnavailableRainStation(station, source, statusLeitura = "sem_leitura", motivoIndisponibilidade = "Sem leitura v?lida nas ?ltimas 24h", updatedAt = null, consultada = true) {
+  return normalizeRainStation({
+    ...station,
+    amount: null,
+    chuva24h: null,
+    motivoIndisponibilidade,
+    ultimaTentativa: updatedAt || new Date().toISOString(),
+    consultada
+  }, source, updatedAt, { statusLeitura, motivoIndisponibilidade, consultada });
 }
 
 function statusLabel(status) {
@@ -185,25 +212,42 @@ async function fetchInmetRain() {
     }))
     .filter((station) => Number.isFinite(station.latitude) && Number.isFinite(station.longitude));
 
+  const attemptAt = new Date().toISOString();
   const settled = await Promise.allSettled(stations.map(async (station) => {
     const reading = await fetchInmetStationReadings(station.code);
-    if (!reading) return null;
+    if (!reading) return normalizeUnavailableRainStation(
+      station,
+      "INMET",
+      "sem_leitura",
+      "Sem leitura v?lida nas ?ltimas 24h ou consulta bloqueada no navegador.",
+      attemptAt,
+      true
+    );
     return normalizeRainStation({ ...station, amount: reading.amount, atualizadoEm: reading.updatedAt, observacao: reading.observacao }, "INMET", reading.updatedAt);
   }));
-  const observed = settled.map((item) => item.value).filter(Boolean);
+  const allStations = settled.map((item, index) => (
+    item.status === "fulfilled" && item.value
+      ? item.value
+      : normalizeUnavailableRainStation(stations[index], "INMET", "erro", "Falha ao consultar a esta??o no navegador.", attemptAt, true)
+  )).filter(Boolean);
+  const observed = allStations.filter((station) => station.statusLeitura === "valida");
 
   return {
     source: "INMET",
     status: observed.length ? "ready" : "catalog",
-    label: observed.length ? "Operando" : "Sem leitura válida",
+    label: observed.length ? "Operando" : "Sem leitura v?lida",
     message: observed.length
-      ? "Leituras automáticas integradas quando a API permite consulta."
-      : "Fonte sem leituras válidas nas últimas 24h ou bloqueada por CORS no navegador.",
+      ? "Leituras autom?ticas integradas quando a API permite consulta."
+      : "Fonte sem leituras v?lidas nas ?ltimas 24h ou bloqueada por CORS no navegador.",
     registeredCount: stations.length,
     queriedCount: stations.length,
     validCount: observed.length,
+    semLeituraCount: allStations.filter((station) => station.statusLeitura === "sem_leitura").length,
+    errorCount: allStations.filter((station) => station.statusLeitura === "erro").length,
+    integrationCount: allStations.filter((station) => station.statusLeitura === "integracao").length,
     updatedAt: observed[0]?.updatedAt || null,
-    stations: observed
+    stations: observed,
+    allStations
   };
 }
 
@@ -239,26 +283,52 @@ async function fetchAnaRain() {
   const stations = parseAnaRainInventory(await fetchText(ANA_RAIN_INVENTORY_URL));
   const { start, end } = recentAnaPeriod();
   const sample = stations.slice(0, 60);
+  const attemptAt = new Date().toISOString();
   const settled = await Promise.allSettled(sample.map(async (station) => {
     const params = new URLSearchParams({ codEstacao: station.code, dataInicio: start, dataFim: end });
-    const amount = parseAnaRainAmount(await fetchText(`${ANA_READINGS_URL}?${params}`));
-    if (amount === null) return null;
-    return normalizeRainStation({ ...station, amount, atualizadoEm: `${start} a ${end}` }, "ANA", `${start} a ${end}`);
+    const amount = parseAnaRainAmount(await fetchText(ANA_READINGS_URL + "?" + params));
+    if (amount === null) return normalizeUnavailableRainStation(
+      station,
+      "ANA",
+      "sem_leitura",
+      "Esta??o cadastrada, mas sem dado operacional de precipita??o na consulta direta.",
+      start + " a " + end,
+      true
+    );
+    return normalizeRainStation({ ...station, amount, atualizadoEm: start + " a " + end }, "ANA", start + " a " + end);
   }));
-  const observed = settled.map((item) => item.value).filter(Boolean);
+  const queriedStations = settled.map((item, index) => (
+    item.status === "fulfilled" && item.value
+      ? item.value
+      : normalizeUnavailableRainStation(sample[index], "ANA", "erro", "Falha ao consultar a esta??o na telemetria ANA.", attemptAt, true)
+  )).filter(Boolean);
+  const notQueriedStations = stations.slice(sample.length).map((station) => normalizeUnavailableRainStation(
+    station,
+    "ANA",
+    "sem_leitura",
+    "Esta??o cadastrada, mas n?o consultada nesta rodada para preservar desempenho.",
+    attemptAt,
+    false
+  ));
+  const allStations = [...queriedStations, ...notQueriedStations];
+  const observed = allStations.filter((station) => station.statusLeitura === "valida");
 
   return {
     source: "ANA",
     status: observed.length ? "ready" : "catalog",
-    label: observed.length ? "Operando" : "Sem leitura válida",
+    label: observed.length ? "Operando" : "Sem leitura v?lida",
     message: observed.length
-      ? `Leitura 24h obtida em ${observed.length} estação(ões); consulta direta limitada para preservar desempenho.`
-      : "Estações cadastradas, mas sem leitura operacional de precipitação na consulta direta.",
+      ? "Leitura 24h obtida em " + observed.length + " esta??o(?es); consulta direta limitada para preservar desempenho."
+      : "Esta??es cadastradas, mas sem leitura operacional de precipita??o na consulta direta.",
     registeredCount: stations.length,
     queriedCount: sample.length,
     validCount: observed.length,
+    semLeituraCount: allStations.filter((station) => station.statusLeitura === "sem_leitura").length,
+    errorCount: allStations.filter((station) => station.statusLeitura === "erro").length,
+    integrationCount: allStations.filter((station) => station.statusLeitura === "integracao").length,
     updatedAt: observed[0]?.updatedAt || null,
-    stations: observed
+    stations: observed,
+    allStations
   };
 }
 
@@ -266,13 +336,17 @@ async function sourceInIntegration(source) {
   return {
     source,
     status: "integration",
-    label: "Fonte em integração",
-    message: "Acesso/API não configurado para consulta automática pública.",
+    label: "Fonte em integra??o",
+    message: "Acesso/API n?o configurado para consulta autom?tica p?blica.",
     registeredCount: 0,
     queriedCount: 0,
     validCount: 0,
+    semLeituraCount: 0,
+    errorCount: 0,
+    integrationCount: 0,
     updatedAt: null,
-    stations: []
+    stations: [],
+    allStations: []
   };
 }
 
@@ -281,15 +355,19 @@ function sourceError(source, error, registeredCount = 0) {
   return {
     source,
     status: "error",
-    label: corsHint ? "Fonte indisponível no navegador" : "Erro de consulta",
+    label: corsHint ? "Fonte indispon?vel no navegador" : "Erro de consulta",
     message: corsHint
-      ? "Falha ao consultar a fonte no navegador. Quando disponível, usar a base consolidada publicada pelo workflow."
+      ? "Falha ao consultar a fonte no navegador. Quando dispon?vel, usar a base consolidada publicada pelo workflow."
       : error?.message || "Falha ao consultar a fonte no momento.",
     registeredCount,
     queriedCount: 0,
     validCount: 0,
+    semLeituraCount: 0,
+    errorCount: registeredCount || 0,
+    integrationCount: 0,
     updatedAt: null,
-    stations: []
+    stations: [],
+    allStations: []
   };
 }
 
@@ -301,8 +379,16 @@ function normalizePublishedRainStation(station, source, updatedAt) {
     city: station.municipio || station.city,
     amount: station.chuva24h ?? station.amount,
     atualizadoEm: station.atualizadoEm || updatedAt,
-    observacao: station.observacao
-  }, source, station.atualizadoEm || updatedAt);
+    observacao: station.observacao,
+    statusLeitura: station.statusLeitura,
+    motivoIndisponibilidade: station.motivoIndisponibilidade,
+    ultimaTentativa: station.ultimaTentativa,
+    consultada: station.consultada
+  }, source, station.atualizadoEm || updatedAt, {
+    statusLeitura: station.statusLeitura,
+    motivoIndisponibilidade: station.motivoIndisponibilidade,
+    consultada: station.consultada
+  });
 }
 
 async function fetchPublishedRainSources() {
@@ -313,17 +399,24 @@ async function fetchPublishedRainSources() {
     return Object.fromEntries(Object.entries(sourceData).map(([source, item]) => {
       const stations = (item.estacoes || item.stations || [])
         .map((station) => normalizePublishedRainStation(station, source, item.atualizadoEm || data.chuva_observada?.atualizadoEm))
+        .filter((station) => Number.isFinite(station.latitude) && Number.isFinite(station.longitude) && station.statusLeitura === "valida");
+      const allStations = (item.todasEstacoes || item.allStations || item.estacoes || item.stations || [])
+        .map((station) => normalizePublishedRainStation(station, source, item.atualizadoEm || data.chuva_observada?.atualizadoEm))
         .filter((station) => Number.isFinite(station.latitude) && Number.isFinite(station.longitude));
       return [source, {
         source,
         status: item.status || (stations.length ? "ready" : "catalog"),
         label: item.label || (stations.length ? "Operando" : statusLabel(item.status || "catalog")),
         message: item.observacao || item.message || null,
-        registeredCount: item.estacoesCadastradas ?? item.registeredCount ?? stations.length,
-        queriedCount: item.estacoesConsultadas ?? item.queriedCount ?? item.registeredCount ?? stations.length,
+        registeredCount: item.estacoesCadastradas ?? item.registeredCount ?? allStations.length,
+        queriedCount: item.estacoesConsultadas ?? item.queriedCount ?? item.registeredCount ?? allStations.length,
         validCount: item.estacoesComLeitura ?? item.validCount ?? stations.length,
+        semLeituraCount: item.estacoesSemLeitura ?? item.semLeituraCount ?? allStations.filter((station) => station.statusLeitura === "sem_leitura").length,
+        errorCount: item.estacoesComErro ?? item.errorCount ?? allStations.filter((station) => station.statusLeitura === "erro").length,
+        integrationCount: item.estacoesEmIntegracao ?? item.integrationCount ?? allStations.filter((station) => station.statusLeitura === "integracao").length,
         updatedAt: item.atualizadoEm || data.chuva_observada?.atualizadoEm || null,
-        stations
+        stations,
+        allStations
       }];
     }));
   } catch {
@@ -348,6 +441,8 @@ export function deduplicateRainStations(stations) {
 
 function buildRainfallIndicator(results, fallback) {
   const stations = deduplicateRainStations(results.flatMap((result) => result.stations));
+  const allStations = deduplicateRainStations(results.flatMap((result) => result.allStations || result.stations));
+  const visibleStations = allStations;
   const bySource = results.reduce((summary, result) => {
     summary[result.source] = {
       status: result.status,
@@ -356,6 +451,9 @@ function buildRainfallIndicator(results, fallback) {
       registeredCount: result.registeredCount ?? result.stations.length,
       queriedCount: result.queriedCount ?? null,
       validCount: result.validCount ?? result.stations.length,
+      semLeituraCount: result.semLeituraCount ?? (result.allStations || []).filter((station) => station.statusLeitura === "sem_leitura").length,
+      errorCount: result.errorCount ?? (result.allStations || []).filter((station) => station.statusLeitura === "erro").length,
+      integrationCount: result.integrationCount ?? (result.allStations || []).filter((station) => station.statusLeitura === "integracao").length,
       message: result.message || null,
       updatedAt: result.updatedAt
     };
@@ -376,6 +474,8 @@ function buildRainfallIndicator(results, fallback) {
       description: "Nenhuma fonte integrada retornou chuva observada para o Tocantins.",
       source: "CEMADEN / INMET / ANA / SEMARH",
       stations: [],
+      allStations,
+      visibleStations,
       sourceBreakdown: bySource,
       updatedAt: null
     };
@@ -389,6 +489,8 @@ function buildRainfallIndicator(results, fallback) {
     description: `Maior acumulado: ${mostRain.municipio} | ${stations.length} estações com leitura 24h.`,
     source: (readySources.length ? readySources : integratedSources).map((result) => result.source).join(" / "),
     stations,
+    allStations,
+    visibleStations,
     sourceBreakdown: bySource,
     updatedAt: mostRain.atualizadoEm || readySources[0]?.updatedAt || null
   };
@@ -407,7 +509,8 @@ function mergeSourceResult(live, published) {
   return live;
 }
 
-export async function getChuvaObservada24h(fallback) {
+export async function getChuvaObservada24h(fallback, options = {}) {
+  const incluirSemLeitura = options.incluirSemLeitura ?? true;
   const published = await fetchPublishedRainSources();
   const liveResults = await Promise.all([
     fetchCemadenRain().catch((error) => sourceError("CEMADEN", error)),
@@ -417,5 +520,7 @@ export async function getChuvaObservada24h(fallback) {
   ]);
   const results = liveResults.map((result) => mergeSourceResult(result, published[result.source]));
 
-  return buildRainfallIndicator(results, fallback);
+  const indicator = buildRainfallIndicator(results, fallback);
+  if (!incluirSemLeitura) return { ...indicator, allStations: indicator.stations, visibleStations: indicator.stations };
+  return indicator;
 }

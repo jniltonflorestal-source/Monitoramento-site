@@ -1,13 +1,16 @@
 const legends = {
   rain: {
     title: "Chuva observada",
-    note: "Acumulado 24h",
+    note: "Acumulado 24h e status da estação",
     items: [
       ["zero", "0 mm"],
       ["rain-light", "1 a 10 mm"],
       ["rain-medium", "10 a 30 mm"],
       ["rain-heavy", "30 a 50 mm"],
-      ["danger", "Acima de 50 mm"]
+      ["danger", "Acima de 50 mm"],
+      ["station-empty", "Sem leitura 24h"],
+      ["station-error", "Erro de consulta"],
+      ["station-integration", "Fonte em integração"]
     ]
   },
   rivers: {

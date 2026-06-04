@@ -1,5 +1,8 @@
 import { readFile, writeFile } from "node:fs/promises";
 
+// Chuva observada 24h: manter também estações cadastradas sem leitura no JSON.
+// Campos esperados por estação/fonte: statusLeitura, motivoIndisponibilidade,
+// ultimaTentativa, allStations/todasEstacoes, semLeituraCount/estacoesSemLeitura.
 const INPE_DAILY_DIR = "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/";
 const CEMADEN_ALERTS_URL = "https://painelalertas.cemaden.gov.br/wsAlertas2";
 const CEMADEN_RAIN_URL = "https://resources.cemaden.gov.br/dados/311_24.json";

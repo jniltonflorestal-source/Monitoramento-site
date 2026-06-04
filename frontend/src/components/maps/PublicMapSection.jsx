@@ -51,6 +51,47 @@ function rainColor(amount) {
   return "#ffffff";
 }
 
+function rainStationColor(station) {
+  if (station.statusLeitura === "erro") return "#d73027";
+  if (station.statusLeitura === "integracao") return "#64748b";
+  if (station.statusLeitura === "sem_leitura") return "#94a3b8";
+  return rainColor(Number(station.amount ?? station.chuva24h ?? 0));
+}
+
+function rainStationStyle(station) {
+  const status = station.statusLeitura || "valida";
+  const amount = Number(station.amount ?? station.chuva24h ?? 0);
+  if (status === "sem_leitura") {
+    return { color: "#64748b", fillColor: "#ffffff", fillOpacity: 0.12, weight: 2, dashArray: "0" };
+  }
+  if (status === "erro") {
+    return { color: "#d73027", fillColor: "#ffffff", fillOpacity: 0.16, weight: 3, dashArray: "4 3" };
+  }
+  if (status === "integracao") {
+    return { color: "#64748b", fillColor: "#cbd5e1", fillOpacity: 0.28, weight: 2, dashArray: "3 4" };
+  }
+  return {
+    color: amount >= 30 ? "#d73027" : amount >= 10 ? "#f59a23" : "#1e5a8a",
+    fillColor: rainColor(amount),
+    fillOpacity: 0.84,
+    weight: 2
+  };
+}
+
+function rainStationRadius(station) {
+  if (station.statusLeitura !== "valida") return station.fonte === "ANA" ? 7 : station.fonte === "INMET" ? 6 : 5;
+  const amount = Number(station.amount ?? station.chuva24h ?? 0);
+  return amount >= 30 ? 9 : amount >= 10 ? 7 : 5;
+}
+
+function rainStatusText(status) {
+  if (status === "valida") return "Leitura válida";
+  if (status === "sem_leitura") return "Sem leitura 24h";
+  if (status === "erro") return "Erro de consulta";
+  if (status === "integracao") return "Fonte em integração";
+  return "Status não informado";
+}
+
 function rainSituation(maximum) {
   if (!Number.isFinite(maximum)) return "Dados em integração";
   if (maximum >= 50) return "Chuva intensa";
@@ -78,6 +119,13 @@ function buildRainStats(stations, summary) {
     situation: rainSituation(maximum),
     value: summary?.value || formatNumber(maximum, " mm")
   };
+}
+
+function buildRainStationRows(stations = []) {
+  return stations
+    .slice()
+    .sort((a, b) => String(a.fonte || a.source).localeCompare(String(b.fonte || b.source)) || String(a.city || a.municipio).localeCompare(String(b.city || b.municipio)))
+    .slice(0, 80);
 }
 
 function trendText(readingState, riverReading) {
@@ -173,6 +221,8 @@ export function PublicMapSection({
   const [showBurnedArea, setShowBurnedArea] = useState(false);
   const [rainMode, setRainMode] = useState("observed");
   const [forecastState, setForecastState] = useState({ state: "idle", points: [] });
+  const [selectedRainSource, setSelectedRainSource] = useState("TODAS");
+  const [selectedRainStatus, setSelectedRainStatus] = useState("todos");
 
   const searchResults = useMemo(() => buildMapSearchResults(activeLayer, {
     rainStations,
@@ -182,6 +232,13 @@ export function PublicMapSection({
     droughtMunicipalities: droughtSummary?.municipalities || []
   }, searchQuery), [activeLayer, droughtSummary, emergencyPoints, firePoints, rainStations, riverStations, searchQuery]);
   const rainStats = useMemo(() => buildRainStats(rainStations, rainSummary), [rainStations, rainSummary]);
+  const allRainStations = rainSummary?.visibleStations || rainSummary?.allStations || rainStations;
+  const visibleRainStations = useMemo(() => allRainStations.filter((station) => {
+    const sourceMatch = selectedRainSource === "TODAS" || (station.fonte || station.source) === selectedRainSource;
+    const statusMatch = selectedRainStatus === "todos" || station.statusLeitura === selectedRainStatus;
+    return sourceMatch && statusMatch;
+  }), [allRainStations, selectedRainSource, selectedRainStatus]);
+  const rainStationRows = useMemo(() => buildRainStationRows(visibleRainStations), [visibleRainStations]);
   const forecastPoints = forecastState.points || [];
   const droughtByName = useMemo(() => {
     const entries = droughtSummary?.municipalities || [];
@@ -303,17 +360,21 @@ export function PublicMapSection({
                     item?.status === "catalog" ? "Sem leitura válida" :
                     item?.status === "error" ? "Erro de consulta" :
                     item?.status === "integration" ? "Fonte em integração" :
-                    "Fonte indisponível no momento"
+                    "Fonte indispon?vel no momento"
                   );
                   return (
-                    <span key={source}>
+                    <span key={source} className={selectedRainSource === source ? "rain-source-filter active" : "rain-source-filter"}>
                       <b>{source}</b>
                       <em>{status}</em>
                       {item ? (
                         <>
-                          <small>{registered} cadastrada{registered === 1 ? "" : "s"} | {queried !== null && queried !== undefined ? `${queried} consultada${queried === 1 ? "" : "s"} | ` : ""}{count} com leitura válida</small>
+                          <small>{registered} cadastrada{registered === 1 ? "" : "s"} | {queried !== null && queried !== undefined ? String(queried) + " consultada" + (queried === 1 ? "" : "s") + " | " : ""}{count} com leitura válida</small>
+                          <small>{item.semLeituraCount || 0} sem leitura | {item.errorCount || 0} erro | {item.integrationCount || 0} em integração</small>
                           {item.updatedAt && <small>Atualização: {item.updatedAt}</small>}
                           {item.message && <small>{item.message}</small>}
+                          <div className="rain-source-actions">
+                            <button type="button" onClick={() => setSelectedRainSource(source)}>Mostrar no mapa</button>
+                          </div>
                         </>
                       ) : (
                         <small>Fonte em integração</small>
@@ -321,7 +382,37 @@ export function PublicMapSection({
                     </span>
                   );
                 })}
+                {(selectedRainSource !== "TODAS" || selectedRainStatus !== "todos") && (
+                  <button type="button" className="rain-clear-filter" onClick={() => { setSelectedRainSource("TODAS"); setSelectedRainStatus("todos"); }}>
+                    Limpar filtro
+                  </button>
+                )}
               </div>
+              <p className="rain-network-note">
+                As estações cadastradas sem leitura aparecem no mapa com símbolo cinza. Elas indicam pontos da rede que não retornaram acumulado válido de chuva nas últimas 24h ou ainda dependem de integração.
+              </p>
+              <div className="rain-status-legend" aria-label="Legenda de status das estações de chuva">
+                <span><i className="status-valid" /> leitura válida</span>
+                <span><i className="status-empty" /> sem leitura 24h</span>
+                <span><i className="status-error" /> erro de consulta</span>
+                <span><i className="status-integration" /> fonte em integração</span>
+              </div>
+              <details className="rain-stations-panel">
+                <summary>Estações da camada</summary>
+                <div className="rain-station-filters">
+                  <label>Fonte<select value={selectedRainSource} onChange={(event) => setSelectedRainSource(event.target.value)}><option value="TODAS">Todas</option><option value="CEMADEN">CEMADEN</option><option value="INMET">INMET</option><option value="ANA">ANA</option><option value="SEMARH">SEMARH</option></select></label>
+                  <label>Status<select value={selectedRainStatus} onChange={(event) => setSelectedRainStatus(event.target.value)}><option value="todos">Todos</option><option value="valida">Com leitura válida</option><option value="sem_leitura">Sem leitura</option><option value="erro">Erro</option><option value="integracao">Em integração</option></select></label>
+                </div>
+                <div className="rain-stations-table" role="table" aria-label="Estações da camada de chuva">
+                  <div role="row" className="rain-table-head"><span>Fonte</span><span>Estação</span><span>Município</span><span>Chuva 24h</span><span>Status</span></div>
+                  {rainStationRows.map((station) => (
+                    <div role="row" key={(station.fonte || station.source) + "-" + (station.code || station.id || station.name)} className="rain-table-row">
+                      <span>{station.fonte || station.source}</span><span>{station.name || station.nome}</span><span>{station.city || station.municipio}</span><span>{station.statusLeitura === "valida" ? formatNumber(Number(station.amount ?? station.chuva24h ?? 0), " mm") : "--"}</span><span className={"rain-station-status-chip status-" + (station.statusLeitura || "valida")}>{rainStatusText(station.statusLeitura || "valida")}</span><small>{station.motivoIndisponibilidade || station.observacao || "Leitura operacional disponível."}</small><small>{station.atualizadoEm || station.updatedAt || station.ultimaTentativa || "Sem atualização"}</small>
+                    </div>
+                  ))}
+                  {!rainStationRows.length && <p>Nenhuma estação encontrada neste filtro.</p>}
+                </div>
+              </details>
             </>
           ) : ["forecast24", "forecast48"].includes(rainMode) ? (
             <>
@@ -562,7 +653,7 @@ export function PublicMapSection({
               <span>Não foi possível carregar a malha municipal neste momento.</span>
             </div>
           )}
-          {variant === "priority" && activeLayer === "rain" && rainMode === "observed" && rainStations.map((station) => (
+          {variant === "priority" && activeLayer === "rain" && rainMode === "observed" && visibleRainStations.filter((station) => station.statusLeitura === "valida").map((station) => (
             <CircleMarker
               key={`heat-${station.code}`}
               center={[station.latitude, station.longitude]}
@@ -572,9 +663,24 @@ export function PublicMapSection({
               className="rain-heat-point"
             />
           ))}
-          {variant === "priority" && activeLayer === "rain" && rainMode === "observed" && rainStations.map((station) => (
-            <CircleMarker key={station.code} center={[station.latitude, station.longitude]} radius={station.amount >= 30 ? 9 : station.amount >= 10 ? 7 : 5} pathOptions={{ color: station.amount >= 30 ? "#d73027" : station.amount >= 10 ? "#f59a23" : "#1e5a8a", fillOpacity: 0.84, weight: 2 }}>
-              <Popup><strong>{station.city}</strong><br />{station.name}<br />Acumulado 24h: {formatNumber(station.amount, " mm")}<br />Fonte: {station.fonte || station.source || "CEMADEN"}<br />Faixa: {rainTone(station.amount)}</Popup>
+          {variant === "priority" && activeLayer === "rain" && rainMode === "observed" && visibleRainStations.map((station) => (
+            <CircleMarker
+              key={`${station.fonte || station.source}-${station.code || station.id || station.name}`}
+              center={[station.latitude, station.longitude]}
+              radius={rainStationRadius(station)}
+              pathOptions={rainStationStyle(station)}
+              className={`rain-station-marker status-${station.statusLeitura || "valida"}`}
+            >
+              <Popup>
+                <strong>{station.city || station.municipio}</strong><br />
+                {station.name || station.nome}<br />
+                Fonte: {station.fonte || station.source || "Rede integrada"}<br />
+                Status da leitura: {rainStatusText(station.statusLeitura || "valida")}<br />
+                {station.statusLeitura === "valida" ? <>Chuva 24h: {formatNumber(Number(station.amount ?? station.chuva24h ?? 0), " mm")}<br />Faixa: {rainTone(Number(station.amount ?? station.chuva24h ?? 0))}<br /></> : null}
+                Última atualização: {station.atualizadoEm || station.updatedAt || "Sem atualização"}<br />
+                Última tentativa: {station.ultimaTentativa || "Não informada"}<br />
+                Motivo: {station.motivoIndisponibilidade || station.observacao || "Leitura operacional disponível."}
+              </Popup>
             </CircleMarker>
           ))}
           {variant === "priority" && activeLayer === "rain" && ["forecast24", "forecast48"].includes(rainMode) && forecastPoints.map((point) => (
