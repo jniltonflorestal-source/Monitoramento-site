@@ -340,9 +340,9 @@ function TocantinsMiniMap({ geoJson, points = [], droughtMunicipalities = [] }) 
   );
 }
 
-function BulletinMapCard({ title, subtitle, geoJson, points, droughtMunicipalities, legend, footer, children }) {
+function BulletinMapCard({ title, subtitle, geoJson, points, droughtMunicipalities, legend, footer, children, className = "" }) {
   return (
-    <article className="generated-map-card">
+    <article className={`generated-map-card ${className}`}>
       <header>
         <div>
           <small>Mapa temático</small>
@@ -395,6 +395,7 @@ function PageFooter({ source, updatedAt }) {
 function PageShell({ label, title, subtitle, tone = "navy", children, source = "Fontes oficiais", updatedAt = "Atualização no momento da geração", className = "" }) {
   return (
     <section className={`generated-page-shell theme-${tone} ${className}`}>
+      <span className="generated-print-kicker">Boletim Hidrometeorológico</span>
       <SectionHeader eyebrow={label} title={title} subtitle={subtitle} tone={tone} />
       <div className="generated-page-content">{children}</div>
       <PageFooter source={source} updatedAt={updatedAt} />
@@ -617,6 +618,7 @@ function EditorialGeneratedBulletinTemplate({
     <section className="generated-bulletin-print generated-editorial-bulletin" aria-label="Boletim Hidrometeorológico para impressão">
       {/* Página 1 - Capa / Síntese Executiva */}
       <header className="generated-page-shell generated-cover-page theme-navy">
+        <div className="generated-cover-accent" aria-hidden="true" />
         <div className="generated-cover-topline">
           <img src={logoSrc} alt="" />
           <div>
@@ -683,6 +685,7 @@ function EditorialGeneratedBulletinTemplate({
         >
           <div className="generated-hero-map-layout">
             <BulletinMapCard
+              className="generated-full-map-card"
               title="Mapa de chuva observada 24h"
               subtitle={text(rain.description, "Pontos de pluviômetros e estações integradas quando disponíveis.")}
               geoJson={geoJson}
@@ -696,6 +699,7 @@ function EditorialGeneratedBulletinTemplate({
               ]}
               footer={`Fonte: ${text(rain.source || boletim.chuva?.fonte || "CEMADEN / INMET / ANA / SEMARH")}`}
             >
+              <p className="generated-map-insight">Leitura pública: observe a distribuição das estações e confirme situações de risco nos avisos oficiais.</p>
               <div className="generated-map-summary">
                 <strong>{text(rain.value || boletim.chuva?.maiorAcumulado)}</strong>
                 <span>{operationalRainComment(maxRainValue)}</span>
@@ -729,6 +733,7 @@ function EditorialGeneratedBulletinTemplate({
         >
           <div className="generated-hero-map-layout">
             <BulletinMapCard
+              className="generated-full-map-card"
               title="Mapa de rios monitorados"
               subtitle="Estações fluviométricas com simbologia por situação hidrológica."
               geoJson={geoJson}
@@ -800,6 +805,7 @@ function EditorialGeneratedBulletinTemplate({
         >
           <div className="generated-hero-map-layout">
             <BulletinMapCard
+              className="generated-full-map-card"
               title="Mapa de focos de calor"
               subtitle={text(fire.description, "Pontos detectados por satélite no arquivo diário do INPE.")}
               geoJson={geoJson}
@@ -831,6 +837,7 @@ function EditorialGeneratedBulletinTemplate({
         >
           <div className="generated-hero-map-layout">
             <BulletinMapCard
+              className="generated-full-map-card"
               title="Mapa de seca por município"
               subtitle="Municípios coloridos por grau de seca quando a base municipal estiver disponível."
               geoJson={geoJson}
@@ -1121,6 +1128,7 @@ function GeneratedBulletinTemplate({ payload }) {
               ]}
               footer={`Fonte: ${text(rain.source || boletim.chuva?.fonte || "CEMADEN / INMET / ANA / SEMARH")} | Atualização: ${text(rain.updatedAt || boletim.chuva?.atualizadoEm || snapshot.updatedAt)}`}
             >
+              <p className="generated-map-insight">Leitura pública: pontos em atenção, alerta ou emergência devem ser acompanhados com prioridade operacional.</p>
               <div className="generated-map-summary">
                 <strong>{text(rain.value || boletim.chuva?.maiorAcumulado)}</strong>
                 <span>{text(rain.description, "Maior acumulado observado no período de referência.")}</span>
@@ -1224,6 +1232,7 @@ function GeneratedBulletinTemplate({ payload }) {
               ]}
               footer={`Fonte: ${text(fire.source || "INPE Queimadas / MapBiomas Fogo")} | Atualização: ${text(fire.updatedAt || boletim.focosCalor?.atualizadoEm || snapshot.updatedAt)}`}
             >
+              <p className="generated-map-insight">Leitura pública: a concentração de pontos orienta o monitoramento, mas não confirma incêndio isoladamente.</p>
               <div className="generated-map-summary">
                 <strong>{text(fire.value || `${data.firePoints.length} foco(s)`)}</strong>
                 <span>Área queimada: {text(burnedAreaLabel, "MapBiomas Fogo em integração")}.</span>
@@ -1273,6 +1282,7 @@ function GeneratedBulletinTemplate({ payload }) {
               ]}
               footer={`Fonte: ${text(drought.source || boletim.seca?.fonte || "Monitor de Secas / CEMADEN")} | Atualização: ${text(drought.updatedAt || boletim.seca?.atualizadoEm || snapshot.updatedAt)}`}
             >
+              <p className="generated-map-insight">Leitura pública: a seca monitorada por índices técnicos complementa registros administrativos e decretos.</p>
               <div className="generated-map-summary">
                 <strong>{text(drought.value || boletim.seca?.situacao)}</strong>
                 <span>{text(drought.description || `${boletim.seca?.municipiosAfetados ?? 0} município(s) afetados ou em análise.`)}</span>

@@ -40,7 +40,7 @@ assert.ok(
 
 for (const snippet of [
   ".generated-page-shell",
-  "min-height: 276mm",
+  "min-height: 277mm",
   ".generated-hero-map-layout",
   ".generated-full-map-card",
   ".generated-cover-kpis",
