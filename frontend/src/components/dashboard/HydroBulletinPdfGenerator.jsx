@@ -382,6 +382,119 @@ function CompactTable({ columns, rows, emptyMessage }) {
   );
 }
 
+function PageFooter({ source, updatedAt }) {
+  return (
+    <footer className="generated-page-footer">
+      <span>Centro de Monitoramento da Defesa Civil do Tocantins</span>
+      <span>{source}</span>
+      <span>{updatedAt}</span>
+    </footer>
+  );
+}
+
+function PageShell({ label, title, subtitle, tone = "navy", children, source = "Fontes oficiais", updatedAt = "Atualização no momento da geração", className = "" }) {
+  return (
+    <section className={`generated-page-shell theme-${tone} ${className}`}>
+      <SectionHeader eyebrow={label} title={title} subtitle={subtitle} tone={tone} />
+      <div className="generated-page-content">{children}</div>
+      <PageFooter source={source} updatedAt={updatedAt} />
+    </section>
+  );
+}
+
+function CoverKpi({ title, value, tone = "sem_dados" }) {
+  return (
+    <article className={`generated-cover-kpi tone-${tone}`}>
+      <span>{title}</span>
+      <strong>{value}</strong>
+    </article>
+  );
+}
+
+function BigMetric({ title, value, description, tone = "navy" }) {
+  return (
+    <article className={`generated-big-metric theme-${tone}`}>
+      <span>{title}</span>
+      <strong>{value}</strong>
+      {description && <p>{description}</p>}
+    </article>
+  );
+}
+
+function BarList({ rows, emptyMessage, tone = "navy" }) {
+  const max = Math.max(1, ...rows.map((row) => safeNumber(row.value) || 0));
+  if (!rows.length) return <p className="generated-empty-note">{emptyMessage}</p>;
+  return (
+    <div className={`generated-bar-list theme-${tone}`}>
+      {rows.map((row) => {
+        const value = safeNumber(row.value) || 0;
+        return (
+          <div key={row.label} className="generated-bar-row">
+            <span>{row.label}</span>
+            <strong>{value.toLocaleString("pt-BR")}</strong>
+            <i style={{ width: `${Math.max(6, (value / max) * 100)}%` }} />
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function WeatherCards({ rows }) {
+  if (!rows.length) return <p className="generated-empty-note">Meteorologia regional indisponível no momento.</p>;
+  return (
+    <div className="generated-weather-cards">
+      {rows.map((row) => {
+        const unavailable = !row.temperatura && !row.umidade && !row.vento && !row.chuva;
+        return (
+          <article key={`${row.municipio}-${row.regiao}`} className={unavailable ? "is-unavailable" : ""}>
+            <small>{row.regiao || "Região estratégica"}</small>
+            <strong>{row.municipio || "Município estratégico"}</strong>
+            {unavailable ? (
+              <p>Dado não disponível no momento.</p>
+            ) : (
+              <dl>
+                <InfoRow label="Temp." value={numberText(row.temperatura, " °C")} />
+                <InfoRow label="Umidade" value={numberText(row.umidade, "%")} />
+                <InfoRow label="Vento" value={numberText(row.vento, " km/h")} />
+                <InfoRow label="Chuva" value={numberText(row.chuva, " mm")} />
+              </dl>
+            )}
+            <span>{text(row.condicao, "Condição em integração")}</span>
+          </article>
+        );
+      })}
+    </div>
+  );
+}
+
+function S2idCards({ emergency, snapshot }) {
+  const points = snapshot.emergency?.points || [];
+  if (!points.length) {
+    return (
+      <div className="generated-s2id-cards">
+        <article>
+          <small>S2ID / SEDEC-MIDR</small>
+          <strong>{text(emergency.value || "Sem registros ativos no momento")}</strong>
+          <p>{text(emergency.description || "Não há lista municipal publicada na base local para este boletim.")}</p>
+        </article>
+      </div>
+    );
+  }
+  return (
+    <div className="generated-s2id-cards">
+      {points.slice(0, 10).map((item) => (
+        <article key={`${item.municipio}-${item.situacao}`}>
+          <small>{item.situacao || "Reconhecimento vigente"}</small>
+          <strong>{item.municipio || "Município"}</strong>
+          <p>{item.desastre || "Desastre não informado"} {item.cobrade ? `| COBRADE ${item.cobrade}` : ""}</p>
+          <span>{updateLabel(item.data || item.reconhecimento || item.updatedAt)}</span>
+        </article>
+      ))}
+    </div>
+  );
+}
+
 function buildGeneratedData({ snapshot, boletim, weather, riverReadings = {} }) {
   const rainStations = snapshot.rain?.stations || [];
   const riverStations = snapshot.rivers?.stations || [];
@@ -467,6 +580,343 @@ function buildGeneratedData({ snapshot, boletim, weather, riverReadings = {} }) 
     droughtCounts: [...droughtCounts.entries()],
     weatherRows: (weather || []).slice(0, 8)
   };
+}
+
+function EditorialGeneratedBulletinTemplate({
+  boletim,
+  snapshot,
+  generatedAt,
+  geoJson,
+  logoSrc,
+  blocks,
+  overviewTiles,
+  data,
+  rain,
+  river,
+  fire,
+  drought,
+  emergency,
+  executiveSummary,
+  rainPoints,
+  riverPoints,
+  fireMapPoints,
+  maxRainValue,
+  burnedAreaLabel,
+  weatherComment
+}) {
+  const generatedLabel = formatDateTime(generatedAt);
+  const updateSource = `Geração: ${generatedLabel}`;
+  const methodologySources = boletim.fontes?.length
+    ? boletim.fontes
+    : ["CEMADEN", "INMET", "ANA", "INPE Queimadas", "MapBiomas Fogo", "CEMADEN Alerta-Secas", "S2ID / SEDEC-MIDR"];
+  const droughtBarRows = data.droughtCounts.map(([label, value]) => ({ label, value }));
+  const fireBarRows = data.fireByCity.map(([label, value]) => ({ label, value }));
+  const s2idCount = emergency.s2idFederal ?? emergency.federal ?? 0;
+
+  return (
+    <section className="generated-bulletin-print generated-editorial-bulletin" aria-label="Boletim Hidrometeorológico para impressão">
+      {/* Página 1 - Capa / Síntese Executiva */}
+      <header className="generated-page-shell generated-cover-page theme-navy">
+        <div className="generated-cover-topline">
+          <img src={logoSrc} alt="" />
+          <div>
+            <small>Governo do Tocantins | Defesa Civil Estadual</small>
+            <strong>Centro de Monitoramento da Defesa Civil do Tocantins</strong>
+          </div>
+        </div>
+        <div className="generated-cover-title">
+          <span>Publicação oficial de monitoramento</span>
+          <h1>Boletim Hidrometeorológico</h1>
+          <p>Centro de Monitoramento da Defesa Civil do Tocantins</p>
+        </div>
+        <dl className="generated-cover-meta">
+          <InfoRow label="Número" value={text(boletim.numero, "Sob demanda")} />
+          <InfoRow label="Data e hora de geração" value={generatedLabel} />
+          <InfoRow label="Período de referência" value={text(boletim.periodoReferencia || snapshot.updatedAt)} />
+        </dl>
+        <div className="generated-cover-kpis">
+          <CoverKpi title="Alertas vigentes" value={text(snapshot.alerts?.value || `${boletim.alertas?.quantidade ?? 0}`)} tone={statusTone(snapshot.alerts?.tone || snapshot.alerts?.status)} />
+          <CoverKpi title="Maior chuva 24h" value={text(rain.value || boletim.chuva?.maiorAcumulado)} tone={statusTone(rain.tone || "normal")} />
+          <CoverKpi title="Focos de calor" value={text(fire.value || `${data.firePoints.length}`)} tone={statusTone(fire.tone || "atencao")} />
+          <CoverKpi title="Situação de seca" value={text(drought.value || boletim.seca?.situacao)} tone={statusTone(drought.tone || drought.value)} />
+        </div>
+        <article className="generated-cover-summary">
+          <small>Síntese executiva</small>
+          <p>{executiveSummary}</p>
+        </article>
+        <PageFooter source="Defesa Civil do Tocantins" updatedAt={updateSource} />
+      </header>
+
+      <main className="generated-bulletin-body">
+        {/* Página 2 - Panorama Geral */}
+        <PageShell
+          label="Página 2"
+          title="Panorama Geral do Monitoramento"
+          subtitle="Síntese dos principais indicadores acompanhados pelo Centro de Monitoramento."
+          tone="navy"
+          source="IDAP | INMET | CEMADEN | ANA | INPE | S2ID"
+          updatedAt={updateSource}
+          className="page-break-before"
+        >
+          <div className="generated-panorama-grid">
+            {blocks.map((block) => (
+              <BigMetric key={block.title} title={block.title} value={block.value} description={block.description} tone={block.tone} />
+            ))}
+          </div>
+          <EditorialCallout
+            label="Destaque operacional"
+            value={text(snapshot.generalStatus?.label || boletim.situacaoGeral?.status, "Monitoramento ativo")}
+            text="Os dados deste boletim devem ser lidos em conjunto com os mapas temáticos e confirmados nas fontes oficiais emissoras."
+            tone="navy"
+          />
+        </PageShell>
+
+        {/* Página 3 - Chuva Observada 24h */}
+        <PageShell
+          label="Página 3"
+          title="Chuva Observada 24h"
+          subtitle="Mapa amplo com leituras válidas, maior acumulado e ranking curto das estações com maior precipitação."
+          tone="rain"
+          source={text(rain.source || boletim.chuva?.fonte || "CEMADEN / INMET / ANA / SEMARH")}
+          updatedAt={text(rain.updatedAt || boletim.chuva?.atualizadoEm || snapshot.updatedAt, updateSource)}
+          className="page-break-before"
+        >
+          <div className="generated-hero-map-layout">
+            <BulletinMapCard
+              title="Mapa de chuva observada 24h"
+              subtitle={text(rain.description, "Pontos de pluviômetros e estações integradas quando disponíveis.")}
+              geoJson={geoJson}
+              points={rainPoints}
+              legend={[
+                { label: "0 mm", color: "#94a3b8" },
+                { label: "1 a 10 mm", color: "#facc15" },
+                { label: "10 a 30 mm", color: "#22c55e" },
+                { label: "30 a 50 mm", color: "#38bdf8" },
+                { label: "Acima de 50 mm", color: "#2563eb" }
+              ]}
+              footer={`Fonte: ${text(rain.source || boletim.chuva?.fonte || "CEMADEN / INMET / ANA / SEMARH")}`}
+            >
+              <div className="generated-map-summary">
+                <strong>{text(rain.value || boletim.chuva?.maiorAcumulado)}</strong>
+                <span>{operationalRainComment(maxRainValue)}</span>
+              </div>
+            </BulletinMapCard>
+            <aside className="generated-side-panel">
+              <BigMetric title="Maior acumulado" value={text(rain.value || boletim.chuva?.maiorAcumulado)} description={text(rain.description, "Maior leitura disponível no período.")} tone="rain" />
+              <h3>Maiores acumulados</h3>
+              <CompactTable
+                columns={[
+                  { key: "pos", label: "#", render: (_, index) => index + 1 },
+                  { key: "municipio", label: "Município / estação", render: (row) => row.municipio || row.city || row.nome },
+                  { key: "chuva24h", label: "24h", render: (row) => `${(safeNumber(row.chuva24h ?? row.amount) || 0).toLocaleString("pt-BR", { maximumFractionDigits: 1 })} mm` }
+                ]}
+                rows={data.topRain.slice(0, 5)}
+                emptyMessage="Sem estações com leitura disponível no momento da geração."
+              />
+            </aside>
+          </div>
+        </PageShell>
+
+        {/* Página 4 - Rios Monitorados / Situação Geral */}
+        <PageShell
+          label="Página 4"
+          title="Rios Monitorados / Situação Geral"
+          subtitle="Mapa amplo das estações fluviométricas e resumo hidrológico sem tabela extensa."
+          tone="river"
+          source={text(river.source || boletim.rios?.fonte || "ANA / Telemetria")}
+          updatedAt={text(river.updatedAt || boletim.rios?.atualizadoEm || snapshot.updatedAt, updateSource)}
+          className="page-break-before"
+        >
+          <div className="generated-hero-map-layout">
+            <BulletinMapCard
+              title="Mapa de rios monitorados"
+              subtitle="Estações fluviométricas com simbologia por situação hidrológica."
+              geoJson={geoJson}
+              points={riverPoints}
+              legend={[
+                { label: "Normal", color: "#16734c" },
+                { label: "Atenção", color: "#d9a312" },
+                { label: "Alerta", color: "#f59a23" },
+                { label: "Emergência", color: "#d73027" }
+              ]}
+              footer={`Fonte: ${text(river.source || boletim.rios?.fonte || "ANA / Telemetria")}`}
+            />
+            <aside className="generated-side-panel">
+              <div className="generated-hydro-kpis">
+                <BigMetric title="Total de estações" value={data.hydroCounts.total || boletim.rios?.estacoesMonitoradas || "Dado em integração"} tone="river" />
+                <BigMetric title="Normal" value={data.hydroCounts.normal} tone="normal" />
+                <BigMetric title="Atenção" value={data.hydroCounts.atencao} tone="atencao" />
+                <BigMetric title="Alerta" value={data.hydroCounts.alerta} tone="alerta" />
+                <BigMetric title="Emergência" value={data.hydroCounts.emergencia} tone="emergencia" />
+              </div>
+              <EditorialCallout
+                label="Comentário operacional"
+                value={text(river.value || `${boletim.rios?.estacoesMonitoradas ?? 0} estação(ões)`)}
+                text={text(river.description || `Tendência predominante: ${text(boletim.rios?.tendenciaPredominante)}.`)}
+                tone="river"
+              />
+            </aside>
+          </div>
+        </PageShell>
+
+        {/* Página 5 - Principais Rios Estratégicos */}
+        <PageShell
+          label="Página 5"
+          title="Principais Rios Estratégicos"
+          subtitle="Tabela limpa e limitada aos pontos prioritários, com menos colunas para evitar quebra de texto."
+          tone="river"
+          source={text(river.source || boletim.rios?.fonte || "ANA / Telemetria")}
+          updatedAt={text(river.updatedAt || boletim.rios?.atualizadoEm || snapshot.updatedAt, updateSource)}
+          className="page-break-before"
+        >
+          <div className="generated-river-priority-table">
+            <CompactTable
+              columns={[
+                { key: "river", label: "Rio", render: (row) => row.river || row.rio || "Não informado" },
+                { key: "name", label: "Estação", render: (row) => row.name || row.nome || "Estação ANA" },
+                { key: "city", label: "Município", render: (row) => row.city || row.municipio || "Não informado" },
+                { key: "level", label: "Cota atual", render: (row) => row.level !== null && row.level !== undefined ? `${formatNumberPt(row.level, { maximumFractionDigits: 0 })} cm` : "sem leitura" },
+                { key: "trendLabel", label: "Tendência", render: (row) => row.trendLabel || "em integração" }
+              ]}
+              rows={data.riverRows.slice(0, 10)}
+              emptyMessage="Tabela dos principais rios em integração."
+            />
+          </div>
+          <div className="generated-line-placeholder">
+            <strong>Série semanal</strong>
+            <span>Gráfico de linha semanal preparado para integração quando a série histórica estiver disponível.</span>
+          </div>
+        </PageShell>
+
+        {/* Página 6 - Fogo e Queimadas */}
+        <PageShell
+          label="Página 6"
+          title="Fogo e Queimadas"
+          subtitle="Mapa de focos de calor, área queimada e ranking curto por município."
+          tone="fire"
+          source={text(fire.source || "INPE Queimadas / MapBiomas Fogo")}
+          updatedAt={text(fire.updatedAt || boletim.focosCalor?.atualizadoEm || snapshot.updatedAt, updateSource)}
+          className="page-break-before"
+        >
+          <div className="generated-hero-map-layout">
+            <BulletinMapCard
+              title="Mapa de focos de calor"
+              subtitle={text(fire.description, "Pontos detectados por satélite no arquivo diário do INPE.")}
+              geoJson={geoJson}
+              points={fireMapPoints}
+              legend={[
+                { label: "Foco de calor", color: "#f97316" },
+                { label: "Base municipal", color: "#edf2f7" }
+              ]}
+              footer="Foco de calor não confirma incêndio isoladamente."
+            />
+            <aside className="generated-side-panel">
+              <BigMetric title="Total de focos" value={text(fire.value || `${data.firePoints.length}`)} description="Pontos localizados no mapa temático." tone="fire" />
+              <BigMetric title="Área queimada" value={text(burnedAreaLabel, "Em integração")} description="Referência complementar do MapBiomas Fogo." tone="fire" />
+              <h3>Municípios com mais focos</h3>
+              <BarList rows={fireBarRows} emptyMessage="Sem focos por município no momento da geração." tone="fire" />
+            </aside>
+          </div>
+        </PageShell>
+
+        {/* Página 7 - Seca */}
+        <PageShell
+          label="Página 7"
+          title="Seca"
+          subtitle="Mapa municipal de seca, resumo por categoria e municípios em condição mais severa."
+          tone="drought"
+          source={text(drought.source || boletim.seca?.fonte || "Monitor de Secas / CEMADEN")}
+          updatedAt={text(drought.updatedAt || boletim.seca?.atualizadoEm || snapshot.updatedAt, updateSource)}
+          className="page-break-before"
+        >
+          <div className="generated-hero-map-layout">
+            <BulletinMapCard
+              title="Mapa de seca por município"
+              subtitle="Municípios coloridos por grau de seca quando a base municipal estiver disponível."
+              geoJson={geoJson}
+              droughtMunicipalities={data.droughtMunicipalities}
+              legend={[
+                { label: "Sem seca", color: "#c7f0cf" },
+                { label: "Seca fraca", color: "#facc15" },
+                { label: "Moderada", color: "#f59a23" },
+                { label: "Severa/grave", color: "#d73027" },
+                { label: "Extrema/excepcional", color: "#5f0f40" }
+              ]}
+              footer={`Fonte: ${text(drought.source || boletim.seca?.fonte || "Monitor de Secas / CEMADEN")}`}
+            />
+            <aside className="generated-side-panel">
+              <BigMetric title="Situação predominante" value={text(drought.value || boletim.seca?.situacao)} description={text(drought.description || `${boletim.seca?.municipiosAfetados ?? 0} município(s) afetados ou em análise.`)} tone="drought" />
+              <h3>Resumo por categoria</h3>
+              <BarList rows={droughtBarRows} emptyMessage="Dados municipais de seca ainda não disponíveis." tone="drought" />
+              {!!data.severeDrought.length && <p className="generated-map-note">Mais severos: {data.severeDrought.map((item) => droughtName(item)).filter(Boolean).join(", ")}.</p>}
+            </aside>
+          </div>
+        </PageShell>
+
+        {/* Página 8 - Meteorologia Regional */}
+        <PageShell
+          label="Página 8"
+          title="Meteorologia Regional"
+          subtitle="Cards por município estratégico, com leitura compacta de temperatura, umidade, vento, chuva e condição do tempo."
+          tone="rain"
+          source="INMET / CPTEC / Open-Meteo / redes integradas"
+          updatedAt={updateSource}
+          className="page-break-before"
+        >
+          <WeatherCards rows={data.weatherRows} />
+          <EditorialCallout label="Comentário meteorológico" value="Condição em acompanhamento" text={weatherComment} tone="rain" />
+        </PageShell>
+
+        {/* Página 9 - Emergência e Calamidade / S2ID */}
+        <PageShell
+          label="Página 9"
+          title="Emergência e Calamidade / S2ID"
+          subtitle="Reconhecimentos vigentes e registros administrativos consultados para acompanhamento institucional."
+          tone="fire"
+          source={text(emergency.source || "S2ID / SEDEC-MIDR")}
+          updatedAt={text(emergency.updatedAt || snapshot.updatedAt, updateSource)}
+          className="page-break-before"
+        >
+          <div className="generated-s2id-summary">
+            <BigMetric title="Reconhecimentos vigentes" value={text(emergency.value || `${s2idCount}`)} description={text(emergency.description || "Situação administrativa consultada no S2ID.")} tone={statusTone(emergency.tone)} />
+            <BigMetric title="Situação de Emergência" value={emergency.se ?? emergency.s2idSe ?? 0} tone="alerta" />
+            <BigMetric title="Estado de Calamidade" value={emergency.ecp ?? emergency.s2idEcp ?? 0} tone="emergencia" />
+          </div>
+          <S2idCards emergency={emergency} snapshot={snapshot} />
+        </PageShell>
+
+        {/* Página 10 - Fontes e Metodologia */}
+        <PageShell
+          label="Página 10"
+          title="Fontes e Metodologia"
+          subtitle="Fontes oficiais consultadas e observações metodológicas para leitura correta do boletim."
+          tone="guidance"
+          source="Defesa Civil do Tocantins"
+          updatedAt={updateSource}
+          className="page-break-before"
+        >
+          <div className="generated-methodology-grid">
+            <article>
+              <h3>Fontes oficiais utilizadas</h3>
+              <ul>
+                {methodologySources.map((source) => <li key={source}>{source}</li>)}
+              </ul>
+            </article>
+            <article>
+              <h3>Observações metodológicas</h3>
+              <p>Este boletim organiza informações públicas e dados disponíveis no painel do Centro de Monitoramento. Alertas oficiais, reconhecimentos administrativos e classificações técnicas devem ser confirmados nos canais emissores.</p>
+              <p>A seca monitorada por índices técnicos e a situação registrada no S2ID são informações complementares.</p>
+              <p>Focos de calor são detecções por satélite e não confirmam incêndio isoladamente.</p>
+            </article>
+            <article className="generated-emergency-box">
+              <h3>Canais de emergência</h3>
+              <p>Defesa Civil 199 | Corpo de Bombeiros 193.</p>
+            </article>
+          </div>
+        </PageShell>
+      </main>
+    </section>
+  );
 }
 
 function GeneratedBulletinTemplate({ payload }) {
@@ -566,6 +1016,31 @@ function GeneratedBulletinTemplate({ payload }) {
   const maxRainValue = safeNumber(String(rain.value || "").replace(",", ".")) ?? safeNumber(data.topRain[0]?.chuva24h ?? data.topRain[0]?.amount) ?? 0;
   const burnedAreaLabel = formatAreaHa(fire.burnedAreaLabel || fire.burnedArea?.hectares);
   const weatherComment = operationalWeatherComment(data.weatherRows);
+
+  return (
+    <EditorialGeneratedBulletinTemplate
+      boletim={boletim}
+      snapshot={snapshot}
+      generatedAt={generatedAt}
+      geoJson={geoJson}
+      logoSrc={logoSrc}
+      blocks={blocks}
+      overviewTiles={overviewTiles}
+      data={data}
+      rain={rain}
+      river={river}
+      fire={fire}
+      drought={drought}
+      emergency={emergency}
+      executiveSummary={executiveSummary}
+      rainPoints={rainPoints}
+      riverPoints={riverPoints}
+      fireMapPoints={fireMapPoints}
+      maxRainValue={maxRainValue}
+      burnedAreaLabel={burnedAreaLabel}
+      weatherComment={weatherComment}
+    />
+  );
 
   return (
     <section className="generated-bulletin-print" aria-label="Boletim Hidrometeorológico para impressão">
