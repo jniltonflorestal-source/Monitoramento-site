@@ -8,6 +8,10 @@ const CEMADEN_ALERTS_URL = "https://painelalertas.cemaden.gov.br/wsAlertas2";
 const CEMADEN_RAIN_URL = "https://resources.cemaden.gov.br/dados/311_24.json";
 const INMET_WARNINGS_URL = "https://apiprevmet3.inmet.gov.br/avisos/ativos";
 const INMET_STATIONS_URL = "https://apitempo.inmet.gov.br/estacoes/T";
+const INMET_AUTH_STATION_URL = "https://apitempo.inmet.gov.br/token/estacao";
+const INMET_API_ID = process.env.INMET_API_ID?.trim() || "";
+const INMET_API_TOKEN = process.env.INMET_API_TOKEN?.trim() || "";
+const INMET_AUTH_ENABLED = Boolean(INMET_API_ID && INMET_API_TOKEN);
 const ANA_RAIN_INVENTORY_URL = "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroInventario?codEstDE=&codEstATE=&tpEst=2&nmEst=&nmRio=&codSubBacia=&codBacia=&nmMunicipio=&nmEstado=Tocantins&sgResp=&sgOper=&telemetrica=1";
 const ANA_READINGS_URL = "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/DadosHidrometeorologicos";
 const CEMADEN_DROUGHT_META_URL = "https://mapasecas.cemaden.gov.br/rest/product/meta/iis3";
@@ -57,7 +61,26 @@ function normalizeRainStation(station, source, updatedAt) {
     chuva24h: amount,
     atualizadoEm: station.atualizadoEm || updatedAt || null,
     status: normalizeRainStatus(amount),
+    statusLeitura: "valida",
     observacao: station.observacao || ""
+  };
+}
+
+function normalizeUnavailableRainCatalogStation(station, source, motivoIndisponibilidade, updatedAt = null) {
+  return {
+    id: `${source}-${station.code || station.id || station.name || station.nome}`,
+    codigo: String(station.code || station.id || ""),
+    nome: String(station.nome || station.name || "Estacao de chuva"),
+    municipio: String(station.municipio || station.city || "Municipio nao informado"),
+    fonte: source,
+    latitude: Number(station.latitude),
+    longitude: Number(station.longitude),
+    chuva24h: null,
+    atualizadoEm: updatedAt,
+    status: "sem_dado",
+    statusLeitura: "sem_leitura",
+    motivoIndisponibilidade,
+    observacao: motivoIndisponibilidade
   };
 }
 
@@ -201,8 +224,65 @@ function recentIsoDates(days = 3) {
   });
 }
 
-async function fetchInmetStationRain(station) {
+function recentInmetPeriod(days = 3) {
+  const dates = recentIsoDates(days);
+  return { start: dates[dates.length - 1], end: dates[0] };
+}
+
+function parseInmetTimestamp(row) {
+  const hour = String(row.HR_MEDICAO || "0000").padStart(4, "0");
+  const timestamp = new Date(`${row.DT_MEDICAO}T${hour.slice(0, 2)}:${hour.slice(2, 4)}:00Z`).getTime();
+  return Number.isFinite(timestamp) ? timestamp : null;
+}
+
+function normalizeInmetRows(rows, station, observacao) {
+  if (!rows.length) return null;
   const cutoff = Date.now() - 24 * 60 * 60 * 1000;
+  const recentRows = rows.filter((row) => {
+    const timestamp = parseInmetTimestamp(row);
+    return timestamp !== null && timestamp >= cutoff;
+  });
+  if (!recentRows.length) return null;
+  const amount = recentRows.reduce((sum, row) => sum + (asNumber(row.CHUVA ?? row.chuva) ?? 0), 0);
+  const latest = recentRows.reduce((current, row) => {
+    const currentTimestamp = current ? parseInmetTimestamp(current) : null;
+    const rowTimestamp = parseInmetTimestamp(row);
+    return rowTimestamp !== null && (currentTimestamp === null || rowTimestamp > currentTimestamp) ? row : current;
+  }, null) || recentRows[recentRows.length - 1];
+  const updatedAt = [latest.DT_MEDICAO, latest.HR_MEDICAO].filter(Boolean).join(" ");
+  return normalizeRainStation({
+    ...station,
+    amount,
+    atualizadoEm: updatedAt,
+    observacao
+  }, "INMET", updatedAt);
+}
+
+async function fetchInmetAuthenticatedStationRain(station) {
+  if (!INMET_AUTH_ENABLED) return null;
+  const { start, end } = recentInmetPeriod(3);
+  const response = await fetch(`${INMET_AUTH_STATION_URL}/${start}/${end}/${station.code}/${INMET_API_TOKEN}`, {
+    headers: {
+      "X-INMET-Client-ID": INMET_API_ID
+    }
+  });
+  if (!response.ok) throw new Error(`Consulta autenticada INMET indisponivel: ${response.status}`);
+  const rows = await response.json();
+  return normalizeInmetRows(
+    Array.isArray(rows) ? rows : [],
+    station,
+    "Somatorio de precipitacao horaria nas ultimas 24h via consulta autenticada INMET."
+  );
+}
+
+async function fetchInmetStationRain(station) {
+  try {
+    const authenticatedReading = await fetchInmetAuthenticatedStationRain(station);
+    if (authenticatedReading) return authenticatedReading;
+  } catch {
+    // Quando a consulta autenticada falha em uma estacao, ainda tentamos o endpoint publico.
+  }
+
   const allRows = [];
   for (const date of recentIsoDates(3)) {
     const response = await fetch(`https://apitempo.inmet.gov.br/estacao/dados/${date}/${station.code}`);
@@ -210,21 +290,13 @@ async function fetchInmetStationRain(station) {
     const rows = await response.json();
     if (Array.isArray(rows)) allRows.push(...rows);
   }
-  if (!allRows.length) return null;
-  const recentRows = allRows.filter((row) => {
-    const hour = String(row.HR_MEDICAO || "0000").padStart(4, "0");
-    const timestamp = new Date(`${row.DT_MEDICAO}T${hour.slice(0, 2)}:${hour.slice(2, 4)}:00Z`).getTime();
-    return Number.isFinite(timestamp) && timestamp >= cutoff;
-  });
-  if (!recentRows.length) return null;
-  const amount = recentRows.reduce((sum, row) => sum + (asNumber(row.CHUVA ?? row.chuva) ?? 0), 0);
-  const latest = recentRows[recentRows.length - 1];
-  return normalizeRainStation({
-    ...station,
-    amount,
-    atualizadoEm: [latest.DT_MEDICAO, latest.HR_MEDICAO].filter(Boolean).join(" "),
-    observacao: "Somatorio de precipitacao horaria nas ultimas 24h."
-  }, "INMET", [latest.DT_MEDICAO, latest.HR_MEDICAO].filter(Boolean).join(" "));
+  return normalizeInmetRows(
+    allRows,
+    station,
+    INMET_AUTH_ENABLED
+      ? "Consulta autenticada sem leitura recente; fallback publico consultado."
+      : "Somatorio de precipitacao horaria nas ultimas 24h. Credenciais INMET ausentes; usando endpoint publico."
+  );
 }
 
 async function fetchInmetRain24h() {
@@ -243,16 +315,32 @@ async function fetchInmetRain24h() {
 
   const settled = await Promise.allSettled(stations.map(fetchInmetStationRain));
   const observed = settled.map((item) => item.value).filter(Boolean);
+  const observedByCode = new Map(observed.map((station) => [station.codigo, station]));
+  const allStations = stations.map((station) => observedByCode.get(station.code) || normalizeUnavailableRainCatalogStation(
+    station,
+    "INMET",
+    INMET_AUTH_ENABLED
+      ? "Estacao cadastrada no INMET, mas sem leitura valida de chuva nas ultimas 24h."
+      : "Estacao cadastrada no INMET; consulta autenticada nao configurada e sem leitura valida no endpoint publico."
+  ));
+  const errorCount = settled.filter((item) => item.status === "rejected").length;
   return {
     source: "INMET",
     status: observed.length ? "ready" : "catalog",
     label: observed.length ? "Operando" : "Sem leitura valida",
-    observacao: observed.length ? "Consulta server-side realizada pelo workflow." : "Fonte sem leituras validas nas ultimas 24h.",
+    observacao: observed.length
+      ? `Consulta server-side realizada pelo workflow (${INMET_AUTH_ENABLED ? "endpoint autenticado por token" : "endpoint publico; credenciais INMET ausentes"}).`
+      : `${INMET_AUTH_ENABLED ? "Consulta autenticada sem leituras validas nas ultimas 24h." : "Fonte sem leituras validas nas ultimas 24h; credenciais INMET ausentes para consulta autenticada."}`,
+    modoConsulta: INMET_AUTH_ENABLED ? "autenticada" : "publica",
     estacoesCadastradas: stations.length,
     estacoesConsultadas: stations.length,
     estacoesComLeitura: observed.length,
+    estacoesSemLeitura: allStations.filter((station) => station.statusLeitura === "sem_leitura").length,
+    estacoesComErro: errorCount,
+    estacoesEmIntegracao: 0,
     atualizadoEm: observed[0]?.atualizadoEm || null,
-    estacoes: observed
+    estacoes: observed,
+    todasEstacoes: allStations
   };
 }
 

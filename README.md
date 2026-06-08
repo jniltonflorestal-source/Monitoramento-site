@@ -62,6 +62,22 @@ mapa-seca-tocantins-2026-04.pdf
 7. Faça commit e push.
 8. Confira a seção `#boletins` no site publicado.
 
+## Como configurar a API do INMET com segurança
+
+O site roda no GitHub Pages, portanto qualquer variável `VITE_*` ou token colocado no frontend fica público no JavaScript publicado. Nunca coloque credenciais INMET no frontend, no código público ou nos arquivos JSON servidos pelo site.
+
+Para usar a consulta autenticada do INMET, cadastre as credenciais como **GitHub Actions Secrets** no repositório:
+
+1. Abra o repositório no GitHub.
+2. Acesse **Settings > Secrets and variables > Actions**.
+3. Crie o secret `INMET_API_ID` com o ID fornecido pelo INMET.
+4. Crie o secret `INMET_API_TOKEN` com o token fornecido pelo INMET.
+5. Rode o workflow **Atualizar dados de monitoramento** manualmente ou aguarde a próxima execução horária.
+
+O workflow `.github/workflows/atualizar-dados.yml` repassa esses secrets apenas para `scripts/update-monitoring.mjs`. O script consulta a API do INMET no ambiente do GitHub Actions e publica somente o resultado sanitizado em `dados-monitoramento.json`, sem expor ID ou token.
+
+Se os secrets não estiverem configurados, a chuva do INMET continua tentando o endpoint público e a interface informa que a consulta autenticada ainda não está configurada.
+
 ## Como funciona o botão "Gerar Boletim Hidrometeorológico em PDF"
 
 Na seção **Publicações da Defesa Civil**, o bloco **Boletins da Defesa Civil** possui o botão **Gerar Boletim Hidrometeorológico em PDF**.
