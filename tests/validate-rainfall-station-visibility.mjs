@@ -26,14 +26,15 @@ for (const snippet of [
   "visibleRainStations",
   "selectedRainSource",
   "selectedRainStatus",
-  "Estações da camada",
+  "Esta",
   "Mostrar no mapa",
   "Limpar filtro",
   "Sem leitura 24h",
   "Erro de consulta",
-  "Fonte em integração",
-  "As estações cadastradas sem leitura ficam neste diagnóstico técnico",
-  "O mapa principal mostra apenas leituras válidas",
+  "Fonte em integra",
+  "As esta",
+  "tamb",
+  "aparecem no mapa",
   "rain-diagnostics",
   "statusLeitura",
   "motivoIndisponibilidade",
@@ -43,6 +44,8 @@ for (const snippet of [
 ]) {
   assert.ok(map.includes(snippet), `PublicMapSection.jsx precisa conter ${snippet}`);
 }
+assert.match(map, /visibleRainStations\.map\(\(station\) => \(/, "Mapa deve desenhar estacoes visiveis, incluindo sem leitura");
+assert.doesNotMatch(map, /O mapa principal mostra apenas leituras/, "Interface nao deve esconder estacoes sem leitura do mapa");
 
 const styles = await read("frontend/src/styles.css");
 for (const snippet of [
@@ -58,6 +61,8 @@ for (const snippet of [
 
 const monitoring = await read("scripts/update-monitoring.mjs");
 for (const snippet of [
+  "/diaria/",
+  "CHAVE INV",
   "statusLeitura",
   "motivoIndisponibilidade",
   "ultimaTentativa",
@@ -67,4 +72,4 @@ for (const snippet of [
   assert.ok(monitoring.includes(snippet), `update-monitoring.mjs precisa conter ${snippet}`);
 }
 
-console.log("Visibilidade de estações de chuva sem leitura validada.");
+console.log("Visibilidade de estacoes de chuva e endpoints INMET validados.");

@@ -12,6 +12,7 @@ const INMET_AUTH_STATION_URL = "https://apitempo.inmet.gov.br/token/estacao";
 const INMET_API_ID = process.env.INMET_API_ID?.trim() || "";
 const INMET_API_TOKEN = process.env.INMET_API_TOKEN?.trim() || "";
 const INMET_AUTH_ENABLED = Boolean(INMET_API_ID && INMET_API_TOKEN);
+let inmetAuthLastError = "";
 const ANA_RAIN_INVENTORY_URL = "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroInventario?codEstDE=&codEstATE=&tpEst=2&nmEst=&nmRio=&codSubBacia=&codBacia=&nmMunicipio=&nmEstado=Tocantins&sgResp=&sgOper=&telemetrica=1";
 const ANA_READINGS_URL = "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/DadosHidrometeorologicos";
 const CEMADEN_DROUGHT_META_URL = "https://mapasecas.cemaden.gov.br/rest/product/meta/iis3";
@@ -261,13 +262,18 @@ function normalizeInmetRows(rows, station, observacao) {
 async function fetchInmetAuthenticatedStationRain(station) {
   if (!INMET_AUTH_ENABLED) return null;
   const { start, end } = recentInmetPeriod(3);
-  const response = await fetch(`${INMET_AUTH_STATION_URL}/${start}/${end}/${station.code}/${INMET_API_TOKEN}`, {
+  const response = await fetch(`${INMET_AUTH_STATION_URL}/diaria/${start}/${end}/${station.code}/${INMET_API_TOKEN}`, {
     headers: {
       "X-INMET-Client-ID": INMET_API_ID
     }
   });
   if (!response.ok) throw new Error(`Consulta autenticada INMET indisponivel: ${response.status}`);
-  const rows = await response.json();
+  const text = await response.text();
+  if (/CHAVE INV/i.test(text)) {
+    inmetAuthLastError = "Chave/token INMET recusado pela API.";
+    throw new Error(inmetAuthLastError);
+  }
+  const rows = JSON.parse(text);
   return normalizeInmetRows(
     Array.isArray(rows) ? rows : [],
     station,
@@ -320,7 +326,7 @@ async function fetchInmetRain24h() {
     station,
     "INMET",
     INMET_AUTH_ENABLED
-      ? "Estacao cadastrada no INMET, mas sem leitura valida de chuva nas ultimas 24h."
+      ? (inmetAuthLastError || "Estacao cadastrada no INMET, mas sem leitura valida de chuva nas ultimas 24h.")
       : "Estacao cadastrada no INMET; consulta autenticada nao configurada e sem leitura valida no endpoint publico."
   ));
   const errorCount = settled.filter((item) => item.status === "rejected").length;
@@ -330,8 +336,9 @@ async function fetchInmetRain24h() {
     label: observed.length ? "Operando" : "Sem leitura valida",
     observacao: observed.length
       ? `Consulta server-side realizada pelo workflow (${INMET_AUTH_ENABLED ? "endpoint autenticado por token" : "endpoint publico; credenciais INMET ausentes"}).`
-      : `${INMET_AUTH_ENABLED ? "Consulta autenticada sem leituras validas nas ultimas 24h." : "Fonte sem leituras validas nas ultimas 24h; credenciais INMET ausentes para consulta autenticada."}`,
+      : `${INMET_AUTH_ENABLED ? (inmetAuthLastError || "Consulta autenticada sem leituras validas nas ultimas 24h.") : "Fonte sem leituras validas nas ultimas 24h; credenciais INMET ausentes para consulta autenticada."}`,
     modoConsulta: INMET_AUTH_ENABLED ? "autenticada" : "publica",
+    erroAutenticacao: inmetAuthLastError || null,
     estacoesCadastradas: stations.length,
     estacoesConsultadas: stations.length,
     estacoesComLeitura: observed.length,

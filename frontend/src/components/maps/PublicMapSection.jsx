@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+﻿import { useEffect, useMemo, useRef, useState } from "react";
 import { Flame, Layers3, MapPinned, Waves } from "lucide-react";
 import { CircleMarker, GeoJSON, MapContainer, Popup, TileLayer } from "react-leaflet";
 import { getAnaStationReading } from "../../services/ana";
@@ -85,17 +85,17 @@ function rainStationRadius(station) {
 }
 
 function rainStatusText(status) {
-  if (status === "valida") return "Leitura válida";
+  if (status === "valida") return "Leitura vÃ¡lida";
   if (status === "sem_leitura") return "Sem leitura 24h";
   if (status === "erro") return "Erro de consulta";
   if (status === "integracao") return "Fonte em integração";
-  return "Status não informado";
+  return "Status nÃ£o informado";
 }
 
 function rainSituation(maximum) {
-  if (!Number.isFinite(maximum)) return "Dados em integração";
+  if (!Number.isFinite(maximum)) return "Dados em integraÃ§Ã£o";
   if (maximum >= 50) return "Chuva intensa";
-  if (maximum >= 30) return "Atenção para chuva";
+  if (maximum >= 30) return "AtenÃ§Ã£o para chuva";
   if (maximum >= 10) return "Chuva moderada";
   if (maximum > 0) return "Chuva fraca";
   return "Sem chuva relevante";
@@ -108,7 +108,7 @@ function buildRainStats(stations, summary) {
   return {
     total: stations.length,
     maximum,
-    maxLabel: maxStation ? `${maxStation.city} | ${maxStation.name}` : "Sem estação de destaque",
+    maxLabel: maxStation ? `${maxStation.city} | ${maxStation.name}` : "Sem estaÃ§Ã£o de destaque",
     sourceBreakdown: summary?.sourceBreakdown || {},
     topSource: Object.entries(summary?.sourceBreakdown || {})
       .sort((first, second) => ((second[1].count || 0) || (second[1].registeredCount || 0)) - ((first[1].count || 0) || (first[1].registeredCount || 0)))[0]?.[0] || "Fonte em integração",
@@ -130,8 +130,8 @@ function buildRainStationRows(stations = []) {
 
 function trendText(readingState, riverReading) {
   if (readingState === "ready" && riverReading?.trend?.label) return riverReading.trend.label;
-  if (readingState === "loading") return "Atualizando estação";
-  return "Classificação oficial em integração";
+  if (readingState === "loading") return "Atualizando estaÃ§Ã£o";
+  return "ClassificaÃ§Ã£o oficial em integraÃ§Ã£o";
 }
 
 function normalizeName(value) {
@@ -156,7 +156,7 @@ function droughtTone(classe) {
 
 function buildDroughtCounts(municipalities = []) {
   return municipalities.reduce((counts, city) => {
-    const key = city.classe || "Sem informação";
+    const key = city.classe || "Sem informaÃ§Ã£o";
     counts[key] = (counts[key] || 0) + 1;
     return counts;
   }, {});
@@ -197,8 +197,8 @@ function SelectedSearchMarker({ result }) {
 export function PublicMapSection({
   id = "mapa-prioritario",
   variant = "priority",
-  eyebrow = "Mapa prioritário",
-  title = "Visualização territorial do Tocantins",
+  eyebrow = "Mapa prioritÃ¡rio",
+  title = "VisualizaÃ§Ã£o territorial do Tocantins",
   description = "Mapa preparado para chuva, rios e focos de calor.",
   rainStations = [],
   rainSummary = null,
@@ -224,15 +224,15 @@ export function PublicMapSection({
   const [selectedRainSource, setSelectedRainSource] = useState("TODAS");
   const [selectedRainStatus, setSelectedRainStatus] = useState("todos");
 
+  const rainStats = useMemo(() => buildRainStats(rainStations, rainSummary), [rainStations, rainSummary]);
+  const allRainStations = rainSummary?.visibleStations || rainSummary?.allStations || rainStations;
   const searchResults = useMemo(() => buildMapSearchResults(activeLayer, {
-    rainStations,
+    rainStations: allRainStations,
     riverStations,
     firePoints,
     emergencyPoints,
     droughtMunicipalities: droughtSummary?.municipalities || []
-  }, searchQuery), [activeLayer, droughtSummary, emergencyPoints, firePoints, rainStations, riverStations, searchQuery]);
-  const rainStats = useMemo(() => buildRainStats(rainStations, rainSummary), [rainStations, rainSummary]);
-  const allRainStations = rainSummary?.visibleStations || rainSummary?.allStations || rainStations;
+  }, searchQuery), [activeLayer, allRainStations, droughtSummary, emergencyPoints, firePoints, riverStations, searchQuery]);
   const visibleRainStations = useMemo(() => allRainStations.filter((station) => {
     const sourceMatch = selectedRainSource === "TODAS" || (station.fonte || station.source) === selectedRainSource;
     const statusMatch = selectedRainStatus === "todos" || station.statusLeitura === selectedRainStatus;
@@ -338,7 +338,7 @@ export function PublicMapSection({
             <>
               <h4>{rainStats.situation}</h4>
               <dl>
-                <div><dt>Estações consultadas</dt><dd>{rainStats.total}</dd></div>
+                <div><dt>EstaÃ§Ãµes consultadas</dt><dd>{rainStats.total}</dd></div>
                 <div><dt>Maior acumulado</dt><dd>{rainStats.value}</dd></div>
                 <div><dt>Destaque</dt><dd>{rainStats.maxLabel}</dd></div>
                 <div><dt>Maior fonte integrada</dt><dd>{rainStats.topSource}</dd></div>
@@ -347,8 +347,8 @@ export function PublicMapSection({
                 <div><dt>Acima de 30 mm</dt><dd>{rainStats.above30}</dd></div>
                 <div><dt>Acima de 50 mm</dt><dd>{rainStats.above50}</dd></div>
               </dl>
-              {rainSummary?.updatedAt && <small>Atualização: {rainSummary.updatedAt}</small>}
-              <small>Fonte operacional principal: CEMADEN. INMET e ANA entram como fontes complementares quando houver leitura 24h válida ou base consolidada publicada. SEMARH permanece em estrutura de integração.</small>
+              {rainSummary?.updatedAt && <small>AtualizaÃ§Ã£o: {rainSummary.updatedAt}</small>}
+              <small>Fonte operacional principal: CEMADEN. INMET e ANA entram como fontes complementares quando houver leitura 24h vÃ¡lida ou base consolidada publicada. SEMARH permanece em estrutura de integraÃ§Ã£o.</small>
               <details className="rain-diagnostics">
                 <summary>Diagnóstico das fontes</summary>
                 <div className="rain-source-breakdown" aria-label="Estações por fonte">
@@ -363,7 +363,7 @@ export function PublicMapSection({
                     item?.status === "catalog" ? "Sem leitura válida" :
                     item?.status === "error" ? "Erro de consulta" :
                     item?.status === "integration" ? "Fonte em integração" :
-                    "Fonte indisponível no momento"
+                    "Fonte indisponÃ­vel no momento"
                   );
                   return (
                     <span key={source} className={selectedRainSource === source ? "rain-source-filter active" : "rain-source-filter"}>
@@ -371,9 +371,9 @@ export function PublicMapSection({
                       <em>{status}</em>
                       {item ? (
                         <>
-                          <small>{registered} cadastrada{registered === 1 ? "" : "s"} | {queried !== null && queried !== undefined ? String(queried) + " consultada" + (queried === 1 ? "" : "s") + " | " : ""}{count} com leitura válida</small>
-                          <small>{item.semLeituraCount || 0} sem leitura | {item.errorCount || 0} erro | {item.integrationCount || 0} em integração</small>
-                          {item.updatedAt && <small>Atualização: {item.updatedAt}</small>}
+                          <small>{registered} cadastrada{registered === 1 ? "" : "s"} | {queried !== null && queried !== undefined ? String(queried) + " consultada" + (queried === 1 ? "" : "s") + " | " : ""}{count} com leitura vÃ¡lida</small>
+                          <small>{item.semLeituraCount || 0} sem leitura | {item.errorCount || 0} erro | {item.integrationCount || 0} em integraÃ§Ã£o</small>
+                          {item.updatedAt && <small>AtualizaÃ§Ã£o: {item.updatedAt}</small>}
                           {item.message && <small>{item.message}</small>}
                           <div className="rain-source-actions">
                             <button type="button" onClick={() => setSelectedRainSource(source)}>Mostrar no mapa</button>
@@ -392,13 +392,13 @@ export function PublicMapSection({
                 )}
               </div>
               <p className="rain-network-note">
-                As estações cadastradas sem leitura ficam neste diagnóstico técnico. O mapa principal mostra apenas leituras válidas de chuva observada nas últimas 24h.
+                As estações cadastradas também aparecem no mapa. Quando não houver leitura válida, elas ficam em cinza para indicar cadastro sem dado operacional 24h.
               </p>
-              <div className="rain-status-legend" aria-label="Legenda de status das estações de chuva">
-                <span><i className="status-valid" /> leitura válida</span>
+              <div className="rain-status-legend" aria-label="Legenda de status das estaÃ§Ãµes de chuva">
+                <span><i className="status-valid" /> leitura vÃ¡lida</span>
                 <span><i className="status-empty" /> sem leitura 24h</span>
                 <span><i className="status-error" /> erro de consulta</span>
-                <span><i className="status-integration" /> fonte em integração</span>
+                <span><i className="status-integration" /> fonte em integraÃ§Ã£o</span>
               </div>
               <details className="rain-stations-panel">
                 <summary>Estações da camada</summary>
@@ -410,10 +410,10 @@ export function PublicMapSection({
                   <div role="row" className="rain-table-head"><span>Fonte</span><span>Estação</span><span>Município</span><span>Chuva 24h</span><span>Status</span></div>
                   {rainStationRows.map((station) => (
                     <div role="row" key={(station.fonte || station.source) + "-" + (station.code || station.id || station.name)} className="rain-table-row">
-                      <span>{station.fonte || station.source}</span><span>{station.name || station.nome}</span><span>{station.city || station.municipio}</span><span>{station.statusLeitura === "valida" ? formatNumber(Number(station.amount ?? station.chuva24h ?? 0), " mm") : "--"}</span><span className={"rain-station-status-chip status-" + (station.statusLeitura || "valida")}>{rainStatusText(station.statusLeitura || "valida")}</span><small>{station.motivoIndisponibilidade || station.observacao || "Leitura operacional disponível."}</small><small>{station.atualizadoEm || station.updatedAt || station.ultimaTentativa || "Sem atualização"}</small>
+                      <span>{station.fonte || station.source}</span><span>{station.name || station.nome}</span><span>{station.city || station.municipio}</span><span>{station.statusLeitura === "valida" ? formatNumber(Number(station.amount ?? station.chuva24h ?? 0), " mm") : "--"}</span><span className={"rain-station-status-chip status-" + (station.statusLeitura || "valida")}>{rainStatusText(station.statusLeitura || "valida")}</span><small>{station.motivoIndisponibilidade || station.observacao || "Leitura operacional disponível."}</small><small>{station.atualizadoEm || station.updatedAt || station.ultimaTentativa || "Sem atualizaÃ§Ã£o"}</small>
                     </div>
                   ))}
-                  {!rainStationRows.length && <p>Nenhuma estação encontrada neste filtro.</p>}
+                  {!rainStationRows.length && <p>Nenhuma estaÃ§Ã£o encontrada neste filtro.</p>}
                 </div>
               </details>
               </details>
@@ -426,18 +426,18 @@ export function PublicMapSection({
                 Atualizar previsão
               </button>
               {forecastState.state === "loading" && <p>Carregando previsão INMET...</p>}
-              {forecastState.state === "error" && <p>Previsão INMET indisponível no momento.</p>}
+              {forecastState.state === "error" && <p>PrevisÃ£o INMET indisponÃ­vel no momento.</p>}
               {forecastState.state === "ready" && (
                 <>
                   <dl>
                     <div><dt>Municípios consultados</dt><dd>{forecastState.municipiosConsultados || forecastPoints.length}</dd></div>
-                    <div><dt>Condição predominante</dt><dd>{forecastState.condicaoPredominante || "Não informado"}</dd></div>
+                    <div><dt>Condição predominante</dt><dd>{forecastState.condicaoPredominante || "NÃ£o informado"}</dd></div>
                     <div><dt>Com possibilidade de chuva</dt><dd>{forecastState.comPossibilidadeChuva || 0}</dd></div>
                     <div><dt>Período</dt><dd>{forecastState.period}</dd></div>
                   </dl>
                   {!!forecastState.rainyCities?.length && (
                     <div className="forecast-condition-list">
-                      <strong>Municípios com indicação de chuva</strong>
+                      <strong>Municípios com indicaÃ§Ã£o de chuva</strong>
                       <span>{forecastState.rainyCities.join(", ")}</span>
                     </div>
                   )}
@@ -447,8 +447,8 @@ export function PublicMapSection({
               <small>Fonte: INMET. Confirme alertas e avisos nos canais oficiais.</small>            </>
           ) : (
             <>
-              <h4>Satélite GOES-East</h4>
-              <p>Camada visual de apoio para nebulosidade/condição atmosférica. Não substitui aviso oficial.</p>
+              <h4>SatÃ©lite GOES-East</h4>
+              <p>Camada visual de apoio para nebulosidade/condiÃ§Ã£o atmosfÃ©rica. NÃ£o substitui aviso oficial.</p>
               <small className="satellite-credit">Fonte: NASA GIBS / GOES-East ABI GeoColor.</small>
             </>
           )}
@@ -457,7 +457,7 @@ export function PublicMapSection({
       {activeLayer === "drought" && (
         <div className="map-summary-card drought-map-summary">
           <p className="eyebrow">Resumo da seca</p>
-          <h4>{droughtSummary?.value || "Camada municipal de seca em integração"}</h4>
+          <h4>{droughtSummary?.value || "Camada municipal de seca em integraÃ§Ã£o"}</h4>
           {droughtSummary?.state === "ready" ? (
             <>
               <dl>
@@ -469,26 +469,26 @@ export function PublicMapSection({
                 <div><dt>Seca extrema</dt><dd>{droughtCounts.Extrema || 0}</dd></div>
               </dl>
               <small>Mais severos: {droughtSummary.summary?.municipios_criticos?.join(", ") || "Sem destaque"}</small>
-              <small>Fonte: {droughtSummary.source} | referência {formatDate(droughtSummary.reference)}</small>
+              <small>Fonte: {droughtSummary.source} | referÃªncia {formatDate(droughtSummary.reference)}</small>
             </>
           ) : (
-            <p>Dados municipais de seca ainda não disponíveis.</p>
+            <p>Dados municipais de seca ainda nÃ£o disponÃ­veis.</p>
           )}
         </div>
       )}
       {activeLayer === "rivers" && (
         <div className="map-summary-card hydro-summary-card">
-          <p className="eyebrow">Situação hidrológica</p>
-          <h4>Rede telemétrica consultável</h4>
+          <p className="eyebrow">SituaÃ§Ã£o hidrolÃ³gica</p>
+          <h4>Rede telemÃ©trica consultÃ¡vel</h4>
           <dl>
-            <div><dt>Estações no mapa</dt><dd>{riverStations.length}</dd></div>
+            <div><dt>EstaÃ§Ãµes no mapa</dt><dd>{riverStations.length}</dd></div>
             <div><dt>Normalidade</dt><dd>Em integração</dd></div>
-            <div><dt>Atenção</dt><dd>--</dd></div>
+            <div><dt>AtenÃ§Ã£o</dt><dd>--</dd></div>
             <div><dt>Alerta</dt><dd>--</dd></div>
-            <div><dt>Emergência</dt><dd>--</dd></div>
-            <div><dt>Tendência predominante</dt><dd>{trendText(readingState, riverReading)}</dd></div>
+            <div><dt>EmergÃªncia</dt><dd>--</dd></div>
+            <div><dt>TendÃªncia predominante</dt><dd>{trendText(readingState, riverReading)}</dd></div>
           </dl>
-          <small>Fonte: ANA / Telemetria. Classificação oficial em integração; a tendência aparece por estação selecionada.</small>
+          <small>Fonte: ANA / Telemetria. ClassificaÃ§Ã£o oficial em integraÃ§Ã£o; a tendÃªncia aparece por estaÃ§Ã£o selecionada.</small>
         </div>
       )}
     </>
@@ -498,35 +498,35 @@ export function PublicMapSection({
     <>
       {activeLayer === "rain" && rainStations.length > 0 && (
         <>
-          <p>Chuva acumulada nas últimas 24h em pluviômetros automáticos do Tocantins.</p>
+          <p>Chuva acumulada nas Ãºltimas 24h em pluviÃ´metros automÃ¡ticos do Tocantins.</p>
           <dl className="map-summary">
-            <div><dt>Estações consultadas</dt><dd>{rainStations.length}</dd></div>
+            <div><dt>EstaÃ§Ãµes consultadas</dt><dd>{rainStations.length}</dd></div>
             <div><dt>Maior acumulado</dt><dd>{rainSummary?.value || "Sem dados"}</dd></div>
           </dl>
           <strong>Fonte integrada: {rainSummary?.source || "CEMADEN / INMET / ANA / SEMARH"}</strong>
-          {rainSummary?.updatedAt && <small>Atualização da fonte: {rainSummary.updatedAt}</small>}
+          {rainSummary?.updatedAt && <small>AtualizaÃ§Ã£o da fonte: {rainSummary.updatedAt}</small>}
         </>
       )}
       {activeLayer === "rain" && rainStations.length === 0 && (
-        <p className="map-message">Sem registros disponíveis no momento.</p>
+        <p className="map-message">Sem registros disponÃ­veis no momento.</p>
       )}
       {activeLayer === "rivers" && (
         <>
-          <p>Estações telemétricas consultáveis. A tendência informa a variação observada da cota.</p>
+          <p>EstaÃ§Ãµes telemÃ©tricas consultÃ¡veis. A tendÃªncia informa a variaÃ§Ã£o observada da cota.</p>
           <dl className="map-summary">
-            <div><dt>Estações no mapa</dt><dd>{riverStations.length}</dd></div>
+            <div><dt>EstaÃ§Ãµes no mapa</dt><dd>{riverStations.length}</dd></div>
             {selectedRiver && <div><dt>Estação selecionada</dt><dd>{selectedRiver.name}</dd></div>}
           </dl>
           {readingState === "loading" && <p className="map-message">Atualizando cota observada...</p>}
-          {readingState === "error" && <p className="map-message">Não foi possível atualizar esta cota no momento.</p>}
-          {readingState === "empty" && <p className="map-message">Sem leitura recente disponível para a estação.</p>}
+          {readingState === "error" && <p className="map-message">NÃ£o foi possÃ­vel atualizar esta cota no momento.</p>}
+          {readingState === "empty" && <p className="map-message">Sem leitura recente disponÃ­vel para a estaÃ§Ã£o.</p>}
           {readingState === "ready" && riverReading && (
             <div className={`river-reading trend-${riverReading.trend.direction}`}>
               <Waves aria-hidden="true" />
               <strong>Cota: {formatNumber(riverReading.level, " cm")}</strong>
               <span className="river-trend">
                 <b aria-hidden="true">{riverReading.trend.arrow}</b>
-                Tendência observada: {riverReading.trend.label}
+                TendÃªncia observada: {riverReading.trend.label}
               </span>
               <small>{riverReading.dateTime}</small>
             </div>
@@ -536,31 +536,31 @@ export function PublicMapSection({
       )}
       {activeLayer === "fire" && (
         <>
-          <p>Pontos detectados por satélite no arquivo diário oficial do INPE Queimadas.</p>
+          <p>Pontos detectados por satÃ©lite no arquivo diÃ¡rio oficial do INPE Queimadas.</p>
           <dl className="map-summary">
             <div><dt>Focos localizados</dt><dd>{firePoints.length}</dd></div>
-            <div><dt>Situação</dt><dd>{fireSummary?.value || "Sem dados"}</dd></div>
+            <div><dt>SituaÃ§Ã£o</dt><dd>{fireSummary?.value || "Sem dados"}</dd></div>
             {fireSummary?.burnedArea && (
-              <div><dt>Área queimada</dt><dd>{formatNumber(fireSummary.burnedArea.hectares, " ha")}</dd></div>
+              <div><dt>Ãrea queimada</dt><dd>{formatNumber(fireSummary.burnedArea.hectares, " ha")}</dd></div>
             )}
           </dl>
           <strong><Flame aria-hidden="true" /> Fonte integrada: INPE Queimadas</strong>
           {fireSummary?.burnedArea && (
-            <small>Área e raster: MapBiomas Monitor do Fogo | {fireSummary.burnedArea.period}</small>
+            <small>Ãrea e raster: MapBiomas Monitor do Fogo | {fireSummary.burnedArea.period}</small>
           )}
-          {fireSummary?.updatedAt && <small>Atualização: {fireSummary.updatedAt}</small>}
+          {fireSummary?.updatedAt && <small>AtualizaÃ§Ã£o: {fireSummary.updatedAt}</small>}
         </>
       )}
       {activeLayer === "emergency" && (
         <>
-          <p>Municípios com reconhecimento federal vigente na consulta pública do S2ID.</p>
+          <p>Municípios com reconhecimento federal vigente na consulta pÃºblica do S2ID.</p>
           <dl className="map-summary">
             <div><dt>Reconhecimentos vigentes</dt><dd>{emergencySummary?.federal ?? 0}</dd></div>
-            <div><dt>Situação de Emergência</dt><dd>{emergencySummary?.se ?? 0}</dd></div>
-            <div><dt>Calamidade Pública</dt><dd>{emergencySummary?.ecp ?? 0}</dd></div>
+            <div><dt>SituaÃ§Ã£o de EmergÃªncia</dt><dd>{emergencySummary?.se ?? 0}</dd></div>
+            <div><dt>Calamidade PÃºblica</dt><dd>{emergencySummary?.ecp ?? 0}</dd></div>
           </dl>
           <strong>Fonte integrada: S2ID / SEDEC-MIDR</strong>
-          {emergencySummary?.updatedAt && <small>Atualização: {emergencySummary.updatedAt}</small>}
+          {emergencySummary?.updatedAt && <small>AtualizaÃ§Ã£o: {emergencySummary.updatedAt}</small>}
         </>
       )}
     </>
@@ -575,7 +575,7 @@ export function PublicMapSection({
           <p>{description}</p>
         </div>
         <span className="integration-tag">
-          <Layers3 aria-hidden="true" /> {variant === "priority" ? "Fontes oficiais integradas" : "Painel técnico"}
+          <Layers3 aria-hidden="true" /> {variant === "priority" ? "Fontes oficiais integradas" : "Painel tÃ©cnico"}
         </span>
       </div>
       {variant === "priority" && (
@@ -652,9 +652,9 @@ export function PublicMapSection({
                 const title = city?.nome || `Município IBGE ${code}`;
                 layer.bindPopup(`
                   <strong>${title}</strong><br/>
-                  Grau de seca: ${city?.classe || "Dados municipais de seca ainda não disponíveis"}<br/>
-                  Tendência: ${droughtSummary?.summary?.agravaram ? "Consultar resumo estadual" : "Não informada"}<br/>
-                  Referência: ${city?.referencia ? formatDate(city.referencia) : formatDate(droughtSummary?.reference)}<br/>
+                  Grau de seca: ${city?.classe || "Dados municipais de seca ainda nÃ£o disponÃ­veis"}<br/>
+                  TendÃªncia: ${droughtSummary?.summary?.agravaram ? "Consultar resumo estadual" : "NÃ£o informada"}<br/>
+                  ReferÃªncia: ${city?.referencia ? formatDate(city.referencia) : formatDate(droughtSummary?.reference)}<br/>
                   Fonte: ${droughtSummary?.source || "Monitor de Secas / CEMADEN"}
                 `);
               }}
@@ -662,8 +662,8 @@ export function PublicMapSection({
           )}
           {variant === "priority" && activeLayer === "drought" && !municipalBoundary && (
             <div className="map-mode-placeholder">
-              <strong>Camada municipal de seca em integração</strong>
-              <span>Não foi possível carregar a malha municipal neste momento.</span>
+              <strong>Camada municipal de seca em integraÃ§Ã£o</strong>
+              <span>NÃ£o foi possÃ­vel carregar a malha municipal neste momento.</span>
             </div>
           )}
           {variant === "priority" && activeLayer === "rain" && rainMode === "observed" && rainStations.map((station) => (
@@ -676,7 +676,7 @@ export function PublicMapSection({
               className="rain-heat-point"
             />
           ))}
-          {variant === "priority" && activeLayer === "rain" && rainMode === "observed" && rainStations.map((station) => (
+          {variant === "priority" && activeLayer === "rain" && rainMode === "observed" && visibleRainStations.map((station) => (
             <CircleMarker
               key={`${station.fonte || station.source}-${station.code || station.id || station.name}`}
               center={[station.latitude, station.longitude]}
@@ -690,8 +690,8 @@ export function PublicMapSection({
                 Fonte: {station.fonte || station.source || "Rede integrada"}<br />
                 Status da leitura: {rainStatusText(station.statusLeitura || "valida")}<br />
                 {station.statusLeitura === "valida" ? <>Chuva 24h: {formatNumber(Number(station.amount ?? station.chuva24h ?? 0), " mm")}<br />Faixa: {rainTone(Number(station.amount ?? station.chuva24h ?? 0))}<br /></> : null}
-                Última atualização: {station.atualizadoEm || station.updatedAt || "Sem atualização"}<br />
-                Última tentativa: {station.ultimaTentativa || "Não informada"}<br />
+                Ãšltima atualizaÃ§Ã£o: {station.atualizadoEm || station.updatedAt || "Sem atualizaÃ§Ã£o"}<br />
+                Ãšltima tentativa: {station.ultimaTentativa || "NÃ£o informada"}<br />
                 Motivo: {station.motivoIndisponibilidade || station.observacao || "Leitura operacional disponível."}
               </Popup>
             </CircleMarker>
@@ -707,10 +707,10 @@ export function PublicMapSection({
                 <strong>{point.city}</strong><br />
                 {point.region}<br />
                 {point.period}<br />
-                Condição: {point.condition || "Não informado"}<br />
-                Temperatura mínima/máxima: {point.tempMin ?? "Não informado"} / {point.tempMax ?? "Não informado"} °C<br />
-                Vento: {point.vento || point.wind || "Não informado"}<br />
-                Possibilidade de chuva: {point.hasRain ? "Sim" : "Não identificada"}<br />
+                CondiÃ§Ã£o: {point.condition || "NÃ£o informado"}<br />
+                Temperatura mÃ­nima/mÃ¡xima: {point.tempMin ?? "NÃ£o informado"} / {point.tempMax ?? "NÃ£o informado"} Â°C<br />
+                Vento: {point.vento || point.wind || "NÃ£o informado"}<br />
+                Possibilidade de chuva: {point.hasRain ? "Sim" : "NÃ£o identificada"}<br />
                 Período: {point.period}<br />
                 Fonte: INMET
               </Popup>
@@ -726,14 +726,14 @@ export function PublicMapSection({
                   {selectedRiver?.code === station.code && readingState === "ready" && riverReading ? (
                     <>
                       <span>Cota atual: {formatNumber(riverReading.level, " cm")}</span>
-                      <span>Tendência: {riverReading.trend.arrow} {riverReading.trend.label}</span>
-                      <span>Última atualização: {riverReading.dateTime}</span>
-                      <span>Situação: Classificação oficial em integração</span>
+                      <span>TendÃªncia: {riverReading.trend.arrow} {riverReading.trend.label}</span>
+                      <span>Ãšltima atualizaÃ§Ã£o: {riverReading.dateTime}</span>
+                      <span>SituaÃ§Ã£o: ClassificaÃ§Ã£o oficial em integraÃ§Ã£o</span>
                     </>
                   ) : selectedRiver?.code === station.code && readingState === "loading" ? (
                     <span>Atualizando cota observada...</span>
                   ) : (
-                    <span>Clique para consultar cota e tendência observada.</span>
+                    <span>Clique para consultar cota e tendÃªncia observada.</span>
                   )}
                   <span>Fonte: ANA / Telemetria</span>
                 </div>
@@ -742,13 +742,13 @@ export function PublicMapSection({
           ))}
           {variant === "priority" && activeLayer === "fire" && firePoints.map((point, index) => (
             <CircleMarker key={`${point.latitude}-${point.longitude}-${index}`} center={[point.latitude, point.longitude]} radius={5} pathOptions={{ color: "#ba3e24", fillColor: "#f25922", fillOpacity: 0.88, weight: 2 }}>
-              <Popup><strong>{point.city}</strong><br />Foco detectado por satélite<br />{point.satellite || "INPE Queimadas"} {point.detectedAt ? `| ${point.detectedAt}` : ""}</Popup>
+              <Popup><strong>{point.city}</strong><br />Foco detectado por satÃ©lite<br />{point.satellite || "INPE Queimadas"} {point.detectedAt ? `| ${point.detectedAt}` : ""}</Popup>
             </CircleMarker>
           ))}
           <MapBiomasFireOverlay active={variant === "priority" && activeLayer === "fire"} enabled={showBurnedArea} burnedArea={fireSummary?.burnedArea} />
           {variant === "priority" && activeLayer === "emergency" && emergencyPoints.map((point, index) => (
             <CircleMarker key={`${point.municipio}-${index}`} center={[point.latitude, point.longitude]} radius={7} pathOptions={{ color: "#a7211b", fillColor: "#d73027", fillOpacity: 0.9, weight: 2 }}>
-              <Popup><strong>{point.municipio}</strong><br />{point.situacao}<br />{point.desastre || "Desastre não informado"}<br />{point.cobrade ? `COBRADE: ${point.cobrade}` : ""}</Popup>
+              <Popup><strong>{point.municipio}</strong><br />{point.situacao}<br />{point.desastre || "Desastre nÃ£o informado"}<br />{point.cobrade ? `COBRADE: ${point.cobrade}` : ""}</Popup>
             </CircleMarker>
           ))}
           {variant === "priority" && selectedResult && selectedResult.layer === activeLayer && (
@@ -758,8 +758,8 @@ export function PublicMapSection({
           <FloatingMapLegend activeLayer={activeLayer} rainMode={rainMode} />
           {activeLayer === "rain" && ["forecast24", "forecast48"].includes(rainMode) && forecastState.state !== "ready" && (
             <div className="map-mode-placeholder">
-              <strong>{rainMode === "forecast24" ? "Previsão 24h" : "Previsão 48h"}</strong>
-              <span>{forecastState.state === "loading" ? "Carregando previsão..." : "Não foi possível carregar a previsão no momento."}</span>
+              <strong>{rainMode === "forecast24" ? "PrevisÃ£o 24h" : "PrevisÃ£o 48h"}</strong>
+              <span>{forecastState.state === "loading" ? "Carregando previsÃ£o..." : "Não foi possível carregar a previsão no momento."}</span>
             </div>
           )}
         </div>
@@ -780,23 +780,23 @@ export function PublicMapSection({
         ) : (
           <aside className="map-readiness">
             <MapPinned aria-hidden="true" />
-            <h3>Camadas técnicas</h3>
+            <h3>Camadas tÃ©cnicas</h3>
             <div className="layer-list" aria-label="Camadas previstas">
               {droughtLayers.map((label) => <span key={label}>{label}</span>)}
             </div>
             {droughtSummary?.state === "ready" ? (
               <>
-                <p>Condição de seca monitorada por índice técnico no Tocantins.</p>
+                <p>CondiÃ§Ã£o de seca monitorada por Ã­ndice tÃ©cnico no Tocantins.</p>
                 <dl className="map-summary">
-                  <div><dt>Situação geral</dt><dd>{droughtSummary.value}</dd></div>
+                  <div><dt>SituaÃ§Ã£o geral</dt><dd>{droughtSummary.value}</dd></div>
                   <div><dt>Municípios com seca</dt><dd>{droughtSummary.summary.com_seca}</dd></div>
                   <div><dt>Severa ou extrema</dt><dd>{droughtSummary.summary.severa_ou_extrema}</dd></div>
                 </dl>
                 <strong>Fonte integrada: {droughtSummary.source}</strong>
-                <small>Referência: {droughtSummary.reference}</small>
+                <small>ReferÃªncia: {droughtSummary.reference}</small>
               </>
             ) : (
-              <strong>Consulta automática em desenvolvimento</strong>
+              <strong>Consulta automÃ¡tica em desenvolvimento</strong>
             )}
           </aside>
         )}
@@ -804,3 +804,4 @@ export function PublicMapSection({
     </section>
   );
 }
+
