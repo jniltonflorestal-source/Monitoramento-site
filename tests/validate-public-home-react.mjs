@@ -6,10 +6,9 @@ const read = (path) => readFile(new URL(path, root), "utf8");
 
 const requiredSections = [
   "src/components/dashboard/OfficialAlertsSection.jsx",
-  "src/components/dashboard/FeaturedBulletin.jsx",
-  "src/components/dashboard/RecentBulletins.jsx",
-  "src/components/dashboard/TechnicalPanelsSection.jsx",
+  "src/components/dashboard/PublicationsCenter.jsx",
   "src/components/dashboard/RecommendationsSection.jsx",
+  "src/components/dashboard/OfficialSourcesSection.jsx",
   "src/components/dashboard/AboutCenterSection.jsx"
 ];
 for (const file of requiredSections) {
@@ -37,10 +36,9 @@ const orderedMarkers = [
   "QuickActions",
   "OfficialAlertsSection",
   "PublicMapSection",
-  "FeaturedBulletin",
-  "RecentBulletins",
-  "TechnicalPanelsSection",
+  "PublicationsCenter",
   "RecommendationsSection",
+  "OfficialSourcesSection",
   "AboutCenterSection"
 ];
 let previousIndex = -1;
