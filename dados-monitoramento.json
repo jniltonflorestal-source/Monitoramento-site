@@ -1,13 +1,13 @@
 {
-  "atualizado_em": "2026-06-15T05:12:22.265Z",
+  "atualizado_em": "2026-06-15T12:34:13.821Z",
   "resumo": {
     "alertas_cemaden_to": 0,
     "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
     "estacoes_fluviometricas_ana": null,
-    "focos_calor_24h": 158,
+    "focos_calor_24h": 105,
     "area_queimada_ano_ha": 245000,
-    "chuva_24h_mm": 0.2,
-    "estacoes_operando": 38,
+    "chuva_24h_mm": 0.8,
+    "estacoes_operando": 49,
     "avisos_inmet_to_hoje": 0,
     "avisos_inmet_to_futuro": 0,
     "avisos_inmet_to_severidade_maxima": "Sem aviso vigente",
@@ -20,7 +20,7 @@
     {
       "icon": "cloud-rain",
       "label": "Chuvas",
-      "description": "0,2 mm acumulados nas últimas 24h",
+      "description": "0,8 mm acumulados nas últimas 24h",
       "value": "Monitoramento"
     },
     {
@@ -32,19 +32,19 @@
     {
       "icon": "flame",
       "label": "Focos de calor",
-      "description": "158 focos registrados no arquivo diário do INPE",
+      "description": "105 focos registrados no arquivo diário do INPE",
       "value": "Ativo"
     },
     {
       "icon": "radio-tower",
       "label": "Rede operacional",
-      "description": "38 estacoes ou pontos em acompanhamento",
+      "description": "49 estacoes ou pontos em acompanhamento",
       "value": "24h"
     }
   ],
   "fontes": {
     "alertas": "CEMADEN",
-    "chuva": "CEMADEN",
+    "chuva": "CEMADEN / ANA",
     "rios": "ANA / Telemetria",
     "focos": "INPE Queimadas",
     "area_queimada": "MapBiomas Fogo / INPE AQ",
@@ -1768,1278 +1768,854 @@
   },
   "focos_calor": {
     "status": "ok",
-    "quantidade24h": 158,
-    "quantidadeMapa": 158,
+    "quantidade24h": 105,
+    "quantidadeMapa": 105,
     "periodo": "Arquivo diario INPE",
     "fonte": "INPE Queimadas",
-    "atualizadoEm": "2026-06-15T05:11:46.802Z",
-    "referenciaArquivo": "20260613",
-    "csv_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/focos_diario_br_20260613.csv",
+    "atualizadoEm": "2026-06-15T12:33:49.166Z",
+    "referenciaArquivo": "20260615",
+    "csv_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/focos_diario_br_20260615.csv",
     "observacao": "Dados filtrados para o Tocantins a partir do arquivo diario Brasil do INPE Queimadas.",
     "pontos_24h": [
       {
-        "latitude": -10.0623,
-        "longitude": -48.0978,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:00:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.6497,
-        "longitude": -48.5473,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:00:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:00:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.6309,
-        "longitude": -48.5277,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:00:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.6306,
-        "longitude": -48.5497,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:00:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.2408,
-        "longitude": -46.7124,
-        "municipio": "RIO DA CONCEIÇÃO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:00:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -10.0623,
-        "longitude": -48.0978,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:10:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:10:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.6306,
-        "longitude": -48.5497,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:10:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.6309,
-        "longitude": -48.5277,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:10:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.6497,
-        "longitude": -48.5473,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:10:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -10.6489,
-        "longitude": -46.8549,
-        "municipio": "MATEIROS",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:10:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -10.0623,
-        "longitude": -48.0978,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:20:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:20:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.6306,
-        "longitude": -48.5497,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:20:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.6497,
-        "longitude": -48.5473,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:20:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.6309,
-        "longitude": -48.5277,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:20:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.65,
-        "longitude": -48.5253,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:20:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -10.6295,
-        "longitude": -46.8797,
-        "municipio": "MATEIROS",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:20:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.2408,
-        "longitude": -46.7124,
-        "municipio": "RIO DA CONCEIÇÃO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:30:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:30:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.6306,
-        "longitude": -48.5497,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:30:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.2405,
-        "longitude": -46.7349,
-        "municipio": "RIO DA CONCEIÇÃO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:30:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -10.0623,
-        "longitude": -48.0978,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:30:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.1828,
-        "longitude": -46.7649,
-        "municipio": "ALMAS",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:30:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.6309,
-        "longitude": -48.5277,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:30:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.6497,
-        "longitude": -48.5473,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:30:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.1634,
-        "longitude": -46.7899,
-        "municipio": "ALMAS",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:30:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.1638,
-        "longitude": -46.7674,
-        "municipio": "ALMAS",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:30:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.65,
-        "longitude": -48.5253,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:30:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.1825,
-        "longitude": -46.7874,
-        "municipio": "ALMAS",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:40:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.6306,
-        "longitude": -48.5497,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:40:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.1634,
-        "longitude": -46.7899,
-        "municipio": "ALMAS",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:40:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.1828,
-        "longitude": -46.7649,
-        "municipio": "ALMAS",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:40:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.1638,
-        "longitude": -46.7674,
-        "municipio": "ALMAS",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:40:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.6497,
-        "longitude": -48.5473,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:40:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:40:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.2408,
-        "longitude": -46.7124,
-        "municipio": "RIO DA CONCEIÇÃO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:40:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.2405,
-        "longitude": -46.7349,
-        "municipio": "RIO DA CONCEIÇÃO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:40:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -10.0623,
-        "longitude": -48.0978,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:40:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.6309,
-        "longitude": -48.5277,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:40:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.1768,
-        "longitude": -46.713501,
-        "municipio": "ALMAS",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -12.1474,
-        "longitude": -48.439201,
-        "municipio": "PEIXE",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.1727,
-        "longitude": -46.7374,
-        "municipio": "ALMAS",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.6221,
-        "longitude": -48.527,
-        "municipio": "PEIXE",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.6261,
-        "longitude": -48.542801,
-        "municipio": "PEIXE",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.1631,
-        "longitude": -46.740002,
-        "municipio": "ALMAS",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.1686,
-        "longitude": -46.7612,
-        "municipio": "ALMAS",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.225,
-        "longitude": -46.7006,
-        "municipio": "RIO DA CONCEIÇÃO",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.2346,
-        "longitude": -46.698002,
-        "municipio": "RIO DA CONCEIÇÃO",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.1823,
-        "longitude": -46.734798,
-        "municipio": "ALMAS",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.1782,
-        "longitude": -46.758598,
-        "municipio": "ALMAS",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -11.2401,
-        "longitude": -46.7192,
-        "municipio": "RIO DA CONCEIÇÃO",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
-        "bioma": "Cerrado"
+        "latitude": -7.31427,
+        "longitude": -48.87993,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -11.6415,
-        "longitude": -48.5219,
-        "municipio": "PEIXE",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
-        "bioma": "Cerrado"
-      },
-      {
-        "latitude": -10.0576,
-        "longitude": -48.054699,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
-        "bioma": "Cerrado"
+        "latitude": -7.32634,
+        "longitude": -48.87228,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -10.0524,
-        "longitude": -48.075199,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
+        "latitude": -8.19431,
+        "longitude": -46.75751,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.5736,
-        "longitude": -48.015701,
-        "municipio": "MONTE DO CARMO",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
-        "bioma": "Cerrado"
+        "latitude": -7.32059,
+        "longitude": -48.87454,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -11.1493,
-        "longitude": -46.766399,
-        "municipio": "ALMAS",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
+        "latitude": -8.18622,
+        "longitude": -46.75164,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6318,
-        "longitude": -48.524502,
-        "municipio": "PEIXE",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
+        "latitude": -8.18666,
+        "longitude": -46.7533,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0621,
-        "longitude": -48.072701,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
-        "bioma": "Cerrado"
+        "latitude": -8.88778,
+        "longitude": -48.50826,
+        "municipio": "GUARAÍ",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -10.5639,
-        "longitude": -48.0182,
-        "municipio": "MONTE DO CARMO",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
+        "latitude": -8.19109,
+        "longitude": -46.75404,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6358,
-        "longitude": -48.540298,
-        "municipio": "PEIXE",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
+        "latitude": -8.19478,
+        "longitude": -46.7592,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -9.3048,
-        "longitude": -48.9552,
-        "municipio": "DOIS IRMÃOS DO TOCANTINS",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
+        "latitude": -10.28869,
+        "longitude": -47.60015,
+        "municipio": "LAGOA DO TOCANTINS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.2442,
-        "longitude": -46.6954,
-        "municipio": "RIO DA CONCEIÇÃO",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
+        "latitude": -8.19874,
+        "longitude": -46.75823,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6278,
-        "longitude": -48.508701,
-        "municipio": "PEIXE",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
+        "latitude": -8.88285,
+        "longitude": -48.5074,
+        "municipio": "GUARAÍ",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0479,
-        "longitude": -48.057201,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
+        "latitude": -8.38972,
+        "longitude": -47.47316,
+        "municipio": "GOIATINS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0428,
-        "longitude": -48.077702,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
-        "bioma": "Cerrado"
+        "latitude": -7.31484,
+        "longitude": -48.87676,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -11.1534,
-        "longitude": -46.742599,
-        "municipio": "ALMAS",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
+        "latitude": -8.19922,
+        "longitude": -46.75992,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.1589,
-        "longitude": -46.763802,
-        "municipio": "ALMAS",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
+        "latitude": -8.18987,
+        "longitude": -46.75678,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.2305,
-        "longitude": -46.721802,
-        "municipio": "RIO DA CONCEIÇÃO",
-        "satelite": "METOP-B",
-        "data_hora_gmt": "2026-06-13 00:42:00",
+        "latitude": -11.19821,
+        "longitude": -49.68365,
+        "municipio": "DUERÉ",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.16821,
-        "longitude": -46.80172,
-        "municipio": "ALMAS",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
-        "bioma": "Cerrado"
+        "latitude": -7.32003,
+        "longitude": -48.87767,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -10.06777,
-        "longitude": -48.10899,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
+        "latitude": -10.29321,
+        "longitude": -47.60102,
+        "municipio": "LAGOA DO TOCANTINS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.05515,
-        "longitude": -48.08145,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
+        "latitude": -7.92021,
+        "longitude": -48.25257,
+        "municipio": "PALMEIRANTE",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.63152,
-        "longitude": -48.53793,
-        "municipio": "PEIXE",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
+        "latitude": -8.13929,
+        "longitude": -47.55595,
+        "municipio": "GOIATINS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.16089,
-        "longitude": -46.75953,
-        "municipio": "ALMAS",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
-        "bioma": "Cerrado"
+        "latitude": -7.32578,
+        "longitude": -48.87543,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -10.57139,
-        "longitude": -48.03164,
-        "municipio": "MONTE DO CARMO",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
+        "latitude": -8.19796,
+        "longitude": -46.76265,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.16064,
-        "longitude": -46.75275,
-        "municipio": "ALMAS",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
+        "latitude": -8.9873,
+        "longitude": -48.09352,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.06127,
-        "longitude": -48.07219,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
+        "latitude": -7.92165,
+        "longitude": -48.25452,
+        "municipio": "PALMEIRANTE",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.23066,
-        "longitude": -46.73423,
-        "municipio": "RIO DA CONCEIÇÃO",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
+        "latitude": -7.91671,
+        "longitude": -48.25373,
+        "municipio": "PALMEIRANTE",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.06126,
-        "longitude": -48.11734,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
-        "bioma": "Cerrado"
+        "latitude": -7.31947,
+        "longitude": -48.88081,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:02:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -11.6332,
-        "longitude": -48.56218,
-        "municipio": "PEIXE",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
+        "latitude": -12.73188,
+        "longitude": -46.29427,
+        "municipio": "AURORA DO TOCANTINS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:04:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.57855,
-        "longitude": -48.02502,
-        "municipio": "MONTE DO CARMO",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
+        "latitude": -12.73432,
+        "longitude": -46.29189,
+        "municipio": "AURORA DO TOCANTINS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:04:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.18562,
-        "longitude": -46.79111,
-        "municipio": "ALMAS",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
+        "latitude": -12.73252,
+        "longitude": -46.29057,
+        "municipio": "AURORA DO TOCANTINS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-06-15 04:04:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.64314,
-        "longitude": -48.52906,
-        "municipio": "PEIXE",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
+        "latitude": -8.6848,
+        "longitude": -47.83619,
+        "municipio": "ITACAJÁ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -12.1545,
-        "longitude": -48.4675,
-        "municipio": "PEIXE",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
-        "bioma": "Cerrado"
+        "latitude": -7.31806,
+        "longitude": -48.88013,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -11.16822,
-        "longitude": -46.79481,
-        "municipio": "ALMAS",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
+        "latitude": -8.14029,
+        "longitude": -47.55593,
+        "municipio": "GOIATINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.62784,
-        "longitude": -48.53181,
-        "municipio": "PEIXE",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
+        "latitude": -8.39101,
+        "longitude": -47.4705,
+        "municipio": "GOIATINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.64847,
-        "longitude": -48.55946,
-        "municipio": "PEIXE",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
+        "latitude": -8.18733,
+        "longitude": -46.75377,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.63663,
-        "longitude": -48.56821,
-        "municipio": "PEIXE",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
-        "bioma": "Cerrado"
+        "latitude": -7.31868,
+        "longitude": -48.87632,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -11.17818,
-        "longitude": -46.74952,
-        "municipio": "ALMAS",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
+        "latitude": -5.54478,
+        "longitude": -47.57777,
+        "municipio": "SÃO MIGUEL DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.23065,
-        "longitude": -46.73901,
-        "municipio": "RIO DA CONCEIÇÃO",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
+        "latitude": -7.91643,
+        "longitude": -48.25136,
+        "municipio": "PALMEIRANTE",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -12.14934,
-        "longitude": -48.43739,
-        "municipio": "PEIXE",
-        "satelite": "TERRA_M-M",
-        "data_hora_gmt": "2026-06-13 00:45:00",
+        "latitude": -8.14419,
+        "longitude": -47.55295,
+        "municipio": "GOIATINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.1638,
-        "longitude": -46.7674,
-        "municipio": "ALMAS",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:50:00",
+        "latitude": -8.74609,
+        "longitude": -47.49568,
+        "municipio": "ITACAJÁ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.1634,
-        "longitude": -46.7899,
-        "municipio": "ALMAS",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:50:00",
+        "latitude": -7.91982,
+        "longitude": -48.25191,
+        "municipio": "PALMEIRANTE",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6309,
-        "longitude": -48.5277,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:50:00",
-        "bioma": "Cerrado"
+        "latitude": -7.32277,
+        "longitude": -48.87308,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -11.6306,
-        "longitude": -48.5497,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:50:00",
-        "bioma": "Cerrado"
+        "latitude": -7.31521,
+        "longitude": -48.87574,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:50:00",
+        "latitude": -8.19065,
+        "longitude": -46.7543,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6497,
-        "longitude": -48.5473,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:50:00",
+        "latitude": -8.19675,
+        "longitude": -46.75885,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0623,
-        "longitude": -48.0978,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:50:00",
+        "latitude": -8.11044,
+        "longitude": -46.77024,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.1828,
-        "longitude": -46.7649,
-        "municipio": "ALMAS",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 00:50:00",
+        "latitude": -8.19343,
+        "longitude": -46.75831,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.1638,
-        "longitude": -46.7674,
-        "municipio": "ALMAS",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:00:00",
+        "latitude": -8.13695,
+        "longitude": -47.5554,
+        "municipio": "GOIATINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.1828,
-        "longitude": -46.7649,
-        "municipio": "ALMAS",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:00:00",
+        "latitude": -8.08043,
+        "longitude": -47.19076,
+        "municipio": "GOIATINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0623,
-        "longitude": -48.0978,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:00:00",
+        "latitude": -8.31201,
+        "longitude": -47.11734,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:00:00",
-        "bioma": "Cerrado"
+        "latitude": -7.32215,
+        "longitude": -48.87688,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -11.6497,
-        "longitude": -48.5473,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:00:00",
+        "latitude": -8.31256,
+        "longitude": -47.11385,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.1634,
-        "longitude": -46.7899,
-        "municipio": "ALMAS",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:00:00",
+        "latitude": -7.789,
+        "longitude": -48.19446,
+        "municipio": "NOVA OLINDA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6309,
-        "longitude": -48.5277,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:00:00",
-        "bioma": "Cerrado"
+        "latitude": -7.31459,
+        "longitude": -48.87956,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:36:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -11.6306,
-        "longitude": -48.5497,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:00:00",
+        "latitude": -12.73174,
+        "longitude": -46.28962,
+        "municipio": "AURORA DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:38:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:10:00",
+        "latitude": -12.73118,
+        "longitude": -46.2933,
+        "municipio": "AURORA DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:38:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6306,
-        "longitude": -48.5497,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:10:00",
+        "latitude": -10.28823,
+        "longitude": -47.60059,
+        "municipio": "LAGOA DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:38:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0623,
-        "longitude": -48.0978,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:10:00",
+        "latitude": -12.73458,
+        "longitude": -46.29387,
+        "municipio": "AURORA DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:38:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6497,
-        "longitude": -48.5473,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:10:00",
+        "latitude": -10.586,
+        "longitude": -48.37811,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:38:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6309,
-        "longitude": -48.5277,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:10:00",
+        "latitude": -10.40576,
+        "longitude": -49.44234,
+        "municipio": "PIUM",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:38:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:20:00",
+        "latitude": -10.40755,
+        "longitude": -49.44171,
+        "municipio": "PIUM",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:38:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6497,
-        "longitude": -48.5473,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:20:00",
+        "latitude": -10.51378,
+        "longitude": -50.40453,
+        "municipio": "PIUM",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:38:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.65,
-        "longitude": -48.5253,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:20:00",
+        "latitude": -8.98498,
+        "longitude": -48.09568,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:38:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6309,
-        "longitude": -48.5277,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:20:00",
+        "latitude": -8.88385,
+        "longitude": -48.50799,
+        "municipio": "GUARAÍ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:38:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6306,
-        "longitude": -48.5497,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:20:00",
+        "latitude": -10.29156,
+        "longitude": -47.60113,
+        "municipio": "LAGOA DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:38:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6309,
-        "longitude": -48.5277,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:30:00",
-        "bioma": "Cerrado"
+        "latitude": -8.88724,
+        "longitude": -48.50855,
+        "municipio": "GUARAÍ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:38:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:30:00",
+        "latitude": -8.98556,
+        "longitude": -48.09211,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:38:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0623,
-        "longitude": -48.0978,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:30:00",
+        "latitude": -11.7316,
+        "longitude": -49.0442,
+        "municipio": "GURUPI",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:38:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6497,
-        "longitude": -48.5473,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:30:00",
+        "latitude": -9.77696,
+        "longitude": -48.9692,
+        "municipio": "DIVINÓPOLIS DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:38:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.1825,
-        "longitude": -46.7874,
-        "municipio": "ALMAS",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:30:00",
+        "latitude": -11.19692,
+        "longitude": -49.68438,
+        "municipio": "DUERÉ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:38:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6306,
-        "longitude": -48.5497,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:30:00",
+        "latitude": -9.695,
+        "longitude": -47.69905,
+        "municipio": "RIO SONO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:38:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0623,
-        "longitude": -48.0978,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:40:00",
+        "latitude": -10.90629,
+        "longitude": -49.49627,
+        "municipio": "SANTA RITA DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-15 04:38:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:40:00",
+        "latitude": -5.5449,
+        "longitude": -47.57608,
+        "municipio": "SÃO MIGUEL DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:53:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6497,
-        "longitude": -48.5473,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:40:00",
+        "latitude": -10.28919,
+        "longitude": -47.59772,
+        "municipio": "LAGOA DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6306,
-        "longitude": -48.5497,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:40:00",
+        "latitude": -8.88797,
+        "longitude": -48.50561,
+        "municipio": "GUARAÍ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6309,
-        "longitude": -48.5277,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:50:00",
+        "latitude": -8.06773,
+        "longitude": -47.18346,
+        "municipio": "GOIATINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6306,
-        "longitude": -48.5497,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:50:00",
+        "latitude": -8.19365,
+        "longitude": -46.75502,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 01:50:00",
+        "latitude": -7.91966,
+        "longitude": -48.25238,
+        "municipio": "PALMEIRANTE",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 02:00:00",
+        "latitude": -7.91571,
+        "longitude": -48.25176,
+        "municipio": "PALMEIRANTE",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0623,
-        "longitude": -48.0978,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 02:00:00",
+        "latitude": -12.73511,
+        "longitude": -46.29134,
+        "municipio": "AURORA DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6306,
-        "longitude": -48.5497,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 02:00:00",
+        "latitude": -7.91709,
+        "longitude": -48.25015,
+        "municipio": "PALMEIRANTE",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0623,
-        "longitude": -48.0978,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 02:10:00",
+        "latitude": -8.08106,
+        "longitude": -47.08211,
+        "municipio": "GOIATINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 02:10:00",
+        "latitude": -8.38861,
+        "longitude": -47.47131,
+        "municipio": "GOIATINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6306,
-        "longitude": -48.5497,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 02:10:00",
+        "latitude": -11.73078,
+        "longitude": -49.04465,
+        "municipio": "GURUPI",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 02:20:00",
-        "bioma": "Cerrado"
+        "latitude": -7.32431,
+        "longitude": -48.87059,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -10.0623,
-        "longitude": -48.0978,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 02:20:00",
+        "latitude": -8.18927,
+        "longitude": -46.75437,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6306,
-        "longitude": -48.5497,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 02:20:00",
+        "latitude": -8.83499,
+        "longitude": -49.53135,
+        "municipio": "ARAGUACEMA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6309,
-        "longitude": -48.5277,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 02:20:00",
+        "latitude": -12.73031,
+        "longitude": -46.29032,
+        "municipio": "AURORA DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 02:30:00",
+        "latitude": -8.6852,
+        "longitude": -47.83635,
+        "municipio": "ITACAJÁ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0623,
-        "longitude": -48.0978,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 02:30:00",
+        "latitude": -8.19742,
+        "longitude": -46.75995,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6306,
-        "longitude": -48.5497,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 02:30:00",
-        "bioma": "Cerrado"
+        "latitude": -7.31916,
+        "longitude": -48.87926,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -10.0623,
-        "longitude": -48.0978,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 02:40:00",
+        "latitude": -8.88403,
+        "longitude": -48.50501,
+        "municipio": "GUARAÍ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 02:40:00",
+        "latitude": -8.06829,
+        "longitude": -47.1797,
+        "municipio": "GOIATINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6306,
-        "longitude": -48.5497,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 02:40:00",
+        "latitude": -8.19304,
+        "longitude": -46.75928,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 02:50:00",
+        "latitude": -8.07131,
+        "longitude": -47.18298,
+        "municipio": "GOIATINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 03:00:00",
+        "latitude": -8.98436,
+        "longitude": -48.09438,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 03:10:00",
-        "bioma": "Cerrado"
+        "latitude": -7.31539,
+        "longitude": -48.8787,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 03:20:00",
+        "latitude": -10.40919,
+        "longitude": -49.44012,
+        "municipio": "PIUM",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 03:30:00",
+        "latitude": -8.06707,
+        "longitude": -47.18223,
+        "municipio": "GOIATINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 03:40:00",
-        "bioma": "Cerrado"
+        "latitude": -7.31985,
+        "longitude": -48.87465,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 03:50:00",
+        "latitude": -7.92104,
+        "longitude": -48.25076,
+        "municipio": "PALMEIRANTE",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -11.6306,
-        "longitude": -48.5497,
-        "municipio": "PEIXE",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 04:00:00",
-        "bioma": "Cerrado"
+        "latitude": -7.32363,
+        "longitude": -48.87521,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
+        "bioma": "Amazônia"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 04:00:00",
+        "latitude": -9.77748,
+        "longitude": -48.97065,
+        "municipio": "DIVINÓPOLIS DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 04:10:00",
+        "latitude": -10.58781,
+        "longitude": -48.37788,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
         "bioma": "Cerrado"
       },
       {
-        "latitude": -10.0626,
-        "longitude": -48.0758,
-        "municipio": "APARECIDA DO RIO NEGRO",
-        "satelite": "GOES-19",
-        "data_hora_gmt": "2026-06-13 04:20:00",
-        "bioma": "Cerrado"
+        "latitude": -7.31607,
+        "longitude": -48.87409,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-15 04:55:00",
+        "bioma": "Amazônia"
       }
     ],
     "features": [
@@ -3048,971 +2624,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0978,
-            -10.0623
+            -48.87993,
+            -7.31427
           ]
         },
         "properties": {
-          "latitude": -10.0623,
-          "longitude": -48.0978,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:00:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.5473,
-            -11.6497
-          ]
-        },
-        "properties": {
-          "latitude": -11.6497,
-          "longitude": -48.5473,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:00:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.0758,
-            -10.0626
-          ]
-        },
-        "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:00:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.5277,
-            -11.6309
-          ]
-        },
-        "properties": {
-          "latitude": -11.6309,
-          "longitude": -48.5277,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:00:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.5497,
-            -11.6306
-          ]
-        },
-        "properties": {
-          "latitude": -11.6306,
-          "longitude": -48.5497,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:00:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.7124,
-            -11.2408
-          ]
-        },
-        "properties": {
-          "latitude": -11.2408,
-          "longitude": -46.7124,
-          "municipio": "RIO DA CONCEIÇÃO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:00:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.0978,
-            -10.0623
-          ]
-        },
-        "properties": {
-          "latitude": -10.0623,
-          "longitude": -48.0978,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:10:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.0758,
-            -10.0626
-          ]
-        },
-        "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:10:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.5497,
-            -11.6306
-          ]
-        },
-        "properties": {
-          "latitude": -11.6306,
-          "longitude": -48.5497,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:10:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.5277,
-            -11.6309
-          ]
-        },
-        "properties": {
-          "latitude": -11.6309,
-          "longitude": -48.5277,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:10:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.5473,
-            -11.6497
-          ]
-        },
-        "properties": {
-          "latitude": -11.6497,
-          "longitude": -48.5473,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:10:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.8549,
-            -10.6489
-          ]
-        },
-        "properties": {
-          "latitude": -10.6489,
-          "longitude": -46.8549,
-          "municipio": "MATEIROS",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:10:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.0978,
-            -10.0623
-          ]
-        },
-        "properties": {
-          "latitude": -10.0623,
-          "longitude": -48.0978,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:20:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.0758,
-            -10.0626
-          ]
-        },
-        "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:20:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.5497,
-            -11.6306
-          ]
-        },
-        "properties": {
-          "latitude": -11.6306,
-          "longitude": -48.5497,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:20:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.5473,
-            -11.6497
-          ]
-        },
-        "properties": {
-          "latitude": -11.6497,
-          "longitude": -48.5473,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:20:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.5277,
-            -11.6309
-          ]
-        },
-        "properties": {
-          "latitude": -11.6309,
-          "longitude": -48.5277,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:20:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.5253,
-            -11.65
-          ]
-        },
-        "properties": {
-          "latitude": -11.65,
-          "longitude": -48.5253,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:20:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.8797,
-            -10.6295
-          ]
-        },
-        "properties": {
-          "latitude": -10.6295,
-          "longitude": -46.8797,
-          "municipio": "MATEIROS",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:20:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.7124,
-            -11.2408
-          ]
-        },
-        "properties": {
-          "latitude": -11.2408,
-          "longitude": -46.7124,
-          "municipio": "RIO DA CONCEIÇÃO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:30:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.0758,
-            -10.0626
-          ]
-        },
-        "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:30:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.5497,
-            -11.6306
-          ]
-        },
-        "properties": {
-          "latitude": -11.6306,
-          "longitude": -48.5497,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:30:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.7349,
-            -11.2405
-          ]
-        },
-        "properties": {
-          "latitude": -11.2405,
-          "longitude": -46.7349,
-          "municipio": "RIO DA CONCEIÇÃO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:30:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.0978,
-            -10.0623
-          ]
-        },
-        "properties": {
-          "latitude": -10.0623,
-          "longitude": -48.0978,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:30:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.7649,
-            -11.1828
-          ]
-        },
-        "properties": {
-          "latitude": -11.1828,
-          "longitude": -46.7649,
-          "municipio": "ALMAS",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:30:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.5277,
-            -11.6309
-          ]
-        },
-        "properties": {
-          "latitude": -11.6309,
-          "longitude": -48.5277,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:30:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.5473,
-            -11.6497
-          ]
-        },
-        "properties": {
-          "latitude": -11.6497,
-          "longitude": -48.5473,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:30:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.7899,
-            -11.1634
-          ]
-        },
-        "properties": {
-          "latitude": -11.1634,
-          "longitude": -46.7899,
-          "municipio": "ALMAS",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:30:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.7674,
-            -11.1638
-          ]
-        },
-        "properties": {
-          "latitude": -11.1638,
-          "longitude": -46.7674,
-          "municipio": "ALMAS",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:30:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.5253,
-            -11.65
-          ]
-        },
-        "properties": {
-          "latitude": -11.65,
-          "longitude": -48.5253,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:30:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.7874,
-            -11.1825
-          ]
-        },
-        "properties": {
-          "latitude": -11.1825,
-          "longitude": -46.7874,
-          "municipio": "ALMAS",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:40:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.5497,
-            -11.6306
-          ]
-        },
-        "properties": {
-          "latitude": -11.6306,
-          "longitude": -48.5497,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:40:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.7899,
-            -11.1634
-          ]
-        },
-        "properties": {
-          "latitude": -11.1634,
-          "longitude": -46.7899,
-          "municipio": "ALMAS",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:40:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.7649,
-            -11.1828
-          ]
-        },
-        "properties": {
-          "latitude": -11.1828,
-          "longitude": -46.7649,
-          "municipio": "ALMAS",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:40:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.7674,
-            -11.1638
-          ]
-        },
-        "properties": {
-          "latitude": -11.1638,
-          "longitude": -46.7674,
-          "municipio": "ALMAS",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:40:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.5473,
-            -11.6497
-          ]
-        },
-        "properties": {
-          "latitude": -11.6497,
-          "longitude": -48.5473,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:40:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.0758,
-            -10.0626
-          ]
-        },
-        "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:40:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.7124,
-            -11.2408
-          ]
-        },
-        "properties": {
-          "latitude": -11.2408,
-          "longitude": -46.7124,
-          "municipio": "RIO DA CONCEIÇÃO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:40:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.7349,
-            -11.2405
-          ]
-        },
-        "properties": {
-          "latitude": -11.2405,
-          "longitude": -46.7349,
-          "municipio": "RIO DA CONCEIÇÃO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:40:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.0978,
-            -10.0623
-          ]
-        },
-        "properties": {
-          "latitude": -10.0623,
-          "longitude": -48.0978,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:40:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.5277,
-            -11.6309
-          ]
-        },
-        "properties": {
-          "latitude": -11.6309,
-          "longitude": -48.5277,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:40:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.713501,
-            -11.1768
-          ]
-        },
-        "properties": {
-          "latitude": -11.1768,
-          "longitude": -46.713501,
-          "municipio": "ALMAS",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.439201,
-            -12.1474
-          ]
-        },
-        "properties": {
-          "latitude": -12.1474,
-          "longitude": -48.439201,
-          "municipio": "PEIXE",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.7374,
-            -11.1727
-          ]
-        },
-        "properties": {
-          "latitude": -11.1727,
-          "longitude": -46.7374,
-          "municipio": "ALMAS",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.527,
-            -11.6221
-          ]
-        },
-        "properties": {
-          "latitude": -11.6221,
-          "longitude": -48.527,
-          "municipio": "PEIXE",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.542801,
-            -11.6261
-          ]
-        },
-        "properties": {
-          "latitude": -11.6261,
-          "longitude": -48.542801,
-          "municipio": "PEIXE",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.740002,
-            -11.1631
-          ]
-        },
-        "properties": {
-          "latitude": -11.1631,
-          "longitude": -46.740002,
-          "municipio": "ALMAS",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.7612,
-            -11.1686
-          ]
-        },
-        "properties": {
-          "latitude": -11.1686,
-          "longitude": -46.7612,
-          "municipio": "ALMAS",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.7006,
-            -11.225
-          ]
-        },
-        "properties": {
-          "latitude": -11.225,
-          "longitude": -46.7006,
-          "municipio": "RIO DA CONCEIÇÃO",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.698002,
-            -11.2346
-          ]
-        },
-        "properties": {
-          "latitude": -11.2346,
-          "longitude": -46.698002,
-          "municipio": "RIO DA CONCEIÇÃO",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.734798,
-            -11.1823
-          ]
-        },
-        "properties": {
-          "latitude": -11.1823,
-          "longitude": -46.734798,
-          "municipio": "ALMAS",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.758598,
-            -11.1782
-          ]
-        },
-        "properties": {
-          "latitude": -11.1782,
-          "longitude": -46.758598,
-          "municipio": "ALMAS",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -46.7192,
-            -11.2401
-          ]
-        },
-        "properties": {
-          "latitude": -11.2401,
-          "longitude": -46.7192,
-          "municipio": "RIO DA CONCEIÇÃO",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
-          "bioma": "Cerrado"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -48.5219,
-            -11.6415
-          ]
-        },
-        "properties": {
-          "latitude": -11.6415,
-          "longitude": -48.5219,
-          "municipio": "PEIXE",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
-          "bioma": "Cerrado"
+          "latitude": -7.31427,
+          "longitude": -48.87993,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -4020,17 +2642,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.054699,
-            -10.0576
+            -48.87228,
+            -7.32634
           ]
         },
         "properties": {
-          "latitude": -10.0576,
-          "longitude": -48.054699,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
-          "bioma": "Cerrado"
+          "latitude": -7.32634,
+          "longitude": -48.87228,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -4038,16 +2660,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.075199,
-            -10.0524
+            -46.75751,
+            -8.19431
           ]
         },
         "properties": {
-          "latitude": -10.0524,
-          "longitude": -48.075199,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
+          "latitude": -8.19431,
+          "longitude": -46.75751,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4056,17 +2678,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.015701,
-            -10.5736
+            -48.87454,
+            -7.32059
           ]
         },
         "properties": {
-          "latitude": -10.5736,
-          "longitude": -48.015701,
-          "municipio": "MONTE DO CARMO",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
-          "bioma": "Cerrado"
+          "latitude": -7.32059,
+          "longitude": -48.87454,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -4074,16 +2696,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.766399,
-            -11.1493
+            -46.75164,
+            -8.18622
           ]
         },
         "properties": {
-          "latitude": -11.1493,
-          "longitude": -46.766399,
-          "municipio": "ALMAS",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
+          "latitude": -8.18622,
+          "longitude": -46.75164,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4092,16 +2714,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.524502,
-            -11.6318
+            -46.7533,
+            -8.18666
           ]
         },
         "properties": {
-          "latitude": -11.6318,
-          "longitude": -48.524502,
-          "municipio": "PEIXE",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
+          "latitude": -8.18666,
+          "longitude": -46.7533,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4110,17 +2732,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.072701,
-            -10.0621
+            -48.50826,
+            -8.88778
           ]
         },
         "properties": {
-          "latitude": -10.0621,
-          "longitude": -48.072701,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
-          "bioma": "Cerrado"
+          "latitude": -8.88778,
+          "longitude": -48.50826,
+          "municipio": "GUARAÍ",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -4128,16 +2750,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0182,
-            -10.5639
+            -46.75404,
+            -8.19109
           ]
         },
         "properties": {
-          "latitude": -10.5639,
-          "longitude": -48.0182,
-          "municipio": "MONTE DO CARMO",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
+          "latitude": -8.19109,
+          "longitude": -46.75404,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4146,16 +2768,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.540298,
-            -11.6358
+            -46.7592,
+            -8.19478
           ]
         },
         "properties": {
-          "latitude": -11.6358,
-          "longitude": -48.540298,
-          "municipio": "PEIXE",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
+          "latitude": -8.19478,
+          "longitude": -46.7592,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4164,16 +2786,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.9552,
-            -9.3048
+            -47.60015,
+            -10.28869
           ]
         },
         "properties": {
-          "latitude": -9.3048,
-          "longitude": -48.9552,
-          "municipio": "DOIS IRMÃOS DO TOCANTINS",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
+          "latitude": -10.28869,
+          "longitude": -47.60015,
+          "municipio": "LAGOA DO TOCANTINS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4182,16 +2804,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.6954,
-            -11.2442
+            -46.75823,
+            -8.19874
           ]
         },
         "properties": {
-          "latitude": -11.2442,
-          "longitude": -46.6954,
-          "municipio": "RIO DA CONCEIÇÃO",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
+          "latitude": -8.19874,
+          "longitude": -46.75823,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4200,16 +2822,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.508701,
-            -11.6278
+            -48.5074,
+            -8.88285
           ]
         },
         "properties": {
-          "latitude": -11.6278,
-          "longitude": -48.508701,
-          "municipio": "PEIXE",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
+          "latitude": -8.88285,
+          "longitude": -48.5074,
+          "municipio": "GUARAÍ",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4218,16 +2840,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.057201,
-            -10.0479
+            -47.47316,
+            -8.38972
           ]
         },
         "properties": {
-          "latitude": -10.0479,
-          "longitude": -48.057201,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
+          "latitude": -8.38972,
+          "longitude": -47.47316,
+          "municipio": "GOIATINS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4236,17 +2858,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.077702,
-            -10.0428
+            -48.87676,
+            -7.31484
           ]
         },
         "properties": {
-          "latitude": -10.0428,
-          "longitude": -48.077702,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
-          "bioma": "Cerrado"
+          "latitude": -7.31484,
+          "longitude": -48.87676,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -4254,16 +2876,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.742599,
-            -11.1534
+            -46.75992,
+            -8.19922
           ]
         },
         "properties": {
-          "latitude": -11.1534,
-          "longitude": -46.742599,
-          "municipio": "ALMAS",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
+          "latitude": -8.19922,
+          "longitude": -46.75992,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4272,16 +2894,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.763802,
-            -11.1589
+            -46.75678,
+            -8.18987
           ]
         },
         "properties": {
-          "latitude": -11.1589,
-          "longitude": -46.763802,
-          "municipio": "ALMAS",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
+          "latitude": -8.18987,
+          "longitude": -46.75678,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4290,16 +2912,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.721802,
-            -11.2305
+            -49.68365,
+            -11.19821
           ]
         },
         "properties": {
-          "latitude": -11.2305,
-          "longitude": -46.721802,
-          "municipio": "RIO DA CONCEIÇÃO",
-          "satelite": "METOP-B",
-          "data_hora_gmt": "2026-06-13 00:42:00",
+          "latitude": -11.19821,
+          "longitude": -49.68365,
+          "municipio": "DUERÉ",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4308,17 +2930,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.80172,
-            -11.16821
+            -48.87767,
+            -7.32003
           ]
         },
         "properties": {
-          "latitude": -11.16821,
-          "longitude": -46.80172,
-          "municipio": "ALMAS",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
-          "bioma": "Cerrado"
+          "latitude": -7.32003,
+          "longitude": -48.87767,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -4326,16 +2948,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.10899,
-            -10.06777
+            -47.60102,
+            -10.29321
           ]
         },
         "properties": {
-          "latitude": -10.06777,
-          "longitude": -48.10899,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
+          "latitude": -10.29321,
+          "longitude": -47.60102,
+          "municipio": "LAGOA DO TOCANTINS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4344,16 +2966,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.08145,
-            -10.05515
+            -48.25257,
+            -7.92021
           ]
         },
         "properties": {
-          "latitude": -10.05515,
-          "longitude": -48.08145,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
+          "latitude": -7.92021,
+          "longitude": -48.25257,
+          "municipio": "PALMEIRANTE",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4362,16 +2984,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.53793,
-            -11.63152
+            -47.55595,
+            -8.13929
           ]
         },
         "properties": {
-          "latitude": -11.63152,
-          "longitude": -48.53793,
-          "municipio": "PEIXE",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
+          "latitude": -8.13929,
+          "longitude": -47.55595,
+          "municipio": "GOIATINS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4380,17 +3002,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.75953,
-            -11.16089
+            -48.87543,
+            -7.32578
           ]
         },
         "properties": {
-          "latitude": -11.16089,
-          "longitude": -46.75953,
-          "municipio": "ALMAS",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
-          "bioma": "Cerrado"
+          "latitude": -7.32578,
+          "longitude": -48.87543,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -4398,16 +3020,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.03164,
-            -10.57139
+            -46.76265,
+            -8.19796
           ]
         },
         "properties": {
-          "latitude": -10.57139,
-          "longitude": -48.03164,
-          "municipio": "MONTE DO CARMO",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
+          "latitude": -8.19796,
+          "longitude": -46.76265,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4416,16 +3038,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.75275,
-            -11.16064
+            -48.09352,
+            -8.9873
           ]
         },
         "properties": {
-          "latitude": -11.16064,
-          "longitude": -46.75275,
-          "municipio": "ALMAS",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
+          "latitude": -8.9873,
+          "longitude": -48.09352,
+          "municipio": "BOM JESUS DO TOCANTINS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4434,16 +3056,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.07219,
-            -10.06127
+            -48.25452,
+            -7.92165
           ]
         },
         "properties": {
-          "latitude": -10.06127,
-          "longitude": -48.07219,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
+          "latitude": -7.92165,
+          "longitude": -48.25452,
+          "municipio": "PALMEIRANTE",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4452,16 +3074,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.73423,
-            -11.23066
+            -48.25373,
+            -7.91671
           ]
         },
         "properties": {
-          "latitude": -11.23066,
-          "longitude": -46.73423,
-          "municipio": "RIO DA CONCEIÇÃO",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
+          "latitude": -7.91671,
+          "longitude": -48.25373,
+          "municipio": "PALMEIRANTE",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
           "bioma": "Cerrado"
         }
       },
@@ -4470,17 +3092,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.11734,
-            -10.06126
+            -48.88081,
+            -7.31947
           ]
         },
         "properties": {
-          "latitude": -10.06126,
-          "longitude": -48.11734,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
-          "bioma": "Cerrado"
+          "latitude": -7.31947,
+          "longitude": -48.88081,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:02:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -4488,16 +3110,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.56218,
-            -11.6332
+            -46.29427,
+            -12.73188
           ]
         },
         "properties": {
-          "latitude": -11.6332,
-          "longitude": -48.56218,
-          "municipio": "PEIXE",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
+          "latitude": -12.73188,
+          "longitude": -46.29427,
+          "municipio": "AURORA DO TOCANTINS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:04:00",
           "bioma": "Cerrado"
         }
       },
@@ -4506,16 +3128,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.02502,
-            -10.57855
+            -46.29189,
+            -12.73432
           ]
         },
         "properties": {
-          "latitude": -10.57855,
-          "longitude": -48.02502,
-          "municipio": "MONTE DO CARMO",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
+          "latitude": -12.73432,
+          "longitude": -46.29189,
+          "municipio": "AURORA DO TOCANTINS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:04:00",
           "bioma": "Cerrado"
         }
       },
@@ -4524,16 +3146,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.79111,
-            -11.18562
+            -46.29057,
+            -12.73252
           ]
         },
         "properties": {
-          "latitude": -11.18562,
-          "longitude": -46.79111,
-          "municipio": "ALMAS",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
+          "latitude": -12.73252,
+          "longitude": -46.29057,
+          "municipio": "AURORA DO TOCANTINS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-06-15 04:04:00",
           "bioma": "Cerrado"
         }
       },
@@ -4542,16 +3164,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.52906,
-            -11.64314
+            -47.83619,
+            -8.6848
           ]
         },
         "properties": {
-          "latitude": -11.64314,
-          "longitude": -48.52906,
-          "municipio": "PEIXE",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
+          "latitude": -8.6848,
+          "longitude": -47.83619,
+          "municipio": "ITACAJÁ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
           "bioma": "Cerrado"
         }
       },
@@ -4560,17 +3182,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.4675,
-            -12.1545
+            -48.88013,
+            -7.31806
           ]
         },
         "properties": {
-          "latitude": -12.1545,
-          "longitude": -48.4675,
-          "municipio": "PEIXE",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
-          "bioma": "Cerrado"
+          "latitude": -7.31806,
+          "longitude": -48.88013,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -4578,16 +3200,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.79481,
-            -11.16822
+            -47.55593,
+            -8.14029
           ]
         },
         "properties": {
-          "latitude": -11.16822,
-          "longitude": -46.79481,
-          "municipio": "ALMAS",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
+          "latitude": -8.14029,
+          "longitude": -47.55593,
+          "municipio": "GOIATINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
           "bioma": "Cerrado"
         }
       },
@@ -4596,16 +3218,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.53181,
-            -11.62784
+            -47.4705,
+            -8.39101
           ]
         },
         "properties": {
-          "latitude": -11.62784,
-          "longitude": -48.53181,
-          "municipio": "PEIXE",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
+          "latitude": -8.39101,
+          "longitude": -47.4705,
+          "municipio": "GOIATINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
           "bioma": "Cerrado"
         }
       },
@@ -4614,16 +3236,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.55946,
-            -11.64847
+            -46.75377,
+            -8.18733
           ]
         },
         "properties": {
-          "latitude": -11.64847,
-          "longitude": -48.55946,
-          "municipio": "PEIXE",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
+          "latitude": -8.18733,
+          "longitude": -46.75377,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
           "bioma": "Cerrado"
         }
       },
@@ -4632,17 +3254,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.56821,
-            -11.63663
+            -48.87632,
+            -7.31868
           ]
         },
         "properties": {
-          "latitude": -11.63663,
-          "longitude": -48.56821,
-          "municipio": "PEIXE",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
-          "bioma": "Cerrado"
+          "latitude": -7.31868,
+          "longitude": -48.87632,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -4650,16 +3272,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.74952,
-            -11.17818
+            -47.57777,
+            -5.54478
           ]
         },
         "properties": {
-          "latitude": -11.17818,
-          "longitude": -46.74952,
-          "municipio": "ALMAS",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
+          "latitude": -5.54478,
+          "longitude": -47.57777,
+          "municipio": "SÃO MIGUEL DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
           "bioma": "Cerrado"
         }
       },
@@ -4668,16 +3290,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.73901,
-            -11.23065
+            -48.25136,
+            -7.91643
           ]
         },
         "properties": {
-          "latitude": -11.23065,
-          "longitude": -46.73901,
-          "municipio": "RIO DA CONCEIÇÃO",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
+          "latitude": -7.91643,
+          "longitude": -48.25136,
+          "municipio": "PALMEIRANTE",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
           "bioma": "Cerrado"
         }
       },
@@ -4686,16 +3308,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.43739,
-            -12.14934
+            -47.55295,
+            -8.14419
           ]
         },
         "properties": {
-          "latitude": -12.14934,
-          "longitude": -48.43739,
-          "municipio": "PEIXE",
-          "satelite": "TERRA_M-M",
-          "data_hora_gmt": "2026-06-13 00:45:00",
+          "latitude": -8.14419,
+          "longitude": -47.55295,
+          "municipio": "GOIATINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
           "bioma": "Cerrado"
         }
       },
@@ -4704,16 +3326,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.7674,
-            -11.1638
+            -47.49568,
+            -8.74609
           ]
         },
         "properties": {
-          "latitude": -11.1638,
-          "longitude": -46.7674,
-          "municipio": "ALMAS",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:50:00",
+          "latitude": -8.74609,
+          "longitude": -47.49568,
+          "municipio": "ITACAJÁ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
           "bioma": "Cerrado"
         }
       },
@@ -4722,16 +3344,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.7899,
-            -11.1634
+            -48.25191,
+            -7.91982
           ]
         },
         "properties": {
-          "latitude": -11.1634,
-          "longitude": -46.7899,
-          "municipio": "ALMAS",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:50:00",
+          "latitude": -7.91982,
+          "longitude": -48.25191,
+          "municipio": "PALMEIRANTE",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
           "bioma": "Cerrado"
         }
       },
@@ -4740,17 +3362,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5277,
-            -11.6309
+            -48.87308,
+            -7.32277
           ]
         },
         "properties": {
-          "latitude": -11.6309,
-          "longitude": -48.5277,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:50:00",
-          "bioma": "Cerrado"
+          "latitude": -7.32277,
+          "longitude": -48.87308,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -4758,17 +3380,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5497,
-            -11.6306
+            -48.87574,
+            -7.31521
           ]
         },
         "properties": {
-          "latitude": -11.6306,
-          "longitude": -48.5497,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:50:00",
-          "bioma": "Cerrado"
+          "latitude": -7.31521,
+          "longitude": -48.87574,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -4776,16 +3398,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -46.7543,
+            -8.19065
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:50:00",
+          "latitude": -8.19065,
+          "longitude": -46.7543,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
           "bioma": "Cerrado"
         }
       },
@@ -4794,16 +3416,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5473,
-            -11.6497
+            -46.75885,
+            -8.19675
           ]
         },
         "properties": {
-          "latitude": -11.6497,
-          "longitude": -48.5473,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:50:00",
+          "latitude": -8.19675,
+          "longitude": -46.75885,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
           "bioma": "Cerrado"
         }
       },
@@ -4812,16 +3434,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0978,
-            -10.0623
+            -46.77024,
+            -8.11044
           ]
         },
         "properties": {
-          "latitude": -10.0623,
-          "longitude": -48.0978,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:50:00",
+          "latitude": -8.11044,
+          "longitude": -46.77024,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
           "bioma": "Cerrado"
         }
       },
@@ -4830,16 +3452,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.7649,
-            -11.1828
+            -46.75831,
+            -8.19343
           ]
         },
         "properties": {
-          "latitude": -11.1828,
-          "longitude": -46.7649,
-          "municipio": "ALMAS",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 00:50:00",
+          "latitude": -8.19343,
+          "longitude": -46.75831,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
           "bioma": "Cerrado"
         }
       },
@@ -4848,16 +3470,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.7674,
-            -11.1638
+            -47.5554,
+            -8.13695
           ]
         },
         "properties": {
-          "latitude": -11.1638,
-          "longitude": -46.7674,
-          "municipio": "ALMAS",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:00:00",
+          "latitude": -8.13695,
+          "longitude": -47.5554,
+          "municipio": "GOIATINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
           "bioma": "Cerrado"
         }
       },
@@ -4866,16 +3488,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.7649,
-            -11.1828
+            -47.19076,
+            -8.08043
           ]
         },
         "properties": {
-          "latitude": -11.1828,
-          "longitude": -46.7649,
-          "municipio": "ALMAS",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:00:00",
+          "latitude": -8.08043,
+          "longitude": -47.19076,
+          "municipio": "GOIATINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
           "bioma": "Cerrado"
         }
       },
@@ -4884,16 +3506,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0978,
-            -10.0623
+            -47.11734,
+            -8.31201
           ]
         },
         "properties": {
-          "latitude": -10.0623,
-          "longitude": -48.0978,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:00:00",
+          "latitude": -8.31201,
+          "longitude": -47.11734,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
           "bioma": "Cerrado"
         }
       },
@@ -4902,17 +3524,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -48.87688,
+            -7.32215
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:00:00",
-          "bioma": "Cerrado"
+          "latitude": -7.32215,
+          "longitude": -48.87688,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -4920,16 +3542,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5473,
-            -11.6497
+            -47.11385,
+            -8.31256
           ]
         },
         "properties": {
-          "latitude": -11.6497,
-          "longitude": -48.5473,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:00:00",
+          "latitude": -8.31256,
+          "longitude": -47.11385,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
           "bioma": "Cerrado"
         }
       },
@@ -4938,16 +3560,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.7899,
-            -11.1634
+            -48.19446,
+            -7.789
           ]
         },
         "properties": {
-          "latitude": -11.1634,
-          "longitude": -46.7899,
-          "municipio": "ALMAS",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:00:00",
+          "latitude": -7.789,
+          "longitude": -48.19446,
+          "municipio": "NOVA OLINDA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
           "bioma": "Cerrado"
         }
       },
@@ -4956,17 +3578,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5277,
-            -11.6309
+            -48.87956,
+            -7.31459
           ]
         },
         "properties": {
-          "latitude": -11.6309,
-          "longitude": -48.5277,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:00:00",
-          "bioma": "Cerrado"
+          "latitude": -7.31459,
+          "longitude": -48.87956,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:36:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -4974,16 +3596,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5497,
-            -11.6306
+            -46.28962,
+            -12.73174
           ]
         },
         "properties": {
-          "latitude": -11.6306,
-          "longitude": -48.5497,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:00:00",
+          "latitude": -12.73174,
+          "longitude": -46.28962,
+          "municipio": "AURORA DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:38:00",
           "bioma": "Cerrado"
         }
       },
@@ -4992,16 +3614,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -46.2933,
+            -12.73118
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:10:00",
+          "latitude": -12.73118,
+          "longitude": -46.2933,
+          "municipio": "AURORA DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:38:00",
           "bioma": "Cerrado"
         }
       },
@@ -5010,16 +3632,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5497,
-            -11.6306
+            -47.60059,
+            -10.28823
           ]
         },
         "properties": {
-          "latitude": -11.6306,
-          "longitude": -48.5497,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:10:00",
+          "latitude": -10.28823,
+          "longitude": -47.60059,
+          "municipio": "LAGOA DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:38:00",
           "bioma": "Cerrado"
         }
       },
@@ -5028,16 +3650,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0978,
-            -10.0623
+            -46.29387,
+            -12.73458
           ]
         },
         "properties": {
-          "latitude": -10.0623,
-          "longitude": -48.0978,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:10:00",
+          "latitude": -12.73458,
+          "longitude": -46.29387,
+          "municipio": "AURORA DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:38:00",
           "bioma": "Cerrado"
         }
       },
@@ -5046,16 +3668,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5473,
-            -11.6497
+            -48.37811,
+            -10.586
           ]
         },
         "properties": {
-          "latitude": -11.6497,
-          "longitude": -48.5473,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:10:00",
+          "latitude": -10.586,
+          "longitude": -48.37811,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:38:00",
           "bioma": "Cerrado"
         }
       },
@@ -5064,16 +3686,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5277,
-            -11.6309
+            -49.44234,
+            -10.40576
           ]
         },
         "properties": {
-          "latitude": -11.6309,
-          "longitude": -48.5277,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:10:00",
+          "latitude": -10.40576,
+          "longitude": -49.44234,
+          "municipio": "PIUM",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:38:00",
           "bioma": "Cerrado"
         }
       },
@@ -5082,16 +3704,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -49.44171,
+            -10.40755
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:20:00",
+          "latitude": -10.40755,
+          "longitude": -49.44171,
+          "municipio": "PIUM",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:38:00",
           "bioma": "Cerrado"
         }
       },
@@ -5100,16 +3722,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5473,
-            -11.6497
+            -50.40453,
+            -10.51378
           ]
         },
         "properties": {
-          "latitude": -11.6497,
-          "longitude": -48.5473,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:20:00",
+          "latitude": -10.51378,
+          "longitude": -50.40453,
+          "municipio": "PIUM",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:38:00",
           "bioma": "Cerrado"
         }
       },
@@ -5118,16 +3740,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5253,
-            -11.65
+            -48.09568,
+            -8.98498
           ]
         },
         "properties": {
-          "latitude": -11.65,
-          "longitude": -48.5253,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:20:00",
+          "latitude": -8.98498,
+          "longitude": -48.09568,
+          "municipio": "BOM JESUS DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:38:00",
           "bioma": "Cerrado"
         }
       },
@@ -5136,16 +3758,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5277,
-            -11.6309
+            -48.50799,
+            -8.88385
           ]
         },
         "properties": {
-          "latitude": -11.6309,
-          "longitude": -48.5277,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:20:00",
+          "latitude": -8.88385,
+          "longitude": -48.50799,
+          "municipio": "GUARAÍ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:38:00",
           "bioma": "Cerrado"
         }
       },
@@ -5154,16 +3776,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5497,
-            -11.6306
+            -47.60113,
+            -10.29156
           ]
         },
         "properties": {
-          "latitude": -11.6306,
-          "longitude": -48.5497,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:20:00",
+          "latitude": -10.29156,
+          "longitude": -47.60113,
+          "municipio": "LAGOA DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:38:00",
           "bioma": "Cerrado"
         }
       },
@@ -5172,17 +3794,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5277,
-            -11.6309
+            -48.50855,
+            -8.88724
           ]
         },
         "properties": {
-          "latitude": -11.6309,
-          "longitude": -48.5277,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:30:00",
-          "bioma": "Cerrado"
+          "latitude": -8.88724,
+          "longitude": -48.50855,
+          "municipio": "GUARAÍ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:38:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -5190,16 +3812,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -48.09211,
+            -8.98556
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:30:00",
+          "latitude": -8.98556,
+          "longitude": -48.09211,
+          "municipio": "BOM JESUS DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:38:00",
           "bioma": "Cerrado"
         }
       },
@@ -5208,16 +3830,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0978,
-            -10.0623
+            -49.0442,
+            -11.7316
           ]
         },
         "properties": {
-          "latitude": -10.0623,
-          "longitude": -48.0978,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:30:00",
+          "latitude": -11.7316,
+          "longitude": -49.0442,
+          "municipio": "GURUPI",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:38:00",
           "bioma": "Cerrado"
         }
       },
@@ -5226,16 +3848,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5473,
-            -11.6497
+            -48.9692,
+            -9.77696
           ]
         },
         "properties": {
-          "latitude": -11.6497,
-          "longitude": -48.5473,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:30:00",
+          "latitude": -9.77696,
+          "longitude": -48.9692,
+          "municipio": "DIVINÓPOLIS DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:38:00",
           "bioma": "Cerrado"
         }
       },
@@ -5244,16 +3866,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -46.7874,
-            -11.1825
+            -49.68438,
+            -11.19692
           ]
         },
         "properties": {
-          "latitude": -11.1825,
-          "longitude": -46.7874,
-          "municipio": "ALMAS",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:30:00",
+          "latitude": -11.19692,
+          "longitude": -49.68438,
+          "municipio": "DUERÉ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:38:00",
           "bioma": "Cerrado"
         }
       },
@@ -5262,16 +3884,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5497,
-            -11.6306
+            -47.69905,
+            -9.695
           ]
         },
         "properties": {
-          "latitude": -11.6306,
-          "longitude": -48.5497,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:30:00",
+          "latitude": -9.695,
+          "longitude": -47.69905,
+          "municipio": "RIO SONO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:38:00",
           "bioma": "Cerrado"
         }
       },
@@ -5280,16 +3902,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0978,
-            -10.0623
+            -49.49627,
+            -10.90629
           ]
         },
         "properties": {
-          "latitude": -10.0623,
-          "longitude": -48.0978,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:40:00",
+          "latitude": -10.90629,
+          "longitude": -49.49627,
+          "municipio": "SANTA RITA DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-15 04:38:00",
           "bioma": "Cerrado"
         }
       },
@@ -5298,16 +3920,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -47.57608,
+            -5.5449
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:40:00",
+          "latitude": -5.5449,
+          "longitude": -47.57608,
+          "municipio": "SÃO MIGUEL DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:53:00",
           "bioma": "Cerrado"
         }
       },
@@ -5316,16 +3938,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5473,
-            -11.6497
+            -47.59772,
+            -10.28919
           ]
         },
         "properties": {
-          "latitude": -11.6497,
-          "longitude": -48.5473,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:40:00",
+          "latitude": -10.28919,
+          "longitude": -47.59772,
+          "municipio": "LAGOA DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5334,16 +3956,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5497,
-            -11.6306
+            -48.50561,
+            -8.88797
           ]
         },
         "properties": {
-          "latitude": -11.6306,
-          "longitude": -48.5497,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:40:00",
+          "latitude": -8.88797,
+          "longitude": -48.50561,
+          "municipio": "GUARAÍ",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5352,16 +3974,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5277,
-            -11.6309
+            -47.18346,
+            -8.06773
           ]
         },
         "properties": {
-          "latitude": -11.6309,
-          "longitude": -48.5277,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:50:00",
+          "latitude": -8.06773,
+          "longitude": -47.18346,
+          "municipio": "GOIATINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5370,16 +3992,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5497,
-            -11.6306
+            -46.75502,
+            -8.19365
           ]
         },
         "properties": {
-          "latitude": -11.6306,
-          "longitude": -48.5497,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:50:00",
+          "latitude": -8.19365,
+          "longitude": -46.75502,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5388,16 +4010,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -48.25238,
+            -7.91966
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 01:50:00",
+          "latitude": -7.91966,
+          "longitude": -48.25238,
+          "municipio": "PALMEIRANTE",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5406,16 +4028,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -48.25176,
+            -7.91571
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 02:00:00",
+          "latitude": -7.91571,
+          "longitude": -48.25176,
+          "municipio": "PALMEIRANTE",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5424,16 +4046,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0978,
-            -10.0623
+            -46.29134,
+            -12.73511
           ]
         },
         "properties": {
-          "latitude": -10.0623,
-          "longitude": -48.0978,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 02:00:00",
+          "latitude": -12.73511,
+          "longitude": -46.29134,
+          "municipio": "AURORA DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5442,16 +4064,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5497,
-            -11.6306
+            -48.25015,
+            -7.91709
           ]
         },
         "properties": {
-          "latitude": -11.6306,
-          "longitude": -48.5497,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 02:00:00",
+          "latitude": -7.91709,
+          "longitude": -48.25015,
+          "municipio": "PALMEIRANTE",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5460,16 +4082,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0978,
-            -10.0623
+            -47.08211,
+            -8.08106
           ]
         },
         "properties": {
-          "latitude": -10.0623,
-          "longitude": -48.0978,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 02:10:00",
+          "latitude": -8.08106,
+          "longitude": -47.08211,
+          "municipio": "GOIATINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5478,16 +4100,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -47.47131,
+            -8.38861
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 02:10:00",
+          "latitude": -8.38861,
+          "longitude": -47.47131,
+          "municipio": "GOIATINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5496,16 +4118,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5497,
-            -11.6306
+            -49.04465,
+            -11.73078
           ]
         },
         "properties": {
-          "latitude": -11.6306,
-          "longitude": -48.5497,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 02:10:00",
+          "latitude": -11.73078,
+          "longitude": -49.04465,
+          "municipio": "GURUPI",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5514,17 +4136,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -48.87059,
+            -7.32431
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 02:20:00",
-          "bioma": "Cerrado"
+          "latitude": -7.32431,
+          "longitude": -48.87059,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -5532,16 +4154,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0978,
-            -10.0623
+            -46.75437,
+            -8.18927
           ]
         },
         "properties": {
-          "latitude": -10.0623,
-          "longitude": -48.0978,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 02:20:00",
+          "latitude": -8.18927,
+          "longitude": -46.75437,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5550,16 +4172,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5497,
-            -11.6306
+            -49.53135,
+            -8.83499
           ]
         },
         "properties": {
-          "latitude": -11.6306,
-          "longitude": -48.5497,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 02:20:00",
+          "latitude": -8.83499,
+          "longitude": -49.53135,
+          "municipio": "ARAGUACEMA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5568,16 +4190,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5277,
-            -11.6309
+            -46.29032,
+            -12.73031
           ]
         },
         "properties": {
-          "latitude": -11.6309,
-          "longitude": -48.5277,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 02:20:00",
+          "latitude": -12.73031,
+          "longitude": -46.29032,
+          "municipio": "AURORA DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5586,16 +4208,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -47.83635,
+            -8.6852
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 02:30:00",
+          "latitude": -8.6852,
+          "longitude": -47.83635,
+          "municipio": "ITACAJÁ",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5604,16 +4226,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0978,
-            -10.0623
+            -46.75995,
+            -8.19742
           ]
         },
         "properties": {
-          "latitude": -10.0623,
-          "longitude": -48.0978,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 02:30:00",
+          "latitude": -8.19742,
+          "longitude": -46.75995,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5622,17 +4244,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5497,
-            -11.6306
+            -48.87926,
+            -7.31916
           ]
         },
         "properties": {
-          "latitude": -11.6306,
-          "longitude": -48.5497,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 02:30:00",
-          "bioma": "Cerrado"
+          "latitude": -7.31916,
+          "longitude": -48.87926,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -5640,16 +4262,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0978,
-            -10.0623
+            -48.50501,
+            -8.88403
           ]
         },
         "properties": {
-          "latitude": -10.0623,
-          "longitude": -48.0978,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 02:40:00",
+          "latitude": -8.88403,
+          "longitude": -48.50501,
+          "municipio": "GUARAÍ",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5658,16 +4280,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -47.1797,
+            -8.06829
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 02:40:00",
+          "latitude": -8.06829,
+          "longitude": -47.1797,
+          "municipio": "GOIATINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5676,16 +4298,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5497,
-            -11.6306
+            -46.75928,
+            -8.19304
           ]
         },
         "properties": {
-          "latitude": -11.6306,
-          "longitude": -48.5497,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 02:40:00",
+          "latitude": -8.19304,
+          "longitude": -46.75928,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5694,16 +4316,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -47.18298,
+            -8.07131
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 02:50:00",
+          "latitude": -8.07131,
+          "longitude": -47.18298,
+          "municipio": "GOIATINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5712,16 +4334,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -48.09438,
+            -8.98436
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 03:00:00",
+          "latitude": -8.98436,
+          "longitude": -48.09438,
+          "municipio": "BOM JESUS DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5730,17 +4352,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -48.8787,
+            -7.31539
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 03:10:00",
-          "bioma": "Cerrado"
+          "latitude": -7.31539,
+          "longitude": -48.8787,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -5748,16 +4370,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -49.44012,
+            -10.40919
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 03:20:00",
+          "latitude": -10.40919,
+          "longitude": -49.44012,
+          "municipio": "PIUM",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5766,16 +4388,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -47.18223,
+            -8.06707
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 03:30:00",
+          "latitude": -8.06707,
+          "longitude": -47.18223,
+          "municipio": "GOIATINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5784,17 +4406,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -48.87465,
+            -7.31985
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 03:40:00",
-          "bioma": "Cerrado"
+          "latitude": -7.31985,
+          "longitude": -48.87465,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -5802,16 +4424,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -48.25076,
+            -7.92104
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 03:50:00",
+          "latitude": -7.92104,
+          "longitude": -48.25076,
+          "municipio": "PALMEIRANTE",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5820,17 +4442,17 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.5497,
-            -11.6306
+            -48.87521,
+            -7.32363
           ]
         },
         "properties": {
-          "latitude": -11.6306,
-          "longitude": -48.5497,
-          "municipio": "PEIXE",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 04:00:00",
-          "bioma": "Cerrado"
+          "latitude": -7.32363,
+          "longitude": -48.87521,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
+          "bioma": "Amazônia"
         }
       },
       {
@@ -5838,16 +4460,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -48.97065,
+            -9.77748
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 04:00:00",
+          "latitude": -9.77748,
+          "longitude": -48.97065,
+          "municipio": "DIVINÓPOLIS DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5856,16 +4478,16 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -48.37788,
+            -10.58781
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 04:10:00",
+          "latitude": -10.58781,
+          "longitude": -48.37788,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
           "bioma": "Cerrado"
         }
       },
@@ -5874,23 +4496,22 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -48.0758,
-            -10.0626
+            -48.87409,
+            -7.31607
           ]
         },
         "properties": {
-          "latitude": -10.0626,
-          "longitude": -48.0758,
-          "municipio": "APARECIDA DO RIO NEGRO",
-          "satelite": "GOES-19",
-          "data_hora_gmt": "2026-06-13 04:20:00",
-          "bioma": "Cerrado"
+          "latitude": -7.31607,
+          "longitude": -48.87409,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-15 04:55:00",
+          "bioma": "Amazônia"
         }
       }
     ]
   },
   "erros_atualizacao": {
-    "avisos_inmet": "fetch failed",
     "s2id": "Portal S2ID indisponivel"
   },
   "s2id": {
@@ -5981,21 +4602,21 @@
     "mes_final": 5,
     "periodo": "Janeiro a maio de 2026",
     "area_queimada_ha": 149509.64,
-    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/0756e6747a8cafcbf3f8799c7cbab90b-b673cb490be91b795390732c132178f8/tiles/{z}/{x}/{y}",
+    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/0756e6747a8cafcbf3f8799c7cbab90b-46fb1ab022509e73dbcc5cf68c5cb80f/tiles/{z}/{x}/{y}",
     "unidade": "ha",
     "natureza": "Cicatrizes de área queimada mapeadas pelo Monitor do Fogo."
   },
   "chuva_observada": {
     "status": "ok",
     "periodo": "ultimas 24h",
-    "fonte": "CEMADEN",
-    "atualizadoEm": "2026-06-15T05:12:11.395Z",
-    "maiorAcumulado": 0.2,
-    "estacaoMaiorAcumulado": "G2-170389102A",
-    "municipioMaiorAcumulado": "CARRASCO BONITO",
-    "estacoesCadastradas": 38,
-    "estacoesConsultadas": 38,
-    "estacoesComLeitura": 38,
+    "fonte": "CEMADEN / ANA",
+    "atualizadoEm": "2026-06-15T12:34:05.517Z",
+    "maiorAcumulado": 0.8,
+    "estacaoMaiorAcumulado": "Prefeitura Municipal",
+    "municipioMaiorAcumulado": "ARAGUANÃ",
+    "estacoesCadastradas": 234,
+    "estacoesConsultadas": 234,
+    "estacoesComLeitura": 49,
     "acima10": 0,
     "acima30": 0,
     "acima50": 0,
@@ -6008,7 +4629,7 @@
         "estacoesCadastradas": 38,
         "estacoesConsultadas": 38,
         "estacoesComLeitura": 38,
-        "atualizadoEm": "2026-06-15 05:10:40 UTC",
+        "atualizadoEm": "2026-06-15 12:32:36 UTC",
         "estacoes": [
           {
             "id": "CEMADEN-170730601A",
@@ -6019,7 +4640,7 @@
             "latitude": -11.34296,
             "longitude": -49.26664,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6033,7 +4654,7 @@
             "latitude": -5.36527,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6047,7 +4668,7 @@
             "latitude": -12.035,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6061,7 +4682,7 @@
             "latitude": -5.3956,
             "longitude": -47.8114,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6075,7 +4696,7 @@
             "latitude": -7.14869,
             "longitude": -48.69083,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6089,7 +4710,7 @@
             "latitude": -5.25903,
             "longitude": -48.20147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6102,9 +4723,9 @@
             "fonte": "CEMADEN",
             "latitude": -6.58226,
             "longitude": -48.64368,
-            "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
-            "status": "sem_chuva",
+            "chuva24h": 0.8,
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
+            "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -6117,7 +4738,7 @@
             "latitude": -5.55265,
             "longitude": -47.57758,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6131,7 +4752,7 @@
             "latitude": -7.18755,
             "longitude": -48.23527,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6145,7 +4766,7 @@
             "latitude": -7.15587,
             "longitude": -48.1888,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6159,7 +4780,7 @@
             "latitude": -7.19408,
             "longitude": -48.19586,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6173,7 +4794,7 @@
             "latitude": -7.22806,
             "longitude": -48.24461,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6187,7 +4808,7 @@
             "latitude": -5.65762,
             "longitude": -48.11147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6201,7 +4822,7 @@
             "latitude": -11.8055,
             "longitude": -49.5275,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6215,7 +4836,7 @@
             "latitude": -7.71295,
             "longitude": -47.3093,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6229,7 +4850,7 @@
             "latitude": -6.41126,
             "longitude": -48.53374,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6243,7 +4864,7 @@
             "latitude": -10.71611,
             "longitude": -48.39972,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6257,7 +4878,7 @@
             "latitude": -6.36582,
             "longitude": -48.0746,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6271,7 +4892,7 @@
             "latitude": -6.38119,
             "longitude": -48.06281,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6285,7 +4906,7 @@
             "latitude": -5.46415,
             "longitude": -47.89705,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6299,7 +4920,7 @@
             "latitude": -5.47529,
             "longitude": -47.88956,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6313,7 +4934,7 @@
             "latitude": -5.43,
             "longitude": -47.85787,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6326,9 +4947,9 @@
             "fonte": "CEMADEN",
             "latitude": -5.31866,
             "longitude": -48.03934,
-            "chuva24h": 0.2,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
-            "status": "fraca",
+            "chuva24h": 0,
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
+            "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -6341,7 +4962,7 @@
             "latitude": -5.32414,
             "longitude": -48.03401,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6355,7 +4976,7 @@
             "latitude": -9.27355,
             "longitude": -49.95393,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6369,7 +4990,7 @@
             "latitude": -9.28132,
             "longitude": -49.95269,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6382,9 +5003,9 @@
             "fonte": "CEMADEN",
             "latitude": -5.76973,
             "longitude": -47.48155,
-            "chuva24h": 0.2,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
-            "status": "fraca",
+            "chuva24h": 0,
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
+            "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -6397,7 +5018,7 @@
             "latitude": -5.77483,
             "longitude": -47.47833,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6411,7 +5032,7 @@
             "latitude": -10.79377,
             "longitude": -49.62398,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6425,7 +5046,7 @@
             "latitude": -10.78247,
             "longitude": -49.61686,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6439,7 +5060,7 @@
             "latitude": -12.61468,
             "longitude": -47.88194,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6453,7 +5074,7 @@
             "latitude": -12.62013,
             "longitude": -47.86877,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6467,7 +5088,7 @@
             "latitude": -12.62794,
             "longitude": -47.56296,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6481,7 +5102,7 @@
             "latitude": -10.44876,
             "longitude": -49.16777,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6495,7 +5116,7 @@
             "latitude": -10.44167,
             "longitude": -49.18087,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6509,7 +5130,7 @@
             "latitude": -6.32722,
             "longitude": -47.42806,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6523,7 +5144,7 @@
             "latitude": -6.33778,
             "longitude": -47.43333,
             "chuva24h": 0.2,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6537,7 +5158,7 @@
             "latitude": -6.31556,
             "longitude": -47.42306,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-15 05:10:40 UTC",
+            "atualizadoEm": "2026-06-15 12:32:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6546,25 +5167,487 @@
       },
       "INMET": {
         "source": "INMET",
-        "status": "error",
-        "label": "Erro de consulta",
-        "observacao": "Falha ao consultar a fonte no workflow: fetch failed",
-        "estacoesCadastradas": 0,
-        "estacoesConsultadas": 0,
+        "status": "catalog",
+        "label": "Sem leitura valida",
+        "observacao": "Chave/token INMET recusado pela API.",
+        "modoConsulta": "autenticada",
+        "erroAutenticacao": "Chave/token INMET recusado pela API.",
+        "estacoesCadastradas": 20,
+        "estacoesConsultadas": 20,
         "estacoesComLeitura": 0,
+        "estacoesSemLeitura": 20,
+        "estacoesComErro": 20,
+        "estacoesEmIntegracao": 0,
         "atualizadoEm": null,
-        "estacoes": []
+        "estacoes": [],
+        "todasEstacoes": [
+          {
+            "id": "INMET-A053",
+            "codigo": "A053",
+            "nome": "ALMAS",
+            "municipio": "ALMAS",
+            "fonte": "INMET",
+            "latitude": -11.28416666,
+            "longitude": -47.21222222,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A054",
+            "codigo": "A054",
+            "nome": "ARAGUACU",
+            "municipio": "ARAGUACU",
+            "fonte": "INMET",
+            "latitude": -12.59222221,
+            "longitude": -49.5286111,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A021",
+            "codigo": "A021",
+            "nome": "ARAGUAINA",
+            "municipio": "ARAGUAINA",
+            "fonte": "INMET",
+            "latitude": -7.10388888,
+            "longitude": -48.20111111,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A044",
+            "codigo": "A044",
+            "nome": "ARAGUATINS",
+            "municipio": "ARAGUATINS",
+            "fonte": "INMET",
+            "latitude": -5.6436111,
+            "longitude": -48.11194444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A043",
+            "codigo": "A043",
+            "nome": "CAMPOS LINDOS",
+            "municipio": "CAMPOS LINDOS",
+            "fonte": "INMET",
+            "latitude": -8.15472222,
+            "longitude": -46.63944444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A049",
+            "codigo": "A049",
+            "nome": "COLINAS DO TOCANTINS",
+            "municipio": "COLINAS DO TOCANTINS",
+            "fonte": "INMET",
+            "latitude": -8.09277777,
+            "longitude": -48.4786111,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A038",
+            "codigo": "A038",
+            "nome": "DIANOPOLIS",
+            "municipio": "DIANOPOLIS",
+            "fonte": "INMET",
+            "latitude": -11.59444444,
+            "longitude": -46.84722221,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A039",
+            "codigo": "A039",
+            "nome": "FORMOSO DO ARAGUAIA",
+            "municipio": "FORMOSO DO ARAGUAIA",
+            "fonte": "INMET",
+            "latitude": -11.88749999,
+            "longitude": -49.60833333,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A019",
+            "codigo": "A019",
+            "nome": "GURUPI",
+            "municipio": "GURUPI",
+            "fonte": "INMET",
+            "latitude": -11.74499999,
+            "longitude": -49.05166666,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A055",
+            "codigo": "A055",
+            "nome": "LAGOA DA CONFUSAO",
+            "municipio": "LAGOA DA CONFUSAO",
+            "fonte": "INMET",
+            "latitude": -10.828286,
+            "longitude": -49.847882,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A041",
+            "codigo": "A041",
+            "nome": "MARIANOPOLIS DO TO",
+            "municipio": "MARIANOPOLIS DO TO",
+            "fonte": "INMET",
+            "latitude": -9.57638888,
+            "longitude": -49.72333332,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A040",
+            "codigo": "A040",
+            "nome": "MATEIROS",
+            "municipio": "MATEIROS",
+            "fonte": "INMET",
+            "latitude": -10.43444444,
+            "longitude": -45.92194443,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A009",
+            "codigo": "A009",
+            "nome": "PALMAS",
+            "municipio": "PALMAS",
+            "fonte": "INMET",
+            "latitude": -10.14777777,
+            "longitude": -48.31444444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A010",
+            "codigo": "A010",
+            "nome": "PARANA",
+            "municipio": "PARANA",
+            "fonte": "INMET",
+            "latitude": -12.615,
+            "longitude": -47.87194443,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A020",
+            "codigo": "A020",
+            "nome": "PEDRO AFONSO",
+            "municipio": "PEDRO AFONSO",
+            "fonte": "INMET",
+            "latitude": -8.9686111,
+            "longitude": -48.17722221,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A018",
+            "codigo": "A018",
+            "nome": "PEIXE",
+            "municipio": "PEIXE",
+            "fonte": "INMET",
+            "latitude": -12.01527777,
+            "longitude": -48.54444444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A051",
+            "codigo": "A051",
+            "nome": "PIUM",
+            "municipio": "PIUM",
+            "fonte": "INMET",
+            "latitude": -10.47694443,
+            "longitude": -49.62944443,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A050",
+            "codigo": "A050",
+            "nome": "RIO SONO",
+            "municipio": "RIO SONO",
+            "fonte": "INMET",
+            "latitude": -9.793363,
+            "longitude": -47.132732,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A048",
+            "codigo": "A048",
+            "nome": "SANTA FE DO ARAGUAIA",
+            "municipio": "SANTA FE DO ARAGUAIA",
+            "fonte": "INMET",
+            "latitude": -7.12416666,
+            "longitude": -48.78138888,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A052",
+            "codigo": "A052",
+            "nome": "SANTA ROSA DO TOCANTINS",
+            "municipio": "SANTA ROSA DO TOCANTINS",
+            "fonte": "INMET",
+            "latitude": -11.42888888,
+            "longitude": -48.18499999,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          }
+        ]
       },
       "ANA": {
         "source": "ANA",
-        "status": "error",
-        "label": "Erro de consulta",
-        "observacao": "Falha ao consultar a fonte no workflow: fetch failed",
-        "estacoesCadastradas": 0,
-        "estacoesConsultadas": 0,
-        "estacoesComLeitura": 0,
-        "atualizadoEm": null,
-        "estacoes": []
+        "status": "ready",
+        "label": "Operando",
+        "observacao": "Consulta server-side realizada pelo workflow.",
+        "estacoesCadastradas": 176,
+        "estacoesConsultadas": 176,
+        "estacoesComLeitura": 11,
+        "atualizadoEm": "14/06/2026 a 15/06/2026",
+        "estacoes": [
+          {
+            "id": "ANA-547004",
+            "codigo": "547004",
+            "nome": "DESCARRETO",
+            "municipio": "ITAGUATINS",
+            "fonte": "ANA",
+            "latitude": -5.7894,
+            "longitude": -47.4689,
+            "chuva24h": 0,
+            "atualizadoEm": "14/06/2026 a 15/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-547007",
+            "codigo": "547007",
+            "nome": "PRAIA NORTE_Prefeitura Municipal",
+            "municipio": "PRAIA NORTE",
+            "fonte": "ANA",
+            "latitude": -5.3956,
+            "longitude": -47.8114,
+            "chuva24h": 0,
+            "atualizadoEm": "14/06/2026 a 15/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-547008",
+            "codigo": "547008",
+            "nome": "SÃO MIGUEL DO TOCANTINS_Centro Cultural",
+            "municipio": "SÃO MIGUEL DO TOCAN",
+            "fonte": "ANA",
+            "latitude": -5.5525,
+            "longitude": -47.5775,
+            "chuva24h": 0,
+            "atualizadoEm": "14/06/2026 a 15/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-548006",
+            "codigo": "548006",
+            "nome": "ESPERANTINA_Prefeitura Municipal",
+            "municipio": "ESPERANTINA",
+            "fonte": "ANA",
+            "latitude": -5.3621,
+            "longitude": -48.5386,
+            "chuva24h": 0,
+            "atualizadoEm": "14/06/2026 a 15/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-548010",
+            "codigo": "548010",
+            "nome": "RIO TOCANTINS - SÃO SEBASTIÃO DO TO",
+            "municipio": "SÃO SEBASTIÃO DO TO",
+            "fonte": "ANA",
+            "latitude": -5.2544,
+            "longitude": -48.1983,
+            "chuva24h": 0,
+            "atualizadoEm": "14/06/2026 a 15/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-647000",
+            "codigo": "647000",
+            "nome": "TOCANTINÓPOLIS",
+            "municipio": "TOCANTINÓPOLIS",
+            "fonte": "ANA",
+            "latitude": -6.2886,
+            "longitude": -47.3919,
+            "chuva24h": 0,
+            "atualizadoEm": "14/06/2026 a 15/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-647007",
+            "codigo": "647007",
+            "nome": "TOCANTINÓPOLIS",
+            "municipio": "TOCANTINÓPOLIS",
+            "fonte": "ANA",
+            "latitude": -6.2889,
+            "longitude": -47.3917,
+            "chuva24h": 0,
+            "atualizadoEm": "14/06/2026 a 15/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-648005",
+            "codigo": "648005",
+            "nome": "CGH LAJES JUSANTE",
+            "municipio": "PIRAQUÊ",
+            "fonte": "ANA",
+            "latitude": -6.7822,
+            "longitude": -48.1525,
+            "chuva24h": 0,
+            "atualizadoEm": "14/06/2026 a 15/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-648007",
+            "codigo": "648007",
+            "nome": "CGH LAJES MONTANTE",
+            "municipio": "WANDERLÂNDIA",
+            "fonte": "ANA",
+            "latitude": -6.8006,
+            "longitude": -48.1358,
+            "chuva24h": 0,
+            "atualizadoEm": "14/06/2026 a 15/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-648010",
+            "codigo": "648010",
+            "nome": "UHE TUCURUÍ RIO ARAGUAIA 1",
+            "municipio": "XAMBIOÁ",
+            "fonte": "ANA",
+            "latitude": -6.3997,
+            "longitude": -48.5281,
+            "chuva24h": 0,
+            "atualizadoEm": "14/06/2026 a 15/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-648011",
+            "codigo": "648011",
+            "nome": "RIO CORDA - RIACHINHO",
+            "municipio": "RIACHINHO",
+            "fonte": "ANA",
+            "latitude": -6.5178,
+            "longitude": -48.1514,
+            "chuva24h": 0,
+            "atualizadoEm": "14/06/2026 a 15/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          }
+        ]
       },
       "SEMARH": {
         "source": "SEMARH",
@@ -6578,9 +5661,6 @@
         "estacoes": []
       }
     },
-    "erros": {
-      "INMET": "fetch failed",
-      "ANA": "fetch failed"
-    }
+    "erros": {}
   }
 }
