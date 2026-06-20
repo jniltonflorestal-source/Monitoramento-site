@@ -1,13 +1,13 @@
 {
-  "atualizado_em": "2026-06-20T08:25:57.815Z",
+  "atualizado_em": "2026-06-20T11:23:48.298Z",
   "resumo": {
     "alertas_cemaden_to": 0,
     "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
     "estacoes_fluviometricas_ana": null,
-    "focos_calor_24h": 85,
+    "focos_calor_24h": 210,
     "area_queimada_ano_ha": 245000,
     "chuva_24h_mm": 9.4,
-    "estacoes_operando": 38,
+    "estacoes_operando": 49,
     "avisos_inmet_to_hoje": 0,
     "avisos_inmet_to_futuro": 0,
     "avisos_inmet_to_severidade_maxima": "Sem aviso vigente",
@@ -32,19 +32,19 @@
     {
       "icon": "flame",
       "label": "Focos de calor",
-      "description": "85 focos registrados no arquivo diário do INPE",
+      "description": "210 focos registrados no arquivo diário do INPE",
       "value": "Ativo"
     },
     {
       "icon": "radio-tower",
       "label": "Rede operacional",
-      "description": "38 estacoes ou pontos em acompanhamento",
+      "description": "49 estacoes ou pontos em acompanhamento",
       "value": "24h"
     }
   ],
   "fontes": {
     "alertas": "CEMADEN",
-    "chuva": "CEMADEN",
+    "chuva": "CEMADEN / ANA",
     "rios": "ANA / Telemetria",
     "focos": "INPE Queimadas",
     "area_queimada": "MapBiomas Fogo / INPE AQ",
@@ -1768,11 +1768,11 @@
   },
   "focos_calor": {
     "status": "ok",
-    "quantidade24h": 85,
-    "quantidadeMapa": 85,
+    "quantidade24h": 210,
+    "quantidadeMapa": 210,
     "periodo": "Arquivo diario INPE",
     "fonte": "INPE Queimadas",
-    "atualizadoEm": "2026-06-20T08:25:19.287Z",
+    "atualizadoEm": "2026-06-20T11:23:15.312Z",
     "referenciaArquivo": "20260620",
     "csv_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/focos_diario_br_20260620.csv",
     "observacao": "Dados filtrados para o Tocantins a partir do arquivo diario Brasil do INPE Queimadas.",
@@ -2434,6 +2434,998 @@
         "bioma": "Cerrado"
       },
       {
+        "latitude": -6.83736,
+        "longitude": -47.91706,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:42:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -6.93802,
+        "longitude": -48.1964,
+        "municipio": "PIRAQUÊ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:42:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -6.83403,
+        "longitude": -47.91653,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:42:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.63566,
+        "longitude": -48.53651,
+        "municipio": "PEIXE",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.90291,
+        "longitude": -46.32833,
+        "municipio": "MATEIROS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.13406,
+        "longitude": -48.26601,
+        "municipio": "PEIXE",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.63176,
+        "longitude": -48.53954,
+        "municipio": "PEIXE",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.45027,
+        "longitude": -47.40058,
+        "municipio": "ALMAS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.31732,
+        "longitude": -46.73956,
+        "municipio": "TAGUATINGA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.19816,
+        "longitude": -46.56844,
+        "municipio": "MATEIROS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.31437,
+        "longitude": -46.73498,
+        "municipio": "TAGUATINGA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.64914,
+        "longitude": -47.76479,
+        "municipio": "ITACAJÁ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.65193,
+        "longitude": -47.76886,
+        "municipio": "ITACAJÁ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.44226,
+        "longitude": -47.40702,
+        "municipio": "ALMAS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.87992,
+        "longitude": -46.34261,
+        "municipio": "MATEIROS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.63796,
+        "longitude": -47.7485,
+        "municipio": "ITACAJÁ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.92019,
+        "longitude": -49.48561,
+        "municipio": "ARAGUAÇU",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.9141,
+        "longitude": -49.48097,
+        "municipio": "ARAGUAÇU",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.23183,
+        "longitude": -46.51341,
+        "municipio": "MATEIROS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.63231,
+        "longitude": -48.53597,
+        "municipio": "PEIXE",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.71868,
+        "longitude": -48.88385,
+        "municipio": "ABREULÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.81422,
+        "longitude": -47.34129,
+        "municipio": "ALMAS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.93703,
+        "longitude": -46.44085,
+        "municipio": "MATEIROS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.5154,
+        "longitude": -48.29629,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.7454,
+        "longitude": -47.87356,
+        "municipio": "RIO SONO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.19051,
+        "longitude": -46.57129,
+        "municipio": "MATEIROS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.91743,
+        "longitude": -49.48152,
+        "municipio": "ARAGUAÇU",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.64804,
+        "longitude": -47.77187,
+        "municipio": "ITACAJÁ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.81767,
+        "longitude": -47.34183,
+        "municipio": "ALMAS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.63511,
+        "longitude": -48.54008,
+        "municipio": "PEIXE",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8311,
+        "longitude": -47.09759,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.91799,
+        "longitude": -49.47797,
+        "municipio": "ARAGUAÇU",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.19873,
+        "longitude": -46.56463,
+        "municipio": "MATEIROS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.6402,
+        "longitude": -47.75611,
+        "municipio": "ITACAJÁ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.62134,
+        "longitude": -48.49108,
+        "municipio": "MIRACEMA DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.74876,
+        "longitude": -47.8741,
+        "municipio": "RIO SONO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.64465,
+        "longitude": -47.74957,
+        "municipio": "ITACAJÁ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.16212,
+        "longitude": -47.24813,
+        "municipio": "LIZARDA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.97867,
+        "longitude": -47.97554,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.65528,
+        "longitude": -47.76938,
+        "municipio": "ITACAJÁ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.65138,
+        "longitude": -47.7724,
+        "municipio": "ITACAJÁ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.10408,
+        "longitude": -49.65797,
+        "municipio": "ARAGUACEMA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.19462,
+        "longitude": -46.56794,
+        "municipio": "MATEIROS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.21961,
+        "longitude": -46.76186,
+        "municipio": "RIO DA CONCEIÇÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.63882,
+        "longitude": -48.64695,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.51315,
+        "longitude": -48.31082,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.45313,
+        "longitude": -46.52927,
+        "municipio": "TAGUATINGA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.63741,
+        "longitude": -47.75204,
+        "municipio": "ITACAJÁ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.79037,
+        "longitude": -48.08104,
+        "municipio": "TOCANTÍNIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.46623,
+        "longitude": -49.09114,
+        "municipio": "PIUM",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -7.92647,
+        "longitude": -48.25707,
+        "municipio": "PALMEIRANTE",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.97811,
+        "longitude": -47.97906,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.51765,
+        "longitude": -48.28174,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.88748,
+        "longitude": -48.73198,
+        "municipio": "BARROLÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.64859,
+        "longitude": -47.76833,
+        "municipio": "ITACAJÁ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.97477,
+        "longitude": -47.97853,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.64355,
+        "longitude": -47.75664,
+        "municipio": "ITACAJÁ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.2161,
+        "longitude": -46.76134,
+        "municipio": "ALMAS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.6441,
+        "longitude": -47.75311,
+        "municipio": "ITACAJÁ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -7.9298,
+        "longitude": -48.2576,
+        "municipio": "PALMEIRANTE",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.81604,
+        "longitude": -47.0695,
+        "municipio": "RECURSOLÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.81661,
+        "longitude": -47.06583,
+        "municipio": "RECURSOLÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.68574,
+        "longitude": -48.31055,
+        "municipio": "GUARAÍ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.21902,
+        "longitude": -46.76575,
+        "municipio": "RIO DA CONCEIÇÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.51877,
+        "longitude": -48.29683,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.63175,
+        "longitude": -47.87849,
+        "municipio": "CHAPADA DA NATIVIDADE",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.6413,
+        "longitude": -47.74903,
+        "municipio": "ITACAJÁ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.45658,
+        "longitude": -46.45313,
+        "municipio": "MATEIROS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.81501,
+        "longitude": -47.34243,
+        "municipio": "ALMAS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.68629,
+        "longitude": -48.30705,
+        "municipio": "GUARAÍ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.13742,
+        "longitude": -48.26654,
+        "municipio": "PEIXE",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.22667,
+        "longitude": -46.84735,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.62189,
+        "longitude": -48.48757,
+        "municipio": "MIRACEMA DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.18993,
+        "longitude": -46.57523,
+        "municipio": "MATEIROS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.64969,
+        "longitude": -47.76125,
+        "municipio": "ITACAJÁ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.31377,
+        "longitude": -46.73901,
+        "municipio": "TAGUATINGA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.46567,
+        "longitude": -49.09465,
+        "municipio": "PIUM",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.81559,
+        "longitude": -47.33864,
+        "municipio": "ALMAS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.10465,
+        "longitude": -49.65442,
+        "municipio": "ARAGUACEMA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.55878,
+        "longitude": -48.67145,
+        "municipio": "MIRANORTE",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.64075,
+        "longitude": -47.75257,
+        "municipio": "ITACAJÁ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-06-20 04:44:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.63863,
+        "longitude": -48.54163,
+        "municipio": "PEIXE",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -7.92953,
+        "longitude": -48.25586,
+        "municipio": "PALMEIRANTE",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.21744,
+        "longitude": -46.76551,
+        "municipio": "RIO DA CONCEIÇÃO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.97701,
+        "longitude": -47.97922,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.21783,
+        "longitude": -46.76251,
+        "municipio": "RIO DA CONCEIÇÃO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.64356,
+        "longitude": -47.75291,
+        "municipio": "ITACAJÁ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.22256,
+        "longitude": -46.76619,
+        "municipio": "RIO DA CONCEIÇÃO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.63904,
+        "longitude": -47.75436,
+        "municipio": "ITACAJÁ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.97766,
+        "longitude": -47.97455,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.46416,
+        "longitude": -49.09337,
+        "municipio": "PIUM",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.63472,
+        "longitude": -48.53622,
+        "municipio": "PEIXE",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.22623,
+        "longitude": -46.84338,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.81544,
+        "longitude": -47.34119,
+        "municipio": "ALMAS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.68484,
+        "longitude": -48.30598,
+        "municipio": "GUARAÍ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.81442,
+        "longitude": -47.06681,
+        "municipio": "RECURSOLÂNDIA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.63408,
+        "longitude": -48.54097,
+        "municipio": "PEIXE",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.46903,
+        "longitude": -49.08999,
+        "municipio": "PIUM",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.64292,
+        "longitude": -47.75769,
+        "municipio": "ITACAJÁ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.6861,
+        "longitude": -48.3048,
+        "municipio": "GUARAÍ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.55857,
+        "longitude": -48.66901,
+        "municipio": "MIRANORTE",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -7.92931,
+        "longitude": -48.25705,
+        "municipio": "PALMEIRANTE",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.46846,
+        "longitude": -49.0941,
+        "municipio": "PIUM",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.63511,
+        "longitude": -47.74897,
+        "municipio": "ITACAJÁ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.68546,
+        "longitude": -48.30919,
+        "municipio": "GUARAÍ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.64431,
+        "longitude": -47.75033,
+        "municipio": "ITACAJÁ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.23032,
+        "longitude": -46.51273,
+        "municipio": "MATEIROS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.64686,
+        "longitude": -47.76319,
+        "municipio": "ITACAJÁ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.64363,
+        "longitude": -47.75507,
+        "municipio": "ITACAJÁ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -7.9249,
+        "longitude": -48.25644,
+        "municipio": "PALMEIRANTE",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.74845,
+        "longitude": -47.87489,
+        "municipio": "RIO SONO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.63971,
+        "longitude": -47.74964,
+        "municipio": "ITACAJÁ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.22993,
+        "longitude": -46.51581,
+        "municipio": "MATEIROS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.6442,
+        "longitude": -47.74816,
+        "municipio": "ITACAJÁ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:01:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.91781,
+        "longitude": -49.4795,
+        "municipio": "ARAGUAÇU",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:04:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.31141,
+        "longitude": -46.73498,
+        "municipio": "TAGUATINGA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:04:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.91723,
+        "longitude": -49.48376,
+        "municipio": "ARAGUAÇU",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:04:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.51633,
+        "longitude": -48.2966,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:04:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.51833,
+        "longitude": -48.28141,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:04:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.13648,
+        "longitude": -48.26541,
+        "municipio": "PEIXE",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:04:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3162,
+        "longitude": -46.73885,
+        "municipio": "TAGUATINGA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:04:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.91345,
+        "longitude": -49.47887,
+        "municipio": "ARAGUAÇU",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:04:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.311,
+        "longitude": -46.73816,
+        "municipio": "TAGUATINGA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:04:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.52103,
+        "longitude": -48.29721,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-06-20 05:04:00",
+        "bioma": "Cerrado"
+      },
+      {
         "latitude": -11.1857,
         "longitude": -46.5847,
         "municipio": "MATEIROS",
@@ -2455,6 +3447,14 @@
         "municipio": "MATEIROS",
         "satelite": "GOES-19",
         "data_hora_gmt": "2026-06-20 06:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.65049,
+        "longitude": -47.75788,
+        "municipio": "ITACAJÁ",
+        "satelite": "AQUA_M-M",
+        "data_hora_gmt": "2026-06-20 07:03:00",
         "bioma": "Cerrado"
       }
     ],
@@ -3940,6 +4940,2238 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
+            -47.91706,
+            -6.83736
+          ]
+        },
+        "properties": {
+          "latitude": -6.83736,
+          "longitude": -47.91706,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:42:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.1964,
+            -6.93802
+          ]
+        },
+        "properties": {
+          "latitude": -6.93802,
+          "longitude": -48.1964,
+          "municipio": "PIRAQUÊ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:42:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.91653,
+            -6.83403
+          ]
+        },
+        "properties": {
+          "latitude": -6.83403,
+          "longitude": -47.91653,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:42:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.53651,
+            -11.63566
+          ]
+        },
+        "properties": {
+          "latitude": -11.63566,
+          "longitude": -48.53651,
+          "municipio": "PEIXE",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.32833,
+            -10.90291
+          ]
+        },
+        "properties": {
+          "latitude": -10.90291,
+          "longitude": -46.32833,
+          "municipio": "MATEIROS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.26601,
+            -12.13406
+          ]
+        },
+        "properties": {
+          "latitude": -12.13406,
+          "longitude": -48.26601,
+          "municipio": "PEIXE",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.53954,
+            -11.63176
+          ]
+        },
+        "properties": {
+          "latitude": -11.63176,
+          "longitude": -48.53954,
+          "municipio": "PEIXE",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.40058,
+            -11.45027
+          ]
+        },
+        "properties": {
+          "latitude": -11.45027,
+          "longitude": -47.40058,
+          "municipio": "ALMAS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.73956,
+            -12.31732
+          ]
+        },
+        "properties": {
+          "latitude": -12.31732,
+          "longitude": -46.73956,
+          "municipio": "TAGUATINGA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.56844,
+            -11.19816
+          ]
+        },
+        "properties": {
+          "latitude": -11.19816,
+          "longitude": -46.56844,
+          "municipio": "MATEIROS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.73498,
+            -12.31437
+          ]
+        },
+        "properties": {
+          "latitude": -12.31437,
+          "longitude": -46.73498,
+          "municipio": "TAGUATINGA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.76479,
+            -8.64914
+          ]
+        },
+        "properties": {
+          "latitude": -8.64914,
+          "longitude": -47.76479,
+          "municipio": "ITACAJÁ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.76886,
+            -8.65193
+          ]
+        },
+        "properties": {
+          "latitude": -8.65193,
+          "longitude": -47.76886,
+          "municipio": "ITACAJÁ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.40702,
+            -11.44226
+          ]
+        },
+        "properties": {
+          "latitude": -11.44226,
+          "longitude": -47.40702,
+          "municipio": "ALMAS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.34261,
+            -10.87992
+          ]
+        },
+        "properties": {
+          "latitude": -10.87992,
+          "longitude": -46.34261,
+          "municipio": "MATEIROS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.7485,
+            -8.63796
+          ]
+        },
+        "properties": {
+          "latitude": -8.63796,
+          "longitude": -47.7485,
+          "municipio": "ITACAJÁ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.48561,
+            -12.92019
+          ]
+        },
+        "properties": {
+          "latitude": -12.92019,
+          "longitude": -49.48561,
+          "municipio": "ARAGUAÇU",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.48097,
+            -12.9141
+          ]
+        },
+        "properties": {
+          "latitude": -12.9141,
+          "longitude": -49.48097,
+          "municipio": "ARAGUAÇU",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.51341,
+            -10.23183
+          ]
+        },
+        "properties": {
+          "latitude": -10.23183,
+          "longitude": -46.51341,
+          "municipio": "MATEIROS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.53597,
+            -11.63231
+          ]
+        },
+        "properties": {
+          "latitude": -11.63231,
+          "longitude": -48.53597,
+          "municipio": "PEIXE",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.88385,
+            -9.71868
+          ]
+        },
+        "properties": {
+          "latitude": -9.71868,
+          "longitude": -48.88385,
+          "municipio": "ABREULÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.34129,
+            -11.81422
+          ]
+        },
+        "properties": {
+          "latitude": -11.81422,
+          "longitude": -47.34129,
+          "municipio": "ALMAS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.44085,
+            -10.93703
+          ]
+        },
+        "properties": {
+          "latitude": -10.93703,
+          "longitude": -46.44085,
+          "municipio": "MATEIROS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.29629,
+            -12.5154
+          ]
+        },
+        "properties": {
+          "latitude": -12.5154,
+          "longitude": -48.29629,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.87356,
+            -9.7454
+          ]
+        },
+        "properties": {
+          "latitude": -9.7454,
+          "longitude": -47.87356,
+          "municipio": "RIO SONO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.57129,
+            -11.19051
+          ]
+        },
+        "properties": {
+          "latitude": -11.19051,
+          "longitude": -46.57129,
+          "municipio": "MATEIROS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.48152,
+            -12.91743
+          ]
+        },
+        "properties": {
+          "latitude": -12.91743,
+          "longitude": -49.48152,
+          "municipio": "ARAGUAÇU",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.77187,
+            -8.64804
+          ]
+        },
+        "properties": {
+          "latitude": -8.64804,
+          "longitude": -47.77187,
+          "municipio": "ITACAJÁ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.34183,
+            -11.81767
+          ]
+        },
+        "properties": {
+          "latitude": -11.81767,
+          "longitude": -47.34183,
+          "municipio": "ALMAS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.54008,
+            -11.63511
+          ]
+        },
+        "properties": {
+          "latitude": -11.63511,
+          "longitude": -48.54008,
+          "municipio": "PEIXE",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.09759,
+            -11.8311
+          ]
+        },
+        "properties": {
+          "latitude": -11.8311,
+          "longitude": -47.09759,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.47797,
+            -12.91799
+          ]
+        },
+        "properties": {
+          "latitude": -12.91799,
+          "longitude": -49.47797,
+          "municipio": "ARAGUAÇU",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.56463,
+            -11.19873
+          ]
+        },
+        "properties": {
+          "latitude": -11.19873,
+          "longitude": -46.56463,
+          "municipio": "MATEIROS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.75611,
+            -8.6402
+          ]
+        },
+        "properties": {
+          "latitude": -8.6402,
+          "longitude": -47.75611,
+          "municipio": "ITACAJÁ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.49108,
+            -9.62134
+          ]
+        },
+        "properties": {
+          "latitude": -9.62134,
+          "longitude": -48.49108,
+          "municipio": "MIRACEMA DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.8741,
+            -9.74876
+          ]
+        },
+        "properties": {
+          "latitude": -9.74876,
+          "longitude": -47.8741,
+          "municipio": "RIO SONO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.74957,
+            -8.64465
+          ]
+        },
+        "properties": {
+          "latitude": -8.64465,
+          "longitude": -47.74957,
+          "municipio": "ITACAJÁ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.24813,
+            -9.16212
+          ]
+        },
+        "properties": {
+          "latitude": -9.16212,
+          "longitude": -47.24813,
+          "municipio": "LIZARDA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.97554,
+            -8.97867
+          ]
+        },
+        "properties": {
+          "latitude": -8.97867,
+          "longitude": -47.97554,
+          "municipio": "BOM JESUS DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.76938,
+            -8.65528
+          ]
+        },
+        "properties": {
+          "latitude": -8.65528,
+          "longitude": -47.76938,
+          "municipio": "ITACAJÁ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.7724,
+            -8.65138
+          ]
+        },
+        "properties": {
+          "latitude": -8.65138,
+          "longitude": -47.7724,
+          "municipio": "ITACAJÁ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.65797,
+            -9.10408
+          ]
+        },
+        "properties": {
+          "latitude": -9.10408,
+          "longitude": -49.65797,
+          "municipio": "ARAGUACEMA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.56794,
+            -11.19462
+          ]
+        },
+        "properties": {
+          "latitude": -11.19462,
+          "longitude": -46.56794,
+          "municipio": "MATEIROS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.76186,
+            -11.21961
+          ]
+        },
+        "properties": {
+          "latitude": -11.21961,
+          "longitude": -46.76186,
+          "municipio": "RIO DA CONCEIÇÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.64695,
+            -10.63882
+          ]
+        },
+        "properties": {
+          "latitude": -10.63882,
+          "longitude": -48.64695,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.31082,
+            -12.51315
+          ]
+        },
+        "properties": {
+          "latitude": -12.51315,
+          "longitude": -48.31082,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.52927,
+            -12.45313
+          ]
+        },
+        "properties": {
+          "latitude": -12.45313,
+          "longitude": -46.52927,
+          "municipio": "TAGUATINGA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.75204,
+            -8.63741
+          ]
+        },
+        "properties": {
+          "latitude": -8.63741,
+          "longitude": -47.75204,
+          "municipio": "ITACAJÁ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.08104,
+            -9.79037
+          ]
+        },
+        "properties": {
+          "latitude": -9.79037,
+          "longitude": -48.08104,
+          "municipio": "TOCANTÍNIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.09114,
+            -10.46623
+          ]
+        },
+        "properties": {
+          "latitude": -10.46623,
+          "longitude": -49.09114,
+          "municipio": "PIUM",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.25707,
+            -7.92647
+          ]
+        },
+        "properties": {
+          "latitude": -7.92647,
+          "longitude": -48.25707,
+          "municipio": "PALMEIRANTE",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.97906,
+            -8.97811
+          ]
+        },
+        "properties": {
+          "latitude": -8.97811,
+          "longitude": -47.97906,
+          "municipio": "BOM JESUS DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.28174,
+            -12.51765
+          ]
+        },
+        "properties": {
+          "latitude": -12.51765,
+          "longitude": -48.28174,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.73198,
+            -9.88748
+          ]
+        },
+        "properties": {
+          "latitude": -9.88748,
+          "longitude": -48.73198,
+          "municipio": "BARROLÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.76833,
+            -8.64859
+          ]
+        },
+        "properties": {
+          "latitude": -8.64859,
+          "longitude": -47.76833,
+          "municipio": "ITACAJÁ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.97853,
+            -8.97477
+          ]
+        },
+        "properties": {
+          "latitude": -8.97477,
+          "longitude": -47.97853,
+          "municipio": "BOM JESUS DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.75664,
+            -8.64355
+          ]
+        },
+        "properties": {
+          "latitude": -8.64355,
+          "longitude": -47.75664,
+          "municipio": "ITACAJÁ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.76134,
+            -11.2161
+          ]
+        },
+        "properties": {
+          "latitude": -11.2161,
+          "longitude": -46.76134,
+          "municipio": "ALMAS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.75311,
+            -8.6441
+          ]
+        },
+        "properties": {
+          "latitude": -8.6441,
+          "longitude": -47.75311,
+          "municipio": "ITACAJÁ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.2576,
+            -7.9298
+          ]
+        },
+        "properties": {
+          "latitude": -7.9298,
+          "longitude": -48.2576,
+          "municipio": "PALMEIRANTE",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0695,
+            -8.81604
+          ]
+        },
+        "properties": {
+          "latitude": -8.81604,
+          "longitude": -47.0695,
+          "municipio": "RECURSOLÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.06583,
+            -8.81661
+          ]
+        },
+        "properties": {
+          "latitude": -8.81661,
+          "longitude": -47.06583,
+          "municipio": "RECURSOLÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.31055,
+            -8.68574
+          ]
+        },
+        "properties": {
+          "latitude": -8.68574,
+          "longitude": -48.31055,
+          "municipio": "GUARAÍ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.76575,
+            -11.21902
+          ]
+        },
+        "properties": {
+          "latitude": -11.21902,
+          "longitude": -46.76575,
+          "municipio": "RIO DA CONCEIÇÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.29683,
+            -12.51877
+          ]
+        },
+        "properties": {
+          "latitude": -12.51877,
+          "longitude": -48.29683,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.87849,
+            -11.63175
+          ]
+        },
+        "properties": {
+          "latitude": -11.63175,
+          "longitude": -47.87849,
+          "municipio": "CHAPADA DA NATIVIDADE",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.74903,
+            -8.6413
+          ]
+        },
+        "properties": {
+          "latitude": -8.6413,
+          "longitude": -47.74903,
+          "municipio": "ITACAJÁ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.45313,
+            -10.45658
+          ]
+        },
+        "properties": {
+          "latitude": -10.45658,
+          "longitude": -46.45313,
+          "municipio": "MATEIROS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.34243,
+            -11.81501
+          ]
+        },
+        "properties": {
+          "latitude": -11.81501,
+          "longitude": -47.34243,
+          "municipio": "ALMAS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.30705,
+            -8.68629
+          ]
+        },
+        "properties": {
+          "latitude": -8.68629,
+          "longitude": -48.30705,
+          "municipio": "GUARAÍ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.26654,
+            -12.13742
+          ]
+        },
+        "properties": {
+          "latitude": -12.13742,
+          "longitude": -48.26654,
+          "municipio": "PEIXE",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.84735,
+            -8.22667
+          ]
+        },
+        "properties": {
+          "latitude": -8.22667,
+          "longitude": -46.84735,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.48757,
+            -9.62189
+          ]
+        },
+        "properties": {
+          "latitude": -9.62189,
+          "longitude": -48.48757,
+          "municipio": "MIRACEMA DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.57523,
+            -11.18993
+          ]
+        },
+        "properties": {
+          "latitude": -11.18993,
+          "longitude": -46.57523,
+          "municipio": "MATEIROS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.76125,
+            -8.64969
+          ]
+        },
+        "properties": {
+          "latitude": -8.64969,
+          "longitude": -47.76125,
+          "municipio": "ITACAJÁ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.73901,
+            -12.31377
+          ]
+        },
+        "properties": {
+          "latitude": -12.31377,
+          "longitude": -46.73901,
+          "municipio": "TAGUATINGA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.09465,
+            -10.46567
+          ]
+        },
+        "properties": {
+          "latitude": -10.46567,
+          "longitude": -49.09465,
+          "municipio": "PIUM",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.33864,
+            -11.81559
+          ]
+        },
+        "properties": {
+          "latitude": -11.81559,
+          "longitude": -47.33864,
+          "municipio": "ALMAS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.65442,
+            -9.10465
+          ]
+        },
+        "properties": {
+          "latitude": -9.10465,
+          "longitude": -49.65442,
+          "municipio": "ARAGUACEMA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.67145,
+            -9.55878
+          ]
+        },
+        "properties": {
+          "latitude": -9.55878,
+          "longitude": -48.67145,
+          "municipio": "MIRANORTE",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.75257,
+            -8.64075
+          ]
+        },
+        "properties": {
+          "latitude": -8.64075,
+          "longitude": -47.75257,
+          "municipio": "ITACAJÁ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-06-20 04:44:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.54163,
+            -11.63863
+          ]
+        },
+        "properties": {
+          "latitude": -11.63863,
+          "longitude": -48.54163,
+          "municipio": "PEIXE",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.25586,
+            -7.92953
+          ]
+        },
+        "properties": {
+          "latitude": -7.92953,
+          "longitude": -48.25586,
+          "municipio": "PALMEIRANTE",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.76551,
+            -11.21744
+          ]
+        },
+        "properties": {
+          "latitude": -11.21744,
+          "longitude": -46.76551,
+          "municipio": "RIO DA CONCEIÇÃO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.97922,
+            -8.97701
+          ]
+        },
+        "properties": {
+          "latitude": -8.97701,
+          "longitude": -47.97922,
+          "municipio": "BOM JESUS DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.76251,
+            -11.21783
+          ]
+        },
+        "properties": {
+          "latitude": -11.21783,
+          "longitude": -46.76251,
+          "municipio": "RIO DA CONCEIÇÃO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.75291,
+            -8.64356
+          ]
+        },
+        "properties": {
+          "latitude": -8.64356,
+          "longitude": -47.75291,
+          "municipio": "ITACAJÁ",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.76619,
+            -11.22256
+          ]
+        },
+        "properties": {
+          "latitude": -11.22256,
+          "longitude": -46.76619,
+          "municipio": "RIO DA CONCEIÇÃO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.75436,
+            -8.63904
+          ]
+        },
+        "properties": {
+          "latitude": -8.63904,
+          "longitude": -47.75436,
+          "municipio": "ITACAJÁ",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.97455,
+            -8.97766
+          ]
+        },
+        "properties": {
+          "latitude": -8.97766,
+          "longitude": -47.97455,
+          "municipio": "BOM JESUS DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.09337,
+            -10.46416
+          ]
+        },
+        "properties": {
+          "latitude": -10.46416,
+          "longitude": -49.09337,
+          "municipio": "PIUM",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.53622,
+            -11.63472
+          ]
+        },
+        "properties": {
+          "latitude": -11.63472,
+          "longitude": -48.53622,
+          "municipio": "PEIXE",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.84338,
+            -8.22623
+          ]
+        },
+        "properties": {
+          "latitude": -8.22623,
+          "longitude": -46.84338,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.34119,
+            -11.81544
+          ]
+        },
+        "properties": {
+          "latitude": -11.81544,
+          "longitude": -47.34119,
+          "municipio": "ALMAS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.30598,
+            -8.68484
+          ]
+        },
+        "properties": {
+          "latitude": -8.68484,
+          "longitude": -48.30598,
+          "municipio": "GUARAÍ",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.06681,
+            -8.81442
+          ]
+        },
+        "properties": {
+          "latitude": -8.81442,
+          "longitude": -47.06681,
+          "municipio": "RECURSOLÂNDIA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.54097,
+            -11.63408
+          ]
+        },
+        "properties": {
+          "latitude": -11.63408,
+          "longitude": -48.54097,
+          "municipio": "PEIXE",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.08999,
+            -10.46903
+          ]
+        },
+        "properties": {
+          "latitude": -10.46903,
+          "longitude": -49.08999,
+          "municipio": "PIUM",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.75769,
+            -8.64292
+          ]
+        },
+        "properties": {
+          "latitude": -8.64292,
+          "longitude": -47.75769,
+          "municipio": "ITACAJÁ",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.3048,
+            -8.6861
+          ]
+        },
+        "properties": {
+          "latitude": -8.6861,
+          "longitude": -48.3048,
+          "municipio": "GUARAÍ",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.66901,
+            -9.55857
+          ]
+        },
+        "properties": {
+          "latitude": -9.55857,
+          "longitude": -48.66901,
+          "municipio": "MIRANORTE",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.25705,
+            -7.92931
+          ]
+        },
+        "properties": {
+          "latitude": -7.92931,
+          "longitude": -48.25705,
+          "municipio": "PALMEIRANTE",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.0941,
+            -10.46846
+          ]
+        },
+        "properties": {
+          "latitude": -10.46846,
+          "longitude": -49.0941,
+          "municipio": "PIUM",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.74897,
+            -8.63511
+          ]
+        },
+        "properties": {
+          "latitude": -8.63511,
+          "longitude": -47.74897,
+          "municipio": "ITACAJÁ",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.30919,
+            -8.68546
+          ]
+        },
+        "properties": {
+          "latitude": -8.68546,
+          "longitude": -48.30919,
+          "municipio": "GUARAÍ",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.75033,
+            -8.64431
+          ]
+        },
+        "properties": {
+          "latitude": -8.64431,
+          "longitude": -47.75033,
+          "municipio": "ITACAJÁ",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.51273,
+            -10.23032
+          ]
+        },
+        "properties": {
+          "latitude": -10.23032,
+          "longitude": -46.51273,
+          "municipio": "MATEIROS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.76319,
+            -8.64686
+          ]
+        },
+        "properties": {
+          "latitude": -8.64686,
+          "longitude": -47.76319,
+          "municipio": "ITACAJÁ",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.75507,
+            -8.64363
+          ]
+        },
+        "properties": {
+          "latitude": -8.64363,
+          "longitude": -47.75507,
+          "municipio": "ITACAJÁ",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.25644,
+            -7.9249
+          ]
+        },
+        "properties": {
+          "latitude": -7.9249,
+          "longitude": -48.25644,
+          "municipio": "PALMEIRANTE",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.87489,
+            -9.74845
+          ]
+        },
+        "properties": {
+          "latitude": -9.74845,
+          "longitude": -47.87489,
+          "municipio": "RIO SONO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.74964,
+            -8.63971
+          ]
+        },
+        "properties": {
+          "latitude": -8.63971,
+          "longitude": -47.74964,
+          "municipio": "ITACAJÁ",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.51581,
+            -10.22993
+          ]
+        },
+        "properties": {
+          "latitude": -10.22993,
+          "longitude": -46.51581,
+          "municipio": "MATEIROS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.74816,
+            -8.6442
+          ]
+        },
+        "properties": {
+          "latitude": -8.6442,
+          "longitude": -47.74816,
+          "municipio": "ITACAJÁ",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:01:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.4795,
+            -12.91781
+          ]
+        },
+        "properties": {
+          "latitude": -12.91781,
+          "longitude": -49.4795,
+          "municipio": "ARAGUAÇU",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:04:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.73498,
+            -12.31141
+          ]
+        },
+        "properties": {
+          "latitude": -12.31141,
+          "longitude": -46.73498,
+          "municipio": "TAGUATINGA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:04:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.48376,
+            -12.91723
+          ]
+        },
+        "properties": {
+          "latitude": -12.91723,
+          "longitude": -49.48376,
+          "municipio": "ARAGUAÇU",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:04:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.2966,
+            -12.51633
+          ]
+        },
+        "properties": {
+          "latitude": -12.51633,
+          "longitude": -48.2966,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:04:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.28141,
+            -12.51833
+          ]
+        },
+        "properties": {
+          "latitude": -12.51833,
+          "longitude": -48.28141,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:04:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.26541,
+            -12.13648
+          ]
+        },
+        "properties": {
+          "latitude": -12.13648,
+          "longitude": -48.26541,
+          "municipio": "PEIXE",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:04:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.73885,
+            -12.3162
+          ]
+        },
+        "properties": {
+          "latitude": -12.3162,
+          "longitude": -46.73885,
+          "municipio": "TAGUATINGA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:04:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.47887,
+            -12.91345
+          ]
+        },
+        "properties": {
+          "latitude": -12.91345,
+          "longitude": -49.47887,
+          "municipio": "ARAGUAÇU",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:04:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.73816,
+            -12.311
+          ]
+        },
+        "properties": {
+          "latitude": -12.311,
+          "longitude": -46.73816,
+          "municipio": "TAGUATINGA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:04:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.29721,
+            -12.52103
+          ]
+        },
+        "properties": {
+          "latitude": -12.52103,
+          "longitude": -48.29721,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-06-20 05:04:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
             -46.5847,
             -11.1857
           ]
@@ -3988,11 +7220,28 @@
           "data_hora_gmt": "2026-06-20 06:30:00",
           "bioma": "Cerrado"
         }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.75788,
+            -8.65049
+          ]
+        },
+        "properties": {
+          "latitude": -8.65049,
+          "longitude": -47.75788,
+          "municipio": "ITACAJÁ",
+          "satelite": "AQUA_M-M",
+          "data_hora_gmt": "2026-06-20 07:03:00",
+          "bioma": "Cerrado"
+        }
       }
     ]
   },
   "erros_atualizacao": {
-    "avisos_inmet": "fetch failed",
     "s2id": "Portal S2ID indisponivel"
   },
   "s2id": {
@@ -4083,21 +7332,21 @@
     "mes_final": 5,
     "periodo": "Janeiro a maio de 2026",
     "area_queimada_ha": 149509.64,
-    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/0756e6747a8cafcbf3f8799c7cbab90b-3ab2252e8b759aee7df664c1d27b593b/tiles/{z}/{x}/{y}",
+    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/0756e6747a8cafcbf3f8799c7cbab90b-200e6565abe6ec25f6749aa2589b3c97/tiles/{z}/{x}/{y}",
     "unidade": "ha",
     "natureza": "Cicatrizes de área queimada mapeadas pelo Monitor do Fogo."
   },
   "chuva_observada": {
     "status": "ok",
     "periodo": "ultimas 24h",
-    "fonte": "CEMADEN",
-    "atualizadoEm": "2026-06-20T08:25:48.227Z",
+    "fonte": "CEMADEN / ANA",
+    "atualizadoEm": "2026-06-20T11:23:38.575Z",
     "maiorAcumulado": 9.4,
     "estacaoMaiorAcumulado": "G2-170389102A",
     "municipioMaiorAcumulado": "CARRASCO BONITO",
-    "estacoesCadastradas": 38,
-    "estacoesConsultadas": 38,
-    "estacoesComLeitura": 38,
+    "estacoesCadastradas": 234,
+    "estacoesConsultadas": 234,
+    "estacoesComLeitura": 49,
     "acima10": 0,
     "acima30": 0,
     "acima50": 0,
@@ -4110,7 +7359,7 @@
         "estacoesCadastradas": 38,
         "estacoesConsultadas": 38,
         "estacoesComLeitura": 38,
-        "atualizadoEm": "2026-06-20 08:24:36 UTC",
+        "atualizadoEm": "2026-06-20 11:22:36 UTC",
         "estacoes": [
           {
             "id": "CEMADEN-170730601A",
@@ -4121,7 +7370,7 @@
             "latitude": -11.34296,
             "longitude": -49.26664,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4135,7 +7384,7 @@
             "latitude": -5.36527,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4149,7 +7398,7 @@
             "latitude": -12.035,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4163,7 +7412,7 @@
             "latitude": -5.3956,
             "longitude": -47.8114,
             "chuva24h": 3.2,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4177,7 +7426,7 @@
             "latitude": -7.14869,
             "longitude": -48.69083,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4191,7 +7440,7 @@
             "latitude": -5.25903,
             "longitude": -48.20147,
             "chuva24h": 3.6,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4205,7 +7454,7 @@
             "latitude": -6.58226,
             "longitude": -48.64368,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4219,7 +7468,7 @@
             "latitude": -5.55265,
             "longitude": -47.57758,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4233,7 +7482,7 @@
             "latitude": -7.18755,
             "longitude": -48.23527,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4247,7 +7496,7 @@
             "latitude": -7.15587,
             "longitude": -48.1888,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4261,7 +7510,7 @@
             "latitude": -7.19408,
             "longitude": -48.19586,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4275,7 +7524,7 @@
             "latitude": -7.22806,
             "longitude": -48.24461,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4289,7 +7538,7 @@
             "latitude": -5.65762,
             "longitude": -48.11147,
             "chuva24h": 0.2,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4303,7 +7552,7 @@
             "latitude": -11.8055,
             "longitude": -49.5275,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4317,7 +7566,7 @@
             "latitude": -7.71295,
             "longitude": -47.3093,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4331,7 +7580,7 @@
             "latitude": -6.41126,
             "longitude": -48.53374,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4345,7 +7594,7 @@
             "latitude": -10.71611,
             "longitude": -48.39972,
             "chuva24h": 0.2,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4359,7 +7608,7 @@
             "latitude": -6.36582,
             "longitude": -48.0746,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4373,7 +7622,7 @@
             "latitude": -6.38119,
             "longitude": -48.06281,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4387,7 +7636,7 @@
             "latitude": -5.46415,
             "longitude": -47.89705,
             "chuva24h": 0.2,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4401,7 +7650,7 @@
             "latitude": -5.47529,
             "longitude": -47.88956,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4415,7 +7664,7 @@
             "latitude": -5.43,
             "longitude": -47.85787,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4429,7 +7678,7 @@
             "latitude": -5.31866,
             "longitude": -48.03934,
             "chuva24h": 9.4,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4443,7 +7692,7 @@
             "latitude": -5.32414,
             "longitude": -48.03401,
             "chuva24h": 7.8,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4457,7 +7706,7 @@
             "latitude": -9.27355,
             "longitude": -49.95393,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4471,7 +7720,7 @@
             "latitude": -9.28132,
             "longitude": -49.95269,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4485,7 +7734,7 @@
             "latitude": -5.76973,
             "longitude": -47.48155,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4499,7 +7748,7 @@
             "latitude": -5.77483,
             "longitude": -47.47833,
             "chuva24h": 0.2,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4513,7 +7762,7 @@
             "latitude": -10.79377,
             "longitude": -49.62398,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4527,7 +7776,7 @@
             "latitude": -10.78247,
             "longitude": -49.61686,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4541,7 +7790,7 @@
             "latitude": -12.61468,
             "longitude": -47.88194,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4555,7 +7804,7 @@
             "latitude": -12.62013,
             "longitude": -47.86877,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4569,7 +7818,7 @@
             "latitude": -12.62794,
             "longitude": -47.56296,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4583,7 +7832,7 @@
             "latitude": -10.44876,
             "longitude": -49.16777,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4597,7 +7846,7 @@
             "latitude": -10.44167,
             "longitude": -49.18087,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4611,7 +7860,7 @@
             "latitude": -6.32722,
             "longitude": -47.42806,
             "chuva24h": 1.2,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4625,7 +7874,7 @@
             "latitude": -6.33778,
             "longitude": -47.43333,
             "chuva24h": 0.4,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4639,7 +7888,7 @@
             "latitude": -6.31556,
             "longitude": -47.42306,
             "chuva24h": 2.4,
-            "atualizadoEm": "2026-06-20 08:24:36 UTC",
+            "atualizadoEm": "2026-06-20 11:22:36 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4648,25 +7897,487 @@
       },
       "INMET": {
         "source": "INMET",
-        "status": "error",
-        "label": "Erro de consulta",
-        "observacao": "Falha ao consultar a fonte no workflow: fetch failed",
-        "estacoesCadastradas": 0,
-        "estacoesConsultadas": 0,
+        "status": "catalog",
+        "label": "Sem leitura valida",
+        "observacao": "Chave/token INMET recusado pela API.",
+        "modoConsulta": "autenticada",
+        "erroAutenticacao": "Chave/token INMET recusado pela API.",
+        "estacoesCadastradas": 20,
+        "estacoesConsultadas": 20,
         "estacoesComLeitura": 0,
+        "estacoesSemLeitura": 20,
+        "estacoesComErro": 20,
+        "estacoesEmIntegracao": 0,
         "atualizadoEm": null,
-        "estacoes": []
+        "estacoes": [],
+        "todasEstacoes": [
+          {
+            "id": "INMET-A053",
+            "codigo": "A053",
+            "nome": "ALMAS",
+            "municipio": "ALMAS",
+            "fonte": "INMET",
+            "latitude": -11.28416666,
+            "longitude": -47.21222222,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A054",
+            "codigo": "A054",
+            "nome": "ARAGUACU",
+            "municipio": "ARAGUACU",
+            "fonte": "INMET",
+            "latitude": -12.59222221,
+            "longitude": -49.5286111,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A021",
+            "codigo": "A021",
+            "nome": "ARAGUAINA",
+            "municipio": "ARAGUAINA",
+            "fonte": "INMET",
+            "latitude": -7.10388888,
+            "longitude": -48.20111111,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A044",
+            "codigo": "A044",
+            "nome": "ARAGUATINS",
+            "municipio": "ARAGUATINS",
+            "fonte": "INMET",
+            "latitude": -5.6436111,
+            "longitude": -48.11194444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A043",
+            "codigo": "A043",
+            "nome": "CAMPOS LINDOS",
+            "municipio": "CAMPOS LINDOS",
+            "fonte": "INMET",
+            "latitude": -8.15472222,
+            "longitude": -46.63944444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A049",
+            "codigo": "A049",
+            "nome": "COLINAS DO TOCANTINS",
+            "municipio": "COLINAS DO TOCANTINS",
+            "fonte": "INMET",
+            "latitude": -8.09277777,
+            "longitude": -48.4786111,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A038",
+            "codigo": "A038",
+            "nome": "DIANOPOLIS",
+            "municipio": "DIANOPOLIS",
+            "fonte": "INMET",
+            "latitude": -11.59444444,
+            "longitude": -46.84722221,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A039",
+            "codigo": "A039",
+            "nome": "FORMOSO DO ARAGUAIA",
+            "municipio": "FORMOSO DO ARAGUAIA",
+            "fonte": "INMET",
+            "latitude": -11.88749999,
+            "longitude": -49.60833333,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A019",
+            "codigo": "A019",
+            "nome": "GURUPI",
+            "municipio": "GURUPI",
+            "fonte": "INMET",
+            "latitude": -11.74499999,
+            "longitude": -49.05166666,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A055",
+            "codigo": "A055",
+            "nome": "LAGOA DA CONFUSAO",
+            "municipio": "LAGOA DA CONFUSAO",
+            "fonte": "INMET",
+            "latitude": -10.828286,
+            "longitude": -49.847882,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A041",
+            "codigo": "A041",
+            "nome": "MARIANOPOLIS DO TO",
+            "municipio": "MARIANOPOLIS DO TO",
+            "fonte": "INMET",
+            "latitude": -9.57638888,
+            "longitude": -49.72333332,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A040",
+            "codigo": "A040",
+            "nome": "MATEIROS",
+            "municipio": "MATEIROS",
+            "fonte": "INMET",
+            "latitude": -10.43444444,
+            "longitude": -45.92194443,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A009",
+            "codigo": "A009",
+            "nome": "PALMAS",
+            "municipio": "PALMAS",
+            "fonte": "INMET",
+            "latitude": -10.14777777,
+            "longitude": -48.31444444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A010",
+            "codigo": "A010",
+            "nome": "PARANA",
+            "municipio": "PARANA",
+            "fonte": "INMET",
+            "latitude": -12.615,
+            "longitude": -47.87194443,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A020",
+            "codigo": "A020",
+            "nome": "PEDRO AFONSO",
+            "municipio": "PEDRO AFONSO",
+            "fonte": "INMET",
+            "latitude": -8.9686111,
+            "longitude": -48.17722221,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A018",
+            "codigo": "A018",
+            "nome": "PEIXE",
+            "municipio": "PEIXE",
+            "fonte": "INMET",
+            "latitude": -12.01527777,
+            "longitude": -48.54444444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A051",
+            "codigo": "A051",
+            "nome": "PIUM",
+            "municipio": "PIUM",
+            "fonte": "INMET",
+            "latitude": -10.47694443,
+            "longitude": -49.62944443,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A050",
+            "codigo": "A050",
+            "nome": "RIO SONO",
+            "municipio": "RIO SONO",
+            "fonte": "INMET",
+            "latitude": -9.793363,
+            "longitude": -47.132732,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A048",
+            "codigo": "A048",
+            "nome": "SANTA FE DO ARAGUAIA",
+            "municipio": "SANTA FE DO ARAGUAIA",
+            "fonte": "INMET",
+            "latitude": -7.12416666,
+            "longitude": -48.78138888,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A052",
+            "codigo": "A052",
+            "nome": "SANTA ROSA DO TOCANTINS",
+            "municipio": "SANTA ROSA DO TOCANTINS",
+            "fonte": "INMET",
+            "latitude": -11.42888888,
+            "longitude": -48.18499999,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          }
+        ]
       },
       "ANA": {
         "source": "ANA",
-        "status": "error",
-        "label": "Erro de consulta",
-        "observacao": "Falha ao consultar a fonte no workflow: fetch failed",
-        "estacoesCadastradas": 0,
-        "estacoesConsultadas": 0,
-        "estacoesComLeitura": 0,
-        "atualizadoEm": null,
-        "estacoes": []
+        "status": "ready",
+        "label": "Operando",
+        "observacao": "Consulta server-side realizada pelo workflow.",
+        "estacoesCadastradas": 176,
+        "estacoesConsultadas": 176,
+        "estacoesComLeitura": 11,
+        "atualizadoEm": "19/06/2026 a 20/06/2026",
+        "estacoes": [
+          {
+            "id": "ANA-547007",
+            "codigo": "547007",
+            "nome": "PRAIA NORTE_Prefeitura Municipal",
+            "municipio": "PRAIA NORTE",
+            "fonte": "ANA",
+            "latitude": -5.3956,
+            "longitude": -47.8114,
+            "chuva24h": 0,
+            "atualizadoEm": "19/06/2026 a 20/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-547008",
+            "codigo": "547008",
+            "nome": "SÃO MIGUEL DO TOCANTINS_Centro Cultural",
+            "municipio": "SÃO MIGUEL DO TOCAN",
+            "fonte": "ANA",
+            "latitude": -5.5525,
+            "longitude": -47.5775,
+            "chuva24h": 0,
+            "atualizadoEm": "19/06/2026 a 20/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-548000",
+            "codigo": "548000",
+            "nome": "ARAGUATINS",
+            "municipio": "ARAGUATINS",
+            "fonte": "ANA",
+            "latitude": -5.6483,
+            "longitude": -48.125,
+            "chuva24h": 0,
+            "atualizadoEm": "19/06/2026 a 20/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-548007",
+            "codigo": "548007",
+            "nome": "SÃO SEBASTIÃO DO TOCANTINS_Viveiro Municipal",
+            "municipio": "SÃO SEBASTIÃO DO TO",
+            "fonte": "ANA",
+            "latitude": -5.2617,
+            "longitude": -48.2025,
+            "chuva24h": 0,
+            "atualizadoEm": "19/06/2026 a 20/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-647007",
+            "codigo": "647007",
+            "nome": "TOCANTINÓPOLIS",
+            "municipio": "TOCANTINÓPOLIS",
+            "fonte": "ANA",
+            "latitude": -6.2889,
+            "longitude": -47.3917,
+            "chuva24h": 0,
+            "atualizadoEm": "19/06/2026 a 20/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-647010",
+            "codigo": "647010",
+            "nome": "UHE ESTREITO JUSANTE",
+            "municipio": "TOCANTINÓPOLIS",
+            "fonte": "ANA",
+            "latitude": -6.2889,
+            "longitude": -47.3917,
+            "chuva24h": 0,
+            "atualizadoEm": "19/06/2026 a 20/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-648006",
+            "codigo": "648006",
+            "nome": "ARAGUANÃ",
+            "municipio": "ARAGUANÃ",
+            "fonte": "ANA",
+            "latitude": -6.56557,
+            "longitude": -48.6355,
+            "chuva24h": 0,
+            "atualizadoEm": "19/06/2026 a 20/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-648009",
+            "codigo": "648009",
+            "nome": "ARAGUANÃ_Prefeitura Municipal",
+            "municipio": "ARAGUANÃ",
+            "fonte": "ANA",
+            "latitude": -6.5822,
+            "longitude": -48.6436,
+            "chuva24h": 0,
+            "atualizadoEm": "19/06/2026 a 20/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-748006",
+            "codigo": "748006",
+            "nome": "CGH LAGEADO RIBEIRÃO LONTRA",
+            "municipio": "ARAGUAÍNA",
+            "fonte": "ANA",
+            "latitude": -7.2517,
+            "longitude": -48.1603,
+            "chuva24h": 0,
+            "atualizadoEm": "19/06/2026 a 20/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-748007",
+            "codigo": "748007",
+            "nome": "SANTA FE DO ARAGUAIA_Prefeitura Municipal",
+            "municipio": "SANTA FÉ DO ARAGUAI",
+            "fonte": "ANA",
+            "latitude": -7.1537,
+            "longitude": -48.6956,
+            "chuva24h": 0,
+            "atualizadoEm": "19/06/2026 a 20/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-748008",
+            "codigo": "748008",
+            "nome": "PONTE RIO LONTRA",
+            "municipio": "ARAGUAÍNA",
+            "fonte": "ANA",
+            "latitude": -7.2075,
+            "longitude": -48.2958,
+            "chuva24h": 0,
+            "atualizadoEm": "19/06/2026 a 20/06/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          }
+        ]
       },
       "SEMARH": {
         "source": "SEMARH",
@@ -4680,9 +8391,6 @@
         "estacoes": []
       }
     },
-    "erros": {
-      "INMET": "fetch failed",
-      "ANA": "fetch failed"
-    }
+    "erros": {}
   }
 }
