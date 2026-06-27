@@ -1,13 +1,13 @@
 {
-  "atualizado_em": "2026-06-27T00:16:29.404Z",
+  "atualizado_em": "2026-06-27T04:58:47.594Z",
   "resumo": {
     "alertas_cemaden_to": 0,
     "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
     "estacoes_fluviometricas_ana": null,
-    "focos_calor_24h": 0,
+    "focos_calor_24h": 133,
     "area_queimada_ano_ha": 245000,
     "chuva_24h_mm": 0,
-    "estacoes_operando": 49,
+    "estacoes_operando": 38,
     "avisos_inmet_to_hoje": 0,
     "avisos_inmet_to_futuro": 0,
     "avisos_inmet_to_severidade_maxima": "Sem aviso vigente",
@@ -32,19 +32,19 @@
     {
       "icon": "flame",
       "label": "Focos de calor",
-      "description": "0 focos registrados no arquivo diário do INPE",
-      "value": "Sem foco"
+      "description": "133 focos registrados no arquivo diário do INPE",
+      "value": "Ativo"
     },
     {
       "icon": "radio-tower",
       "label": "Rede operacional",
-      "description": "49 estacoes ou pontos em acompanhamento",
+      "description": "38 estacoes ou pontos em acompanhamento",
       "value": "24h"
     }
   ],
   "fontes": {
     "alertas": "CEMADEN",
-    "chuva": "CEMADEN / ANA",
+    "chuva": "CEMADEN",
     "rios": "ANA / Telemetria",
     "focos": "INPE Queimadas",
     "area_queimada": "MapBiomas Fogo / INPE AQ",
@@ -1768,18 +1768,3479 @@
   },
   "focos_calor": {
     "status": "ok",
-    "quantidade24h": 0,
-    "quantidadeMapa": 0,
+    "quantidade24h": 133,
+    "quantidadeMapa": 133,
     "periodo": "Arquivo diario INPE",
     "fonte": "INPE Queimadas",
-    "atualizadoEm": "2026-06-27T00:16:01.526Z",
+    "atualizadoEm": "2026-06-27T04:58:12.200Z",
     "referenciaArquivo": "20260627",
     "csv_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/focos_diario_br_20260627.csv",
     "observacao": "Dados filtrados para o Tocantins a partir do arquivo diario Brasil do INPE Queimadas.",
-    "pontos_24h": [],
-    "features": []
+    "pontos_24h": [
+      {
+        "latitude": -10.6382,
+        "longitude": -50.2232,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.3557,
+        "longitude": -50.1457,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6571,
+        "longitude": -50.2212,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6385,
+        "longitude": -50.2018,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -13.09276,
+        "longitude": -48.17008,
+        "municipio": "PALMEIRÓPOLIS",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:03:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.35697,
+        "longitude": -47.42254,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:03:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.51959,
+        "longitude": -48.28735,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:03:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.51833,
+        "longitude": -48.27785,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:03:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.52084,
+        "longitude": -48.29683,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:03:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.74215,
+        "longitude": -49.0092,
+        "municipio": "GURUPI",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:03:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.44154,
+        "longitude": -49.58662,
+        "municipio": "SANDOLÂNDIA",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:03:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.03216,
+        "longitude": -47.80861,
+        "municipio": "NATIVIDADE",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:03:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.45117,
+        "longitude": -49.58526,
+        "municipio": "SANDOLÂNDIA",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:03:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -13.08369,
+        "longitude": -48.17136,
+        "municipio": "PALMEIRÓPOLIS",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:03:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3582,
+        "longitude": -47.4316,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:03:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.51302,
+        "longitude": -48.30759,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:03:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.52209,
+        "longitude": -48.30634,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:03:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.44015,
+        "longitude": -49.57585,
+        "municipio": "SANDOLÂNDIA",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:03:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.66751,
+        "longitude": -50.2259,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.6885,
+        "longitude": -47.69802,
+        "municipio": "RIO SONO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6479,
+        "longitude": -50.22853,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.68423,
+        "longitude": -50.20105,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.64649,
+        "longitude": -50.21742,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6339,
+        "longitude": -50.19655,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.35288,
+        "longitude": -50.1515,
+        "municipio": "PIUM",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6353,
+        "longitude": -50.20763,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.57943,
+        "longitude": -48.72797,
+        "municipio": "MIRANORTE",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.70963,
+        "longitude": -50.24292,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.35011,
+        "longitude": -50.12971,
+        "municipio": "PIUM",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.68727,
+        "longitude": -47.6891,
+        "municipio": "RIO SONO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.63538,
+        "longitude": -50.22465,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.35149,
+        "longitude": -50.14059,
+        "municipio": "PIUM",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.64509,
+        "longitude": -50.20632,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.63392,
+        "longitude": -50.21355,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.34938,
+        "longitude": -50.14725,
+        "municipio": "PIUM",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.75363,
+        "longitude": -49.11214,
+        "municipio": "CRISTALÂNDIA",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6367,
+        "longitude": -50.21874,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.63245,
+        "longitude": -50.20247,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.78111,
+        "longitude": -47.53503,
+        "municipio": "ITACAJÁ",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.55474,
+        "longitude": -46.24842,
+        "municipio": "MATEIROS",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.64368,
+        "longitude": -50.19523,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.34794,
+        "longitude": -50.13636,
+        "municipio": "PIUM",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.55345,
+        "longitude": -46.23927,
+        "municipio": "MATEIROS",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.35083,
+        "longitude": -50.15815,
+        "municipio": "PIUM",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.55601,
+        "longitude": -46.25748,
+        "municipio": "MATEIROS",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.69611,
+        "longitude": -47.68784,
+        "municipio": "RIO SONO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.54449,
+        "longitude": -46.24058,
+        "municipio": "MATEIROS",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.21749,
+        "longitude": -47.1189,
+        "municipio": "GOIATINS",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.64227,
+        "longitude": -50.18416,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.65771,
+        "longitude": -50.22721,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.54577,
+        "longitude": -46.24965,
+        "municipio": "MATEIROS",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -7.38796,
+        "longitude": -48.11999,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.65912,
+        "longitude": -50.23835,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-06-27 00:05:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6382,
+        "longitude": -50.2232,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6385,
+        "longitude": -50.2018,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6571,
+        "longitude": -50.2212,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6385,
+        "longitude": -50.2018,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6571,
+        "longitude": -50.2212,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6382,
+        "longitude": -50.2232,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5634,
+        "longitude": -46.2362,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6571,
+        "longitude": -50.2212,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6382,
+        "longitude": -50.2232,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.563,
+        "longitude": -46.2588,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6385,
+        "longitude": -50.2018,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6571,
+        "longitude": -50.2212,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6382,
+        "longitude": -50.2232,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.3557,
+        "longitude": -50.1457,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6385,
+        "longitude": -50.2018,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6571,
+        "longitude": -50.2212,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6382,
+        "longitude": -50.2232,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5634,
+        "longitude": -46.2362,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6385,
+        "longitude": -50.2018,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 00:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6273,
+        "longitude": -50.175098,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-06-27 00:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6228,
+        "longitude": -50.197498,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-06-27 00:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6324,
+        "longitude": -50.195,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-06-27 00:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6279,
+        "longitude": -50.2173,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-06-27 00:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.3357,
+        "longitude": -50.123299,
+        "municipio": "PIUM",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-06-27 00:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6375,
+        "longitude": -50.214802,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-06-27 00:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6426,
+        "longitude": -50.2346,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-06-27 00:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6523,
+        "longitude": -50.231998,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-06-27 00:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6472,
+        "longitude": -50.2122,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-06-27 00:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.341,
+        "longitude": -50.1436,
+        "municipio": "PIUM",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-06-27 00:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.3557,
+        "longitude": -50.1457,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5634,
+        "longitude": -46.2362,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6385,
+        "longitude": -50.2018,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6382,
+        "longitude": -50.2232,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.3368,
+        "longitude": -50.1477,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6571,
+        "longitude": -50.2212,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6571,
+        "longitude": -50.2212,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6382,
+        "longitude": -50.2232,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.3557,
+        "longitude": -50.1457,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6385,
+        "longitude": -50.2018,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6419,
+        "longitude": -50.243099,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-06-27 01:17:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6298,
+        "longitude": -50.1954,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-06-27 01:17:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6435,
+        "longitude": -50.208801,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-06-27 01:17:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6338,
+        "longitude": -50.2113,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-06-27 01:17:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.704,
+        "longitude": -50.2439,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-06-27 01:17:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6516,
+        "longitude": -50.240601,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-06-27 01:17:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6395,
+        "longitude": -50.192902,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-06-27 01:17:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.3494,
+        "longitude": -50.1479,
+        "municipio": "PIUM",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-06-27 01:17:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6613,
+        "longitude": -50.238098,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-06-27 01:17:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6379,
+        "longitude": -50.2272,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-06-27 01:17:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6573,
+        "longitude": -50.222198,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-06-27 01:17:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6476,
+        "longitude": -50.224701,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-06-27 01:17:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6571,
+        "longitude": -50.2212,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6385,
+        "longitude": -50.2018,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6382,
+        "longitude": -50.2232,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5634,
+        "longitude": -46.2362,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6382,
+        "longitude": -50.2232,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5634,
+        "longitude": -46.2362,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6571,
+        "longitude": -50.2212,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6385,
+        "longitude": -50.2018,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6195,
+        "longitude": -50.2038,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6385,
+        "longitude": -50.2018,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6192,
+        "longitude": -50.2252,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6382,
+        "longitude": -50.2232,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5634,
+        "longitude": -46.2362,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6571,
+        "longitude": -50.2212,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6382,
+        "longitude": -50.2232,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6385,
+        "longitude": -50.2018,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6195,
+        "longitude": -50.2038,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 01:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5634,
+        "longitude": -46.2362,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 02:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6385,
+        "longitude": -50.2018,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 02:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6382,
+        "longitude": -50.2232,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 02:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6385,
+        "longitude": -50.2018,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 02:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6382,
+        "longitude": -50.2232,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 02:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5634,
+        "longitude": -46.2362,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 02:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6382,
+        "longitude": -50.2232,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 02:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.474,
+        "longitude": -47.1218,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 03:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6195,
+        "longitude": -50.2038,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 03:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6192,
+        "longitude": -50.2252,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 03:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6382,
+        "longitude": -50.2232,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 03:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6385,
+        "longitude": -50.2018,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-06-27 03:10:00",
+        "bioma": "Cerrado"
+      }
+    ],
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2232,
+            -10.6382
+          ]
+        },
+        "properties": {
+          "latitude": -10.6382,
+          "longitude": -50.2232,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.1457,
+            -10.3557
+          ]
+        },
+        "properties": {
+          "latitude": -10.3557,
+          "longitude": -50.1457,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2212,
+            -10.6571
+          ]
+        },
+        "properties": {
+          "latitude": -10.6571,
+          "longitude": -50.2212,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2018,
+            -10.6385
+          ]
+        },
+        "properties": {
+          "latitude": -10.6385,
+          "longitude": -50.2018,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.17008,
+            -13.09276
+          ]
+        },
+        "properties": {
+          "latitude": -13.09276,
+          "longitude": -48.17008,
+          "municipio": "PALMEIRÓPOLIS",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:03:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.42254,
+            -12.35697
+          ]
+        },
+        "properties": {
+          "latitude": -12.35697,
+          "longitude": -47.42254,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:03:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.28735,
+            -12.51959
+          ]
+        },
+        "properties": {
+          "latitude": -12.51959,
+          "longitude": -48.28735,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:03:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.27785,
+            -12.51833
+          ]
+        },
+        "properties": {
+          "latitude": -12.51833,
+          "longitude": -48.27785,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:03:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.29683,
+            -12.52084
+          ]
+        },
+        "properties": {
+          "latitude": -12.52084,
+          "longitude": -48.29683,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:03:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.0092,
+            -11.74215
+          ]
+        },
+        "properties": {
+          "latitude": -11.74215,
+          "longitude": -49.0092,
+          "municipio": "GURUPI",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:03:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.58662,
+            -12.44154
+          ]
+        },
+        "properties": {
+          "latitude": -12.44154,
+          "longitude": -49.58662,
+          "municipio": "SANDOLÂNDIA",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:03:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.80861,
+            -12.03216
+          ]
+        },
+        "properties": {
+          "latitude": -12.03216,
+          "longitude": -47.80861,
+          "municipio": "NATIVIDADE",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:03:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.58526,
+            -12.45117
+          ]
+        },
+        "properties": {
+          "latitude": -12.45117,
+          "longitude": -49.58526,
+          "municipio": "SANDOLÂNDIA",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:03:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.17136,
+            -13.08369
+          ]
+        },
+        "properties": {
+          "latitude": -13.08369,
+          "longitude": -48.17136,
+          "municipio": "PALMEIRÓPOLIS",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:03:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4316,
+            -12.3582
+          ]
+        },
+        "properties": {
+          "latitude": -12.3582,
+          "longitude": -47.4316,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:03:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.30759,
+            -12.51302
+          ]
+        },
+        "properties": {
+          "latitude": -12.51302,
+          "longitude": -48.30759,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:03:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.30634,
+            -12.52209
+          ]
+        },
+        "properties": {
+          "latitude": -12.52209,
+          "longitude": -48.30634,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:03:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.57585,
+            -12.44015
+          ]
+        },
+        "properties": {
+          "latitude": -12.44015,
+          "longitude": -49.57585,
+          "municipio": "SANDOLÂNDIA",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:03:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2259,
+            -10.66751
+          ]
+        },
+        "properties": {
+          "latitude": -10.66751,
+          "longitude": -50.2259,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.69802,
+            -9.6885
+          ]
+        },
+        "properties": {
+          "latitude": -9.6885,
+          "longitude": -47.69802,
+          "municipio": "RIO SONO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.22853,
+            -10.6479
+          ]
+        },
+        "properties": {
+          "latitude": -10.6479,
+          "longitude": -50.22853,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.20105,
+            -10.68423
+          ]
+        },
+        "properties": {
+          "latitude": -10.68423,
+          "longitude": -50.20105,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.21742,
+            -10.64649
+          ]
+        },
+        "properties": {
+          "latitude": -10.64649,
+          "longitude": -50.21742,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.19655,
+            -10.6339
+          ]
+        },
+        "properties": {
+          "latitude": -10.6339,
+          "longitude": -50.19655,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.1515,
+            -10.35288
+          ]
+        },
+        "properties": {
+          "latitude": -10.35288,
+          "longitude": -50.1515,
+          "municipio": "PIUM",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.20763,
+            -10.6353
+          ]
+        },
+        "properties": {
+          "latitude": -10.6353,
+          "longitude": -50.20763,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.72797,
+            -9.57943
+          ]
+        },
+        "properties": {
+          "latitude": -9.57943,
+          "longitude": -48.72797,
+          "municipio": "MIRANORTE",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.24292,
+            -10.70963
+          ]
+        },
+        "properties": {
+          "latitude": -10.70963,
+          "longitude": -50.24292,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.12971,
+            -10.35011
+          ]
+        },
+        "properties": {
+          "latitude": -10.35011,
+          "longitude": -50.12971,
+          "municipio": "PIUM",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.6891,
+            -9.68727
+          ]
+        },
+        "properties": {
+          "latitude": -9.68727,
+          "longitude": -47.6891,
+          "municipio": "RIO SONO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.22465,
+            -10.63538
+          ]
+        },
+        "properties": {
+          "latitude": -10.63538,
+          "longitude": -50.22465,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.14059,
+            -10.35149
+          ]
+        },
+        "properties": {
+          "latitude": -10.35149,
+          "longitude": -50.14059,
+          "municipio": "PIUM",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.20632,
+            -10.64509
+          ]
+        },
+        "properties": {
+          "latitude": -10.64509,
+          "longitude": -50.20632,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.21355,
+            -10.63392
+          ]
+        },
+        "properties": {
+          "latitude": -10.63392,
+          "longitude": -50.21355,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.14725,
+            -10.34938
+          ]
+        },
+        "properties": {
+          "latitude": -10.34938,
+          "longitude": -50.14725,
+          "municipio": "PIUM",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.11214,
+            -10.75363
+          ]
+        },
+        "properties": {
+          "latitude": -10.75363,
+          "longitude": -49.11214,
+          "municipio": "CRISTALÂNDIA",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.21874,
+            -10.6367
+          ]
+        },
+        "properties": {
+          "latitude": -10.6367,
+          "longitude": -50.21874,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.20247,
+            -10.63245
+          ]
+        },
+        "properties": {
+          "latitude": -10.63245,
+          "longitude": -50.20247,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.53503,
+            -8.78111
+          ]
+        },
+        "properties": {
+          "latitude": -8.78111,
+          "longitude": -47.53503,
+          "municipio": "ITACAJÁ",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.24842,
+            -10.55474
+          ]
+        },
+        "properties": {
+          "latitude": -10.55474,
+          "longitude": -46.24842,
+          "municipio": "MATEIROS",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.19523,
+            -10.64368
+          ]
+        },
+        "properties": {
+          "latitude": -10.64368,
+          "longitude": -50.19523,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.13636,
+            -10.34794
+          ]
+        },
+        "properties": {
+          "latitude": -10.34794,
+          "longitude": -50.13636,
+          "municipio": "PIUM",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.23927,
+            -10.55345
+          ]
+        },
+        "properties": {
+          "latitude": -10.55345,
+          "longitude": -46.23927,
+          "municipio": "MATEIROS",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.15815,
+            -10.35083
+          ]
+        },
+        "properties": {
+          "latitude": -10.35083,
+          "longitude": -50.15815,
+          "municipio": "PIUM",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.25748,
+            -10.55601
+          ]
+        },
+        "properties": {
+          "latitude": -10.55601,
+          "longitude": -46.25748,
+          "municipio": "MATEIROS",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.68784,
+            -9.69611
+          ]
+        },
+        "properties": {
+          "latitude": -9.69611,
+          "longitude": -47.68784,
+          "municipio": "RIO SONO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.24058,
+            -10.54449
+          ]
+        },
+        "properties": {
+          "latitude": -10.54449,
+          "longitude": -46.24058,
+          "municipio": "MATEIROS",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.1189,
+            -8.21749
+          ]
+        },
+        "properties": {
+          "latitude": -8.21749,
+          "longitude": -47.1189,
+          "municipio": "GOIATINS",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.18416,
+            -10.64227
+          ]
+        },
+        "properties": {
+          "latitude": -10.64227,
+          "longitude": -50.18416,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.22721,
+            -10.65771
+          ]
+        },
+        "properties": {
+          "latitude": -10.65771,
+          "longitude": -50.22721,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.24965,
+            -10.54577
+          ]
+        },
+        "properties": {
+          "latitude": -10.54577,
+          "longitude": -46.24965,
+          "municipio": "MATEIROS",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.11999,
+            -7.38796
+          ]
+        },
+        "properties": {
+          "latitude": -7.38796,
+          "longitude": -48.11999,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.23835,
+            -10.65912
+          ]
+        },
+        "properties": {
+          "latitude": -10.65912,
+          "longitude": -50.23835,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-06-27 00:05:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2232,
+            -10.6382
+          ]
+        },
+        "properties": {
+          "latitude": -10.6382,
+          "longitude": -50.2232,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2018,
+            -10.6385
+          ]
+        },
+        "properties": {
+          "latitude": -10.6385,
+          "longitude": -50.2018,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2212,
+            -10.6571
+          ]
+        },
+        "properties": {
+          "latitude": -10.6571,
+          "longitude": -50.2212,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2018,
+            -10.6385
+          ]
+        },
+        "properties": {
+          "latitude": -10.6385,
+          "longitude": -50.2018,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2212,
+            -10.6571
+          ]
+        },
+        "properties": {
+          "latitude": -10.6571,
+          "longitude": -50.2212,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2232,
+            -10.6382
+          ]
+        },
+        "properties": {
+          "latitude": -10.6382,
+          "longitude": -50.2232,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.2362,
+            -10.5634
+          ]
+        },
+        "properties": {
+          "latitude": -10.5634,
+          "longitude": -46.2362,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2212,
+            -10.6571
+          ]
+        },
+        "properties": {
+          "latitude": -10.6571,
+          "longitude": -50.2212,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2232,
+            -10.6382
+          ]
+        },
+        "properties": {
+          "latitude": -10.6382,
+          "longitude": -50.2232,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.2588,
+            -10.563
+          ]
+        },
+        "properties": {
+          "latitude": -10.563,
+          "longitude": -46.2588,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2018,
+            -10.6385
+          ]
+        },
+        "properties": {
+          "latitude": -10.6385,
+          "longitude": -50.2018,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2212,
+            -10.6571
+          ]
+        },
+        "properties": {
+          "latitude": -10.6571,
+          "longitude": -50.2212,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2232,
+            -10.6382
+          ]
+        },
+        "properties": {
+          "latitude": -10.6382,
+          "longitude": -50.2232,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.1457,
+            -10.3557
+          ]
+        },
+        "properties": {
+          "latitude": -10.3557,
+          "longitude": -50.1457,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2018,
+            -10.6385
+          ]
+        },
+        "properties": {
+          "latitude": -10.6385,
+          "longitude": -50.2018,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2212,
+            -10.6571
+          ]
+        },
+        "properties": {
+          "latitude": -10.6571,
+          "longitude": -50.2212,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2232,
+            -10.6382
+          ]
+        },
+        "properties": {
+          "latitude": -10.6382,
+          "longitude": -50.2232,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.2362,
+            -10.5634
+          ]
+        },
+        "properties": {
+          "latitude": -10.5634,
+          "longitude": -46.2362,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2018,
+            -10.6385
+          ]
+        },
+        "properties": {
+          "latitude": -10.6385,
+          "longitude": -50.2018,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 00:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.175098,
+            -10.6273
+          ]
+        },
+        "properties": {
+          "latitude": -10.6273,
+          "longitude": -50.175098,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-06-27 00:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.197498,
+            -10.6228
+          ]
+        },
+        "properties": {
+          "latitude": -10.6228,
+          "longitude": -50.197498,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-06-27 00:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.195,
+            -10.6324
+          ]
+        },
+        "properties": {
+          "latitude": -10.6324,
+          "longitude": -50.195,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-06-27 00:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2173,
+            -10.6279
+          ]
+        },
+        "properties": {
+          "latitude": -10.6279,
+          "longitude": -50.2173,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-06-27 00:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.123299,
+            -10.3357
+          ]
+        },
+        "properties": {
+          "latitude": -10.3357,
+          "longitude": -50.123299,
+          "municipio": "PIUM",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-06-27 00:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.214802,
+            -10.6375
+          ]
+        },
+        "properties": {
+          "latitude": -10.6375,
+          "longitude": -50.214802,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-06-27 00:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2346,
+            -10.6426
+          ]
+        },
+        "properties": {
+          "latitude": -10.6426,
+          "longitude": -50.2346,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-06-27 00:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.231998,
+            -10.6523
+          ]
+        },
+        "properties": {
+          "latitude": -10.6523,
+          "longitude": -50.231998,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-06-27 00:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2122,
+            -10.6472
+          ]
+        },
+        "properties": {
+          "latitude": -10.6472,
+          "longitude": -50.2122,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-06-27 00:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.1436,
+            -10.341
+          ]
+        },
+        "properties": {
+          "latitude": -10.341,
+          "longitude": -50.1436,
+          "municipio": "PIUM",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-06-27 00:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.1457,
+            -10.3557
+          ]
+        },
+        "properties": {
+          "latitude": -10.3557,
+          "longitude": -50.1457,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.2362,
+            -10.5634
+          ]
+        },
+        "properties": {
+          "latitude": -10.5634,
+          "longitude": -46.2362,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2018,
+            -10.6385
+          ]
+        },
+        "properties": {
+          "latitude": -10.6385,
+          "longitude": -50.2018,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2232,
+            -10.6382
+          ]
+        },
+        "properties": {
+          "latitude": -10.6382,
+          "longitude": -50.2232,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.1477,
+            -10.3368
+          ]
+        },
+        "properties": {
+          "latitude": -10.3368,
+          "longitude": -50.1477,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2212,
+            -10.6571
+          ]
+        },
+        "properties": {
+          "latitude": -10.6571,
+          "longitude": -50.2212,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2212,
+            -10.6571
+          ]
+        },
+        "properties": {
+          "latitude": -10.6571,
+          "longitude": -50.2212,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2232,
+            -10.6382
+          ]
+        },
+        "properties": {
+          "latitude": -10.6382,
+          "longitude": -50.2232,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.1457,
+            -10.3557
+          ]
+        },
+        "properties": {
+          "latitude": -10.3557,
+          "longitude": -50.1457,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2018,
+            -10.6385
+          ]
+        },
+        "properties": {
+          "latitude": -10.6385,
+          "longitude": -50.2018,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.243099,
+            -10.6419
+          ]
+        },
+        "properties": {
+          "latitude": -10.6419,
+          "longitude": -50.243099,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-06-27 01:17:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.1954,
+            -10.6298
+          ]
+        },
+        "properties": {
+          "latitude": -10.6298,
+          "longitude": -50.1954,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-06-27 01:17:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.208801,
+            -10.6435
+          ]
+        },
+        "properties": {
+          "latitude": -10.6435,
+          "longitude": -50.208801,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-06-27 01:17:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2113,
+            -10.6338
+          ]
+        },
+        "properties": {
+          "latitude": -10.6338,
+          "longitude": -50.2113,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-06-27 01:17:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2439,
+            -10.704
+          ]
+        },
+        "properties": {
+          "latitude": -10.704,
+          "longitude": -50.2439,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-06-27 01:17:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.240601,
+            -10.6516
+          ]
+        },
+        "properties": {
+          "latitude": -10.6516,
+          "longitude": -50.240601,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-06-27 01:17:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.192902,
+            -10.6395
+          ]
+        },
+        "properties": {
+          "latitude": -10.6395,
+          "longitude": -50.192902,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-06-27 01:17:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.1479,
+            -10.3494
+          ]
+        },
+        "properties": {
+          "latitude": -10.3494,
+          "longitude": -50.1479,
+          "municipio": "PIUM",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-06-27 01:17:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.238098,
+            -10.6613
+          ]
+        },
+        "properties": {
+          "latitude": -10.6613,
+          "longitude": -50.238098,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-06-27 01:17:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2272,
+            -10.6379
+          ]
+        },
+        "properties": {
+          "latitude": -10.6379,
+          "longitude": -50.2272,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-06-27 01:17:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.222198,
+            -10.6573
+          ]
+        },
+        "properties": {
+          "latitude": -10.6573,
+          "longitude": -50.222198,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-06-27 01:17:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.224701,
+            -10.6476
+          ]
+        },
+        "properties": {
+          "latitude": -10.6476,
+          "longitude": -50.224701,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-06-27 01:17:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2212,
+            -10.6571
+          ]
+        },
+        "properties": {
+          "latitude": -10.6571,
+          "longitude": -50.2212,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2018,
+            -10.6385
+          ]
+        },
+        "properties": {
+          "latitude": -10.6385,
+          "longitude": -50.2018,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2232,
+            -10.6382
+          ]
+        },
+        "properties": {
+          "latitude": -10.6382,
+          "longitude": -50.2232,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.2362,
+            -10.5634
+          ]
+        },
+        "properties": {
+          "latitude": -10.5634,
+          "longitude": -46.2362,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2232,
+            -10.6382
+          ]
+        },
+        "properties": {
+          "latitude": -10.6382,
+          "longitude": -50.2232,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.2362,
+            -10.5634
+          ]
+        },
+        "properties": {
+          "latitude": -10.5634,
+          "longitude": -46.2362,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2212,
+            -10.6571
+          ]
+        },
+        "properties": {
+          "latitude": -10.6571,
+          "longitude": -50.2212,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2018,
+            -10.6385
+          ]
+        },
+        "properties": {
+          "latitude": -10.6385,
+          "longitude": -50.2018,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2038,
+            -10.6195
+          ]
+        },
+        "properties": {
+          "latitude": -10.6195,
+          "longitude": -50.2038,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2018,
+            -10.6385
+          ]
+        },
+        "properties": {
+          "latitude": -10.6385,
+          "longitude": -50.2018,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2252,
+            -10.6192
+          ]
+        },
+        "properties": {
+          "latitude": -10.6192,
+          "longitude": -50.2252,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2232,
+            -10.6382
+          ]
+        },
+        "properties": {
+          "latitude": -10.6382,
+          "longitude": -50.2232,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.2362,
+            -10.5634
+          ]
+        },
+        "properties": {
+          "latitude": -10.5634,
+          "longitude": -46.2362,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2212,
+            -10.6571
+          ]
+        },
+        "properties": {
+          "latitude": -10.6571,
+          "longitude": -50.2212,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2232,
+            -10.6382
+          ]
+        },
+        "properties": {
+          "latitude": -10.6382,
+          "longitude": -50.2232,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2018,
+            -10.6385
+          ]
+        },
+        "properties": {
+          "latitude": -10.6385,
+          "longitude": -50.2018,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2038,
+            -10.6195
+          ]
+        },
+        "properties": {
+          "latitude": -10.6195,
+          "longitude": -50.2038,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 01:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.2362,
+            -10.5634
+          ]
+        },
+        "properties": {
+          "latitude": -10.5634,
+          "longitude": -46.2362,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 02:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2018,
+            -10.6385
+          ]
+        },
+        "properties": {
+          "latitude": -10.6385,
+          "longitude": -50.2018,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 02:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2232,
+            -10.6382
+          ]
+        },
+        "properties": {
+          "latitude": -10.6382,
+          "longitude": -50.2232,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 02:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2018,
+            -10.6385
+          ]
+        },
+        "properties": {
+          "latitude": -10.6385,
+          "longitude": -50.2018,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 02:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2232,
+            -10.6382
+          ]
+        },
+        "properties": {
+          "latitude": -10.6382,
+          "longitude": -50.2232,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 02:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.2362,
+            -10.5634
+          ]
+        },
+        "properties": {
+          "latitude": -10.5634,
+          "longitude": -46.2362,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 02:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2232,
+            -10.6382
+          ]
+        },
+        "properties": {
+          "latitude": -10.6382,
+          "longitude": -50.2232,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 02:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.1218,
+            -10.474
+          ]
+        },
+        "properties": {
+          "latitude": -10.474,
+          "longitude": -47.1218,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 03:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2038,
+            -10.6195
+          ]
+        },
+        "properties": {
+          "latitude": -10.6195,
+          "longitude": -50.2038,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 03:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2252,
+            -10.6192
+          ]
+        },
+        "properties": {
+          "latitude": -10.6192,
+          "longitude": -50.2252,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 03:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2232,
+            -10.6382
+          ]
+        },
+        "properties": {
+          "latitude": -10.6382,
+          "longitude": -50.2232,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 03:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2018,
+            -10.6385
+          ]
+        },
+        "properties": {
+          "latitude": -10.6385,
+          "longitude": -50.2018,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-06-27 03:10:00",
+          "bioma": "Cerrado"
+        }
+      }
+    ]
   },
   "erros_atualizacao": {
+    "avisos_inmet": "fetch failed",
     "s2id": "Portal S2ID indisponivel"
   },
   "s2id": {
@@ -1870,21 +5331,21 @@
     "mes_final": 5,
     "periodo": "Janeiro a maio de 2026",
     "area_queimada_ha": 149509.64,
-    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/0756e6747a8cafcbf3f8799c7cbab90b-d54a34377906c191b3acbc9040f74c62/tiles/{z}/{x}/{y}",
+    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/0756e6747a8cafcbf3f8799c7cbab90b-b13f0ad49f372db7eb7a8af9c814b702/tiles/{z}/{x}/{y}",
     "unidade": "ha",
     "natureza": "Cicatrizes de área queimada mapeadas pelo Monitor do Fogo."
   },
   "chuva_observada": {
     "status": "ok",
     "periodo": "ultimas 24h",
-    "fonte": "CEMADEN / ANA",
-    "atualizadoEm": "2026-06-27T00:16:20.326Z",
+    "fonte": "CEMADEN",
+    "atualizadoEm": "2026-06-27T04:58:37.230Z",
     "maiorAcumulado": 0,
     "estacaoMaiorAcumulado": "Dona Constanci",
     "municipioMaiorAcumulado": "DUERÉ",
-    "estacoesCadastradas": 234,
-    "estacoesConsultadas": 234,
-    "estacoesComLeitura": 49,
+    "estacoesCadastradas": 38,
+    "estacoesConsultadas": 38,
+    "estacoesComLeitura": 38,
     "acima10": 0,
     "acima30": 0,
     "acima50": 0,
@@ -1897,7 +5358,7 @@
         "estacoesCadastradas": 38,
         "estacoesConsultadas": 38,
         "estacoesComLeitura": 38,
-        "atualizadoEm": "2026-06-27 00:14:38 UTC",
+        "atualizadoEm": "2026-06-27 04:56:34 UTC",
         "estacoes": [
           {
             "id": "CEMADEN-170730601A",
@@ -1908,7 +5369,7 @@
             "latitude": -11.34296,
             "longitude": -49.26664,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -1922,7 +5383,7 @@
             "latitude": -5.36527,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -1936,7 +5397,7 @@
             "latitude": -12.035,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -1950,7 +5411,7 @@
             "latitude": -5.3956,
             "longitude": -47.8114,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -1964,7 +5425,7 @@
             "latitude": -7.14869,
             "longitude": -48.69083,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -1978,7 +5439,7 @@
             "latitude": -5.25903,
             "longitude": -48.20147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -1992,7 +5453,7 @@
             "latitude": -6.58226,
             "longitude": -48.64368,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2006,7 +5467,7 @@
             "latitude": -5.55265,
             "longitude": -47.57758,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2020,7 +5481,7 @@
             "latitude": -7.18755,
             "longitude": -48.23527,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2034,7 +5495,7 @@
             "latitude": -7.15587,
             "longitude": -48.1888,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2048,7 +5509,7 @@
             "latitude": -7.19408,
             "longitude": -48.19586,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2062,7 +5523,7 @@
             "latitude": -7.22806,
             "longitude": -48.24461,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2076,7 +5537,7 @@
             "latitude": -5.65762,
             "longitude": -48.11147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2090,7 +5551,7 @@
             "latitude": -11.8055,
             "longitude": -49.5275,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2104,7 +5565,7 @@
             "latitude": -7.71295,
             "longitude": -47.3093,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2118,7 +5579,7 @@
             "latitude": -6.41126,
             "longitude": -48.53374,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2132,7 +5593,7 @@
             "latitude": -10.71611,
             "longitude": -48.39972,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2146,7 +5607,7 @@
             "latitude": -6.36582,
             "longitude": -48.0746,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2160,7 +5621,7 @@
             "latitude": -6.38119,
             "longitude": -48.06281,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2174,7 +5635,7 @@
             "latitude": -5.46415,
             "longitude": -47.89705,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2188,7 +5649,7 @@
             "latitude": -5.47529,
             "longitude": -47.88956,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2202,7 +5663,7 @@
             "latitude": -5.43,
             "longitude": -47.85787,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2216,7 +5677,7 @@
             "latitude": -5.31866,
             "longitude": -48.03934,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2230,7 +5691,7 @@
             "latitude": -5.32414,
             "longitude": -48.03401,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2244,7 +5705,7 @@
             "latitude": -9.27355,
             "longitude": -49.95393,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2258,7 +5719,7 @@
             "latitude": -9.28132,
             "longitude": -49.95269,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2272,7 +5733,7 @@
             "latitude": -5.76973,
             "longitude": -47.48155,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2286,7 +5747,7 @@
             "latitude": -5.77483,
             "longitude": -47.47833,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2300,7 +5761,7 @@
             "latitude": -10.79377,
             "longitude": -49.62398,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2314,7 +5775,7 @@
             "latitude": -10.78247,
             "longitude": -49.61686,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2328,7 +5789,7 @@
             "latitude": -12.61468,
             "longitude": -47.88194,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2342,7 +5803,7 @@
             "latitude": -12.62013,
             "longitude": -47.86877,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2356,7 +5817,7 @@
             "latitude": -12.62794,
             "longitude": -47.56296,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2370,7 +5831,7 @@
             "latitude": -10.44876,
             "longitude": -49.16777,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2384,7 +5845,7 @@
             "latitude": -10.44167,
             "longitude": -49.18087,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2398,7 +5859,7 @@
             "latitude": -6.32722,
             "longitude": -47.42806,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2412,7 +5873,7 @@
             "latitude": -6.33778,
             "longitude": -47.43333,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2426,7 +5887,7 @@
             "latitude": -6.31556,
             "longitude": -47.42306,
             "chuva24h": 0,
-            "atualizadoEm": "2026-06-27 00:14:38 UTC",
+            "atualizadoEm": "2026-06-27 04:56:34 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2435,487 +5896,25 @@
       },
       "INMET": {
         "source": "INMET",
-        "status": "catalog",
-        "label": "Sem leitura valida",
-        "observacao": "Chave/token INMET recusado pela API.",
-        "modoConsulta": "autenticada",
-        "erroAutenticacao": "Chave/token INMET recusado pela API.",
-        "estacoesCadastradas": 20,
-        "estacoesConsultadas": 20,
+        "status": "error",
+        "label": "Erro de consulta",
+        "observacao": "Falha ao consultar a fonte no workflow: fetch failed",
+        "estacoesCadastradas": 0,
+        "estacoesConsultadas": 0,
         "estacoesComLeitura": 0,
-        "estacoesSemLeitura": 20,
-        "estacoesComErro": 20,
-        "estacoesEmIntegracao": 0,
         "atualizadoEm": null,
-        "estacoes": [],
-        "todasEstacoes": [
-          {
-            "id": "INMET-A053",
-            "codigo": "A053",
-            "nome": "ALMAS",
-            "municipio": "ALMAS",
-            "fonte": "INMET",
-            "latitude": -11.28416666,
-            "longitude": -47.21222222,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A054",
-            "codigo": "A054",
-            "nome": "ARAGUACU",
-            "municipio": "ARAGUACU",
-            "fonte": "INMET",
-            "latitude": -12.59222221,
-            "longitude": -49.5286111,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A021",
-            "codigo": "A021",
-            "nome": "ARAGUAINA",
-            "municipio": "ARAGUAINA",
-            "fonte": "INMET",
-            "latitude": -7.10388888,
-            "longitude": -48.20111111,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A044",
-            "codigo": "A044",
-            "nome": "ARAGUATINS",
-            "municipio": "ARAGUATINS",
-            "fonte": "INMET",
-            "latitude": -5.6436111,
-            "longitude": -48.11194444,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A043",
-            "codigo": "A043",
-            "nome": "CAMPOS LINDOS",
-            "municipio": "CAMPOS LINDOS",
-            "fonte": "INMET",
-            "latitude": -8.15472222,
-            "longitude": -46.63944444,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A049",
-            "codigo": "A049",
-            "nome": "COLINAS DO TOCANTINS",
-            "municipio": "COLINAS DO TOCANTINS",
-            "fonte": "INMET",
-            "latitude": -8.09277777,
-            "longitude": -48.4786111,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A038",
-            "codigo": "A038",
-            "nome": "DIANOPOLIS",
-            "municipio": "DIANOPOLIS",
-            "fonte": "INMET",
-            "latitude": -11.59444444,
-            "longitude": -46.84722221,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A039",
-            "codigo": "A039",
-            "nome": "FORMOSO DO ARAGUAIA",
-            "municipio": "FORMOSO DO ARAGUAIA",
-            "fonte": "INMET",
-            "latitude": -11.88749999,
-            "longitude": -49.60833333,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A019",
-            "codigo": "A019",
-            "nome": "GURUPI",
-            "municipio": "GURUPI",
-            "fonte": "INMET",
-            "latitude": -11.74499999,
-            "longitude": -49.05166666,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A055",
-            "codigo": "A055",
-            "nome": "LAGOA DA CONFUSAO",
-            "municipio": "LAGOA DA CONFUSAO",
-            "fonte": "INMET",
-            "latitude": -10.828286,
-            "longitude": -49.847882,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A041",
-            "codigo": "A041",
-            "nome": "MARIANOPOLIS DO TO",
-            "municipio": "MARIANOPOLIS DO TO",
-            "fonte": "INMET",
-            "latitude": -9.57638888,
-            "longitude": -49.72333332,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A040",
-            "codigo": "A040",
-            "nome": "MATEIROS",
-            "municipio": "MATEIROS",
-            "fonte": "INMET",
-            "latitude": -10.43444444,
-            "longitude": -45.92194443,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A009",
-            "codigo": "A009",
-            "nome": "PALMAS",
-            "municipio": "PALMAS",
-            "fonte": "INMET",
-            "latitude": -10.14777777,
-            "longitude": -48.31444444,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A010",
-            "codigo": "A010",
-            "nome": "PARANA",
-            "municipio": "PARANA",
-            "fonte": "INMET",
-            "latitude": -12.615,
-            "longitude": -47.87194443,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A020",
-            "codigo": "A020",
-            "nome": "PEDRO AFONSO",
-            "municipio": "PEDRO AFONSO",
-            "fonte": "INMET",
-            "latitude": -8.9686111,
-            "longitude": -48.17722221,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A018",
-            "codigo": "A018",
-            "nome": "PEIXE",
-            "municipio": "PEIXE",
-            "fonte": "INMET",
-            "latitude": -12.01527777,
-            "longitude": -48.54444444,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A051",
-            "codigo": "A051",
-            "nome": "PIUM",
-            "municipio": "PIUM",
-            "fonte": "INMET",
-            "latitude": -10.47694443,
-            "longitude": -49.62944443,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A050",
-            "codigo": "A050",
-            "nome": "RIO SONO",
-            "municipio": "RIO SONO",
-            "fonte": "INMET",
-            "latitude": -9.793363,
-            "longitude": -47.132732,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A048",
-            "codigo": "A048",
-            "nome": "SANTA FE DO ARAGUAIA",
-            "municipio": "SANTA FE DO ARAGUAIA",
-            "fonte": "INMET",
-            "latitude": -7.12416666,
-            "longitude": -48.78138888,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          },
-          {
-            "id": "INMET-A052",
-            "codigo": "A052",
-            "nome": "SANTA ROSA DO TOCANTINS",
-            "municipio": "SANTA ROSA DO TOCANTINS",
-            "fonte": "INMET",
-            "latitude": -11.42888888,
-            "longitude": -48.18499999,
-            "chuva24h": null,
-            "atualizadoEm": null,
-            "status": "sem_dado",
-            "statusLeitura": "sem_leitura",
-            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
-            "observacao": "Chave/token INMET recusado pela API."
-          }
-        ]
+        "estacoes": []
       },
       "ANA": {
         "source": "ANA",
-        "status": "ready",
-        "label": "Operando",
-        "observacao": "Consulta server-side realizada pelo workflow.",
-        "estacoesCadastradas": 176,
-        "estacoesConsultadas": 176,
-        "estacoesComLeitura": 11,
-        "atualizadoEm": "26/06/2026 a 27/06/2026",
-        "estacoes": [
-          {
-            "id": "ANA-547004",
-            "codigo": "547004",
-            "nome": "DESCARRETO",
-            "municipio": "ITAGUATINS",
-            "fonte": "ANA",
-            "latitude": -5.7894,
-            "longitude": -47.4689,
-            "chuva24h": 0,
-            "atualizadoEm": "26/06/2026 a 27/06/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          },
-          {
-            "id": "ANA-547007",
-            "codigo": "547007",
-            "nome": "PRAIA NORTE_Prefeitura Municipal",
-            "municipio": "PRAIA NORTE",
-            "fonte": "ANA",
-            "latitude": -5.3956,
-            "longitude": -47.8114,
-            "chuva24h": 0,
-            "atualizadoEm": "26/06/2026 a 27/06/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          },
-          {
-            "id": "ANA-547008",
-            "codigo": "547008",
-            "nome": "SÃO MIGUEL DO TOCANTINS_Centro Cultural",
-            "municipio": "SÃO MIGUEL DO TOCAN",
-            "fonte": "ANA",
-            "latitude": -5.5525,
-            "longitude": -47.5775,
-            "chuva24h": 0,
-            "atualizadoEm": "26/06/2026 a 27/06/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          },
-          {
-            "id": "ANA-548000",
-            "codigo": "548000",
-            "nome": "ARAGUATINS",
-            "municipio": "ARAGUATINS",
-            "fonte": "ANA",
-            "latitude": -5.6483,
-            "longitude": -48.125,
-            "chuva24h": 0,
-            "atualizadoEm": "26/06/2026 a 27/06/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          },
-          {
-            "id": "ANA-548007",
-            "codigo": "548007",
-            "nome": "SÃO SEBASTIÃO DO TOCANTINS_Viveiro Municipal",
-            "municipio": "SÃO SEBASTIÃO DO TO",
-            "fonte": "ANA",
-            "latitude": -5.2617,
-            "longitude": -48.2025,
-            "chuva24h": 0,
-            "atualizadoEm": "26/06/2026 a 27/06/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          },
-          {
-            "id": "ANA-548009",
-            "codigo": "548009",
-            "nome": "RIO SÃO MARTINHO",
-            "municipio": "ARAGUATINS",
-            "fonte": "ANA",
-            "latitude": -5.78905,
-            "longitude": -48.1781,
-            "chuva24h": 0,
-            "atualizadoEm": "26/06/2026 a 27/06/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          },
-          {
-            "id": "ANA-647010",
-            "codigo": "647010",
-            "nome": "UHE ESTREITO JUSANTE",
-            "municipio": "TOCANTINÓPOLIS",
-            "fonte": "ANA",
-            "latitude": -6.2889,
-            "longitude": -47.3917,
-            "chuva24h": 0,
-            "atualizadoEm": "26/06/2026 a 27/06/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          },
-          {
-            "id": "ANA-648012",
-            "codigo": "648012",
-            "nome": "RIO PIRANHAS - SÃO BENTO DO TOCANTINS",
-            "municipio": "SÃO BENTO DO TOCANT",
-            "fonte": "ANA",
-            "latitude": -6.0442,
-            "longitude": -48.1983,
-            "chuva24h": 0,
-            "atualizadoEm": "26/06/2026 a 27/06/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          },
-          {
-            "id": "ANA-747010",
-            "codigo": "747010",
-            "nome": "UHE ESTREITO RIO MANOEL ALVES GRANDE",
-            "municipio": "GOIATINS",
-            "fonte": "ANA",
-            "latitude": -7.7083,
-            "longitude": -47.3108,
-            "chuva24h": 0,
-            "atualizadoEm": "26/06/2026 a 27/06/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          },
-          {
-            "id": "ANA-748004",
-            "codigo": "748004",
-            "nome": "ARAGUAINA",
-            "municipio": "ARAGOMINAS",
-            "fonte": "ANA",
-            "latitude": -7.1039,
-            "longitude": -48.2014,
-            "chuva24h": 0,
-            "atualizadoEm": "26/06/2026 a 27/06/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          },
-          {
-            "id": "ANA-847006",
-            "codigo": "847006",
-            "nome": "RIO MANUEL ALVES PEQUENO - ITACAJÁ",
-            "municipio": "ITACAJÁ",
-            "fonte": "ANA",
-            "latitude": -8.3917,
-            "longitude": -47.7661,
-            "chuva24h": 0,
-            "atualizadoEm": "26/06/2026 a 27/06/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          }
-        ]
+        "status": "error",
+        "label": "Erro de consulta",
+        "observacao": "Falha ao consultar a fonte no workflow: fetch failed",
+        "estacoesCadastradas": 0,
+        "estacoesConsultadas": 0,
+        "estacoesComLeitura": 0,
+        "atualizadoEm": null,
+        "estacoes": []
       },
       "SEMARH": {
         "source": "SEMARH",
@@ -2929,6 +5928,9 @@
         "estacoes": []
       }
     },
-    "erros": {}
+    "erros": {
+      "INMET": "fetch failed",
+      "ANA": "fetch failed"
+    }
   }
 }
