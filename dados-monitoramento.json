@@ -1,13 +1,13 @@
 {
-  "atualizado_em": "2026-08-13T08:26:24.418Z",
+  "atualizado_em": "2026-08-13T10:15:18.709Z",
   "resumo": {
     "alertas_cemaden_to": 0,
     "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
     "estacoes_fluviometricas_ana": null,
-    "focos_calor_24h": 73,
+    "focos_calor_24h": 263,
     "area_queimada_ano_ha": 245000,
-    "chuva_24h_mm": 0.4,
-    "estacoes_operando": 38,
+    "chuva_24h_mm": 0.2,
+    "estacoes_operando": 49,
     "avisos_inmet_to_hoje": 1,
     "avisos_inmet_to_futuro": 0,
     "avisos_inmet_to_severidade_maxima": "Perigo Potencial",
@@ -26,7 +26,7 @@
     {
       "icon": "cloud-rain",
       "label": "Chuvas",
-      "description": "0,4 mm acumulados nas últimas 24h",
+      "description": "0,2 mm acumulados nas últimas 24h",
       "value": "Monitoramento"
     },
     {
@@ -38,19 +38,19 @@
     {
       "icon": "flame",
       "label": "Focos de calor",
-      "description": "73 focos registrados no arquivo diário do INPE",
+      "description": "263 focos registrados no arquivo diário do INPE",
       "value": "Ativo"
     },
     {
       "icon": "radio-tower",
       "label": "Rede operacional",
-      "description": "38 estacoes ou pontos em acompanhamento",
+      "description": "49 estacoes ou pontos em acompanhamento",
       "value": "24h"
     }
   ],
   "fontes": {
     "alertas": "CEMADEN",
-    "chuva": "CEMADEN",
+    "chuva": "CEMADEN / ANA",
     "rios": "ANA / Telemetria",
     "focos": "INPE Queimadas",
     "area_queimada": "MapBiomas Fogo / INPE AQ",
@@ -1774,11 +1774,11 @@
   },
   "focos_calor": {
     "status": "ok",
-    "quantidade24h": 73,
-    "quantidadeMapa": 73,
+    "quantidade24h": 263,
+    "quantidadeMapa": 263,
     "periodo": "Arquivo diario INPE",
     "fonte": "INPE Queimadas",
-    "atualizadoEm": "2026-08-13T08:26:08.594Z",
+    "atualizadoEm": "2026-08-13T10:14:53.615Z",
     "referenciaArquivo": "20260813",
     "csv_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/focos_diario_br_20260813.csv",
     "observacao": "Dados filtrados para o Tocantins a partir do arquivo diario Brasil do INPE Queimadas.",
@@ -2365,6 +2365,1526 @@
         "municipio": "GURUPI",
         "satelite": "NOAA-21",
         "data_hora_gmt": "2026-08-13 03:57:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.33509,
+        "longitude": -47.45852,
+        "municipio": "RIO SONO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.74196,
+        "longitude": -47.91499,
+        "municipio": "MONTE DO CARMO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.47956,
+        "longitude": -46.60928,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9401,
+        "longitude": -46.33364,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.09596,
+        "longitude": -47.80284,
+        "municipio": "SILVANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.34036,
+        "longitude": -47.44782,
+        "municipio": "RIO SONO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9418,
+        "longitude": -46.32304,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.34379,
+        "longitude": -47.44838,
+        "municipio": "RIO SONO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.0857,
+        "longitude": -47.80098,
+        "municipio": "SILVANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.48289,
+        "longitude": -46.60985,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.05222,
+        "longitude": -47.47395,
+        "municipio": "CENTENÁRIO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.99977,
+        "longitude": -46.38677,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.74132,
+        "longitude": -47.91886,
+        "municipio": "MONTE DO CARMO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.09877,
+        "longitude": -47.18402,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.00472,
+        "longitude": -46.39848,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.05628,
+        "longitude": -47.47077,
+        "municipio": "CENTENÁRIO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.71585,
+        "longitude": -47.03246,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.92226,
+        "longitude": -48.75185,
+        "municipio": "BARROLÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.01524,
+        "longitude": -46.39655,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.66689,
+        "longitude": -48.73825,
+        "municipio": "GURUPI",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.66757,
+        "longitude": -48.73424,
+        "municipio": "GURUPI",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.09316,
+        "longitude": -47.79844,
+        "municipio": "SILVANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.93734,
+        "longitude": -46.32957,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.69106,
+        "longitude": -50.48091,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.01856,
+        "longitude": -46.39708,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.00916,
+        "longitude": -46.39193,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.4738,
+        "longitude": -48.26926,
+        "municipio": "SANTA ROSA DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.74479,
+        "longitude": -47.91934,
+        "municipio": "MONTE DO CARMO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.69128,
+        "longitude": -50.48424,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.11785,
+        "longitude": -47.17242,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.30459,
+        "longitude": -47.51542,
+        "municipio": "RIO SONO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.09192,
+        "longitude": -47.80597,
+        "municipio": "SILVANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.71861,
+        "longitude": -47.0366,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.93791,
+        "longitude": -46.32605,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.78501,
+        "longitude": -47.44322,
+        "municipio": "ITACAJÁ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.09254,
+        "longitude": -47.80222,
+        "municipio": "SILVANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.94342,
+        "longitude": -46.33418,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.01192,
+        "longitude": -46.39602,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.94067,
+        "longitude": -46.33011,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.57283,
+        "longitude": -46.35604,
+        "municipio": "MATEIROS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.76968,
+        "longitude": -48.74582,
+        "municipio": "BARROLÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.81826,
+        "longitude": -50.3284,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.33975,
+        "longitude": -47.45158,
+        "municipio": "RIO SONO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.08913,
+        "longitude": -47.80158,
+        "municipio": "SILVANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.84988,
+        "longitude": -50.23973,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.0885,
+        "longitude": -47.80534,
+        "municipio": "SILVANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.72515,
+        "longitude": -47.05981,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.48014,
+        "longitude": -46.60573,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.10212,
+        "longitude": -47.18457,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.11961,
+        "longitude": -47.1731,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.94399,
+        "longitude": -46.33065,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.94345,
+        "longitude": -47.41125,
+        "municipio": "ALMAS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.94753,
+        "longitude": -47.32232,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.34784,
+        "longitude": -47.44519,
+        "municipio": "RIO SONO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.3217,
+        "longitude": -47.47566,
+        "municipio": "RIO SONO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.69475,
+        "longitude": -47.04398,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.47681,
+        "longitude": -46.60516,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.84903,
+        "longitude": -50.2446,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.30115,
+        "longitude": -47.51486,
+        "municipio": "RIO SONO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.02244,
+        "longitude": -46.39408,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.91583,
+        "longitude": -48.76782,
+        "municipio": "BARROLÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.3357,
+        "longitude": -47.45477,
+        "municipio": "RIO SONO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.00252,
+        "longitude": -46.39085,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.32637,
+        "longitude": -47.46869,
+        "municipio": "RIO SONO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.85074,
+        "longitude": -50.23487,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.94042,
+        "longitude": -47.60066,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0086,
+        "longitude": -46.39548,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.94569,
+        "longitude": -46.32003,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.00528,
+        "longitude": -46.39494,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.7125,
+        "longitude": -47.0319,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.08975,
+        "longitude": -47.7978,
+        "municipio": "SILVANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.7218,
+        "longitude": -47.05925,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.69017,
+        "longitude": -50.48597,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.48232,
+        "longitude": -46.6134,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.95214,
+        "longitude": -47.37906,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.03559,
+        "longitude": -47.51016,
+        "municipio": "CENTENÁRIO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.2402,
+        "longitude": -48.34681,
+        "municipio": "PALMAS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.6914,
+        "longitude": -47.04342,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.81353,
+        "longitude": -50.33267,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.94512,
+        "longitude": -46.32357,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.94123,
+        "longitude": -46.32658,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.33631,
+        "longitude": -47.45102,
+        "municipio": "RIO SONO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.00584,
+        "longitude": -46.39139,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9992,
+        "longitude": -46.39032,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.46626,
+        "longitude": -46.60703,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.32109,
+        "longitude": -47.47942,
+        "municipio": "RIO SONO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.32576,
+        "longitude": -47.47245,
+        "municipio": "RIO SONO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.84876,
+        "longitude": -50.24274,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.91655,
+        "longitude": -48.76361,
+        "municipio": "BARROLÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.57343,
+        "longitude": -48.38065,
+        "municipio": "TOCANTÍNIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.76606,
+        "longitude": -48.74521,
+        "municipio": "BARROLÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.74542,
+        "longitude": -47.9155,
+        "municipio": "MONTE DO CARMO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.04877,
+        "longitude": -47.47338,
+        "municipio": "CENTENÁRIO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.00804,
+        "longitude": -46.39901,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.01912,
+        "longitude": -46.39354,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.7748,
+        "longitude": -48.82624,
+        "municipio": "PEIXE",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.72196,
+        "longitude": -47.03716,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.15996,
+        "longitude": -50.1283,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:34:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.35166,
+        "longitude": -48.20439,
+        "municipio": "PARANÃ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:34:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.30733,
+        "longitude": -49.99377,
+        "municipio": "SANDOLÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:34:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.72874,
+        "longitude": -48.43899,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:34:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.73219,
+        "longitude": -48.43962,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:34:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.7233,
+        "longitude": -48.45029,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:34:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.71986,
+        "longitude": -48.44962,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:34:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.71708,
+        "longitude": -48.44495,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:34:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.15997,
+        "longitude": -50.12558,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:34:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.34821,
+        "longitude": -48.20382,
+        "municipio": "PARANÃ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:34:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.65047,
+        "longitude": -47.64133,
+        "municipio": "PARANÃ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:34:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.65537,
+        "longitude": -47.09275,
+        "municipio": "ARRAIAS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:34:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.14213,
+        "longitude": -48.26818,
+        "municipio": "PEIXE",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-13 04:34:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.05436,
+        "longitude": -47.47176,
+        "municipio": "CENTENÁRIO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.81602,
+        "longitude": -50.33263,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.85018,
+        "longitude": -50.24553,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.03509,
+        "longitude": -47.51096,
+        "municipio": "CENTENÁRIO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.72075,
+        "longitude": -48.44926,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.91552,
+        "longitude": -48.76736,
+        "municipio": "BARROLÂNDIA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.47299,
+        "longitude": -48.26974,
+        "municipio": "SANTA ROSA DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.74485,
+        "longitude": -50.13529,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.33647,
+        "longitude": -47.45244,
+        "municipio": "RIO SONO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.71252,
+        "longitude": -47.0336,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.93979,
+        "longitude": -46.33648,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.66415,
+        "longitude": -48.73395,
+        "municipio": "GURUPI",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.01953,
+        "longitude": -46.3969,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.01101,
+        "longitude": -46.39498,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.30754,
+        "longitude": -49.99651,
+        "municipio": "SANDOLÂNDIA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.34105,
+        "longitude": -47.44816,
+        "municipio": "RIO SONO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.74283,
+        "longitude": -47.92041,
+        "municipio": "MONTE DO CARMO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.72594,
+        "longitude": -47.05832,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.94032,
+        "longitude": -46.3325,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.08378,
+        "longitude": -47.80132,
+        "municipio": "SILVANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.84846,
+        "longitude": -50.23366,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.73968,
+        "longitude": -47.91497,
+        "municipio": "MONTE DO CARMO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.01267,
+        "longitude": -46.39786,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.77392,
+        "longitude": -48.8256,
+        "municipio": "PEIXE",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.00673,
+        "longitude": -46.39417,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.72132,
+        "longitude": -47.06142,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.57202,
+        "longitude": -46.35827,
+        "municipio": "MATEIROS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.85418,
+        "longitude": -50.24228,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.33718,
+        "longitude": -47.44756,
+        "municipio": "RIO SONO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.82,
+        "longitude": -50.32942,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.34492,
+        "longitude": -47.44877,
+        "municipio": "RIO SONO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.71302,
+        "longitude": -47.02988,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.33575,
+        "longitude": -47.45735,
+        "municipio": "RIO SONO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.71756,
+        "longitude": -48.44429,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.95492,
+        "longitude": -47.38162,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.69209,
+        "longitude": -50.48163,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.76957,
+        "longitude": -48.74591,
+        "municipio": "BARROLÂNDIA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.32588,
+        "longitude": -47.47079,
+        "municipio": "RIO SONO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.01047,
+        "longitude": -46.39888,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.71796,
+        "longitude": -47.03504,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.48106,
+        "longitude": -46.60994,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.32659,
+        "longitude": -47.46594,
+        "municipio": "RIO SONO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.00621,
+        "longitude": -46.39793,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.01746,
+        "longitude": -46.39492,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.6672,
+        "longitude": -48.73898,
+        "municipio": "GURUPI",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.47733,
+        "longitude": -46.60575,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.72543,
+        "longitude": -47.06203,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.08767,
+        "longitude": -47.80191,
+        "municipio": "SILVANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.01693,
+        "longitude": -46.39894,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.94409,
+        "longitude": -46.33723,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.00567,
+        "longitude": -46.40183,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.92171,
+        "longitude": -48.7508,
+        "municipio": "BARROLÂNDIA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.6635,
+        "longitude": -48.73843,
+        "municipio": "GURUPI",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.15819,
+        "longitude": -50.12768,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.74349,
+        "longitude": -47.91571,
+        "municipio": "MONTE DO CARMO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.01472,
+        "longitude": -46.39991,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.91615,
+        "longitude": -48.76315,
+        "municipio": "BARROLÂNDIA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.71438,
+        "longitude": -47.0307,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.76595,
+        "longitude": -48.74535,
+        "municipio": "BARROLÂNDIA",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.95139,
+        "longitude": -47.37744,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.33188,
+        "longitude": -47.45675,
+        "municipio": "RIO SONO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.47681,
+        "longitude": -46.60958,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.81658,
+        "longitude": -50.32888,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.48053,
+        "longitude": -46.61382,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.85189,
+        "longitude": -50.23419,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.09157,
+        "longitude": -47.80235,
+        "municipio": "SILVANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.09547,
+        "longitude": -47.80279,
+        "municipio": "SILVANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.71385,
+        "longitude": -47.03442,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.00724,
+        "longitude": -46.39054,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.14078,
+        "longitude": -48.27056,
+        "municipio": "PEIXE",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.34564,
+        "longitude": -47.44387,
+        "municipio": "RIO SONO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3509,
+        "longitude": -48.20201,
+        "municipio": "PARANÃ",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.71663,
+        "longitude": -47.03423,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.94085,
+        "longitude": -46.32857,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.09878,
+        "longitude": -47.18571,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.04849,
+        "longitude": -47.47377,
+        "municipio": "CENTENÁRIO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.05235,
+        "longitude": -47.47434,
+        "municipio": "CENTENÁRIO",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-08-13 04:53:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.93787,
+        "longitude": -46.31642,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "AQUA_M-M",
+        "data_hora_gmt": "2026-08-13 06:54:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.93517,
+        "longitude": -46.32071,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "AQUA_M-M",
+        "data_hora_gmt": "2026-08-13 06:54:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.93579,
+        "longitude": -46.33182,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "AQUA_M-M",
+        "data_hora_gmt": "2026-08-13 06:54:00",
         "bioma": "Cerrado"
       }
     ],
@@ -3682,6 +5202,3426 @@
           "data_hora_gmt": "2026-08-13 03:57:00",
           "bioma": "Cerrado"
         }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.45852,
+            -9.33509
+          ]
+        },
+        "properties": {
+          "latitude": -9.33509,
+          "longitude": -47.45852,
+          "municipio": "RIO SONO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.91499,
+            -10.74196
+          ]
+        },
+        "properties": {
+          "latitude": -10.74196,
+          "longitude": -47.91499,
+          "municipio": "MONTE DO CARMO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.60928,
+            -11.47956
+          ]
+        },
+        "properties": {
+          "latitude": -11.47956,
+          "longitude": -46.60928,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.33364,
+            -11.9401
+          ]
+        },
+        "properties": {
+          "latitude": -11.9401,
+          "longitude": -46.33364,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.80284,
+            -11.09596
+          ]
+        },
+        "properties": {
+          "latitude": -11.09596,
+          "longitude": -47.80284,
+          "municipio": "SILVANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.44782,
+            -9.34036
+          ]
+        },
+        "properties": {
+          "latitude": -9.34036,
+          "longitude": -47.44782,
+          "municipio": "RIO SONO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.32304,
+            -11.9418
+          ]
+        },
+        "properties": {
+          "latitude": -11.9418,
+          "longitude": -46.32304,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.44838,
+            -9.34379
+          ]
+        },
+        "properties": {
+          "latitude": -9.34379,
+          "longitude": -47.44838,
+          "municipio": "RIO SONO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.80098,
+            -11.0857
+          ]
+        },
+        "properties": {
+          "latitude": -11.0857,
+          "longitude": -47.80098,
+          "municipio": "SILVANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.60985,
+            -11.48289
+          ]
+        },
+        "properties": {
+          "latitude": -11.48289,
+          "longitude": -46.60985,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.47395,
+            -9.05222
+          ]
+        },
+        "properties": {
+          "latitude": -9.05222,
+          "longitude": -47.47395,
+          "municipio": "CENTENÁRIO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.38677,
+            -11.99977
+          ]
+        },
+        "properties": {
+          "latitude": -11.99977,
+          "longitude": -46.38677,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.91886,
+            -10.74132
+          ]
+        },
+        "properties": {
+          "latitude": -10.74132,
+          "longitude": -47.91886,
+          "municipio": "MONTE DO CARMO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.18402,
+            -12.09877
+          ]
+        },
+        "properties": {
+          "latitude": -12.09877,
+          "longitude": -47.18402,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39848,
+            -12.00472
+          ]
+        },
+        "properties": {
+          "latitude": -12.00472,
+          "longitude": -46.39848,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.47077,
+            -9.05628
+          ]
+        },
+        "properties": {
+          "latitude": -9.05628,
+          "longitude": -47.47077,
+          "municipio": "CENTENÁRIO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.03246,
+            -11.71585
+          ]
+        },
+        "properties": {
+          "latitude": -11.71585,
+          "longitude": -47.03246,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.75185,
+            -9.92226
+          ]
+        },
+        "properties": {
+          "latitude": -9.92226,
+          "longitude": -48.75185,
+          "municipio": "BARROLÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39655,
+            -12.01524
+          ]
+        },
+        "properties": {
+          "latitude": -12.01524,
+          "longitude": -46.39655,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.73825,
+            -11.66689
+          ]
+        },
+        "properties": {
+          "latitude": -11.66689,
+          "longitude": -48.73825,
+          "municipio": "GURUPI",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.73424,
+            -11.66757
+          ]
+        },
+        "properties": {
+          "latitude": -11.66757,
+          "longitude": -48.73424,
+          "municipio": "GURUPI",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.79844,
+            -11.09316
+          ]
+        },
+        "properties": {
+          "latitude": -11.09316,
+          "longitude": -47.79844,
+          "municipio": "SILVANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.32957,
+            -11.93734
+          ]
+        },
+        "properties": {
+          "latitude": -11.93734,
+          "longitude": -46.32957,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.48091,
+            -10.69106
+          ]
+        },
+        "properties": {
+          "latitude": -10.69106,
+          "longitude": -50.48091,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39708,
+            -12.01856
+          ]
+        },
+        "properties": {
+          "latitude": -12.01856,
+          "longitude": -46.39708,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39193,
+            -12.00916
+          ]
+        },
+        "properties": {
+          "latitude": -12.00916,
+          "longitude": -46.39193,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.26926,
+            -11.4738
+          ]
+        },
+        "properties": {
+          "latitude": -11.4738,
+          "longitude": -48.26926,
+          "municipio": "SANTA ROSA DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.91934,
+            -10.74479
+          ]
+        },
+        "properties": {
+          "latitude": -10.74479,
+          "longitude": -47.91934,
+          "municipio": "MONTE DO CARMO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.48424,
+            -10.69128
+          ]
+        },
+        "properties": {
+          "latitude": -10.69128,
+          "longitude": -50.48424,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.17242,
+            -12.11785
+          ]
+        },
+        "properties": {
+          "latitude": -12.11785,
+          "longitude": -47.17242,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.51542,
+            -9.30459
+          ]
+        },
+        "properties": {
+          "latitude": -9.30459,
+          "longitude": -47.51542,
+          "municipio": "RIO SONO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.80597,
+            -11.09192
+          ]
+        },
+        "properties": {
+          "latitude": -11.09192,
+          "longitude": -47.80597,
+          "municipio": "SILVANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0366,
+            -11.71861
+          ]
+        },
+        "properties": {
+          "latitude": -11.71861,
+          "longitude": -47.0366,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.32605,
+            -11.93791
+          ]
+        },
+        "properties": {
+          "latitude": -11.93791,
+          "longitude": -46.32605,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.44322,
+            -8.78501
+          ]
+        },
+        "properties": {
+          "latitude": -8.78501,
+          "longitude": -47.44322,
+          "municipio": "ITACAJÁ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.80222,
+            -11.09254
+          ]
+        },
+        "properties": {
+          "latitude": -11.09254,
+          "longitude": -47.80222,
+          "municipio": "SILVANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.33418,
+            -11.94342
+          ]
+        },
+        "properties": {
+          "latitude": -11.94342,
+          "longitude": -46.33418,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39602,
+            -12.01192
+          ]
+        },
+        "properties": {
+          "latitude": -12.01192,
+          "longitude": -46.39602,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.33011,
+            -11.94067
+          ]
+        },
+        "properties": {
+          "latitude": -11.94067,
+          "longitude": -46.33011,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.35604,
+            -10.57283
+          ]
+        },
+        "properties": {
+          "latitude": -10.57283,
+          "longitude": -46.35604,
+          "municipio": "MATEIROS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.74582,
+            -9.76968
+          ]
+        },
+        "properties": {
+          "latitude": -9.76968,
+          "longitude": -48.74582,
+          "municipio": "BARROLÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.3284,
+            -10.81826
+          ]
+        },
+        "properties": {
+          "latitude": -10.81826,
+          "longitude": -50.3284,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.45158,
+            -9.33975
+          ]
+        },
+        "properties": {
+          "latitude": -9.33975,
+          "longitude": -47.45158,
+          "municipio": "RIO SONO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.80158,
+            -11.08913
+          ]
+        },
+        "properties": {
+          "latitude": -11.08913,
+          "longitude": -47.80158,
+          "municipio": "SILVANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.23973,
+            -10.84988
+          ]
+        },
+        "properties": {
+          "latitude": -10.84988,
+          "longitude": -50.23973,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.80534,
+            -11.0885
+          ]
+        },
+        "properties": {
+          "latitude": -11.0885,
+          "longitude": -47.80534,
+          "municipio": "SILVANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.05981,
+            -11.72515
+          ]
+        },
+        "properties": {
+          "latitude": -11.72515,
+          "longitude": -47.05981,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.60573,
+            -11.48014
+          ]
+        },
+        "properties": {
+          "latitude": -11.48014,
+          "longitude": -46.60573,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.18457,
+            -12.10212
+          ]
+        },
+        "properties": {
+          "latitude": -12.10212,
+          "longitude": -47.18457,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.1731,
+            -12.11961
+          ]
+        },
+        "properties": {
+          "latitude": -12.11961,
+          "longitude": -47.1731,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.33065,
+            -11.94399
+          ]
+        },
+        "properties": {
+          "latitude": -11.94399,
+          "longitude": -46.33065,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.41125,
+            -11.94345
+          ]
+        },
+        "properties": {
+          "latitude": -11.94345,
+          "longitude": -47.41125,
+          "municipio": "ALMAS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.32232,
+            -11.94753
+          ]
+        },
+        "properties": {
+          "latitude": -11.94753,
+          "longitude": -47.32232,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.44519,
+            -9.34784
+          ]
+        },
+        "properties": {
+          "latitude": -9.34784,
+          "longitude": -47.44519,
+          "municipio": "RIO SONO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.47566,
+            -9.3217
+          ]
+        },
+        "properties": {
+          "latitude": -9.3217,
+          "longitude": -47.47566,
+          "municipio": "RIO SONO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.04398,
+            -11.69475
+          ]
+        },
+        "properties": {
+          "latitude": -11.69475,
+          "longitude": -47.04398,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.60516,
+            -11.47681
+          ]
+        },
+        "properties": {
+          "latitude": -11.47681,
+          "longitude": -46.60516,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2446,
+            -10.84903
+          ]
+        },
+        "properties": {
+          "latitude": -10.84903,
+          "longitude": -50.2446,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.51486,
+            -9.30115
+          ]
+        },
+        "properties": {
+          "latitude": -9.30115,
+          "longitude": -47.51486,
+          "municipio": "RIO SONO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39408,
+            -12.02244
+          ]
+        },
+        "properties": {
+          "latitude": -12.02244,
+          "longitude": -46.39408,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.76782,
+            -9.91583
+          ]
+        },
+        "properties": {
+          "latitude": -9.91583,
+          "longitude": -48.76782,
+          "municipio": "BARROLÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.45477,
+            -9.3357
+          ]
+        },
+        "properties": {
+          "latitude": -9.3357,
+          "longitude": -47.45477,
+          "municipio": "RIO SONO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39085,
+            -12.00252
+          ]
+        },
+        "properties": {
+          "latitude": -12.00252,
+          "longitude": -46.39085,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.46869,
+            -9.32637
+          ]
+        },
+        "properties": {
+          "latitude": -9.32637,
+          "longitude": -47.46869,
+          "municipio": "RIO SONO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.23487,
+            -10.85074
+          ]
+        },
+        "properties": {
+          "latitude": -10.85074,
+          "longitude": -50.23487,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.60066,
+            -8.94042
+          ]
+        },
+        "properties": {
+          "latitude": -8.94042,
+          "longitude": -47.60066,
+          "municipio": "BOM JESUS DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39548,
+            -12.0086
+          ]
+        },
+        "properties": {
+          "latitude": -12.0086,
+          "longitude": -46.39548,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.32003,
+            -11.94569
+          ]
+        },
+        "properties": {
+          "latitude": -11.94569,
+          "longitude": -46.32003,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39494,
+            -12.00528
+          ]
+        },
+        "properties": {
+          "latitude": -12.00528,
+          "longitude": -46.39494,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0319,
+            -11.7125
+          ]
+        },
+        "properties": {
+          "latitude": -11.7125,
+          "longitude": -47.0319,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.7978,
+            -11.08975
+          ]
+        },
+        "properties": {
+          "latitude": -11.08975,
+          "longitude": -47.7978,
+          "municipio": "SILVANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.05925,
+            -11.7218
+          ]
+        },
+        "properties": {
+          "latitude": -11.7218,
+          "longitude": -47.05925,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.48597,
+            -10.69017
+          ]
+        },
+        "properties": {
+          "latitude": -10.69017,
+          "longitude": -50.48597,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.6134,
+            -11.48232
+          ]
+        },
+        "properties": {
+          "latitude": -11.48232,
+          "longitude": -46.6134,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.37906,
+            -11.95214
+          ]
+        },
+        "properties": {
+          "latitude": -11.95214,
+          "longitude": -47.37906,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.51016,
+            -9.03559
+          ]
+        },
+        "properties": {
+          "latitude": -9.03559,
+          "longitude": -47.51016,
+          "municipio": "CENTENÁRIO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.34681,
+            -10.2402
+          ]
+        },
+        "properties": {
+          "latitude": -10.2402,
+          "longitude": -48.34681,
+          "municipio": "PALMAS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.04342,
+            -11.6914
+          ]
+        },
+        "properties": {
+          "latitude": -11.6914,
+          "longitude": -47.04342,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.33267,
+            -10.81353
+          ]
+        },
+        "properties": {
+          "latitude": -10.81353,
+          "longitude": -50.33267,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.32357,
+            -11.94512
+          ]
+        },
+        "properties": {
+          "latitude": -11.94512,
+          "longitude": -46.32357,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.32658,
+            -11.94123
+          ]
+        },
+        "properties": {
+          "latitude": -11.94123,
+          "longitude": -46.32658,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.45102,
+            -9.33631
+          ]
+        },
+        "properties": {
+          "latitude": -9.33631,
+          "longitude": -47.45102,
+          "municipio": "RIO SONO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39139,
+            -12.00584
+          ]
+        },
+        "properties": {
+          "latitude": -12.00584,
+          "longitude": -46.39139,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39032,
+            -11.9992
+          ]
+        },
+        "properties": {
+          "latitude": -11.9992,
+          "longitude": -46.39032,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.60703,
+            -11.46626
+          ]
+        },
+        "properties": {
+          "latitude": -11.46626,
+          "longitude": -46.60703,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.47942,
+            -9.32109
+          ]
+        },
+        "properties": {
+          "latitude": -9.32109,
+          "longitude": -47.47942,
+          "municipio": "RIO SONO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.47245,
+            -9.32576
+          ]
+        },
+        "properties": {
+          "latitude": -9.32576,
+          "longitude": -47.47245,
+          "municipio": "RIO SONO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.24274,
+            -10.84876
+          ]
+        },
+        "properties": {
+          "latitude": -10.84876,
+          "longitude": -50.24274,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.76361,
+            -9.91655
+          ]
+        },
+        "properties": {
+          "latitude": -9.91655,
+          "longitude": -48.76361,
+          "municipio": "BARROLÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.38065,
+            -9.57343
+          ]
+        },
+        "properties": {
+          "latitude": -9.57343,
+          "longitude": -48.38065,
+          "municipio": "TOCANTÍNIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.74521,
+            -9.76606
+          ]
+        },
+        "properties": {
+          "latitude": -9.76606,
+          "longitude": -48.74521,
+          "municipio": "BARROLÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.9155,
+            -10.74542
+          ]
+        },
+        "properties": {
+          "latitude": -10.74542,
+          "longitude": -47.9155,
+          "municipio": "MONTE DO CARMO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.47338,
+            -9.04877
+          ]
+        },
+        "properties": {
+          "latitude": -9.04877,
+          "longitude": -47.47338,
+          "municipio": "CENTENÁRIO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39901,
+            -12.00804
+          ]
+        },
+        "properties": {
+          "latitude": -12.00804,
+          "longitude": -46.39901,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39354,
+            -12.01912
+          ]
+        },
+        "properties": {
+          "latitude": -12.01912,
+          "longitude": -46.39354,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.82624,
+            -11.7748
+          ]
+        },
+        "properties": {
+          "latitude": -11.7748,
+          "longitude": -48.82624,
+          "municipio": "PEIXE",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.03716,
+            -11.72196
+          ]
+        },
+        "properties": {
+          "latitude": -11.72196,
+          "longitude": -47.03716,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.1283,
+            -12.15996
+          ]
+        },
+        "properties": {
+          "latitude": -12.15996,
+          "longitude": -50.1283,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:34:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.20439,
+            -12.35166
+          ]
+        },
+        "properties": {
+          "latitude": -12.35166,
+          "longitude": -48.20439,
+          "municipio": "PARANÃ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:34:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.99377,
+            -12.30733
+          ]
+        },
+        "properties": {
+          "latitude": -12.30733,
+          "longitude": -49.99377,
+          "municipio": "SANDOLÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:34:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.43899,
+            -12.72874
+          ]
+        },
+        "properties": {
+          "latitude": -12.72874,
+          "longitude": -48.43899,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:34:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.43962,
+            -12.73219
+          ]
+        },
+        "properties": {
+          "latitude": -12.73219,
+          "longitude": -48.43962,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:34:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.45029,
+            -12.7233
+          ]
+        },
+        "properties": {
+          "latitude": -12.7233,
+          "longitude": -48.45029,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:34:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.44962,
+            -12.71986
+          ]
+        },
+        "properties": {
+          "latitude": -12.71986,
+          "longitude": -48.44962,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:34:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.44495,
+            -12.71708
+          ]
+        },
+        "properties": {
+          "latitude": -12.71708,
+          "longitude": -48.44495,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:34:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.12558,
+            -12.15997
+          ]
+        },
+        "properties": {
+          "latitude": -12.15997,
+          "longitude": -50.12558,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:34:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.20382,
+            -12.34821
+          ]
+        },
+        "properties": {
+          "latitude": -12.34821,
+          "longitude": -48.20382,
+          "municipio": "PARANÃ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:34:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.64133,
+            -12.65047
+          ]
+        },
+        "properties": {
+          "latitude": -12.65047,
+          "longitude": -47.64133,
+          "municipio": "PARANÃ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:34:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.09275,
+            -12.65537
+          ]
+        },
+        "properties": {
+          "latitude": -12.65537,
+          "longitude": -47.09275,
+          "municipio": "ARRAIAS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:34:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.26818,
+            -12.14213
+          ]
+        },
+        "properties": {
+          "latitude": -12.14213,
+          "longitude": -48.26818,
+          "municipio": "PEIXE",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-13 04:34:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.47176,
+            -9.05436
+          ]
+        },
+        "properties": {
+          "latitude": -9.05436,
+          "longitude": -47.47176,
+          "municipio": "CENTENÁRIO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.33263,
+            -10.81602
+          ]
+        },
+        "properties": {
+          "latitude": -10.81602,
+          "longitude": -50.33263,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.24553,
+            -10.85018
+          ]
+        },
+        "properties": {
+          "latitude": -10.85018,
+          "longitude": -50.24553,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.51096,
+            -9.03509
+          ]
+        },
+        "properties": {
+          "latitude": -9.03509,
+          "longitude": -47.51096,
+          "municipio": "CENTENÁRIO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.44926,
+            -12.72075
+          ]
+        },
+        "properties": {
+          "latitude": -12.72075,
+          "longitude": -48.44926,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.76736,
+            -9.91552
+          ]
+        },
+        "properties": {
+          "latitude": -9.91552,
+          "longitude": -48.76736,
+          "municipio": "BARROLÂNDIA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.26974,
+            -11.47299
+          ]
+        },
+        "properties": {
+          "latitude": -11.47299,
+          "longitude": -48.26974,
+          "municipio": "SANTA ROSA DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.13529,
+            -11.74485
+          ]
+        },
+        "properties": {
+          "latitude": -11.74485,
+          "longitude": -50.13529,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.45244,
+            -9.33647
+          ]
+        },
+        "properties": {
+          "latitude": -9.33647,
+          "longitude": -47.45244,
+          "municipio": "RIO SONO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0336,
+            -11.71252
+          ]
+        },
+        "properties": {
+          "latitude": -11.71252,
+          "longitude": -47.0336,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.33648,
+            -11.93979
+          ]
+        },
+        "properties": {
+          "latitude": -11.93979,
+          "longitude": -46.33648,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.73395,
+            -11.66415
+          ]
+        },
+        "properties": {
+          "latitude": -11.66415,
+          "longitude": -48.73395,
+          "municipio": "GURUPI",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3969,
+            -12.01953
+          ]
+        },
+        "properties": {
+          "latitude": -12.01953,
+          "longitude": -46.3969,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39498,
+            -12.01101
+          ]
+        },
+        "properties": {
+          "latitude": -12.01101,
+          "longitude": -46.39498,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.99651,
+            -12.30754
+          ]
+        },
+        "properties": {
+          "latitude": -12.30754,
+          "longitude": -49.99651,
+          "municipio": "SANDOLÂNDIA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.44816,
+            -9.34105
+          ]
+        },
+        "properties": {
+          "latitude": -9.34105,
+          "longitude": -47.44816,
+          "municipio": "RIO SONO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.92041,
+            -10.74283
+          ]
+        },
+        "properties": {
+          "latitude": -10.74283,
+          "longitude": -47.92041,
+          "municipio": "MONTE DO CARMO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.05832,
+            -11.72594
+          ]
+        },
+        "properties": {
+          "latitude": -11.72594,
+          "longitude": -47.05832,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3325,
+            -11.94032
+          ]
+        },
+        "properties": {
+          "latitude": -11.94032,
+          "longitude": -46.3325,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.80132,
+            -11.08378
+          ]
+        },
+        "properties": {
+          "latitude": -11.08378,
+          "longitude": -47.80132,
+          "municipio": "SILVANÓPOLIS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.23366,
+            -10.84846
+          ]
+        },
+        "properties": {
+          "latitude": -10.84846,
+          "longitude": -50.23366,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.91497,
+            -10.73968
+          ]
+        },
+        "properties": {
+          "latitude": -10.73968,
+          "longitude": -47.91497,
+          "municipio": "MONTE DO CARMO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39786,
+            -12.01267
+          ]
+        },
+        "properties": {
+          "latitude": -12.01267,
+          "longitude": -46.39786,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.8256,
+            -11.77392
+          ]
+        },
+        "properties": {
+          "latitude": -11.77392,
+          "longitude": -48.8256,
+          "municipio": "PEIXE",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39417,
+            -12.00673
+          ]
+        },
+        "properties": {
+          "latitude": -12.00673,
+          "longitude": -46.39417,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.06142,
+            -11.72132
+          ]
+        },
+        "properties": {
+          "latitude": -11.72132,
+          "longitude": -47.06142,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.35827,
+            -10.57202
+          ]
+        },
+        "properties": {
+          "latitude": -10.57202,
+          "longitude": -46.35827,
+          "municipio": "MATEIROS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.24228,
+            -10.85418
+          ]
+        },
+        "properties": {
+          "latitude": -10.85418,
+          "longitude": -50.24228,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.44756,
+            -9.33718
+          ]
+        },
+        "properties": {
+          "latitude": -9.33718,
+          "longitude": -47.44756,
+          "municipio": "RIO SONO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.32942,
+            -10.82
+          ]
+        },
+        "properties": {
+          "latitude": -10.82,
+          "longitude": -50.32942,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.44877,
+            -9.34492
+          ]
+        },
+        "properties": {
+          "latitude": -9.34492,
+          "longitude": -47.44877,
+          "municipio": "RIO SONO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.02988,
+            -11.71302
+          ]
+        },
+        "properties": {
+          "latitude": -11.71302,
+          "longitude": -47.02988,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.45735,
+            -9.33575
+          ]
+        },
+        "properties": {
+          "latitude": -9.33575,
+          "longitude": -47.45735,
+          "municipio": "RIO SONO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.44429,
+            -12.71756
+          ]
+        },
+        "properties": {
+          "latitude": -12.71756,
+          "longitude": -48.44429,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.38162,
+            -11.95492
+          ]
+        },
+        "properties": {
+          "latitude": -11.95492,
+          "longitude": -47.38162,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.48163,
+            -10.69209
+          ]
+        },
+        "properties": {
+          "latitude": -10.69209,
+          "longitude": -50.48163,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.74591,
+            -9.76957
+          ]
+        },
+        "properties": {
+          "latitude": -9.76957,
+          "longitude": -48.74591,
+          "municipio": "BARROLÂNDIA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.47079,
+            -9.32588
+          ]
+        },
+        "properties": {
+          "latitude": -9.32588,
+          "longitude": -47.47079,
+          "municipio": "RIO SONO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39888,
+            -12.01047
+          ]
+        },
+        "properties": {
+          "latitude": -12.01047,
+          "longitude": -46.39888,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.03504,
+            -11.71796
+          ]
+        },
+        "properties": {
+          "latitude": -11.71796,
+          "longitude": -47.03504,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.60994,
+            -11.48106
+          ]
+        },
+        "properties": {
+          "latitude": -11.48106,
+          "longitude": -46.60994,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.46594,
+            -9.32659
+          ]
+        },
+        "properties": {
+          "latitude": -9.32659,
+          "longitude": -47.46594,
+          "municipio": "RIO SONO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39793,
+            -12.00621
+          ]
+        },
+        "properties": {
+          "latitude": -12.00621,
+          "longitude": -46.39793,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39492,
+            -12.01746
+          ]
+        },
+        "properties": {
+          "latitude": -12.01746,
+          "longitude": -46.39492,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.73898,
+            -11.6672
+          ]
+        },
+        "properties": {
+          "latitude": -11.6672,
+          "longitude": -48.73898,
+          "municipio": "GURUPI",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.60575,
+            -11.47733
+          ]
+        },
+        "properties": {
+          "latitude": -11.47733,
+          "longitude": -46.60575,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.06203,
+            -11.72543
+          ]
+        },
+        "properties": {
+          "latitude": -11.72543,
+          "longitude": -47.06203,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.80191,
+            -11.08767
+          ]
+        },
+        "properties": {
+          "latitude": -11.08767,
+          "longitude": -47.80191,
+          "municipio": "SILVANÓPOLIS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39894,
+            -12.01693
+          ]
+        },
+        "properties": {
+          "latitude": -12.01693,
+          "longitude": -46.39894,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.33723,
+            -11.94409
+          ]
+        },
+        "properties": {
+          "latitude": -11.94409,
+          "longitude": -46.33723,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.40183,
+            -12.00567
+          ]
+        },
+        "properties": {
+          "latitude": -12.00567,
+          "longitude": -46.40183,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.7508,
+            -9.92171
+          ]
+        },
+        "properties": {
+          "latitude": -9.92171,
+          "longitude": -48.7508,
+          "municipio": "BARROLÂNDIA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.73843,
+            -11.6635
+          ]
+        },
+        "properties": {
+          "latitude": -11.6635,
+          "longitude": -48.73843,
+          "municipio": "GURUPI",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.12768,
+            -12.15819
+          ]
+        },
+        "properties": {
+          "latitude": -12.15819,
+          "longitude": -50.12768,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.91571,
+            -10.74349
+          ]
+        },
+        "properties": {
+          "latitude": -10.74349,
+          "longitude": -47.91571,
+          "municipio": "MONTE DO CARMO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39991,
+            -12.01472
+          ]
+        },
+        "properties": {
+          "latitude": -12.01472,
+          "longitude": -46.39991,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.76315,
+            -9.91615
+          ]
+        },
+        "properties": {
+          "latitude": -9.91615,
+          "longitude": -48.76315,
+          "municipio": "BARROLÂNDIA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0307,
+            -11.71438
+          ]
+        },
+        "properties": {
+          "latitude": -11.71438,
+          "longitude": -47.0307,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.74535,
+            -9.76595
+          ]
+        },
+        "properties": {
+          "latitude": -9.76595,
+          "longitude": -48.74535,
+          "municipio": "BARROLÂNDIA",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.37744,
+            -11.95139
+          ]
+        },
+        "properties": {
+          "latitude": -11.95139,
+          "longitude": -47.37744,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.45675,
+            -9.33188
+          ]
+        },
+        "properties": {
+          "latitude": -9.33188,
+          "longitude": -47.45675,
+          "municipio": "RIO SONO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.60958,
+            -11.47681
+          ]
+        },
+        "properties": {
+          "latitude": -11.47681,
+          "longitude": -46.60958,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.32888,
+            -10.81658
+          ]
+        },
+        "properties": {
+          "latitude": -10.81658,
+          "longitude": -50.32888,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.61382,
+            -11.48053
+          ]
+        },
+        "properties": {
+          "latitude": -11.48053,
+          "longitude": -46.61382,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.23419,
+            -10.85189
+          ]
+        },
+        "properties": {
+          "latitude": -10.85189,
+          "longitude": -50.23419,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.80235,
+            -11.09157
+          ]
+        },
+        "properties": {
+          "latitude": -11.09157,
+          "longitude": -47.80235,
+          "municipio": "SILVANÓPOLIS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.80279,
+            -11.09547
+          ]
+        },
+        "properties": {
+          "latitude": -11.09547,
+          "longitude": -47.80279,
+          "municipio": "SILVANÓPOLIS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.03442,
+            -11.71385
+          ]
+        },
+        "properties": {
+          "latitude": -11.71385,
+          "longitude": -47.03442,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.39054,
+            -12.00724
+          ]
+        },
+        "properties": {
+          "latitude": -12.00724,
+          "longitude": -46.39054,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.27056,
+            -12.14078
+          ]
+        },
+        "properties": {
+          "latitude": -12.14078,
+          "longitude": -48.27056,
+          "municipio": "PEIXE",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.44387,
+            -9.34564
+          ]
+        },
+        "properties": {
+          "latitude": -9.34564,
+          "longitude": -47.44387,
+          "municipio": "RIO SONO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.20201,
+            -12.3509
+          ]
+        },
+        "properties": {
+          "latitude": -12.3509,
+          "longitude": -48.20201,
+          "municipio": "PARANÃ",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.03423,
+            -11.71663
+          ]
+        },
+        "properties": {
+          "latitude": -11.71663,
+          "longitude": -47.03423,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.32857,
+            -11.94085
+          ]
+        },
+        "properties": {
+          "latitude": -11.94085,
+          "longitude": -46.32857,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.18571,
+            -12.09878
+          ]
+        },
+        "properties": {
+          "latitude": -12.09878,
+          "longitude": -47.18571,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.47377,
+            -9.04849
+          ]
+        },
+        "properties": {
+          "latitude": -9.04849,
+          "longitude": -47.47377,
+          "municipio": "CENTENÁRIO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.47434,
+            -9.05235
+          ]
+        },
+        "properties": {
+          "latitude": -9.05235,
+          "longitude": -47.47434,
+          "municipio": "CENTENÁRIO",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-08-13 04:53:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.31642,
+            -11.93787
+          ]
+        },
+        "properties": {
+          "latitude": -11.93787,
+          "longitude": -46.31642,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "AQUA_M-M",
+          "data_hora_gmt": "2026-08-13 06:54:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.32071,
+            -11.93517
+          ]
+        },
+        "properties": {
+          "latitude": -11.93517,
+          "longitude": -46.32071,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "AQUA_M-M",
+          "data_hora_gmt": "2026-08-13 06:54:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.33182,
+            -11.93579
+          ]
+        },
+        "properties": {
+          "latitude": -11.93579,
+          "longitude": -46.33182,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "AQUA_M-M",
+          "data_hora_gmt": "2026-08-13 06:54:00",
+          "bioma": "Cerrado"
+        }
       }
     ]
   },
@@ -3763,21 +8703,21 @@
     "mes_final": 6,
     "periodo": "Janeiro a junho de 2026",
     "area_queimada_ha": 322182.98,
-    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/937c59d6315b8200d63b6ed80ff561b9-ea2410a200c8317d6fb9db5e3778cc6e/tiles/{z}/{x}/{y}",
+    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/937c59d6315b8200d63b6ed80ff561b9-24b621303fb54a2305c87d379c0f845d/tiles/{z}/{x}/{y}",
     "unidade": "ha",
     "natureza": "Cicatrizes de área queimada mapeadas pelo Monitor do Fogo."
   },
   "chuva_observada": {
     "status": "ok",
     "periodo": "ultimas 24h",
-    "fonte": "CEMADEN",
-    "atualizadoEm": "2026-08-13T08:26:18.602Z",
-    "maiorAcumulado": 0.4,
-    "estacaoMaiorAcumulado": "Centro",
-    "municipioMaiorAcumulado": "XAMBIOÁ",
-    "estacoesCadastradas": 58,
-    "estacoesConsultadas": 58,
-    "estacoesComLeitura": 38,
+    "fonte": "CEMADEN / ANA",
+    "atualizadoEm": "2026-08-13T10:15:09.858Z",
+    "maiorAcumulado": 0.2,
+    "estacaoMaiorAcumulado": "Prefeitura Municipal",
+    "municipioMaiorAcumulado": "ARAGUANÃ",
+    "estacoesCadastradas": 233,
+    "estacoesConsultadas": 233,
+    "estacoesComLeitura": 49,
     "acima10": 0,
     "acima30": 0,
     "acima50": 0,
@@ -3790,7 +8730,7 @@
         "estacoesCadastradas": 38,
         "estacoesConsultadas": 38,
         "estacoesComLeitura": 38,
-        "atualizadoEm": "2026-08-13 08:24:37 UTC",
+        "atualizadoEm": "2026-08-13 10:14:39 UTC",
         "estacoes": [
           {
             "id": "CEMADEN-170730601A",
@@ -3801,7 +8741,7 @@
             "latitude": -11.34296,
             "longitude": -49.26664,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3815,7 +8755,7 @@
             "latitude": -5.36527,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3829,7 +8769,7 @@
             "latitude": -12.035,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3843,7 +8783,7 @@
             "latitude": -5.3956,
             "longitude": -47.8114,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3857,7 +8797,7 @@
             "latitude": -7.14869,
             "longitude": -48.69083,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3871,7 +8811,7 @@
             "latitude": -5.25903,
             "longitude": -48.20147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3885,7 +8825,7 @@
             "latitude": -6.58226,
             "longitude": -48.64368,
             "chuva24h": 0.2,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3899,7 +8839,7 @@
             "latitude": -5.55265,
             "longitude": -47.57758,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3913,7 +8853,7 @@
             "latitude": -7.18755,
             "longitude": -48.23527,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3927,7 +8867,7 @@
             "latitude": -7.15587,
             "longitude": -48.1888,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3941,7 +8881,7 @@
             "latitude": -7.19408,
             "longitude": -48.19586,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3955,7 +8895,7 @@
             "latitude": -7.22806,
             "longitude": -48.24461,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3969,7 +8909,7 @@
             "latitude": -5.65762,
             "longitude": -48.11147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3983,7 +8923,7 @@
             "latitude": -11.8055,
             "longitude": -49.5275,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3997,7 +8937,7 @@
             "latitude": -7.71295,
             "longitude": -47.3093,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4010,8 +8950,8 @@
             "fonte": "CEMADEN",
             "latitude": -6.41126,
             "longitude": -48.53374,
-            "chuva24h": 0.4,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "chuva24h": 0.2,
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4025,7 +8965,7 @@
             "latitude": -10.71611,
             "longitude": -48.39972,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4039,7 +8979,7 @@
             "latitude": -6.36582,
             "longitude": -48.0746,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4053,7 +8993,7 @@
             "latitude": -6.38119,
             "longitude": -48.06281,
             "chuva24h": 0.2,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4067,7 +9007,7 @@
             "latitude": -5.46415,
             "longitude": -47.89705,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4081,7 +9021,7 @@
             "latitude": -5.47529,
             "longitude": -47.88956,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4095,7 +9035,7 @@
             "latitude": -5.43,
             "longitude": -47.85787,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4109,7 +9049,7 @@
             "latitude": -5.31866,
             "longitude": -48.03934,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4123,7 +9063,7 @@
             "latitude": -5.32414,
             "longitude": -48.03401,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4137,7 +9077,7 @@
             "latitude": -9.27355,
             "longitude": -49.95393,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4151,7 +9091,7 @@
             "latitude": -9.28132,
             "longitude": -49.95269,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4165,7 +9105,7 @@
             "latitude": -5.76973,
             "longitude": -47.48155,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4179,7 +9119,7 @@
             "latitude": -5.77483,
             "longitude": -47.47833,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4193,7 +9133,7 @@
             "latitude": -10.79377,
             "longitude": -49.62398,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4207,7 +9147,7 @@
             "latitude": -10.78247,
             "longitude": -49.61686,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4221,7 +9161,7 @@
             "latitude": -12.61468,
             "longitude": -47.88194,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4235,7 +9175,7 @@
             "latitude": -12.62013,
             "longitude": -47.86877,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4249,7 +9189,7 @@
             "latitude": -12.62794,
             "longitude": -47.56296,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4263,7 +9203,7 @@
             "latitude": -10.44876,
             "longitude": -49.16777,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4277,7 +9217,7 @@
             "latitude": -10.44167,
             "longitude": -49.18087,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4291,7 +9231,7 @@
             "latitude": -6.32722,
             "longitude": -47.42806,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4305,7 +9245,7 @@
             "latitude": -6.33778,
             "longitude": -47.43333,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4319,7 +9259,7 @@
             "latitude": -6.31556,
             "longitude": -47.42306,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-13 08:24:37 UTC",
+            "atualizadoEm": "2026-08-13 10:14:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -4646,14 +9586,169 @@
       },
       "ANA": {
         "source": "ANA",
-        "status": "error",
-        "label": "Erro de consulta",
-        "observacao": "Falha ao consultar a fonte no workflow: Inventario ANA indisponivel",
-        "estacoesCadastradas": 0,
-        "estacoesConsultadas": 0,
-        "estacoesComLeitura": 0,
-        "atualizadoEm": null,
-        "estacoes": []
+        "status": "ready",
+        "label": "Operando",
+        "observacao": "Consulta server-side realizada pelo workflow.",
+        "estacoesCadastradas": 175,
+        "estacoesConsultadas": 175,
+        "estacoesComLeitura": 11,
+        "atualizadoEm": "12/08/2026 a 13/08/2026",
+        "estacoes": [
+          {
+            "id": "ANA-547007",
+            "codigo": "547007",
+            "nome": "PRAIA NORTE_Prefeitura Municipal",
+            "municipio": "PRAIA NORTE",
+            "fonte": "ANA",
+            "latitude": -5.3956,
+            "longitude": -47.8114,
+            "chuva24h": 0,
+            "atualizadoEm": "12/08/2026 a 13/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-548000",
+            "codigo": "548000",
+            "nome": "ARAGUATINS",
+            "municipio": "ARAGUATINS",
+            "fonte": "ANA",
+            "latitude": -5.6483,
+            "longitude": -48.125,
+            "chuva24h": 0,
+            "atualizadoEm": "12/08/2026 a 13/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-548010",
+            "codigo": "548010",
+            "nome": "RIO TOCANTINS - SÃO SEBASTIÃO DO TO",
+            "municipio": "SÃO SEBASTIÃO DO TO",
+            "fonte": "ANA",
+            "latitude": -5.2544,
+            "longitude": -48.1983,
+            "chuva24h": 0,
+            "atualizadoEm": "12/08/2026 a 13/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-648000",
+            "codigo": "648000",
+            "nome": "XAMBIOÁ",
+            "municipio": "XAMBIOÁ",
+            "fonte": "ANA",
+            "latitude": -6.4131,
+            "longitude": -48.5333,
+            "chuva24h": 0,
+            "atualizadoEm": "12/08/2026 a 13/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-648007",
+            "codigo": "648007",
+            "nome": "CGH LAJES MONTANTE",
+            "municipio": "WANDERLÂNDIA",
+            "fonte": "ANA",
+            "latitude": -6.8006,
+            "longitude": -48.1358,
+            "chuva24h": 0,
+            "atualizadoEm": "12/08/2026 a 13/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-648011",
+            "codigo": "648011",
+            "nome": "RIO CORDA - RIACHINHO",
+            "municipio": "RIACHINHO",
+            "fonte": "ANA",
+            "latitude": -6.5178,
+            "longitude": -48.1514,
+            "chuva24h": 0,
+            "atualizadoEm": "12/08/2026 a 13/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-747010",
+            "codigo": "747010",
+            "nome": "UHE ESTREITO RIO MANOEL ALVES GRANDE",
+            "municipio": "GOIATINS",
+            "fonte": "ANA",
+            "latitude": -7.7083,
+            "longitude": -47.3108,
+            "chuva24h": 0,
+            "atualizadoEm": "12/08/2026 a 13/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-748006",
+            "codigo": "748006",
+            "nome": "CGH LAGEADO RIBEIRÃO LONTRA",
+            "municipio": "ARAGUAÍNA",
+            "fonte": "ANA",
+            "latitude": -7.2517,
+            "longitude": -48.1603,
+            "chuva24h": 0,
+            "atualizadoEm": "12/08/2026 a 13/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-847005",
+            "codigo": "847005",
+            "nome": "UHE ESTREITO RIO MANOEL ALVES PEQUENO",
+            "municipio": "ITACAJÁ",
+            "fonte": "ANA",
+            "latitude": -8.3914,
+            "longitude": -47.7658,
+            "chuva24h": 0,
+            "atualizadoEm": "12/08/2026 a 13/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-948006",
+            "codigo": "948006",
+            "nome": "CGH LAGEADO MONTANTE",
+            "municipio": "LAJEADO",
+            "fonte": "ANA",
+            "latitude": -9.8519,
+            "longitude": -48.2836,
+            "chuva24h": 0,
+            "atualizadoEm": "12/08/2026 a 13/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-949006",
+            "codigo": "949006",
+            "nome": "RIO PIRANHAS - DOIS IRMÃOS",
+            "municipio": "DOIS IRMÃOS DO TOCA",
+            "fonte": "ANA",
+            "latitude": -9.1517,
+            "longitude": -49.3931,
+            "chuva24h": 0,
+            "atualizadoEm": "12/08/2026 a 13/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          }
+        ]
       },
       "SEMARH": {
         "source": "SEMARH",
@@ -4667,8 +9762,6 @@
         "estacoes": []
       }
     },
-    "erros": {
-      "ANA": "Inventario ANA indisponivel"
-    }
+    "erros": {}
   }
 }
