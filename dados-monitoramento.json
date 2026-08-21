@@ -1,13 +1,13 @@
 {
-  "atualizado_em": "2026-08-21T08:50:50.345Z",
+  "atualizado_em": "2026-08-21T09:44:02.984Z",
   "resumo": {
     "alertas_cemaden_to": 0,
     "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
     "estacoes_fluviometricas_ana": null,
-    "focos_calor_24h": 608,
+    "focos_calor_24h": 721,
     "area_queimada_ano_ha": 245000,
     "chuva_24h_mm": 0,
-    "estacoes_operando": 38,
+    "estacoes_operando": 49,
     "avisos_inmet_to_hoje": 2,
     "avisos_inmet_to_futuro": 0,
     "avisos_inmet_to_severidade_maxima": "Perigo",
@@ -43,19 +43,19 @@
     {
       "icon": "flame",
       "label": "Focos de calor",
-      "description": "608 focos registrados no arquivo diário do INPE",
+      "description": "721 focos registrados no arquivo diário do INPE",
       "value": "Ativo"
     },
     {
       "icon": "radio-tower",
       "label": "Rede operacional",
-      "description": "38 estacoes ou pontos em acompanhamento",
+      "description": "49 estacoes ou pontos em acompanhamento",
       "value": "24h"
     }
   ],
   "fontes": {
     "alertas": "CEMADEN",
-    "chuva": "CEMADEN",
+    "chuva": "CEMADEN / ANA",
     "rios": "ANA / Telemetria",
     "focos": "INPE Queimadas",
     "area_queimada": "MapBiomas Fogo / INPE AQ",
@@ -1779,11 +1779,11 @@
   },
   "focos_calor": {
     "status": "ok",
-    "quantidade24h": 608,
-    "quantidadeMapa": 608,
+    "quantidade24h": 721,
+    "quantidadeMapa": 721,
     "periodo": "Arquivo diario INPE",
     "fonte": "INPE Queimadas",
-    "atualizadoEm": "2026-08-21T08:49:35.847Z",
+    "atualizadoEm": "2026-08-21T09:43:41.287Z",
     "referenciaArquivo": "20260821",
     "csv_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/focos_diario_br_20260821.csv",
     "observacao": "Dados filtrados para o Tocantins a partir do arquivo diario Brasil do INPE Queimadas.",
@@ -6634,6 +6634,910 @@
         "municipio": "SÃO SALVADOR DO TOCANTINS",
         "satelite": "NOAA-21",
         "data_hora_gmt": "2026-08-21 04:49:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6618,
+        "longitude": -49.01914,
+        "municipio": "NOVA ROSALÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.99963,
+        "longitude": -48.56109,
+        "municipio": "MIRACEMA DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.15917,
+        "longitude": -46.72926,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.79867,
+        "longitude": -46.6436,
+        "municipio": "LIZARDA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.16563,
+        "longitude": -46.73116,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.30331,
+        "longitude": -48.23187,
+        "municipio": "PALMAS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.15951,
+        "longitude": -46.73034,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.65633,
+        "longitude": -49.0185,
+        "municipio": "NOVA ROSALÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -7.01521,
+        "longitude": -48.03659,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -7.01392,
+        "longitude": -48.03871,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.805,
+        "longitude": -46.644,
+        "municipio": "LIZARDA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.45328,
+        "longitude": -46.95725,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.80439,
+        "longitude": -46.64887,
+        "municipio": "LIZARDA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.66091,
+        "longitude": -49.02604,
+        "municipio": "NOVA ROSALÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.44778,
+        "longitude": -46.95214,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -7.00968,
+        "longitude": -48.03588,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -7.01948,
+        "longitude": -48.03925,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.44721,
+        "longitude": -46.95659,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.99407,
+        "longitude": -48.56028,
+        "municipio": "MIRACEMA DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.80377,
+        "longitude": -46.65377,
+        "municipio": "LIZARDA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -7.01441,
+        "longitude": -48.03509,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.29749,
+        "longitude": -48.232,
+        "municipio": "PALMAS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.45992,
+        "longitude": -46.95354,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.66136,
+        "longitude": -49.02256,
+        "municipio": "NOVA ROSALÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.15853,
+        "longitude": -46.73398,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.79805,
+        "longitude": -46.64853,
+        "municipio": "LIZARDA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -7.02027,
+        "longitude": -48.04069,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:23:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.74924,
+        "longitude": -48.47694,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.76159,
+        "longitude": -50.31173,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.81016,
+        "longitude": -48.40954,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.77095,
+        "longitude": -50.31342,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.76189,
+        "longitude": -48.46982,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.71976,
+        "longitude": -48.47709,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.76169,
+        "longitude": -50.30626,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.76738,
+        "longitude": -50.30666,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.84863,
+        "longitude": -48.43488,
+        "municipio": "PALMEIRÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.79625,
+        "longitude": -50.27577,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.72554,
+        "longitude": -48.47802,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.7667,
+        "longitude": -50.30695,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.74335,
+        "longitude": -48.47688,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.80334,
+        "longitude": -48.42072,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.79884,
+        "longitude": -48.40907,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.80444,
+        "longitude": -48.41175,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.75521,
+        "longitude": -50.3171,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.79908,
+        "longitude": -48.40298,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.75079,
+        "longitude": -48.46402,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.7608,
+        "longitude": -50.31747,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.8604,
+        "longitude": -48.43545,
+        "municipio": "PALMEIRÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.75845,
+        "longitude": -50.33469,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.76595,
+        "longitude": -50.31272,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.8039,
+        "longitude": -48.41613,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.74297,
+        "longitude": -48.48008,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.74454,
+        "longitude": -48.467,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.84815,
+        "longitude": -48.43895,
+        "municipio": "PALMEIRÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.78784,
+        "longitude": -48.39774,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.7558,
+        "longitude": -50.3168,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.75346,
+        "longitude": -50.33401,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.79815,
+        "longitude": -48.41109,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.76659,
+        "longitude": -50.31241,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.75632,
+        "longitude": -48.46711,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.83504,
+        "longitude": -48.44976,
+        "municipio": "PALMEIRÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.80497,
+        "longitude": -48.40745,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.84709,
+        "longitude": -48.44785,
+        "municipio": "PALMEIRÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.5016,
+        "longitude": -47.84793,
+        "municipio": "PARANÃ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.80628,
+        "longitude": -50.2771,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.78755,
+        "longitude": -48.45294,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.81207,
+        "longitude": -50.27197,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.74371,
+        "longitude": -48.47392,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.78722,
+        "longitude": -48.40318,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.80127,
+        "longitude": -50.27643,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.89773,
+        "longitude": -50.27866,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.84761,
+        "longitude": -48.44352,
+        "municipio": "PALMEIRÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.78802,
+        "longitude": -48.40063,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.71932,
+        "longitude": -48.48077,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.74091,
+        "longitude": -48.44799,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.76021,
+        "longitude": -50.31778,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.76237,
+        "longitude": -50.30598,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.50713,
+        "longitude": -47.85293,
+        "municipio": "PARANÃ",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.75799,
+        "longitude": -50.33503,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.90275,
+        "longitude": -50.27934,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.809,
+        "longitude": -48.41954,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.75126,
+        "longitude": -48.4601,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.55503,
+        "longitude": -46.94015,
+        "municipio": "DIANÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.80705,
+        "longitude": -50.27129,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.78224,
+        "longitude": -48.3994,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.74664,
+        "longitude": -48.44943,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.77245,
+        "longitude": -50.30187,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.66487,
+        "longitude": -48.3535,
+        "municipio": "SÃO VALÉRIO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.72597,
+        "longitude": -48.47441,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.80835,
+        "longitude": -48.42521,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.80422,
+        "longitude": -48.40968,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.7504,
+        "longitude": -48.46732,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.84246,
+        "longitude": -48.43703,
+        "municipio": "PALMEIRÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.84294,
+        "longitude": -48.43298,
+        "municipio": "PALMEIRÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.80322,
+        "longitude": -48.4184,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.83444,
+        "longitude": -48.45489,
+        "municipio": "PALMEIRÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.78198,
+        "longitude": -48.39711,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.86088,
+        "longitude": -48.43144,
+        "municipio": "PALMEIRÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.73132,
+        "longitude": -48.47891,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.80906,
+        "longitude": -48.42226,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.77745,
+        "longitude": -50.30257,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.73752,
+        "longitude": -48.47633,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.8544,
+        "longitude": -48.4361,
+        "municipio": "PALMEIRÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.79838,
+        "longitude": -48.4128,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.75596,
+        "longitude": -48.4701,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.73173,
+        "longitude": -48.47549,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.86141,
+        "longitude": -48.42698,
+        "municipio": "PALMEIRÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.84071,
+        "longitude": -48.45182,
+        "municipio": "PALMEIRÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.80262,
+        "longitude": -48.42356,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.85482,
+        "longitude": -48.43264,
+        "municipio": "PALMEIRÓPOLIS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.80373,
+        "longitude": -48.41397,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.76147,
+        "longitude": -48.47329,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.76095,
+        "longitude": -50.31202,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NPP-375D",
+        "data_hora_gmt": "2026-08-21 05:25:00",
         "bioma": "Cerrado"
       },
       {
@@ -17567,6 +18471,2040 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
+            -49.01914,
+            -10.6618
+          ]
+        },
+        "properties": {
+          "latitude": -10.6618,
+          "longitude": -49.01914,
+          "municipio": "NOVA ROSALÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.56109,
+            -9.99963
+          ]
+        },
+        "properties": {
+          "latitude": -9.99963,
+          "longitude": -48.56109,
+          "municipio": "MIRACEMA DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.72926,
+            -8.15917
+          ]
+        },
+        "properties": {
+          "latitude": -8.15917,
+          "longitude": -46.72926,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.6436,
+            -9.79867
+          ]
+        },
+        "properties": {
+          "latitude": -9.79867,
+          "longitude": -46.6436,
+          "municipio": "LIZARDA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.73116,
+            -8.16563
+          ]
+        },
+        "properties": {
+          "latitude": -8.16563,
+          "longitude": -46.73116,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.23187,
+            -10.30331
+          ]
+        },
+        "properties": {
+          "latitude": -10.30331,
+          "longitude": -48.23187,
+          "municipio": "PALMAS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.73034,
+            -8.15951
+          ]
+        },
+        "properties": {
+          "latitude": -8.15951,
+          "longitude": -46.73034,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.0185,
+            -10.65633
+          ]
+        },
+        "properties": {
+          "latitude": -10.65633,
+          "longitude": -49.0185,
+          "municipio": "NOVA ROSALÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.03659,
+            -7.01521
+          ]
+        },
+        "properties": {
+          "latitude": -7.01521,
+          "longitude": -48.03659,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.03871,
+            -7.01392
+          ]
+        },
+        "properties": {
+          "latitude": -7.01392,
+          "longitude": -48.03871,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.644,
+            -9.805
+          ]
+        },
+        "properties": {
+          "latitude": -9.805,
+          "longitude": -46.644,
+          "municipio": "LIZARDA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.95725,
+            -8.45328
+          ]
+        },
+        "properties": {
+          "latitude": -8.45328,
+          "longitude": -46.95725,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.64887,
+            -9.80439
+          ]
+        },
+        "properties": {
+          "latitude": -9.80439,
+          "longitude": -46.64887,
+          "municipio": "LIZARDA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.02604,
+            -10.66091
+          ]
+        },
+        "properties": {
+          "latitude": -10.66091,
+          "longitude": -49.02604,
+          "municipio": "NOVA ROSALÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.95214,
+            -8.44778
+          ]
+        },
+        "properties": {
+          "latitude": -8.44778,
+          "longitude": -46.95214,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.03588,
+            -7.00968
+          ]
+        },
+        "properties": {
+          "latitude": -7.00968,
+          "longitude": -48.03588,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.03925,
+            -7.01948
+          ]
+        },
+        "properties": {
+          "latitude": -7.01948,
+          "longitude": -48.03925,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.95659,
+            -8.44721
+          ]
+        },
+        "properties": {
+          "latitude": -8.44721,
+          "longitude": -46.95659,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.56028,
+            -9.99407
+          ]
+        },
+        "properties": {
+          "latitude": -9.99407,
+          "longitude": -48.56028,
+          "municipio": "MIRACEMA DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.65377,
+            -9.80377
+          ]
+        },
+        "properties": {
+          "latitude": -9.80377,
+          "longitude": -46.65377,
+          "municipio": "LIZARDA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.03509,
+            -7.01441
+          ]
+        },
+        "properties": {
+          "latitude": -7.01441,
+          "longitude": -48.03509,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.232,
+            -10.29749
+          ]
+        },
+        "properties": {
+          "latitude": -10.29749,
+          "longitude": -48.232,
+          "municipio": "PALMAS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.95354,
+            -8.45992
+          ]
+        },
+        "properties": {
+          "latitude": -8.45992,
+          "longitude": -46.95354,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.02256,
+            -10.66136
+          ]
+        },
+        "properties": {
+          "latitude": -10.66136,
+          "longitude": -49.02256,
+          "municipio": "NOVA ROSALÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.73398,
+            -8.15853
+          ]
+        },
+        "properties": {
+          "latitude": -8.15853,
+          "longitude": -46.73398,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.64853,
+            -9.79805
+          ]
+        },
+        "properties": {
+          "latitude": -9.79805,
+          "longitude": -46.64853,
+          "municipio": "LIZARDA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.04069,
+            -7.02027
+          ]
+        },
+        "properties": {
+          "latitude": -7.02027,
+          "longitude": -48.04069,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:23:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.47694,
+            -12.74924
+          ]
+        },
+        "properties": {
+          "latitude": -12.74924,
+          "longitude": -48.47694,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.31173,
+            -10.76159
+          ]
+        },
+        "properties": {
+          "latitude": -10.76159,
+          "longitude": -50.31173,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.40954,
+            -12.81016
+          ]
+        },
+        "properties": {
+          "latitude": -12.81016,
+          "longitude": -48.40954,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.31342,
+            -10.77095
+          ]
+        },
+        "properties": {
+          "latitude": -10.77095,
+          "longitude": -50.31342,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.46982,
+            -12.76189
+          ]
+        },
+        "properties": {
+          "latitude": -12.76189,
+          "longitude": -48.46982,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.47709,
+            -12.71976
+          ]
+        },
+        "properties": {
+          "latitude": -12.71976,
+          "longitude": -48.47709,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.30626,
+            -10.76169
+          ]
+        },
+        "properties": {
+          "latitude": -10.76169,
+          "longitude": -50.30626,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.30666,
+            -10.76738
+          ]
+        },
+        "properties": {
+          "latitude": -10.76738,
+          "longitude": -50.30666,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.43488,
+            -12.84863
+          ]
+        },
+        "properties": {
+          "latitude": -12.84863,
+          "longitude": -48.43488,
+          "municipio": "PALMEIRÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.27577,
+            -10.79625
+          ]
+        },
+        "properties": {
+          "latitude": -10.79625,
+          "longitude": -50.27577,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.47802,
+            -12.72554
+          ]
+        },
+        "properties": {
+          "latitude": -12.72554,
+          "longitude": -48.47802,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.30695,
+            -10.7667
+          ]
+        },
+        "properties": {
+          "latitude": -10.7667,
+          "longitude": -50.30695,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.47688,
+            -12.74335
+          ]
+        },
+        "properties": {
+          "latitude": -12.74335,
+          "longitude": -48.47688,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.42072,
+            -12.80334
+          ]
+        },
+        "properties": {
+          "latitude": -12.80334,
+          "longitude": -48.42072,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.40907,
+            -12.79884
+          ]
+        },
+        "properties": {
+          "latitude": -12.79884,
+          "longitude": -48.40907,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.41175,
+            -12.80444
+          ]
+        },
+        "properties": {
+          "latitude": -12.80444,
+          "longitude": -48.41175,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.3171,
+            -10.75521
+          ]
+        },
+        "properties": {
+          "latitude": -10.75521,
+          "longitude": -50.3171,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.40298,
+            -12.79908
+          ]
+        },
+        "properties": {
+          "latitude": -12.79908,
+          "longitude": -48.40298,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.46402,
+            -12.75079
+          ]
+        },
+        "properties": {
+          "latitude": -12.75079,
+          "longitude": -48.46402,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.31747,
+            -10.7608
+          ]
+        },
+        "properties": {
+          "latitude": -10.7608,
+          "longitude": -50.31747,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.43545,
+            -12.8604
+          ]
+        },
+        "properties": {
+          "latitude": -12.8604,
+          "longitude": -48.43545,
+          "municipio": "PALMEIRÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.33469,
+            -10.75845
+          ]
+        },
+        "properties": {
+          "latitude": -10.75845,
+          "longitude": -50.33469,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.31272,
+            -10.76595
+          ]
+        },
+        "properties": {
+          "latitude": -10.76595,
+          "longitude": -50.31272,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.41613,
+            -12.8039
+          ]
+        },
+        "properties": {
+          "latitude": -12.8039,
+          "longitude": -48.41613,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.48008,
+            -12.74297
+          ]
+        },
+        "properties": {
+          "latitude": -12.74297,
+          "longitude": -48.48008,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.467,
+            -12.74454
+          ]
+        },
+        "properties": {
+          "latitude": -12.74454,
+          "longitude": -48.467,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.43895,
+            -12.84815
+          ]
+        },
+        "properties": {
+          "latitude": -12.84815,
+          "longitude": -48.43895,
+          "municipio": "PALMEIRÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.39774,
+            -12.78784
+          ]
+        },
+        "properties": {
+          "latitude": -12.78784,
+          "longitude": -48.39774,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.3168,
+            -10.7558
+          ]
+        },
+        "properties": {
+          "latitude": -10.7558,
+          "longitude": -50.3168,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.33401,
+            -10.75346
+          ]
+        },
+        "properties": {
+          "latitude": -10.75346,
+          "longitude": -50.33401,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.41109,
+            -12.79815
+          ]
+        },
+        "properties": {
+          "latitude": -12.79815,
+          "longitude": -48.41109,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.31241,
+            -10.76659
+          ]
+        },
+        "properties": {
+          "latitude": -10.76659,
+          "longitude": -50.31241,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.46711,
+            -12.75632
+          ]
+        },
+        "properties": {
+          "latitude": -12.75632,
+          "longitude": -48.46711,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.44976,
+            -12.83504
+          ]
+        },
+        "properties": {
+          "latitude": -12.83504,
+          "longitude": -48.44976,
+          "municipio": "PALMEIRÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.40745,
+            -12.80497
+          ]
+        },
+        "properties": {
+          "latitude": -12.80497,
+          "longitude": -48.40745,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.44785,
+            -12.84709
+          ]
+        },
+        "properties": {
+          "latitude": -12.84709,
+          "longitude": -48.44785,
+          "municipio": "PALMEIRÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.84793,
+            -12.5016
+          ]
+        },
+        "properties": {
+          "latitude": -12.5016,
+          "longitude": -47.84793,
+          "municipio": "PARANÃ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2771,
+            -10.80628
+          ]
+        },
+        "properties": {
+          "latitude": -10.80628,
+          "longitude": -50.2771,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.45294,
+            -12.78755
+          ]
+        },
+        "properties": {
+          "latitude": -12.78755,
+          "longitude": -48.45294,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.27197,
+            -10.81207
+          ]
+        },
+        "properties": {
+          "latitude": -10.81207,
+          "longitude": -50.27197,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.47392,
+            -12.74371
+          ]
+        },
+        "properties": {
+          "latitude": -12.74371,
+          "longitude": -48.47392,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.40318,
+            -12.78722
+          ]
+        },
+        "properties": {
+          "latitude": -12.78722,
+          "longitude": -48.40318,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.27643,
+            -10.80127
+          ]
+        },
+        "properties": {
+          "latitude": -10.80127,
+          "longitude": -50.27643,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.27866,
+            -10.89773
+          ]
+        },
+        "properties": {
+          "latitude": -10.89773,
+          "longitude": -50.27866,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.44352,
+            -12.84761
+          ]
+        },
+        "properties": {
+          "latitude": -12.84761,
+          "longitude": -48.44352,
+          "municipio": "PALMEIRÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.40063,
+            -12.78802
+          ]
+        },
+        "properties": {
+          "latitude": -12.78802,
+          "longitude": -48.40063,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.48077,
+            -12.71932
+          ]
+        },
+        "properties": {
+          "latitude": -12.71932,
+          "longitude": -48.48077,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.44799,
+            -12.74091
+          ]
+        },
+        "properties": {
+          "latitude": -12.74091,
+          "longitude": -48.44799,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.31778,
+            -10.76021
+          ]
+        },
+        "properties": {
+          "latitude": -10.76021,
+          "longitude": -50.31778,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.30598,
+            -10.76237
+          ]
+        },
+        "properties": {
+          "latitude": -10.76237,
+          "longitude": -50.30598,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.85293,
+            -12.50713
+          ]
+        },
+        "properties": {
+          "latitude": -12.50713,
+          "longitude": -47.85293,
+          "municipio": "PARANÃ",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.33503,
+            -10.75799
+          ]
+        },
+        "properties": {
+          "latitude": -10.75799,
+          "longitude": -50.33503,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.27934,
+            -10.90275
+          ]
+        },
+        "properties": {
+          "latitude": -10.90275,
+          "longitude": -50.27934,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.41954,
+            -12.809
+          ]
+        },
+        "properties": {
+          "latitude": -12.809,
+          "longitude": -48.41954,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4601,
+            -12.75126
+          ]
+        },
+        "properties": {
+          "latitude": -12.75126,
+          "longitude": -48.4601,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.94015,
+            -11.55503
+          ]
+        },
+        "properties": {
+          "latitude": -11.55503,
+          "longitude": -46.94015,
+          "municipio": "DIANÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.27129,
+            -10.80705
+          ]
+        },
+        "properties": {
+          "latitude": -10.80705,
+          "longitude": -50.27129,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.3994,
+            -12.78224
+          ]
+        },
+        "properties": {
+          "latitude": -12.78224,
+          "longitude": -48.3994,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.44943,
+            -12.74664
+          ]
+        },
+        "properties": {
+          "latitude": -12.74664,
+          "longitude": -48.44943,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.30187,
+            -10.77245
+          ]
+        },
+        "properties": {
+          "latitude": -10.77245,
+          "longitude": -50.30187,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.3535,
+            -11.66487
+          ]
+        },
+        "properties": {
+          "latitude": -11.66487,
+          "longitude": -48.3535,
+          "municipio": "SÃO VALÉRIO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.47441,
+            -12.72597
+          ]
+        },
+        "properties": {
+          "latitude": -12.72597,
+          "longitude": -48.47441,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.42521,
+            -12.80835
+          ]
+        },
+        "properties": {
+          "latitude": -12.80835,
+          "longitude": -48.42521,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.40968,
+            -12.80422
+          ]
+        },
+        "properties": {
+          "latitude": -12.80422,
+          "longitude": -48.40968,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.46732,
+            -12.7504
+          ]
+        },
+        "properties": {
+          "latitude": -12.7504,
+          "longitude": -48.46732,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.43703,
+            -12.84246
+          ]
+        },
+        "properties": {
+          "latitude": -12.84246,
+          "longitude": -48.43703,
+          "municipio": "PALMEIRÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.43298,
+            -12.84294
+          ]
+        },
+        "properties": {
+          "latitude": -12.84294,
+          "longitude": -48.43298,
+          "municipio": "PALMEIRÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4184,
+            -12.80322
+          ]
+        },
+        "properties": {
+          "latitude": -12.80322,
+          "longitude": -48.4184,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.45489,
+            -12.83444
+          ]
+        },
+        "properties": {
+          "latitude": -12.83444,
+          "longitude": -48.45489,
+          "municipio": "PALMEIRÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.39711,
+            -12.78198
+          ]
+        },
+        "properties": {
+          "latitude": -12.78198,
+          "longitude": -48.39711,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.43144,
+            -12.86088
+          ]
+        },
+        "properties": {
+          "latitude": -12.86088,
+          "longitude": -48.43144,
+          "municipio": "PALMEIRÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.47891,
+            -12.73132
+          ]
+        },
+        "properties": {
+          "latitude": -12.73132,
+          "longitude": -48.47891,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.42226,
+            -12.80906
+          ]
+        },
+        "properties": {
+          "latitude": -12.80906,
+          "longitude": -48.42226,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.30257,
+            -10.77745
+          ]
+        },
+        "properties": {
+          "latitude": -10.77745,
+          "longitude": -50.30257,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.47633,
+            -12.73752
+          ]
+        },
+        "properties": {
+          "latitude": -12.73752,
+          "longitude": -48.47633,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4361,
+            -12.8544
+          ]
+        },
+        "properties": {
+          "latitude": -12.8544,
+          "longitude": -48.4361,
+          "municipio": "PALMEIRÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4128,
+            -12.79838
+          ]
+        },
+        "properties": {
+          "latitude": -12.79838,
+          "longitude": -48.4128,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4701,
+            -12.75596
+          ]
+        },
+        "properties": {
+          "latitude": -12.75596,
+          "longitude": -48.4701,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.47549,
+            -12.73173
+          ]
+        },
+        "properties": {
+          "latitude": -12.73173,
+          "longitude": -48.47549,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.42698,
+            -12.86141
+          ]
+        },
+        "properties": {
+          "latitude": -12.86141,
+          "longitude": -48.42698,
+          "municipio": "PALMEIRÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.45182,
+            -12.84071
+          ]
+        },
+        "properties": {
+          "latitude": -12.84071,
+          "longitude": -48.45182,
+          "municipio": "PALMEIRÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.42356,
+            -12.80262
+          ]
+        },
+        "properties": {
+          "latitude": -12.80262,
+          "longitude": -48.42356,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.43264,
+            -12.85482
+          ]
+        },
+        "properties": {
+          "latitude": -12.85482,
+          "longitude": -48.43264,
+          "municipio": "PALMEIRÓPOLIS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.41397,
+            -12.80373
+          ]
+        },
+        "properties": {
+          "latitude": -12.80373,
+          "longitude": -48.41397,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.47329,
+            -12.76147
+          ]
+        },
+        "properties": {
+          "latitude": -12.76147,
+          "longitude": -48.47329,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.31202,
+            -10.76095
+          ]
+        },
+        "properties": {
+          "latitude": -10.76095,
+          "longitude": -50.31202,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NPP-375D",
+          "data_hora_gmt": "2026-08-21 05:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
             -50.3162,
             -10.7693
           ]
@@ -17685,14 +20623,14 @@
   "chuva_observada": {
     "status": "ok",
     "periodo": "ultimas 24h",
-    "fonte": "CEMADEN",
-    "atualizadoEm": "2026-08-21T08:50:46.273Z",
+    "fonte": "CEMADEN / ANA",
+    "atualizadoEm": "2026-08-21T09:43:58.976Z",
     "maiorAcumulado": 0,
     "estacaoMaiorAcumulado": "Dona Constanci",
     "municipioMaiorAcumulado": "DUERÉ",
-    "estacoesCadastradas": 58,
-    "estacoesConsultadas": 58,
-    "estacoesComLeitura": 38,
+    "estacoesCadastradas": 233,
+    "estacoesConsultadas": 233,
+    "estacoesComLeitura": 49,
     "acima10": 0,
     "acima30": 0,
     "acima50": 0,
@@ -17705,7 +20643,7 @@
         "estacoesCadastradas": 38,
         "estacoesConsultadas": 38,
         "estacoesComLeitura": 38,
-        "atualizadoEm": "2026-08-21 08:48:39 UTC",
+        "atualizadoEm": "2026-08-21 09:42:39 UTC",
         "estacoes": [
           {
             "id": "CEMADEN-170730601A",
@@ -17716,7 +20654,7 @@
             "latitude": -11.34296,
             "longitude": -49.26664,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17730,7 +20668,7 @@
             "latitude": -5.36527,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17744,7 +20682,7 @@
             "latitude": -12.035,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17758,7 +20696,7 @@
             "latitude": -5.3956,
             "longitude": -47.8114,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17772,7 +20710,7 @@
             "latitude": -7.14869,
             "longitude": -48.69083,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17786,7 +20724,7 @@
             "latitude": -5.25903,
             "longitude": -48.20147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17800,7 +20738,7 @@
             "latitude": -6.58226,
             "longitude": -48.64368,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17814,7 +20752,7 @@
             "latitude": -5.55265,
             "longitude": -47.57758,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17828,7 +20766,7 @@
             "latitude": -7.18755,
             "longitude": -48.23527,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17842,7 +20780,7 @@
             "latitude": -7.15587,
             "longitude": -48.1888,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17856,7 +20794,7 @@
             "latitude": -7.19408,
             "longitude": -48.19586,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17870,7 +20808,7 @@
             "latitude": -7.22806,
             "longitude": -48.24461,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17884,7 +20822,7 @@
             "latitude": -5.65762,
             "longitude": -48.11147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17898,7 +20836,7 @@
             "latitude": -11.8055,
             "longitude": -49.5275,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17912,7 +20850,7 @@
             "latitude": -7.71295,
             "longitude": -47.3093,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17926,7 +20864,7 @@
             "latitude": -6.41126,
             "longitude": -48.53374,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17940,7 +20878,7 @@
             "latitude": -10.71611,
             "longitude": -48.39972,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17954,7 +20892,7 @@
             "latitude": -6.36582,
             "longitude": -48.0746,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17968,7 +20906,7 @@
             "latitude": -6.38119,
             "longitude": -48.06281,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17982,7 +20920,7 @@
             "latitude": -5.46415,
             "longitude": -47.89705,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17996,7 +20934,7 @@
             "latitude": -5.47529,
             "longitude": -47.88956,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -18010,7 +20948,7 @@
             "latitude": -5.43,
             "longitude": -47.85787,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -18024,7 +20962,7 @@
             "latitude": -5.31866,
             "longitude": -48.03934,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -18038,7 +20976,7 @@
             "latitude": -5.32414,
             "longitude": -48.03401,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -18052,7 +20990,7 @@
             "latitude": -9.27355,
             "longitude": -49.95393,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -18066,7 +21004,7 @@
             "latitude": -9.28132,
             "longitude": -49.95269,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -18080,7 +21018,7 @@
             "latitude": -5.76973,
             "longitude": -47.48155,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -18094,7 +21032,7 @@
             "latitude": -5.77483,
             "longitude": -47.47833,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -18108,7 +21046,7 @@
             "latitude": -10.79377,
             "longitude": -49.62398,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -18122,7 +21060,7 @@
             "latitude": -10.78247,
             "longitude": -49.61686,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -18136,7 +21074,7 @@
             "latitude": -12.61468,
             "longitude": -47.88194,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -18150,7 +21088,7 @@
             "latitude": -12.62013,
             "longitude": -47.86877,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -18164,7 +21102,7 @@
             "latitude": -12.62794,
             "longitude": -47.56296,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -18178,7 +21116,7 @@
             "latitude": -10.44876,
             "longitude": -49.16777,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -18192,7 +21130,7 @@
             "latitude": -10.44167,
             "longitude": -49.18087,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -18206,7 +21144,7 @@
             "latitude": -6.32722,
             "longitude": -47.42806,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -18220,7 +21158,7 @@
             "latitude": -6.33778,
             "longitude": -47.43333,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -18234,7 +21172,7 @@
             "latitude": -6.31556,
             "longitude": -47.42306,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-21 08:48:39 UTC",
+            "atualizadoEm": "2026-08-21 09:42:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -18561,14 +21499,169 @@
       },
       "ANA": {
         "source": "ANA",
-        "status": "error",
-        "label": "Erro de consulta",
-        "observacao": "Falha ao consultar a fonte no workflow: Inventario ANA indisponivel",
-        "estacoesCadastradas": 0,
-        "estacoesConsultadas": 0,
-        "estacoesComLeitura": 0,
-        "atualizadoEm": null,
-        "estacoes": []
+        "status": "ready",
+        "label": "Operando",
+        "observacao": "Consulta server-side realizada pelo workflow.",
+        "estacoesCadastradas": 175,
+        "estacoesConsultadas": 175,
+        "estacoesComLeitura": 11,
+        "atualizadoEm": "20/08/2026 a 21/08/2026",
+        "estacoes": [
+          {
+            "id": "ANA-648005",
+            "codigo": "648005",
+            "nome": "CGH LAJES JUSANTE",
+            "municipio": "PIRAQUÊ",
+            "fonte": "ANA",
+            "latitude": -6.7822,
+            "longitude": -48.1525,
+            "chuva24h": 0,
+            "atualizadoEm": "20/08/2026 a 21/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-749001",
+            "codigo": "749001",
+            "nome": "BOA VISTA DO ARAGUAIA",
+            "municipio": "ARAGUAÍNA",
+            "fonte": "ANA",
+            "latitude": -7.3231,
+            "longitude": -49.2242,
+            "chuva24h": 0,
+            "atualizadoEm": "20/08/2026 a 21/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-849002",
+            "codigo": "849002",
+            "nome": "ARAGUACEMA (CHACARA ARAGUAIA)",
+            "municipio": "ARAGUACEMA",
+            "fonte": "ANA",
+            "latitude": -8.8022,
+            "longitude": -49.5556,
+            "chuva24h": 0,
+            "atualizadoEm": "20/08/2026 a 21/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-947005",
+            "codigo": "947005",
+            "nome": "RIO PERDIDA",
+            "municipio": "RIO SONO",
+            "fonte": "ANA",
+            "latitude": -9.3397,
+            "longitude": -47.8722,
+            "chuva24h": 0,
+            "atualizadoEm": "20/08/2026 a 21/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-1047010",
+            "codigo": "1047010",
+            "nome": "UHE ESTREITO RIO DAS BALSAS",
+            "municipio": "APARECIDA DO RIO NE",
+            "fonte": "ANA",
+            "latitude": -10.0017,
+            "longitude": -47.8272,
+            "chuva24h": 0,
+            "atualizadoEm": "20/08/2026 a 21/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-1048011",
+            "codigo": "1048011",
+            "nome": "RIBEIRÃO TAQUARUÇU GRANDE - PALMAS",
+            "municipio": "PALMAS",
+            "fonte": "ANA",
+            "latitude": -10.2881,
+            "longitude": -48.2797,
+            "chuva24h": 0,
+            "atualizadoEm": "20/08/2026 a 21/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-1146003",
+            "codigo": "1146003",
+            "nome": "PCH AGRO TRAFO MONTANTE",
+            "municipio": "DIANÓPOLIS",
+            "fonte": "ANA",
+            "latitude": -11.6764,
+            "longitude": -46.6642,
+            "chuva24h": 0,
+            "atualizadoEm": "20/08/2026 a 21/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-1146034",
+            "codigo": "1146034",
+            "nome": "CGH BURITIRANA JUSANTE",
+            "municipio": "PONTE ALTA DO BOM J",
+            "fonte": "ANA",
+            "latitude": -11.9272,
+            "longitude": -46.2978,
+            "chuva24h": 0,
+            "atualizadoEm": "20/08/2026 a 21/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-1147005",
+            "codigo": "1147005",
+            "nome": "UHE LUÍS EDUARDO MAGALHÃES JERÔNIMO",
+            "municipio": "CHAPADA DA NATIVIDA",
+            "fonte": "ANA",
+            "latitude": -11.7578,
+            "longitude": -47.8358,
+            "chuva24h": 0,
+            "atualizadoEm": "20/08/2026 a 21/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-1148007",
+            "codigo": "1148007",
+            "nome": "UHE LUÍS EDUARDO MAGALHÃES JACINTO",
+            "municipio": "PEIXE",
+            "fonte": "ANA",
+            "latitude": -11.9817,
+            "longitude": -48.6569,
+            "chuva24h": 0,
+            "atualizadoEm": "20/08/2026 a 21/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-1348011",
+            "codigo": "1348011",
+            "nome": "UHE SÃO SALVADOR RIO CUSTÓDIO",
+            "municipio": "PARANÃ",
+            "fonte": "ANA",
+            "latitude": -13.0847,
+            "longitude": -48.0983,
+            "chuva24h": 0,
+            "atualizadoEm": "20/08/2026 a 21/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          }
+        ]
       },
       "SEMARH": {
         "source": "SEMARH",
@@ -18582,8 +21675,6 @@
         "estacoes": []
       }
     },
-    "erros": {
-      "ANA": "Inventario ANA indisponivel"
-    }
+    "erros": {}
   }
 }
