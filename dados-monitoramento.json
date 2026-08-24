@@ -1,22 +1,17 @@
 {
-  "atualizado_em": "2026-08-24T21:35:53.631Z",
+  "atualizado_em": "2026-08-24T22:33:42.145Z",
   "resumo": {
     "alertas_cemaden_to": 0,
     "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
     "estacoes_fluviometricas_ana": null,
-    "focos_calor_24h": 2195,
+    "focos_calor_24h": 2196,
     "area_queimada_ano_ha": 245000,
     "chuva_24h_mm": 0,
     "estacoes_operando": 49,
-    "avisos_inmet_to_hoje": 2,
+    "avisos_inmet_to_hoje": 1,
     "avisos_inmet_to_futuro": 2,
     "avisos_inmet_to_severidade_maxima": "Perigo",
     "avisos_inmet_detalhes": [
-      {
-        "title": "Vigente hoje: Baixa Umidade",
-        "detail": "Perigo Potencial | 2026-08-24 12:00 até 2026-08-24 19:00",
-        "location": "Abreulândia, Aguiarnópolis, Aliança do Tocantins, Almas, Alvorada, Ananás e mais 133 municipio(s)."
-      },
       {
         "title": "Vigente hoje: Baixa Umidade",
         "detail": "Perigo | 2026-08-24 12:00 até 2026-08-24 20:00",
@@ -53,7 +48,7 @@
     {
       "icon": "flame",
       "label": "Focos de calor",
-      "description": "2195 focos registrados no arquivo diário do INPE",
+      "description": "2196 focos registrados no arquivo diário do INPE",
       "value": "Ativo"
     },
     {
@@ -1789,11 +1784,11 @@
   },
   "focos_calor": {
     "status": "ok",
-    "quantidade24h": 2195,
-    "quantidadeMapa": 2195,
+    "quantidade24h": 2196,
+    "quantidadeMapa": 2196,
     "periodo": "Arquivo diario INPE",
     "fonte": "INPE Queimadas",
-    "atualizadoEm": "2026-08-24T21:35:35.152Z",
+    "atualizadoEm": "2026-08-24T22:33:23.231Z",
     "referenciaArquivo": "20260824",
     "csv_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/focos_diario_br_20260824.csv",
     "observacao": "Dados filtrados para o Tocantins a partir do arquivo diario Brasil do INPE Queimadas.",
@@ -19356,6 +19351,14 @@
         "municipio": "MATEIROS",
         "satelite": "GOES-19",
         "data_hora_gmt": "2026-08-24 20:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.8739,
+        "longitude": -48.4957,
+        "municipio": "PALMEIRÓPOLIS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-24 20:50:00",
         "bioma": "Cerrado"
       }
     ],
@@ -58869,6 +58872,24 @@
           "data_hora_gmt": "2026-08-24 20:40:00",
           "bioma": "Cerrado"
         }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4957,
+            -12.8739
+          ]
+        },
+        "properties": {
+          "latitude": -12.8739,
+          "longitude": -48.4957,
+          "municipio": "PALMEIRÓPOLIS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-24 20:50:00",
+          "bioma": "Cerrado"
+        }
       }
     ]
   },
@@ -58950,7 +58971,7 @@
     "mes_final": 7,
     "periodo": "Janeiro a julho de 2026",
     "area_queimada_ha": 593653,
-    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/0b01f7b1cf698c91bf2ffcbf4a74fa69-0ea8fb0b0032521a7533950fbaf657d3/tiles/{z}/{x}/{y}",
+    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/0b01f7b1cf698c91bf2ffcbf4a74fa69-4b1cccf58bb385bf18f620b1f8fa302e/tiles/{z}/{x}/{y}",
     "unidade": "ha",
     "natureza": "Cicatrizes de área queimada mapeadas pelo Monitor do Fogo."
   },
@@ -58958,7 +58979,7 @@
     "status": "ok",
     "periodo": "ultimas 24h",
     "fonte": "CEMADEN / ANA",
-    "atualizadoEm": "2026-08-24T21:35:50.539Z",
+    "atualizadoEm": "2026-08-24T22:33:38.779Z",
     "maiorAcumulado": 0,
     "estacaoMaiorAcumulado": "Dona Constanci",
     "municipioMaiorAcumulado": "DUERÉ",
@@ -58977,7 +58998,7 @@
         "estacoesCadastradas": 38,
         "estacoesConsultadas": 38,
         "estacoesComLeitura": 38,
-        "atualizadoEm": "2026-08-24 21:34:37 UTC",
+        "atualizadoEm": "2026-08-24 22:32:37 UTC",
         "estacoes": [
           {
             "id": "CEMADEN-170730601A",
@@ -58988,7 +59009,7 @@
             "latitude": -11.34296,
             "longitude": -49.26664,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59002,7 +59023,7 @@
             "latitude": -5.36527,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59016,7 +59037,7 @@
             "latitude": -12.035,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59030,7 +59051,7 @@
             "latitude": -5.3956,
             "longitude": -47.8114,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59044,7 +59065,7 @@
             "latitude": -7.14869,
             "longitude": -48.69083,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59058,7 +59079,7 @@
             "latitude": -5.25903,
             "longitude": -48.20147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59072,7 +59093,7 @@
             "latitude": -6.58226,
             "longitude": -48.64368,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59086,7 +59107,7 @@
             "latitude": -5.55265,
             "longitude": -47.57758,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59100,7 +59121,7 @@
             "latitude": -7.18755,
             "longitude": -48.23527,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59114,7 +59135,7 @@
             "latitude": -7.15587,
             "longitude": -48.1888,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59128,7 +59149,7 @@
             "latitude": -7.19408,
             "longitude": -48.19586,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59142,7 +59163,7 @@
             "latitude": -7.22806,
             "longitude": -48.24461,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59156,7 +59177,7 @@
             "latitude": -5.65762,
             "longitude": -48.11147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59170,7 +59191,7 @@
             "latitude": -11.8055,
             "longitude": -49.5275,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59184,7 +59205,7 @@
             "latitude": -7.71295,
             "longitude": -47.3093,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59198,7 +59219,7 @@
             "latitude": -6.41126,
             "longitude": -48.53374,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59212,7 +59233,7 @@
             "latitude": -10.71611,
             "longitude": -48.39972,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59226,7 +59247,7 @@
             "latitude": -6.36582,
             "longitude": -48.0746,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59240,7 +59261,7 @@
             "latitude": -6.38119,
             "longitude": -48.06281,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59254,7 +59275,7 @@
             "latitude": -5.46415,
             "longitude": -47.89705,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59268,7 +59289,7 @@
             "latitude": -5.47529,
             "longitude": -47.88956,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59282,7 +59303,7 @@
             "latitude": -5.43,
             "longitude": -47.85787,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59296,7 +59317,7 @@
             "latitude": -5.31866,
             "longitude": -48.03934,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59310,7 +59331,7 @@
             "latitude": -5.32414,
             "longitude": -48.03401,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59324,7 +59345,7 @@
             "latitude": -9.27355,
             "longitude": -49.95393,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59338,7 +59359,7 @@
             "latitude": -9.28132,
             "longitude": -49.95269,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59352,7 +59373,7 @@
             "latitude": -5.76973,
             "longitude": -47.48155,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59366,7 +59387,7 @@
             "latitude": -5.77483,
             "longitude": -47.47833,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59380,7 +59401,7 @@
             "latitude": -10.79377,
             "longitude": -49.62398,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59394,7 +59415,7 @@
             "latitude": -10.78247,
             "longitude": -49.61686,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59408,7 +59429,7 @@
             "latitude": -12.61468,
             "longitude": -47.88194,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59422,7 +59443,7 @@
             "latitude": -12.62013,
             "longitude": -47.86877,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59436,7 +59457,7 @@
             "latitude": -12.62794,
             "longitude": -47.56296,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59450,7 +59471,7 @@
             "latitude": -10.44876,
             "longitude": -49.16777,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59464,7 +59485,7 @@
             "latitude": -10.44167,
             "longitude": -49.18087,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59478,7 +59499,7 @@
             "latitude": -6.32722,
             "longitude": -47.42806,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59492,7 +59513,7 @@
             "latitude": -6.33778,
             "longitude": -47.43333,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59506,7 +59527,7 @@
             "latitude": -6.31556,
             "longitude": -47.42306,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-24 21:34:37 UTC",
+            "atualizadoEm": "2026-08-24 22:32:37 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -59856,34 +59877,6 @@
             "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
           },
           {
-            "id": "ANA-547008",
-            "codigo": "547008",
-            "nome": "SÃO MIGUEL DO TOCANTINS_Centro Cultural",
-            "municipio": "SÃO MIGUEL DO TOCAN",
-            "fonte": "ANA",
-            "latitude": -5.5525,
-            "longitude": -47.5775,
-            "chuva24h": 0,
-            "atualizadoEm": "23/08/2026 a 24/08/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          },
-          {
-            "id": "ANA-548000",
-            "codigo": "548000",
-            "nome": "ARAGUATINS",
-            "municipio": "ARAGUATINS",
-            "fonte": "ANA",
-            "latitude": -5.6483,
-            "longitude": -48.125,
-            "chuva24h": 0,
-            "atualizadoEm": "23/08/2026 a 24/08/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          },
-          {
             "id": "ANA-548006",
             "codigo": "548006",
             "nome": "ESPERANTINA_Prefeitura Municipal",
@@ -59891,20 +59884,6 @@
             "fonte": "ANA",
             "latitude": -5.3621,
             "longitude": -48.5386,
-            "chuva24h": 0,
-            "atualizadoEm": "23/08/2026 a 24/08/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          },
-          {
-            "id": "ANA-548007",
-            "codigo": "548007",
-            "nome": "SÃO SEBASTIÃO DO TOCANTINS_Viveiro Municipal",
-            "municipio": "SÃO SEBASTIÃO DO TO",
-            "fonte": "ANA",
-            "latitude": -5.2617,
-            "longitude": -48.2025,
             "chuva24h": 0,
             "atualizadoEm": "23/08/2026 a 24/08/2026",
             "status": "sem_chuva",
@@ -59933,6 +59912,20 @@
             "fonte": "ANA",
             "latitude": -5.2544,
             "longitude": -48.1983,
+            "chuva24h": 0,
+            "atualizadoEm": "23/08/2026 a 24/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-647000",
+            "codigo": "647000",
+            "nome": "TOCANTINÓPOLIS",
+            "municipio": "TOCANTINÓPOLIS",
+            "fonte": "ANA",
+            "latitude": -6.2886,
+            "longitude": -47.3919,
             "chuva24h": 0,
             "atualizadoEm": "23/08/2026 a 24/08/2026",
             "status": "sem_chuva",
@@ -59989,6 +59982,34 @@
             "fonte": "ANA",
             "latitude": -6.8006,
             "longitude": -48.1358,
+            "chuva24h": 0,
+            "atualizadoEm": "23/08/2026 a 24/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-746013",
+            "codigo": "746013",
+            "nome": "RIO MANUEL ALVES GRANDE - CAMPOS LINDOS",
+            "municipio": "CAMPOS LINDOS",
+            "fonte": "ANA",
+            "latitude": -7.9528,
+            "longitude": -46.8097,
+            "chuva24h": 0,
+            "atualizadoEm": "23/08/2026 a 24/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-748006",
+            "codigo": "748006",
+            "nome": "CGH LAGEADO RIBEIRÃO LONTRA",
+            "municipio": "ARAGUAÍNA",
+            "fonte": "ANA",
+            "latitude": -7.2517,
+            "longitude": -48.1603,
             "chuva24h": 0,
             "atualizadoEm": "23/08/2026 a 24/08/2026",
             "status": "sem_chuva",
