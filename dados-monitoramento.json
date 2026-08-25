@@ -1,19 +1,24 @@
 {
-  "atualizado_em": "2026-08-25T01:41:34.258Z",
+  "atualizado_em": "2026-08-25T03:05:57.502Z",
   "resumo": {
     "alertas_cemaden_to": 0,
     "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
     "estacoes_fluviometricas_ana": null,
-    "focos_calor_24h": 2,
+    "focos_calor_24h": 3,
     "area_queimada_ano_ha": 245000,
     "chuva_24h_mm": 0,
     "estacoes_operando": 11,
-    "avisos_inmet_to_hoje": 0,
-    "avisos_inmet_to_futuro": 2,
-    "avisos_inmet_to_severidade_maxima": "Sem aviso vigente",
+    "avisos_inmet_to_hoje": 2,
+    "avisos_inmet_to_futuro": 1,
+    "avisos_inmet_to_severidade_maxima": "Perigo",
     "avisos_inmet_detalhes": [
       {
-        "title": "Previsto: Baixa Umidade",
+        "title": "Vigente hoje: Baixa Umidade",
+        "detail": "Perigo Potencial | 2026-08-25 10:00 até 2026-08-27 23:00",
+        "location": "Abreulândia, Aguiarnópolis, Aliança do Tocantins, Almas, Alvorada, Ananás e mais 127 municipio(s)."
+      },
+      {
+        "title": "Vigente hoje: Baixa Umidade",
         "detail": "Perigo | 2026-08-25 12:00 até 2026-08-25 20:00",
         "location": "Abreulândia, Aguiarnópolis, Aliança do Tocantins, Almas, Alvorada, Ananás e mais 125 municipio(s)."
       },
@@ -43,7 +48,7 @@
     {
       "icon": "flame",
       "label": "Focos de calor",
-      "description": "2 focos registrados no arquivo diário do INPE",
+      "description": "3 focos registrados no arquivo diário do INPE",
       "value": "Ativo"
     },
     {
@@ -1779,11 +1784,11 @@
   },
   "focos_calor": {
     "status": "ok",
-    "quantidade24h": 2,
-    "quantidadeMapa": 2,
+    "quantidade24h": 3,
+    "quantidadeMapa": 3,
     "periodo": "Arquivo diario INPE",
     "fonte": "INPE Queimadas",
-    "atualizadoEm": "2026-08-25T01:41:08.264Z",
+    "atualizadoEm": "2026-08-25T03:05:36.557Z",
     "referenciaArquivo": "20260825",
     "csv_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/focos_diario_br_20260825.csv",
     "observacao": "Dados filtrados para o Tocantins a partir do arquivo diario Brasil do INPE Queimadas.",
@@ -1802,6 +1807,14 @@
         "municipio": "SÃO SALVADOR DO TOCANTINS",
         "satelite": "GOES-19",
         "data_hora_gmt": "2026-08-25 00:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.0918,
+        "longitude": -47.527,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-25 01:00:00",
         "bioma": "Cerrado"
       }
     ],
@@ -1839,6 +1852,24 @@
           "municipio": "SÃO SALVADOR DO TOCANTINS",
           "satelite": "GOES-19",
           "data_hora_gmt": "2026-08-25 00:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.527,
+            -8.0918
+          ]
+        },
+        "properties": {
+          "latitude": -8.0918,
+          "longitude": -47.527,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-25 01:00:00",
           "bioma": "Cerrado"
         }
       }
@@ -1922,7 +1953,7 @@
     "mes_final": 7,
     "periodo": "Janeiro a julho de 2026",
     "area_queimada_ha": 593653,
-    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/0b01f7b1cf698c91bf2ffcbf4a74fa69-e87e75f353783e37049a3641c3a50566/tiles/{z}/{x}/{y}",
+    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/0b01f7b1cf698c91bf2ffcbf4a74fa69-960acc32828c17ee4238255cd4a85b08/tiles/{z}/{x}/{y}",
     "unidade": "ha",
     "natureza": "Cicatrizes de área queimada mapeadas pelo Monitor do Fogo."
   },
@@ -1930,7 +1961,7 @@
     "status": "ok",
     "periodo": "ultimas 24h",
     "fonte": "ANA",
-    "atualizadoEm": "2026-08-25T01:41:27.815Z",
+    "atualizadoEm": "2026-08-25T03:05:52.770Z",
     "maiorAcumulado": 0,
     "estacaoMaiorAcumulado": "DESCARRETO",
     "municipioMaiorAcumulado": "ITAGUATINS",
@@ -2295,20 +2326,6 @@
             "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
           },
           {
-            "id": "ANA-547007",
-            "codigo": "547007",
-            "nome": "PRAIA NORTE_Prefeitura Municipal",
-            "municipio": "PRAIA NORTE",
-            "fonte": "ANA",
-            "latitude": -5.3956,
-            "longitude": -47.8114,
-            "chuva24h": 0,
-            "atualizadoEm": "24/08/2026 a 25/08/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          },
-          {
             "id": "ANA-548006",
             "codigo": "548006",
             "nome": "ESPERANTINA_Prefeitura Municipal",
@@ -2316,20 +2333,6 @@
             "fonte": "ANA",
             "latitude": -5.3621,
             "longitude": -48.5386,
-            "chuva24h": 0,
-            "atualizadoEm": "24/08/2026 a 25/08/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          },
-          {
-            "id": "ANA-548007",
-            "codigo": "548007",
-            "nome": "SÃO SEBASTIÃO DO TOCANTINS_Viveiro Municipal",
-            "municipio": "SÃO SEBASTIÃO DO TO",
-            "fonte": "ANA",
-            "latitude": -5.2617,
-            "longitude": -48.2025,
             "chuva24h": 0,
             "atualizadoEm": "24/08/2026 a 25/08/2026",
             "status": "sem_chuva",
@@ -2351,13 +2354,27 @@
             "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
           },
           {
-            "id": "ANA-548010",
-            "codigo": "548010",
-            "nome": "RIO TOCANTINS - SÃO SEBASTIÃO DO TO",
-            "municipio": "SÃO SEBASTIÃO DO TO",
+            "id": "ANA-647000",
+            "codigo": "647000",
+            "nome": "TOCANTINÓPOLIS",
+            "municipio": "TOCANTINÓPOLIS",
             "fonte": "ANA",
-            "latitude": -5.2544,
-            "longitude": -48.1983,
+            "latitude": -6.2886,
+            "longitude": -47.3919,
+            "chuva24h": 0,
+            "atualizadoEm": "24/08/2026 a 25/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-647010",
+            "codigo": "647010",
+            "nome": "UHE ESTREITO JUSANTE",
+            "municipio": "TOCANTINÓPOLIS",
+            "fonte": "ANA",
+            "latitude": -6.2889,
+            "longitude": -47.3917,
             "chuva24h": 0,
             "atualizadoEm": "24/08/2026 a 25/08/2026",
             "status": "sem_chuva",
@@ -2379,13 +2396,13 @@
             "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
           },
           {
-            "id": "ANA-648006",
-            "codigo": "648006",
-            "nome": "ARAGUANÃ",
-            "municipio": "ARAGUANÃ",
+            "id": "ANA-648011",
+            "codigo": "648011",
+            "nome": "RIO CORDA - RIACHINHO",
+            "municipio": "RIACHINHO",
             "fonte": "ANA",
-            "latitude": -6.56557,
-            "longitude": -48.6355,
+            "latitude": -6.5178,
+            "longitude": -48.1514,
             "chuva24h": 0,
             "atualizadoEm": "24/08/2026 a 25/08/2026",
             "status": "sem_chuva",
@@ -2393,13 +2410,13 @@
             "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
           },
           {
-            "id": "ANA-648010",
-            "codigo": "648010",
-            "nome": "UHE TUCURUÍ RIO ARAGUAIA 1",
-            "municipio": "XAMBIOÁ",
+            "id": "ANA-746013",
+            "codigo": "746013",
+            "nome": "RIO MANUEL ALVES GRANDE - CAMPOS LINDOS",
+            "municipio": "CAMPOS LINDOS",
             "fonte": "ANA",
-            "latitude": -6.3997,
-            "longitude": -48.5281,
+            "latitude": -7.9528,
+            "longitude": -46.8097,
             "chuva24h": 0,
             "atualizadoEm": "24/08/2026 a 25/08/2026",
             "status": "sem_chuva",
@@ -2421,13 +2438,27 @@
             "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
           },
           {
-            "id": "ANA-748010",
-            "codigo": "748010",
-            "nome": "RIO LONTRA MONTANTE DE ARAGUAINA",
+            "id": "ANA-748004",
+            "codigo": "748004",
+            "nome": "ARAGUAINA",
+            "municipio": "ARAGOMINAS",
+            "fonte": "ANA",
+            "latitude": -7.1039,
+            "longitude": -48.2014,
+            "chuva24h": 0,
+            "atualizadoEm": "24/08/2026 a 25/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-748008",
+            "codigo": "748008",
+            "nome": "PONTE RIO LONTRA",
             "municipio": "ARAGUAÍNA",
             "fonte": "ANA",
-            "latitude": -7.2708,
-            "longitude": -48.1606,
+            "latitude": -7.2075,
+            "longitude": -48.2958,
             "chuva24h": 0,
             "atualizadoEm": "24/08/2026 a 25/08/2026",
             "status": "sem_chuva",
