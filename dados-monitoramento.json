@@ -1,21 +1,21 @@
 {
-  "atualizado_em": "2026-08-26T13:06:22.309Z",
+  "atualizado_em": "2026-08-26T14:52:20.862Z",
   "resumo": {
     "alertas_cemaden_to": 0,
     "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
     "estacoes_fluviometricas_ana": null,
-    "focos_calor_24h": 574,
+    "focos_calor_24h": 661,
     "area_queimada_ano_ha": 245000,
-    "chuva_24h_mm": 0.2,
-    "estacoes_operando": 38,
+    "chuva_24h_mm": 0,
+    "estacoes_operando": 49,
     "avisos_inmet_to_hoje": 2,
-    "avisos_inmet_to_futuro": 1,
+    "avisos_inmet_to_futuro": 3,
     "avisos_inmet_to_severidade_maxima": "Perigo",
     "avisos_inmet_detalhes": [
       {
         "title": "Vigente hoje: Baixa Umidade",
-        "detail": "Perigo Potencial | 2026-08-26 10:00 até 2026-08-27 23:59",
-        "location": "Abreulândia, Aguiarnópolis, Aliança do Tocantins, Almas, Alvorada, Ananás e mais 126 municipio(s)."
+        "detail": "Perigo Potencial | 2026-08-26 08:42 até 2026-08-26 20:00",
+        "location": "Abreulândia, Aliança do Tocantins, Almas, Alvorada, Aparecida do Rio Negro, Aragominas e mais 103 municipio(s)."
       },
       {
         "title": "Vigente hoje: Baixa Umidade",
@@ -24,8 +24,18 @@
       },
       {
         "title": "Previsto: Baixa Umidade",
-        "detail": "Perigo Potencial | 2026-08-26 10:00 até 2026-08-27 23:59",
-        "location": "Abreulândia, Aguiarnópolis, Aliança do Tocantins, Almas, Alvorada, Ananás e mais 126 municipio(s)."
+        "detail": "Perigo Potencial | 2026-08-27 10:00 até 2026-08-27 20:00",
+        "location": "Abreulândia, Aguiarnópolis, Aliança do Tocantins, Almas, Alvorada, Ananás e mais 117 municipio(s)."
+      },
+      {
+        "title": "Previsto: Baixa Umidade",
+        "detail": "Perigo Potencial | 2026-08-28 10:00 até 2026-08-28 20:00",
+        "location": "Abreulândia, Aguiarnópolis, Aliança do Tocantins, Almas, Alvorada, Aparecida do Rio Negro e mais 110 municipio(s)."
+      },
+      {
+        "title": "Previsto: Baixa Umidade",
+        "detail": "Perigo | 2026-08-27 12:00 até 2026-08-27 18:00",
+        "location": "Abreulândia, Aliança do Tocantins, Almas, Alvorada, Aparecida do Rio Negro, Araguacema e mais 73 municipio(s)."
       }
     ],
     "municipios_s2id_vigentes": 4,
@@ -36,7 +46,7 @@
     {
       "icon": "cloud-rain",
       "label": "Chuvas",
-      "description": "0,2 mm acumulados nas últimas 24h",
+      "description": "0 mm acumulados nas últimas 24h",
       "value": "Monitoramento"
     },
     {
@@ -48,19 +58,19 @@
     {
       "icon": "flame",
       "label": "Focos de calor",
-      "description": "574 focos registrados no arquivo diário do INPE",
+      "description": "661 focos registrados no arquivo diário do INPE",
       "value": "Ativo"
     },
     {
       "icon": "radio-tower",
       "label": "Rede operacional",
-      "description": "38 estacoes ou pontos em acompanhamento",
+      "description": "49 estacoes ou pontos em acompanhamento",
       "value": "24h"
     }
   ],
   "fontes": {
     "alertas": "CEMADEN",
-    "chuva": "CEMADEN",
+    "chuva": "CEMADEN / ANA",
     "rios": "ANA / Telemetria",
     "focos": "INPE Queimadas",
     "area_queimada": "MapBiomas Fogo / INPE AQ",
@@ -1784,11 +1794,11 @@
   },
   "focos_calor": {
     "status": "ok",
-    "quantidade24h": 574,
-    "quantidadeMapa": 574,
+    "quantidade24h": 661,
+    "quantidadeMapa": 661,
     "periodo": "Arquivo diario INPE",
     "fonte": "INPE Queimadas",
-    "atualizadoEm": "2026-08-26T13:05:12.015Z",
+    "atualizadoEm": "2026-08-26T14:51:21.690Z",
     "referenciaArquivo": "20260826",
     "csv_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/focos_diario_br_20260826.csv",
     "observacao": "Dados filtrados para o Tocantins a partir do arquivo diario Brasil do INPE Queimadas.",
@@ -6383,6 +6393,702 @@
         "municipio": "SÃO SALVADOR DO TOCANTINS",
         "satelite": "GOES-19",
         "data_hora_gmt": "2026-08-26 11:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1482,
+        "longitude": -47.5218,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 11:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6452,
+        "longitude": -48.4168,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 11:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6836,
+        "longitude": -48.4116,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 11:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.2923,
+        "longitude": -47.0644,
+        "municipio": "ALMAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6644,
+        "longitude": -48.4142,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1482,
+        "longitude": -47.5218,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6452,
+        "longitude": -48.4168,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1484,
+        "longitude": -47.4998,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6452,
+        "longitude": -48.4168,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1482,
+        "longitude": -47.5218,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1484,
+        "longitude": -47.4998,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1484,
+        "longitude": -47.4998,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1482,
+        "longitude": -47.5218,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.5748,
+        "longitude": -49.2799,
+        "municipio": "ABREULÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.5936,
+        "longitude": -49.278,
+        "municipio": "ABREULÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6836,
+        "longitude": -48.4116,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.5748,
+        "longitude": -49.2799,
+        "municipio": "ABREULÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1484,
+        "longitude": -47.4998,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1482,
+        "longitude": -47.5218,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.2923,
+        "longitude": -47.0644,
+        "municipio": "ALMAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6452,
+        "longitude": -48.4168,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1484,
+        "longitude": -47.4998,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.2923,
+        "longitude": -47.0644,
+        "municipio": "ALMAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6644,
+        "longitude": -48.4142,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5596,
+        "longitude": -50.4449,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.5748,
+        "longitude": -49.2799,
+        "municipio": "ABREULÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.7249,
+        "longitude": -49.3296,
+        "municipio": "DIVINÓPOLIS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1482,
+        "longitude": -47.5218,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6836,
+        "longitude": -48.4116,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.5936,
+        "longitude": -49.278,
+        "municipio": "ABREULÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6452,
+        "longitude": -48.4168,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.5748,
+        "longitude": -49.2799,
+        "municipio": "ABREULÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.2923,
+        "longitude": -47.0644,
+        "municipio": "ALMAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1484,
+        "longitude": -47.4998,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.5936,
+        "longitude": -49.278,
+        "municipio": "ABREULÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6452,
+        "longitude": -48.4168,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1482,
+        "longitude": -47.5218,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5596,
+        "longitude": -50.4449,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6836,
+        "longitude": -48.4116,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.0733,
+        "longitude": -47.5066,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.7249,
+        "longitude": -49.3296,
+        "municipio": "DIVINÓPOLIS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6832,
+        "longitude": -48.4337,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6452,
+        "longitude": -48.4168,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5596,
+        "longitude": -50.4449,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.9506,
+        "longitude": -46.6251,
+        "municipio": "SÃO FÉLIX DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6836,
+        "longitude": -48.4116,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1484,
+        "longitude": -47.4998,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1482,
+        "longitude": -47.5218,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.7249,
+        "longitude": -49.3296,
+        "municipio": "DIVINÓPOLIS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.5748,
+        "longitude": -49.2799,
+        "municipio": "ABREULÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6644,
+        "longitude": -48.4142,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6836,
+        "longitude": -48.4116,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.5748,
+        "longitude": -49.2799,
+        "municipio": "ABREULÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.7249,
+        "longitude": -49.3296,
+        "municipio": "DIVINÓPOLIS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1484,
+        "longitude": -47.4998,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5596,
+        "longitude": -50.4449,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6644,
+        "longitude": -48.4142,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1482,
+        "longitude": -47.5218,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6452,
+        "longitude": -48.4168,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1294,
+        "longitude": -47.5235,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1484,
+        "longitude": -47.4998,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6456,
+        "longitude": -48.3947,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.9506,
+        "longitude": -46.6251,
+        "municipio": "SÃO FÉLIX DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.5748,
+        "longitude": -49.2799,
+        "municipio": "ABREULÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.5936,
+        "longitude": -49.278,
+        "municipio": "ABREULÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.7249,
+        "longitude": -49.3296,
+        "municipio": "DIVINÓPOLIS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1482,
+        "longitude": -47.5218,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6836,
+        "longitude": -48.4116,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6452,
+        "longitude": -48.4168,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.5936,
+        "longitude": -49.278,
+        "municipio": "ABREULÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.5748,
+        "longitude": -49.2799,
+        "municipio": "ABREULÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6836,
+        "longitude": -48.4116,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.7246,
+        "longitude": -49.3512,
+        "municipio": "DIVINÓPOLIS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.7249,
+        "longitude": -49.3296,
+        "municipio": "DIVINÓPOLIS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1484,
+        "longitude": -47.4998,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.9506,
+        "longitude": -46.6251,
+        "municipio": "SÃO FÉLIX DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1482,
+        "longitude": -47.5218,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6452,
+        "longitude": -48.4168,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6832,
+        "longitude": -48.4337,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.5936,
+        "longitude": -49.278,
+        "municipio": "ABREULÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.5748,
+        "longitude": -49.2799,
+        "municipio": "ABREULÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6452,
+        "longitude": -48.4168,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6644,
+        "longitude": -48.4142,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.7246,
+        "longitude": -49.3512,
+        "municipio": "DIVINÓPOLIS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.7249,
+        "longitude": -49.3296,
+        "municipio": "DIVINÓPOLIS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.6836,
+        "longitude": -48.4116,
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.1482,
+        "longitude": -47.5218,
+        "municipio": "GOIATINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-08-26 13:40:00",
         "bioma": "Cerrado"
       }
     ],
@@ -16718,11 +17424,1576 @@
           "data_hora_gmt": "2026-08-26 11:40:00",
           "bioma": "Cerrado"
         }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.5218,
+            -8.1482
+          ]
+        },
+        "properties": {
+          "latitude": -8.1482,
+          "longitude": -47.5218,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 11:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4168,
+            -12.6452
+          ]
+        },
+        "properties": {
+          "latitude": -12.6452,
+          "longitude": -48.4168,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 11:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4116,
+            -12.6836
+          ]
+        },
+        "properties": {
+          "latitude": -12.6836,
+          "longitude": -48.4116,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 11:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0644,
+            -11.2923
+          ]
+        },
+        "properties": {
+          "latitude": -11.2923,
+          "longitude": -47.0644,
+          "municipio": "ALMAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4142,
+            -12.6644
+          ]
+        },
+        "properties": {
+          "latitude": -12.6644,
+          "longitude": -48.4142,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.5218,
+            -8.1482
+          ]
+        },
+        "properties": {
+          "latitude": -8.1482,
+          "longitude": -47.5218,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4168,
+            -12.6452
+          ]
+        },
+        "properties": {
+          "latitude": -12.6452,
+          "longitude": -48.4168,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4998,
+            -8.1484
+          ]
+        },
+        "properties": {
+          "latitude": -8.1484,
+          "longitude": -47.4998,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4168,
+            -12.6452
+          ]
+        },
+        "properties": {
+          "latitude": -12.6452,
+          "longitude": -48.4168,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.5218,
+            -8.1482
+          ]
+        },
+        "properties": {
+          "latitude": -8.1482,
+          "longitude": -47.5218,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4998,
+            -8.1484
+          ]
+        },
+        "properties": {
+          "latitude": -8.1484,
+          "longitude": -47.4998,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4998,
+            -8.1484
+          ]
+        },
+        "properties": {
+          "latitude": -8.1484,
+          "longitude": -47.4998,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.5218,
+            -8.1482
+          ]
+        },
+        "properties": {
+          "latitude": -8.1482,
+          "longitude": -47.5218,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.2799,
+            -9.5748
+          ]
+        },
+        "properties": {
+          "latitude": -9.5748,
+          "longitude": -49.2799,
+          "municipio": "ABREULÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.278,
+            -9.5936
+          ]
+        },
+        "properties": {
+          "latitude": -9.5936,
+          "longitude": -49.278,
+          "municipio": "ABREULÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4116,
+            -12.6836
+          ]
+        },
+        "properties": {
+          "latitude": -12.6836,
+          "longitude": -48.4116,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.2799,
+            -9.5748
+          ]
+        },
+        "properties": {
+          "latitude": -9.5748,
+          "longitude": -49.2799,
+          "municipio": "ABREULÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4998,
+            -8.1484
+          ]
+        },
+        "properties": {
+          "latitude": -8.1484,
+          "longitude": -47.4998,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.5218,
+            -8.1482
+          ]
+        },
+        "properties": {
+          "latitude": -8.1482,
+          "longitude": -47.5218,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0644,
+            -11.2923
+          ]
+        },
+        "properties": {
+          "latitude": -11.2923,
+          "longitude": -47.0644,
+          "municipio": "ALMAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4168,
+            -12.6452
+          ]
+        },
+        "properties": {
+          "latitude": -12.6452,
+          "longitude": -48.4168,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4998,
+            -8.1484
+          ]
+        },
+        "properties": {
+          "latitude": -8.1484,
+          "longitude": -47.4998,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0644,
+            -11.2923
+          ]
+        },
+        "properties": {
+          "latitude": -11.2923,
+          "longitude": -47.0644,
+          "municipio": "ALMAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4142,
+            -12.6644
+          ]
+        },
+        "properties": {
+          "latitude": -12.6644,
+          "longitude": -48.4142,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.4449,
+            -10.5596
+          ]
+        },
+        "properties": {
+          "latitude": -10.5596,
+          "longitude": -50.4449,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.2799,
+            -9.5748
+          ]
+        },
+        "properties": {
+          "latitude": -9.5748,
+          "longitude": -49.2799,
+          "municipio": "ABREULÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.3296,
+            -9.7249
+          ]
+        },
+        "properties": {
+          "latitude": -9.7249,
+          "longitude": -49.3296,
+          "municipio": "DIVINÓPOLIS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.5218,
+            -8.1482
+          ]
+        },
+        "properties": {
+          "latitude": -8.1482,
+          "longitude": -47.5218,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4116,
+            -12.6836
+          ]
+        },
+        "properties": {
+          "latitude": -12.6836,
+          "longitude": -48.4116,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.278,
+            -9.5936
+          ]
+        },
+        "properties": {
+          "latitude": -9.5936,
+          "longitude": -49.278,
+          "municipio": "ABREULÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4168,
+            -12.6452
+          ]
+        },
+        "properties": {
+          "latitude": -12.6452,
+          "longitude": -48.4168,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.2799,
+            -9.5748
+          ]
+        },
+        "properties": {
+          "latitude": -9.5748,
+          "longitude": -49.2799,
+          "municipio": "ABREULÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0644,
+            -11.2923
+          ]
+        },
+        "properties": {
+          "latitude": -11.2923,
+          "longitude": -47.0644,
+          "municipio": "ALMAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4998,
+            -8.1484
+          ]
+        },
+        "properties": {
+          "latitude": -8.1484,
+          "longitude": -47.4998,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.278,
+            -9.5936
+          ]
+        },
+        "properties": {
+          "latitude": -9.5936,
+          "longitude": -49.278,
+          "municipio": "ABREULÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4168,
+            -12.6452
+          ]
+        },
+        "properties": {
+          "latitude": -12.6452,
+          "longitude": -48.4168,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.5218,
+            -8.1482
+          ]
+        },
+        "properties": {
+          "latitude": -8.1482,
+          "longitude": -47.5218,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.4449,
+            -10.5596
+          ]
+        },
+        "properties": {
+          "latitude": -10.5596,
+          "longitude": -50.4449,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4116,
+            -12.6836
+          ]
+        },
+        "properties": {
+          "latitude": -12.6836,
+          "longitude": -48.4116,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.5066,
+            -8.0733
+          ]
+        },
+        "properties": {
+          "latitude": -8.0733,
+          "longitude": -47.5066,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.3296,
+            -9.7249
+          ]
+        },
+        "properties": {
+          "latitude": -9.7249,
+          "longitude": -49.3296,
+          "municipio": "DIVINÓPOLIS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4337,
+            -12.6832
+          ]
+        },
+        "properties": {
+          "latitude": -12.6832,
+          "longitude": -48.4337,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4168,
+            -12.6452
+          ]
+        },
+        "properties": {
+          "latitude": -12.6452,
+          "longitude": -48.4168,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.4449,
+            -10.5596
+          ]
+        },
+        "properties": {
+          "latitude": -10.5596,
+          "longitude": -50.4449,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.6251,
+            -9.9506
+          ]
+        },
+        "properties": {
+          "latitude": -9.9506,
+          "longitude": -46.6251,
+          "municipio": "SÃO FÉLIX DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4116,
+            -12.6836
+          ]
+        },
+        "properties": {
+          "latitude": -12.6836,
+          "longitude": -48.4116,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4998,
+            -8.1484
+          ]
+        },
+        "properties": {
+          "latitude": -8.1484,
+          "longitude": -47.4998,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.5218,
+            -8.1482
+          ]
+        },
+        "properties": {
+          "latitude": -8.1482,
+          "longitude": -47.5218,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.3296,
+            -9.7249
+          ]
+        },
+        "properties": {
+          "latitude": -9.7249,
+          "longitude": -49.3296,
+          "municipio": "DIVINÓPOLIS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.2799,
+            -9.5748
+          ]
+        },
+        "properties": {
+          "latitude": -9.5748,
+          "longitude": -49.2799,
+          "municipio": "ABREULÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4142,
+            -12.6644
+          ]
+        },
+        "properties": {
+          "latitude": -12.6644,
+          "longitude": -48.4142,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4116,
+            -12.6836
+          ]
+        },
+        "properties": {
+          "latitude": -12.6836,
+          "longitude": -48.4116,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.2799,
+            -9.5748
+          ]
+        },
+        "properties": {
+          "latitude": -9.5748,
+          "longitude": -49.2799,
+          "municipio": "ABREULÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.3296,
+            -9.7249
+          ]
+        },
+        "properties": {
+          "latitude": -9.7249,
+          "longitude": -49.3296,
+          "municipio": "DIVINÓPOLIS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4998,
+            -8.1484
+          ]
+        },
+        "properties": {
+          "latitude": -8.1484,
+          "longitude": -47.4998,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.4449,
+            -10.5596
+          ]
+        },
+        "properties": {
+          "latitude": -10.5596,
+          "longitude": -50.4449,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4142,
+            -12.6644
+          ]
+        },
+        "properties": {
+          "latitude": -12.6644,
+          "longitude": -48.4142,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.5218,
+            -8.1482
+          ]
+        },
+        "properties": {
+          "latitude": -8.1482,
+          "longitude": -47.5218,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4168,
+            -12.6452
+          ]
+        },
+        "properties": {
+          "latitude": -12.6452,
+          "longitude": -48.4168,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.5235,
+            -8.1294
+          ]
+        },
+        "properties": {
+          "latitude": -8.1294,
+          "longitude": -47.5235,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4998,
+            -8.1484
+          ]
+        },
+        "properties": {
+          "latitude": -8.1484,
+          "longitude": -47.4998,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.3947,
+            -12.6456
+          ]
+        },
+        "properties": {
+          "latitude": -12.6456,
+          "longitude": -48.3947,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.6251,
+            -9.9506
+          ]
+        },
+        "properties": {
+          "latitude": -9.9506,
+          "longitude": -46.6251,
+          "municipio": "SÃO FÉLIX DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.2799,
+            -9.5748
+          ]
+        },
+        "properties": {
+          "latitude": -9.5748,
+          "longitude": -49.2799,
+          "municipio": "ABREULÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.278,
+            -9.5936
+          ]
+        },
+        "properties": {
+          "latitude": -9.5936,
+          "longitude": -49.278,
+          "municipio": "ABREULÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.3296,
+            -9.7249
+          ]
+        },
+        "properties": {
+          "latitude": -9.7249,
+          "longitude": -49.3296,
+          "municipio": "DIVINÓPOLIS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.5218,
+            -8.1482
+          ]
+        },
+        "properties": {
+          "latitude": -8.1482,
+          "longitude": -47.5218,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4116,
+            -12.6836
+          ]
+        },
+        "properties": {
+          "latitude": -12.6836,
+          "longitude": -48.4116,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4168,
+            -12.6452
+          ]
+        },
+        "properties": {
+          "latitude": -12.6452,
+          "longitude": -48.4168,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.278,
+            -9.5936
+          ]
+        },
+        "properties": {
+          "latitude": -9.5936,
+          "longitude": -49.278,
+          "municipio": "ABREULÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.2799,
+            -9.5748
+          ]
+        },
+        "properties": {
+          "latitude": -9.5748,
+          "longitude": -49.2799,
+          "municipio": "ABREULÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4116,
+            -12.6836
+          ]
+        },
+        "properties": {
+          "latitude": -12.6836,
+          "longitude": -48.4116,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.3512,
+            -9.7246
+          ]
+        },
+        "properties": {
+          "latitude": -9.7246,
+          "longitude": -49.3512,
+          "municipio": "DIVINÓPOLIS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.3296,
+            -9.7249
+          ]
+        },
+        "properties": {
+          "latitude": -9.7249,
+          "longitude": -49.3296,
+          "municipio": "DIVINÓPOLIS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4998,
+            -8.1484
+          ]
+        },
+        "properties": {
+          "latitude": -8.1484,
+          "longitude": -47.4998,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.6251,
+            -9.9506
+          ]
+        },
+        "properties": {
+          "latitude": -9.9506,
+          "longitude": -46.6251,
+          "municipio": "SÃO FÉLIX DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.5218,
+            -8.1482
+          ]
+        },
+        "properties": {
+          "latitude": -8.1482,
+          "longitude": -47.5218,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4168,
+            -12.6452
+          ]
+        },
+        "properties": {
+          "latitude": -12.6452,
+          "longitude": -48.4168,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4337,
+            -12.6832
+          ]
+        },
+        "properties": {
+          "latitude": -12.6832,
+          "longitude": -48.4337,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.278,
+            -9.5936
+          ]
+        },
+        "properties": {
+          "latitude": -9.5936,
+          "longitude": -49.278,
+          "municipio": "ABREULÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.2799,
+            -9.5748
+          ]
+        },
+        "properties": {
+          "latitude": -9.5748,
+          "longitude": -49.2799,
+          "municipio": "ABREULÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4168,
+            -12.6452
+          ]
+        },
+        "properties": {
+          "latitude": -12.6452,
+          "longitude": -48.4168,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4142,
+            -12.6644
+          ]
+        },
+        "properties": {
+          "latitude": -12.6644,
+          "longitude": -48.4142,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.3512,
+            -9.7246
+          ]
+        },
+        "properties": {
+          "latitude": -9.7246,
+          "longitude": -49.3512,
+          "municipio": "DIVINÓPOLIS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.3296,
+            -9.7249
+          ]
+        },
+        "properties": {
+          "latitude": -9.7249,
+          "longitude": -49.3296,
+          "municipio": "DIVINÓPOLIS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4116,
+            -12.6836
+          ]
+        },
+        "properties": {
+          "latitude": -12.6836,
+          "longitude": -48.4116,
+          "municipio": "SÃO SALVADOR DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.5218,
+            -8.1482
+          ]
+        },
+        "properties": {
+          "latitude": -8.1482,
+          "longitude": -47.5218,
+          "municipio": "GOIATINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-08-26 13:40:00",
+          "bioma": "Cerrado"
+        }
       }
     ]
   },
   "erros_atualizacao": {
-    "avisos_inmet": "fetch failed",
     "seca_iis3": "Metadados do Alerta-Secas indisponiveis",
     "s2id": "Portal S2ID indisponivel"
   },
@@ -16800,21 +19071,21 @@
     "mes_final": 7,
     "periodo": "Janeiro a julho de 2026",
     "area_queimada_ha": 593653,
-    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/0b01f7b1cf698c91bf2ffcbf4a74fa69-f7c3d8034b3b8d7cf1985bd70f9cd1ab/tiles/{z}/{x}/{y}",
+    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/0b01f7b1cf698c91bf2ffcbf4a74fa69-e9a8323812799818192ac74285a1e39f/tiles/{z}/{x}/{y}",
     "unidade": "ha",
     "natureza": "Cicatrizes de área queimada mapeadas pelo Monitor do Fogo."
   },
   "chuva_observada": {
     "status": "ok",
     "periodo": "ultimas 24h",
-    "fonte": "CEMADEN",
-    "atualizadoEm": "2026-08-26T13:06:14.353Z",
-    "maiorAcumulado": 0.2,
-    "estacaoMaiorAcumulado": "G2-172120801A",
-    "municipioMaiorAcumulado": "TOCANTINÓPOLIS",
-    "estacoesCadastradas": 213,
-    "estacoesConsultadas": 213,
-    "estacoesComLeitura": 38,
+    "fonte": "CEMADEN / ANA",
+    "atualizadoEm": "2026-08-26T14:52:16.459Z",
+    "maiorAcumulado": 0,
+    "estacaoMaiorAcumulado": "Dona Constanci",
+    "municipioMaiorAcumulado": "DUERÉ",
+    "estacoesCadastradas": 233,
+    "estacoesConsultadas": 233,
+    "estacoesComLeitura": 49,
     "acima10": 0,
     "acima30": 0,
     "acima50": 0,
@@ -16827,7 +19098,7 @@
         "estacoesCadastradas": 38,
         "estacoesConsultadas": 38,
         "estacoesComLeitura": 38,
-        "atualizadoEm": "2026-08-26 13:04:37 UTC",
+        "atualizadoEm": "2026-08-26 14:50:42 UTC",
         "estacoes": [
           {
             "id": "CEMADEN-170730601A",
@@ -16838,7 +19109,7 @@
             "latitude": -11.34296,
             "longitude": -49.26664,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -16852,7 +19123,7 @@
             "latitude": -5.36527,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -16866,7 +19137,7 @@
             "latitude": -12.035,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -16880,7 +19151,7 @@
             "latitude": -5.3956,
             "longitude": -47.8114,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -16894,7 +19165,7 @@
             "latitude": -7.14869,
             "longitude": -48.69083,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -16908,7 +19179,7 @@
             "latitude": -5.25903,
             "longitude": -48.20147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -16922,7 +19193,7 @@
             "latitude": -6.58226,
             "longitude": -48.64368,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -16936,7 +19207,7 @@
             "latitude": -5.55265,
             "longitude": -47.57758,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -16950,7 +19221,7 @@
             "latitude": -7.18755,
             "longitude": -48.23527,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -16964,7 +19235,7 @@
             "latitude": -7.15587,
             "longitude": -48.1888,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -16978,7 +19249,7 @@
             "latitude": -7.19408,
             "longitude": -48.19586,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -16992,7 +19263,7 @@
             "latitude": -7.22806,
             "longitude": -48.24461,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17006,7 +19277,7 @@
             "latitude": -5.65762,
             "longitude": -48.11147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17020,7 +19291,7 @@
             "latitude": -11.8055,
             "longitude": -49.5275,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17034,7 +19305,7 @@
             "latitude": -7.71295,
             "longitude": -47.3093,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17048,7 +19319,7 @@
             "latitude": -6.41126,
             "longitude": -48.53374,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17062,7 +19333,7 @@
             "latitude": -10.71611,
             "longitude": -48.39972,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17076,7 +19347,7 @@
             "latitude": -6.36614,
             "longitude": -48.07425,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17090,7 +19361,7 @@
             "latitude": -6.38166,
             "longitude": -48.06247,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17104,7 +19375,7 @@
             "latitude": -5.464,
             "longitude": -47.8968,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17118,7 +19389,7 @@
             "latitude": -5.47538,
             "longitude": -47.8894,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17132,7 +19403,7 @@
             "latitude": -5.43003,
             "longitude": -47.85794,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17146,7 +19417,7 @@
             "latitude": -5.31875,
             "longitude": -48.03931,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17160,7 +19431,7 @@
             "latitude": -5.32428,
             "longitude": -48.03409,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17174,7 +19445,7 @@
             "latitude": -9.27346,
             "longitude": -49.95341,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17188,7 +19459,7 @@
             "latitude": -9.28222,
             "longitude": -49.95326,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17202,7 +19473,7 @@
             "latitude": -5.7713,
             "longitude": -47.48039,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17216,7 +19487,7 @@
             "latitude": -5.77459,
             "longitude": -47.47793,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17230,7 +19501,7 @@
             "latitude": -10.79377,
             "longitude": -49.62398,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17244,7 +19515,7 @@
             "latitude": -10.78287,
             "longitude": -49.61681,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17258,7 +19529,7 @@
             "latitude": -12.61455,
             "longitude": -47.88209,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17272,7 +19543,7 @@
             "latitude": -12.62006,
             "longitude": -47.86848,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17286,7 +19557,7 @@
             "latitude": -12.63128,
             "longitude": -47.56409,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17300,7 +19571,7 @@
             "latitude": -10.44846,
             "longitude": -49.16758,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17314,7 +19585,7 @@
             "latitude": -10.44163,
             "longitude": -49.181,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17328,7 +19599,7 @@
             "latitude": -6.32722,
             "longitude": -47.42812,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17341,9 +19612,9 @@
             "fonte": "CEMADEN",
             "latitude": -6.33796,
             "longitude": -47.4185,
-            "chuva24h": 0.2,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
-            "status": "fraca",
+            "chuva24h": 0,
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
+            "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -17356,7 +19627,7 @@
             "latitude": -6.31512,
             "longitude": -47.42296,
             "chuva24h": 0,
-            "atualizadoEm": "2026-08-26 13:04:37 UTC",
+            "atualizadoEm": "2026-08-26 14:50:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -17365,25 +19636,487 @@
       },
       "INMET": {
         "source": "INMET",
-        "status": "error",
-        "label": "Erro de consulta",
-        "observacao": "Falha ao consultar a fonte no workflow: fetch failed",
-        "estacoesCadastradas": 0,
-        "estacoesConsultadas": 0,
+        "status": "catalog",
+        "label": "Sem leitura valida",
+        "observacao": "Chave/token INMET recusado pela API.",
+        "modoConsulta": "autenticada",
+        "erroAutenticacao": "Chave/token INMET recusado pela API.",
+        "estacoesCadastradas": 20,
+        "estacoesConsultadas": 20,
         "estacoesComLeitura": 0,
+        "estacoesSemLeitura": 20,
+        "estacoesComErro": 20,
+        "estacoesEmIntegracao": 0,
         "atualizadoEm": null,
-        "estacoes": []
+        "estacoes": [],
+        "todasEstacoes": [
+          {
+            "id": "INMET-A053",
+            "codigo": "A053",
+            "nome": "ALMAS",
+            "municipio": "ALMAS",
+            "fonte": "INMET",
+            "latitude": -11.28416666,
+            "longitude": -47.21222222,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A054",
+            "codigo": "A054",
+            "nome": "ARAGUACU",
+            "municipio": "ARAGUACU",
+            "fonte": "INMET",
+            "latitude": -12.59222221,
+            "longitude": -49.5286111,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A021",
+            "codigo": "A021",
+            "nome": "ARAGUAINA",
+            "municipio": "ARAGUAINA",
+            "fonte": "INMET",
+            "latitude": -7.10388888,
+            "longitude": -48.20111111,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A044",
+            "codigo": "A044",
+            "nome": "ARAGUATINS",
+            "municipio": "ARAGUATINS",
+            "fonte": "INMET",
+            "latitude": -5.6436111,
+            "longitude": -48.11194444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A043",
+            "codigo": "A043",
+            "nome": "CAMPOS LINDOS",
+            "municipio": "CAMPOS LINDOS",
+            "fonte": "INMET",
+            "latitude": -8.15472222,
+            "longitude": -46.63944444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A049",
+            "codigo": "A049",
+            "nome": "COLINAS DO TOCANTINS",
+            "municipio": "COLINAS DO TOCANTINS",
+            "fonte": "INMET",
+            "latitude": -8.09277777,
+            "longitude": -48.4786111,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A038",
+            "codigo": "A038",
+            "nome": "DIANOPOLIS",
+            "municipio": "DIANOPOLIS",
+            "fonte": "INMET",
+            "latitude": -11.59444444,
+            "longitude": -46.84722221,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A039",
+            "codigo": "A039",
+            "nome": "FORMOSO DO ARAGUAIA",
+            "municipio": "FORMOSO DO ARAGUAIA",
+            "fonte": "INMET",
+            "latitude": -11.88749999,
+            "longitude": -49.60833333,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A019",
+            "codigo": "A019",
+            "nome": "GURUPI",
+            "municipio": "GURUPI",
+            "fonte": "INMET",
+            "latitude": -11.74499999,
+            "longitude": -49.05166666,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A055",
+            "codigo": "A055",
+            "nome": "LAGOA DA CONFUSAO",
+            "municipio": "LAGOA DA CONFUSAO",
+            "fonte": "INMET",
+            "latitude": -10.828286,
+            "longitude": -49.847882,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A041",
+            "codigo": "A041",
+            "nome": "MARIANOPOLIS DO TO",
+            "municipio": "MARIANOPOLIS DO TO",
+            "fonte": "INMET",
+            "latitude": -9.57638888,
+            "longitude": -49.72333332,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A040",
+            "codigo": "A040",
+            "nome": "MATEIROS",
+            "municipio": "MATEIROS",
+            "fonte": "INMET",
+            "latitude": -10.43444444,
+            "longitude": -45.92194443,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A009",
+            "codigo": "A009",
+            "nome": "PALMAS",
+            "municipio": "PALMAS",
+            "fonte": "INMET",
+            "latitude": -10.14777777,
+            "longitude": -48.31444444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A010",
+            "codigo": "A010",
+            "nome": "PARANA",
+            "municipio": "PARANA",
+            "fonte": "INMET",
+            "latitude": -12.615,
+            "longitude": -47.87194443,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A020",
+            "codigo": "A020",
+            "nome": "PEDRO AFONSO",
+            "municipio": "PEDRO AFONSO",
+            "fonte": "INMET",
+            "latitude": -8.9686111,
+            "longitude": -48.17722221,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A018",
+            "codigo": "A018",
+            "nome": "PEIXE",
+            "municipio": "PEIXE",
+            "fonte": "INMET",
+            "latitude": -12.01527777,
+            "longitude": -48.54444444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A051",
+            "codigo": "A051",
+            "nome": "PIUM",
+            "municipio": "PIUM",
+            "fonte": "INMET",
+            "latitude": -10.47694443,
+            "longitude": -49.62944443,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A050",
+            "codigo": "A050",
+            "nome": "RIO SONO",
+            "municipio": "RIO SONO",
+            "fonte": "INMET",
+            "latitude": -9.79333333,
+            "longitude": -47.13277777,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A048",
+            "codigo": "A048",
+            "nome": "SANTA FE DO ARAGUAIA",
+            "municipio": "SANTA FE DO ARAGUAIA",
+            "fonte": "INMET",
+            "latitude": -7.12416666,
+            "longitude": -48.78138888,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A052",
+            "codigo": "A052",
+            "nome": "SANTA ROSA DO TOCANTINS",
+            "municipio": "SANTA ROSA DO TOCANTINS",
+            "fonte": "INMET",
+            "latitude": -11.42888888,
+            "longitude": -48.18499999,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          }
+        ]
       },
       "ANA": {
         "source": "ANA",
-        "status": "catalog",
-        "label": "Sem leitura valida",
-        "observacao": "Estacoes cadastradas, mas sem leitura operacional de chuva nas ultimas 24h.",
+        "status": "ready",
+        "label": "Operando",
+        "observacao": "Consulta server-side realizada pelo workflow.",
         "estacoesCadastradas": 175,
         "estacoesConsultadas": 175,
-        "estacoesComLeitura": 0,
-        "atualizadoEm": null,
-        "estacoes": []
+        "estacoesComLeitura": 11,
+        "atualizadoEm": "25/08/2026 a 26/08/2026",
+        "estacoes": [
+          {
+            "id": "ANA-648005",
+            "codigo": "648005",
+            "nome": "CGH LAJES JUSANTE",
+            "municipio": "PIRAQUÊ",
+            "fonte": "ANA",
+            "latitude": -6.7822,
+            "longitude": -48.1525,
+            "chuva24h": 0,
+            "atualizadoEm": "25/08/2026 a 26/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-648006",
+            "codigo": "648006",
+            "nome": "ARAGUANÃ",
+            "municipio": "ARAGUANÃ",
+            "fonte": "ANA",
+            "latitude": -6.56557,
+            "longitude": -48.6355,
+            "chuva24h": 0,
+            "atualizadoEm": "25/08/2026 a 26/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-648012",
+            "codigo": "648012",
+            "nome": "RIO PIRANHAS - SÃO BENTO DO TOCANTINS",
+            "municipio": "SÃO BENTO DO TOCANT",
+            "fonte": "ANA",
+            "latitude": -6.0442,
+            "longitude": -48.1983,
+            "chuva24h": 0,
+            "atualizadoEm": "25/08/2026 a 26/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-749001",
+            "codigo": "749001",
+            "nome": "BOA VISTA DO ARAGUAIA",
+            "municipio": "ARAGUAÍNA",
+            "fonte": "ANA",
+            "latitude": -7.3231,
+            "longitude": -49.2242,
+            "chuva24h": 0,
+            "atualizadoEm": "25/08/2026 a 26/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-848001",
+            "codigo": "848001",
+            "nome": "GUARAI",
+            "municipio": "GUARAÍ",
+            "fonte": "ANA",
+            "latitude": -8.8319,
+            "longitude": -48.8172,
+            "chuva24h": 0,
+            "atualizadoEm": "25/08/2026 a 26/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-848004",
+            "codigo": "848004",
+            "nome": "PEDRO AFONSO",
+            "municipio": "PEDRO AFONSO",
+            "fonte": "ANA",
+            "latitude": -8.9686,
+            "longitude": -48.1761,
+            "chuva24h": 0,
+            "atualizadoEm": "25/08/2026 a 26/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-849008",
+            "codigo": "849008",
+            "nome": "RIO PIRANHAS - ARAGUACEMA",
+            "municipio": "ARAGUACEMA",
+            "fonte": "ANA",
+            "latitude": -8.81,
+            "longitude": -49.4239,
+            "chuva24h": 0,
+            "atualizadoEm": "25/08/2026 a 26/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-949004",
+            "codigo": "949004",
+            "nome": "RIO CAIAPÓ - FAZ GRUPO AGROPAULO",
+            "municipio": "CASEARA",
+            "fonte": "ANA",
+            "latitude": -9.1256,
+            "longitude": -49.7431,
+            "chuva24h": 0,
+            "atualizadoEm": "25/08/2026 a 26/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-1047005",
+            "codigo": "1047005",
+            "nome": "PCH ISAMU IKEDA RIO PONTE ALTA",
+            "municipio": "MONTE DO CARMO",
+            "fonte": "ANA",
+            "latitude": -10.7506,
+            "longitude": -47.6803,
+            "chuva24h": 0,
+            "atualizadoEm": "25/08/2026 a 26/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-1047006",
+            "codigo": "1047006",
+            "nome": "PCH ISAMU IKEDA MONTANTE 1",
+            "municipio": "MONTE DO CARMO",
+            "fonte": "ANA",
+            "latitude": -10.8353,
+            "longitude": -47.7675,
+            "chuva24h": 0,
+            "atualizadoEm": "25/08/2026 a 26/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-1146003",
+            "codigo": "1146003",
+            "nome": "PCH AGRO TRAFO MONTANTE",
+            "municipio": "DIANÓPOLIS",
+            "fonte": "ANA",
+            "latitude": -11.6764,
+            "longitude": -46.6642,
+            "chuva24h": 0,
+            "atualizadoEm": "25/08/2026 a 26/08/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          }
+        ]
       },
       "SEMARH": {
         "source": "SEMARH",
@@ -17397,8 +20130,6 @@
         "estacoes": []
       }
     },
-    "erros": {
-      "INMET": "fetch failed"
-    }
+    "erros": {}
   }
 }
