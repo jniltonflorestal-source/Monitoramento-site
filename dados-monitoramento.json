@@ -1,21 +1,26 @@
 {
-  "atualizado_em": "2026-09-06T13:32:15.576Z",
+  "atualizado_em": "2026-09-06T16:51:23.879Z",
   "resumo": {
     "alertas_cemaden_to": 0,
     "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
     "estacoes_fluviometricas_ana": null,
-    "focos_calor_24h": 54,
+    "focos_calor_24h": 69,
     "area_queimada_ano_ha": 245000,
-    "chuva_24h_mm": 31.4,
+    "chuva_24h_mm": 31.6,
     "estacoes_operando": 38,
-    "avisos_inmet_to_hoje": 1,
-    "avisos_inmet_to_futuro": 2,
+    "avisos_inmet_to_hoje": 2,
+    "avisos_inmet_to_futuro": 5,
     "avisos_inmet_to_severidade_maxima": "Perigo Potencial",
     "avisos_inmet_detalhes": [
       {
         "title": "Vigente hoje: Baixa Umidade",
         "detail": "Perigo Potencial | 2026-09-06 10:00 até 2026-09-06 23:59",
         "location": "Almas, Arraias, Aurora do Tocantins, Combinado, Conceição do Tocantins, Dianópolis e mais 18 municipio(s)."
+      },
+      {
+        "title": "Vigente hoje: Tempestade",
+        "detail": "Perigo Potencial | 2026-09-06 11:06 até 2026-09-06 23:59",
+        "location": "Abreulândia, Aliança do Tocantins, Almas, Alvorada, Aparecida do Rio Negro, Araguacema e mais 62 municipio(s)."
       },
       {
         "title": "Previsto: Baixa Umidade",
@@ -26,6 +31,21 @@
         "title": "Previsto: Baixa Umidade",
         "detail": "Perigo Potencial | 2026-09-08 10:00 até 2026-09-08 21:00",
         "location": "Abreulândia, Aliança do Tocantins, Almas, Alvorada, Aparecida do Rio Negro, Araguaçu e mais 82 municipio(s)."
+      },
+      {
+        "title": "Previsto: Chuvas Intensas",
+        "detail": "Perigo Potencial | 2026-09-07 00:00 até 2026-09-07 23:59",
+        "location": "Aragominas, Araguaína, Muricilândia, Pau D'Arco, Santa Fé do Araguaia."
+      },
+      {
+        "title": "Previsto: Tempestade",
+        "detail": "Perigo Potencial | 2026-09-07 00:00 até 2026-09-07 23:59",
+        "location": "Abreulândia, Aliança do Tocantins, Almas, Alvorada, Aparecida do Rio Negro, Araguacema e mais 76 municipio(s)."
+      },
+      {
+        "title": "Previsto: Tempestade",
+        "detail": "Perigo Potencial | 2026-09-08 00:00 até 2026-09-08 23:59",
+        "location": "Abreulândia, Aliança do Tocantins, Almas, Alvorada, Aparecida do Rio Negro, Araguacema e mais 75 municipio(s)."
       }
     ],
     "municipios_s2id_vigentes": 4,
@@ -36,7 +56,7 @@
     {
       "icon": "cloud-rain",
       "label": "Chuvas",
-      "description": "31,4 mm acumulados nas últimas 24h",
+      "description": "31,6 mm acumulados nas últimas 24h",
       "value": "Monitoramento"
     },
     {
@@ -48,7 +68,7 @@
     {
       "icon": "flame",
       "label": "Focos de calor",
-      "description": "54 focos registrados no arquivo diário do INPE",
+      "description": "69 focos registrados no arquivo diário do INPE",
       "value": "Ativo"
     },
     {
@@ -1784,11 +1804,11 @@
   },
   "focos_calor": {
     "status": "ok",
-    "quantidade24h": 54,
-    "quantidadeMapa": 54,
+    "quantidade24h": 69,
+    "quantidadeMapa": 69,
     "periodo": "Arquivo diario INPE",
     "fonte": "INPE Queimadas",
-    "atualizadoEm": "2026-09-06T13:31:46.956Z",
+    "atualizadoEm": "2026-09-06T16:50:28.501Z",
     "referenciaArquivo": "20260906",
     "csv_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/focos_diario_br_20260906.csv",
     "observacao": "Dados filtrados para o Tocantins a partir do arquivo diario Brasil do INPE Queimadas.",
@@ -2223,6 +2243,126 @@
         "municipio": "FORMOSO DO ARAGUAIA",
         "satelite": "NPP-375D",
         "data_hora_gmt": "2026-09-06 05:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6731,
+        "longitude": -50.4331,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-06 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.4023,
+        "longitude": -46.8402,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-06 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.1504,
+        "longitude": -47.1283,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-06 14:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.2028,
+        "longitude": -50.2895,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-06 14:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.2025,
+        "longitude": -50.3109,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-06 14:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.2818,
+        "longitude": -50.025,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-06 14:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.1132,
+        "longitude": -47.0661,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-06 14:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.3154,
+        "longitude": -50.3421,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-06 14:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.334,
+        "longitude": -50.3615,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-06 14:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.3205,
+        "longitude": -49.9567,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-06 15:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.3397,
+        "longitude": -49.9333,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-06 15:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.2031,
+        "longitude": -50.2681,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-06 15:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.0542,
+        "longitude": -50.1123,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-06 15:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.3016,
+        "longitude": -49.9587,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-06 15:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.2406,
+        "longitude": -50.2857,
+        "municipio": "PIUM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-06 15:30:00",
         "bioma": "Cerrado"
       }
     ],
@@ -3198,11 +3338,280 @@
           "data_hora_gmt": "2026-09-06 05:25:00",
           "bioma": "Cerrado"
         }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.4331,
+            -10.6731
+          ]
+        },
+        "properties": {
+          "latitude": -10.6731,
+          "longitude": -50.4331,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-06 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.8402,
+            -10.4023
+          ]
+        },
+        "properties": {
+          "latitude": -10.4023,
+          "longitude": -46.8402,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-06 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.1283,
+            -12.1504
+          ]
+        },
+        "properties": {
+          "latitude": -12.1504,
+          "longitude": -47.1283,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-06 14:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2895,
+            -10.2028
+          ]
+        },
+        "properties": {
+          "latitude": -10.2028,
+          "longitude": -50.2895,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-06 14:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.3109,
+            -10.2025
+          ]
+        },
+        "properties": {
+          "latitude": -10.2025,
+          "longitude": -50.3109,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-06 14:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.025,
+            -10.2818
+          ]
+        },
+        "properties": {
+          "latitude": -10.2818,
+          "longitude": -50.025,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-06 14:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0661,
+            -12.1132
+          ]
+        },
+        "properties": {
+          "latitude": -12.1132,
+          "longitude": -47.0661,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-06 14:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.3421,
+            -10.3154
+          ]
+        },
+        "properties": {
+          "latitude": -10.3154,
+          "longitude": -50.3421,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-06 14:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.3615,
+            -10.334
+          ]
+        },
+        "properties": {
+          "latitude": -10.334,
+          "longitude": -50.3615,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-06 14:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.9567,
+            -10.3205
+          ]
+        },
+        "properties": {
+          "latitude": -10.3205,
+          "longitude": -49.9567,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-06 15:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.9333,
+            -10.3397
+          ]
+        },
+        "properties": {
+          "latitude": -10.3397,
+          "longitude": -49.9333,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-06 15:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2681,
+            -10.2031
+          ]
+        },
+        "properties": {
+          "latitude": -10.2031,
+          "longitude": -50.2681,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-06 15:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.1123,
+            -10.0542
+          ]
+        },
+        "properties": {
+          "latitude": -10.0542,
+          "longitude": -50.1123,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-06 15:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.9587,
+            -10.3016
+          ]
+        },
+        "properties": {
+          "latitude": -10.3016,
+          "longitude": -49.9587,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-06 15:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.2857,
+            -10.2406
+          ]
+        },
+        "properties": {
+          "latitude": -10.2406,
+          "longitude": -50.2857,
+          "municipio": "PIUM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-06 15:30:00",
+          "bioma": "Cerrado"
+        }
       }
     ]
   },
   "erros_atualizacao": {
-    "avisos_inmet": "fetch failed",
     "seca_iis3": "Metadados do Alerta-Secas indisponiveis",
     "s2id": "Portal S2ID indisponivel"
   },
@@ -3280,7 +3689,7 @@
     "mes_final": 7,
     "periodo": "Janeiro a julho de 2026",
     "area_queimada_ha": 593653,
-    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/2b4d4c4ddd211fc50a5cca0288365486-19ff0c3ea5f2cab339e75efd09d8cef0/tiles/{z}/{x}/{y}",
+    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/2b4d4c4ddd211fc50a5cca0288365486-e27fed2a3535a40a2868ae14332fa865/tiles/{z}/{x}/{y}",
     "unidade": "ha",
     "natureza": "Cicatrizes de área queimada mapeadas pelo Monitor do Fogo."
   },
@@ -3288,12 +3697,12 @@
     "status": "ok",
     "periodo": "ultimas 24h",
     "fonte": "CEMADEN",
-    "atualizadoEm": "2026-09-06T13:32:12.022Z",
-    "maiorAcumulado": 31.4,
+    "atualizadoEm": "2026-09-06T16:51:16.764Z",
+    "maiorAcumulado": 31.6,
     "estacaoMaiorAcumulado": "G2-171190202A",
     "municipioMaiorAcumulado": "LAGOA DA CONFUSÃO",
-    "estacoesCadastradas": 38,
-    "estacoesConsultadas": 38,
+    "estacoesCadastradas": 233,
+    "estacoesConsultadas": 233,
     "estacoesComLeitura": 38,
     "acima10": 2,
     "acima30": 2,
@@ -3307,7 +3716,7 @@
         "estacoesCadastradas": 38,
         "estacoesConsultadas": 38,
         "estacoesComLeitura": 38,
-        "atualizadoEm": "2026-09-06 13:30:46 UTC",
+        "atualizadoEm": "2026-09-06 16:48:39 UTC",
         "estacoes": [
           {
             "id": "CEMADEN-170730601A",
@@ -3318,7 +3727,7 @@
             "latitude": -11.34296,
             "longitude": -49.26664,
             "chuva24h": 1,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3332,7 +3741,7 @@
             "latitude": -5.36527,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3346,7 +3755,7 @@
             "latitude": -12.035,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3360,7 +3769,7 @@
             "latitude": -5.3956,
             "longitude": -47.8114,
             "chuva24h": 6.6,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3374,7 +3783,7 @@
             "latitude": -7.14869,
             "longitude": -48.69083,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3388,7 +3797,7 @@
             "latitude": -5.25903,
             "longitude": -48.20147,
             "chuva24h": 6.6,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3402,7 +3811,7 @@
             "latitude": -6.58226,
             "longitude": -48.64368,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3416,7 +3825,7 @@
             "latitude": -5.55265,
             "longitude": -47.57758,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3430,7 +3839,7 @@
             "latitude": -7.18755,
             "longitude": -48.23527,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3443,9 +3852,9 @@
             "fonte": "CEMADEN",
             "latitude": -7.15587,
             "longitude": -48.1888,
-            "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
-            "status": "sem_chuva",
+            "chuva24h": 3.15,
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
+            "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -3458,7 +3867,7 @@
             "latitude": -7.19408,
             "longitude": -48.19586,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3472,7 +3881,7 @@
             "latitude": -7.22806,
             "longitude": -48.24461,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3486,7 +3895,7 @@
             "latitude": -5.65762,
             "longitude": -48.11147,
             "chuva24h": 0.2,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3500,7 +3909,7 @@
             "latitude": -11.8055,
             "longitude": -49.5275,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3514,7 +3923,7 @@
             "latitude": -7.71295,
             "longitude": -47.3093,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3528,7 +3937,7 @@
             "latitude": -6.41126,
             "longitude": -48.53374,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3541,8 +3950,8 @@
             "fonte": "CEMADEN",
             "latitude": -10.71611,
             "longitude": -48.39972,
-            "chuva24h": 2.8,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "chuva24h": 3,
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3556,7 +3965,7 @@
             "latitude": -6.36614,
             "longitude": -48.07425,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3570,7 +3979,7 @@
             "latitude": -6.38166,
             "longitude": -48.06247,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3584,7 +3993,7 @@
             "latitude": -5.464,
             "longitude": -47.8968,
             "chuva24h": 3.6,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3598,7 +4007,7 @@
             "latitude": -5.47538,
             "longitude": -47.8894,
             "chuva24h": 3.2,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3612,7 +4021,7 @@
             "latitude": -5.43003,
             "longitude": -47.85794,
             "chuva24h": 5.6,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3626,7 +4035,7 @@
             "latitude": -5.31875,
             "longitude": -48.03931,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3640,7 +4049,7 @@
             "latitude": -5.32428,
             "longitude": -48.03409,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3654,7 +4063,7 @@
             "latitude": -9.27346,
             "longitude": -49.95341,
             "chuva24h": 0.2,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3667,9 +4076,9 @@
             "fonte": "CEMADEN",
             "latitude": -9.28222,
             "longitude": -49.95326,
-            "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
-            "status": "sem_chuva",
+            "chuva24h": 0.8,
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
+            "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -3682,7 +4091,7 @@
             "latitude": -5.7713,
             "longitude": -47.48039,
             "chuva24h": 0.4,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3696,7 +4105,7 @@
             "latitude": -5.77459,
             "longitude": -47.47793,
             "chuva24h": 1,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3709,8 +4118,8 @@
             "fonte": "CEMADEN",
             "latitude": -10.79377,
             "longitude": -49.62398,
-            "chuva24h": 31.4,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "chuva24h": 31.6,
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "forte",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3723,8 +4132,8 @@
             "fonte": "CEMADEN",
             "latitude": -10.78287,
             "longitude": -49.61681,
-            "chuva24h": 31,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "chuva24h": 31.2,
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "forte",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3738,7 +4147,7 @@
             "latitude": -12.61455,
             "longitude": -47.88209,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3752,7 +4161,7 @@
             "latitude": -12.62006,
             "longitude": -47.86848,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3766,7 +4175,7 @@
             "latitude": -12.63128,
             "longitude": -47.56409,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3780,7 +4189,7 @@
             "latitude": -10.44846,
             "longitude": -49.16758,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3794,7 +4203,7 @@
             "latitude": -10.44163,
             "longitude": -49.181,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3808,7 +4217,7 @@
             "latitude": -6.32722,
             "longitude": -47.42812,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3822,7 +4231,7 @@
             "latitude": -6.33796,
             "longitude": -47.4185,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3836,7 +4245,7 @@
             "latitude": -6.31512,
             "longitude": -47.42296,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-06 13:30:46 UTC",
+            "atualizadoEm": "2026-09-06 16:48:39 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3845,22 +4254,329 @@
       },
       "INMET": {
         "source": "INMET",
-        "status": "error",
-        "label": "Erro de consulta",
-        "observacao": "Falha ao consultar a fonte no workflow: fetch failed",
-        "estacoesCadastradas": 0,
-        "estacoesConsultadas": 0,
+        "status": "catalog",
+        "label": "Sem leitura valida",
+        "observacao": "Chave/token INMET recusado pela API.",
+        "modoConsulta": "autenticada",
+        "erroAutenticacao": "Chave/token INMET recusado pela API.",
+        "estacoesCadastradas": 20,
+        "estacoesConsultadas": 20,
         "estacoesComLeitura": 0,
+        "estacoesSemLeitura": 20,
+        "estacoesComErro": 20,
+        "estacoesEmIntegracao": 0,
         "atualizadoEm": null,
-        "estacoes": []
+        "estacoes": [],
+        "todasEstacoes": [
+          {
+            "id": "INMET-A053",
+            "codigo": "A053",
+            "nome": "ALMAS",
+            "municipio": "ALMAS",
+            "fonte": "INMET",
+            "latitude": -11.28416666,
+            "longitude": -47.21222222,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A054",
+            "codigo": "A054",
+            "nome": "ARAGUACU",
+            "municipio": "ARAGUACU",
+            "fonte": "INMET",
+            "latitude": -12.59222221,
+            "longitude": -49.5286111,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A021",
+            "codigo": "A021",
+            "nome": "ARAGUAINA",
+            "municipio": "ARAGUAINA",
+            "fonte": "INMET",
+            "latitude": -7.10388888,
+            "longitude": -48.20111111,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A044",
+            "codigo": "A044",
+            "nome": "ARAGUATINS",
+            "municipio": "ARAGUATINS",
+            "fonte": "INMET",
+            "latitude": -5.6436111,
+            "longitude": -48.11194444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A043",
+            "codigo": "A043",
+            "nome": "CAMPOS LINDOS",
+            "municipio": "CAMPOS LINDOS",
+            "fonte": "INMET",
+            "latitude": -8.15472222,
+            "longitude": -46.63944444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A049",
+            "codigo": "A049",
+            "nome": "COLINAS DO TOCANTINS",
+            "municipio": "COLINAS DO TOCANTINS",
+            "fonte": "INMET",
+            "latitude": -8.09277777,
+            "longitude": -48.4786111,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A038",
+            "codigo": "A038",
+            "nome": "DIANOPOLIS",
+            "municipio": "DIANOPOLIS",
+            "fonte": "INMET",
+            "latitude": -11.59444444,
+            "longitude": -46.84722221,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A039",
+            "codigo": "A039",
+            "nome": "FORMOSO DO ARAGUAIA",
+            "municipio": "FORMOSO DO ARAGUAIA",
+            "fonte": "INMET",
+            "latitude": -11.88749999,
+            "longitude": -49.60833333,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A019",
+            "codigo": "A019",
+            "nome": "GURUPI",
+            "municipio": "GURUPI",
+            "fonte": "INMET",
+            "latitude": -11.74499999,
+            "longitude": -49.05166666,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A055",
+            "codigo": "A055",
+            "nome": "LAGOA DA CONFUSAO",
+            "municipio": "LAGOA DA CONFUSAO",
+            "fonte": "INMET",
+            "latitude": -10.828286,
+            "longitude": -49.847882,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A041",
+            "codigo": "A041",
+            "nome": "MARIANOPOLIS DO TO",
+            "municipio": "MARIANOPOLIS DO TO",
+            "fonte": "INMET",
+            "latitude": -9.57638888,
+            "longitude": -49.72333332,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A040",
+            "codigo": "A040",
+            "nome": "MATEIROS",
+            "municipio": "MATEIROS",
+            "fonte": "INMET",
+            "latitude": -10.43444444,
+            "longitude": -45.92194443,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A009",
+            "codigo": "A009",
+            "nome": "PALMAS",
+            "municipio": "PALMAS",
+            "fonte": "INMET",
+            "latitude": -10.14777777,
+            "longitude": -48.31444444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A010",
+            "codigo": "A010",
+            "nome": "PARANA",
+            "municipio": "PARANA",
+            "fonte": "INMET",
+            "latitude": -12.615,
+            "longitude": -47.87194443,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A020",
+            "codigo": "A020",
+            "nome": "PEDRO AFONSO",
+            "municipio": "PEDRO AFONSO",
+            "fonte": "INMET",
+            "latitude": -8.9686111,
+            "longitude": -48.17722221,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A018",
+            "codigo": "A018",
+            "nome": "PEIXE",
+            "municipio": "PEIXE",
+            "fonte": "INMET",
+            "latitude": -12.01527777,
+            "longitude": -48.54444444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A051",
+            "codigo": "A051",
+            "nome": "PIUM",
+            "municipio": "PIUM",
+            "fonte": "INMET",
+            "latitude": -10.47694443,
+            "longitude": -49.62944443,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A050",
+            "codigo": "A050",
+            "nome": "RIO SONO",
+            "municipio": "RIO SONO",
+            "fonte": "INMET",
+            "latitude": -9.79333333,
+            "longitude": -47.13277777,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A048",
+            "codigo": "A048",
+            "nome": "SANTA FE DO ARAGUAIA",
+            "municipio": "SANTA FE DO ARAGUAIA",
+            "fonte": "INMET",
+            "latitude": -7.12416666,
+            "longitude": -48.78138888,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A052",
+            "codigo": "A052",
+            "nome": "SANTA ROSA DO TOCANTINS",
+            "municipio": "SANTA ROSA DO TOCANTINS",
+            "fonte": "INMET",
+            "latitude": -11.42888888,
+            "longitude": -48.18499999,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          }
+        ]
       },
       "ANA": {
         "source": "ANA",
-        "status": "error",
-        "label": "Erro de consulta",
-        "observacao": "Falha ao consultar a fonte no workflow: fetch failed",
-        "estacoesCadastradas": 0,
-        "estacoesConsultadas": 0,
+        "status": "catalog",
+        "label": "Sem leitura valida",
+        "observacao": "Estacoes cadastradas, mas sem leitura operacional de chuva nas ultimas 24h.",
+        "estacoesCadastradas": 175,
+        "estacoesConsultadas": 175,
         "estacoesComLeitura": 0,
         "atualizadoEm": null,
         "estacoes": []
@@ -3877,9 +4593,6 @@
         "estacoes": []
       }
     },
-    "erros": {
-      "INMET": "fetch failed",
-      "ANA": "fetch failed"
-    }
+    "erros": {}
   }
 }
