@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import {
   AlertTriangle,
   CloudRain,
@@ -20,6 +21,7 @@ const MAP_HEIGHT = 430;
 
 function formatDateTime(value) {
   if (!value) return "Não disponível no momento da geração";
+  if (/^\d{2}\/\d{2}\/\d{4}/.test(value)) return value;
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return value;
   return date.toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
@@ -70,6 +72,7 @@ function statusTone(value) {
 }
 
 function safeNumber(value) {
+  if (value === null || value === undefined || value === "") return null;
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed : null;
 }
@@ -142,7 +145,7 @@ function riverColor(status) {
   if (tone === "emergencia") return "#d73027";
   if (tone === "alerta") return "#f59a23";
   if (tone === "atencao") return "#d9a312";
-  return "#16734c";
+  return tone === "normal" ? "#158463" : "#94a3b8";
 }
 
 function droughtColor(level) {
@@ -307,15 +310,15 @@ function TocantinsMiniMap({ geoJson, points = [], droughtMunicipalities = [] }) 
             <path
               key={feature.properties?.codarea || name}
               d={featurePath(feature, bounds)}
-              fill={drought ? droughtColor(droughtClass(drought)) : "#edf2f7"}
-              stroke="#ffffff"
-              strokeWidth="0.65"
+              fill={drought ? droughtColor(droughtClass(drought)) : "#e2e8f0"}
+              stroke={drought ? "#ffffff" : "#b7c5d3"}
+              strokeWidth="0.45"
             />
           );
         })}
       </g>
       <g>
-        {points.slice(0, 180).map((point, index) => {
+        {points.map((point, index) => {
           const latitude = safeNumber(point.latitude ?? point.lat);
           const longitude = safeNumber(point.longitude ?? point.lon ?? point.lng);
           if (latitude === null || longitude === null) return null;
@@ -538,7 +541,7 @@ function buildGeneratedData({ snapshot, boletim, weather, riverReadings = {} }) 
   const riverRows = riverStations.slice(0, 15).map((station) => {
     const reading = riverReadings[station.code];
     const trendLabel = reading?.trend?.label || "Tendência em integração";
-    const status = station.status || station.situacao || station.condition || "Normal";
+    const status = station.status || station.situacao || station.condition || "Sem classificação";
     return {
       ...station,
       level: reading?.level ?? null,
@@ -1356,6 +1359,55 @@ function OfficialDefenseBulletinTemplate({
   );
 }
 
+async function boundedBulletinData(promise, fallback, timeout = 25000) {
+  let timer;
+  try {
+    return await Promise.race([promise, new Promise(resolve => { timer = setTimeout(() => resolve(fallback), timeout); })]);
+  } catch {
+    return fallback;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+function StandardBulletinTemplate({ boletim, generatedAt, geoJson, logoSrc, blocks, data, rain, river, fire, drought, rainPoints, riverPoints, fireMapPoints, burnedAreaLabel }) {
+  const generatedLabel = formatDateTime(generatedAt);
+  const usableBlocks = blocks.map(block => ({ ...block, value: block.value || "Não disponível" }));
+  const sections = [
+    { title: "Chuva observada", tone: "rain", indicator: rain, points: rainPoints, description: "Acumulados de 24 horas nas estações com leitura disponível.", legend: [{label:"0 mm",color:"#94a3b8"},{label:"Até 10 mm",color:"#facc15"},{label:"10 a 30 mm",color:"#22c55e"},{label:"30 a 50 mm",color:"#38bdf8"},{label:"Acima de 50 mm",color:"#2563eb"}], columns: [{key:"city",label:"Município / estação",render:r=>r.municipio||r.city||r.name||r.nome},{key:"rain",label:"Chuva 24h",render:r=>numberText(r.chuva24h??r.amount," mm")}], rows: data.topRain, detailTitle:"Maiores acumulados" },
+    { title: "Rios monitorados", tone: "river", indicator: river, points: riverPoints, description: "Localização das estações. Ausência de classificação não significa normalidade.", legend: [{label:"Normal",color:"#158463"},{label:"Atenção",color:"#eab308"},{label:"Alerta",color:"#f59a23"},{label:"Emergência",color:"#d73027"},{label:"Sem classificação",color:"#94a3b8"}], columns: [{key:"name",label:"Estação",render:r=>r.name||r.nome||r.code},{key:"level",label:"Cota",render:r=>numberText(r.level," cm")},{key:"trendLabel",label:"Tendência"}], rows:data.riverRows.slice(0,6), detailTitle:"Leituras disponíveis" },
+    { title: "Focos de calor e queimadas", tone: "fire", indicator: fire, points: fireMapPoints, description:"Detecções de calor por satélite. Um foco não confirma, isoladamente, um incêndio.", legend:[{label:"Foco de calor",color:"#f97316"}], columns:[{key:"city",label:"Município",render:r=>r[0]},{key:"count",label:"Focos",render:r=>r[1]}], rows:data.fireByCity, detailTitle:"Municípios com mais detecções" },
+    { title:"Seca no Tocantins", tone:"drought", indicator:drought, droughtMunicipalities:data.droughtMunicipalities, description:"Classificação municipal disponível na base de monitoramento de seca.", legend:[{label:"Sem seca",color:"#dcfce7"},{label:"Fraca",color:"#fde047"},{label:"Moderada",color:"#fb923c"},{label:"Severa",color:"#ef4444"},{label:"Extrema",color:"#7f1d1d"},{label:"Sem informação",color:"#edf2f7"}], columns:[{key:"category",label:"Classificação",render:r=>r[0]},{key:"count",label:"Municípios",render:r=>r[1]}], rows:data.droughtCounts, detailTitle:"Distribuição municipal" }
+  ];
+  function Page({number,title,tone="navy",children}) {
+    return <section className={`standard-bulletin-page official-theme-${tone}`}>
+      <header className="standard-bulletin-header"><img src={logoSrc} alt="Defesa Civil do Tocantins"/><div><small>DEFESA CIVIL DO TOCANTINS</small><strong>Centro de Monitoramento</strong></div><span>{number} / 7</span></header>
+      <div className="standard-section-title"><small>BOLETIM HIDROMETEOROLÓGICO</small><h2>{title}</h2></div>
+      <div className="standard-page-content">{children}</div>
+      <footer className="standard-bulletin-footer"><span>Gerado em {generatedLabel}</span><strong>Defesa Civil 199 | Bombeiros 193</strong></footer>
+    </section>;
+  }
+  return <main className="standard-bulletin">
+    <Page number="1" title="Panorama do monitoramento">
+      <div className="standard-edition"><span>Emissão sob demanda</span><span>Dados disponíveis no painel</span></div>
+      <p className="standard-intro">Boletim Hidrometeorológico do Tocantins</p>
+      <p>Resumo das condições acompanhadas pelo Centro de Monitoramento, com mapas de chuva, rios, focos de calor e seca.</p>
+      <p className="standard-note">A data de geração não substitui a data de observação. Cada tema apresenta a atualização disponível da sua fonte. Dados sem leitura ou classificação não indicam ausência de risco.</p>
+      <div className="standard-metrics">{usableBlocks.map(block=><OfficialMetric key={block.title} {...block}/>)}</div>
+      <h3>Alertas e situação administrativa</h3>
+      <p>{blocks[0].description}</p><p>{blocks[5].description}</p>
+      <p className="standard-note">Documento gerado sob demanda. A emissão oficial depende de revisão institucional. Confirme a vigência dos avisos nos canais dos órgãos emissores.</p>
+    </Page>
+    {sections.map((section,index)=><Page key={section.title} number={index+2} title={section.title} tone={section.tone}>
+      <div className="standard-highlight"><strong>{section.indicator.value || "Dados indisponíveis"}</strong><p>{section.description}</p></div>
+      <div className="standard-map-row"><BulletinMapCard title={section.title} geoJson={geoJson} points={section.points} droughtMunicipalities={section.droughtMunicipalities} legend={section.legend}/><aside><h3>{section.detailTitle}</h3><CompactTable columns={section.columns} rows={section.rows} emptyMessage="Sem leituras disponíveis nesta consulta."/>{section.tone==="fire"&&<p className="standard-note">Área queimada: <strong>{burnedAreaLabel}</strong><br/>{fire.burnedArea?.period || "Período não informado"}<br/>MapBiomas Monitor do Fogo</p>}{section.tone==="drought"&&<p>Seca monitorada e reconhecimento de emergência no S2ID são informações complementares.</p>}</aside></div>
+      <p className="standard-source"><strong>Fonte:</strong> {section.indicator.source || "Fonte não disponível"}<br/><strong>Atualização da fonte:</strong> {formatDateTime(section.indicator.updatedAt)}<br/>{section.indicator.description}</p>
+    </Page>)}
+    <Page number="6" title="Meteorologia regional" tone="rain"><p>Municípios estratégicos e condições disponíveis no painel meteorológico.</p><OfficialWeatherTable rows={data.weatherRows}/><h3>Referências das observações</h3><CompactTable columns={[{key:"municipio",label:"Município"},{key:"fonte",label:"Fonte"},{key:"atualizadoEm",label:"Atualização",render:r=>formatDateTime(r.atualizadoEm||r.updatedAt)}]} rows={data.weatherRows} emptyMessage="Meteorologia indisponível no momento."/><p className="standard-note">Condições meteorológicas não equivalem a alertas oficiais. Consulte os avisos vigentes antes de decisões operacionais.</p></Page>
+    <Page number="7" title="Orientações e fontes" tone="guidance"><div className="standard-guidance">{[{tema:"Chuva e alagamentos",texto:"Evite áreas alagadas e não atravesse enxurradas."},{tema:"Rios e córregos",texto:"Não atravesse pontes ou passagens inundadas."},{tema:"Fogo em vegetação",texto:"Ao identificar fumaça ou chamas, acione o Corpo de Bombeiros pelo 193."},{tema:"Baixa umidade e calor",texto:"Beba água e evite exposição prolongada ao sol."}].map(item=><article key={item.tema}><h3>{item.tema}</h3><p>{item.texto}</p></article>)}</div><h3>Fontes dos dados apresentados</h3><ul>{[...new Set(blocks.map(b=>b.source))].map(source=><li key={source}>{source}</li>)}</ul><h3>Notas metodológicas</h3><p>Os períodos de chuva, focos de calor, área queimada e seca podem ser diferentes. Compare cada indicador com seu período de referência.</p><p>Estações cadastradas podem não ter leitura recente. Áreas sem pontos não devem ser interpretadas como áreas sem risco.</p><p>Este boletim reúne a base disponível na consulta e pode conter dados de períodos anteriores. Revise datas, fontes e disponibilidade antes de distribuir.</p><div className="standard-emergency">Emergência: Defesa Civil 199 | Bombeiros 193</div></Page>
+  </main>;
+}
+
 function GeneratedBulletinTemplate({ payload }) {
   const boletim = payload?.boletim || {};
   const snapshot = payload?.snapshot || {};
@@ -1392,7 +1444,7 @@ function GeneratedBulletinTemplate({ payload }) {
     {
       icon: ShieldAlert,
       title: "Alertas vigentes",
-      value: text(alerts.value || `${boletim.alertas?.quantidade ?? 0} registro(s)`),
+      value: text(alerts.value || "Não disponível"),
       description: text(alerts.description || boletim.alertas?.descricao),
       source: text(alerts.source || boletim.alertas?.fonte || "IDAP / Defesa Civil Alerta / INMET / CEMADEN"),
       updatedAt: text(alerts.updatedAt || snapshot.updatedAt || boletim.dataEmissao, "Não disponível no momento da geração"),
@@ -1410,7 +1462,7 @@ function GeneratedBulletinTemplate({ payload }) {
     {
       icon: Waves,
       title: "Rios monitorados",
-      value: text(river.value || `${boletim.rios?.estacoesMonitoradas ?? 0} estação(ões)`),
+      value: text(river.value || "Não disponível"),
       description: text(river.description || `Tendência predominante: ${text(boletim.rios?.tendenciaPredominante)}.`),
       source: text(river.source || boletim.rios?.fonte || "ANA / Telemetria"),
       updatedAt: text(river.updatedAt || boletim.rios?.atualizadoEm || snapshot.updatedAt, "Não disponível no momento da geração"),
@@ -1419,7 +1471,7 @@ function GeneratedBulletinTemplate({ payload }) {
     {
       icon: Flame,
       title: "Fogo e queimadas",
-      value: text(fire.value || `${boletim.focosCalor?.quantidade24h ?? 0} foco(s)`),
+      value: text(fire.value || "Não disponível"),
       description: text(fire.description || `${text(boletim.focosCalor?.periodo)}. Área queimada: ${text(fire.burnedAreaLabel, "Não disponível")}.`),
       source: text(fire.source || boletim.focosCalor?.fonte || "INPE Queimadas / MapBiomas Fogo"),
       updatedAt: text(fire.updatedAt || boletim.focosCalor?.atualizadoEm || snapshot.updatedAt, "Não disponível no momento da geração"),
@@ -1437,7 +1489,7 @@ function GeneratedBulletinTemplate({ payload }) {
     {
       icon: AlertTriangle,
       title: "Emergência e calamidade",
-      value: text(emergency.value || `${emergency.s2idFederal ?? emergency.federal ?? 0} reconhecimento(s)`),
+      value: text(emergency.value || "Não disponível"),
       description: text(emergency.description || "Reconhecimentos e registros administrativos consultados no S2ID."),
       source: text(emergency.source || "S2ID / SEDEC-MIDR"),
       updatedAt: text(emergency.updatedAt || snapshot.updatedAt, "Não disponível no momento da geração"),
@@ -1455,7 +1507,7 @@ function GeneratedBulletinTemplate({ payload }) {
   const weatherComment = operationalWeatherComment(data.weatherRows);
 
   return (
-    <OfficialDefenseBulletinTemplate
+    <StandardBulletinTemplate
       boletim={boletim}
       snapshot={snapshot}
       generatedAt={generatedAt}
@@ -1843,11 +1895,19 @@ export function HydroBulletinPdfGenerator() {
 
   useEffect(() => {
     if (status !== "ready") return;
-    const timer = window.setTimeout(() => {
-      window.print();
-      setStatus("idle");
-    }, 260);
-    return () => window.clearTimeout(timer);
+    let cancelled = false;
+    document.body.classList.add("bulletin-preview-open");
+    async function printWhenReady() {
+      await document.fonts.ready;
+      await Promise.all(Array.from(document.querySelectorAll(".generated-bulletin-root img"), image => image.decode().catch(() => {})));
+      await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      if (!cancelled) window.print();
+    }
+    printWhenReady();
+    return () => {
+      cancelled = true;
+      document.body.classList.remove("bulletin-preview-open");
+    };
   }, [status]);
 
   const buttonLabel = useMemo(() => {
@@ -1860,12 +1920,12 @@ export function HydroBulletinPdfGenerator() {
     setStatus("loading");
     try {
       const [boletim, snapshot, weather, geoJson] = await Promise.all([
-        getBoletimAtual(),
-        fetchMonitoringSnapshot(),
-        getMeteorologiaTocantins().catch(() => []),
-        loadMunicipalityGeoJson().catch(() => null)
+        boundedBulletinData(getBoletimAtual(), {}),
+        boundedBulletinData(fetchMonitoringSnapshot(), {}),
+        boundedBulletinData(getMeteorologiaTocantins(), []),
+        boundedBulletinData(loadMunicipalityGeoJson(), null)
       ]);
-      const riverReadings = await loadRiverReadings(snapshot?.rivers?.stations || []).catch(() => ({}));
+      const riverReadings = await boundedBulletinData(loadRiverReadings(snapshot?.rivers?.stations || []), {}, 12000);
       setPayload({ boletim, snapshot, weather, geoJson, riverReadings, generatedAt: new Date().toISOString() });
       setStatus("ready");
     } catch {
@@ -1887,9 +1947,16 @@ export function HydroBulletinPdfGenerator() {
           {buttonLabel}
         </button>
       </div>
-      <div className="generated-bulletin-root" aria-hidden={status !== "ready"}>
-        {payload && <GeneratedBulletinTemplate payload={payload} />}
-      </div>
+      {payload && status === "ready" && createPortal(
+        <div className="generated-bulletin-root" role="dialog" aria-modal="true" aria-label="Prévia do Boletim Hidrometeorológico">
+          <nav className="bulletin-preview-toolbar" aria-label="Ações do boletim">
+            <strong>Boletim Hidrometeorológico</strong>
+            <button type="button" onClick={() => window.print()}>Imprimir / Salvar PDF</button>
+            <button type="button" onClick={() => setStatus("idle")}>Voltar ao site</button>
+          </nav>
+          <GeneratedBulletinTemplate payload={payload} />
+        </div>, document.body
+      )}
     </>
   );
 }
