@@ -1,20 +1,35 @@
 {
-  "atualizado_em": "2026-09-15T09:58:53.185Z",
+  "atualizado_em": "2026-09-15T14:50:10.256Z",
   "resumo": {
     "alertas_cemaden_to": 0,
     "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
     "estacoes_fluviometricas_ana": null,
-    "focos_calor_24h": 361,
+    "focos_calor_24h": 561,
     "area_queimada_ano_ha": 245000,
     "chuva_24h_mm": 0,
-    "estacoes_operando": 38,
-    "avisos_inmet_to_hoje": 1,
-    "avisos_inmet_to_futuro": 0,
-    "avisos_inmet_to_severidade_maxima": "Perigo Potencial",
+    "estacoes_operando": 49,
+    "avisos_inmet_to_hoje": 2,
+    "avisos_inmet_to_futuro": 2,
+    "avisos_inmet_to_severidade_maxima": "Perigo",
     "avisos_inmet_detalhes": [
       {
         "title": "Vigente hoje: Baixa Umidade",
-        "detail": "Perigo Potencial | 2026-09-15 10:00 até 2026-09-15 22:00",
+        "detail": "Perigo Potencial | 2026-09-15 09:00 até 2026-09-15 21:00",
+        "location": "Abreulândia, Aliança do Tocantins, Almas, Alvorada, Aparecida do Rio Negro, Araguacema e mais 99 municipio(s)."
+      },
+      {
+        "title": "Vigente hoje: Baixa Umidade",
+        "detail": "Perigo | 2026-09-15 12:00 até 2026-09-15 18:00",
+        "location": "Almas, Arraias, Aurora do Tocantins, Combinado, Dianópolis, Lavandeira e mais 9 municipio(s)."
+      },
+      {
+        "title": "Previsto: Baixa Umidade",
+        "detail": "Perigo Potencial | 2026-09-16 10:00 até 2026-09-16 21:00",
+        "location": "Abreulândia, Aguiarnópolis, Aliança do Tocantins, Almas, Alvorada, Angico e mais 116 municipio(s)."
+      },
+      {
+        "title": "Previsto: Baixa Umidade",
+        "detail": "Perigo Potencial | 2026-09-17 10:00 até 2026-09-17 21:00",
         "location": "Abreulândia, Aliança do Tocantins, Almas, Alvorada, Aparecida do Rio Negro, Araguacema e mais 99 municipio(s)."
       }
     ],
@@ -38,19 +53,19 @@
     {
       "icon": "flame",
       "label": "Focos de calor",
-      "description": "361 focos registrados no arquivo diário do INPE",
+      "description": "561 focos registrados no arquivo diário do INPE",
       "value": "Ativo"
     },
     {
       "icon": "radio-tower",
       "label": "Rede operacional",
-      "description": "38 estacoes ou pontos em acompanhamento",
+      "description": "49 estacoes ou pontos em acompanhamento",
       "value": "24h"
     }
   ],
   "fontes": {
     "alertas": "CEMADEN",
-    "chuva": "CEMADEN",
+    "chuva": "CEMADEN / ANA",
     "rios": "ANA / Telemetria",
     "focos": "INPE Queimadas",
     "area_queimada": "MapBiomas Fogo / INPE AQ",
@@ -1774,11 +1789,11 @@
   },
   "focos_calor": {
     "status": "ok",
-    "quantidade24h": 361,
-    "quantidadeMapa": 361,
+    "quantidade24h": 561,
+    "quantidadeMapa": 561,
     "periodo": "Arquivo diario INPE",
     "fonte": "INPE Queimadas",
-    "atualizadoEm": "2026-09-15T09:57:34.184Z",
+    "atualizadoEm": "2026-09-15T14:49:47.619Z",
     "referenciaArquivo": "20260915",
     "csv_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/focos_diario_br_20260915.csv",
     "observacao": "Dados filtrados para o Tocantins a partir do arquivo diario Brasil do INPE Queimadas.",
@@ -1824,6 +1839,662 @@
         "bioma": "Cerrado"
       },
       {
+        "latitude": -10.5751,
+        "longitude": -47.727901,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.4321,
+        "longitude": -48.6222,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8529,
+        "longitude": -46.2952,
+        "municipio": "MATEIROS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.2421,
+        "longitude": -47.533798,
+        "municipio": "PINDORAMA DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.8738,
+        "longitude": -47.766602,
+        "municipio": "RIO SONO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5834,
+        "longitude": -47.718601,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.8769,
+        "longitude": -47.780701,
+        "municipio": "RIO SONO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.4259,
+        "longitude": -47.3046,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.9801,
+        "longitude": -48.308102,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.9817,
+        "longitude": -48.315399,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.6575,
+        "longitude": -49.1063,
+        "municipio": "GOIANORTE",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.4419,
+        "longitude": -48.619999,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.6721,
+        "longitude": -47.878201,
+        "municipio": "RIO SONO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.2492,
+        "longitude": -48.5242,
+        "municipio": "RIO DOS BOIS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.708,
+        "longitude": -47.4911,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.572,
+        "longitude": -47.713699,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.5103,
+        "longitude": -48.485298,
+        "municipio": "PRESIDENTE KENNEDY",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -6.7286,
+        "longitude": -48.1119,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -9.6353,
+        "longitude": -47.665798,
+        "municipio": "RIO SONO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.4244,
+        "longitude": -47.297501,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.4579,
+        "longitude": -48.538502,
+        "municipio": "MIRACEMA DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.8882,
+        "longitude": -47.7855,
+        "municipio": "RIO SONO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8099,
+        "longitude": -46.566601,
+        "municipio": "NOVO JARDIM",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -5.4101,
+        "longitude": -48.477699,
+        "municipio": "ESPERANTINA",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -10.5736,
+        "longitude": -47.720798,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -6.778,
+        "longitude": -48.654701,
+        "municipio": "ARAGOMINAS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -5.4132,
+        "longitude": -48.491501,
+        "municipio": "ESPERANTINA",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -9.8443,
+        "longitude": -48.331902,
+        "municipio": "LAJEADO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -5.3264,
+        "longitude": -47.877399,
+        "municipio": "SAMPAIO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -13.0736,
+        "longitude": -48.588799,
+        "municipio": "JAÚ DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -5.3248,
+        "longitude": -47.870602,
+        "municipio": "SAMPAIO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.3636,
+        "longitude": -49.032001,
+        "municipio": "COUTO MAGALHÃES",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8114,
+        "longitude": -46.573601,
+        "municipio": "NOVO JARDIM",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.9915,
+        "longitude": -48.313202,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6966,
+        "longitude": -47.486301,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.8867,
+        "longitude": -47.7785,
+        "municipio": "RIO SONO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9204,
+        "longitude": -48.238499,
+        "municipio": "SÃO VALÉRIO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -5.4018,
+        "longitude": -48.486801,
+        "municipio": "ESPERANTINA",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -9.6184,
+        "longitude": -46.715698,
+        "municipio": "LIZARDA",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.2837,
+        "longitude": -49.763199,
+        "municipio": "CASEARA",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5767,
+        "longitude": -47.734901,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3615,
+        "longitude": -46.918499,
+        "municipio": "PONTE ALTA DO BOM JESUS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5849,
+        "longitude": -47.7257,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8083,
+        "longitude": -46.5597,
+        "municipio": "NOVO JARDIM",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0305,
+        "longitude": -47.799599,
+        "municipio": "NATIVIDADE",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.4747,
+        "longitude": -47.422199,
+        "municipio": "ALMAS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.8784,
+        "longitude": -47.787701,
+        "municipio": "RIO SONO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.0202,
+        "longitude": -47.723202,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.4435,
+        "longitude": -48.627399,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.3322,
+        "longitude": -47.662498,
+        "municipio": "CHAPADA DA NATIVIDADE",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8032,
+        "longitude": -46.582802,
+        "municipio": "NOVO JARDIM",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0289,
+        "longitude": -47.7924,
+        "municipio": "NATIVIDADE",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.5957,
+        "longitude": -46.706402,
+        "municipio": "LIZARDA",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.0187,
+        "longitude": -47.547001,
+        "municipio": "PINDORAMA DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -5.5895,
+        "longitude": -48.084702,
+        "municipio": "ARAGUATINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -9.4239,
+        "longitude": -50.079601,
+        "municipio": "PIUM",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -5.4095,
+        "longitude": -48.521198,
+        "municipio": "ESPERANTINA",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -10.7064,
+        "longitude": -47.4841,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -6.7157,
+        "longitude": -48.100201,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -8.6591,
+        "longitude": -49.113701,
+        "municipio": "GOIANORTE",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -5.4116,
+        "longitude": -48.4846,
+        "municipio": "ESPERANTINA",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -12.4072,
+        "longitude": -48.114899,
+        "municipio": "PARANÃ",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -6.7188,
+        "longitude": -48.113998,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -8.5087,
+        "longitude": -48.478199,
+        "municipio": "PRESIDENTE KENNEDY",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -7.2722,
+        "longitude": -48.332401,
+        "municipio": "ARAGUAÍNA",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -9.8753,
+        "longitude": -47.773701,
+        "municipio": "RIO SONO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -5.408,
+        "longitude": -48.514301,
+        "municipio": "ESPERANTINA",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -10.9899,
+        "longitude": -48.305901,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -13.072,
+        "longitude": -48.581001,
+        "municipio": "JAÚ DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5865,
+        "longitude": -47.7327,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.7873,
+        "longitude": -47.5467,
+        "municipio": "PARANÃ",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -6.724,
+        "longitude": -48.091202,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -6.7255,
+        "longitude": -48.098099,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -9.4595,
+        "longitude": -48.5457,
+        "municipio": "MIRACEMA DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.8851,
+        "longitude": -47.7715,
+        "municipio": "RIO SONO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -6.7764,
+        "longitude": -48.647701,
+        "municipio": "ARAGUANÃ",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -9.0217,
+        "longitude": -47.730202,
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.4181,
+        "longitude": -47.8466,
+        "municipio": "RIO SONO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -6.7173,
+        "longitude": -48.107101,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -11.813,
+        "longitude": -46.580601,
+        "municipio": "NOVO JARDIM",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -6.7271,
+        "longitude": -48.105,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -9.6368,
+        "longitude": -47.672798,
+        "municipio": "RIO SONO",
+        "satelite": "METOP-B",
+        "data_hora_gmt": "2026-09-15 00:02:00",
+        "bioma": "Cerrado"
+      },
+      {
         "latitude": -6.7382,
         "longitude": -48.1187,
         "municipio": "WANDERLÂNDIA",
@@ -1862,6 +2533,406 @@
         "satelite": "GOES-19",
         "data_hora_gmt": "2026-09-15 00:20:00",
         "bioma": "Amazônia"
+      },
+      {
+        "latitude": -9.314,
+        "longitude": -48.700199,
+        "municipio": "MIRANORTE",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.4555,
+        "longitude": -48.548698,
+        "municipio": "MIRACEMA DO TOCANTINS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -5.413,
+        "longitude": -48.501301,
+        "municipio": "ESPERANTINA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -10.4364,
+        "longitude": -48.636501,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.4714,
+        "longitude": -46.8624,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.3161,
+        "longitude": -48.709999,
+        "municipio": "MIRANORTE",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.5574,
+        "longitude": -47.105999,
+        "municipio": "ARRAIAS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8711,
+        "longitude": -46.327099,
+        "municipio": "MATEIROS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -5.4092,
+        "longitude": -48.484501,
+        "municipio": "ESPERANTINA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -9.875,
+        "longitude": -47.786098,
+        "municipio": "RIO SONO",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5699,
+        "longitude": -47.729099,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.5612,
+        "longitude": -47.1236,
+        "municipio": "ARRAIAS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.3182,
+        "longitude": -48.7197,
+        "municipio": "MIRANORTE",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.6571,
+        "longitude": -49.1203,
+        "municipio": "GOIANORTE",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.9739,
+        "longitude": -48.325802,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.2473,
+        "longitude": -48.533298,
+        "municipio": "RIO DOS BOIS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.4268,
+        "longitude": -47.310799,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -5.4111,
+        "longitude": -48.492901,
+        "municipio": "ESPERANTINA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -11.3257,
+        "longitude": -47.6702,
+        "municipio": "PINDORAMA DO TOCANTINS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.3276,
+        "longitude": -47.679298,
+        "municipio": "PINDORAMA DO TOCANTINS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -6.7733,
+        "longitude": -48.660999,
+        "municipio": "ARAGOMINAS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -5.3252,
+        "longitude": -47.879299,
+        "municipio": "SAMPAIO",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.9837,
+        "longitude": -48.3237,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5817,
+        "longitude": -47.736,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5797,
+        "longitude": -47.727001,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -6.7135,
+        "longitude": -48.1119,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -5.327,
+        "longitude": -47.8871,
+        "municipio": "SAMPAIO",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -6.727,
+        "longitude": -48.126598,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -10.8563,
+        "longitude": -46.305901,
+        "municipio": "MATEIROS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8106,
+        "longitude": -46.587002,
+        "municipio": "NOVO JARDIM",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -6.7251,
+        "longitude": -48.118198,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -6.7153,
+        "longitude": -48.1203,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -10.5719,
+        "longitude": -47.738098,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0309,
+        "longitude": -47.809502,
+        "municipio": "NATIVIDADE",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -6.7233,
+        "longitude": -48.109798,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -11.8089,
+        "longitude": -46.578899,
+        "municipio": "NOVO JARDIM",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.4342,
+        "longitude": -48.626499,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.8769,
+        "longitude": -47.794899,
+        "municipio": "RIO SONO",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.4385,
+        "longitude": -48.6465,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5738,
+        "longitude": -47.747002,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.858,
+        "longitude": -46.313702,
+        "municipio": "MATEIROS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.5495,
+        "longitude": -47.116901,
+        "municipio": "ARRAIAS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5836,
+        "longitude": -47.7449,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -5.4013,
+        "longitude": -48.494999,
+        "municipio": "ESPERANTINA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -9.2571,
+        "longitude": -48.5312,
+        "municipio": "RIO DOS BOIS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -6.7214,
+        "longitude": -48.101501,
+        "municipio": "WANDERLÂNDIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Amazônia"
+      },
+      {
+        "latitude": -10.7044,
+        "longitude": -47.496899,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8546,
+        "longitude": -46.298199,
+        "municipio": "MATEIROS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.4697,
+        "longitude": -46.854698,
+        "municipio": "CAMPOS LINDOS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.5593,
+        "longitude": -47.114799,
+        "municipio": "ARRAIAS",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-15 00:25:00",
+        "bioma": "Cerrado"
       },
       {
         "latitude": -6.7195,
@@ -4670,6 +5741,550 @@
         "satelite": "NOAA-21",
         "data_hora_gmt": "2026-09-15 05:18:00",
         "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.98096,
+        "longitude": -48.32123,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "AQUA_M-M",
+        "data_hora_gmt": "2026-09-15 06:31:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.87927,
+        "longitude": -47.76665,
+        "municipio": "RIO SONO",
+        "satelite": "AQUA_M-M",
+        "data_hora_gmt": "2026-09-15 06:31:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.87736,
+        "longitude": -47.77864,
+        "municipio": "RIO SONO",
+        "satelite": "AQUA_M-M",
+        "data_hora_gmt": "2026-09-15 06:31:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.85965,
+        "longitude": -46.30152,
+        "municipio": "MATEIROS",
+        "satelite": "AQUA_M-M",
+        "data_hora_gmt": "2026-09-15 06:31:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.58294,
+        "longitude": -47.73606,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "AQUA_M-M",
+        "data_hora_gmt": "2026-09-15 06:31:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.86581,
+        "longitude": -46.30943,
+        "municipio": "MATEIROS",
+        "satelite": "AQUA_M-M",
+        "data_hora_gmt": "2026-09-15 06:31:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8665,
+        "longitude": -46.3105,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 11:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.9875,
+        "longitude": -48.3209,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 11:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8665,
+        "longitude": -46.3105,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 11:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8665,
+        "longitude": -46.3105,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 11:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8665,
+        "longitude": -46.3105,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 11:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8661,
+        "longitude": -46.3331,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8665,
+        "longitude": -46.3105,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8665,
+        "longitude": -46.3105,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.9875,
+        "longitude": -48.3209,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8661,
+        "longitude": -46.3331,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8474,
+        "longitude": -46.313,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8665,
+        "longitude": -46.3105,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.4234,
+        "longitude": -47.8588,
+        "municipio": "RIO SONO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8661,
+        "longitude": -46.3331,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.9875,
+        "longitude": -48.3209,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8661,
+        "longitude": -46.3331,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8665,
+        "longitude": -46.3105,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.9875,
+        "longitude": -48.3209,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8661,
+        "longitude": -46.3331,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8665,
+        "longitude": -46.3105,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.4234,
+        "longitude": -47.8588,
+        "municipio": "RIO SONO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8665,
+        "longitude": -46.3105,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.9875,
+        "longitude": -48.3209,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8661,
+        "longitude": -46.3331,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.8137,
+        "longitude": -46.905,
+        "municipio": "RECURSOLÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8665,
+        "longitude": -46.3105,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.8134,
+        "longitude": -46.9272,
+        "municipio": "RECURSOLÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.4234,
+        "longitude": -47.8588,
+        "municipio": "RIO SONO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.7949,
+        "longitude": -46.9069,
+        "municipio": "RECURSOLÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8661,
+        "longitude": -46.3331,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.7946,
+        "longitude": -46.9291,
+        "municipio": "RECURSOLÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8154,
+        "longitude": -46.5899,
+        "municipio": "NOVO JARDIM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8661,
+        "longitude": -46.3331,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8665,
+        "longitude": -46.3105,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.4234,
+        "longitude": -47.8588,
+        "municipio": "RIO SONO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.4234,
+        "longitude": -47.8588,
+        "municipio": "RIO SONO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8661,
+        "longitude": -46.3331,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8665,
+        "longitude": -46.3105,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6962,
+        "longitude": -47.4953,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.7358,
+        "longitude": -47.0958,
+        "municipio": "RIO SONO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8154,
+        "longitude": -46.5899,
+        "municipio": "NOVO JARDIM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.8137,
+        "longitude": -46.905,
+        "municipio": "RECURSOLÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5788,
+        "longitude": -47.7306,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.4234,
+        "longitude": -47.8588,
+        "municipio": "RIO SONO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8665,
+        "longitude": -46.3105,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5788,
+        "longitude": -47.7306,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8154,
+        "longitude": -46.5899,
+        "municipio": "NOVO JARDIM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5785,
+        "longitude": -47.7528,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.0434,
+        "longitude": -49.6851,
+        "municipio": "SANTA RITA DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.5915,
+        "longitude": -46.5989,
+        "municipio": "LIZARDA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.6962,
+        "longitude": -47.4953,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.4234,
+        "longitude": -47.8588,
+        "municipio": "RIO SONO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.0434,
+        "longitude": -49.6851,
+        "municipio": "SANTA RITA DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.9875,
+        "longitude": -48.3209,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -8.8137,
+        "longitude": -46.905,
+        "municipio": "RECURSOLÂNDIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.7358,
+        "longitude": -47.0958,
+        "municipio": "RIO SONO",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8154,
+        "longitude": -46.5899,
+        "municipio": "NOVO JARDIM",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5788,
+        "longitude": -47.7306,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.5785,
+        "longitude": -47.7528,
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.5915,
+        "longitude": -46.5989,
+        "municipio": "LIZARDA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.8665,
+        "longitude": -46.3105,
+        "municipio": "MATEIROS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.9685,
+        "longitude": -48.3232,
+        "municipio": "PORTO NACIONAL",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-15 13:40:00",
+        "bioma": "Cerrado"
       }
     ],
     "features": [
@@ -4768,6 +6383,1482 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
+            -47.727901,
+            -10.5751
+          ]
+        },
+        "properties": {
+          "latitude": -10.5751,
+          "longitude": -47.727901,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.6222,
+            -10.4321
+          ]
+        },
+        "properties": {
+          "latitude": -10.4321,
+          "longitude": -48.6222,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.2952,
+            -10.8529
+          ]
+        },
+        "properties": {
+          "latitude": -10.8529,
+          "longitude": -46.2952,
+          "municipio": "MATEIROS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.533798,
+            -11.2421
+          ]
+        },
+        "properties": {
+          "latitude": -11.2421,
+          "longitude": -47.533798,
+          "municipio": "PINDORAMA DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.766602,
+            -9.8738
+          ]
+        },
+        "properties": {
+          "latitude": -9.8738,
+          "longitude": -47.766602,
+          "municipio": "RIO SONO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.718601,
+            -10.5834
+          ]
+        },
+        "properties": {
+          "latitude": -10.5834,
+          "longitude": -47.718601,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.780701,
+            -9.8769
+          ]
+        },
+        "properties": {
+          "latitude": -9.8769,
+          "longitude": -47.780701,
+          "municipio": "RIO SONO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.3046,
+            -12.4259
+          ]
+        },
+        "properties": {
+          "latitude": -12.4259,
+          "longitude": -47.3046,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.308102,
+            -10.9801
+          ]
+        },
+        "properties": {
+          "latitude": -10.9801,
+          "longitude": -48.308102,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.315399,
+            -10.9817
+          ]
+        },
+        "properties": {
+          "latitude": -10.9817,
+          "longitude": -48.315399,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.1063,
+            -8.6575
+          ]
+        },
+        "properties": {
+          "latitude": -8.6575,
+          "longitude": -49.1063,
+          "municipio": "GOIANORTE",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.619999,
+            -10.4419
+          ]
+        },
+        "properties": {
+          "latitude": -10.4419,
+          "longitude": -48.619999,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.878201,
+            -9.6721
+          ]
+        },
+        "properties": {
+          "latitude": -9.6721,
+          "longitude": -47.878201,
+          "municipio": "RIO SONO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.5242,
+            -9.2492
+          ]
+        },
+        "properties": {
+          "latitude": -9.2492,
+          "longitude": -48.5242,
+          "municipio": "RIO DOS BOIS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4911,
+            -10.708
+          ]
+        },
+        "properties": {
+          "latitude": -10.708,
+          "longitude": -47.4911,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.713699,
+            -10.572
+          ]
+        },
+        "properties": {
+          "latitude": -10.572,
+          "longitude": -47.713699,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.485298,
+            -8.5103
+          ]
+        },
+        "properties": {
+          "latitude": -8.5103,
+          "longitude": -48.485298,
+          "municipio": "PRESIDENTE KENNEDY",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.1119,
+            -6.7286
+          ]
+        },
+        "properties": {
+          "latitude": -6.7286,
+          "longitude": -48.1119,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.665798,
+            -9.6353
+          ]
+        },
+        "properties": {
+          "latitude": -9.6353,
+          "longitude": -47.665798,
+          "municipio": "RIO SONO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.297501,
+            -12.4244
+          ]
+        },
+        "properties": {
+          "latitude": -12.4244,
+          "longitude": -47.297501,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.538502,
+            -9.4579
+          ]
+        },
+        "properties": {
+          "latitude": -9.4579,
+          "longitude": -48.538502,
+          "municipio": "MIRACEMA DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.7855,
+            -9.8882
+          ]
+        },
+        "properties": {
+          "latitude": -9.8882,
+          "longitude": -47.7855,
+          "municipio": "RIO SONO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.566601,
+            -11.8099
+          ]
+        },
+        "properties": {
+          "latitude": -11.8099,
+          "longitude": -46.566601,
+          "municipio": "NOVO JARDIM",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.477699,
+            -5.4101
+          ]
+        },
+        "properties": {
+          "latitude": -5.4101,
+          "longitude": -48.477699,
+          "municipio": "ESPERANTINA",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.720798,
+            -10.5736
+          ]
+        },
+        "properties": {
+          "latitude": -10.5736,
+          "longitude": -47.720798,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.654701,
+            -6.778
+          ]
+        },
+        "properties": {
+          "latitude": -6.778,
+          "longitude": -48.654701,
+          "municipio": "ARAGOMINAS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.491501,
+            -5.4132
+          ]
+        },
+        "properties": {
+          "latitude": -5.4132,
+          "longitude": -48.491501,
+          "municipio": "ESPERANTINA",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.331902,
+            -9.8443
+          ]
+        },
+        "properties": {
+          "latitude": -9.8443,
+          "longitude": -48.331902,
+          "municipio": "LAJEADO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.877399,
+            -5.3264
+          ]
+        },
+        "properties": {
+          "latitude": -5.3264,
+          "longitude": -47.877399,
+          "municipio": "SAMPAIO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.588799,
+            -13.0736
+          ]
+        },
+        "properties": {
+          "latitude": -13.0736,
+          "longitude": -48.588799,
+          "municipio": "JAÚ DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.870602,
+            -5.3248
+          ]
+        },
+        "properties": {
+          "latitude": -5.3248,
+          "longitude": -47.870602,
+          "municipio": "SAMPAIO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.032001,
+            -8.3636
+          ]
+        },
+        "properties": {
+          "latitude": -8.3636,
+          "longitude": -49.032001,
+          "municipio": "COUTO MAGALHÃES",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.573601,
+            -11.8114
+          ]
+        },
+        "properties": {
+          "latitude": -11.8114,
+          "longitude": -46.573601,
+          "municipio": "NOVO JARDIM",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.313202,
+            -10.9915
+          ]
+        },
+        "properties": {
+          "latitude": -10.9915,
+          "longitude": -48.313202,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.486301,
+            -10.6966
+          ]
+        },
+        "properties": {
+          "latitude": -10.6966,
+          "longitude": -47.486301,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.7785,
+            -9.8867
+          ]
+        },
+        "properties": {
+          "latitude": -9.8867,
+          "longitude": -47.7785,
+          "municipio": "RIO SONO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.238499,
+            -11.9204
+          ]
+        },
+        "properties": {
+          "latitude": -11.9204,
+          "longitude": -48.238499,
+          "municipio": "SÃO VALÉRIO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.486801,
+            -5.4018
+          ]
+        },
+        "properties": {
+          "latitude": -5.4018,
+          "longitude": -48.486801,
+          "municipio": "ESPERANTINA",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.715698,
+            -9.6184
+          ]
+        },
+        "properties": {
+          "latitude": -9.6184,
+          "longitude": -46.715698,
+          "municipio": "LIZARDA",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.763199,
+            -9.2837
+          ]
+        },
+        "properties": {
+          "latitude": -9.2837,
+          "longitude": -49.763199,
+          "municipio": "CASEARA",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.734901,
+            -10.5767
+          ]
+        },
+        "properties": {
+          "latitude": -10.5767,
+          "longitude": -47.734901,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.918499,
+            -12.3615
+          ]
+        },
+        "properties": {
+          "latitude": -12.3615,
+          "longitude": -46.918499,
+          "municipio": "PONTE ALTA DO BOM JESUS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.7257,
+            -10.5849
+          ]
+        },
+        "properties": {
+          "latitude": -10.5849,
+          "longitude": -47.7257,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.5597,
+            -11.8083
+          ]
+        },
+        "properties": {
+          "latitude": -11.8083,
+          "longitude": -46.5597,
+          "municipio": "NOVO JARDIM",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.799599,
+            -12.0305
+          ]
+        },
+        "properties": {
+          "latitude": -12.0305,
+          "longitude": -47.799599,
+          "municipio": "NATIVIDADE",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.422199,
+            -11.4747
+          ]
+        },
+        "properties": {
+          "latitude": -11.4747,
+          "longitude": -47.422199,
+          "municipio": "ALMAS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.787701,
+            -9.8784
+          ]
+        },
+        "properties": {
+          "latitude": -9.8784,
+          "longitude": -47.787701,
+          "municipio": "RIO SONO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.723202,
+            -9.0202
+          ]
+        },
+        "properties": {
+          "latitude": -9.0202,
+          "longitude": -47.723202,
+          "municipio": "BOM JESUS DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.627399,
+            -10.4435
+          ]
+        },
+        "properties": {
+          "latitude": -10.4435,
+          "longitude": -48.627399,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.662498,
+            -11.3322
+          ]
+        },
+        "properties": {
+          "latitude": -11.3322,
+          "longitude": -47.662498,
+          "municipio": "CHAPADA DA NATIVIDADE",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.582802,
+            -11.8032
+          ]
+        },
+        "properties": {
+          "latitude": -11.8032,
+          "longitude": -46.582802,
+          "municipio": "NOVO JARDIM",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.7924,
+            -12.0289
+          ]
+        },
+        "properties": {
+          "latitude": -12.0289,
+          "longitude": -47.7924,
+          "municipio": "NATIVIDADE",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.706402,
+            -9.5957
+          ]
+        },
+        "properties": {
+          "latitude": -9.5957,
+          "longitude": -46.706402,
+          "municipio": "LIZARDA",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.547001,
+            -11.0187
+          ]
+        },
+        "properties": {
+          "latitude": -11.0187,
+          "longitude": -47.547001,
+          "municipio": "PINDORAMA DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.084702,
+            -5.5895
+          ]
+        },
+        "properties": {
+          "latitude": -5.5895,
+          "longitude": -48.084702,
+          "municipio": "ARAGUATINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.079601,
+            -9.4239
+          ]
+        },
+        "properties": {
+          "latitude": -9.4239,
+          "longitude": -50.079601,
+          "municipio": "PIUM",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.521198,
+            -5.4095
+          ]
+        },
+        "properties": {
+          "latitude": -5.4095,
+          "longitude": -48.521198,
+          "municipio": "ESPERANTINA",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4841,
+            -10.7064
+          ]
+        },
+        "properties": {
+          "latitude": -10.7064,
+          "longitude": -47.4841,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.100201,
+            -6.7157
+          ]
+        },
+        "properties": {
+          "latitude": -6.7157,
+          "longitude": -48.100201,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.113701,
+            -8.6591
+          ]
+        },
+        "properties": {
+          "latitude": -8.6591,
+          "longitude": -49.113701,
+          "municipio": "GOIANORTE",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.4846,
+            -5.4116
+          ]
+        },
+        "properties": {
+          "latitude": -5.4116,
+          "longitude": -48.4846,
+          "municipio": "ESPERANTINA",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.114899,
+            -12.4072
+          ]
+        },
+        "properties": {
+          "latitude": -12.4072,
+          "longitude": -48.114899,
+          "municipio": "PARANÃ",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.113998,
+            -6.7188
+          ]
+        },
+        "properties": {
+          "latitude": -6.7188,
+          "longitude": -48.113998,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.478199,
+            -8.5087
+          ]
+        },
+        "properties": {
+          "latitude": -8.5087,
+          "longitude": -48.478199,
+          "municipio": "PRESIDENTE KENNEDY",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.332401,
+            -7.2722
+          ]
+        },
+        "properties": {
+          "latitude": -7.2722,
+          "longitude": -48.332401,
+          "municipio": "ARAGUAÍNA",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.773701,
+            -9.8753
+          ]
+        },
+        "properties": {
+          "latitude": -9.8753,
+          "longitude": -47.773701,
+          "municipio": "RIO SONO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.514301,
+            -5.408
+          ]
+        },
+        "properties": {
+          "latitude": -5.408,
+          "longitude": -48.514301,
+          "municipio": "ESPERANTINA",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.305901,
+            -10.9899
+          ]
+        },
+        "properties": {
+          "latitude": -10.9899,
+          "longitude": -48.305901,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.581001,
+            -13.072
+          ]
+        },
+        "properties": {
+          "latitude": -13.072,
+          "longitude": -48.581001,
+          "municipio": "JAÚ DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.7327,
+            -10.5865
+          ]
+        },
+        "properties": {
+          "latitude": -10.5865,
+          "longitude": -47.7327,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.5467,
+            -12.7873
+          ]
+        },
+        "properties": {
+          "latitude": -12.7873,
+          "longitude": -47.5467,
+          "municipio": "PARANÃ",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.091202,
+            -6.724
+          ]
+        },
+        "properties": {
+          "latitude": -6.724,
+          "longitude": -48.091202,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.098099,
+            -6.7255
+          ]
+        },
+        "properties": {
+          "latitude": -6.7255,
+          "longitude": -48.098099,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.5457,
+            -9.4595
+          ]
+        },
+        "properties": {
+          "latitude": -9.4595,
+          "longitude": -48.5457,
+          "municipio": "MIRACEMA DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.7715,
+            -9.8851
+          ]
+        },
+        "properties": {
+          "latitude": -9.8851,
+          "longitude": -47.7715,
+          "municipio": "RIO SONO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.647701,
+            -6.7764
+          ]
+        },
+        "properties": {
+          "latitude": -6.7764,
+          "longitude": -48.647701,
+          "municipio": "ARAGUANÃ",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.730202,
+            -9.0217
+          ]
+        },
+        "properties": {
+          "latitude": -9.0217,
+          "longitude": -47.730202,
+          "municipio": "BOM JESUS DO TOCANTINS",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.8466,
+            -9.4181
+          ]
+        },
+        "properties": {
+          "latitude": -9.4181,
+          "longitude": -47.8466,
+          "municipio": "RIO SONO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.107101,
+            -6.7173
+          ]
+        },
+        "properties": {
+          "latitude": -6.7173,
+          "longitude": -48.107101,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.580601,
+            -11.813
+          ]
+        },
+        "properties": {
+          "latitude": -11.813,
+          "longitude": -46.580601,
+          "municipio": "NOVO JARDIM",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.105,
+            -6.7271
+          ]
+        },
+        "properties": {
+          "latitude": -6.7271,
+          "longitude": -48.105,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.672798,
+            -9.6368
+          ]
+        },
+        "properties": {
+          "latitude": -9.6368,
+          "longitude": -47.672798,
+          "municipio": "RIO SONO",
+          "satelite": "METOP-B",
+          "data_hora_gmt": "2026-09-15 00:02:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
             -48.1187,
             -6.7382
           ]
@@ -4851,6 +7942,906 @@
           "satelite": "GOES-19",
           "data_hora_gmt": "2026-09-15 00:20:00",
           "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.700199,
+            -9.314
+          ]
+        },
+        "properties": {
+          "latitude": -9.314,
+          "longitude": -48.700199,
+          "municipio": "MIRANORTE",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.548698,
+            -9.4555
+          ]
+        },
+        "properties": {
+          "latitude": -9.4555,
+          "longitude": -48.548698,
+          "municipio": "MIRACEMA DO TOCANTINS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.501301,
+            -5.413
+          ]
+        },
+        "properties": {
+          "latitude": -5.413,
+          "longitude": -48.501301,
+          "municipio": "ESPERANTINA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.636501,
+            -10.4364
+          ]
+        },
+        "properties": {
+          "latitude": -10.4364,
+          "longitude": -48.636501,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.8624,
+            -8.4714
+          ]
+        },
+        "properties": {
+          "latitude": -8.4714,
+          "longitude": -46.8624,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.709999,
+            -9.3161
+          ]
+        },
+        "properties": {
+          "latitude": -9.3161,
+          "longitude": -48.709999,
+          "municipio": "MIRANORTE",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.105999,
+            -12.5574
+          ]
+        },
+        "properties": {
+          "latitude": -12.5574,
+          "longitude": -47.105999,
+          "municipio": "ARRAIAS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.327099,
+            -10.8711
+          ]
+        },
+        "properties": {
+          "latitude": -10.8711,
+          "longitude": -46.327099,
+          "municipio": "MATEIROS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.484501,
+            -5.4092
+          ]
+        },
+        "properties": {
+          "latitude": -5.4092,
+          "longitude": -48.484501,
+          "municipio": "ESPERANTINA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.786098,
+            -9.875
+          ]
+        },
+        "properties": {
+          "latitude": -9.875,
+          "longitude": -47.786098,
+          "municipio": "RIO SONO",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.729099,
+            -10.5699
+          ]
+        },
+        "properties": {
+          "latitude": -10.5699,
+          "longitude": -47.729099,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.1236,
+            -12.5612
+          ]
+        },
+        "properties": {
+          "latitude": -12.5612,
+          "longitude": -47.1236,
+          "municipio": "ARRAIAS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.7197,
+            -9.3182
+          ]
+        },
+        "properties": {
+          "latitude": -9.3182,
+          "longitude": -48.7197,
+          "municipio": "MIRANORTE",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.1203,
+            -8.6571
+          ]
+        },
+        "properties": {
+          "latitude": -8.6571,
+          "longitude": -49.1203,
+          "municipio": "GOIANORTE",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.325802,
+            -10.9739
+          ]
+        },
+        "properties": {
+          "latitude": -10.9739,
+          "longitude": -48.325802,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.533298,
+            -9.2473
+          ]
+        },
+        "properties": {
+          "latitude": -9.2473,
+          "longitude": -48.533298,
+          "municipio": "RIO DOS BOIS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.310799,
+            -12.4268
+          ]
+        },
+        "properties": {
+          "latitude": -12.4268,
+          "longitude": -47.310799,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.492901,
+            -5.4111
+          ]
+        },
+        "properties": {
+          "latitude": -5.4111,
+          "longitude": -48.492901,
+          "municipio": "ESPERANTINA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.6702,
+            -11.3257
+          ]
+        },
+        "properties": {
+          "latitude": -11.3257,
+          "longitude": -47.6702,
+          "municipio": "PINDORAMA DO TOCANTINS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.679298,
+            -11.3276
+          ]
+        },
+        "properties": {
+          "latitude": -11.3276,
+          "longitude": -47.679298,
+          "municipio": "PINDORAMA DO TOCANTINS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.660999,
+            -6.7733
+          ]
+        },
+        "properties": {
+          "latitude": -6.7733,
+          "longitude": -48.660999,
+          "municipio": "ARAGOMINAS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.879299,
+            -5.3252
+          ]
+        },
+        "properties": {
+          "latitude": -5.3252,
+          "longitude": -47.879299,
+          "municipio": "SAMPAIO",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.3237,
+            -10.9837
+          ]
+        },
+        "properties": {
+          "latitude": -10.9837,
+          "longitude": -48.3237,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.736,
+            -10.5817
+          ]
+        },
+        "properties": {
+          "latitude": -10.5817,
+          "longitude": -47.736,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.727001,
+            -10.5797
+          ]
+        },
+        "properties": {
+          "latitude": -10.5797,
+          "longitude": -47.727001,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.1119,
+            -6.7135
+          ]
+        },
+        "properties": {
+          "latitude": -6.7135,
+          "longitude": -48.1119,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.8871,
+            -5.327
+          ]
+        },
+        "properties": {
+          "latitude": -5.327,
+          "longitude": -47.8871,
+          "municipio": "SAMPAIO",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.126598,
+            -6.727
+          ]
+        },
+        "properties": {
+          "latitude": -6.727,
+          "longitude": -48.126598,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.305901,
+            -10.8563
+          ]
+        },
+        "properties": {
+          "latitude": -10.8563,
+          "longitude": -46.305901,
+          "municipio": "MATEIROS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.587002,
+            -11.8106
+          ]
+        },
+        "properties": {
+          "latitude": -11.8106,
+          "longitude": -46.587002,
+          "municipio": "NOVO JARDIM",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.118198,
+            -6.7251
+          ]
+        },
+        "properties": {
+          "latitude": -6.7251,
+          "longitude": -48.118198,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.1203,
+            -6.7153
+          ]
+        },
+        "properties": {
+          "latitude": -6.7153,
+          "longitude": -48.1203,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.738098,
+            -10.5719
+          ]
+        },
+        "properties": {
+          "latitude": -10.5719,
+          "longitude": -47.738098,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.809502,
+            -12.0309
+          ]
+        },
+        "properties": {
+          "latitude": -12.0309,
+          "longitude": -47.809502,
+          "municipio": "NATIVIDADE",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.109798,
+            -6.7233
+          ]
+        },
+        "properties": {
+          "latitude": -6.7233,
+          "longitude": -48.109798,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.578899,
+            -11.8089
+          ]
+        },
+        "properties": {
+          "latitude": -11.8089,
+          "longitude": -46.578899,
+          "municipio": "NOVO JARDIM",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.626499,
+            -10.4342
+          ]
+        },
+        "properties": {
+          "latitude": -10.4342,
+          "longitude": -48.626499,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.794899,
+            -9.8769
+          ]
+        },
+        "properties": {
+          "latitude": -9.8769,
+          "longitude": -47.794899,
+          "municipio": "RIO SONO",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.6465,
+            -10.4385
+          ]
+        },
+        "properties": {
+          "latitude": -10.4385,
+          "longitude": -48.6465,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.747002,
+            -10.5738
+          ]
+        },
+        "properties": {
+          "latitude": -10.5738,
+          "longitude": -47.747002,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.313702,
+            -10.858
+          ]
+        },
+        "properties": {
+          "latitude": -10.858,
+          "longitude": -46.313702,
+          "municipio": "MATEIROS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.116901,
+            -12.5495
+          ]
+        },
+        "properties": {
+          "latitude": -12.5495,
+          "longitude": -47.116901,
+          "municipio": "ARRAIAS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.7449,
+            -10.5836
+          ]
+        },
+        "properties": {
+          "latitude": -10.5836,
+          "longitude": -47.7449,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.494999,
+            -5.4013
+          ]
+        },
+        "properties": {
+          "latitude": -5.4013,
+          "longitude": -48.494999,
+          "municipio": "ESPERANTINA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.5312,
+            -9.2571
+          ]
+        },
+        "properties": {
+          "latitude": -9.2571,
+          "longitude": -48.5312,
+          "municipio": "RIO DOS BOIS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.101501,
+            -6.7214
+          ]
+        },
+        "properties": {
+          "latitude": -6.7214,
+          "longitude": -48.101501,
+          "municipio": "WANDERLÂNDIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Amazônia"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.496899,
+            -10.7044
+          ]
+        },
+        "properties": {
+          "latitude": -10.7044,
+          "longitude": -47.496899,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.298199,
+            -10.8546
+          ]
+        },
+        "properties": {
+          "latitude": -10.8546,
+          "longitude": -46.298199,
+          "municipio": "MATEIROS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.854698,
+            -8.4697
+          ]
+        },
+        "properties": {
+          "latitude": -8.4697,
+          "longitude": -46.854698,
+          "municipio": "CAMPOS LINDOS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.114799,
+            -12.5593
+          ]
+        },
+        "properties": {
+          "latitude": -12.5593,
+          "longitude": -47.114799,
+          "municipio": "ARRAIAS",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-15 00:25:00",
+          "bioma": "Cerrado"
         }
       },
       {
@@ -11170,6 +15161,1230 @@
           "data_hora_gmt": "2026-09-15 05:18:00",
           "bioma": "Cerrado"
         }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.32123,
+            -10.98096
+          ]
+        },
+        "properties": {
+          "latitude": -10.98096,
+          "longitude": -48.32123,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "AQUA_M-M",
+          "data_hora_gmt": "2026-09-15 06:31:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.76665,
+            -9.87927
+          ]
+        },
+        "properties": {
+          "latitude": -9.87927,
+          "longitude": -47.76665,
+          "municipio": "RIO SONO",
+          "satelite": "AQUA_M-M",
+          "data_hora_gmt": "2026-09-15 06:31:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.77864,
+            -9.87736
+          ]
+        },
+        "properties": {
+          "latitude": -9.87736,
+          "longitude": -47.77864,
+          "municipio": "RIO SONO",
+          "satelite": "AQUA_M-M",
+          "data_hora_gmt": "2026-09-15 06:31:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.30152,
+            -10.85965
+          ]
+        },
+        "properties": {
+          "latitude": -10.85965,
+          "longitude": -46.30152,
+          "municipio": "MATEIROS",
+          "satelite": "AQUA_M-M",
+          "data_hora_gmt": "2026-09-15 06:31:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.73606,
+            -10.58294
+          ]
+        },
+        "properties": {
+          "latitude": -10.58294,
+          "longitude": -47.73606,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "AQUA_M-M",
+          "data_hora_gmt": "2026-09-15 06:31:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.30943,
+            -10.86581
+          ]
+        },
+        "properties": {
+          "latitude": -10.86581,
+          "longitude": -46.30943,
+          "municipio": "MATEIROS",
+          "satelite": "AQUA_M-M",
+          "data_hora_gmt": "2026-09-15 06:31:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3105,
+            -10.8665
+          ]
+        },
+        "properties": {
+          "latitude": -10.8665,
+          "longitude": -46.3105,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 11:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.3209,
+            -10.9875
+          ]
+        },
+        "properties": {
+          "latitude": -10.9875,
+          "longitude": -48.3209,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 11:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3105,
+            -10.8665
+          ]
+        },
+        "properties": {
+          "latitude": -10.8665,
+          "longitude": -46.3105,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 11:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3105,
+            -10.8665
+          ]
+        },
+        "properties": {
+          "latitude": -10.8665,
+          "longitude": -46.3105,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 11:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3105,
+            -10.8665
+          ]
+        },
+        "properties": {
+          "latitude": -10.8665,
+          "longitude": -46.3105,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 11:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3331,
+            -10.8661
+          ]
+        },
+        "properties": {
+          "latitude": -10.8661,
+          "longitude": -46.3331,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3105,
+            -10.8665
+          ]
+        },
+        "properties": {
+          "latitude": -10.8665,
+          "longitude": -46.3105,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3105,
+            -10.8665
+          ]
+        },
+        "properties": {
+          "latitude": -10.8665,
+          "longitude": -46.3105,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.3209,
+            -10.9875
+          ]
+        },
+        "properties": {
+          "latitude": -10.9875,
+          "longitude": -48.3209,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3331,
+            -10.8661
+          ]
+        },
+        "properties": {
+          "latitude": -10.8661,
+          "longitude": -46.3331,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.313,
+            -10.8474
+          ]
+        },
+        "properties": {
+          "latitude": -10.8474,
+          "longitude": -46.313,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3105,
+            -10.8665
+          ]
+        },
+        "properties": {
+          "latitude": -10.8665,
+          "longitude": -46.3105,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.8588,
+            -9.4234
+          ]
+        },
+        "properties": {
+          "latitude": -9.4234,
+          "longitude": -47.8588,
+          "municipio": "RIO SONO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3331,
+            -10.8661
+          ]
+        },
+        "properties": {
+          "latitude": -10.8661,
+          "longitude": -46.3331,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.3209,
+            -10.9875
+          ]
+        },
+        "properties": {
+          "latitude": -10.9875,
+          "longitude": -48.3209,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3331,
+            -10.8661
+          ]
+        },
+        "properties": {
+          "latitude": -10.8661,
+          "longitude": -46.3331,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3105,
+            -10.8665
+          ]
+        },
+        "properties": {
+          "latitude": -10.8665,
+          "longitude": -46.3105,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.3209,
+            -10.9875
+          ]
+        },
+        "properties": {
+          "latitude": -10.9875,
+          "longitude": -48.3209,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3331,
+            -10.8661
+          ]
+        },
+        "properties": {
+          "latitude": -10.8661,
+          "longitude": -46.3331,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3105,
+            -10.8665
+          ]
+        },
+        "properties": {
+          "latitude": -10.8665,
+          "longitude": -46.3105,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.8588,
+            -9.4234
+          ]
+        },
+        "properties": {
+          "latitude": -9.4234,
+          "longitude": -47.8588,
+          "municipio": "RIO SONO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3105,
+            -10.8665
+          ]
+        },
+        "properties": {
+          "latitude": -10.8665,
+          "longitude": -46.3105,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.3209,
+            -10.9875
+          ]
+        },
+        "properties": {
+          "latitude": -10.9875,
+          "longitude": -48.3209,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3331,
+            -10.8661
+          ]
+        },
+        "properties": {
+          "latitude": -10.8661,
+          "longitude": -46.3331,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.905,
+            -8.8137
+          ]
+        },
+        "properties": {
+          "latitude": -8.8137,
+          "longitude": -46.905,
+          "municipio": "RECURSOLÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3105,
+            -10.8665
+          ]
+        },
+        "properties": {
+          "latitude": -10.8665,
+          "longitude": -46.3105,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.9272,
+            -8.8134
+          ]
+        },
+        "properties": {
+          "latitude": -8.8134,
+          "longitude": -46.9272,
+          "municipio": "RECURSOLÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.8588,
+            -9.4234
+          ]
+        },
+        "properties": {
+          "latitude": -9.4234,
+          "longitude": -47.8588,
+          "municipio": "RIO SONO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.9069,
+            -8.7949
+          ]
+        },
+        "properties": {
+          "latitude": -8.7949,
+          "longitude": -46.9069,
+          "municipio": "RECURSOLÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3331,
+            -10.8661
+          ]
+        },
+        "properties": {
+          "latitude": -10.8661,
+          "longitude": -46.3331,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.9291,
+            -8.7946
+          ]
+        },
+        "properties": {
+          "latitude": -8.7946,
+          "longitude": -46.9291,
+          "municipio": "RECURSOLÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.5899,
+            -11.8154
+          ]
+        },
+        "properties": {
+          "latitude": -11.8154,
+          "longitude": -46.5899,
+          "municipio": "NOVO JARDIM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3331,
+            -10.8661
+          ]
+        },
+        "properties": {
+          "latitude": -10.8661,
+          "longitude": -46.3331,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3105,
+            -10.8665
+          ]
+        },
+        "properties": {
+          "latitude": -10.8665,
+          "longitude": -46.3105,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.8588,
+            -9.4234
+          ]
+        },
+        "properties": {
+          "latitude": -9.4234,
+          "longitude": -47.8588,
+          "municipio": "RIO SONO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.8588,
+            -9.4234
+          ]
+        },
+        "properties": {
+          "latitude": -9.4234,
+          "longitude": -47.8588,
+          "municipio": "RIO SONO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3331,
+            -10.8661
+          ]
+        },
+        "properties": {
+          "latitude": -10.8661,
+          "longitude": -46.3331,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3105,
+            -10.8665
+          ]
+        },
+        "properties": {
+          "latitude": -10.8665,
+          "longitude": -46.3105,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4953,
+            -10.6962
+          ]
+        },
+        "properties": {
+          "latitude": -10.6962,
+          "longitude": -47.4953,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0958,
+            -9.7358
+          ]
+        },
+        "properties": {
+          "latitude": -9.7358,
+          "longitude": -47.0958,
+          "municipio": "RIO SONO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.5899,
+            -11.8154
+          ]
+        },
+        "properties": {
+          "latitude": -11.8154,
+          "longitude": -46.5899,
+          "municipio": "NOVO JARDIM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.905,
+            -8.8137
+          ]
+        },
+        "properties": {
+          "latitude": -8.8137,
+          "longitude": -46.905,
+          "municipio": "RECURSOLÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.7306,
+            -10.5788
+          ]
+        },
+        "properties": {
+          "latitude": -10.5788,
+          "longitude": -47.7306,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.8588,
+            -9.4234
+          ]
+        },
+        "properties": {
+          "latitude": -9.4234,
+          "longitude": -47.8588,
+          "municipio": "RIO SONO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3105,
+            -10.8665
+          ]
+        },
+        "properties": {
+          "latitude": -10.8665,
+          "longitude": -46.3105,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.7306,
+            -10.5788
+          ]
+        },
+        "properties": {
+          "latitude": -10.5788,
+          "longitude": -47.7306,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.5899,
+            -11.8154
+          ]
+        },
+        "properties": {
+          "latitude": -11.8154,
+          "longitude": -46.5899,
+          "municipio": "NOVO JARDIM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.7528,
+            -10.5785
+          ]
+        },
+        "properties": {
+          "latitude": -10.5785,
+          "longitude": -47.7528,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.6851,
+            -11.0434
+          ]
+        },
+        "properties": {
+          "latitude": -11.0434,
+          "longitude": -49.6851,
+          "municipio": "SANTA RITA DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.5989,
+            -9.5915
+          ]
+        },
+        "properties": {
+          "latitude": -9.5915,
+          "longitude": -46.5989,
+          "municipio": "LIZARDA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4953,
+            -10.6962
+          ]
+        },
+        "properties": {
+          "latitude": -10.6962,
+          "longitude": -47.4953,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.8588,
+            -9.4234
+          ]
+        },
+        "properties": {
+          "latitude": -9.4234,
+          "longitude": -47.8588,
+          "municipio": "RIO SONO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.6851,
+            -11.0434
+          ]
+        },
+        "properties": {
+          "latitude": -11.0434,
+          "longitude": -49.6851,
+          "municipio": "SANTA RITA DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.3209,
+            -10.9875
+          ]
+        },
+        "properties": {
+          "latitude": -10.9875,
+          "longitude": -48.3209,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.905,
+            -8.8137
+          ]
+        },
+        "properties": {
+          "latitude": -8.8137,
+          "longitude": -46.905,
+          "municipio": "RECURSOLÂNDIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0958,
+            -9.7358
+          ]
+        },
+        "properties": {
+          "latitude": -9.7358,
+          "longitude": -47.0958,
+          "municipio": "RIO SONO",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.5899,
+            -11.8154
+          ]
+        },
+        "properties": {
+          "latitude": -11.8154,
+          "longitude": -46.5899,
+          "municipio": "NOVO JARDIM",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.7306,
+            -10.5788
+          ]
+        },
+        "properties": {
+          "latitude": -10.5788,
+          "longitude": -47.7306,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.7528,
+            -10.5785
+          ]
+        },
+        "properties": {
+          "latitude": -10.5785,
+          "longitude": -47.7528,
+          "municipio": "PONTE ALTA DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.5989,
+            -9.5915
+          ]
+        },
+        "properties": {
+          "latitude": -9.5915,
+          "longitude": -46.5989,
+          "municipio": "LIZARDA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -46.3105,
+            -10.8665
+          ]
+        },
+        "properties": {
+          "latitude": -10.8665,
+          "longitude": -46.3105,
+          "municipio": "MATEIROS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.3232,
+            -10.9685
+          ]
+        },
+        "properties": {
+          "latitude": -10.9685,
+          "longitude": -48.3232,
+          "municipio": "PORTO NACIONAL",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-15 13:40:00",
+          "bioma": "Cerrado"
+        }
       }
     ]
   },
@@ -11251,21 +16466,21 @@
     "mes_final": 8,
     "periodo": "Janeiro a agosto de 2026",
     "area_queimada_ha": 1023369.62,
-    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/156548d745a3c1a190958c7a533eec40-851d29b043e5c88bd6e624a76b2298bc/tiles/{z}/{x}/{y}",
+    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/156548d745a3c1a190958c7a533eec40-11a2fff87c643f8229a19fc414c4e637/tiles/{z}/{x}/{y}",
     "unidade": "ha",
     "natureza": "Cicatrizes de área queimada mapeadas pelo Monitor do Fogo."
   },
   "chuva_observada": {
     "status": "ok",
     "periodo": "ultimas 24h",
-    "fonte": "CEMADEN",
-    "atualizadoEm": "2026-09-15T09:58:43.555Z",
+    "fonte": "CEMADEN / ANA",
+    "atualizadoEm": "2026-09-15T14:50:05.071Z",
     "maiorAcumulado": 0,
     "estacaoMaiorAcumulado": "Dona Constanci",
     "municipioMaiorAcumulado": "DUERÉ",
-    "estacoesCadastradas": 58,
-    "estacoesConsultadas": 58,
-    "estacoesComLeitura": 38,
+    "estacoesCadastradas": 233,
+    "estacoesConsultadas": 233,
+    "estacoesComLeitura": 49,
     "acima10": 0,
     "acima30": 0,
     "acima50": 0,
@@ -11278,7 +16493,7 @@
         "estacoesCadastradas": 38,
         "estacoesConsultadas": 38,
         "estacoesComLeitura": 38,
-        "atualizadoEm": "2026-09-15 09:56:42 UTC",
+        "atualizadoEm": "2026-09-15 14:48:43 UTC",
         "estacoes": [
           {
             "id": "CEMADEN-170730601A",
@@ -11289,7 +16504,7 @@
             "latitude": -11.34296,
             "longitude": -49.26664,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11303,7 +16518,7 @@
             "latitude": -5.36527,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11317,7 +16532,7 @@
             "latitude": -12.035,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11331,7 +16546,7 @@
             "latitude": -5.3956,
             "longitude": -47.8114,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11345,7 +16560,7 @@
             "latitude": -7.14869,
             "longitude": -48.69083,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11359,7 +16574,7 @@
             "latitude": -5.25903,
             "longitude": -48.20147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11373,7 +16588,7 @@
             "latitude": -6.58226,
             "longitude": -48.64368,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11387,7 +16602,7 @@
             "latitude": -5.55265,
             "longitude": -47.57758,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11401,7 +16616,7 @@
             "latitude": -7.18755,
             "longitude": -48.23527,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11415,7 +16630,7 @@
             "latitude": -7.15587,
             "longitude": -48.1888,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11429,7 +16644,7 @@
             "latitude": -7.19408,
             "longitude": -48.19586,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11443,7 +16658,7 @@
             "latitude": -7.22806,
             "longitude": -48.24461,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11457,7 +16672,7 @@
             "latitude": -5.65762,
             "longitude": -48.11147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11471,7 +16686,7 @@
             "latitude": -11.8055,
             "longitude": -49.5275,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11485,7 +16700,7 @@
             "latitude": -7.71295,
             "longitude": -47.3093,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11499,7 +16714,7 @@
             "latitude": -6.41126,
             "longitude": -48.53374,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11513,7 +16728,7 @@
             "latitude": -10.71611,
             "longitude": -48.39972,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11527,7 +16742,7 @@
             "latitude": -6.36614,
             "longitude": -48.07425,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11541,7 +16756,7 @@
             "latitude": -6.38166,
             "longitude": -48.06247,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11555,7 +16770,7 @@
             "latitude": -5.464,
             "longitude": -47.8968,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11569,7 +16784,7 @@
             "latitude": -5.47538,
             "longitude": -47.8894,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11583,7 +16798,7 @@
             "latitude": -5.43003,
             "longitude": -47.85794,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11597,7 +16812,7 @@
             "latitude": -5.31875,
             "longitude": -48.03931,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11611,7 +16826,7 @@
             "latitude": -5.32428,
             "longitude": -48.03409,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11625,7 +16840,7 @@
             "latitude": -9.27346,
             "longitude": -49.95341,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11639,7 +16854,7 @@
             "latitude": -9.28222,
             "longitude": -49.95326,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11653,7 +16868,7 @@
             "latitude": -5.7713,
             "longitude": -47.48039,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11667,7 +16882,7 @@
             "latitude": -5.77459,
             "longitude": -47.47793,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11681,7 +16896,7 @@
             "latitude": -10.79377,
             "longitude": -49.62398,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11695,7 +16910,7 @@
             "latitude": -10.78287,
             "longitude": -49.61681,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11709,7 +16924,7 @@
             "latitude": -12.61455,
             "longitude": -47.88209,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11723,7 +16938,7 @@
             "latitude": -12.62006,
             "longitude": -47.86848,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11737,7 +16952,7 @@
             "latitude": -12.63128,
             "longitude": -47.56409,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11751,7 +16966,7 @@
             "latitude": -10.44846,
             "longitude": -49.16758,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11765,7 +16980,7 @@
             "latitude": -10.44163,
             "longitude": -49.181,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11779,7 +16994,7 @@
             "latitude": -6.32722,
             "longitude": -47.42812,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11793,7 +17008,7 @@
             "latitude": -6.33796,
             "longitude": -47.4185,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -11807,7 +17022,7 @@
             "latitude": -6.31512,
             "longitude": -47.42296,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-15 09:56:42 UTC",
+            "atualizadoEm": "2026-09-15 14:48:43 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -12134,14 +17349,169 @@
       },
       "ANA": {
         "source": "ANA",
-        "status": "error",
-        "label": "Erro de consulta",
-        "observacao": "Falha ao consultar a fonte no workflow: Inventario ANA indisponivel",
-        "estacoesCadastradas": 0,
-        "estacoesConsultadas": 0,
-        "estacoesComLeitura": 0,
-        "atualizadoEm": null,
-        "estacoes": []
+        "status": "ready",
+        "label": "Operando",
+        "observacao": "Consulta server-side realizada pelo workflow.",
+        "estacoesCadastradas": 175,
+        "estacoesConsultadas": 175,
+        "estacoesComLeitura": 11,
+        "atualizadoEm": "14/09/2026 a 15/09/2026",
+        "estacoes": [
+          {
+            "id": "ANA-547004",
+            "codigo": "547004",
+            "nome": "DESCARRETO",
+            "municipio": "ITAGUATINS",
+            "fonte": "ANA",
+            "latitude": -5.7894,
+            "longitude": -47.4689,
+            "chuva24h": 0,
+            "atualizadoEm": "14/09/2026 a 15/09/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-547008",
+            "codigo": "547008",
+            "nome": "SÃO MIGUEL DO TOCANTINS_Centro Cultural",
+            "municipio": "SÃO MIGUEL DO TOCAN",
+            "fonte": "ANA",
+            "latitude": -5.5525,
+            "longitude": -47.5775,
+            "chuva24h": 0,
+            "atualizadoEm": "14/09/2026 a 15/09/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-548000",
+            "codigo": "548000",
+            "nome": "ARAGUATINS",
+            "municipio": "ARAGUATINS",
+            "fonte": "ANA",
+            "latitude": -5.6483,
+            "longitude": -48.125,
+            "chuva24h": 0,
+            "atualizadoEm": "14/09/2026 a 15/09/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-548010",
+            "codigo": "548010",
+            "nome": "RIO TOCANTINS - SÃO SEBASTIÃO DO TO",
+            "municipio": "SÃO SEBASTIÃO DO TO",
+            "fonte": "ANA",
+            "latitude": -5.2544,
+            "longitude": -48.1983,
+            "chuva24h": 0,
+            "atualizadoEm": "14/09/2026 a 15/09/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-648005",
+            "codigo": "648005",
+            "nome": "CGH LAJES JUSANTE",
+            "municipio": "PIRAQUÊ",
+            "fonte": "ANA",
+            "latitude": -6.7822,
+            "longitude": -48.1525,
+            "chuva24h": 0,
+            "atualizadoEm": "14/09/2026 a 15/09/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-648006",
+            "codigo": "648006",
+            "nome": "ARAGUANÃ",
+            "municipio": "ARAGUANÃ",
+            "fonte": "ANA",
+            "latitude": -6.56557,
+            "longitude": -48.6355,
+            "chuva24h": 0,
+            "atualizadoEm": "14/09/2026 a 15/09/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-648012",
+            "codigo": "648012",
+            "nome": "RIO PIRANHAS - SÃO BENTO DO TOCANTINS",
+            "municipio": "SÃO BENTO DO TOCANT",
+            "fonte": "ANA",
+            "latitude": -6.0442,
+            "longitude": -48.1983,
+            "chuva24h": 0,
+            "atualizadoEm": "14/09/2026 a 15/09/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-748004",
+            "codigo": "748004",
+            "nome": "ARAGUAINA",
+            "municipio": "ARAGOMINAS",
+            "fonte": "ANA",
+            "latitude": -7.1039,
+            "longitude": -48.2014,
+            "chuva24h": 0,
+            "atualizadoEm": "14/09/2026 a 15/09/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-947006",
+            "codigo": "947006",
+            "nome": "RIO SONO - APARECIDA DO RIO NEGRO",
+            "municipio": "APARECIDA DO RIO NE",
+            "fonte": "ANA",
+            "latitude": -9.8092,
+            "longitude": -47.885,
+            "chuva24h": 0,
+            "atualizadoEm": "14/09/2026 a 15/09/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-1047000",
+            "codigo": "1047000",
+            "nome": "JATOBÁ (FAZENDA BOA NOVA)",
+            "municipio": "NOVO ACORDO",
+            "fonte": "ANA",
+            "latitude": -9.9906,
+            "longitude": -47.4786,
+            "chuva24h": 0,
+            "atualizadoEm": "14/09/2026 a 15/09/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-1049021",
+            "codigo": "1049021",
+            "nome": "JUSANTE EIXO TARTARUGA RIO URUBU",
+            "municipio": "LAGOA DA CONFUSÃO",
+            "fonte": "ANA",
+            "latitude": -10.8408,
+            "longitude": -49.7567,
+            "chuva24h": 0,
+            "atualizadoEm": "14/09/2026 a 15/09/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          }
+        ]
       },
       "SEMARH": {
         "source": "SEMARH",
@@ -12155,8 +17525,6 @@
         "estacoes": []
       }
     },
-    "erros": {
-      "ANA": "Inventario ANA indisponivel"
-    }
+    "erros": {}
   }
 }
