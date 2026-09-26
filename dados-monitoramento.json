@@ -1,24 +1,19 @@
 {
-  "atualizado_em": "2026-09-26T01:24:12.311Z",
+  "atualizado_em": "2026-09-26T07:26:59.173Z",
   "resumo": {
     "alertas_cemaden_to": 0,
     "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
     "estacoes_fluviometricas_ana": null,
-    "focos_calor_24h": 3,
+    "focos_calor_24h": 90,
     "area_queimada_ano_ha": 245000,
-    "chuva_24h_mm": 41.2,
+    "chuva_24h_mm": 41.4,
     "estacoes_operando": 49,
     "avisos_inmet_to_hoje": 1,
-    "avisos_inmet_to_futuro": 1,
+    "avisos_inmet_to_futuro": 0,
     "avisos_inmet_to_severidade_maxima": "Perigo Potencial",
     "avisos_inmet_detalhes": [
       {
-        "title": "Vigente hoje: Tempestade",
-        "detail": "Perigo Potencial | 2026-09-25 09:00 até 2026-09-25 23:59",
-        "location": "Abreulândia, Aguiarnópolis, Aliança do Tocantins, Almas, Alvorada, Ananás e mais 133 municipio(s)."
-      },
-      {
-        "title": "Previsto: Baixa Umidade",
+        "title": "Vigente hoje: Baixa Umidade",
         "detail": "Perigo Potencial | 2026-09-26 10:00 até 2026-09-26 22:00",
         "location": "Arraias, Aurora do Tocantins, Combinado, Dianópolis, Lavandeira, Mateiros e mais 7 municipio(s)."
       }
@@ -31,7 +26,7 @@
     {
       "icon": "cloud-rain",
       "label": "Chuvas",
-      "description": "41,2 mm acumulados nas últimas 24h",
+      "description": "41,4 mm acumulados nas últimas 24h",
       "value": "Monitoramento"
     },
     {
@@ -43,7 +38,7 @@
     {
       "icon": "flame",
       "label": "Focos de calor",
-      "description": "3 focos registrados no arquivo diário do INPE",
+      "description": "90 focos registrados no arquivo diário do INPE",
       "value": "Ativo"
     },
     {
@@ -1779,15 +1774,31 @@
   },
   "focos_calor": {
     "status": "ok",
-    "quantidade24h": 3,
-    "quantidadeMapa": 3,
+    "quantidade24h": 90,
+    "quantidadeMapa": 90,
     "periodo": "Arquivo diario INPE",
     "fonte": "INPE Queimadas",
-    "atualizadoEm": "2026-09-26T01:23:52.093Z",
+    "atualizadoEm": "2026-09-26T07:26:38.153Z",
     "referenciaArquivo": "20260926",
     "csv_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/focos_diario_br_20260926.csv",
     "observacao": "Dados filtrados para o Tocantins a partir do arquivo diario Brasil do INPE Queimadas.",
     "pontos_24h": [
+      {
+        "latitude": -12.70475,
+        "longitude": -47.29967,
+        "municipio": "ARRAIAS",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-09-26 00:18:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.34483,
+        "longitude": -48.20074,
+        "municipio": "PARANÃ",
+        "satelite": "TERRA_M-M",
+        "data_hora_gmt": "2026-09-26 00:18:00",
+        "bioma": "Cerrado"
+      },
       {
         "latitude": -12.9065,
         "longitude": -49.956,
@@ -1811,9 +1822,725 @@
         "satelite": "GOES-19",
         "data_hora_gmt": "2026-09-26 00:40:00",
         "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8659,
+        "longitude": -50.5791,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8662,
+        "longitude": -50.5576,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8094,
+        "longitude": -50.5428,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2696,
+        "longitude": -50.3381,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2699,
+        "longitude": -50.3166,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0362,
+        "longitude": -50.6448,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8284,
+        "longitude": -50.5406,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2887,
+        "longitude": -50.3358,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2508,
+        "longitude": -50.3189,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2429,
+        "longitude": -50.332901,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-26 01:36:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2699,
+        "longitude": -50.3559,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-26 01:36:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2445,
+        "longitude": -50.301498,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-26 01:36:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8362,
+        "longitude": -50.540298,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-26 01:36:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8266,
+        "longitude": -50.542999,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-26 01:36:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2541,
+        "longitude": -50.298801,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-26 01:36:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2811,
+        "longitude": -50.321899,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-26 01:36:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2524,
+        "longitude": -50.330101,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-26 01:36:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2637,
+        "longitude": -50.296101,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-26 01:36:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2986,
+        "longitude": -50.347698,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-26 01:36:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.262,
+        "longitude": -50.3274,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-26 01:36:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2716,
+        "longitude": -50.324699,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-26 01:36:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2907,
+        "longitude": -50.319199,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-26 01:36:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.235,
+        "longitude": -50.304199,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-26 01:36:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.289,
+        "longitude": -50.350399,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-26 01:36:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2795,
+        "longitude": -50.353199,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "METOP-C",
+        "data_hora_gmt": "2026-09-26 01:36:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9037,
+        "longitude": -50.5961,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0175,
+        "longitude": -50.6256,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0171,
+        "longitude": -50.647,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9228,
+        "longitude": -50.5938,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.289,
+        "longitude": -50.3143,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0362,
+        "longitude": -50.6448,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0365,
+        "longitude": -50.6233,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2887,
+        "longitude": -50.3358,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0175,
+        "longitude": -50.6256,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0365,
+        "longitude": -50.6233,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9231,
+        "longitude": -50.5724,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0362,
+        "longitude": -50.6448,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8284,
+        "longitude": -50.5406,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.904,
+        "longitude": -50.5746,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9228,
+        "longitude": -50.5938,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0171,
+        "longitude": -50.647,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9037,
+        "longitude": -50.5961,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 01:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0175,
+        "longitude": -50.6256,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0362,
+        "longitude": -50.6448,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0365,
+        "longitude": -50.6233,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0553,
+        "longitude": -50.6425,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0556,
+        "longitude": -50.6211,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0365,
+        "longitude": -50.6233,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9231,
+        "longitude": -50.5724,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.904,
+        "longitude": -50.5746,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0556,
+        "longitude": -50.6211,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0362,
+        "longitude": -50.6448,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0175,
+        "longitude": -50.6256,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9037,
+        "longitude": -50.5961,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0553,
+        "longitude": -50.6425,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9228,
+        "longitude": -50.5938,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9231,
+        "longitude": -50.5724,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0365,
+        "longitude": -50.6233,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9228,
+        "longitude": -50.5938,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0556,
+        "longitude": -50.6211,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0553,
+        "longitude": -50.6425,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0362,
+        "longitude": -50.6448,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0171,
+        "longitude": -50.647,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.904,
+        "longitude": -50.5746,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9231,
+        "longitude": -50.5724,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9228,
+        "longitude": -50.5938,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.904,
+        "longitude": -50.5746,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9231,
+        "longitude": -50.5724,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9228,
+        "longitude": -50.5938,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 02:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9231,
+        "longitude": -50.5724,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 03:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9228,
+        "longitude": -50.5938,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 03:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9231,
+        "longitude": -50.5724,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 03:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9228,
+        "longitude": -50.5938,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 03:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9231,
+        "longitude": -50.5724,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 03:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.904,
+        "longitude": -50.5746,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 03:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8662,
+        "longitude": -50.5576,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 03:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.70504,
+        "longitude": -47.29658,
+        "municipio": "ARRAIAS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-09-26 03:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.69817,
+        "longitude": -47.29523,
+        "municipio": "ARRAIAS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-09-26 03:32:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8475,
+        "longitude": -50.5384,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 03:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8662,
+        "longitude": -50.5576,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 03:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.9228,
+        "longitude": -50.5938,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 03:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8665,
+        "longitude": -50.5362,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 03:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8472,
+        "longitude": -50.5598,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 03:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8662,
+        "longitude": -50.5576,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 03:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8472,
+        "longitude": -50.5598,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-09-26 03:50:00",
+        "bioma": "Cerrado"
       }
     ],
     "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.29967,
+            -12.70475
+          ]
+        },
+        "properties": {
+          "latitude": -12.70475,
+          "longitude": -47.29967,
+          "municipio": "ARRAIAS",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-09-26 00:18:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.20074,
+            -12.34483
+          ]
+        },
+        "properties": {
+          "latitude": -12.34483,
+          "longitude": -48.20074,
+          "municipio": "PARANÃ",
+          "satelite": "TERRA_M-M",
+          "data_hora_gmt": "2026-09-26 00:18:00",
+          "bioma": "Cerrado"
+        }
+      },
       {
         "type": "Feature",
         "geometry": {
@@ -1865,6 +2592,1536 @@
           "municipio": "ARAGUAÇU",
           "satelite": "GOES-19",
           "data_hora_gmt": "2026-09-26 00:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5791,
+            -11.8659
+          ]
+        },
+        "properties": {
+          "latitude": -11.8659,
+          "longitude": -50.5791,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5576,
+            -11.8662
+          ]
+        },
+        "properties": {
+          "latitude": -11.8662,
+          "longitude": -50.5576,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5428,
+            -11.8094
+          ]
+        },
+        "properties": {
+          "latitude": -11.8094,
+          "longitude": -50.5428,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.3381,
+            -12.2696
+          ]
+        },
+        "properties": {
+          "latitude": -12.2696,
+          "longitude": -50.3381,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.3166,
+            -12.2699
+          ]
+        },
+        "properties": {
+          "latitude": -12.2699,
+          "longitude": -50.3166,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6448,
+            -12.0362
+          ]
+        },
+        "properties": {
+          "latitude": -12.0362,
+          "longitude": -50.6448,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5406,
+            -11.8284
+          ]
+        },
+        "properties": {
+          "latitude": -11.8284,
+          "longitude": -50.5406,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.3358,
+            -12.2887
+          ]
+        },
+        "properties": {
+          "latitude": -12.2887,
+          "longitude": -50.3358,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.3189,
+            -12.2508
+          ]
+        },
+        "properties": {
+          "latitude": -12.2508,
+          "longitude": -50.3189,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.332901,
+            -12.2429
+          ]
+        },
+        "properties": {
+          "latitude": -12.2429,
+          "longitude": -50.332901,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-26 01:36:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.3559,
+            -12.2699
+          ]
+        },
+        "properties": {
+          "latitude": -12.2699,
+          "longitude": -50.3559,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-26 01:36:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.301498,
+            -12.2445
+          ]
+        },
+        "properties": {
+          "latitude": -12.2445,
+          "longitude": -50.301498,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-26 01:36:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.540298,
+            -11.8362
+          ]
+        },
+        "properties": {
+          "latitude": -11.8362,
+          "longitude": -50.540298,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-26 01:36:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.542999,
+            -11.8266
+          ]
+        },
+        "properties": {
+          "latitude": -11.8266,
+          "longitude": -50.542999,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-26 01:36:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.298801,
+            -12.2541
+          ]
+        },
+        "properties": {
+          "latitude": -12.2541,
+          "longitude": -50.298801,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-26 01:36:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.321899,
+            -12.2811
+          ]
+        },
+        "properties": {
+          "latitude": -12.2811,
+          "longitude": -50.321899,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-26 01:36:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.330101,
+            -12.2524
+          ]
+        },
+        "properties": {
+          "latitude": -12.2524,
+          "longitude": -50.330101,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-26 01:36:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.296101,
+            -12.2637
+          ]
+        },
+        "properties": {
+          "latitude": -12.2637,
+          "longitude": -50.296101,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-26 01:36:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.347698,
+            -12.2986
+          ]
+        },
+        "properties": {
+          "latitude": -12.2986,
+          "longitude": -50.347698,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-26 01:36:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.3274,
+            -12.262
+          ]
+        },
+        "properties": {
+          "latitude": -12.262,
+          "longitude": -50.3274,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-26 01:36:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.324699,
+            -12.2716
+          ]
+        },
+        "properties": {
+          "latitude": -12.2716,
+          "longitude": -50.324699,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-26 01:36:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.319199,
+            -12.2907
+          ]
+        },
+        "properties": {
+          "latitude": -12.2907,
+          "longitude": -50.319199,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-26 01:36:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.304199,
+            -12.235
+          ]
+        },
+        "properties": {
+          "latitude": -12.235,
+          "longitude": -50.304199,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-26 01:36:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.350399,
+            -12.289
+          ]
+        },
+        "properties": {
+          "latitude": -12.289,
+          "longitude": -50.350399,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-26 01:36:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.353199,
+            -12.2795
+          ]
+        },
+        "properties": {
+          "latitude": -12.2795,
+          "longitude": -50.353199,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "METOP-C",
+          "data_hora_gmt": "2026-09-26 01:36:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5961,
+            -11.9037
+          ]
+        },
+        "properties": {
+          "latitude": -11.9037,
+          "longitude": -50.5961,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6256,
+            -12.0175
+          ]
+        },
+        "properties": {
+          "latitude": -12.0175,
+          "longitude": -50.6256,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.647,
+            -12.0171
+          ]
+        },
+        "properties": {
+          "latitude": -12.0171,
+          "longitude": -50.647,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5938,
+            -11.9228
+          ]
+        },
+        "properties": {
+          "latitude": -11.9228,
+          "longitude": -50.5938,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.3143,
+            -12.289
+          ]
+        },
+        "properties": {
+          "latitude": -12.289,
+          "longitude": -50.3143,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6448,
+            -12.0362
+          ]
+        },
+        "properties": {
+          "latitude": -12.0362,
+          "longitude": -50.6448,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6233,
+            -12.0365
+          ]
+        },
+        "properties": {
+          "latitude": -12.0365,
+          "longitude": -50.6233,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.3358,
+            -12.2887
+          ]
+        },
+        "properties": {
+          "latitude": -12.2887,
+          "longitude": -50.3358,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6256,
+            -12.0175
+          ]
+        },
+        "properties": {
+          "latitude": -12.0175,
+          "longitude": -50.6256,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6233,
+            -12.0365
+          ]
+        },
+        "properties": {
+          "latitude": -12.0365,
+          "longitude": -50.6233,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5724,
+            -11.9231
+          ]
+        },
+        "properties": {
+          "latitude": -11.9231,
+          "longitude": -50.5724,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6448,
+            -12.0362
+          ]
+        },
+        "properties": {
+          "latitude": -12.0362,
+          "longitude": -50.6448,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5406,
+            -11.8284
+          ]
+        },
+        "properties": {
+          "latitude": -11.8284,
+          "longitude": -50.5406,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5746,
+            -11.904
+          ]
+        },
+        "properties": {
+          "latitude": -11.904,
+          "longitude": -50.5746,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5938,
+            -11.9228
+          ]
+        },
+        "properties": {
+          "latitude": -11.9228,
+          "longitude": -50.5938,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.647,
+            -12.0171
+          ]
+        },
+        "properties": {
+          "latitude": -12.0171,
+          "longitude": -50.647,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5961,
+            -11.9037
+          ]
+        },
+        "properties": {
+          "latitude": -11.9037,
+          "longitude": -50.5961,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 01:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6256,
+            -12.0175
+          ]
+        },
+        "properties": {
+          "latitude": -12.0175,
+          "longitude": -50.6256,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6448,
+            -12.0362
+          ]
+        },
+        "properties": {
+          "latitude": -12.0362,
+          "longitude": -50.6448,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6233,
+            -12.0365
+          ]
+        },
+        "properties": {
+          "latitude": -12.0365,
+          "longitude": -50.6233,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6425,
+            -12.0553
+          ]
+        },
+        "properties": {
+          "latitude": -12.0553,
+          "longitude": -50.6425,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6211,
+            -12.0556
+          ]
+        },
+        "properties": {
+          "latitude": -12.0556,
+          "longitude": -50.6211,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6233,
+            -12.0365
+          ]
+        },
+        "properties": {
+          "latitude": -12.0365,
+          "longitude": -50.6233,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5724,
+            -11.9231
+          ]
+        },
+        "properties": {
+          "latitude": -11.9231,
+          "longitude": -50.5724,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5746,
+            -11.904
+          ]
+        },
+        "properties": {
+          "latitude": -11.904,
+          "longitude": -50.5746,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6211,
+            -12.0556
+          ]
+        },
+        "properties": {
+          "latitude": -12.0556,
+          "longitude": -50.6211,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6448,
+            -12.0362
+          ]
+        },
+        "properties": {
+          "latitude": -12.0362,
+          "longitude": -50.6448,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6256,
+            -12.0175
+          ]
+        },
+        "properties": {
+          "latitude": -12.0175,
+          "longitude": -50.6256,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5961,
+            -11.9037
+          ]
+        },
+        "properties": {
+          "latitude": -11.9037,
+          "longitude": -50.5961,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6425,
+            -12.0553
+          ]
+        },
+        "properties": {
+          "latitude": -12.0553,
+          "longitude": -50.6425,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5938,
+            -11.9228
+          ]
+        },
+        "properties": {
+          "latitude": -11.9228,
+          "longitude": -50.5938,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5724,
+            -11.9231
+          ]
+        },
+        "properties": {
+          "latitude": -11.9231,
+          "longitude": -50.5724,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6233,
+            -12.0365
+          ]
+        },
+        "properties": {
+          "latitude": -12.0365,
+          "longitude": -50.6233,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5938,
+            -11.9228
+          ]
+        },
+        "properties": {
+          "latitude": -11.9228,
+          "longitude": -50.5938,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6211,
+            -12.0556
+          ]
+        },
+        "properties": {
+          "latitude": -12.0556,
+          "longitude": -50.6211,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6425,
+            -12.0553
+          ]
+        },
+        "properties": {
+          "latitude": -12.0553,
+          "longitude": -50.6425,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.6448,
+            -12.0362
+          ]
+        },
+        "properties": {
+          "latitude": -12.0362,
+          "longitude": -50.6448,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.647,
+            -12.0171
+          ]
+        },
+        "properties": {
+          "latitude": -12.0171,
+          "longitude": -50.647,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5746,
+            -11.904
+          ]
+        },
+        "properties": {
+          "latitude": -11.904,
+          "longitude": -50.5746,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5724,
+            -11.9231
+          ]
+        },
+        "properties": {
+          "latitude": -11.9231,
+          "longitude": -50.5724,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5938,
+            -11.9228
+          ]
+        },
+        "properties": {
+          "latitude": -11.9228,
+          "longitude": -50.5938,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5746,
+            -11.904
+          ]
+        },
+        "properties": {
+          "latitude": -11.904,
+          "longitude": -50.5746,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5724,
+            -11.9231
+          ]
+        },
+        "properties": {
+          "latitude": -11.9231,
+          "longitude": -50.5724,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5938,
+            -11.9228
+          ]
+        },
+        "properties": {
+          "latitude": -11.9228,
+          "longitude": -50.5938,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 02:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5724,
+            -11.9231
+          ]
+        },
+        "properties": {
+          "latitude": -11.9231,
+          "longitude": -50.5724,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 03:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5938,
+            -11.9228
+          ]
+        },
+        "properties": {
+          "latitude": -11.9228,
+          "longitude": -50.5938,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 03:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5724,
+            -11.9231
+          ]
+        },
+        "properties": {
+          "latitude": -11.9231,
+          "longitude": -50.5724,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 03:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5938,
+            -11.9228
+          ]
+        },
+        "properties": {
+          "latitude": -11.9228,
+          "longitude": -50.5938,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 03:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5724,
+            -11.9231
+          ]
+        },
+        "properties": {
+          "latitude": -11.9231,
+          "longitude": -50.5724,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 03:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5746,
+            -11.904
+          ]
+        },
+        "properties": {
+          "latitude": -11.904,
+          "longitude": -50.5746,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 03:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5576,
+            -11.8662
+          ]
+        },
+        "properties": {
+          "latitude": -11.8662,
+          "longitude": -50.5576,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 03:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.29658,
+            -12.70504
+          ]
+        },
+        "properties": {
+          "latitude": -12.70504,
+          "longitude": -47.29658,
+          "municipio": "ARRAIAS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-09-26 03:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.29523,
+            -12.69817
+          ]
+        },
+        "properties": {
+          "latitude": -12.69817,
+          "longitude": -47.29523,
+          "municipio": "ARRAIAS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-09-26 03:32:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5384,
+            -11.8475
+          ]
+        },
+        "properties": {
+          "latitude": -11.8475,
+          "longitude": -50.5384,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 03:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5576,
+            -11.8662
+          ]
+        },
+        "properties": {
+          "latitude": -11.8662,
+          "longitude": -50.5576,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 03:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5938,
+            -11.9228
+          ]
+        },
+        "properties": {
+          "latitude": -11.9228,
+          "longitude": -50.5938,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 03:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5362,
+            -11.8665
+          ]
+        },
+        "properties": {
+          "latitude": -11.8665,
+          "longitude": -50.5362,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 03:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5598,
+            -11.8472
+          ]
+        },
+        "properties": {
+          "latitude": -11.8472,
+          "longitude": -50.5598,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 03:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5576,
+            -11.8662
+          ]
+        },
+        "properties": {
+          "latitude": -11.8662,
+          "longitude": -50.5576,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 03:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -50.5598,
+            -11.8472
+          ]
+        },
+        "properties": {
+          "latitude": -11.8472,
+          "longitude": -50.5598,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-09-26 03:50:00",
           "bioma": "Cerrado"
         }
       }
@@ -1948,7 +4205,7 @@
     "mes_final": 8,
     "periodo": "Janeiro a agosto de 2026",
     "area_queimada_ha": 1023369.62,
-    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/156548d745a3c1a190958c7a533eec40-346827d9515a708505bf1b9be345904b/tiles/{z}/{x}/{y}",
+    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/156548d745a3c1a190958c7a533eec40-79251c4b7a94e6e9c6d783c4b20ce2ef/tiles/{z}/{x}/{y}",
     "unidade": "ha",
     "natureza": "Cicatrizes de área queimada mapeadas pelo Monitor do Fogo."
   },
@@ -1956,12 +4213,12 @@
     "status": "ok",
     "periodo": "ultimas 24h",
     "fonte": "CEMADEN / ANA",
-    "atualizadoEm": "2026-09-26T01:24:06.837Z",
-    "maiorAcumulado": 41.2,
+    "atualizadoEm": "2026-09-26T07:26:54.382Z",
+    "maiorAcumulado": 41.4,
     "estacaoMaiorAcumulado": "G2-170100201A",
     "municipioMaiorAcumulado": "ANANÁS",
-    "estacoesCadastradas": 213,
-    "estacoesConsultadas": 213,
+    "estacoesCadastradas": 233,
+    "estacoesConsultadas": 233,
     "estacoesComLeitura": 49,
     "acima10": 7,
     "acima30": 2,
@@ -1975,7 +4232,7 @@
         "estacoesCadastradas": 38,
         "estacoesConsultadas": 38,
         "estacoesComLeitura": 38,
-        "atualizadoEm": "2026-09-26 01:22:43 UTC",
+        "atualizadoEm": "2026-09-26 07:26:41 UTC",
         "estacoes": [
           {
             "id": "CEMADEN-170730601A",
@@ -1986,7 +4243,7 @@
             "latitude": -11.34296,
             "longitude": -49.26664,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2000,7 +4257,7 @@
             "latitude": -5.36527,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2014,7 +4271,7 @@
             "latitude": -12.035,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2028,7 +4285,7 @@
             "latitude": -5.3956,
             "longitude": -47.8114,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2042,7 +4299,7 @@
             "latitude": -7.14869,
             "longitude": -48.69083,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2056,7 +4313,7 @@
             "latitude": -5.25903,
             "longitude": -48.20147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2070,7 +4327,7 @@
             "latitude": -6.58226,
             "longitude": -48.64368,
             "chuva24h": 2.4,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2084,7 +4341,7 @@
             "latitude": -5.55265,
             "longitude": -47.57758,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2097,8 +4354,8 @@
             "fonte": "CEMADEN",
             "latitude": -7.18755,
             "longitude": -48.23527,
-            "chuva24h": 29.79,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "chuva24h": 18.97,
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "moderada",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2111,8 +4368,8 @@
             "fonte": "CEMADEN",
             "latitude": -7.15587,
             "longitude": -48.1888,
-            "chuva24h": 28.09,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "chuva24h": 27.67,
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "moderada",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2126,7 +4383,7 @@
             "latitude": -7.19408,
             "longitude": -48.19586,
             "chuva24h": 12.41,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "moderada",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2139,8 +4396,8 @@
             "fonte": "CEMADEN",
             "latitude": -7.22806,
             "longitude": -48.24461,
-            "chuva24h": 14.39,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "chuva24h": 11.83,
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "moderada",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2154,7 +4411,7 @@
             "latitude": -5.65762,
             "longitude": -48.11147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2168,7 +4425,7 @@
             "latitude": -11.8055,
             "longitude": -49.5275,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2182,7 +4439,7 @@
             "latitude": -7.71295,
             "longitude": -47.3093,
             "chuva24h": 21.2,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "moderada",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2196,7 +4453,7 @@
             "latitude": -6.41126,
             "longitude": -48.53374,
             "chuva24h": 0.4,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2210,7 +4467,7 @@
             "latitude": -10.71611,
             "longitude": -48.39972,
             "chuva24h": 0.4,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2223,8 +4480,8 @@
             "fonte": "CEMADEN",
             "latitude": -6.36614,
             "longitude": -48.07425,
-            "chuva24h": 41.2,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "chuva24h": 41.4,
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "forte",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2238,7 +4495,7 @@
             "latitude": -6.38166,
             "longitude": -48.06247,
             "chuva24h": 37.6,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "forte",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2252,7 +4509,7 @@
             "latitude": -5.464,
             "longitude": -47.8968,
             "chuva24h": 1,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2266,7 +4523,7 @@
             "latitude": -5.47538,
             "longitude": -47.8894,
             "chuva24h": 2,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2280,7 +4537,7 @@
             "latitude": -5.43003,
             "longitude": -47.85794,
             "chuva24h": 8.2,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2294,7 +4551,7 @@
             "latitude": -5.31875,
             "longitude": -48.03931,
             "chuva24h": 0.4,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2308,7 +4565,7 @@
             "latitude": -5.32428,
             "longitude": -48.03409,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2322,7 +4579,7 @@
             "latitude": -9.27346,
             "longitude": -49.95341,
             "chuva24h": 6.4,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2336,7 +4593,7 @@
             "latitude": -9.28222,
             "longitude": -49.95326,
             "chuva24h": 5.6,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2350,7 +4607,7 @@
             "latitude": -5.7713,
             "longitude": -47.48039,
             "chuva24h": 3,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2364,7 +4621,7 @@
             "latitude": -5.77459,
             "longitude": -47.47793,
             "chuva24h": 3.6,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2378,7 +4635,7 @@
             "latitude": -10.79377,
             "longitude": -49.62398,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2392,7 +4649,7 @@
             "latitude": -10.78287,
             "longitude": -49.61681,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2406,7 +4663,7 @@
             "latitude": -12.61455,
             "longitude": -47.88209,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2420,7 +4677,7 @@
             "latitude": -12.62006,
             "longitude": -47.86848,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2434,7 +4691,7 @@
             "latitude": -12.63128,
             "longitude": -47.56409,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2447,9 +4704,9 @@
             "fonte": "CEMADEN",
             "latitude": -10.44846,
             "longitude": -49.16758,
-            "chuva24h": 0.6,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
-            "status": "fraca",
+            "chuva24h": 0,
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
+            "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -2461,9 +4718,9 @@
             "fonte": "CEMADEN",
             "latitude": -10.44163,
             "longitude": -49.181,
-            "chuva24h": 0.4,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
-            "status": "fraca",
+            "chuva24h": 0,
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
+            "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -2476,7 +4733,7 @@
             "latitude": -6.32722,
             "longitude": -47.42812,
             "chuva24h": 0.2,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2490,7 +4747,7 @@
             "latitude": -6.33796,
             "longitude": -47.4185,
             "chuva24h": 0,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2504,7 +4761,7 @@
             "latitude": -6.31512,
             "longitude": -47.42296,
             "chuva24h": 0.4,
-            "atualizadoEm": "2026-09-26 01:22:43 UTC",
+            "atualizadoEm": "2026-09-26 07:26:41 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2513,14 +4770,321 @@
       },
       "INMET": {
         "source": "INMET",
-        "status": "error",
-        "label": "Erro de consulta",
-        "observacao": "Falha ao consultar a fonte no workflow: fetch failed",
-        "estacoesCadastradas": 0,
-        "estacoesConsultadas": 0,
+        "status": "catalog",
+        "label": "Sem leitura valida",
+        "observacao": "Chave/token INMET recusado pela API.",
+        "modoConsulta": "autenticada",
+        "erroAutenticacao": "Chave/token INMET recusado pela API.",
+        "estacoesCadastradas": 20,
+        "estacoesConsultadas": 20,
         "estacoesComLeitura": 0,
+        "estacoesSemLeitura": 20,
+        "estacoesComErro": 20,
+        "estacoesEmIntegracao": 0,
         "atualizadoEm": null,
-        "estacoes": []
+        "estacoes": [],
+        "todasEstacoes": [
+          {
+            "id": "INMET-A053",
+            "codigo": "A053",
+            "nome": "ALMAS",
+            "municipio": "ALMAS",
+            "fonte": "INMET",
+            "latitude": -11.28416666,
+            "longitude": -47.21222222,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A054",
+            "codigo": "A054",
+            "nome": "ARAGUACU",
+            "municipio": "ARAGUACU",
+            "fonte": "INMET",
+            "latitude": -12.59222221,
+            "longitude": -49.5286111,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A021",
+            "codigo": "A021",
+            "nome": "ARAGUAINA",
+            "municipio": "ARAGUAINA",
+            "fonte": "INMET",
+            "latitude": -7.10388888,
+            "longitude": -48.20111111,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A044",
+            "codigo": "A044",
+            "nome": "ARAGUATINS",
+            "municipio": "ARAGUATINS",
+            "fonte": "INMET",
+            "latitude": -5.6436111,
+            "longitude": -48.11194444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A043",
+            "codigo": "A043",
+            "nome": "CAMPOS LINDOS",
+            "municipio": "CAMPOS LINDOS",
+            "fonte": "INMET",
+            "latitude": -8.15472222,
+            "longitude": -46.63944444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A049",
+            "codigo": "A049",
+            "nome": "COLINAS DO TOCANTINS",
+            "municipio": "COLINAS DO TOCANTINS",
+            "fonte": "INMET",
+            "latitude": -8.09277777,
+            "longitude": -48.4786111,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A038",
+            "codigo": "A038",
+            "nome": "DIANOPOLIS",
+            "municipio": "DIANOPOLIS",
+            "fonte": "INMET",
+            "latitude": -11.59444444,
+            "longitude": -46.84722221,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A039",
+            "codigo": "A039",
+            "nome": "FORMOSO DO ARAGUAIA",
+            "municipio": "FORMOSO DO ARAGUAIA",
+            "fonte": "INMET",
+            "latitude": -11.88749999,
+            "longitude": -49.60833333,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A019",
+            "codigo": "A019",
+            "nome": "GURUPI",
+            "municipio": "GURUPI",
+            "fonte": "INMET",
+            "latitude": -11.74499999,
+            "longitude": -49.05166666,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A055",
+            "codigo": "A055",
+            "nome": "LAGOA DA CONFUSAO",
+            "municipio": "LAGOA DA CONFUSAO",
+            "fonte": "INMET",
+            "latitude": -10.828286,
+            "longitude": -49.847882,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A041",
+            "codigo": "A041",
+            "nome": "MARIANOPOLIS DO TO",
+            "municipio": "MARIANOPOLIS DO TO",
+            "fonte": "INMET",
+            "latitude": -9.57638888,
+            "longitude": -49.72333332,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A040",
+            "codigo": "A040",
+            "nome": "MATEIROS",
+            "municipio": "MATEIROS",
+            "fonte": "INMET",
+            "latitude": -10.43444444,
+            "longitude": -45.92194443,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A009",
+            "codigo": "A009",
+            "nome": "PALMAS",
+            "municipio": "PALMAS",
+            "fonte": "INMET",
+            "latitude": -10.14777777,
+            "longitude": -48.31444444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A010",
+            "codigo": "A010",
+            "nome": "PARANA",
+            "municipio": "PARANA",
+            "fonte": "INMET",
+            "latitude": -12.615,
+            "longitude": -47.87194443,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A020",
+            "codigo": "A020",
+            "nome": "PEDRO AFONSO",
+            "municipio": "PEDRO AFONSO",
+            "fonte": "INMET",
+            "latitude": -8.9686111,
+            "longitude": -48.17722221,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A018",
+            "codigo": "A018",
+            "nome": "PEIXE",
+            "municipio": "PEIXE",
+            "fonte": "INMET",
+            "latitude": -12.01527777,
+            "longitude": -48.54444444,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A051",
+            "codigo": "A051",
+            "nome": "PIUM",
+            "municipio": "PIUM",
+            "fonte": "INMET",
+            "latitude": -10.47694443,
+            "longitude": -49.62944443,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A050",
+            "codigo": "A050",
+            "nome": "RIO SONO",
+            "municipio": "RIO SONO",
+            "fonte": "INMET",
+            "latitude": -9.79333333,
+            "longitude": -47.13277777,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A048",
+            "codigo": "A048",
+            "nome": "SANTA FE DO ARAGUAIA",
+            "municipio": "SANTA FE DO ARAGUAIA",
+            "fonte": "INMET",
+            "latitude": -7.12416666,
+            "longitude": -48.78138888,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          },
+          {
+            "id": "INMET-A052",
+            "codigo": "A052",
+            "nome": "SANTA ROSA DO TOCANTINS",
+            "municipio": "SANTA ROSA DO TOCANTINS",
+            "fonte": "INMET",
+            "latitude": -11.42888888,
+            "longitude": -48.18499999,
+            "chuva24h": null,
+            "atualizadoEm": null,
+            "status": "sem_dado",
+            "statusLeitura": "sem_leitura",
+            "motivoIndisponibilidade": "Chave/token INMET recusado pela API.",
+            "observacao": "Chave/token INMET recusado pela API."
+          }
+        ]
       },
       "ANA": {
         "source": "ANA",
@@ -2533,13 +5097,13 @@
         "atualizadoEm": "25/09/2026 a 26/09/2026",
         "estacoes": [
           {
-            "id": "ANA-547008",
-            "codigo": "547008",
-            "nome": "SÃO MIGUEL DO TOCANTINS_Centro Cultural",
-            "municipio": "SÃO MIGUEL DO TOCAN",
+            "id": "ANA-647010",
+            "codigo": "647010",
+            "nome": "UHE ESTREITO JUSANTE",
+            "municipio": "TOCANTINÓPOLIS",
             "fonte": "ANA",
-            "latitude": -5.5525,
-            "longitude": -47.5775,
+            "latitude": -6.2889,
+            "longitude": -47.3917,
             "chuva24h": 0,
             "atualizadoEm": "25/09/2026 a 26/09/2026",
             "status": "sem_chuva",
@@ -2547,13 +5111,13 @@
             "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
           },
           {
-            "id": "ANA-548006",
-            "codigo": "548006",
-            "nome": "ESPERANTINA_Prefeitura Municipal",
-            "municipio": "ESPERANTINA",
+            "id": "ANA-648007",
+            "codigo": "648007",
+            "nome": "CGH LAJES MONTANTE",
+            "municipio": "WANDERLÂNDIA",
             "fonte": "ANA",
-            "latitude": -5.3621,
-            "longitude": -48.5386,
+            "latitude": -6.8006,
+            "longitude": -48.1358,
             "chuva24h": 0,
             "atualizadoEm": "25/09/2026 a 26/09/2026",
             "status": "sem_chuva",
@@ -2561,13 +5125,13 @@
             "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
           },
           {
-            "id": "ANA-548010",
-            "codigo": "548010",
-            "nome": "RIO TOCANTINS - SÃO SEBASTIÃO DO TO",
-            "municipio": "SÃO SEBASTIÃO DO TO",
+            "id": "ANA-648009",
+            "codigo": "648009",
+            "nome": "ARAGUANÃ_Prefeitura Municipal",
+            "municipio": "ARAGUANÃ",
             "fonte": "ANA",
-            "latitude": -5.2544,
-            "longitude": -48.1983,
+            "latitude": -6.5822,
+            "longitude": -48.6436,
             "chuva24h": 0,
             "atualizadoEm": "25/09/2026 a 26/09/2026",
             "status": "sem_chuva",
@@ -2575,27 +5139,13 @@
             "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
           },
           {
-            "id": "ANA-648010",
-            "codigo": "648010",
-            "nome": "UHE TUCURUÍ RIO ARAGUAIA 1",
-            "municipio": "XAMBIOÁ",
+            "id": "ANA-748008",
+            "codigo": "748008",
+            "nome": "PONTE RIO LONTRA",
+            "municipio": "ARAGUAÍNA",
             "fonte": "ANA",
-            "latitude": -6.3997,
-            "longitude": -48.5281,
-            "chuva24h": 0,
-            "atualizadoEm": "25/09/2026 a 26/09/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          },
-          {
-            "id": "ANA-746013",
-            "codigo": "746013",
-            "nome": "RIO MANUEL ALVES GRANDE - CAMPOS LINDOS",
-            "municipio": "CAMPOS LINDOS",
-            "fonte": "ANA",
-            "latitude": -7.9528,
-            "longitude": -46.8097,
+            "latitude": -7.2075,
+            "longitude": -48.2958,
             "chuva24h": 0,
             "atualizadoEm": "25/09/2026 a 26/09/2026",
             "status": "sem_chuva",
@@ -2617,20 +5167,6 @@
             "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
           },
           {
-            "id": "ANA-848001",
-            "codigo": "848001",
-            "nome": "GUARAI",
-            "municipio": "GUARAÍ",
-            "fonte": "ANA",
-            "latitude": -8.8319,
-            "longitude": -48.8172,
-            "chuva24h": 0,
-            "atualizadoEm": "25/09/2026 a 26/09/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          },
-          {
             "id": "ANA-848008",
             "codigo": "848008",
             "nome": "RIO BANANAL - GOIANORTE",
@@ -2645,13 +5181,55 @@
             "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
           },
           {
-            "id": "ANA-946003",
-            "codigo": "946003",
-            "nome": "LIZARDA",
-            "municipio": "LIZARDA",
+            "id": "ANA-849002",
+            "codigo": "849002",
+            "nome": "ARAGUACEMA (CHACARA ARAGUAIA)",
+            "municipio": "ARAGUACEMA",
             "fonte": "ANA",
-            "latitude": -9.5972,
-            "longitude": -46.6728,
+            "latitude": -8.8022,
+            "longitude": -49.5556,
+            "chuva24h": 0,
+            "atualizadoEm": "25/09/2026 a 26/09/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-947003",
+            "codigo": "947003",
+            "nome": "UHE ESTREITO RIO DO SONO 1",
+            "municipio": "PEDRO AFONSO",
+            "fonte": "ANA",
+            "latitude": -9.3086,
+            "longitude": -47.9314,
+            "chuva24h": 0,
+            "atualizadoEm": "25/09/2026 a 26/09/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-947005",
+            "codigo": "947005",
+            "nome": "RIO PERDIDA",
+            "municipio": "RIO SONO",
+            "fonte": "ANA",
+            "latitude": -9.3397,
+            "longitude": -47.8722,
+            "chuva24h": 0,
+            "atualizadoEm": "25/09/2026 a 26/09/2026",
+            "status": "sem_chuva",
+            "statusLeitura": "valida",
+            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
+          },
+          {
+            "id": "ANA-947006",
+            "codigo": "947006",
+            "nome": "RIO SONO - APARECIDA DO RIO NEGRO",
+            "municipio": "APARECIDA DO RIO NE",
+            "fonte": "ANA",
+            "latitude": -9.8092,
+            "longitude": -47.885,
             "chuva24h": 0,
             "atualizadoEm": "25/09/2026 a 26/09/2026",
             "status": "sem_chuva",
@@ -2666,20 +5244,6 @@
             "fonte": "ANA",
             "latitude": -9.3069,
             "longitude": -47.9292,
-            "chuva24h": 0,
-            "atualizadoEm": "25/09/2026 a 26/09/2026",
-            "status": "sem_chuva",
-            "statusLeitura": "valida",
-            "observacao": "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-          },
-          {
-            "id": "ANA-1048003",
-            "codigo": "1048003",
-            "nome": "PALMAS",
-            "municipio": "PORTO NACIONAL",
-            "fonte": "ANA",
-            "latitude": -10.7167,
-            "longitude": -48.4167,
             "chuva24h": 0,
             "atualizadoEm": "25/09/2026 a 26/09/2026",
             "status": "sem_chuva",
@@ -2700,8 +5264,6 @@
         "estacoes": []
       }
     },
-    "erros": {
-      "INMET": "fetch failed"
-    }
+    "erros": {}
   }
 }
