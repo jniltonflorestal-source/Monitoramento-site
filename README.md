@@ -139,3 +139,9 @@ Fontes previstas para integração:
 - MapBiomas Fogo
 
 Também existe o fluxo auxiliar `scripts/update-boletim-data.js` com o workflow `.github/workflows/update-boletim.yml`, voltado a atualizar o JSON do boletim atual como rascunho.
+
+## Mapa operacional
+
+O mapa permite combinar camadas, filtrar deteccoes do INPE por periodo, satelite e municipio, consultar o raster mensal do MapBiomas e visualizar series hidrologicas da ANA. A meteorologia usa previsao GFS via Open-Meteo, carregada sob demanda, com animacao ilustrativa do vento.
+
+Consulte [fontes, limites e operacao do WebGIS](docs/WEBGIS-OPERACIONAL.md). O coletor `scripts/update-fire-history.py` alimenta `data/fire-history.json` no workflow horario existente. Dados ausentes nao representam ausencia de risco. As chaves privadas permanecem nos secrets do GitHub Actions, nunca no navegador.

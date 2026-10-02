@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import { filterDetections, utcTime } from '../frontend/src/services/operationalMap.js';
+const now = Date.parse('2026-10-02T12:00:00Z');
+const p = {latitude:-10,longitude:-48,detectedAt:'2026-10-02 10:00:00',satellite:'A',city:'Palmas'};
+const rows = [p,p,{...p,satellite:'B'},{...p,detectedAt:'2026-09-20 10:00:00'},{...p,detectedAt:'2026-10-03 10:00:00'},{...p,latitude:'invalid'}];
+assert.equal(utcTime(p.detectedAt),Date.parse('2026-10-02T10:00:00Z'));
+assert.equal(filterDetections(rows,{now}).length,2);
+assert.equal(filterDetections(rows,{now,satellite:'A',city:'Palmas'}).length,1);
+assert.equal(filterDetections(rows,{now,city:'Gurupi'}).length,0);
+const boundary={type:'Feature',properties:{},geometry:{type:'Polygon',coordinates:[[[-49,-11],[-47,-11],[-47,-9],[-49,-9],[-49,-11]]]}};
+assert.equal(filterDetections([p,{...p,longitude:-52}],{now,boundary}).length,1);
+console.log('Operational map: UTC, periods, duplicates, sources and boundary passed.');

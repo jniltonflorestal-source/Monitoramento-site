@@ -11,6 +11,14 @@ import { MapInfoPanel } from "./MapInfoPanel";
 import { MapSearchBox } from "./MapSearchBox";
 import { MapViewportController } from "./MapViewportController";
 import { RainModeTabs } from "./RainModeTabs";
+import "../../operational-map.css";
+import { filterDetections, cachedJson } from "../../services/operationalMap";
+import { FireControls } from "./FireControls";
+import { SatelliteOverlay } from "./SatelliteOverlay";
+import { BurnedAreaControls } from "./BurnedAreaControls";
+import { lazy, Suspense } from "react";
+const HydrologyPanel = lazy(() => import("./HydrologyPanel").then(module => ({default: module.HydrologyPanel})));
+import { WeatherControls, WeatherLayers, useWeatherLayers } from "./WeatherLayers";
 
 const priorityLayers = [
   { id: "drought", label: "Seca" },
@@ -199,7 +207,7 @@ export function PublicMapSection({
   variant = "priority",
   eyebrow = "Mapa prioritário",
   title = "Visualização territorial do Tocantins",
-  description = "Mapa preparado para chuva, rios e focos de calor.",
+  description = "Chuva, rios, fogo, seca e previsão meteorológica no Tocantins.",
   rainStations = [],
   rainSummary = null,
   riverStations = [],
@@ -212,6 +220,8 @@ export function PublicMapSection({
   const [tocantinsBoundary, setTocantinsBoundary] = useState(null);
   const [municipalBoundary, setMunicipalBoundary] = useState(null);
   const [activeLayer, setActiveLayer] = useState("drought");
+  const [showPrimary,setShowPrimary]=useState(true);
+  const renderedLayer=showPrimary?activeLayer:null;
   const [selectedRiver, setSelectedRiver] = useState(null);
   const [readingState, setReadingState] = useState("idle");
   const [riverReading, setRiverReading] = useState(null);
@@ -223,16 +233,32 @@ export function PublicMapSection({
   const [forecastState, setForecastState] = useState({ state: "idle", points: [], refreshKey: 0 });
   const [selectedRainSource, setSelectedRainSource] = useState("TODAS");
   const [selectedRainStatus, setSelectedRainStatus] = useState("todos");
+  const [pinned,setPinned]=useState({fire:false,rivers:false,rain:false,municipal:false,satellite:false});
+  const [fireEnabled,setFireEnabled]=useState(true);
+  const [fireFilters,setFireFilters]=useState({hours:24,satellite:'',city:''});
+  const [fireHistory,setFireHistory]=useState(null);
+  const [burnedOpacity,setBurnedOpacity]=useState(.7);
+  const [selectedBurnedArea,setSelectedBurnedArea]=useState(null);
+  const burnedLayer=selectedBurnedArea||fireSummary?.burnedArea;
+  const weatherModel=useWeatherLayers();
+  useEffect(()=>{
+    if(activeLayer!=='fire'&&!pinned.fire)return;
+    let alive=true;
+    cachedJson(`${import.meta.env.BASE_URL}data/fire-history.json`).then(data=>{if(alive)setFireHistory(data)}).catch(()=>{if(alive)setFireHistory({status:'error',points:[]})});
+    return()=>{alive=false};
+  },[activeLayer,pinned.fire]);
+  const availableFires=useMemo(()=>[...firePoints,...(fireHistory?.points||[])],[firePoints,fireHistory]);
+  const filteredFires=useMemo(()=>filterDetections(availableFires,{...fireFilters,boundary:tocantinsBoundary}),[availableFires,fireFilters,tocantinsBoundary]);
 
   const rainStats = useMemo(() => buildRainStats(rainStations, rainSummary), [rainStations, rainSummary]);
   const allRainStations = rainSummary?.visibleStations || rainSummary?.allStations || rainStations;
   const searchResults = useMemo(() => buildMapSearchResults(activeLayer, {
     rainStations: allRainStations,
     riverStations,
-    firePoints,
+    firePoints: filteredFires,
     emergencyPoints,
     droughtMunicipalities: droughtSummary?.municipalities || []
-  }, searchQuery), [activeLayer, allRainStations, droughtSummary, emergencyPoints, firePoints, riverStations, searchQuery]);
+  }, searchQuery), [activeLayer, allRainStations, droughtSummary, emergencyPoints, filteredFires, riverStations, searchQuery]);
   const visibleRainStations = useMemo(() => allRainStations.filter((station) => {
     const sourceMatch = selectedRainSource === "TODAS" || (station.fonte || station.source) === selectedRainSource;
     const statusMatch = selectedRainStatus === "todos" || station.statusLeitura === selectedRainStatus;
@@ -300,10 +326,10 @@ export function PublicMapSection({
   }, [variant]);
 
   function changeLayer(layer) {
+    setShowPrimary(true);
     setActiveLayer(layer);
     setSearchQuery("");
     setSelectedResult(null);
-    if (layer !== "fire") setShowBurnedArea(false);
   }
 
   function clearSearch() {
@@ -536,17 +562,17 @@ export function PublicMapSection({
       )}
       {activeLayer === "fire" && (
         <>
-          <p>Pontos detectados por satélite no arquivo diário oficial do INPE Queimadas.</p>
+          <p>Detecções térmicas do INPE no período selecionado. Não equivalem a incêndios distintos nem à extensão queimada.</p>
           <dl className="map-summary">
-            <div><dt>Focos localizados</dt><dd>{firePoints.length}</dd></div>
-            <div><dt>Situação</dt><dd>{fireSummary?.value || "Sem dados"}</dd></div>
-            {fireSummary?.burnedArea && (
-              <div><dt>Área queimada</dt><dd>{formatNumber(fireSummary.burnedArea.hectares, " ha")}</dd></div>
+            <div><dt>Focos localizados</dt><dd>{filteredFires.length}</dd></div>
+            <div><dt>Situação</dt><dd>{fireHistory?.status === "ready" ? "Histórico consultado" : "Cobertura parcial"}</dd></div>
+            {burnedLayer && (
+              <div><dt>Área queimada</dt><dd>{formatNumber(burnedLayer.hectares, " ha")}</dd></div>
             )}
           </dl>
           <strong><Flame aria-hidden="true" /> Fonte integrada: INPE Queimadas</strong>
-          {fireSummary?.burnedArea && (
-            <small>Área e raster: MapBiomas Monitor do Fogo | {fireSummary.burnedArea.period}</small>
+          {burnedLayer && (
+            <small>Área e raster: MapBiomas Monitor do Fogo | {burnedLayer.period}</small>
           )}
           {fireSummary?.updatedAt && <small>Atualização: {fireSummary.updatedAt}</small>}
         </>
@@ -592,6 +618,13 @@ export function PublicMapSection({
       {variant === "priority" && activeLayer === "rain" && (
         <RainModeTabs activeMode={rainMode} onChange={setRainMode} />
       )}
+      {variant === "priority" && <>
+        <details className="operational-layer-panel" open><summary>Combinar camadas</summary><label className="operational-note"><input type="checkbox" checked={showPrimary} onChange={e=>setShowPrimary(e.target.checked)}/> Exibir camada selecionada</label><div className="operational-controls">{Object.entries({fire:'Focos de calor',rivers:'Estações hidrológicas',rain:'Chuva observada',municipal:'Limites municipais',satellite:'Imagem de satélite'}).map(([key,label])=><label key={key}><input type="checkbox" checked={pinned[key]} onChange={e=>setPinned(p=>({...p,[key]:e.target.checked}))}/>{label}</label>)}<label><input type="checkbox" checked={showBurnedArea} disabled={!burnedLayer?.rasterUrl&&!burnedLayer?.geoJsonUrl} onChange={e=>setShowBurnedArea(e.target.checked)}/>Área queimada • MapBiomas</label></div>{showBurnedArea&&<p className="operational-note">{burnedLayer?.period} • {burnedLayer?.hectares?.toLocaleString('pt-BR')} ha no território consultado. Raster disponível; área por cicatriz e seleção de polígonos dependem de base vetorial oficial.</p>}</details>
+        {(activeLayer==='fire'||pinned.fire||showBurnedArea)&&<FireControls filters={fireFilters} onChange={setFireFilters} points={availableFires} count={filteredFires.length} historyState={fireHistory?.status} updatedAt={fireHistory?.updatedAt||fireSummary?.updatedAt} enabled={fireEnabled} onToggle={setFireEnabled} opacity={burnedOpacity} onOpacity={setBurnedOpacity} burnedArea={burnedLayer}/>}
+        {(activeLayer==='fire'||showBurnedArea)&&<BurnedAreaControls boundary={municipalBoundary} onLoad={area=>{setSelectedBurnedArea(area);setShowBurnedArea(true)}}/>}
+        {selectedBurnedArea&&showBurnedArea&&<p className="operational-note"><strong>{selectedBurnedArea.hectares.toLocaleString('pt-BR')} ha</strong> • {selectedBurnedArea.territory} • {selectedBurnedArea.period} • MapBiomas • Consulta: {new Date(selectedBurnedArea.updatedAt).toLocaleString('pt-BR')}</p>}
+        <WeatherControls model={weatherModel}/>
+      </>}
       {variant === "priority" && (
         <div className="mobile-map-search">
           <MapSearchBox
@@ -605,7 +638,10 @@ export function PublicMapSection({
       )}
       <div className="map-layout">
         <div className="map-shell">
-        <MapContainer center={[-10.18, -48.33]} zoom={6} scrollWheelZoom={false} className="public-map">
+        <MapContainer center={[-10.18, -48.33]} zoom={6} preferCanvas scrollWheelZoom={false} className="public-map">
+          <WeatherLayers model={weatherModel} boundary={tocantinsBoundary}/>
+          {pinned.municipal&&municipalBoundary&&<GeoJSON data={municipalBoundary} style={{color:'#475569',fillOpacity:0,weight:1}} interactive={false}/>}
+          {pinned.satellite&&<SatelliteOverlay/>}
           {variant === "priority" && (
             <MapViewportController
               boundary={tocantinsBoundary}
@@ -614,7 +650,7 @@ export function PublicMapSection({
             />
           )}
           <TileLayer attribution="&copy; OpenStreetMap" url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-          {variant === "priority" && activeLayer === "rain" && rainMode === "satellite" && (
+          {variant === "priority" && renderedLayer === "rain" && rainMode === "satellite" && (
             <TileLayer
               attribution="NASA GIBS / GOES-East"
               url={satelliteUrl}
@@ -622,7 +658,7 @@ export function PublicMapSection({
               maxZoom={7}
             />
           )}
-          {tocantinsBoundary && activeLayer !== "drought" && (
+          {tocantinsBoundary && renderedLayer !== "drought" && (
             <GeoJSON
               data={tocantinsBoundary}
               style={{
@@ -633,7 +669,7 @@ export function PublicMapSection({
               }}
             />
           )}
-          {variant === "priority" && activeLayer === "drought" && municipalBoundary && (
+          {variant === "priority" && renderedLayer === "drought" && municipalBoundary && (
             <GeoJSON
               key={`drought-${droughtSummary?.reference || "fallback"}`}
               data={municipalBoundary}
@@ -660,13 +696,13 @@ export function PublicMapSection({
               }}
             />
           )}
-          {variant === "priority" && activeLayer === "drought" && !municipalBoundary && (
+          {variant === "priority" && renderedLayer === "drought" && !municipalBoundary && (
             <div className="map-mode-placeholder">
               <strong>Camada municipal de seca em integração</strong>
               <span>Não foi possível carregar a malha municipal neste momento.</span>
             </div>
           )}
-          {variant === "priority" && activeLayer === "rain" && rainMode === "observed" && rainStations.map((station) => (
+          {variant === "priority" && renderedLayer === "rain" && rainMode === "observed" && rainStations.map((station) => (
             <CircleMarker
               key={`heat-${station.code}`}
               center={[station.latitude, station.longitude]}
@@ -676,7 +712,7 @@ export function PublicMapSection({
               className="rain-heat-point"
             />
           ))}
-          {variant === "priority" && activeLayer === "rain" && rainMode === "observed" && visibleRainStations.map((station) => (
+          {variant === "priority" && (renderedLayer === "rain" && rainMode === "observed" || pinned.rain) && visibleRainStations.map((station) => (
             <CircleMarker
               key={`${station.fonte || station.source}-${station.code || station.id || station.name}`}
               center={[station.latitude, station.longitude]}
@@ -696,7 +732,7 @@ export function PublicMapSection({
               </Popup>
             </CircleMarker>
           ))}
-          {variant === "priority" && activeLayer === "rain" && ["forecast24", "forecast48"].includes(rainMode) && forecastPoints.map((point) => (
+          {variant === "priority" && renderedLayer === "rain" && ["forecast24", "forecast48"].includes(rainMode) && forecastPoints.map((point) => (
             <CircleMarker
               key={point.id}
               center={[point.latitude, point.longitude]}
@@ -716,7 +752,7 @@ export function PublicMapSection({
               </Popup>
             </CircleMarker>
           ))}
-          {variant === "priority" && activeLayer === "rivers" && riverStations.map((station) => (
+          {variant === "priority" && (renderedLayer === "rivers" || pinned.rivers) && riverStations.map((station) => (
             <CircleMarker key={station.code} center={[station.latitude, station.longitude]} radius={selectedRiver?.code === station.code ? 8 : 6} pathOptions={{ color: selectedRiver?.code === station.code ? "#f59a23" : "#125f8f", fillColor: "#24a8d8", fillOpacity: 0.82, weight: selectedRiver?.code === station.code ? 4 : 2 }} eventHandlers={{ click: () => inspectRiver(station) }}>
               <Popup>
                 <div className="river-popup-grid">
@@ -740,22 +776,22 @@ export function PublicMapSection({
               </Popup>
             </CircleMarker>
           ))}
-          {variant === "priority" && activeLayer === "fire" && firePoints.map((point, index) => (
+          {variant === "priority" && (renderedLayer === "fire" || pinned.fire) && fireEnabled && filteredFires.map((point, index) => (
             <CircleMarker key={`${point.latitude}-${point.longitude}-${index}`} center={[point.latitude, point.longitude]} radius={5} pathOptions={{ color: "#ba3e24", fillColor: "#f25922", fillOpacity: 0.88, weight: 2 }}>
-              <Popup><strong>{point.city}</strong><br />Foco detectado por satélite<br />{point.satellite || "INPE Queimadas"} {point.detectedAt ? `| ${point.detectedAt}` : ""}</Popup>
+              <Popup><strong>{point.city}</strong><br />Foco detectado por satélite<br />{point.satellite || "INPE Queimadas"} {point.detectedAt ? `| ${point.detectedAt} UTC` : ""}<br/>{point.latitude}, {point.longitude}<br/>Fonte: INPE Queimadas</Popup>
             </CircleMarker>
           ))}
-          <MapBiomasFireOverlay active={variant === "priority" && activeLayer === "fire"} enabled={showBurnedArea} burnedArea={fireSummary?.burnedArea} />
-          {variant === "priority" && activeLayer === "emergency" && emergencyPoints.map((point, index) => (
+          <MapBiomasFireOverlay active={variant === "priority"} enabled={showBurnedArea} burnedArea={burnedLayer} opacity={burnedOpacity} />
+          {variant === "priority" && renderedLayer === "emergency" && emergencyPoints.map((point, index) => (
             <CircleMarker key={`${point.municipio}-${index}`} center={[point.latitude, point.longitude]} radius={7} pathOptions={{ color: "#a7211b", fillColor: "#d73027", fillOpacity: 0.9, weight: 2 }}>
               <Popup><strong>{point.municipio}</strong><br />{point.situacao}<br />{point.desastre || "Desastre não informado"}<br />{point.cobrade ? `COBRADE: ${point.cobrade}` : ""}</Popup>
             </CircleMarker>
           ))}
-          {variant === "priority" && selectedResult && selectedResult.layer === activeLayer && (
+          {variant === "priority" && selectedResult && selectedResult.layer === renderedLayer && (
             <SelectedSearchMarker result={selectedResult} />
           )}
         </MapContainer>
-          <FloatingMapLegend activeLayer={activeLayer} rainMode={rainMode} />
+          {showPrimary && <FloatingMapLegend activeLayer={activeLayer} rainMode={rainMode} />}
           {activeLayer === "rain" && ["forecast24", "forecast48"].includes(rainMode) && forecastState.state !== "ready" && (
             <div className="map-mode-placeholder">
               <strong>{rainMode === "forecast24" ? "Previsão 24h" : "Previsão 48h"}</strong>
@@ -770,10 +806,10 @@ export function PublicMapSection({
             results={searchResults}
             onQueryChange={setSearchQuery}
             onSelect={selectSearchResult}
-            mapBiomasAvailable={Boolean(fireSummary?.burnedArea?.rasterUrl)}
+            mapBiomasAvailable={Boolean(burnedLayer?.rasterUrl)}
             mapBiomasEnabled={showBurnedArea}
             onMapBiomasChange={setShowBurnedArea}
-            summary={panelSummary}
+            summary={<>{(activeLayer==='rivers'||pinned.rivers)&&<Suspense fallback={<p>Carregando painel hidrológico...</p>}><HydrologyPanel stations={riverStations} station={selectedRiver} onSelect={station=>{inspectRiver(station);setSelectedResult({layer:'rivers',item:station,latitude:station.latitude,longitude:station.longitude})}}/></Suspense>}{activeLayer!=="rivers"&&panelSummary}</>}
           >
             {layerInformation}
           </MapInfoPanel>

@@ -23,6 +23,7 @@ export function MapInfoPanel({
           <h3>Detalhes da camada</h3>
         </div>
       </header>
+      <details open className="geo-panel-content"><summary>Resumo e consultas</summary>
       {summary}
       <MapSearchBox
         activeLayer={activeLayer}
@@ -47,6 +48,7 @@ export function MapInfoPanel({
         {children}
       </div>
       <DynamicMapLegend activeLayer={activeLayer} mapBiomasEnabled={mapBiomasEnabled} />
+      </details>
     </aside>
   );
 }
