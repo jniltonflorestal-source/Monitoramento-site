@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import { municipalObservations, finiteReading } from '../frontend/src/services/municipalMonitoring.js';
+const feature={type:'Feature',properties:{codarea:'1721000',nome:'Palmas'},geometry:{type:'Polygon',coordinates:[[[-49,-11],[-47,-11],[-47,-9],[-49,-9],[-49,-11]]]}};
+const rain=[{latitude:-10,longitude:-48,amount:null},{latitude:-10,longitude:-48,amount:0},{latitude:-10,longitude:-48,amount:12},{latitude:-10,longitude:-52,amount:90}];
+assert.equal(finiteReading(null),null);
+assert.equal(finiteReading(''),null);
+assert.equal(finiteReading(0),0);
+const result=municipalObservations(feature,rain,[{latitude:-10,longitude:-48,code:'1'}]);
+assert.equal(result.rain.length,3);
+assert.equal(result.maxRain24,12);
+assert.equal(result.validRain.length,2);
+assert.equal(result.rivers.length,1);
+assert.equal(municipalObservations(feature,[rain[0]],[]).maxRain24,null);
+console.log('Municipal data: spatial selection and missing values passed.');

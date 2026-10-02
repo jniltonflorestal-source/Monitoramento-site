@@ -1,16 +1,36 @@
-import { CloudRain, Flame, LocateFixed, RotateCcw, Waves, Building2, Maximize2 } from "lucide-react";
+import {
+  CloudRain,
+  Flame,
+  LocateFixed,
+  RotateCcw,
+  Waves,
+  Building2,
+  Maximize2,
+} from "lucide-react";
 
 const layerIcons = {
   rain: CloudRain,
+  burned: Flame,
   rivers: Waves,
   fire: Flame,
-  emergency: Building2
+  emergency: Building2,
 };
 
-export function LayerSelector({ layers, anchors, activeLayer, onSelect, onCenter, onClear, canClear }) {
+export function LayerSelector({
+  layers,
+  anchors,
+  activeLayer,
+  onSelect,
+  onCenter,
+  onClear,
+  canClear,
+}) {
   return (
     <div className="geo-toolbar">
-      <div className="layer-switch geo-layer-switch" aria-label="Camadas do mapa">
+      <div
+        className="layer-switch geo-layer-switch"
+        aria-label="Camadas do mapa"
+      >
         {layers.map((layer) => {
           const Icon = layerIcons[layer.id];
           return (
@@ -30,7 +50,21 @@ export function LayerSelector({ layers, anchors, activeLayer, onSelect, onCenter
         })}
       </div>
       <div className="map-actions">
-        <button type="button" title="Ampliar mapa" onClick={e=>{if(document.fullscreenElement)document.exitFullscreen();else e.currentTarget.closest('section')?.requestFullscreen?.().catch(()=>{});}}><Maximize2 aria-hidden="true"/>Ampliar mapa</button>
+        <button
+          type="button"
+          title="Ampliar mapa"
+          onClick={(e) => {
+            if (document.fullscreenElement) document.exitFullscreen();
+            else
+              e.currentTarget
+                .closest("section")
+                ?.requestFullscreen?.()
+                .catch(() => {});
+          }}
+        >
+          <Maximize2 aria-hidden="true" />
+          Ampliar mapa
+        </button>
         <button type="button" onClick={onCenter}>
           <LocateFixed aria-hidden="true" />
           Centralizar Tocantins

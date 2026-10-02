@@ -1,4 +1,5 @@
 const legends = {
+  burned: [["burned-area", "Área queimada - MapBiomas"]],
   rain: [
     ["zero", "0 mm"],
     ["rain-light", "1 a 10 mm"],

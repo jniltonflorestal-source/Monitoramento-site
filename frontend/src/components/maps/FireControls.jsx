@@ -10,6 +10,8 @@ export function FireControls({
   opacity,
   onOpacity,
   burnedArea,
+  showBurnedControls = true,
+  municipalityName,
 }) {
   const options = (key) =>
     [...new Set(points.map((p) => p[key]).filter(Boolean))].sort();
@@ -50,39 +52,50 @@ export function FireControls({
           ))}
         </select>
       </label>
-      <label>
-        Município
-        <select
-          value={filters.city}
-          onChange={(e) => onChange({ ...filters, city: e.target.value })}
-        >
-          <option value="">Todo o Tocantins</option>
-          {options("city").map((s) => (
-            <option key={s}>{s}</option>
-          ))}
-        </select>
-      </label>
-      <label>
-        Opacidade das queimadas: {Math.round(opacity * 100)}%
-        <input
-          type="range"
-          min="0.1"
-          max="1"
-          step="0.05"
-          value={opacity}
-          onChange={(e) => onOpacity(Number(e.target.value))}
-        />
-      </label>
+      {municipalityName ? (
+        <strong>Município: {municipalityName}</strong>
+      ) : (
+        <label>
+          Município
+          <select
+            value={filters.city}
+            onChange={(e) => onChange({ ...filters, city: e.target.value })}
+          >
+            <option value="">Todo o Tocantins</option>
+            {options("city").map((s) => (
+              <option key={s}>{s}</option>
+            ))}
+          </select>
+        </label>
+      )}
+      {showBurnedControls && (
+        <label>
+          Opacidade das queimadas: {Math.round(opacity * 100)}%
+          <input
+            type="range"
+            min="0.1"
+            max="1"
+            step="0.05"
+            value={opacity}
+            onChange={(e) => onOpacity(Number(e.target.value))}
+          />
+        </label>
+      )}
       <p>
-        <strong>{count.toLocaleString('pt-BR')} detecções na base disponível</strong> • INPE •{" "}
-        {updatedAt && Number.isFinite(Date.parse(updatedAt)) ? new Date(updatedAt).toLocaleString('pt-BR') : updatedAt || "Atualização não informada"}
+        <strong>
+          {count.toLocaleString("pt-BR")}{" "}
+          {count === 1 ? "detecção" : "detecções"} na base disponível
+        </strong>{" "}
+        • INPE •{" "}
+        {updatedAt && Number.isFinite(Date.parse(updatedAt))
+          ? new Date(updatedAt).toLocaleString("pt-BR")
+          : updatedAt || "Atualização não informada"}
         <br />
         {historyState === "ready"
           ? "Arquivo histórico consultado; confira a cobertura temporal."
           : "Histórico completo indisponível; contagem limitada aos registros carregados."}
         <br />
-        Área queimada: {burnedArea?.period || "Período não disponível"}. Focos
-        não representam hectares queimados.
+        Focos não representam hectares queimados.
       </p>
     </div>
   );

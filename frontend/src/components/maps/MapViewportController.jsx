@@ -11,10 +11,14 @@ export function MapViewportController({ boundary, focus, centerRequest }) {
     const container = map.getContainer();
     const updateSize = () => {
       map.invalidateSize({ pan: false });
-      if (boundary && !focus) map.fitBounds(L.geoJSON(boundary).getBounds(), {padding:[20,20]});
+      if (boundary && !focus)
+        map.fitBounds(L.geoJSON(boundary).getBounds(), { padding: [20, 20] });
     };
     const frame = window.requestAnimationFrame(updateSize);
-    const observer = typeof ResizeObserver !== "undefined" ? new ResizeObserver(updateSize) : null;
+    const observer =
+      typeof ResizeObserver !== "undefined"
+        ? new ResizeObserver(updateSize)
+        : null;
 
     observer?.observe(container);
     window.addEventListener("resize", updateSize);
@@ -36,8 +40,10 @@ export function MapViewportController({ boundary, focus, centerRequest }) {
   }, [boundary, centerRequest, map]);
 
   useEffect(() => {
-    if (!focus) return;
-    map.flyTo([focus.latitude, focus.longitude], focus.zoom || 9, { duration: 0.6 });
+    if (!focus || focus.municipal) return;
+    map.flyTo([focus.latitude, focus.longitude], focus.zoom || 9, {
+      duration: 0.6,
+    });
   }, [focus, map]);
 
   return null;

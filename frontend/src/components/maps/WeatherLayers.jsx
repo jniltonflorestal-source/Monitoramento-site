@@ -236,7 +236,7 @@ function WindParticles({ rows, boundary }) {
   }, [map, rows, boundary]);
   return null;
 }
-export function WeatherLayers({ model: m, boundary }) {
+export function WeatherLayers({ model: m, boundary, municipalMode = false }) {
   const [clicked, setClicked] = useState(null);
   const request = useRef(0);
   const rows = useMemo(
@@ -245,7 +245,7 @@ export function WeatherLayers({ model: m, boundary }) {
   );
   useMapEvents({
     click: async (e) => {
-      if (!m.grid || !inside(e.latlng.lat, e.latlng.lng, boundary)) return;
+      if (municipalMode || !m.grid || !inside(e.latlng.lat, e.latlng.lng, boundary)) return;
       const id = ++request.current;
       setClicked({ position: e.latlng, state: "loading" });
       try {

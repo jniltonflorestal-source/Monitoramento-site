@@ -142,6 +142,8 @@ Também existe o fluxo auxiliar `scripts/update-boletim-data.js` com o workflow 
 
 ## Mapa operacional
 
+O mapa também oferece [navegação por tema e painel municipal](docs/PAINEL-MUNICIPAL.md), com recorte territorial, fontes e períodos explícitos. Consulte as limitações de chuva histórica, previsão e raster antes de usar os indicadores em decisões operacionais.
+
 O mapa permite combinar camadas, filtrar deteccoes do INPE por periodo, satelite e municipio, consultar o raster mensal do MapBiomas e visualizar series hidrologicas da ANA. A meteorologia usa previsao GFS via Open-Meteo, carregada sob demanda, com animacao ilustrativa do vento.
 
 Consulte [fontes, limites e operacao do WebGIS](docs/WEBGIS-OPERACIONAL.md). O coletor `scripts/update-fire-history.py` alimenta `data/fire-history.json` no workflow horario existente. Dados ausentes nao representam ausencia de risco. As chaves privadas permanecem nos secrets do GitHub Actions, nunca no navegador.
