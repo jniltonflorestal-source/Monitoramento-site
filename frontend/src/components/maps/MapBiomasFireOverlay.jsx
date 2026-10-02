@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { GeoJSON, TileLayer, useMap } from "react-leaflet";
+import { GeoJSON, Pane, TileLayer, useMap } from "react-leaflet";
 import { cachedJson } from "../../services/operationalMap";
 
 export function MapBiomasFireOverlay({ active, enabled, burnedArea, opacity = 0.58 }) {
@@ -26,11 +26,11 @@ export function MapBiomasFireOverlay({ active, enabled, burnedArea, opacity = 0.
   if (!active || !enabled || !burnedArea?.rasterUrl) return null;
 
   return (
-    <TileLayer
+    <Pane name="burned-area-raster" style={{zIndex:350}}><TileLayer
       attribution="MapBiomas Monitor do Fogo"
       url={burnedArea.rasterUrl}
       opacity={opacity}
       eventHandlers={{tileerror:()=>setFailed(true)}}
-    />
+    /></Pane>
   );
 }
