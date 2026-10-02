@@ -20,19 +20,19 @@ export function MapInfoPanel({
         <MapPinned aria-hidden="true" />
         <div>
           <p className="eyebrow">Consulta territorial</p>
-          <h3>Detalhes da camada</h3>
+          <h3>{{rain:'Chuva e clima',rivers:'Rios monitorados',fire:'Focos de calor',burned:'Áreas queimadas',drought:'Seca',emergency:'Situação de Emergência / Calamidade Pública'}[activeLayer]||'Detalhes da camada'}</h3>
         </div>
       </header>
       <details open className="geo-panel-content">
         <summary>Resumo e consultas</summary>
         {summary}
-        <MapSearchBox
+        {activeLayer!=='burned'&&<MapSearchBox
           activeLayer={activeLayer}
           query={query}
           results={results}
           onQueryChange={onQueryChange}
           onSelect={onSelect}
-        />
+        />}
         {activeLayer === "burned" && (
           <label className="fire-overlay-toggle">
             <input

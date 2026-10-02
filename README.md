@@ -142,6 +142,8 @@ Também existe o fluxo auxiliar `scripts/update-boletim-data.js` com o workflow 
 
 ## Mapa operacional
 
+A [Fase 1 de interface](docs/FASE1-INTERFACE.md) reúne seis temas, submodos de fogo e um painel lateral ajustável. Os controles avançados ficam em Camadas adicionais.
+
 O mapa também oferece [navegação por tema e painel municipal](docs/PAINEL-MUNICIPAL.md), com recorte territorial, fontes e períodos explícitos. Consulte as limitações de chuva histórica, previsão e raster antes de usar os indicadores em decisões operacionais.
 
 O mapa permite combinar camadas, filtrar deteccoes do INPE por periodo, satelite e municipio, consultar o raster mensal do MapBiomas e visualizar series hidrologicas da ANA. A meteorologia usa previsao GFS via Open-Meteo, carregada sob demanda, com animacao ilustrativa do vento.

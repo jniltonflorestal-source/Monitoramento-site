@@ -14,6 +14,8 @@ import { FloatingMapLegend } from "./FloatingMapLegend";
 import { LayerSelector } from "./LayerSelector";
 import { MapBiomasFireOverlay } from "./MapBiomasFireOverlay";
 import { MapInfoPanel } from "./MapInfoPanel";
+import { MapWorkspace } from "./MapWorkspace";
+import { MapOverview } from "./MapOverview";
 import { MapSearchBox } from "./MapSearchBox";
 import { MapViewportController } from "./MapViewportController";
 import { RainModeTabs } from "./RainModeTabs";
@@ -38,13 +40,15 @@ import {
 } from "./WeatherLayers";
 
 const priorityLayers = [
-  { id: "drought", label: "Seca" },
-  { id: "rain", label: "Clima" },
+  { id: "overview", label: "Visão geral" },
   { id: "rivers", label: "Rios" },
-  { id: "fire", label: "Focos de calor" },
-  { id: "burned", label: "Área queimada" },
+  { id: "rain", label: "Chuva e clima" },
+  { id: "fire", label: "Focos de calor e áreas queimadas" },
+  { id: "drought", label: "Seca" },
+  { id: "emergency", label: "SE/ECP", title: "Situação de Emergência / Estado de Calamidade Pública" },
 ];
 const priorityLayerAnchors = {
+  overview: "visao-geral-mapa",
   drought: "seca",
   rain: "chuva",
   rivers: "rios",
@@ -286,7 +290,7 @@ export function PublicMapSection({
 }) {
   const [tocantinsBoundary, setTocantinsBoundary] = useState(null);
   const [municipalBoundary, setMunicipalBoundary] = useState(null);
-  const [activeLayer, setActiveLayer] = useState("drought");
+  const [activeLayer, setActiveLayer] = useState(variant==='priority'?"overview":"drought");
   const [municipality, setMunicipality] = useState(null);
   const [showPrimary, setShowPrimary] = useState(true);
   const renderedLayer = showPrimary ? activeLayer : null;
@@ -1124,11 +1128,11 @@ export function PublicMapSection({
       </div>
       {variant === "priority" && (
         <>
-          <span id="emergencia-calamidade" aria-hidden="true" />
+          <span id="area-queimada" aria-hidden="true" />
           <LayerSelector
             layers={priorityLayers}
             anchors={priorityLayerAnchors}
-            activeLayer={activeLayer}
+            activeLayer={activeLayer==='burned'?'fire':activeLayer}
             onSelect={changeLayer}
             onCenter={() => {
               setMunicipality(null);
@@ -1176,7 +1180,7 @@ export function PublicMapSection({
           </div>
           <details className="operational-layer-panel">
             <summary>
-              Modo técnico • combinar camadas
+              Camadas adicionais
               {Object.values(pinned).filter(Boolean).length
                 ? ` (${Object.values(pinned).filter(Boolean).length} adicionais)`
                 : ""}
@@ -1217,11 +1221,9 @@ export function PublicMapSection({
                 />
                 Área queimada • MapBiomas
               </label>
-              <button type="button" onClick={() => changeLayer("emergency")}>
-                SE/ECP
-              </button>
             </div>
           </details>
+          {['fire','burned'].includes(activeLayer)&&<div className="fire-subtabs" aria-label="Monitoramento do fogo"><button type="button" aria-pressed={activeLayer==='fire'} onClick={()=>changeLayer('fire')}>Focos de calor</button><button type="button" aria-pressed={activeLayer==='burned'} onClick={()=>changeLayer('burned')}>Áreas queimadas</button></div>}
           {activeLayer === "fire" && (
             <FireControls
               filters={fireFilters}
@@ -1272,7 +1274,7 @@ export function PublicMapSection({
           {activeLayer === "rain" && <WeatherControls model={weatherModel} />}
         </>
       )}
-      {variant === "priority" && (
+      {variant === "priority" && !['overview','burned'].includes(activeLayer) && (
         <div className="mobile-map-search">
           <MapSearchBox
             activeLayer={activeLayer}
@@ -1283,7 +1285,7 @@ export function PublicMapSection({
           />
         </div>
       )}
-      <div className="map-layout">
+      <MapWorkspace enabled={variant==='priority'} selectionKey={`${activeLayer}:${municipality?.properties.codarea||''}:${selectedRiver?.code||''}:${selectedResult?.id||''}`}>
         <div className="map-shell">
           <MapContainer
             center={[-10.18, -48.33]}
@@ -1682,7 +1684,7 @@ export function PublicMapSection({
               setShowBurnedArea(true);
             }}
           />
-        ) : variant === "priority" ? (
+        ) : variant === 'priority' && activeLayer==='overview' ? <MapOverview rain={rainSummary} fire={fireSummary} drought={droughtSummary} emergency={emergencySummary} stationCount={riverStations.length} onSelect={changeLayer}/> : variant === "priority" ? (
           <MapInfoPanel
             activeLayer={activeLayer}
             query={searchQuery}
@@ -1753,7 +1755,7 @@ export function PublicMapSection({
             )}
           </aside>
         )}
-      </div>
+      </MapWorkspace>
     </section>
   );
 }

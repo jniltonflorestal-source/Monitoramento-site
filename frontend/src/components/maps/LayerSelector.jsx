@@ -6,9 +6,13 @@ import {
   Waves,
   Building2,
   Maximize2,
+  MapPinned,
+  Sun,
 } from "lucide-react";
 
 const layerIcons = {
+  overview: MapPinned,
+  drought: Sun,
   rain: CloudRain,
   burned: Flame,
   rivers: Waves,
@@ -36,6 +40,7 @@ export function LayerSelector({
           return (
             <button
               data-layer={layer.id}
+              title={layer.title||layer.label}
               id={anchors[layer.id]}
               className={activeLayer === layer.id ? "active" : ""}
               key={layer.id}
