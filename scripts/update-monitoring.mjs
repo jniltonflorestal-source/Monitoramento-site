@@ -1,4 +1,8 @@
 import { readFile, writeFile } from "node:fs/promises";
+import { finiteValue, nonNegativeValue, sumHourlyRain24h, assessFreshness } from '../frontend/src/services/dataQuality.js';
+
+// The signal also bounds body consumption; credentials remain server-side.
+const fetch = (url, options = {}) => globalThis.fetch(url, { ...options, signal: options.signal || AbortSignal.timeout(15000) });
 
 // Chuva observada 24h: manter também estações cadastradas sem leitura no JSON.
 // Campos esperados por estação/fonte: statusLeitura, motivoIndisponibilidade,
@@ -37,8 +41,7 @@ function parseCsv(text) {
 }
 
 function asNumber(value) {
-  const parsed = Number(String(value ?? "").replace(",", "."));
-  return Number.isFinite(parsed) ? parsed : null;
+  return finiteValue(value);
 }
 
 function normalizeRainStatus(amount) {
@@ -141,6 +144,7 @@ async function fetchTocantinsAlerts() {
   if (!response.ok) throw new Error("Painel de alertas do CEMADEN indisponivel");
 
   const body = await response.json();
+  if (!Array.isArray(body.alertas)) throw new Error('Resposta CEMADEN sem lista de alertas válida');
   const alerts = (body.alertas || []).filter((alert) => alert.status === 1 && alert.uf === "TO");
   const levels = { "Muito Alto": 3, Alto: 2, Moderado: 1 };
   const highest = alerts.reduce(
@@ -163,6 +167,7 @@ async function fetchTocantinsWeatherWarnings() {
   if (!response.ok) throw new Error("Avisos meteorologicos do INMET indisponiveis");
 
   const body = await response.json();
+  if (!Array.isArray(body.hoje) || !Array.isArray(body.futuro)) throw new Error('Resposta INMET sem listas de avisos válidas');
   const containsTocantins = (warning) => String(warning.estados || "").split(",").includes("Tocantins");
   const today = (body.hoje || []).filter(containsTocantins);
   const future = (body.futuro || []).filter(containsTocantins);
@@ -191,6 +196,7 @@ async function fetchCemadenRain24h() {
       station.uf === "TO"
       && station.status === 0
       && station.idtipoestacao === 1
+      && nonNegativeValue(station.acumulado) !== null
       && Number.isFinite(Number(station.latitude))
       && Number.isFinite(Number(station.longitude))
     )
@@ -204,6 +210,7 @@ async function fetchCemadenRain24h() {
       observacao: "Acumulado 24h informado pelo CEMADEN."
     }, "CEMADEN", record?.atualizado || null));
 
+  if (assessFreshness(record?.atualizado, 3).status !== 'current') throw new Error('Leitura CEMADEN antiga ou sem horário confirmado');
   return {
     source: "CEMADEN",
     status: "ready",
@@ -237,20 +244,12 @@ function parseInmetTimestamp(row) {
 }
 
 function normalizeInmetRows(rows, station, observacao) {
-  if (!rows.length) return null;
-  const cutoff = Date.now() - 24 * 60 * 60 * 1000;
-  const recentRows = rows.filter((row) => {
-    const timestamp = parseInmetTimestamp(row);
-    return timestamp !== null && timestamp >= cutoff;
-  });
-  if (!recentRows.length) return null;
-  const amount = recentRows.reduce((sum, row) => sum + (asNumber(row.CHUVA ?? row.chuva) ?? 0), 0);
-  const latest = recentRows.reduce((current, row) => {
-    const currentTimestamp = current ? parseInmetTimestamp(current) : null;
-    const rowTimestamp = parseInmetTimestamp(row);
-    return rowTimestamp !== null && (currentTimestamp === null || rowTimestamp > currentTimestamp) ? row : current;
-  }, null) || recentRows[recentRows.length - 1];
-  const updatedAt = [latest.DT_MEDICAO, latest.HR_MEDICAO].filter(Boolean).join(" ");
+  const result = sumHourlyRain24h(rows.map(row => {
+    const time = parseInmetTimestamp(row);
+    return { time: time === null ? null : new Date(time).toISOString(), amount: row.CHUVA ?? row.chuva };
+  }));
+  if (result.amount === null) return null;
+  const { amount, updatedAt } = result;
   return normalizeRainStation({
     ...station,
     amount,
@@ -378,36 +377,21 @@ async function fetchAnaRain24h() {
     }))
     .filter((station) => station.code && station.latitude !== null && station.longitude !== null);
 
-  const { start, end } = recentAnaPeriod();
-  const settled = await Promise.allSettled(stations.map(async (station) => {
-    const params = new URLSearchParams({ codEstacao: station.code, dataInicio: start, dataFim: end });
-    const readingResponse = await fetch(`${ANA_READINGS_URL}?${params}`);
-    if (!readingResponse.ok) return null;
-    const rows = xmlTables(await readingResponse.text());
-    const amount = rows
-      .map((node) => asNumber(xmlText(node, "Chuva") || xmlText(node, "Precipitacao") || xmlText(node, "PrecipitacaoTotal")))
-      .filter((value) => value !== null)
-      .reduce((sum, value) => sum + value, 0);
-    if (!Number.isFinite(amount)) return null;
-    return normalizeRainStation({
-      ...station,
-      amount,
-      atualizadoEm: `${start} a ${end}`,
-      observacao: "Somatorio de precipitacao no periodo consultado na telemetria ANA."
-    }, "ANA", `${start} a ${end}`);
-  }));
-  const observed = settled.map((item) => item.value).filter(Boolean);
-
+  // The legacy sum lacked timestamps/interval semantics. Do not count it as
+  // rolling 24h rainfall. River levels continue through their separate service.
+  const reason = 'Cadastro ANA disponível; janela de acumulação 24h e fuso das leituras ainda não validados.';
   return {
     source: "ANA",
-    status: observed.length ? "ready" : "catalog",
-    label: observed.length ? "Operando" : "Sem leitura valida",
-    observacao: observed.length ? "Consulta server-side realizada pelo workflow." : "Estacoes cadastradas, mas sem leitura operacional de chuva nas ultimas 24h.",
+    status: 'catalog',
+    label: 'Sem acumulado 24h validado',
+    observacao: reason,
     estacoesCadastradas: stations.length,
-    estacoesConsultadas: stations.length,
-    estacoesComLeitura: observed.length,
-    atualizadoEm: observed[0]?.atualizadoEm || null,
-    estacoes: observed
+    estacoesConsultadas: 0,
+    estacoesComLeitura: 0,
+    atualizadoEm: null,
+    ultimaTentativa: new Date().toISOString(),
+    estacoes: [],
+    todasEstacoes: stations.map(station => normalizeUnavailableRainCatalogStation(station, 'ANA', reason))
   };
 }
 
@@ -459,7 +443,7 @@ async function fetchTocantinsRain24h() {
     periodo: "ultimas 24h",
     fonte: Object.values(sources).filter((source) => source.estacoesComLeitura > 0).map((source) => source.source).join(" / ") || "CEMADEN / INMET / ANA / SEMARH",
     atualizadoEm: new Date().toISOString(),
-    maiorAcumulado: maximum?.chuva24h ?? 0,
+    maiorAcumulado: maximum?.chuva24h ?? null,
     estacaoMaiorAcumulado: maximum?.nome || null,
     municipioMaiorAcumulado: maximum?.municipio || null,
     estacoesCadastradas: Object.values(sources).reduce((sum, source) => sum + (source.estacoesCadastradas || 0), 0),
@@ -679,15 +663,24 @@ function buildStatuses(data) {
 
 const data = JSON.parse(await readFile(DATA_FILE, "utf8"));
 data.erros_atualizacao = {};
+data.qualidade_fontes ||= {};
 
 async function updateAvailableSource(label, fetcher, applyResult, applyError = null) {
+  const previous = data.qualidade_fontes[label] || {};
+  const attemptedAt = new Date().toISOString();
   try {
     const result = await fetcher();
     applyResult(result);
+    data.qualidade_fontes[label] = { status: 'ok', ultimaTentativa: attemptedAt, ultimoSucesso: new Date().toISOString() };
   } catch (error) {
-    data.erros_atualizacao[label] = error.message;
-    if (applyError) applyError(error);
-    console.warn(`[${label}] ${error.message}. Mantendo ultimo dado valido quando disponivel.`);
+    let message = String(error.message || 'Falha de consulta');
+    for (const secret of [INMET_API_ID, INMET_API_TOKEN].filter(Boolean)) {
+      message = message.split(secret).join('[redigido]').split(encodeURIComponent(secret)).join('[redigido]');
+    }
+    data.erros_atualizacao[label] = message;
+    data.qualidade_fontes[label] = { ...previous, status: 'erro', ultimaTentativa: attemptedAt, erro: message };
+    if (applyError) applyError(new Error(message));
+    console.warn(`[${label}] ${message}. Mantendo ultimo dado valido quando disponivel.`);
   }
 }
 

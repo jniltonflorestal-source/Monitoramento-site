@@ -1,0 +1,27 @@
+import assert from 'node:assert/strict';
+import { parseAlertIndicator, parseEmergencyIndicator, parseFireIndicator } from '../frontend/src/services/publishedSnapshotParser.js';
+import { parseCemadenStations } from '../frontend/src/services/cemadenParser.js';
+import { assessFreshness, sumHourlyRain24h } from '../frontend/src/services/dataQuality.js';
+
+const fresh = new Date().toISOString();
+const old = '2020-01-01T00:00:00Z';
+const snapshot = { atualizado_em: fresh, resumo: { alertas_cemaden_to: 0, avisos_inmet_to_hoje: 0 }, s2id: { resumo: { federal: 0, se: 0, ecp: 0 } } };
+assert.equal(parseAlertIndicator(snapshot, {}).state, 'ready');
+assert.equal(parseAlertIndicator({ ...snapshot, resumo: { ...snapshot.resumo, alertas_cemaden_to: null } }, {}).state, 'error', 'missing count is not zero');
+assert.equal(parseAlertIndicator({ ...snapshot, atualizado_em: old }, {}).state, 'error', 'old alerts cannot be current');
+assert.equal(parseAlertIndicator({ ...snapshot, erros_atualizacao: { avisos_inmet: 'timeout' } }, {}).state, 'error', 'source failure must override fresh global timestamp');
+assert.equal(parseEmergencyIndicator({ ...snapshot, atualizado_em: old }, {}).state, 'error');
+assert.equal(parseFireIndicator({ focos_calor: { quantidade24h: 0 } }, {}).state, 'error', 'missing timestamp is not current');
+const stations = parseCemadenStations([{ atualizado: fresh, estacao: [null, '', -1, 0, 12].map((acumulado, i) => ({ uf: 'TO', status: 0, idtipoestacao: 1, acumulado, latitude: -10, longitude: -48, codestacao: String(i) })) }]).stations;
+assert.deepEqual(stations.filter(s => s.amount !== null).map(s => s.amount).sort((a,b)=>a-b), [0, 12]);
+console.log('Data quality regression tests passed');
+const now = Date.parse('2026-10-02T12:30:00Z');
+assert.equal(assessFreshness('02/10/2026 a 03/10/2026', 3, now).status, 'unknown');
+assert.equal(assessFreshness('2026-10-02T13:00:00Z', 3, now).status, 'invalid');
+const hourly = Array.from({length:24}, (_,i)=>({ time: new Date(now-30*60000-i*3600000).toISOString(), amount: 1 }));
+assert.equal(sumHourlyRain24h(hourly, now).amount, 24);
+assert.equal(sumHourlyRain24h([...hourly, hourly[0]], now).amount, 24);
+assert.equal(sumHourlyRain24h(hourly.slice(1), now).amount, null, 'partial day is not a full 24h total');
+assert.equal(sumHourlyRain24h(hourly.map(r=>({...r,amount:null})), now).amount, null);
+assert.equal(sumHourlyRain24h(hourly.map(r=>({...r,amount:0})), now).amount, 0);
+console.log('Hourly precipitation and timestamp tests passed');

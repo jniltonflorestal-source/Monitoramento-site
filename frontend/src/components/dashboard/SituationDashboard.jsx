@@ -1,4 +1,5 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState, useRef } from "react";
+import { DataHealthPanel } from './DataHealthPanel';
 import { QuickActions } from "../layout/QuickActions";
 import { SituationHero } from "./SituationHero";
 import { OfficialAlertsSection } from "./OfficialAlertsSection";
@@ -14,15 +15,40 @@ const PublicMapSection = lazy(() =>
 );
 
 export function SituationDashboard() {
-  const [snapshot, setSnapshot] = useState(monitoringFallback);
+  const [snapshot, setSnapshot] = useState(() => ({ ...monitoringFallback,
+    ...Object.fromEntries(['alerts', 'emergency', 'rain', 'rivers', 'fire', 'drought'].map(key => [key, { ...monitoringFallback[key], state: 'loading' }])),
+    generalStatus: { tone: 'empty', label: 'Atualizando dados', note: 'Consultando as fontes disponíveis, com tempo limite.' }
+  }));
+  const [refreshing, setRefreshing] = useState(true);
+  const refresh = useRef(() => {});
 
   useEffect(() => {
     let active = true;
-    fetchMonitoringSnapshot().then((result) => {
-      if (active) setSnapshot(result);
-    });
+    let running = false, lastAttempt = 0;
+    const update = async () => {
+      if (running || Date.now() - lastAttempt < 30000) return;
+      running = true;
+      lastAttempt = Date.now();
+      setRefreshing(true);
+      try {
+        const result = await fetchMonitoringSnapshot();
+        if (active) setSnapshot(result);
+      } catch {
+        if (active) setSnapshot({ ...monitoringFallback, attemptedAt: new Date().toISOString(), generalStatus: { tone: 'empty', label: 'Consulta indisponível', note: 'Não foi possível atualizar as fontes neste momento.' } });
+      } finally {
+        running = false;
+        if (active) setRefreshing(false);
+      }
+    };
+    refresh.current = update;
+    update();
+    const interval = setInterval(() => { if (!document.hidden) update(); }, 300000);
+    const onVisible = () => { if (!document.hidden && Date.now() - lastAttempt >= 300000) update(); };
+    document.addEventListener('visibilitychange', onVisible);
     return () => {
       active = false;
+      clearInterval(interval);
+      document.removeEventListener('visibilitychange', onVisible);
     };
   }, []);
 
@@ -43,6 +69,7 @@ export function SituationDashboard() {
           droughtSummary={snapshot.drought}
         />
       </Suspense>
+      <DataHealthPanel snapshot={snapshot} refreshing={refreshing} onRefresh={() => refresh.current()} />
       <PublicationsCenter />
       <RecommendationsSection />
       <OfficialSourcesSection />

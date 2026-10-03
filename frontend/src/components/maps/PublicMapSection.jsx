@@ -87,14 +87,14 @@ function rainColor(amount) {
 function rainStationColor(station) {
   if (station.statusLeitura === "erro") return "#d73027";
   if (station.statusLeitura === "integracao") return "#64748b";
-  if (station.statusLeitura === "sem_leitura") return "#94a3b8";
+  if (["sem_leitura", "desatualizada"].includes(station.statusLeitura)) return "#94a3b8";
   return rainColor(Number(station.amount ?? station.chuva24h ?? 0));
 }
 
 function rainStationStyle(station) {
   const status = station.statusLeitura || "valida";
   const amount = Number(station.amount ?? station.chuva24h ?? 0);
-  if (status === "sem_leitura") {
+  if (["sem_leitura", "desatualizada"].includes(status)) {
     return {
       color: "#64748b",
       fillColor: "#ffffff",
@@ -137,6 +137,7 @@ function rainStationRadius(station) {
 }
 
 function rainStatusText(status) {
+  if (status === 'desatualizada') return 'Leitura desatualizada';
   if (status === "valida") return "Leitura válida";
   if (status === "sem_leitura") return "Sem leitura 24h";
   if (status === "erro") return "Erro de consulta";
@@ -646,6 +647,7 @@ export function PublicMapSection({
                               {item.errorCount || 0} erro |{" "}
                               {item.integrationCount || 0} em integração
                             </small>
+                            <small>{item.staleCount || 0} com leitura desatualizada</small>
                             {item.updatedAt && (
                               <small>Atualização: {item.updatedAt}</small>
                             )}
@@ -884,6 +886,7 @@ export function PublicMapSection({
           <h4>
             {droughtSummary?.value || "Camada municipal de seca em integração"}
           </h4>
+          {droughtSummary?.quality?.status !== 'current' && droughtSummary?.reference && <p role="status">Referência histórica: {formatDate(droughtSummary.reference)}. {droughtSummary.quality?.message || 'Atualização não confirmada'}. As cores não representam uma condição atual confirmada.</p>}
           {droughtSummary?.state === "ready" ? (
             <>
               <dl>
@@ -1038,6 +1041,7 @@ export function PublicMapSection({
                 Tendência observada: {riverReading.trend.label}
               </span>
               <small>{riverReading.dateTime}</small>
+              {riverReading.quality?.status !== 'current' && <small>{riverReading.quality?.message}</small>}
             </div>
           )}
           <strong>Fonte integrada: ANA / Telemetria</strong>
@@ -1375,6 +1379,7 @@ export function PublicMapSection({
                     const title = city?.nome || `Município IBGE ${code}`;
                     layer.bindPopup(`
                   <strong>${title}</strong><br/>
+                  ${droughtSummary?.quality?.status !== 'current' ? 'Referência histórica; condição atual não confirmada.<br/>' : ''}
                   Grau de seca: ${city?.classe || "Dados municipais de seca ainda não disponíveis"}<br/>
                   Tendência: ${droughtSummary?.summary?.agravaram ? "Consultar resumo estadual" : "Não informada"}<br/>
                   Referência: ${city?.referencia ? formatDate(city.referencia) : formatDate(droughtSummary?.reference)}<br/>

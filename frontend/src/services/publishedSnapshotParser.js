@@ -1,18 +1,16 @@
+import { nonNegativeValue, assessFreshness, publishedQuality, unavailableIndicator, FRESHNESS_HOURS, finiteValue } from './dataQuality.js';
+
 function formatUpdate(value) {
   if (!value) return null;
   return new Date(value).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
 }
 
 function safeCount(value) {
-  const count = Number(value);
-  return Number.isFinite(count) ? count : null;
+  return nonNegativeValue(value);
 }
 
 function isOlderThan(value, hours) {
-  if (!value) return false;
-  const time = new Date(value).getTime();
-  if (!Number.isFinite(time)) return false;
-  return Date.now() - time > hours * 60 * 60 * 1000;
+  return assessFreshness(value, hours).status !== 'current';
 }
 
 function formatAlertPeriod(value) {
@@ -58,7 +56,8 @@ export function parseFireIndicator(data, fallback) {
   const fireData = data?.focos_calor || {};
   const count = safeCount(fireData?.quantidade24h ?? data?.resumo?.focos_calor_24h);
   const sourceUpdatedAt = fireData?.atualizadoEm || data?.atualizado_em;
-  const updateFailed = fireData?.status === "erro";
+  const quality = assessFreshness(sourceUpdatedAt, FRESHNESS_HOURS.fire);
+  const updateFailed = fireData?.status === "erro" || Boolean(data?.erros_atualizacao?.focos_calor_inpe);
   const stale = isOlderThan(sourceUpdatedAt, 36);
   if (count === null || updateFailed) {
     return {
@@ -68,6 +67,8 @@ export function parseFireIndicator(data, fallback) {
       value: "Dados indisponíveis",
       description: "Não foi possível atualizar este dado no momento. Consulte a fonte oficial.",
       source: "INPE Queimadas",
+      quality: { ...quality, status: 'error', message: 'Não foi possível confirmar o arquivo diário do INPE.' },
+      observedAt: sourceUpdatedAt,
       points: [],
       updatedAt: formatUpdate(sourceUpdatedAt)
     };
@@ -76,8 +77,8 @@ export function parseFireIndicator(data, fallback) {
   const points = (fireData?.pontos_24h || [])
     .map((point) => ({
       city: point.municipio || point.city || "Município não informado",
-      latitude: Number(point.latitude),
-      longitude: Number(point.longitude),
+      latitude: finiteValue(point.latitude),
+      longitude: finiteValue(point.longitude),
       satellite: point.satelite || point.satellite || "",
       detectedAt: point.data_hora_gmt || point.detectedAt || "",
       biome: point.bioma || point.biome || ""
@@ -86,6 +87,8 @@ export function parseFireIndicator(data, fallback) {
 
   return {
     ...fallback,
+    quality,
+    observedAt: sourceUpdatedAt,
     state: stale ? "error" : "ready",
     tone: stale ? "empty" : count > 0 ? "attention" : "normal",
     value: stale ? "Dados desatualizados" : `${count} ${count === 1 ? "foco" : "focos"}`,
@@ -96,7 +99,7 @@ export function parseFireIndicator(data, fallback) {
         : "Nenhum foco identificado no arquivo diário consultado.",
     source: fireData?.fonte ? `${fireData.fonte} | arquivo diário` : "INPE Queimadas | arquivo diário",
     points: stale ? [] : points,
-    burnedArea: data?.area_queimada?.area_queimada_ha
+    burnedArea: nonNegativeValue(data?.area_queimada?.area_queimada_ha) !== null
       ? {
           hectares: Number(data.area_queimada.area_queimada_ha),
           year: data.area_queimada.ano_referencia,
@@ -114,12 +117,14 @@ export function parseFireIndicator(data, fallback) {
 }
 
 export function parseAlertIndicator(data, fallback) {
+  const quality = publishedQuality(data, ['alertas_cemaden', 'avisos_inmet'], FRESHNESS_HOURS.alerts);
+  if (quality.status !== 'current') return unavailableIndicator(fallback, quality);
   const cemaden = safeCount(data?.resumo?.alertas_cemaden_to);
   const inmet = safeCount(data?.resumo?.avisos_inmet_to_hoje);
-  if (cemaden === null || inmet === null) return { ...fallback, state: "error", value: "Dados indisponíveis" };
+  if (cemaden === null || inmet === null) return unavailableIndicator(fallback, { ...quality, status: 'unknown', message: 'Contagem de alertas não informada pela fonte.' });
 
   const count = cemaden + inmet;
-  const details = (data?.resumo?.avisos_inmet_detalhes || []).map(normalizeAlertDetail);
+  const details = (data?.resumo?.avisos_inmet_detalhes || []).filter(detail => !/^Previsto:/i.test(detail?.title || '')).map(normalizeAlertDetail);
   return {
     ...fallback,
     state: "ready",
@@ -130,11 +135,13 @@ export function parseAlertIndicator(data, fallback) {
       : "Nenhum alerta vigente identificado nas consultas automáticas.",
     source: "CEMADEN / INMET",
     cemadenCount: cemaden,
+    quality,
+    observedAt: quality.observedAt,
     inmetCount: inmet,
     futureInmetCount: safeCount(data?.resumo?.avisos_inmet_to_futuro) || 0,
     details,
     primaryDetail: details[0] || null,
-    updatedAt: formatUpdate(data.atualizado_em)
+    updatedAt: formatUpdate(quality.observedAt)
   };
 }
 
@@ -145,13 +152,19 @@ export function parseDroughtIndicator(data, fallback) {
   }
 
   const tones = { "Sem seca": "normal", Fraca: "attention", Moderada: "alert", Severa: "emergency", Extrema: "emergency" };
-  const count = safeCount(drought.resumo.com_seca) || 0;
+  const count = safeCount(drought.resumo.com_seca);
+  const reference = /^\d{4}-\d{2}-\d{2}/.test(drought.referencia || '') ? `${drought.referencia.slice(0,10)}T00:00:00Z` : null;
+  const quality = assessFreshness(reference, FRESHNESS_HOURS.drought);
+  const consultation = publishedQuality(data, ['seca_iis3'], 48);
+  if (consultation.status === 'error') Object.assign(quality, consultation);
   return {
     ...fallback,
-    state: "ready",
-    tone: tones[drought.situacao_geral] || "empty",
+    state: quality.status === 'current' ? 'ready' : 'error',
+    tone: quality.status === 'current' ? tones[drought.situacao_geral] || 'empty' : 'empty',
     value: drought.situacao_geral,
-    description: `${count} municípios com algum grau de seca | Tendência: ${drought.tendencia || "não informada"}.`,
+    description: `${quality.status !== 'current' ? 'Referência histórica. ' : ''}${count ?? 'Quantidade não informada de'} municípios com algum grau de seca | Tendência: ${drought.tendencia || "não informada"}.`,
+    quality,
+    observedAt: reference,
     source: drought.fonte || "CEMADEN / Alerta-Secas - IIS3",
     summary: drought.resumo,
     reference: drought.referencia,
@@ -161,15 +174,17 @@ export function parseDroughtIndicator(data, fallback) {
 }
 
 export function parseEmergencyIndicator(data, fallback) {
+  const quality = publishedQuality(data, ['s2id'], FRESHNESS_HOURS.emergency);
+  if (quality.status !== 'current') return unavailableIndicator(fallback, quality);
   const summary = data?.s2id?.resumo;
   const count = safeCount(summary?.federal);
-  if (count === null) return { ...fallback, state: "error", value: "Dados indisponíveis" };
+  if (count === null) return unavailableIndicator(fallback, { ...quality, status: 'unknown', message: 'Contagem de reconhecimentos não informada.' });
 
   const points = (data.s2id.reconhecimentos_vigentes || [])
     .map((record) => ({
       ...record,
-      latitude: Number(record.latitude),
-      longitude: Number(record.longitude)
+      latitude: finiteValue(record.latitude),
+      longitude: finiteValue(record.longitude)
     }))
     .filter((record) => Number.isFinite(record.latitude) && Number.isFinite(record.longitude));
 
@@ -182,10 +197,12 @@ export function parseEmergencyIndicator(data, fallback) {
       ? "Com reconhecimento federal vigente identificado na consulta pública."
       : "Sem municípios com reconhecimento federal vigente identificado.",
     source: data.s2id.fonte || "S2ID / SEDEC-MIDR",
-    se: safeCount(summary.se) || 0,
-    ecp: safeCount(summary.ecp) || 0,
+    se: safeCount(summary.se),
+    ecp: safeCount(summary.ecp),
     federal: count,
+    quality,
+    observedAt: quality.observedAt,
     points,
-    updatedAt: formatUpdate(data.atualizado_em)
+    updatedAt: formatUpdate(quality.observedAt)
   };
 }

@@ -14,6 +14,12 @@ export function HydrologyPanel({ stations, station, onSelect }) {
   const [days, setDays] = useState(1),
     [result, setResult] = useState(null),
     [state, setState] = useState("idle");
+  const [refreshVersion, setRefreshVersion] = useState(0);
+  useEffect(() => {
+    if (!station) return;
+    const interval = setInterval(() => { if (!document.hidden) setRefreshVersion(value => value + 1); }, 300000);
+    return () => clearInterval(interval);
+  }, [station?.code]);
   useEffect(() => {
     if (!station) return;
     let alive = true;
@@ -32,7 +38,7 @@ export function HydrologyPanel({ stations, station, onSelect }) {
     return () => {
       alive = false;
     };
-  }, [station?.code, days]);
+  }, [station?.code, days, refreshVersion]);
   const rows = (result?.readings || []).map((r) => ({
     ...r,
     time: Date.parse(r.dateTime),
@@ -126,6 +132,7 @@ export function HydrologyPanel({ stations, station, onSelect }) {
                 {stale ? "Leitura desatualizada • " : ""}
                 {fmt(latest.time)}
               </p>
+              {result.quality?.status !== 'current' && <p role="status">{result.quality?.message}. Horário original da fonte: {result.dateTime}.</p>}
               <div
                 className="hydro-chart"
                 aria-label="Evolução da cota em centímetros"

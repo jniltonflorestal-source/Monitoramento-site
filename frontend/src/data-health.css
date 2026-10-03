@@ -1,0 +1,19 @@
+.data-health { max-width: 1440px; margin: 24px auto; padding: 0 24px; color: #203648; scroll-margin-top: 100px; }
+.data-health details { border-top: 1px solid #cad5df; border-bottom: 1px solid #cad5df; padding: 16px 0; }
+.data-health summary { cursor: pointer; font-weight: 700; font-size: 17px; }
+.data-health summary svg { vertical-align: middle; margin-right: 8px; }
+.data-health summary span { margin-left: 12px; font-size: 14px; font-weight: 400; }
+.data-health-toolbar { display: flex; gap: 24px; justify-content: space-between; align-items: center; margin-top: 18px; }
+.data-health button { display: inline-flex; gap: 8px; align-items: center; min-height: 44px; padding: 10px 16px; background: #fff; border: 1px solid #246087; border-radius: 4px; color: #134b72; font: inherit; cursor: pointer; }
+.data-health button:disabled { opacity: .6; cursor: wait; }
+.data-health :focus-visible { outline: 3px solid #ec961c; outline-offset: 3px; }
+.data-health p { font-size: 14px; line-height: 1.6; margin: 12px 0; }
+.data-health-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; margin: 20px 0; }
+.data-health-item { border-left: 3px solid #98a8b3; padding: 0 16px; min-width: 0; overflow-wrap: anywhere; }
+.data-health-item h3 { font-size: 16px; margin: 0 0 10px; }
+.data-health-item strong { font-size: 14px; color: #525f69; }
+.data-health-item strong.data-health-current { color: #146546; }
+.data-health-item dl { font-size: 13px; line-height: 1.5; }
+.data-health-item dt { font-weight: 600; }.data-health-item dd { margin: 0 0 6px; }
+@media(max-width: 900px) { .data-health-grid {grid-template-columns: repeat(2,minmax(0,1fr));} }
+@media(max-width: 600px) { .data-health-grid {grid-template-columns: 1fr;} .data-health-toolbar {align-items: stretch;flex-direction: column;gap: 8px;} .data-health summary span {display: block;margin: 8px 0;} }
