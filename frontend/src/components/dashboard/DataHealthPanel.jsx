@@ -15,7 +15,7 @@ export function DataHealthPanel({ snapshot, refreshing, onRefresh }) {
     return {
       key, label,
       status: quality?.status === 'catalog' ? 'Cadastro disponível' : quality?.status === 'stale' ? 'Dados desatualizados' : item.state === 'ready' ? 'Dados disponíveis' : refreshing && !snapshot.attemptedAt ? 'Atualizando' : 'Dados indisponíveis',
-      updatedAt: item.observedAt || (key === 'rain' ? item.updatedAt : null),
+      updatedAt: key === 'drought' && /^\d{4}-\d{2}/.test(item.reference || '') ? `${item.reference.slice(5,7)}/${item.reference.slice(0,4)}` : item.observedAt || (key === 'rain' ? item.updatedAt : null),
       attemptedAt: quality?.attemptedAt || item.attemptedAt || snapshot.attemptedAt,
       note: quality?.message || item.description,
       current: item.state === 'ready' && quality?.status !== 'catalog'

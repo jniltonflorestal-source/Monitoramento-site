@@ -21,7 +21,8 @@ export function StatusCard({ icon: Icon, title, indicator, children, className }
   const tone = statusTone[indicator.state] || indicator.tone || "empty";
   const sourceLabel = "Fonte";
   const stamp = indicator.observedAt || indicator.updatedAt;
-  const stampLabel = indicator.observedAt ? new Date(indicator.observedAt).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }) : stamp;
+  const monthlyReference = typeof indicator.reference === 'string' && /^\d{4}-\d{2}/.test(indicator.reference) ? `${indicator.reference.slice(5,7)}/${indicator.reference.slice(0,4)}` : null;
+  const stampLabel = monthlyReference || (indicator.observedAt ? new Date(indicator.observedAt).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }) : stamp);
   const statusLabels = {
     normal: "Normalidade",
     attention: "Atenção",

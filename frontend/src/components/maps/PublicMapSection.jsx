@@ -238,6 +238,7 @@ function buildDroughtCounts(municipalities = []) {
 
 function formatDate(value) {
   if (!value) return "Sem data";
+  if (typeof value === 'string' && /^\d{4}-\d{2}/.test(value)) return `${value.slice(5,7)}/${value.slice(0,4)}`;
   return new Date(value).toLocaleString("pt-BR", { dateStyle: "short" });
 }
 
