@@ -31,5 +31,5 @@ assert.equal(independent.state,'error');
 assert.equal(independent.burnedArea.hectares,12);
 assert.equal(independent.burnedArea.quality.status,'current');
 const incomplete=buildStateDashboard({...data,alerts:{...data.alerts,cemadenCount:null}}).cards[0];
-assert.equal(incomplete.statusLabel,'Sem confirmação');
+assert.equal(incomplete.statusLabel,'Consulta parcial');
 assert.doesNotMatch(incomplete.description,/Nenhum aviso/);

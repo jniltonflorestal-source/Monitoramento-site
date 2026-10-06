@@ -1,8 +1,9 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { finiteValue, nonNegativeValue, sumHourlyRain24h, assessFreshness } from '../frontend/src/services/dataQuality.js';
+import { fetchSource } from './source-fetch.mjs';
 
 // The signal also bounds body consumption; credentials remain server-side.
-const fetch = (url, options = {}) => globalThis.fetch(url, { ...options, signal: options.signal || AbortSignal.timeout(15000) });
+const fetch = fetchSource;
 
 // Chuva observada 24h: manter também estações cadastradas sem leitura no JSON.
 // Campos esperados por estação/fonte: statusLeitura, motivoIndisponibilidade,

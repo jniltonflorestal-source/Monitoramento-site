@@ -47,10 +47,10 @@ export function buildStateDashboard(snapshot) {
   const alerts=base('alerts','Alertas vigentes',snapshot.alerts);
   if(snapshot.alerts?.state==='ready') {
     const a=number(snapshot.alerts.cemadenCount),b=number(snapshot.alerts.inmetCount);
-    alerts.value=a!==null&&b!==null?fmt(a+b):absent;
+    alerts.value=a!==null&&b!==null?fmt(a+b):`${fmt((a??0)+(b??0))} confirmados`;
     const complete = a!==null && b!==null;
-    alerts.description=!complete?'Contagem não confirmada. Consulte os órgãos emissores.':a+b>0?'Avisos identificados nos órgãos emissores.':'Nenhum aviso identificado nas fontes consultadas.';
-    alerts.statusLabel=!complete?'Sem confirmação':a+b>0?'Aviso vigente':'Sem aviso';
+    alerts.description=!complete?'Consulta parcial: o total estadual não está confirmado. Veja o estado de cada órgão abaixo.':a+b>0?'Avisos identificados nos órgãos emissores.':'Nenhum aviso identificado nas fontes consultadas.';
+    alerts.statusLabel=!complete?'Consulta parcial':a+b>0?'Aviso vigente':'Sem aviso';
     const rank={'Grande Perigo':3,'Perigo':2,'Perigo Potencial':1};
     const details=snapshot.alerts.details || [];
     const severity=[...details].sort((a,b)=>(rank[b.severity]||0)-(rank[a.severity]||0))[0]?.severity;

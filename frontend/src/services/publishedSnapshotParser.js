@@ -117,23 +117,30 @@ export function parseFireIndicator(data, fallback) {
 }
 
 export function parseAlertIndicator(data, fallback) {
-  const quality = publishedQuality(data, ['alertas_cemaden', 'avisos_inmet'], FRESHNESS_HOURS.alerts);
-  if (quality.status !== 'current') return unavailableIndicator(fallback, quality);
-  const cemaden = safeCount(data?.resumo?.alertas_cemaden_to);
-  const inmet = safeCount(data?.resumo?.avisos_inmet_to_hoje);
-  if (cemaden === null || inmet === null) return unavailableIndicator(fallback, { ...quality, status: 'unknown', message: 'Contagem de alertas não informada pela fonte.' });
-
-  const count = cemaden + inmet;
-  const details = (data?.resumo?.avisos_inmet_detalhes || []).filter(detail => !/^Previsto:/i.test(detail?.title || '')).map(normalizeAlertDetail);
+  const sourceQuality = {
+    CEMADEN: publishedQuality(data, ['alertas_cemaden'], FRESHNESS_HOURS.alerts),
+    INMET: publishedQuality(data, ['avisos_inmet'], FRESHNESS_HOURS.alerts)
+  };
+  const cemaden = sourceQuality.CEMADEN.status === 'current' ? safeCount(data?.resumo?.alertas_cemaden_to) : null;
+  const inmet = sourceQuality.INMET.status === 'current' ? safeCount(data?.resumo?.avisos_inmet_to_hoje) : null;
+  if (cemaden === null && inmet === null) return unavailableIndicator(fallback, publishedQuality(data, ['alertas_cemaden', 'avisos_inmet'], FRESHNESS_HOURS.alerts));
+  const coverageComplete = cemaden !== null && inmet !== null;
+  const sources = [cemaden !== null && 'CEMADEN', inmet !== null && 'INMET'].filter(Boolean);
+  const dates = sources.map(source => sourceQuality[source].observedAt).sort();
+  const quality = { status: coverageComplete ? 'current' : 'partial', observedAt: dates[0], message: coverageComplete ? 'Fontes consultadas.' : `Cobertura parcial: ${sources.join(' / ')} disponível; outra fonte não confirmada.` };
+  const count = (cemaden ?? 0) + (inmet ?? 0);
+  const details = inmet === null ? [] : (data?.resumo?.avisos_inmet_detalhes || []).filter(detail => !/^Previsto:/i.test(detail?.title || '')).map(normalizeAlertDetail);
   return {
     ...fallback,
     state: "ready",
     tone: count > 0 ? "alert" : "normal",
-    value: `${count} ${count === 1 ? "ativo" : "ativos"}`,
-    description: count
+    value: coverageComplete ? `${count} ${count === 1 ? "ativo" : "ativos"}` : `${count} ${count === 1 ? 'confirmado' : 'confirmados'} · consulta parcial`,
+    description: !coverageComplete ? `Consulta parcial: ${sources.join(' / ')} disponível. Não é possível confirmar o total de alertas do Estado.` : count
       ? "Há avisos oficiais vigentes identificados nas consultas automáticas."
       : "Nenhum alerta vigente identificado nas consultas automáticas.",
-    source: "CEMADEN / INMET",
+    source: sources.join(' / '),
+    coverageComplete,
+    sourceQuality,
     cemadenCount: cemaden,
     quality,
     observedAt: quality.observedAt,
