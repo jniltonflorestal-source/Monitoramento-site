@@ -63,6 +63,7 @@ export function SituationDashboard() {
           rainSummary={snapshot.rain}
           alertsSummary={snapshot.alerts}
           riverStations={snapshot.rivers.stations || []}
+          riverSummary={snapshot.rivers}
           firePoints={snapshot.fire.points || []}
           fireSummary={snapshot.fire}
           emergencyPoints={snapshot.emergency.points || []}

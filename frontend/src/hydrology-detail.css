@@ -1,0 +1,17 @@
+.hydro-station-list { margin:16px 0; border-top:1px solid #c9d9e1; border-bottom:1px solid #c9d9e1; }
+.hydro-station-list summary,.hydro-method summary { padding:12px 0; cursor:pointer; font-weight:700; font-size:14px; }
+.hydro-station-list > p,.hydro-method p { font-size:12px; line-height:1.5; }
+.hydrology-panel .hydro-station-row { width:100%; display:flex; align-items:center; gap:10px; padding:12px 6px; border:0; border-bottom:1px solid #dae5eb; background:white; text-align:left; color:#18394f; cursor:pointer; }
+.hydro-station-row > span:first-child { display:grid; gap:5px; flex:1; min-width:0; }
+.hydro-station-row strong { font-size:14px; overflow-wrap:anywhere; }
+.hydro-station-row small { font-size:11px; line-height:1.4; color:#536d7d; }
+.hydro-station-row[aria-pressed=true] { box-shadow:inset 3px 0 #197481; background:#eaf4f6; }
+.hydro-station-row:focus-visible,.hydro-more:focus-visible { outline:3px solid #eea526; }
+.hydro-spark { width:96px; height:56px; flex:0 0 96px; }
+.hydro-more { width:100%; padding:12px; margin:8px 0; color:#175374; background:white; border:1px solid #bfd0db; border-radius:4px; cursor:pointer; }
+.hydro-differences { display:grid; gap:8px; margin:14px 0; }
+.hydro-differences div { padding:8px 0; border-bottom:1px solid #d7e3e9; }
+.hydro-differences dt { font-size:12px; color:#536d7d; }
+.hydro-differences dd { font-size:16px; font-weight:700; margin:4px 0; }
+.hydro-trend { font-size:14px; line-height:1.4; }
+.hydro-up { color:#b52d30; }.hydro-down { color:#18774f; }.hydro-stable,.hydro-unknown { color:#526776; }

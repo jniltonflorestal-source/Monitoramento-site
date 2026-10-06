@@ -1,0 +1,48 @@
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const assert=require('node:assert/strict');
+(async()=>{const browser=await chromium.launch({channel:'msedge',headless:true});try{
+ const page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[],now=Date.now(),date=new Date(now).toISOString();
+ page.on('pageerror',error=>errors.push(error.message));
+ const readings=[[24,100],[6,112],[1,118],[0,120]].map(([hours,level])=>({dateTime:new Date(now-hours*3600000).toISOString(),level}));
+ const station={code:'123',name:'Estação de teste',city:'Palmas',river:'Rio Tocantins',latitude:-10.184,longitude:-48.333,status:'ok',readings,attemptedAt:date};
+ let liveCalls=0;
+ await page.route('https://**/*',route=>{
+   const url=route.request().url();
+   if(url.includes('resources.cemaden.gov.br/dados/311_24.json'))return route.fulfill({contentType:'text/javascript',body:`estacoes(${JSON.stringify([{atualizado:date,estacao:[{uf:'TO',status:0,idtipoestacao:1,codestacao:'1',cidade:'Palmas',nomeestacao:'Estação chuva teste',acumulado:21.5,latitude:-10.184,longitude:-48.333}]}])});`});
+   if(url.includes('/estacoes/T'))return route.fulfill({json:[]});
+   if(url.includes('HidroInventario'))return route.fulfill({contentType:'text/xml',body:'<root><Table><Codigo>123</Codigo><Nome>Estação de teste</Nome><RioNome>Rio Tocantins</RioNome><nmMunicipio>Palmas</nmMunicipio><Latitude>-10.184</Latitude><Longitude>-48.333</Longitude></Table></root>'});
+   if(url.includes('DadosHidrometeorologicos')){liveCalls++;return route.fulfill({contentType:'text/xml',body:`<root>${readings.map(r=>`<DadosHidrometereologicos><Nivel>${r.level}</Nivel><DataHora>${r.dateTime}</DataHora></DadosHidrometereologicos>`).join('')}</root>`});}
+   return route.abort();
+ });
+ await page.route('**/data/river-summary.json*',route=>route.fulfill({json:{source:'ANA / Telemetria',status:'ok',attemptedAt:date,stations:[station]}}));
+ await page.route('**/dados-monitoramento.json*',route=>route.fulfill({json:{atualizado_em:date,resumo:{alertas_cemaden_to:0,avisos_inmet_to_hoje:0},focos_calor:{status:'ok',atualizadoEm:date,quantidade24h:1,pontos_24h:[{municipio:'Palmas',latitude:-10.184,longitude:-48.333,data_hora_gmt:date,satelite:'Teste'}]}}}));
+ await page.goto('http://127.0.0.1:4196/Monitoramento-site/',{waitUntil:'domcontentloaded'});
+ await page.getByRole('button',{name:'Consultar novamente',exact:true,includeHidden:true}).waitFor({state:'attached',timeout:55000});
+ assert.match(await page.locator('[data-indicator="rivers"]').innerText(),/1 \/ 0/);
+ assert.equal(liveCalls,0,'No per-station history requests on home load');
+ await page.locator('.municipality-ranking summary').click();
+ await page.locator('.ranking-content li button').first().waitFor();
+ assert.match(await page.locator('.ranking-content ol').innerText(),/Palmas/);
+ assert.match(await page.locator('.ranking-content ol').innerText(),/21,5 mm/);
+ await page.locator('.ranking-content li button').first().click();
+ assert.equal(await page.locator('.municipal-panel h3').innerText(),'Palmas');
+ await page.locator('.geo-layer-switch [data-layer="rivers"]').click();
+ await page.locator('.hydro-station-list summary').click();
+ assert.equal(await page.locator('.hydro-spark').count(),1);
+ await page.locator('.hydro-station-row').click();
+ await page.locator('.hydro-differences').waitFor();
+ assert.match(await page.locator('.hydro-differences').innerText(),/8 cm \/ 6h/);
+ assert.match(await page.locator('.hydro-differences').innerText(),/20 cm \/ 24h/);
+ assert.equal(liveCalls,1,'Selected station query is deduplicated');
+ await page.locator('.hydrology-panel').getByRole('button',{name:'7 dias',exact:true}).click();
+ await page.waitForFunction(()=>document.querySelector('.hydro-differences')?.textContent.includes('20 cm'));
+ await page.locator('.map-workspace').screenshot({path:'tmp/hydrology-next-desktop.png'});
+ await page.locator('.ranking-themes').getByRole('button',{name:'Focos de calor',exact:true}).click();
+ assert.match(await page.locator('.ranking-content ol').innerText(),/1 foco/);
+ await page.locator('.municipality-ranking').screenshot({path:'tmp/ranking-next-desktop.png'});
+ await page.setViewportSize({width:390,height:844});await page.waitForTimeout(400);
+ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth),390);
+ await page.locator('.municipality-ranking').screenshot({path:'tmp/ranking-next-mobile.png'});
+ assert.deepEqual(errors,[]);
+ console.log('Ranking/hydrology: real-contract fixtures, coverage, municipality click, mini charts, 6h/24h, dedup, lazy history, desktop and mobile passed.');
+}finally{await browser.close()}})();

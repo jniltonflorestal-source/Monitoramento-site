@@ -1,3 +1,5 @@
+import { analyzeRiverSeries } from './hydrologyMetrics.js';
+
 function asNumber(value) {
   if (value === null || value === undefined || String(value).trim() === "") return null;
   const parsed = Number(String(value || "").replace(",", "."));
@@ -44,21 +46,20 @@ export function parseAnaInventory(xmlText) {
 
 export function parseAnaReadings(xmlText) {
   const xml = new DOMParser().parseFromString(xmlText, "text/xml");
-  const readings = [...xml.querySelectorAll("DadosHidrometereologicos")]
+  const readings = [...xml.querySelectorAll("DadosHidrometereologicos, DadosHidrometeorologicos")]
     .map((node) => ({
       level: asNumber(text(node, "Nivel")),
       flow: asNumber(text(node, "Vazao")),
       dateTime: text(node, "DataHora")
-    }))
-    .filter((reading) => reading.level !== null && Number.isFinite(Date.parse(reading.dateTime)))
-    .sort((a,b) => Date.parse(b.dateTime) - Date.parse(a.dateTime));
+    }));
 
-  const latest = readings[0];
+  const analysis = analyzeRiverSeries(readings);
+  const latest = analysis.latest;
   if (!latest) return null;
   return {
     ...latest,
-    readings: [...new Map(readings.map(r=>[r.dateTime,r])).values()].reverse(),
+    readings: analysis.readings,
     unit: "cm",
-    trend: computeRiverTrend(latest.level, readings[1]?.level)
+    trend: analysis.quality === 'current' ? computeRiverTrend(latest.level, analysis.readings.at(-2)?.level) : computeRiverTrend(null, null)
   };
 }

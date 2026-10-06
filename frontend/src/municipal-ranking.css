@@ -1,0 +1,19 @@
+.municipality-ranking { margin:18px 0; border-top:1px solid #c8d8e3; border-bottom:1px solid #c8d8e3; background:#fff; color:#16374c; }
+.municipality-ranking summary { cursor:pointer; padding:18px 12px; font-weight:700; font-size:18px; }
+.municipality-ranking summary svg { vertical-align:middle; margin-right:8px; }
+.municipality-ranking summary small { font-weight:400; font-size:13px; margin-left:16px; }
+.ranking-content { padding:0 16px 20px; }
+.ranking-content > p { font-size:14px; line-height:1.5; }
+.ranking-themes { display:flex; gap:8px; flex-wrap:wrap; }
+.ranking-themes button,.ranking-more { min-height:44px; padding:8px 16px; border:1px solid #b6cbd9; background:#fff; border-radius:4px; color:#173c57; font-weight:700; cursor:pointer; }
+.ranking-themes button[aria-pressed=true] { background:#1d597c; color:white; }
+.ranking-content ol { padding-left:26px; }
+.ranking-content li { padding:0 4px; border-bottom:1px solid #e1e9ee; }
+.ranking-content li button { display:flex; align-items:center; gap:16px; text-align:left; width:100%; padding:14px 8px; border:0; background:transparent; color:inherit; cursor:pointer; }
+.ranking-content li button:hover { background:#edf5f8; }
+.ranking-content li button > span { display:grid; gap:5px; flex:1; min-width:0; }
+.ranking-content li button span span { font-size:14px; }
+.ranking-content small { font-size:12px; line-height:1.5; color:#4e6576; }
+.ranking-content li button b { font-size:20px; white-space:nowrap; }
+.ranking-content button:focus-visible { outline:3px solid #e99820; outline-offset:2px; }
+@media(max-width:650px){.municipality-ranking summary small{display:block;margin:8px 0 0}.ranking-content{padding:0 10px 16px}.ranking-content li button{flex-wrap:wrap;gap:8px}.ranking-content li button > span{flex-basis:100%}.ranking-content li button b{font-size:18px}}

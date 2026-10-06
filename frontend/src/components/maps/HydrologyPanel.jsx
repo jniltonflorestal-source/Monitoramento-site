@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   ResponsiveContainer,
   LineChart,
@@ -9,12 +9,17 @@ import {
   ReferenceLine,
 } from "recharts";
 import { getAnaStationReading } from "../../services/ana";
+import { analyzeRiverSeries, riverDeltaLabel } from '../../services/hydrologyMetrics.js';
+import '../../hydrology-detail.css';
 
 export function HydrologyPanel({ stations, station, onSelect }) {
   const [days, setDays] = useState(1),
     [result, setResult] = useState(null),
     [state, setState] = useState("idle");
   const [refreshVersion, setRefreshVersion] = useState(0);
+  const [limit,setLimit]=useState(6);
+  const [listOpen,setListOpen]=useState(false);
+  const summaries=useMemo(()=>stations.map(item=>({...item,analysis:analyzeRiverSeries(item.collected?.readings || [])})),[stations,refreshVersion]);
   useEffect(() => {
     if (!station) return;
     const interval = setInterval(() => { if (!document.hidden) setRefreshVersion(value => value + 1); }, 300000);
@@ -39,17 +44,8 @@ export function HydrologyPanel({ stations, station, onSelect }) {
       alive = false;
     };
   }, [station?.code, days, refreshVersion]);
-  const rows = (result?.readings || []).map((r) => ({
-    ...r,
-    time: Date.parse(r.dateTime),
-  }));
-  const latest = rows.at(-1);
-  const target = latest?.time - 86400000;
-  const baseline = rows
-    .filter((r) => Math.abs(r.time - target) <= 3600000)
-    .sort((a, b) => Math.abs(a.time - target) - Math.abs(b.time - target))[0];
-  const delta = latest && baseline ? latest.level - baseline.level : null;
-  const stale = latest && Date.now() - latest.time > 86400000;
+  const analysis=analyzeRiverSeries(result?.readings || []);
+  const rows=analysis.readings,latest=analysis.latest,stale=analysis.quality==='stale';
   const fmt = (t) =>
     new Date(t).toLocaleString("pt-BR", {
       day: "2-digit",
@@ -77,6 +73,15 @@ export function HydrologyPanel({ stations, station, onSelect }) {
           ))}
         </select>
       </label>
+      <details className="hydro-station-list" onToggle={event=>setListOpen(event.currentTarget.open)}>
+        <summary>Leituras e minigráficos das estações</summary>
+        <p>Resumo da última coleta disponível. Sem série válida, a estação permanece sem comparação.</p>
+        {listOpen&&summaries.slice(0,limit).map(item=><button type="button" key={item.code} className="hydro-station-row" aria-pressed={station?.code===item.code} onClick={()=>onSelect(item)}>
+          <span><strong>{item.name}</strong><small>{item.river} · {item.city}</small><b>{item.analysis.latest?`${item.analysis.latest.level.toLocaleString('pt-BR')} cm`:'Leitura indisponível'}</b><small>{item.collected?.status==='ok'&&item.analysis.quality==='current'?riverDeltaLabel(item.analysis.delta24):item.analysis.quality==='stale'?'Leitura desatualizada':'Atualidade não confirmada'}</small><small>{item.analysis.latest?fmt(item.analysis.latest.time):'Horário não confirmado'}</small></span>
+          {item.analysis.readings.length>1&&<span className="hydro-spark" role="img" aria-label={`Histórico coletado da estação ${item.name}`}><ResponsiveContainer width="100%" height="100%"><LineChart data={item.analysis.readings}><XAxis hide dataKey="time" type="number" domain={['dataMin','dataMax']}/><YAxis hide domain={['dataMin','dataMax']}/><Line type="linear" dataKey="level" stroke="#146e83" dot={false} isAnimationActive={false}/></LineChart></ResponsiveContainer></span>}
+        </button>)}
+        {stations.length>limit&&<button type="button" className="hydro-more" onClick={()=>setLimit(value=>value+10)}>Mostrar mais estações</button>}
+      </details>
       {station && (
         <>
           <strong>{station.name}</strong>
@@ -107,27 +112,15 @@ export function HydrologyPanel({ stations, station, onSelect }) {
             </p>
           )}
           {state === "empty" && <p>Sem leituras válidas nesse período.</p>}
+          {state === 'ready' && !latest && <p role="status">Não há medições com valor e horário válidos para comparação. Horários sem fuso informado não são interpretados automaticamente.</p>}
           {latest && (
             <>
               <div className="hydro-reading">
                 <b>{latest.level.toLocaleString("pt-BR")} cm</b>
-                <span
-                  style={{
-                    color:
-                      delta === null
-                        ? "#64748b"
-                        : delta > 0
-                          ? "#b91c1c"
-                          : delta < 0
-                            ? "#15803d"
-                            : "#475569",
-                  }}
-                >
-                  {delta === null
-                    ? "Variação 24h indisponível"
-                    : `${delta > 0 ? "↑ +" : delta < 0 ? "↓ " : "→ "}${delta.toLocaleString("pt-BR")} cm em aproximadamente 24h`}
-                </span>
+                <span className={`hydro-trend hydro-${analysis.direction}`}>{stale?'Série histórica; tendência atual não confirmada':riverDeltaLabel(analysis.delta24)}</span>
               </div>
+              <dl className="hydro-differences">{[['Leitura anterior',analysis.previous],['Aproximadamente 6h',analysis.delta6],['Aproximadamente 24h',analysis.delta24]].map(([label,value])=><div key={label}><dt>{label}</dt><dd>{riverDeltaLabel(value)}</dd></div>)}</dl>
+              <details className="hydro-method"><summary>Ver detalhes técnicos</summary><p>Valores em centímetros no referencial da estação. Comparações de 6h e 24h usam a leitura mais próxima, com tolerância de até 1h; o intervalo real está indicado. Horários futuros, ambíguos e duplicados conflitantes são descartados. Uma subida não é classificação de risco.</p><p>Descartes: {analysis.ambiguous} horários sem confirmação; {analysis.conflicts} instantes conflitantes.</p></details>
               <p>
                 {stale ? "Leitura desatualizada • " : ""}
                 {fmt(latest.time)}

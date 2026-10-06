@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import { rankMunicipalities } from '../frontend/src/services/municipalRanking.js';
+const now=Date.parse('2026-10-06T12:00:00Z'),date=new Date(now).toISOString();
+const features=[{type:'Feature',properties:{codarea:'1',nome:'Município A'},geometry:{type:'Polygon',coordinates:[[[-49,-11],[-48,-11],[-48,-10],[-49,-10],[-49,-11]]]}}];
+const station={latitude:-10.5,longitude:-48.5,amount:18,statusLeitura:'valida',updatedAt:date,name:'Estação X',fonte:'CEMADEN'};
+const snapshot={rain:{state:'ready',stations:[station,{...station,amount:10,name:'Estação Y'}]},fire:{state:'ready',points:[{latitude:-10.5,longitude:-48.5,detectedAt:date,satellite:'A'},{latitude:-10.5,longitude:-48.5,detectedAt:date,satellite:'A'}],observedAt:date}};
+let rows=rankMunicipalities(snapshot,features,'rain',now);
+assert.equal(rows.length,1);assert.equal(rows[0].value,18);assert.equal(rows[0].code,'1');assert.match(rows[0].reason,/pontual/i);
+assert.equal(rankMunicipalities({...snapshot,rain:{state:'error',stations:[station]}},features,'rain',now).length,0);
+assert.equal(rankMunicipalities({...snapshot,rain:{state:'ready',stations:[{...station,updatedAt:'2020-01-01T00:00:00Z'}]}},features,'rain',now).length,0);
+assert.equal(rankMunicipalities({...snapshot,rain:{state:'ready',stations:[{...station,latitude:null}]}},features,'rain',now).length,0);
+assert.equal(rankMunicipalities(snapshot,features,'fire',now)[0].value,1);
+assert.equal(rankMunicipalities({...snapshot,fire:{...snapshot.fire,state:'error'}},features,'fire',now).length,0);
+console.log('Municipal ranking: spatial attribution, point maximum, freshness, missing data and fire deduplication passed.');

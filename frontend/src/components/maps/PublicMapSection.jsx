@@ -41,6 +41,7 @@ import {
 
 import { mapThemes as priorityLayers, mapAnchors as priorityLayerAnchors, themeByHash as priorityLayersByHash } from '../../data/mapThemes.js';
 import { MapAlertsPanel } from './MapAlertsPanel';
+import { MunicipalityRanking } from './MunicipalityRanking';
 const droughtLayers = ["Severidade da seca", "SE/ECP - S2ID", "Focos de calor"];
 
 function formatNumber(value, suffix = "") {
@@ -267,6 +268,7 @@ export function PublicMapSection({
   emergencySummary = null,
   droughtSummary = null,
   alertsSummary = null,
+  riverSummary = null,
 }) {
   const [tocantinsBoundary, setTocantinsBoundary] = useState(null);
   const [municipalBoundary, setMunicipalBoundary] = useState(null);
@@ -1134,6 +1136,7 @@ export function PublicMapSection({
       {variant === "priority" && (
         <>
           <span id="area-queimada" aria-hidden="true" />
+          <MunicipalityRanking features={municipalBoundary?.features || []} snapshot={{rain:rainSummary,fire:fireSummary,rivers:riverSummary,drought:droughtSummary}} onSelect={(feature,theme)=>{if(feature){navigateTheme(theme);selectMunicipality(feature);}}} />
           <LayerSelector
             layers={priorityLayers}
             anchors={priorityLayerAnchors}

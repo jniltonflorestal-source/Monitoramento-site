@@ -1,5 +1,6 @@
 import { nonNegativeValue } from './dataQuality.js';
 import { mapAnchors } from '../data/mapThemes.js';
+import { riverDeltaLabel } from './hydrologyMetrics.js';
 
 const absent = 'Não disponível';
 const number = value => nonNegativeValue(value);
@@ -53,7 +54,8 @@ export function buildStateDashboard(snapshot) {
     const rank={'Grande Perigo':3,'Perigo':2,'Perigo Potencial':1};
     const details=snapshot.alerts.details || [];
     const severity=[...details].sort((a,b)=>(rank[b.severity]||0)-(rank[a.severity]||0))[0]?.severity;
-    alerts.facts=[{label:'Severidade informada',value:severity || 'Consultar órgão emissor'},{label:'Abrangência',value:details.length?'Ver municípios no aviso':'Consultar fonte oficial'}];
+    const mainDetail=[...details].sort((a,b)=>(rank[b.severity]||0)-(rank[a.severity]||0))[0];
+    alerts.facts=[{label:'Severidade informada',value:severity || 'Consultar órgão emissor'},{label:'Abrangência',value:details.length?'Ver municípios no aviso':'Consultar fonte oficial'},...(mainDetail?.period?[{label:'Vigência informada',value:mainDetail.period}]:[])];
     alerts.tone=severity==='Grande Perigo'?'emergency':a+b>0?'alert':'empty';
   }
   const rain=base('rain','Chuva observada · 24h',snapshot.rain);
@@ -72,6 +74,13 @@ export function buildStateDashboard(snapshot) {
     rivers.statusLabel='Cadastro';
   }
   rivers.facts=[{label:'Subidas / reduções',value:'Sem consolidação'},{label:'Maior variação',value:'Consultar estação'}];
+  const hydro=snapshot.rivers?.hydrology;
+  if(hydro?.total) {
+    rivers.statusLabel=hydro.valid?'Leituras parciais':'Sem leitura atual';
+    rivers.description=`${hydro.valid} com leitura recente entre ${hydro.total} estações consultadas. Cadastro: ${snapshot.rivers.stations?.length || hydro.total}.`;
+    const greatest=hydro.rows.filter(row=>row.status==='ok'&&row.analysis.quality==='current'&&row.analysis.delta24).sort((a,b)=>Math.abs(b.analysis.delta24.value)-Math.abs(a.analysis.delta24.value))[0];
+    rivers.facts=[{label:'Subidas / reduções · ~24h',value:`${hydro.rising ?? 'Não disponível'} / ${hydro.falling ?? 'Não disponível'}`},{label:'Atrasadas / indisponíveis',value:`${hydro.stale} / ${hydro.unavailable}`},{label:'Maior variação disponível',value:greatest?`${greatest.name}: ${riverDeltaLabel(greatest.analysis.delta24)}`:'Sem comparação válida'}];
+  }
   const fire=base('fire','Focos de calor',snapshot.fire);
   if(snapshot.fire?.state==='ready') {
     fire.description='Detecções do arquivo diário INPE disponível; não é uma janela móvel de 24h.';

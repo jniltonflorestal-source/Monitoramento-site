@@ -34,11 +34,15 @@ jobs:
       - name: Atualizar historico de focos do INPE
         run: python scripts/update-fire-history.py
 
+      - name: Atualizar resumo dos rios da ANA
+        timeout-minutes: 5
+        run: python scripts/update-river-summary.py
+
       - name: Publicar alteracoes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dados-monitoramento.json data/fire-history.json
+          git add dados-monitoramento.json data/fire-history.json data/river-summary.json
           git diff --cached --quiet || git commit -m "Atualizar dados automaticos de monitoramento"
           git push
 
