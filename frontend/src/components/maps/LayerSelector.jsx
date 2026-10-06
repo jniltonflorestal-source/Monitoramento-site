@@ -8,6 +8,7 @@ import {
   Maximize2,
   MapPinned,
   Sun,
+  BellRing,
 } from "lucide-react";
 
 const layerIcons = {
@@ -18,6 +19,7 @@ const layerIcons = {
   rivers: Waves,
   fire: Flame,
   emergency: Building2,
+  alerts: BellRing,
 };
 
 export function LayerSelector({

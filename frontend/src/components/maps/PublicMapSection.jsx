@@ -39,29 +39,8 @@ import {
   useWeatherLayers,
 } from "./WeatherLayers";
 
-const priorityLayers = [
-  { id: "overview", label: "Visão geral" },
-  { id: "rivers", label: "Rios" },
-  { id: "rain", label: "Chuva e clima" },
-  { id: "fire", label: "Focos de calor e áreas queimadas" },
-  { id: "drought", label: "Seca" },
-  { id: "emergency", label: "SE/ECP", title: "Situação de Emergência / Estado de Calamidade Pública" },
-];
-const priorityLayerAnchors = {
-  overview: "visao-geral-mapa",
-  drought: "seca",
-  rain: "chuva",
-  rivers: "rios",
-  fire: "fogo",
-  burned: "area-queimada",
-  emergency: "emergencia-calamidade",
-};
-const priorityLayersByHash = Object.fromEntries(
-  Object.entries(priorityLayerAnchors).map(([layer, anchor]) => [
-    `#${anchor}`,
-    layer,
-  ]),
-);
+import { mapThemes as priorityLayers, mapAnchors as priorityLayerAnchors, themeByHash as priorityLayersByHash } from '../../data/mapThemes.js';
+import { MapAlertsPanel } from './MapAlertsPanel';
 const droughtLayers = ["Severidade da seca", "SE/ECP - S2ID", "Focos de calor"];
 
 function formatNumber(value, suffix = "") {
@@ -146,7 +125,7 @@ function rainStatusText(status) {
 }
 
 function rainSituation(maximum) {
-  if (!Number.isFinite(maximum)) return "Dados em integração";
+  if (!Number.isFinite(maximum)) return "Sem leitura válida";
   if (maximum >= 50) return "Chuva intensa";
   if (maximum >= 30) return "Atenção para chuva";
   if (maximum >= 10) return "Chuva moderada";
@@ -155,11 +134,13 @@ function rainSituation(maximum) {
 }
 
 function buildRainStats(stations, summary) {
-  const sorted = [...stations].sort(
+  const valid = stations.filter(station => Number.isFinite(station.amount) && station.amount >= 0 && (!station.statusLeitura || station.statusLeitura === 'valida'));
+  const sorted = [...valid].sort(
     (a, b) => Number(b.amount || 0) - Number(a.amount || 0),
   );
   const maxStation = sorted[0];
-  const maximum = Number(maxStation?.amount ?? 0);
+  const maximum = maxStation?.amount ?? null;
+  const countAbove = threshold => valid.length ? valid.filter(station => station.amount > threshold).length : 'Não disponível';
   return {
     total: stations.length,
     maximum,
@@ -168,21 +149,17 @@ function buildRainStats(stations, summary) {
       : "Sem estação de destaque",
     sourceBreakdown: summary?.sourceBreakdown || {},
     topSource:
-      Object.entries(summary?.sourceBreakdown || {}).sort(
+      Object.entries(summary?.sourceBreakdown || {}).filter(([, item]) => item.validCount > 0 || item.count > 0).sort(
         (first, second) =>
-          (second[1].count || 0 || second[1].registeredCount || 0) -
-          (first[1].count || 0 || first[1].registeredCount || 0),
-      )[0]?.[0] || "Fonte em integração",
-    withRain: stations.filter((station) => Number(station.amount || 0) > 0)
-      .length,
-    above10: stations.filter((station) => Number(station.amount || 0) >= 10)
-      .length,
-    above30: stations.filter((station) => Number(station.amount || 0) >= 30)
-      .length,
-    above50: stations.filter((station) => Number(station.amount || 0) >= 50)
-      .length,
+          (second[1].validCount || second[1].count || 0) -
+          (first[1].validCount || first[1].count || 0),
+      )[0]?.[0] || "Sem fonte com leitura válida",
+    withRain: countAbove(0),
+    above10: countAbove(10),
+    above30: countAbove(30),
+    above50: countAbove(50),
     situation: rainSituation(maximum),
-    value: summary?.value || formatNumber(maximum, " mm"),
+    value: maximum === null ? 'Sem leitura válida' : formatNumber(maximum, " mm"),
   };
 }
 
@@ -289,6 +266,7 @@ export function PublicMapSection({
   emergencyPoints = [],
   emergencySummary = null,
   droughtSummary = null,
+  alertsSummary = null,
 }) {
   const [tocantinsBoundary, setTocantinsBoundary] = useState(null);
   const [municipalBoundary, setMunicipalBoundary] = useState(null);
@@ -466,15 +444,30 @@ export function PublicMapSection({
     };
   }, [activeLayer, rainMode, forecastState.refreshKey]);
 
+  const currentChangeLayer = useRef(null);
+  currentChangeLayer.current = changeLayer;
   useEffect(() => {
     if (variant !== "priority") return undefined;
     const selectLayerFromHash = () => {
       const layer = priorityLayersByHash[window.location.hash];
-      if (layer) changeLayer(layer);
+      if (layer) { setMunicipality(null); currentChangeLayer.current(layer); }
+    };
+    const navigate = event => {
+      if (!priorityLayerAnchors[event.detail?.theme]) return;
+      setMunicipality(null);
+      currentChangeLayer.current(event.detail.theme);
+      document.getElementById(priorityLayerAnchors[event.detail.theme === 'burned' ? 'fire' : event.detail.theme])?.focus({preventScroll:true});
+      if (event.detail.scroll) document.getElementById('mapa-prioritario')?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
     };
     selectLayerFromHash();
     window.addEventListener("hashchange", selectLayerFromHash);
-    return () => window.removeEventListener("hashchange", selectLayerFromHash);
+    window.addEventListener('popstate', selectLayerFromHash);
+    window.addEventListener('monitoring:theme', navigate);
+    return () => {
+      window.removeEventListener("hashchange", selectLayerFromHash);
+      window.removeEventListener('popstate', selectLayerFromHash);
+      window.removeEventListener('monitoring:theme', navigate);
+    };
     // This effect responds only to external navigation anchors.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [variant]);
@@ -490,6 +483,13 @@ export function PublicMapSection({
     setShowBurnedArea(layer === "burned" || pinned.burned);
     setSearchQuery("");
     setSelectedResult(null);
+  }
+
+  function navigateTheme(layer) {
+    setMunicipality(null);
+    changeLayer(layer);
+    const hash = `#${priorityLayerAnchors[layer]}`;
+    if (window.location.hash !== hash) window.history.pushState(null, '', hash);
   }
 
   function clearSearch() {
@@ -1096,15 +1096,15 @@ export function PublicMapSection({
           <dl className="map-summary">
             <div>
               <dt>Reconhecimentos vigentes</dt>
-              <dd>{emergencySummary?.federal ?? 0}</dd>
+              <dd>{emergencySummary?.state === 'ready' ? emergencySummary.federal ?? 'Não disponível' : 'Não disponível'}</dd>
             </div>
             <div>
               <dt>Situação de Emergência</dt>
-              <dd>{emergencySummary?.se ?? 0}</dd>
+              <dd>{emergencySummary?.state === 'ready' ? emergencySummary.se ?? 'Não disponível' : 'Não disponível'}</dd>
             </div>
             <div>
               <dt>Calamidade Pública</dt>
-              <dd>{emergencySummary?.ecp ?? 0}</dd>
+              <dd>{emergencySummary?.state === 'ready' ? emergencySummary.ecp ?? 'Não disponível' : 'Não disponível'}</dd>
             </div>
           </dl>
           <strong>Fonte integrada: S2ID / SEDEC-MIDR</strong>
@@ -1138,7 +1138,7 @@ export function PublicMapSection({
             layers={priorityLayers}
             anchors={priorityLayerAnchors}
             activeLayer={activeLayer==='burned'?'fire':activeLayer}
-            onSelect={changeLayer}
+            onSelect={navigateTheme}
             onCenter={() => {
               setMunicipality(null);
               setSelectedResult(null);
@@ -1228,7 +1228,7 @@ export function PublicMapSection({
               </label>
             </div>
           </details>
-          {['fire','burned'].includes(activeLayer)&&<div className="fire-subtabs" aria-label="Monitoramento do fogo"><button type="button" aria-pressed={activeLayer==='fire'} onClick={()=>changeLayer('fire')}>Focos de calor</button><button type="button" aria-pressed={activeLayer==='burned'} onClick={()=>changeLayer('burned')}>Áreas queimadas</button></div>}
+          {['fire','burned'].includes(activeLayer)&&<div className="fire-subtabs" aria-label="Monitoramento do fogo"><button type="button" aria-pressed={activeLayer==='fire'} onClick={()=>navigateTheme('fire')}>Focos de calor</button><button type="button" aria-pressed={activeLayer==='burned'} onClick={()=>navigateTheme('burned')}>Áreas queimadas</button></div>}
           {activeLayer === "fire" && (
             <FireControls
               filters={fireFilters}
@@ -1690,7 +1690,7 @@ export function PublicMapSection({
               setShowBurnedArea(true);
             }}
           />
-        ) : variant === 'priority' && activeLayer==='overview' ? <MapOverview rain={rainSummary} fire={fireSummary} drought={droughtSummary} emergency={emergencySummary} stationCount={riverStations.length} onSelect={changeLayer}/> : variant === "priority" ? (
+        ) : variant === 'priority' && activeLayer==='alerts' ? <MapAlertsPanel alerts={alertsSummary} /> : variant === 'priority' && activeLayer==='overview' ? <MapOverview rain={rainSummary} fire={fireSummary} drought={droughtSummary} emergency={emergencySummary} stationCount={riverStations.length} onSelect={navigateTheme}/> : variant === "priority" ? (
           <MapInfoPanel
             activeLayer={activeLayer}
             query={searchQuery}

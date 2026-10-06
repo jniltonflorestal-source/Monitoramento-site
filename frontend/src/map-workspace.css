@@ -12,5 +12,11 @@
 .overview-panel h3,.overview-row-title{display:flex;gap:9px;align-items:center}.overview-panel svg{width:19px;height:19px;flex-shrink:0}
 .overview-rows{display:grid}.overview-rows button{text-align:left;display:grid;gap:8px;background:transparent;border:0;border-bottom:1px solid #d9e3e8;padding:16px 0;color:#23465d;cursor:pointer;font-size:14px;line-height:1.45}
 .overview-rows button:hover{background:#f0f6fa}.overview-rows strong{font-size:20px;color:#103853}.overview-rows small{color:#526877;line-height:1.5}.overview-row-title{font-weight:700}.overview-row-title svg:last-child{margin-left:auto}
-@media(min-width:1100px){.map-section.priority .geo-toolbar .geo-layer-switch{grid-template-columns:repeat(6,minmax(100px,1fr));width:100%;flex-basis:100%}.map-section.priority .geo-toolbar{display:flex;flex-wrap:wrap}}
+@media(min-width:1100px){.map-section.priority .geo-toolbar .geo-layer-switch{grid-template-columns:repeat(7,minmax(90px,1fr));width:100%;flex-basis:100%}.map-section.priority .geo-toolbar{display:flex;flex-wrap:wrap}}
+.map-alerts-panel { padding:20px; background:#fff; color:#193349; overflow-wrap:anywhere; }
+.map-alerts-panel h3 { display:flex; align-items:center; gap:8px; font-size:20px; }
+.map-alerts-panel > strong { display:block; font-size:24px; margin:18px 0; }
+.map-alerts-panel p { font-size:14px; line-height:1.5; }
+.map-alerts-panel article { border-top:1px solid #d6e1ea; padding:12px 0; }
+.map-alerts-panel a { display:flex; align-items:center; gap:8px; font-weight:700; padding:12px 0; }
 @media(max-width:900px){.map-workspace .workspace-grid{grid-template-columns:minmax(0,1fr)}.workspace-width{display:none}.workspace-panel>aside{max-height:none;overflow:visible}.workspace-toolbar{justify-content:flex-start}.fire-subtabs button{flex:1}}

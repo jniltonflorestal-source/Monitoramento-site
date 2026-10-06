@@ -53,6 +53,13 @@ function normalizeAlertDetail(detail) {
 }
 
 export function parseFireIndicator(data, fallback) {
+  const area = data?.area_queimada;
+  const areaQuality = publishedQuality(data, ['area_queimada_mapbiomas'], 48);
+  const burnedArea = nonNegativeValue(area?.area_queimada_ha) === null ? null : {
+    hectares: Number(area.area_queimada_ha), year: area.ano_referencia, period: area.periodo,
+    rasterUrl: area.raster_url, source: area.fonte || 'MapBiomas Monitor do Fogo',
+    updatedAt: areaQuality.observedAt, quality: areaQuality
+  };
   const fireData = data?.focos_calor || {};
   const count = safeCount(fireData?.quantidade24h ?? data?.resumo?.focos_calor_24h);
   const sourceUpdatedAt = fireData?.atualizadoEm || data?.atualizado_em;
@@ -70,6 +77,7 @@ export function parseFireIndicator(data, fallback) {
       quality: { ...quality, status: 'error', message: 'Não foi possível confirmar o arquivo diário do INPE.' },
       observedAt: sourceUpdatedAt,
       points: [],
+      burnedArea,
       updatedAt: formatUpdate(sourceUpdatedAt)
     };
   }
@@ -99,15 +107,7 @@ export function parseFireIndicator(data, fallback) {
         : "Nenhum foco identificado no arquivo diário consultado.",
     source: fireData?.fonte ? `${fireData.fonte} | arquivo diário` : "INPE Queimadas | arquivo diário",
     points: stale ? [] : points,
-    burnedArea: nonNegativeValue(data?.area_queimada?.area_queimada_ha) !== null
-      ? {
-          hectares: Number(data.area_queimada.area_queimada_ha),
-          year: data.area_queimada.ano_referencia,
-          period: data.area_queimada.periodo,
-          rasterUrl: data.area_queimada.raster_url,
-          source: data.area_queimada.fonte
-        }
-      : null,
+    burnedArea,
     updatedAt: formatUpdate(sourceUpdatedAt),
     csvUrl: fireData?.csv_url || null,
     period: fireData?.periodo || "arquivo diário",

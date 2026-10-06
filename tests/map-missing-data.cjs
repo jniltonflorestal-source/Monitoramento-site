@@ -1,0 +1,21 @@
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const assert=require('node:assert/strict');
+(async()=>{const browser=await chromium.launch({channel:'msedge',headless:true});try{
+ const page=await browser.newPage();
+ await page.route('https://**/*',route=>route.abort());
+ await page.route('**/dados-monitoramento.json*',route=>route.fulfill({json:{}}));
+ await page.goto('http://127.0.0.1:4196/Monitoramento-site/',{waitUntil:'domcontentloaded'});
+ await page.getByRole('button',{name:'Consultar novamente',exact:true,includeHidden:true}).waitFor({state:'attached',timeout:55000});
+ await page.locator('.geo-layer-switch [data-layer="rain"]').click();
+ assert.doesNotMatch(await page.locator('.rain-summary-card').innerText(),/Sem chuva relevante/);
+ await page.locator('.geo-layer-switch [data-layer="emergency"]').click();
+ const counts=await page.locator('.workspace-panel .map-summary dd').allTextContents();
+ assert(counts.length>=3);
+ assert(counts.every(value=>value==='Não disponível'));
+ await page.locator('.geo-layer-switch [data-layer="fire"]').click();
+ await page.locator('.fire-subtabs').getByRole('button',{name:'Áreas queimadas',exact:true}).click();
+ assert.equal(new URL(page.url()).hash,'#area-queimada');
+ await page.goBack();
+ await page.waitForFunction(()=>document.querySelector('.fire-subtabs button')?.getAttribute('aria-pressed')==='true');
+ console.log('Empty rain/S2ID remain unknown; fire submode history passed.');
+}finally{await browser.close()}})();

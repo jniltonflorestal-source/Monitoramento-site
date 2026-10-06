@@ -1,33 +1,27 @@
 import { Database, RefreshCw } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import { dataHealthRows } from '../../services/stateDashboard.js';
 import '../../data-health.css';
 
 const formatTime = value => {
   if (!value) return 'Não informado';
+  if (typeof value === 'string' && !/^\d{4}-\d{2}-\d{2}T/.test(value)) return value;
   const time = Date.parse(value);
   return Number.isFinite(time) ? new Date(time).toLocaleString('pt-BR') : value;
 };
 
 export function DataHealthPanel({ snapshot, refreshing, onRefresh }) {
-  const themes = [['alerts', 'Alertas · CEMADEN / INMET'], ['emergency', 'Reconhecimentos · S2ID'], ['rivers', 'Estações de rios · ANA'], ['fire', 'Focos · INPE'], ['drought', 'Seca · CEMADEN']];
-  const rows = themes.map(([key, label]) => {
-    const item = snapshot[key];
-    const quality = item.quality;
-    return {
-      key, label,
-      status: quality?.status === 'catalog' ? 'Cadastro disponível' : quality?.status === 'stale' ? 'Dados desatualizados' : item.state === 'ready' ? 'Dados disponíveis' : refreshing && !snapshot.attemptedAt ? 'Atualizando' : 'Dados indisponíveis',
-      updatedAt: key === 'drought' && /^\d{4}-\d{2}/.test(item.reference || '') ? `${item.reference.slice(5,7)}/${item.reference.slice(0,4)}` : item.observedAt || (key === 'rain' ? item.updatedAt : null),
-      attemptedAt: quality?.attemptedAt || item.attemptedAt || snapshot.attemptedAt,
-      note: quality?.message || item.description,
-      current: item.state === 'ready' && quality?.status !== 'catalog'
-    };
-  });
-  for (const source of ['CEMADEN', 'INMET', 'ANA', 'SEMARH']) {
-    const item = snapshot.rain.sourceBreakdown?.[source];
-    rows.push({ key: `rain-${source}`, label: `Chuva · ${source}`, status: item?.label || (refreshing ? 'Atualizando' : 'Consulta indisponível'), updatedAt: item?.updatedAt, attemptedAt: item?.attemptedAt || snapshot.attemptedAt, current: item?.status === 'ready', note: item ? `${item.registeredCount ?? 'Não informado'} cadastradas; ${item.validCount ?? 'não informado'} com leitura válida; ${item.staleCount ?? 0} desatualizadas. ${item.message || ''}` : 'Consulta não concluída.' });
-  }
-  rows.push({key:'idap',label:'Alertas · IDAP', status:'Fonte em integração', note:'Consulta automática pública não configurada. Confirme no canal oficial.', current:false});
+  const detailsRef = useRef(null);
+  useEffect(() => {
+    const openFromHash = () => { if (window.location.hash === '#qualidade-dados' && detailsRef.current) detailsRef.current.open = true; };
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
+    window.addEventListener('popstate', openFromHash);
+    return () => { window.removeEventListener('hashchange', openFromHash); window.removeEventListener('popstate', openFromHash); };
+  }, []);
+  const rows = dataHealthRows(snapshot, refreshing);
   return <section className="data-health" id="qualidade-dados" aria-label="Qualidade dos dados">
-    <details>
+    <details ref={detailsRef}>
       <summary><Database size={19} aria-hidden="true" /> Qualidade e atualização dos dados <span>{rows.filter(row=>!row.current).length} fontes exigem consulta ou verificação</span></summary>
       <div className="data-health-toolbar">
         <p>Verificação do portal: {formatTime(snapshot.attemptedAt)}. Consulta a cada 5 minutos com a página visível; isso não altera a frequência de publicação das fontes.</p>

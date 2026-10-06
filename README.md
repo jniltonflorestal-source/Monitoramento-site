@@ -142,6 +142,8 @@ Também existe o fluxo auxiliar `scripts/update-boletim-data.js` com o workflow 
 
 ## Mapa operacional
 
+O [dashboard estadual e a navegação contextual](docs/DASHBOARD-ESTADUAL-FASES1-2.md) apresentam oito indicadores e sete temas do mapa. Esta entrega cobre somente as fases 1 e 2 do novo plano; radar, rankings e novas séries permanecem fora do escopo.
+
 A [Fase 2 de qualidade dos dados](docs/FASE2-QUALIDADE-DADOS.md) acrescenta diagnóstico por fonte, atualização controlada, proteção contra dados antigos e distinção entre cadastro e leitura válida. Consulte a política de atualidade e as limitações de chuva ANA antes de interpretar os indicadores.
 
 A [Fase 1 de interface](docs/FASE1-INTERFACE.md) reúne seis temas, submodos de fogo e um painel lateral ajustável. Os controles avançados ficam em Camadas adicionais.

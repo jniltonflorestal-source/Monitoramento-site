@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { cva } from "class-variance-authority";
 import clsx from "clsx";
+import { activateMapLink } from '../../data/mapThemes.js';
 import { statusTone, visibleValue } from "../../utils/status";
 
 const cardVariants = cva("status-card", {
@@ -35,6 +36,8 @@ export function StatusCard({ icon: Icon, title, indicator, children, className }
       aria-label={`${title}: ${indicator.actionLabel}`}
       className={clsx(cardVariants({ tone }), "interactive-card", className)}
       href={indicator.actionHref}
+      onClick={event => activateMapLink(event, indicator.actionHref)}
+      data-indicator={indicator.id}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.24 }}
@@ -42,12 +45,13 @@ export function StatusCard({ icon: Icon, title, indicator, children, className }
       <header>
         <span className="status-icon"><Icon aria-hidden="true" /></span>
         <span>{title}</span>
-        <small className="status-chip">{indicator.quality?.status === 'catalog' ? 'Cadastro' : indicator.quality?.status === 'stale' ? 'Desatualizado' : statusLabels[tone]}</small>
+        <small className="status-chip">{indicator.statusLabel || (indicator.quality?.status === 'catalog' ? 'Cadastro' : indicator.quality?.status === 'stale' ? 'Desatualizado' : statusLabels[tone])}</small>
       </header>
-      <strong>{visibleValue(indicator)}</strong>
+      <strong>{indicator.displayValue ?? visibleValue(indicator)}</strong>
       <p className="card-description">{indicator.description}</p>
+      {indicator.facts?.length > 0 && <dl className="state-card-facts">{indicator.facts.map(fact => <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>}
       <small className="card-source">{sourceLabel}: {indicator.source}</small>
-      {stampLabel && <small className="card-source">{indicator.reference ? 'Referência' : 'Atualização'}: {stampLabel}</small>}
+      {(indicator.stamp || stampLabel) && <small className="card-source">{indicator.reference ? 'Referência' : 'Atualização'}: {indicator.stamp || stampLabel}</small>}
       {children}
       <span className="card-link" aria-hidden="true">
         {indicator.actionLabel}

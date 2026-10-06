@@ -61,6 +61,7 @@ export function SituationDashboard() {
         <PublicMapSection
           rainStations={snapshot.rain.stations}
           rainSummary={snapshot.rain}
+          alertsSummary={snapshot.alerts}
           riverStations={snapshot.rivers.stations || []}
           firePoints={snapshot.fire.points || []}
           fireSummary={snapshot.fire}
