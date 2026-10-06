@@ -449,7 +449,7 @@ export function PublicMapSection({
   useEffect(() => {
     if (variant !== "priority") return undefined;
     const selectLayerFromHash = () => {
-      const layer = priorityLayersByHash[window.location.hash];
+      const layer = window.location.hash ? priorityLayersByHash[window.location.hash] : 'overview';
       if (layer) { setMunicipality(null); currentChangeLayer.current(layer); }
     };
     const navigate = event => {
