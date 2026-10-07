@@ -60,6 +60,13 @@ class CollectorTests(unittest.TestCase):
         self.assertEqual(result['stations'][0]['readings'][0]['dateTime'], raw)
         self.assertEqual(result['status'], 'partial')
 
+    def test_ana_space_timestamp_preserved_without_timezone(self):
+        raw = '2026-10-06 11:00:00'
+        result = self.collect(lambda url, timeout: inventory() if 'HidroInventario?' in url else readings(level='123', date=raw))
+        self.assertEqual(result['stations'][0]['readings'][0]['level'], 123)
+        self.assertEqual(result['stations'][0]['readings'][0]['dateTime'], raw)
+        self.assertEqual(result['stations'][0]['status'], 'unknown')
+
     def test_window_dedup_and_cap(self):
         rows = b''.join(readings(str(i), (NOW - timedelta(minutes=i)).isoformat()) for i in range(220))
         parsed = river.parse_readings(b'<root>' + rows + readings('4', '2020-01-01T00:00:00Z') + b'</root>', NOW)

@@ -1038,7 +1038,7 @@ export function PublicMapSection({
               className={`river-reading trend-${riverReading.trend.direction}`}
             >
               <Waves aria-hidden="true" />
-              <strong>Cota: {formatNumber(riverReading.level, " cm")}</strong>
+              <strong>{riverReading.reportedReading ? 'Nível informado (horário não confirmado)' : 'Cota'}: {formatNumber(riverReading.reportedReading?.level ?? riverReading.level, " cm")}</strong>
               <span className="river-trend">
                 <b aria-hidden="true">{riverReading.trend.arrow}</b>
                 Tendência observada: {riverReading.trend.label}
@@ -1548,8 +1548,8 @@ export function PublicMapSection({
                       riverReading ? (
                         <>
                           <span>
-                            Cota atual:{" "}
-                            {formatNumber(riverReading.level, " cm")}
+                            {riverReading.reportedReading ? 'Nível informado (horário não confirmado)' : 'Cota observada'}:{" "}
+                            {formatNumber(riverReading.reportedReading?.level ?? riverReading.level, " cm")}
                           </span>
                           <span>
                             Tendência: {riverReading.trend.arrow}{" "}

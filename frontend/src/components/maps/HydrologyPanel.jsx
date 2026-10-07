@@ -10,6 +10,7 @@ import {
 } from "recharts";
 import { getAnaStationReading } from "../../services/ana";
 import { analyzeRiverSeries, riverDeltaLabel } from '../../services/hydrologyMetrics.js';
+import { getAnaReportedReading } from '../../services/anaReportedReading.js';
 import '../../hydrology-detail.css';
 
 export function HydrologyPanel({ stations, station, onSelect }) {
@@ -46,6 +47,7 @@ export function HydrologyPanel({ stations, station, onSelect }) {
   }, [station?.code, days, refreshVersion]);
   const analysis=analyzeRiverSeries(result?.readings || []);
   const rows=analysis.readings,latest=analysis.latest,stale=analysis.quality==='stale';
+  const reported = !latest && (result?.reportedReading || getAnaReportedReading(station?.collected?.readings));
   const fmt = (t) =>
     new Date(t).toLocaleString("pt-BR", {
       day: "2-digit",
@@ -112,7 +114,8 @@ export function HydrologyPanel({ stations, station, onSelect }) {
             </p>
           )}
           {state === "empty" && <p>Sem leituras válidas nesse período.</p>}
-          {state === 'ready' && !latest && <p role="status">Não há medições com valor e horário válidos para comparação. Horários sem fuso informado não são interpretados automaticamente.</p>}
+          {reported && <div className="hydro-reading"><b>{reported.level.toLocaleString('pt-BR')} cm</b><span>Nível informado pela ANA</span><small>Horário original: {reported.dateTime}. Fuso e atualidade não confirmados; não utilizado no resumo de tendências.</small></div>}
+          {state === 'ready' && !latest && <p role="status">Sem horário validado para comparação. Consulte o nível informado acima e confirme na fonte oficial antes de uso operacional.</p>}
           {latest && (
             <>
               <div className="hydro-reading">

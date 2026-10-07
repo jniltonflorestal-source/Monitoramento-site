@@ -5,13 +5,13 @@ const assert=require('node:assert/strict');
  page.on('pageerror',error=>errors.push(error.message));
  const readings=[[24,100],[6,112],[1,118],[0,120]].map(([hours,level])=>({dateTime:new Date(now-hours*3600000).toISOString(),level}));
  const station={code:'123',name:'Estação de teste',city:'Palmas',river:'Rio Tocantins',latitude:-10.184,longitude:-48.333,status:'ok',readings,attemptedAt:date};
- let liveCalls=0;
+ let liveCalls=0, unzoned=false;
  await page.route('https://**/*',route=>{
    const url=route.request().url();
    if(url.includes('resources.cemaden.gov.br/dados/311_24.json'))return route.fulfill({contentType:'text/javascript',body:`estacoes(${JSON.stringify([{atualizado:date,estacao:[{uf:'TO',status:0,idtipoestacao:1,codestacao:'1',cidade:'Palmas',nomeestacao:'Estação chuva teste',acumulado:21.5,latitude:-10.184,longitude:-48.333}]}])});`});
    if(url.includes('/estacoes/T'))return route.fulfill({json:[]});
    if(url.includes('HidroInventario'))return route.fulfill({contentType:'text/xml',body:'<root><Table><Codigo>123</Codigo><Nome>Estação de teste</Nome><RioNome>Rio Tocantins</RioNome><nmMunicipio>Palmas</nmMunicipio><Latitude>-10.184</Latitude><Longitude>-48.333</Longitude></Table></root>'});
-   if(url.includes('DadosHidrometeorologicos')){liveCalls++;return route.fulfill({contentType:'text/xml',body:`<root>${readings.map(r=>`<DadosHidrometereologicos><Nivel>${r.level}</Nivel><DataHora>${r.dateTime}</DataHora></DadosHidrometereologicos>`).join('')}</root>`});}
+   if(url.includes('DadosHidrometeorologicos')){liveCalls++;return route.fulfill({contentType:'text/xml',body:`<root>${readings.map(r=>`<DadosHidrometereologicos><Nivel>${r.level}</Nivel><DataHora>${unzoned?r.dateTime.slice(0,19).replace('T',' '):r.dateTime}</DataHora></DadosHidrometereologicos>`).join('')}</root>`});}
    return route.abort();
  });
  await page.route('**/data/river-summary.json*',route=>route.fulfill({json:{source:'ANA / Telemetria',status:'ok',attemptedAt:date,stations:[station]}}));
@@ -37,6 +37,12 @@ const assert=require('node:assert/strict');
  await page.locator('.hydrology-panel').getByRole('button',{name:'7 dias',exact:true}).click();
  await page.waitForFunction(()=>document.querySelector('.hydro-differences')?.textContent.includes('20 cm'));
  await page.locator('.map-workspace').screenshot({path:'tmp/hydrology-next-desktop.png'});
+ unzoned=true;
+ await page.locator('.hydrology-panel').getByRole('button',{name:'30 dias',exact:true}).click();
+ await page.locator('.hydrology-panel').getByText('Nível informado pela ANA',{exact:true}).waitFor();
+ assert.match(await page.locator('.hydrology-panel .hydro-reading').innerText(),/120 cm/);
+ assert.match(await page.locator('.hydrology-panel .hydro-reading').innerText(),/Fuso e atualidade não confirmados/);
+ assert.equal(await page.locator('.hydro-differences').count(),0);
  await page.locator('.ranking-themes').getByRole('button',{name:'Focos de calor',exact:true}).click();
  assert.match(await page.locator('.ranking-content ol').innerText(),/1 foco/);
  await page.locator('.municipality-ranking').screenshot({path:'tmp/ranking-next-desktop.png'});

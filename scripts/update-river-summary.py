@@ -95,7 +95,7 @@ def parse_inventory(payload):
 
 
 def timestamp(raw):
-    if not isinstance(raw, str) or not re.match(r'^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}', raw):
+    if not isinstance(raw, str) or not re.match(r'^\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}:\d{2}', raw):
         raise ValueError('Data ISO invalida')
     return datetime.fromisoformat(raw.replace('Z', '+00:00'))
 

@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {getAnaReportedReading} from '../frontend/src/services/anaReportedReading.js';
+const raw={level:123,dateTime:'2026-10-07 15:00:00'};
+assert.deepEqual(getAnaReportedReading([raw]),raw);
+assert.equal(getAnaReportedReading([raw,{...raw,level:124}]),null);
+assert.equal(getAnaReportedReading([{...raw,dateTime:'2026-02-30 15:00:00'}]),null);
+assert.equal(getAnaReportedReading([{...raw,dateTime:'2026-10-07T15:00:00Z'}]),null);
+assert.equal(getAnaReportedReading([{...raw,level:0}]).level,0);
+assert.equal(getAnaReportedReading([{...raw,level:null}]),null);
+console.log('ANA unzoned readings: raw date retained, zero preserved, conflicts and invalid dates excluded.');

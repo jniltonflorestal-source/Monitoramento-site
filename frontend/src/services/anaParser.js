@@ -1,4 +1,5 @@
 import { analyzeRiverSeries } from './hydrologyMetrics.js';
+import { getAnaReportedReading } from './anaReportedReading.js';
 
 function asNumber(value) {
   if (value === null || value === undefined || String(value).trim() === "") return null;
@@ -55,7 +56,10 @@ export function parseAnaReadings(xmlText) {
 
   const analysis = analyzeRiverSeries(readings);
   const latest = analysis.latest;
-  if (!latest) return null;
+  if (!latest) {
+    const reportedReading = getAnaReportedReading(readings);
+    return reportedReading ? { reportedReading, readings: [], level: null, dateTime: reportedReading.dateTime, unit: 'cm', trend: computeRiverTrend(null,null) } : null;
+  }
   return {
     ...latest,
     readings: analysis.readings,

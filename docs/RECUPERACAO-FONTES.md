@@ -15,6 +15,8 @@ O JSON de produção registrava sucesso de INPE, INMET e MapBiomas, mas erros de
 
 ## Limitações
 
+Em 07/10 foi identificado e corrigido outro erro: `DataHora` da ANA usa espaço entre data e hora, enquanto o coletor exigia `T`. As leituras agora são preservadas com data original. Quando não houver fuso, o nível aparece apenas como informado, com atualidade não confirmada, sem entrar em tendências atuais. Duplicatas conflitantes e datas inválidas continuam excluídas. O catálogo retornou 164 estações; cadastro não equivale a leitura operacional.
+
 ANA continua dependente do serviço legado e/ou acesso institucional à API moderna. Não foram inventadas leituras, cotas ou fusos. SEMARH e IDAP continuam sem integração pública configurada.
 
 A nova [plataforma Alerta Secas](https://alertasecas.cemaden.gov.br/) apresenta API diferente e condições de divulgação que requerem avaliação institucional. A base antiga não será apresentada como seca atual. A migração precisa validar classificação, referência, cobertura municipal e autorização aplicável antes de substituir o contrato antigo.
