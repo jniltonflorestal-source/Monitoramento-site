@@ -1,0 +1,50 @@
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const assert=require('node:assert/strict');
+(async()=>{const browser=await chromium.launch({channel:'msedge',headless:true});try{
+ const page=await browser.newPage({viewport:{width:1500,height:1100}}),errors=[],now=new Date().toISOString();let historyCalls=0;
+ page.on('pageerror',e=>errors.push(e.message));
+ await page.route('https://**/*',route=>{
+   const url=route.request().url();
+   if(url.includes('DadosHidrometeorologicos'))historyCalls++;
+   if(url.includes('resources.cemaden.gov.br/dados/311_24.json'))return route.fulfill({contentType:'text/javascript',body:`estacoes(${JSON.stringify([{atualizado:now,estacao:[{uf:'TO',status:0,idtipoestacao:1,codestacao:'1',cidade:'Palmas',nomeestacao:'Teste',acumulado:12,latitude:-10.184,longitude:-48.333}]}])});`});
+   if(url.includes('/estacoes/T'))return route.fulfill({json:[]});
+   if(url.includes('HidroInventario'))return route.fulfill({contentType:'text/xml',body:'<root><Table><Codigo>123</Codigo><Nome>Teste</Nome><Latitude>-10.184</Latitude><Longitude>-48.333</Longitude></Table></root>'});
+   return route.abort();
+ });
+ await page.route('**/data/river-summary.json*',route=>route.fulfill({json:{status:'error',stations:[],attemptedAt:now}}));
+ await page.route('**/dados-monitoramento.json*',route=>route.fulfill({json:{atualizado_em:now,resumo:{alertas_cemaden_to:0,avisos_inmet_to_hoje:0},focos_calor:{status:'ok',atualizadoEm:now,quantidade24h:1,pontos_24h:[{municipio:'Palmas',latitude:-10.184,longitude:-48.333,data_hora_gmt:now,satelite:'INPE'}]}}}));
+ await page.goto('http://127.0.0.1:4196/Monitoramento-site/',{waitUntil:'domcontentloaded'});
+ await page.getByRole('button',{name:'Consultar novamente',exact:true,includeHidden:true}).waitFor({state:'attached',timeout:55000});
+ assert.equal(await page.locator('.state-situation-controls').count(),0);
+ await page.locator('[data-layer="state"]').click();
+ await page.locator('.state-situation-panel').getByText('139 municípios na malha',{exact:true}).waitFor();
+ assert.equal(await page.locator('.radar-dimensions button').count(),5);
+ assert.equal(await page.locator('.situation-themes button').count(),6);
+ assert.match(await page.locator('.situation-ranking').innerText(),/Palmas/);
+ assert.match(await page.locator('.situation-ranking').innerText(),/Múltiplos fatores/);
+ assert.equal(historyCalls,0,'No hydrology history fetch on state entry');
+ await page.locator('.state-situation-controls').screenshot({path:'tmp/situation-radar-desktop.png'});
+ for(const label of ['Chuva','Hidrologia','Fogo','Seca','Alertas','Visão Integrada']){
+   await page.locator('.situation-themes').getByRole('button',{name:label,exact:true}).click();
+   assert.equal(await page.locator('.state-situation-panel h3').innerText(),label);
+   assert.match(await page.locator('.situation-legend').innerText(),new RegExp(label));
+ }
+ await page.locator('.situation-themes').getByRole('button',{name:'Chuva',exact:true}).click();
+ await page.locator('.map-workspace').screenshot({path:'tmp/situation-map-desktop.png'});
+ await page.locator('.situation-ranking button').first().click();
+ assert.equal(await page.locator('.municipal-panel h3').innerText(),'Palmas');
+ await page.locator('.situation-themes').getByRole('button',{name:'Fogo',exact:true}).click();
+ assert.equal(await page.locator('.municipal-panel').count(),0);
+ await page.setViewportSize({width:390,height:844});
+ await page.locator('.state-situation-controls').screenshot({path:'tmp/situation-mobile.png'});
+ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth),390);
+ await page.locator('[data-layer="rain"]').click();
+ assert.equal(await page.locator('.state-situation-controls').count(),0);
+ await page.goBack();
+ await page.locator('.state-situation-controls').waitFor();
+ await page.locator('.situation-themes button').first().focus();
+ await page.keyboard.press('Enter');
+ assert.equal(await page.locator('.situation-themes button').first().getAttribute('aria-pressed'),'true');
+ assert.deepEqual(errors,[]);
+ console.log('Situation 4A-C: 139 municipalities, six themes, radar, ranking, municipality reuse, mobile, keyboard, history and lazy queries passed.');
+}finally{await browser.close()}})();

@@ -1,5 +1,6 @@
 export const mapThemes = [
   { id:'overview', label:'Visão geral', anchor:'visao-geral-mapa' },
+  { id:'state', label:'Situação Estadual', anchor:'situacao-estadual' },
   { id:'rivers', label:'Rios', anchor:'rios' },
   { id:'rain', label:'Chuva', title:'Chuva observada, previsão e clima', anchor:'chuva' },
   { id:'fire', label:'Fogo', title:'Focos de calor e áreas queimadas', anchor:'fogo' },

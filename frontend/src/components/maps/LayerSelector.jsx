@@ -13,6 +13,7 @@ import {
 
 const layerIcons = {
   overview: MapPinned,
+  state: MapPinned,
   drought: Sun,
   rain: CloudRain,
   burned: Flame,

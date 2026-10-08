@@ -6,7 +6,7 @@ const assert=require('node:assert/strict');
  await page.locator('#mapa-prioritario').scrollIntoViewIfNeeded();
  const theme=n=>page.locator('.geo-layer-switch').getByRole('button',{name:n,exact:true});
  assert.equal(await theme('Visão geral').getAttribute('aria-pressed'),'true');
- assert.equal(await page.locator('.geo-layer-switch button').count(),7);
+ assert.equal(await page.locator('.geo-layer-switch button').count(),8);
  const tops=await page.locator('.geo-layer-switch button').evaluateAll(nodes=>nodes.map(n=>Math.round(n.getBoundingClientRect().top)));
  assert.equal(new Set(tops).size,1,'Desktop themes should share one row');
  assert.equal(await page.locator('.operational-layer-panel').getAttribute('open'),null);

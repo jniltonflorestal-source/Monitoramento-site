@@ -45,6 +45,7 @@ export function MunicipalPanel({
   onClose,
   onLayer,
   onBurned,
+  situationSummary,
 }) {
   useEffect(() => {
     if (window.matchMedia("(max-width: 900px)").matches)
@@ -123,6 +124,7 @@ export function MunicipalPanel({
           <X />
         </button>
       </header>
+      {situationSummary}
       <label className="municipal-period">
         Período de análise
         <select

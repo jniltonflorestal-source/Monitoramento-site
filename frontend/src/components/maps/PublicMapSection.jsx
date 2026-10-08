@@ -42,6 +42,8 @@ import {
 import { mapThemes as priorityLayers, mapAnchors as priorityLayerAnchors, themeByHash as priorityLayersByHash } from '../../data/mapThemes.js';
 import { MapAlertsPanel } from './MapAlertsPanel';
 import { MunicipalityRanking } from './MunicipalityRanking';
+import {buildStateSituation} from '../../services/stateSituation.js';
+import {StateSituationControls, StateSituationLayer, StateSituationLegend, StateSituationPanel, StateMunicipalitySummary} from './StateSituation';
 const droughtLayers = ["Severidade da seca", "SE/ECP - S2ID", "Focos de calor"];
 
 function formatNumber(value, suffix = "") {
@@ -273,6 +275,8 @@ export function PublicMapSection({
   const [tocantinsBoundary, setTocantinsBoundary] = useState(null);
   const [municipalBoundary, setMunicipalBoundary] = useState(null);
   const [activeLayer, setActiveLayer] = useState(variant==='priority'?"overview":"drought");
+  const [stateTheme,setStateTheme]=useState('integrated');
+  const stateModel=useMemo(()=>activeLayer==='state'?buildStateSituation({rain:rainSummary,rivers:riverSummary,fire:fireSummary,drought:droughtSummary,alerts:alertsSummary},municipalBoundary?.features || []):null,[activeLayer,rainSummary,riverSummary,fireSummary,droughtSummary,alertsSummary,municipalBoundary]);
   const [municipality, setMunicipality] = useState(null);
   const [showPrimary, setShowPrimary] = useState(true);
   const renderedLayer = showPrimary ? activeLayer : null;
@@ -1136,7 +1140,7 @@ export function PublicMapSection({
       {variant === "priority" && (
         <>
           <span id="area-queimada" aria-hidden="true" />
-          <MunicipalityRanking features={municipalBoundary?.features || []} snapshot={{rain:rainSummary,fire:fireSummary,rivers:riverSummary,drought:droughtSummary}} onSelect={(feature,theme)=>{if(feature){navigateTheme(theme);selectMunicipality(feature);}}} />
+          {activeLayer!=='state'&&<MunicipalityRanking features={municipalBoundary?.features || []} snapshot={{rain:rainSummary,fire:fireSummary,rivers:riverSummary,drought:droughtSummary}} onSelect={(feature,theme)=>{if(feature){navigateTheme(theme);selectMunicipality(feature);}}} />}
           <LayerSelector
             layers={priorityLayers}
             anchors={priorityLayerAnchors}
@@ -1155,6 +1159,7 @@ export function PublicMapSection({
       {variant === "priority" && activeLayer === "rain" && (
         <RainModeTabs activeMode={rainMode} onChange={setRainMode} />
       )}
+      {variant==='priority'&&activeLayer==='state'&&stateModel&&<StateSituationControls model={stateModel} theme={stateTheme} onChange={theme=>{setStateTheme(theme);setMunicipality(null);}}/>}
       {variant === "priority" && (
         <>
           <div className="municipality-picker">
@@ -1282,7 +1287,7 @@ export function PublicMapSection({
           {activeLayer === "rain" && <WeatherControls model={weatherModel} />}
         </>
       )}
-      {variant === "priority" && !['overview','burned'].includes(activeLayer) && (
+      {variant === "priority" && !['overview','burned','state'].includes(activeLayer) && (
         <div className="mobile-map-search">
           <MapSearchBox
             activeLayer={activeLayer}
@@ -1342,7 +1347,7 @@ export function PublicMapSection({
                   maxZoom={7}
                 />
               )}
-            {tocantinsBoundary && renderedLayer !== "drought" && (
+            {tocantinsBoundary && renderedLayer !== "drought" && renderedLayer !== 'state' && (
               <GeoJSON
                 data={tocantinsBoundary}
                 style={{
@@ -1640,6 +1645,7 @@ export function PublicMapSection({
               selectedResult.layer === renderedLayer && (
                 <SelectedSearchMarker result={selectedResult} />
               )}
+            {renderedLayer==='state'&&municipalBoundary&&stateModel&&<StateSituationLayer boundary={municipalBoundary} model={stateModel} theme={stateTheme} onSelect={selectMunicipality}/>}
             {variant === "priority" && (
               <MunicipalSelection
                 boundary={municipalBoundary}
@@ -1648,7 +1654,8 @@ export function PublicMapSection({
               />
             )}
           </MapContainer>
-          {showPrimary && (
+          {showPrimary && activeLayer==='state' && stateModel && <StateSituationLegend theme={stateTheme} model={stateModel}/>}
+          {showPrimary && activeLayer!=='state' && (
             <FloatingMapLegend activeLayer={activeLayer} rainMode={rainMode} />
           )}
           {activeLayer === "rain" &&
@@ -1669,6 +1676,7 @@ export function PublicMapSection({
         {variant === "priority" && municipality ? (
           <MunicipalPanel
             key={municipality.properties.codarea}
+            situationSummary={stateModel ? <StateMunicipalitySummary row={stateModel.municipalities.find(row=>row.code===String(municipality.properties.codarea))}/> : null}
             feature={municipality}
             rain={allRainStations}
             rivers={riverStations}
@@ -1693,7 +1701,7 @@ export function PublicMapSection({
               setShowBurnedArea(true);
             }}
           />
-        ) : variant === 'priority' && activeLayer==='alerts' ? <MapAlertsPanel alerts={alertsSummary} /> : variant === 'priority' && activeLayer==='overview' ? <MapOverview rain={rainSummary} fire={fireSummary} drought={droughtSummary} emergency={emergencySummary} stationCount={riverStations.length} onSelect={navigateTheme}/> : variant === "priority" ? (
+        ) : variant === 'priority' && activeLayer==='state' && stateModel ? <StateSituationPanel model={stateModel} theme={stateTheme} onSelect={selectMunicipality}/> : variant === 'priority' && activeLayer==='alerts' ? <MapAlertsPanel alerts={alertsSummary} /> : variant === 'priority' && activeLayer==='overview' ? <MapOverview rain={rainSummary} fire={fireSummary} drought={droughtSummary} emergency={emergencySummary} stationCount={riverStations.length} onSelect={navigateTheme}/> : variant === "priority" ? (
           <MapInfoPanel
             activeLayer={activeLayer}
             query={searchQuery}
