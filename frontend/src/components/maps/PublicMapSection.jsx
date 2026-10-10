@@ -45,6 +45,10 @@ import { MunicipalityRanking } from './MunicipalityRanking';
 import {buildStateSituation} from '../../services/stateSituation.js';
 import {StateSituationControls, StateSituationLayer, StateSituationLegend, StateSituationPanel, StateMunicipalitySummary} from './StateSituation';
 import {OperationalMode} from './OperationalMode';
+import {FireTimeline} from './FireTimeline';
+import {timelineTime} from './TimelineControl';
+import {firePointsAt} from '../../services/timeline.js';
+import {FirePointMarker} from './FirePointMarker';
 const droughtLayers = ["Severidade da seca", "SE/ECP - S2ID", "Focos de calor"];
 
 function formatNumber(value, suffix = "") {
@@ -316,6 +320,7 @@ export function PublicMapSection({
     city: "",
   });
   const [fireHistory, setFireHistory] = useState(null);
+  const [fireSelection,setFireSelection]=useState(null);
   const [burnedOpacity, setBurnedOpacity] = useState(0.7);
   const [selectedBurnedArea, setSelectedBurnedArea] = useState(null);
   const burnedLayer = selectedBurnedArea || fireSummary?.burnedArea;
@@ -340,11 +345,11 @@ export function PublicMapSection({
   );
   const filteredFires = useMemo(
     () =>
-      filterDetections(availableFires, {
+      fireSelection ? firePointsAt(fireSelection.model,fireSelection.time) : filterDetections(availableFires, {
         ...fireFilters,
         boundary: municipality || tocantinsBoundary,
       }),
-    [availableFires, fireFilters, tocantinsBoundary, municipality],
+    [availableFires, fireFilters, tocantinsBoundary, municipality, fireSelection],
   );
 
   const rainStats = useMemo(
@@ -1080,7 +1085,7 @@ export function PublicMapSection({
           </p>
           <dl className="map-summary">
             <div>
-              <dt>Focos localizados</dt>
+              <dt>{fireSelection?'Focos até o instante selecionado':'Focos localizados'}</dt>
               <dd>{filteredFires.length}</dd>
             </div>
             <div>
@@ -1098,6 +1103,7 @@ export function PublicMapSection({
               </div>
             )}
           </dl>
+          {fireSelection&&<p className="map-message">{fireSelection.model.historical?'Arquivo histórico · ':''}{timelineTime(fireSelection.model.start)} a {timelineTime(fireSelection.time)}. {fireSelection.model.complete?'Janela coberta pelo arquivo.':'Cobertura parcial ou não confirmada.'}</p>}
           <strong>
             <Flame aria-hidden="true" /> Fonte integrada: INPE Queimadas
           </strong>
@@ -1268,8 +1274,10 @@ export function PublicMapSection({
               onToggle={setFireEnabled}
               showBurnedControls={false}
               municipalityName={municipality?.properties.nome}
+              timelineActive={Boolean(fireSelection)}
             />
           )}
+          {activeLayer==='fire'&&<FireTimeline points={availableFires} filters={fireFilters} boundary={municipality||tocantinsBoundary} history={fireHistory} onSelection={setFireSelection}/>}
           {activeLayer === "burned" && (
             <>
               <BurnedAreaControls
@@ -1603,30 +1611,7 @@ export function PublicMapSection({
               (renderedLayer === "fire" || pinned.fire) &&
               fireEnabled &&
               filteredFires.map((point, index) => (
-                <CircleMarker
-                  key={`${point.latitude}-${point.longitude}-${index}`}
-                  center={[point.latitude, point.longitude]}
-                  radius={5}
-                  pathOptions={{
-                    color: "#ba3e24",
-                    fillColor: "#f25922",
-                    fillOpacity: 0.88,
-                    weight: 2,
-                  }}
-                >
-                  <Popup>
-                    <strong>{point.city}</strong>
-                    <br />
-                    Foco detectado por satélite
-                    <br />
-                    {point.satellite || "INPE Queimadas"}{" "}
-                    {point.detectedAt ? `| ${point.detectedAt} UTC` : ""}
-                    <br />
-                    {point.latitude}, {point.longitude}
-                    <br />
-                    Fonte: INPE Queimadas
-                  </Popup>
-                </CircleMarker>
+                <FirePointMarker key={`${point.latitude}-${point.longitude}-${index}`} point={point}/>
               ))}
             <MapBiomasFireOverlay
               active={variant === "priority"}

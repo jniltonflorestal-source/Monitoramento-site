@@ -7,11 +7,14 @@ import {
   YAxis,
   Tooltip,
   ReferenceLine,
+  ReferenceDot,
 } from "recharts";
 import { getAnaStationReading } from "../../services/ana";
 import { analyzeRiverSeries, riverDeltaLabel } from '../../services/hydrologyMetrics.js';
 import { getAnaReportedReading } from '../../services/anaReportedReading.js';
 import '../../hydrology-detail.css';
+import {TimelineControl} from './TimelineControl';
+import {buildRiverTimeline} from '../../services/timeline.js';
 
 export function HydrologyPanel({ stations, station, onSelect }) {
   const [days, setDays] = useState(1),
@@ -20,6 +23,8 @@ export function HydrologyPanel({ stations, station, onSelect }) {
   const [refreshVersion, setRefreshVersion] = useState(0);
   const [limit,setLimit]=useState(6);
   const [listOpen,setListOpen]=useState(false);
+  const [selectedFrame,setSelectedFrame]=useState(null);
+  const frames=useMemo(()=>buildRiverTimeline(result?.readings || [],days),[result,days]);
   const summaries=useMemo(()=>stations.map(item=>({...item,analysis:analyzeRiverSeries(item.collected?.readings || [])})),[stations,refreshVersion]);
   useEffect(() => {
     if (!station) return;
@@ -31,6 +36,7 @@ export function HydrologyPanel({ stations, station, onSelect }) {
     let alive = true;
     setState("loading");
     setResult(null);
+    setSelectedFrame(null);
     getAnaStationReading(station.code, days)
       .then((r) => {
         if (alive) {
@@ -62,6 +68,7 @@ export function HydrologyPanel({ stations, station, onSelect }) {
       <label>
         Estação ANA
         <select
+          aria-label="Estação ANA"
           value={station?.code || ""}
           onChange={(e) =>
             onSelect(stations.find((s) => String(s.code) === e.target.value))
@@ -116,6 +123,7 @@ export function HydrologyPanel({ stations, station, onSelect }) {
           {state === "empty" && <p>Sem leituras válidas nesse período.</p>}
           {reported && <div className="hydro-reading"><b>{reported.level.toLocaleString('pt-BR')} cm</b><span>Nível informado pela ANA</span><small>Horário original: {reported.dateTime}. Fuso e atualidade não confirmados; não utilizado no resumo de tendências.</small></div>}
           {state === 'ready' && !latest && <p role="status">Sem horário validado para comparação. Consulte o nível informado acima e confirme na fonte oficial antes de uso operacional.</p>}
+          {state==='ready'&&<TimelineControl key={`${station.code}:${days}`} title="Evolução do nível do rio" frames={frames} source="ANA / Telemetria" unit="cm" onFrame={setSelectedFrame} note="Leitura no instante selecionado. O resumo da última leitura permanece separado. A reprodução usa apenas valores registrados; horários sem fuso confirmado não entram na reprodução."/>}
           {latest && (
             <>
               <div className="hydro-reading">
@@ -154,6 +162,8 @@ export function HydrologyPanel({ stations, station, onSelect }) {
                       dot={false}
                       isAnimationActive={false}
                     />
+                    {selectedFrame&&<ReferenceLine x={selectedFrame.time} stroke="#cc7b16" strokeDasharray="4 3"/>}
+                    {selectedFrame&&<ReferenceDot x={selectedFrame.time} y={selectedFrame.value} r={5} fill="#cc7b16" stroke="#fff"/>}
                     {(station.thresholds || [])
                       .filter(
                         (t) =>

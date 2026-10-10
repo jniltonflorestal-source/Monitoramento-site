@@ -12,6 +12,7 @@ export function FireControls({
   burnedArea,
   showBurnedControls = true,
   municipalityName,
+  timelineActive = false,
 }) {
   const options = (key) =>
     [...new Set(points.map((p) => p[key]).filter(Boolean))].sort();
@@ -28,6 +29,7 @@ export function FireControls({
       <label>
         Período
         <select
+          aria-label="Período dos focos de calor"
           value={filters.hours}
           onChange={(e) =>
             onChange({ ...filters, hours: Number(e.target.value) })
@@ -84,7 +86,7 @@ export function FireControls({
       <p>
         <strong>
           {count.toLocaleString("pt-BR")}{" "}
-          {count === 1 ? "detecção" : "detecções"} na base disponível
+          {count === 1 ? "detecção" : "detecções"} {timelineActive?'até o instante selecionado':'na base disponível'}
         </strong>{" "}
         • INPE •{" "}
         {updatedAt && Number.isFinite(Date.parse(updatedAt))
