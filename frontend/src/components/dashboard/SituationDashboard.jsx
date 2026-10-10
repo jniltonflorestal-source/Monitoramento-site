@@ -59,6 +59,8 @@ export function SituationDashboard() {
       <OfficialAlertsSection alerts={snapshot.alerts} emergency={snapshot.emergency} />
       <Suspense fallback={<section className="map-loading">Preparando visualização territorial...</section>}>
         <PublicMapSection
+          monitoringSnapshot={snapshot}
+          refreshing={refreshing}
           rainStations={snapshot.rain.stations}
           rainSummary={snapshot.rain}
           alertsSummary={snapshot.alerts}

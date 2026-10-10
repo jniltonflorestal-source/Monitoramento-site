@@ -44,6 +44,7 @@ import { MapAlertsPanel } from './MapAlertsPanel';
 import { MunicipalityRanking } from './MunicipalityRanking';
 import {buildStateSituation} from '../../services/stateSituation.js';
 import {StateSituationControls, StateSituationLayer, StateSituationLegend, StateSituationPanel, StateMunicipalitySummary} from './StateSituation';
+import {OperationalMode} from './OperationalMode';
 const droughtLayers = ["Severidade da seca", "SE/ECP - S2ID", "Focos de calor"];
 
 function formatNumber(value, suffix = "") {
@@ -271,7 +272,11 @@ export function PublicMapSection({
   droughtSummary = null,
   alertsSummary = null,
   riverSummary = null,
+  monitoringSnapshot = {},
+  refreshing = false,
 }) {
+  const [operational,setOperational]=useState(false);
+  const previousTheme=useRef('overview');
   const [tocantinsBoundary, setTocantinsBoundary] = useState(null);
   const [municipalBoundary, setMunicipalBoundary] = useState(null);
   const [activeLayer, setActiveLayer] = useState(variant==='priority'?"overview":"drought");
@@ -496,6 +501,19 @@ export function PublicMapSection({
     changeLayer(layer);
     const hash = `#${priorityLayerAnchors[layer]}`;
     if (window.location.hash !== hash) window.history.pushState(null, '', hash);
+  }
+
+  function toggleOperational() {
+    if(!operational){previousTheme.current=activeLayer;setStateTheme('integrated');}
+    setMunicipality(null);
+    changeLayer(operational?previousTheme.current:'state');
+    setOperational(value=>!value);
+  }
+
+  function selectOperationalTheme(layer) {
+    setMunicipality(null);
+    if(layer==='state')setStateTheme('integrated');
+    changeLayer(layer);
   }
 
   function clearSearch() {
@@ -1123,7 +1141,8 @@ export function PublicMapSection({
   );
 
   return (
-    <section className={`map-section ${variant}`} id={id}>
+    <section className={`map-section ${variant}${operational?' operational-active':''}`} id={id}>
+      {variant==='priority'&&<OperationalMode enabled={operational} onToggle={toggleOperational} onSelect={selectOperationalTheme} activeLayer={activeLayer} snapshot={monitoringSnapshot} refreshing={refreshing}/>}
       <div className="map-heading">
         <div>
           <p className="eyebrow">{eyebrow}</p>

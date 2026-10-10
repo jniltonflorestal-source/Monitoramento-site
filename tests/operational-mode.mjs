@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {nextOperationalTheme,rotationDelay,operationalHealth} from '../frontend/src/services/operationalMode.js';
+assert.equal(nextOperationalTheme('state'),'rivers');
+assert.equal(nextOperationalTheme('drought'),'state');
+assert.equal(nextOperationalTheme('alerts'),'state');
+assert.equal(rotationDelay(15),15000);
+assert.equal(rotationDelay(1),30000);
+assert.equal(rotationDelay(60),60000);
+const health=operationalHealth({});
+assert.equal(health.available,0);
+assert.ok(health.rows.some(r=>r.status==='sem integração'));
+const partial=operationalHealth({alerts:{state:'ready',quality:{status:'stale'}}});
+assert.equal(partial.rows.find(r=>r.key==='alerts').status,'desatualizado');
+assert.equal(partial.rows.find(r=>r.key==='alerts').available,false);
+console.log('Operational mode: sequence, allowed intervals, missing/stale/integration states passed.');

@@ -1,0 +1,26 @@
+.operational-entry{display:flex;justify-content:flex-end;margin-bottom:16px}
+.operational-entry button,.operational-console button,.operational-console select{min-height:44px;border:1px solid #9bb5c5;border-radius:4px;padding:10px 14px;background:#fff;color:#123c55;cursor:pointer;font:inherit}
+.operational-entry button,.operational-toolbar button,.operational-themes button,.operational-status button{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.operational-console svg{width:20px;height:20px;flex-shrink:0}
+.operational-entry :focus-visible,.operational-console :focus-visible{outline:3px solid #db820c;outline-offset:3px}
+.map-section.priority.operational-active{position:fixed;inset:0;z-index:20000;background:#f2f6f8;overflow:auto;width:100%;max-width:none;margin:0;padding:20px 28px;box-sizing:border-box;overscroll-behavior:contain}
+.map-section.priority.operational-active>.map-heading,.map-section.priority.operational-active>.geo-toolbar,.map-section.priority.operational-active>.municipality-picker,.map-section.priority.operational-active>.municipality-ranking,.map-section.priority.operational-active>.state-situation-controls,.map-section.priority.operational-active>.operational-layer-panel{display:none!important}
+.operational-toolbar{display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:3px solid #e69320;padding-bottom:12px;flex-wrap:wrap}
+.operational-brand{display:flex;align-items:center;gap:12px;color:#163b55}.operational-brand strong{display:block;font-size:22px}.operational-brand span{font-size:16px}
+.operational-rotation{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.operational-rotation label{display:flex;align-items:center;gap:8px}.operational-rotation [role=status]{font-size:14px}
+.operational-status{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:12px 0;color:#25475d;font-size:15px}
+.operational-status details{position:relative}.operational-status summary{cursor:pointer;min-height:44px;display:flex;align-items:center;text-decoration:underline}
+.operational-status ul{position:absolute;z-index:1100;top:100%;left:0;width:330px;max-width:85vw;max-height:60vh;overflow:auto;margin:0;padding:16px;list-style:none;background:white;border:1px solid #a7bbc7;box-shadow:0 8px 24px #16384d26}
+.operational-status li{display:grid;gap:4px;border-bottom:1px solid #dde5e9;padding:8px 0}.operational-status button{margin-left:auto;background:#fff5e3;border-color:#d99836}
+.operational-themes{display:flex;gap:8px;flex-wrap:wrap}.operational-themes button[aria-pressed=true]{background:#174761;color:white;border-color:#174761}
+.operational-indicators{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:14px 0}
+.operational-indicators button{display:grid;text-align:left;gap:5px;border-top:4px solid #347d97}.operational-indicators strong{font-size:28px;line-height:1.2}.operational-indicators small{font-size:13px;line-height:1.4;color:#4b6474;overflow-wrap:anywhere}
+.operational-active .workspace-grid{grid-template-columns:minmax(0,1fr) min(440px,32%)}
+.operational-active .workspace-grid.panel-collapsed{grid-template-columns:minmax(0,1fr)}
+.operational-active .workspace-width{display:none}
+.operational-active .map-shell,.operational-active .public-map{height:max(560px,calc(100dvh - 400px));min-height:560px}
+.operational-active .workspace-panel>aside{max-height:max(560px,calc(100dvh - 400px));font-size:17px}
+.operational-active .workspace-panel h3{font-size:24px}.operational-active .situation-ranking button{font-size:17px}
+@media(min-width:2200px){.operational-active .operational-brand strong{font-size:30px}.operational-active .operational-indicators strong{font-size:38px}.operational-active .operational-indicators small{font-size:17px}.operational-active .operational-status{font-size:20px}.operational-active .workspace-grid{grid-template-columns:minmax(0,1fr) 540px}.operational-active .workspace-panel>aside{font-size:20px}}
+@media(max-width:900px){.map-section.priority.operational-active{padding:14px}.operational-toolbar{gap:12px}.operational-brand strong{font-size:18px}.operational-rotation{order:3;width:100%}.operational-rotation label{font-size:14px}.operational-indicators{grid-template-columns:repeat(2,minmax(0,1fr))}.operational-indicators strong{font-size:24px}.operational-active .workspace-grid{grid-template-columns:minmax(0,1fr)}.operational-active .map-shell,.operational-active .public-map{height:60dvh;min-height:420px}.operational-active .workspace-panel>aside{max-height:none}.operational-status{gap:8px}.operational-status button{margin-left:0}.operational-themes button{flex:1 1 110px}}
+@media(prefers-reduced-motion:reduce){.operational-active *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
