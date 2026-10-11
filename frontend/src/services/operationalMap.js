@@ -60,7 +60,7 @@ export async function cachedJson(url, ttl = 900000) {
   return promise;
 }
 
-export async function getWeatherGrid() {
+export async function getWeatherGrid({forceRefresh=false}={}) {
   const positions = [];
   for (let lat = -13; lat <= -5.5; lat += 1.5)
     for (let lon = -50; lon <= -46; lon += 1) positions.push([lat, lon]);
@@ -72,7 +72,7 @@ export async function getWeatherGrid() {
     const results = await Promise.allSettled([0, 5].map(async offset => {
       const batch = positions.slice(start + offset, start + offset + 5);
       const query = new URLSearchParams({latitude:batch.map(p=>p[0]).join(','),longitude:batch.map(p=>p[1]).join(','),hourly,forecast_days:'3',timeformat:'unixtime',timezone:'UTC',models:'gfs_seamless'});
-      const response = await cachedJson(`https://api.open-meteo.com/v1/forecast?${query}`,3600000);
+      const response = await cachedJson(`https://api.open-meteo.com/v1/forecast?${query}`,forceRefresh?0:3600000);
       const values = Array.isArray(response) ? response : [response];
       if(values.length!==batch.length || values.some(p=>!p.hourly?.time?.length))throw new Error('Previsão incompleta');
       return values.map((p,i)=>({...p,requested:batch[i]}));

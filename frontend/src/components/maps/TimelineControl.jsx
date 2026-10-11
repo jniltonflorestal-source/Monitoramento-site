@@ -4,11 +4,15 @@ import '../../timeline.css';
 
 export const timelineTime=time=>Number.isFinite(time)?new Date(time).toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo',dateStyle:'short',timeStyle:'short'}):'Horário não confirmado';
 
-export function TimelineControl({frames,title,source,note,onFrame,unit,updatedAt}) {
-  const [index,setIndex]=useState(Math.max(0,frames.length-1)),[playing,setPlaying]=useState(false);
+export function TimelineControl({frames,title,source,note,onFrame,unit,updatedAt,updatedAtLabel='Atualização',initialIndex,playing:controlledPlaying,onPlayingChange}) {
+  const startIndex=initialIndex===undefined?Math.max(0,frames.length-1):Math.min(Math.max(0,initialIndex),Math.max(0,frames.length-1));
+  const [index,setIndex]=useState(startIndex),[localPlaying,setLocalPlaying]=useState(false);
+  const playing=controlledPlaying??localPlaying;
+  const playCallback=useRef(onPlayingChange);playCallback.current=onPlayingChange;
+  const setPlaying=value=>controlledPlaying===undefined?setLocalPlaying(value):playCallback.current?.(value);
   const callback=useRef(onFrame);callback.current=onFrame;
   const safeIndex=Math.min(index,Math.max(0,frames.length-1)),frame=frames[safeIndex];
-  useEffect(()=>{setPlaying(false);setIndex(Math.max(0,frames.length-1));},[frames]);
+  useEffect(()=>{setPlaying(false);setIndex(startIndex);},[frames]);
   useEffect(()=>callback.current?.(frame||null),[frame]);
   useEffect(()=>{
     const stop=()=>{if(document.hidden)setPlaying(false);};
@@ -32,7 +36,7 @@ export function TimelineControl({frames,title,source,note,onFrame,unit,updatedAt
       <button type="button" title="Próximo instante" aria-label="Próximo instante" disabled={!frame||safeIndex===frames.length-1} onClick={()=>move(safeIndex+1)}><ChevronRight aria-hidden="true"/></button>
     </div>
     <p className="timeline-reading">{frame?<><b>{frame.value.toLocaleString('pt-BR',{maximumFractionDigits:2})} {unit}</b><span> · instante {safeIndex+1} de {frames.length}</span></>:'Dados insuficientes para evolução temporal.'}</p>
-    {frames.length===1&&<small>Há apenas uma leitura. Reprodução indisponível.</small>}
-    <small>{source}{updatedAt?` · Atualização: ${updatedAt}`:''}</small><small>{note}</small>
+    {frames.length===1&&<small>Há apenas um instante válido. Reprodução indisponível.</small>}
+    <small>{source}{updatedAt?` · ${updatedAtLabel}: ${updatedAt}`:''}</small><small>{note}</small>
   </section>;
 }

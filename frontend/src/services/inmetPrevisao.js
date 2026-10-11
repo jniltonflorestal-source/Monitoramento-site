@@ -1,6 +1,8 @@
+import {fetchWithDeadline,finiteValue} from './dataQuality.js';
 const INMET_PREVISAO_URL = "https://apiprevmet3.inmet.gov.br/previsao/";
 const CACHE_PREFIX = "inmet-previsao-to:";
 const CACHE_TTL_MS = 60 * 60 * 1000;
+const requests=new Map();
 
 export const MUNICIPIOS_ESTRATEGICOS_TO = [
   { nome: "Palmas", codigoIbge: "1721000", regiao: "Central", latitude: -10.184, longitude: -48.333 },
@@ -52,17 +54,25 @@ export function hasPrevisaoChuva(previsao) {
 
 function flattenForecast(payload, place, mode) {
   const cityData = payload?.[place.codigoIbge] || payload || {};
-  const dates = Object.keys(cityData).sort((a, b) => {
+  const today=Object.fromEntries(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).filter(part=>part.type!=='literal').map(part=>[part.type,Number(part.value)]));
+  const todayTime=Date.UTC(today.year,today.month-1,today.day);
+  const dates = Object.keys(cityData).filter(key=>{
+    if(!/^\d{2}\/\d{2}\/\d{4}$/.test(key))return false;
+    const [day,month,year]=key.split('/').map(Number),value=new Date(Date.UTC(year,month-1,day));
+    return value.getUTCFullYear()===year&&value.getUTCMonth()===month-1&&value.getUTCDate()===day&&value.getTime()>=todayTime;
+  }).sort((a, b) => {
     const [da, ma, ya] = a.split("/").map(Number);
     const [db, mb, yb] = b.split("/").map(Number);
     return new Date(ya, ma - 1, da) - new Date(yb, mb - 1, db);
   });
-  const dateKey = mode === "forecast48" ? dates[1] || dates[0] : dates[0];
+  const dateKey = mode === "forecast48" ? dates[1] : dates[0];
+  if(!dateKey)throw new Error('Sem previsão para o dia solicitado');
   const day = cityData?.[dateKey] || {};
   const shifts = Object.values(day).filter((item) => item && typeof item === "object");
   const selected = shifts.find((item) => hasPrevisaoChuva(item)) || shifts[0] || {};
-  const minValues = shifts.map((item) => Number(item.temp_min)).filter(Number.isFinite);
-  const maxValues = shifts.map((item) => Number(item.temp_max)).filter(Number.isFinite);
+  const minValues = shifts.map((item) => finiteValue(item.temp_min)).filter(Number.isFinite);
+  const maxValues = shifts.map((item) => finiteValue(item.temp_max)).filter(Number.isFinite);
+  if(!shifts.some(item=>item.resumo||item.tempo||item.condicao||item.descricao)&&!minValues.length&&!maxValues.length)throw new Error('Previsão sem informação utilizável');
   const hasRain = shifts.some(hasPrevisaoChuva);
   const condition = clean(selected.resumo || selected.tempo || selected.condicao);
 
@@ -96,11 +106,10 @@ export async function getPrevisaoMunicipioInmet(codigoIbge, options = {}) {
     const cached = getCache(cacheKey);
     if (cached) return cached;
   }
-  const response = await fetch(`${INMET_PREVISAO_URL}${codigoIbge}`, { cache: "no-store" });
-  if (!response.ok) throw new Error("Previsão INMET indisponível no momento");
-  const payload = await response.json();
-  setCache(cacheKey, payload);
-  return payload;
+  if(requests.has(cacheKey))return requests.get(cacheKey);
+  const request=fetchWithDeadline(`${INMET_PREVISAO_URL}${codigoIbge}`).then(payload=>{setCache(cacheKey,payload);return payload;}).finally(()=>requests.delete(cacheKey));
+  requests.set(cacheKey,request);
+  return request;
 }
 
 export async function getPrevisaoTocantinsInmet(mode = "forecast24", options = {}) {
@@ -132,9 +141,9 @@ export async function getPrevisaoTocantinsInmet(mode = "forecast24", options = {
     rainyCities: rainy.map((point) => point.city),
     errors,
     maximum: rainy[0] || points[0] || null,
-    above10: rainy.length,
-    above30: 0,
-    above50: 0,
+    above10: null,
+    above30: null,
+    above50: null,
     note: rainy.length
       ? "Há município(s) estratégico(s) com condição relacionada à chuva na previsão do INMET."
       : "Não há indicação textual de chuva nos municípios estratégicos consultados."

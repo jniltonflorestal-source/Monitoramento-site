@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import {buildWeatherTimeline,weatherRowsAtTime} from '../frontend/src/services/weatherTimeline.js';
+const now=Date.parse('2026-10-11T12:00:00Z'),t=now/1000;
+const grid={points:[{requested:[-10,-48],hourly:{time:[t-3600,t,t+3600],precipitation:[99,0,2],temperature_2m:[30,31,32]}},{requested:[-11,-49],hourly:{time:[t+3600,t+7200],precipitation:[5,6],temperature_2m:[33,34]}}]};
+const frames=buildWeatherTimeline(grid,'precipitation',now);
+assert.deepEqual(frames.map(frame=>frame.time),[now,now+3600000,now+7200000]);
+assert.equal(frames[0].value,0);
+assert.equal(frames[0].rows.length,1);
+assert.equal(frames[1].value,5);
+assert.equal(frames[1].rows.length,2);
+assert.equal(frames[2].rows.length,1);
+assert.equal(weatherRowsAtTime(grid,t)[0].precipitation,0);
+assert.equal(weatherRowsAtTime(grid,t).length,1,'Different axes must not shift rows to another time');
+assert.equal(buildWeatherTimeline({points:[{requested:[-10,-48],hourly:{time:[t],precipitation:[null]}}]},'precipitation',now).length,0);
+assert.equal(buildWeatherTimeline({points:[{requested:[-10,-48],hourly:{time:[t],precipitation:[-1]}}]},'precipitation',now).length,0);
+assert.equal(buildWeatherTimeline({points:[{requested:[null,-48],hourly:{time:[t],precipitation:[2]}}]},'precipitation',now).length,0);
+assert.equal(buildWeatherTimeline(grid,'temperature_2m',now)[1].value,33);
+console.log('Weather timeline: timestamp alignment, future hours, partial coverage, zero and invalid data passed.');

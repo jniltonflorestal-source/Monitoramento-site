@@ -324,7 +324,7 @@ export function PublicMapSection({
   const [burnedOpacity, setBurnedOpacity] = useState(0.7);
   const [selectedBurnedArea, setSelectedBurnedArea] = useState(null);
   const burnedLayer = selectedBurnedArea || fireSummary?.burnedArea;
-  const weatherModel = useWeatherLayers();
+  const weatherModel = useWeatherLayers(tocantinsBoundary);
   useEffect(() => {
     if (activeLayer !== "fire" && !pinned.fire && !municipality) return;
     let alive = true;
@@ -1182,7 +1182,7 @@ export function PublicMapSection({
         </>
       )}
       {variant === "priority" && activeLayer === "rain" && (
-        <RainModeTabs activeMode={rainMode} onChange={setRainMode} />
+        <RainModeTabs activeMode={rainMode} onChange={mode=>{weatherModel.setPlaying(false);setRainMode(mode);}} />
       )}
       {variant==='priority'&&activeLayer==='state'&&stateModel&&<StateSituationControls model={stateModel} theme={stateTheme} onChange={theme=>{setStateTheme(theme);setMunicipality(null);}}/>}
       {variant === "priority" && (

@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useMap, useMapEvents, CircleMarker, Popup } from "react-leaflet";
-import { Play, Pause, RefreshCw } from "lucide-react";
+import { RefreshCw } from "lucide-react";
 import { booleanPointInPolygon, point } from "@turf/turf";
 import {
   cachedJson,
   getWeatherGrid,
-  weatherAt,
 } from "../../services/operationalMap";
+import {buildWeatherTimeline,weatherRowsAtTime} from '../../services/weatherTimeline.js';
+import {TimelineControl} from './TimelineControl';
 
 export const weatherVariables = {
   wind_speed_10m: ["Vento", "km/h"],
@@ -15,7 +16,7 @@ export const weatherVariables = {
   precipitation: ["Precipitação", "mm/h"],
   cloud_cover: ["Nebulosidade", "%"],
 };
-export function useWeatherLayers() {
+export function useWeatherLayers(boundary) {
   const [grid, setGrid] = useState(null),
     [state, setState] = useState("idle"),
     [hour, setHour] = useState(0),
@@ -24,30 +25,21 @@ export function useWeatherLayers() {
     [wind, setWind] = useState(false);
   const load = async () => {
     setState("loading");
+    setPlaying(false);
     try {
-      const value = await getWeatherGrid();
+      const value = await getWeatherGrid({forceRefresh:Boolean(grid)});
       setGrid(value);
-      setHour(
-        Math.max(
-          0,
-          value.points[0].hourly.time.findIndex((t) => t * 1000 >= Date.now()),
-        ),
-      );
+      setHour(0);
       setState("ready");
       setWind(true);
       setVariables(["wind_speed_10m"]);
     } catch {
       setState("error");
+      setGrid(null);setWind(false);setVariables([]);
     }
   };
-  useEffect(() => {
-    if (!playing || !grid) return;
-    const timer = setInterval(() => {
-      if (!document.hidden)
-        setHour((h) => (h + 1) % grid.points[0].hourly.time.length);
-    }, 1800);
-    return () => clearInterval(timer);
-  }, [playing, grid]);
+  const primary=variables[0]||'wind_speed_10m';
+  const frames=useMemo(()=>grid&&boundary?buildWeatherTimeline(grid,primary,Date.now(),boundary):[],[grid,primary,boundary]);
   return {
     grid,
     state,
@@ -60,11 +52,12 @@ export function useWeatherLayers() {
     wind,
     setWind,
     load,
+    frames,primary,
   };
 }
 export function WeatherControls({ model: m }) {
   return (
-    <details className="operational-weather-controls">
+    <details className="operational-weather-controls" onToggle={event=>{if(!event.currentTarget.open)m.setPlaying(false);}}>
       <summary>Meteorologia • previsão e vento animado</summary>
       <div className="operational-controls">
         <button type="button" disabled={m.state === "loading"} onClick={m.load}>
@@ -102,34 +95,9 @@ export function WeatherControls({ model: m }) {
                 {label}
               </label>
             ))}
-            <div className="weather-timeline">
-              <button
-                type="button"
-                aria-label={
-                  m.playing ? "Pausar previsão" : "Reproduzir previsão"
-                }
-                onClick={() => m.setPlaying((v) => !v)}
-              >
-                {m.playing ? <Pause /> : <Play />}
-              </button>
-              <input
-                aria-label="Hora da previsão"
-                type="range"
-                min="0"
-                max={m.grid.points[0].hourly.time.length - 1}
-                value={m.hour}
-                onChange={(e) => m.setHour(Number(e.target.value))}
-              />
-              <time>
-                {new Date(
-                  m.grid.points[0].hourly.time[m.hour] * 1000,
-                ).toLocaleString("pt-BR")}
-              </time>
-            </div>
+            <TimelineControl frames={m.frames} title={`Previsão horária · ${weatherVariables[m.primary][0]}`} source={m.grid.source} updatedAt={new Date(m.grid.updatedAt).toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo'})} updatedAtLabel="Consulta" unit={weatherVariables[m.primary][1]} initialIndex={0} playing={m.playing} onPlayingChange={m.setPlaying} onFrame={frame=>m.setHour(frame?.index||0)} note={`${m.frames[m.hour]?`Maior valor entre ${m.frames[m.hour].coverage} de ${m.frames[m.hour].total} pontos da grade no Tocantins neste horário.`:'Sem horários futuros com dados válidos para esta variável.'} Previsão de modelo, não medição de estação nem média municipal. Pontos sem valor não são convertidos em zero.`}/>
             <small>
-              {m.grid.source} • Consulta:{" "}
-              {new Date(m.grid.updatedAt).toLocaleString("pt-BR")}. Previsão em
-              grade amostrada, não observação. Partículas ilustram a direção do
+              Partículas ilustram a direção do
               vento; a animação não representa deslocamento em escala real.
             </small>
           </>
@@ -240,9 +208,10 @@ export function WeatherLayers({ model: m, boundary, municipalMode = false }) {
   const [clicked, setClicked] = useState(null);
   const request = useRef(0);
   const rows = useMemo(
-    () => (m.grid ? weatherAt(m.grid, m.hour) : []),
-    [m.grid, m.hour],
+    () => m.frames[m.hour]?.rows||[],
+    [m.frames, m.hour],
   );
+  const clickedRow=useMemo(()=>clicked?.state==='ready'?weatherRowsAtTime({points:[{...clicked.data,requested:[clicked.position.lat,clicked.position.lng]}]},m.frames[m.hour]?.time/1000)[0]:null,[clicked,m.frames,m.hour]);
   useMapEvents({
     click: async (e) => {
       if (municipalMode || !m.grid || !inside(e.latlng.lat, e.latlng.lng, boundary)) return;
@@ -344,21 +313,19 @@ export function WeatherLayers({ model: m, boundary, municipalMode = false }) {
               {Object.entries(weatherVariables).map(([key, [label, unit]]) => (
                 <div key={key}>
                   {label}:{" "}
-                  {clicked.data.hourly?.[key]?.[m.hour] ?? "Indisponível"}{" "}
+                  {clickedRow?.[key] ?? "Indisponível"}{" "}
                   {unit}
                 </div>
               ))}
               <div>
                 Direção:{" "}
-                {clicked.data.hourly?.wind_direction_10m?.[m.hour] ??
+                {clickedRow?.wind_direction_10m ??
                   "Indisponível"}
                 °
               </div>
               <small>
                 Open-Meteo •{" "}
-                {new Date(
-                  clicked.data.hourly.time[m.hour] * 1000,
-                ).toLocaleString("pt-BR")}
+                {clickedRow?new Date(clickedRow.time*1000).toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo'}):'Horário não disponível'}
               </small>
             </>
           )}

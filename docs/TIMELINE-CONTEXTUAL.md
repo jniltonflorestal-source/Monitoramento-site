@@ -4,6 +4,8 @@
 
 Implementada para focos de calor e series hidrologicas existentes. Chuva e previsao permanecem nas ferramentas anteriores; a expansao da timeline para essas fontes depende da cobertura temporal apropriada. Nao ha novas APIs, bibliotecas ou credenciais.
 
+Extensao de 11/10/2026: os controles compartilhados tambem foram integrados a previsao horaria GFS existente, com alinhamento por timestamp e cobertura explicita. Ver TIMELINE-CLIMA.md. Chuva observada e previsao textual INMET continuam produtos distintos, sem animacao sintetica.
+
 ## Focos de calor
 
 No tema Fogo, a area recolhivel Linha do tempo dos focos de calor utiliza o arquivo fire-history.json e as deteccoes ja carregadas. Os filtros existentes de 24h, 48h e 7 dias, satelite e municipio tambem se aplicam a timeline.
