@@ -28,7 +28,7 @@ export function OperationalMode({enabled,onToggle,onSelect,activeLayer,snapshot=
       for(const sibling of child.parentElement.children)if(sibling!==child&&sibling instanceof HTMLElement){siblings.push([sibling,sibling.inert]);sibling.inert=true;}
     }
     exitButton.current?.focus();
-    const escape=event=>{if(event.key==='Escape'){event.preventDefault();callbacks.current.onToggle();}};
+    const escape=event=>{if(event.key==='Escape'&&!document.querySelector('[role="dialog"][aria-modal="true"]')){event.preventDefault();callbacks.current.onToggle();}};
     const interaction=event=>{if(!event.target.closest('.operational-toolbar'))setPlaying(false);};
     document.addEventListener('keydown',escape);
     section.addEventListener('pointerdown',interaction);

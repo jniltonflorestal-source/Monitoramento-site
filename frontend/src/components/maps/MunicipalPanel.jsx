@@ -10,6 +10,7 @@ import { filterDetections, cachedJson } from "../../services/operationalMap";
 const HydrologyPanel = lazy(() =>
   import("./HydrologyPanel").then((m) => ({ default: m.HydrologyPanel })),
 );
+const MunicipalBulletinGenerator=lazy(()=>import('../dashboard/MunicipalBulletinGenerator').then(module=>({default:module.MunicipalBulletinGenerator})));
 const fmt = (v, unit = "") =>
   finiteReading(v) === null
     ? "Dado indisponível"
@@ -46,6 +47,7 @@ export function MunicipalPanel({
   onLayer,
   onBurned,
   situationSummary,
+  snapshot,
 }) {
   useEffect(() => {
     if (window.matchMedia("(max-width: 900px)").matches)
@@ -125,6 +127,7 @@ export function MunicipalPanel({
         </button>
       </header>
       {situationSummary}
+      <Suspense fallback={<p>Preparando gerador municipal...</p>}><MunicipalBulletinGenerator feature={feature} rain={rain} rivers={rivers} firePoints={firePoints} fireHistory={fireHistory} weatherQuery={weather} burnedQuery={burned} snapshot={snapshot} hours={hours} station={station}/></Suspense>
       <label className="municipal-period">
         Período de análise
         <select

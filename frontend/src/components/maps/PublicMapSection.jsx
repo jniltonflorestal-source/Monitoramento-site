@@ -1682,6 +1682,7 @@ export function PublicMapSection({
             key={municipality.properties.codarea}
             situationSummary={stateModel ? <StateMunicipalitySummary row={stateModel.municipalities.find(row=>row.code===String(municipality.properties.codarea))}/> : null}
             feature={municipality}
+            snapshot={monitoringSnapshot}
             rain={allRainStations}
             rivers={riverStations}
             fireHistory={fireHistory}

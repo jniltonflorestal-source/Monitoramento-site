@@ -38,7 +38,7 @@ export async function municipalWeather(feature) {
     longitude,
     models: "gfs_seamless",
     hourly:
-      "temperature_2m,wind_speed_10m,wind_direction_10m,wind_gusts_10m,precipitation",
+      "temperature_2m,relative_humidity_2m,wind_speed_10m,wind_direction_10m,wind_gusts_10m,precipitation",
     forecast_days: "3",
     timeformat: "unixtime",
     timezone: "UTC",

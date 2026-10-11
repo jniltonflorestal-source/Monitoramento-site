@@ -1,0 +1,32 @@
+.municipal-bulletin-action{margin:14px 0}.municipal-bulletin-action>button{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;background:#18556f!important;color:#fff!important;border-radius:4px;border:0;font-weight:700;cursor:pointer;padding:12px}
+.municipal-bulletin-action svg{width:20px;height:20px}.municipal-bulletin-action button:disabled{opacity:.65;cursor:wait}
+.municipal-bulletin-preview{position:fixed;inset:0;z-index:30000;overflow:auto;background:#dce5eb;color:#17364b;font-family:Arial,sans-serif}
+.municipal-document-toolbar{position:sticky;top:0;z-index:2;display:flex;gap:12px;align-items:center;justify-content:flex-end;flex-wrap:wrap;background:#fff;padding:12px 20px;border-bottom:1px solid #adbfca}.municipal-document-toolbar strong{margin-right:auto}.municipal-document-toolbar button{display:flex;gap:8px;align-items:center;min-height:44px;padding:8px 12px;border:1px solid #9fb9c8;border-radius:4px;background:#fff;color:#174761;cursor:pointer;font:inherit}.municipal-document-toolbar svg{width:18px;height:18px}
+.municipal-print-page{max-width:210mm;min-height:297mm;width:100%;margin:20px auto;padding:14mm;box-sizing:border-box;background:#fff;display:flex;flex-direction:column;font-size:11px;line-height:1.5;overflow-wrap:anywhere}
+.municipal-document-header{display:flex;align-items:center;gap:12px;border-bottom:3px solid #e39525;padding-bottom:12px}.municipal-document-header img{width:56px;height:56px;object-fit:contain}.municipal-document-header strong{font-size:17px;display:block}.municipal-document-header span,.municipal-document-header small{display:block}.municipal-document-header>b{margin-left:auto;font-size:18px;max-width:35%;text-align:right}
+.municipal-document-title{margin:18px 0 14px;border-bottom:1px solid #c7d6df;padding-bottom:10px}.municipal-document-title>span{font-weight:700;color:#bc7021}.municipal-document-title h2{font-size:25px;line-height:1.15;margin:5px 0 8px;color:#143b55}
+.municipal-document-content{flex:1}.municipal-document-content h3{font-size:14px;color:#1c5b75;margin:12px 0 8px}.municipal-document-content p{margin:8px 0}.municipal-document-lead{font-size:13px;line-height:1.65}
+.municipal-document-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}.municipal-document-metric{border-top:3px solid #317d94;background:#f0f6f8;padding:12px}.municipal-document-metric>span,.municipal-document-metric>small{display:block}.municipal-document-metric>strong{font-size:23px;display:block;margin:6px 0;line-height:1.2}
+.municipal-document-map-block{margin:10px 0}.municipal-document-map{width:100%;height:220px;display:block}.municipal-document-map-block figcaption{font-size:10px;color:#526b79;line-height:1.4;margin-top:6px}
+.municipal-document-columns{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start;margin:12px 0}.municipal-document-columns .municipal-document-map{height:185px}.municipal-document table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:10px;line-height:1.4;margin:10px 0}.municipal-document th{text-align:left;background:#e8f1f5;border-bottom:2px solid #4c8299;padding:7px}.municipal-document td{vertical-align:top;border-bottom:1px solid #d4e0e7;padding:7px;overflow-wrap:anywhere}.municipal-document-chart{margin:15px 0}.municipal-document-chart svg text{font-size:10px}.municipal-document-empty,.municipal-document-method{padding:12px;background:#f0f5f7;border-left:3px solid #718e9e;font-size:11px}
+.municipal-document-footer{border-top:2px solid #e39525;margin-top:20px;padding:10px 0 0;display:grid;gap:5px;font-size:9px;color:#506675;background:#fff;min-height:0;max-width:none}.municipal-document-footer strong{font-size:11px;color:#174761}.municipal-document-footer small{text-align:right}.municipal-document small{font-size:10px;color:#526b79}
+.municipal-bulletin-action :focus-visible,.municipal-document-toolbar :focus-visible{outline:3px solid #e69325;outline-offset:3px}
+.municipal-document-footer>span{color:#506675}
+@media(max-width:600px){.municipal-print-page{padding:18px;min-height:0;margin:12px auto}.municipal-document-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.municipal-document-columns{grid-template-columns:1fr;gap:8px}.municipal-document-header>b{font-size:16px}.municipal-document-toolbar{padding:10px}.municipal-document-toolbar strong{width:100%}.municipal-document-title h2{font-size:22px}}
+@media print{
+ @page municipal {size:A4;margin:12mm}
+ body.municipal-bulletin-open{overflow:visible!important}
+ body.municipal-bulletin-open>:not(.municipal-bulletin-preview){display:none!important}
+ .municipal-bulletin-preview{position:static!important;overflow:visible!important;background:white!important}
+ .municipal-bulletin-preview,.municipal-bulletin-preview *{visibility:visible!important}
+ .municipal-document-toolbar{display:none!important}
+ .municipal-print-page{page:municipal;width:186mm;max-width:186mm;min-height:270mm;margin:0;padding:0;break-after:page;font-size:11px;box-shadow:none}
+ .municipal-document-chart .recharts-surface{max-width:100%}
+ .municipal-print-page:nth-child(2) .municipal-document-columns .municipal-document-map{height:160px}
+ .municipal-print-page:last-child{break-after:auto}
+ .municipal-document *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .municipal-document-columns{grid-template-columns:1fr 1fr;gap:20px}
+ .municipal-document-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .municipal-document-metric,.municipal-document-map-block,.municipal-document-chart,.municipal-document table tr,.municipal-document-header,.municipal-document-footer{break-inside:avoid}
+ .municipal-document-header>b{font-size:18px}.municipal-document-title h2{font-size:25px}
+}
