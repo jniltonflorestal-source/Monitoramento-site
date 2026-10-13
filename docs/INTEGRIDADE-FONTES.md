@@ -67,6 +67,19 @@ Testes de navegador executados em Microsoft Edge/Playwright: `official-alert-mun
 
 Build Vite/PWA concluído. Nenhuma biblioteca nova. O registro de execução real e a conferência do JSON publicado complementam os testes locais; sucesso do workflow não é tratado como sucesso de todas as APIs.
 
+## Conferência em produção — 13/10/2026
+
+Código publicado no commit `16c2d12764b16b509ff8184b2c39a38f54bcf315`. A [coleta real 38402604923](https://github.com/jniltonflorestal-source/Monitoramento-site/actions/runs/38402604923) concluiu, com JSON atualizado às 13:09:06 UTC (10:09:06 em Brasília).
+
+- INMET: aviso de Baixa Umidade com 23 códigos municipais validados, abrangência completa fornecida para o Tocantins. Confirmado no dashboard, mapa Situação Estadual, ranking e resumo municipal de Almas.
+- MapBiomas: 1.023.369,62 ha de janeiro a agosto de 2026, raster disponível e campo legado do resumo sincronizado. Agosto continua sendo o último mês confirmado pelo serviço.
+- INPE: 125 detecções no arquivo diário `20261013` consultado nesta execução. Esse número pode mudar em novas coletas; não é apresentado como total definitivo do dia.
+- Chuva: CEMADEN manteve 35 leituras; INMET permaneceu com 20 cadastradas e credencial recusada; ANA com 175 cadastradas e janela operacional não validada; SEMARH sem integração configurada.
+- S2ID: o portal retornou HTTP 403 no runner do GitHub. A consulta direta neste computador respondeu e identificou dois municípios, mas esse resultado não foi inserido manualmente no JSON como atualização automática. Os registros antigos não são apresentados como vigentes confirmados. É necessária uma forma de acesso institucional autorizada para estabilizar a coleta no runner.
+- Seca: endpoint legado IIS3 confirmou HTTP 404. O produto anterior permanece histórico, não seca atual.
+
+Teste de navegador com os dados publicados, sem fixtures: oito cards, abrangência municipal, ranking, seleção territorial, resumo municipal, celular sem overflow e nenhum erro crítico de JavaScript. O PDF gerado na verificação possui quatro páginas não vazias, contém o aviso municipal e exclui a barra de ferramentas. Os testes locais também cobrem tablet, teclado, ausência de dados e impressão.
+
 ## Referências
 
 - [Avisos ativos INMET](https://apiprevmet3.inmet.gov.br/avisos/ativos)
