@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {parseAlertIndicator} from '../frontend/src/services/publishedSnapshotParser.js';
+import {buildStateSituation} from '../frontend/src/services/stateSituation.js';
+import {buildStateDashboard} from '../frontend/src/services/stateDashboard.js';
+import {buildMunicipalBulletin} from '../frontend/src/services/municipalBulletin.js';
+const date=new Date().toISOString();
+const feature={type:'Feature',properties:{codarea:'1721000',nome:'Palmas'},geometry:{type:'Polygon',coordinates:[[[-49,-11],[-47,-11],[-47,-9],[-49,-9],[-49,-11]]]}};
+const raw={atualizado_em:date,resumo:{alertas_cemaden_to:0,avisos_inmet_to_hoje:1,avisos_inmet_detalhes:[{title:'Vigente hoje: Chuva',detail:'Perigo | Vigência oficial',location:'Texto resumido',municipalityCodes:['1721000'],municipalityCoverageComplete:true}]}};
+const alerts=parseAlertIndicator(raw,{});
+assert.deepEqual(alerts.details[0].municipalityCodes,['1721000']);
+assert.equal(alerts.details[0].municipalityCoverageComplete,true);
+assert.equal(buildStateSituation({alerts},[feature]).municipalities[0].indicators.alerts.value,1);
+assert.equal(buildStateSituation({alerts},[feature]).municipalities[0].indicators.alerts.source,'INMET');
+assert.match(buildStateDashboard({alerts}).cards[0].facts.find(row=>row.label==='Abrangência').value,/1 município/);
+assert.equal(buildMunicipalBulletin({feature,snapshot:{alerts}}).alerts.count,1);
+console.log('Official alert coverage: source codes preserved in map, dashboard and municipal bulletin passed.');

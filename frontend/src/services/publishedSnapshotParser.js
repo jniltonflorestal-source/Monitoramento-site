@@ -1,4 +1,5 @@
 import { nonNegativeValue, assessFreshness, publishedQuality, unavailableIndicator, FRESHNESS_HOURS, finiteValue } from './dataQuality.js';
+import {officialMunicipalityCodes} from './officialMunicipalityCodes.js';
 
 function formatUpdate(value) {
   if (!value) return null;
@@ -48,6 +49,9 @@ function normalizeAlertDetail(detail) {
     period: formatAlertPeriod(period),
     location: detail?.location || "Municípios não informados na consulta automática.",
     issuer: "INMET",
+    municipalityCodes:officialMunicipalityCodes(detail?.municipalityCodes).codes,
+    municipalityCoverageComplete:detail?.municipalityCoverageComplete===true&&officialMunicipalityCodes(detail?.municipalityCodes).complete,
+    sourceId:detail?.sourceId||null,
     recommendation: preventiveGuidance(title)
   };
 }
@@ -57,7 +61,7 @@ export function parseFireIndicator(data, fallback) {
   const areaQuality = publishedQuality(data, ['area_queimada_mapbiomas'], 48);
   const burnedArea = nonNegativeValue(area?.area_queimada_ha) === null ? null : {
     hectares: Number(area.area_queimada_ha), year: area.ano_referencia, period: area.periodo,
-    rasterUrl: area.raster_url, source: area.fonte || 'MapBiomas Monitor do Fogo',
+    rasterUrl: area.raster_url, rasterStatus:area.raster_status, source: area.fonte || 'MapBiomas Monitor do Fogo',
     updatedAt: areaQuality.observedAt, quality: areaQuality
   };
   const fireData = data?.focos_calor || {};

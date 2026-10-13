@@ -55,7 +55,8 @@ export function buildStateDashboard(snapshot) {
     const details=snapshot.alerts.details || [];
     const severity=[...details].sort((a,b)=>(rank[b.severity]||0)-(rank[a.severity]||0))[0]?.severity;
     const mainDetail=[...details].sort((a,b)=>(rank[b.severity]||0)-(rank[a.severity]||0))[0];
-    alerts.facts=[{label:'Severidade informada',value:severity || 'Consultar órgão emissor'},{label:'Abrangência',value:details.length?'Ver municípios no aviso':'Consultar fonte oficial'},...(mainDetail?.period?[{label:'Vigência informada',value:mainDetail.period}]:[])];
+    const coveredCities=new Set(details.flatMap(detail=>detail.municipalityCodes||[])).size;
+    alerts.facts=[{label:'Severidade informada',value:severity || 'Consultar órgão emissor'},{label:'Abrangência',value:coveredCities?`${coveredCities} município${coveredCities===1?'':'s'} identificado${coveredCities===1?'':'s'}`:details.length?'Ver municípios no aviso':'Consultar fonte oficial'},...(mainDetail?.period?[{label:'Vigência informada',value:mainDetail.period}]:[])];
     alerts.tone=severity==='Grande Perigo'?'emergency':a+b>0?'alert':'empty';
   }
   const rain=base('rain','Chuva observada · 24h',snapshot.rain);

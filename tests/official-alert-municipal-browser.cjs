@@ -1,0 +1,25 @@
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');const assert=require('node:assert/strict');
+(async()=>{const browser=await chromium.launch({channel:'msedge',headless:true});try{
+const page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[],date=new Date().toISOString();
+page.on('pageerror',e=>errors.push(e.message));await page.addInitScript(()=>window.print=()=>{});
+await page.route('https://**/*',route=>route.abort());
+await page.route('**/dados-monitoramento.json*',route=>route.fulfill({json:{atualizado_em:date,resumo:{alertas_cemaden_to:0,avisos_inmet_to_hoje:1,avisos_inmet_detalhes:[{title:'Vigente hoje: Chuva',detail:'Perigo | Vigência oficial',location:'Texto resumido sem nome municipal',municipalityCodes:['1721000'],municipalityCoverageComplete:true}]}}}));
+await page.route('**/data/river-summary.json*',route=>route.fulfill({json:{status:'error',stations:[]}}));
+await page.route('**/data/fire-history.json*',route=>route.fulfill({json:{status:'error',points:[]}}));
+await page.goto('http://127.0.0.1:4196/Monitoramento-site/',{waitUntil:'domcontentloaded'});
+await page.locator('[data-indicator="alerts"]').getByText('1 município identificado',{exact:true}).waitFor();
+await page.locator('[data-layer="state"]').click();
+await page.locator('.situation-themes').getByRole('button',{name:'Alertas',exact:true}).click();
+await page.locator('.situation-ranking').getByText('Palmas',{exact:true}).waitFor();
+assert.match(await page.locator('.situation-ranking').innerText(),/INMET/);
+await page.locator('.situation-ranking button').first().click();
+assert.equal(await page.locator('.municipal-panel h3').innerText(),'Palmas');
+await page.getByRole('button',{name:'Gerar Resumo Municipal',exact:true}).click();
+await page.getByRole('button',{name:'Imprimir / Salvar PDF',exact:true}).waitFor();
+assert.match(await page.locator('.municipal-print-page').last().innerText(),/Chuva · INMET/);
+await page.getByRole('button',{name:'Voltar ao mapa',exact:true}).click();
+await page.setViewportSize({width:390,height:844});
+assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth),390);
+assert.deepEqual(errors,[]);
+console.log('Official municipal alert browser: coded coverage in home, state ranking, municipal PDF and mobile passed.');
+}finally{await browser.close()}})();

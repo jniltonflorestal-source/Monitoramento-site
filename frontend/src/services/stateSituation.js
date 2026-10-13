@@ -50,7 +50,7 @@ export function buildStateSituation(snapshot, features=[], now=Date.now()) {
     const localAlerts=alertDetails.filter(alert=>Array.isArray(alert.municipalityCodes) && alert.municipalityCodes.map(String).includes(code));
     if(localAlerts.length) {
       const highest=Math.max(...localAlerts.map(alert=>severity(alert.severity)));
-      indicators.alerts={id:'alerts',value:localAlerts.length,display:`${localAlerts.length} aviso(s)`,status:highest>=2?'Atenção elevada':highest===1?'Atenção':'Acompanhamento',reason:localAlerts.map(alert=>`${alert.title} · ${alert.severity}`).join('; '),source:snapshot.alerts.source,date:snapshot.alerts.observedAt,period:localAlerts.map(alert=>alert.period).filter(Boolean).join('; '),highest};
+      indicators.alerts={id:'alerts',value:localAlerts.length,display:`${localAlerts.length} aviso(s)`,status:highest>=2?'Atenção elevada':highest===1?'Atenção':'Acompanhamento',reason:localAlerts.map(alert=>`${alert.title} · ${alert.severity}`).join('; '),source:[...new Set(localAlerts.map(alert=>alert.issuer||snapshot.alerts.source))].join(' / '),date:snapshot.alerts.observedAt,period:localAlerts.map(alert=>alert.period).filter(Boolean).join('; '),highest};
     }
     const available=themes.filter(id=>indicators[id].value!==null);
     const factors=available.filter(id=>Math.abs(indicators[id].value)>0);

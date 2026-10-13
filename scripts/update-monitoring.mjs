@@ -1,6 +1,8 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { finiteValue, nonNegativeValue, sumHourlyRain24h, assessFreshness } from '../frontend/src/services/dataQuality.js';
 import { fetchSource } from './source-fetch.mjs';
+import {selectLatestInpeFile,summarizeRecognitions,collectBurnedProduct,applyBurnedProduct} from './source-products.mjs';
+import {officialMunicipalityCodes} from '../frontend/src/services/officialMunicipalityCodes.js';
 
 // The signal also bounds body consumption; credentials remain server-side.
 const fetch = fetchSource;
@@ -109,10 +111,7 @@ async function findLatestInpeCsv() {
   if (!response.ok) throw new Error("Diretorio diario do INPE indisponivel");
 
   const html = await response.text();
-  const files = [...html.matchAll(/focos_diario_br_\d{8}\.csv/g)].map((match) => match[0]);
-  if (!files.length) throw new Error("CSV diario do INPE nao encontrado");
-
-  return `${INPE_DAILY_DIR}${files[files.length - 1]}`;
+  return `${INPE_DAILY_DIR}${selectLatestInpeFile(html)}`;
 }
 
 async function fetchTocantinsFires() {
@@ -169,7 +168,7 @@ async function fetchTocantinsWeatherWarnings() {
 
   const body = await response.json();
   if (!Array.isArray(body.hoje) || !Array.isArray(body.futuro)) throw new Error('Resposta INMET sem listas de avisos válidas');
-  const containsTocantins = (warning) => String(warning.estados || "").split(",").includes("Tocantins");
+  const containsTocantins = (warning) => String(warning.estados || "").split(",").map(name=>name.trim()).includes("Tocantins");
   const today = (body.hoje || []).filter(containsTocantins);
   const future = (body.futuro || []).filter(containsTocantins);
   const severityRank = { "Perigo Potencial": 1, Perigo: 2, "Grande Perigo": 3 };
@@ -177,12 +176,19 @@ async function fetchTocantinsWeatherWarnings() {
     (current, warning) => (severityRank[warning.severidade] || 0) > (severityRank[current] || 0) ? warning.severidade : current,
     "Sem aviso vigente"
   );
+  let allowedCodes=null;
+  try{const base=JSON.parse(await readFile(new URL('../data/tocantins_municipios.geojson',import.meta.url),'utf8'));allowedCodes=new Set(base.features.map(feature=>String(feature.properties.codarea)));}catch{}
   const details = [...today.map((warning) => ({ warning, phase: "Vigente hoje" })), ...future.map((warning) => ({ warning, phase: "Previsto" }))]
-    .map(({ warning, phase }) => ({
+    .map(({ warning, phase }) => {
+      const coverage=allowedCodes?officialMunicipalityCodes(warning.geocodes,allowedCodes):{codes:[],complete:false};
+      return {
       title: `${phase}: ${warning.descricao}`,
       detail: `${warning.severidade} | ${warning.inicio} até ${warning.fim}`,
-      location: tocantinsMunicipalities(warning.municipios)
-    }));
+      location: tocantinsMunicipalities(warning.municipios),
+      municipalityCodes:coverage.codes,
+      municipalityCoverageComplete:coverage.complete,
+      sourceId:warning.id_aviso||warning.id||null
+    };});
 
   return { todayCount: today.length, futureCount: future.length, highest, details };
 }
@@ -496,7 +502,7 @@ async function fetchDroughtMonth(viewparams) {
 
 async function fetchTocantinsDrought() {
   const response = await fetch(CEMADEN_DROUGHT_META_URL);
-  if (!response.ok) throw new Error("Metadados do Alerta-Secas indisponiveis");
+  if (!response.ok) throw new Error(`Metadados do Alerta-Secas indisponíveis (HTTP ${response.status})`);
   const metadata = await response.json();
   const dates = Object.keys(metadata.timesteps || {}).sort().reverse();
   if (dates.length < 2) throw new Error("Serie IIS3 sem referencias suficientes");
@@ -550,15 +556,16 @@ async function fetchTocantinsDrought() {
 
 async function fetchTocantinsS2id() {
   const portalResponse = await fetch(S2ID_PORTAL_URL);
-  if (!portalResponse.ok) throw new Error("Portal S2ID indisponivel");
+  if (!portalResponse.ok) throw new Error(`Portal S2ID indisponível (HTTP ${portalResponse.status})`);
   const portalHtml = await portalResponse.text();
   const token = portalHtml.match(/var token = "([^"]+)"/)?.[1];
   if (!token) throw new Error("Token publico do S2ID nao encontrado");
 
   const headers = { "auth-token": token };
   const response = await fetch(S2ID_RECOGNITIONS_URL, { headers });
-  if (!response.ok) throw new Error("Reconhecimentos do S2ID indisponiveis");
+  if (!response.ok) throw new Error(`Reconhecimentos do S2ID indisponíveis (HTTP ${response.status})`);
   const collection = await response.json();
+  if(!Array.isArray(collection.features))throw new Error('Resposta S2ID sem lista válida de reconhecimentos');
   const features = (collection.features || []).filter((feature) => feature.properties?.uf === "TO");
   const records = await Promise.all(features.map(async (feature) => {
     const protocol = feature.properties.protocolo;
@@ -575,61 +582,20 @@ async function fetchTocantinsS2id() {
       data_decreto: details.dataDecreto || null,
       portaria: details.numeroPortaria || null,
       vigencia: details.vigenciaPortaria || null,
-      latitude: Number(feature.geometry?.coordinates?.[1]),
-      longitude: Number(feature.geometry?.coordinates?.[0])
+      latitude: finiteValue(feature.geometry?.coordinates?.[1]),
+      longitude: finiteValue(feature.geometry?.coordinates?.[0])
     };
   }));
-  const isCalamity = (record) => /calamidade/i.test(record.situacao);
-
   return {
     fonte: "S2ID / SEDEC-MIDR",
     consulta: S2ID_RECOGNITIONS_URL,
     reconhecimentos_vigentes: records,
-    resumo: {
-      se: records.filter((record) => !isCalamity(record)).length,
-      ecp: records.filter(isCalamity).length,
-      federal: records.length
-    }
+    resumo: summarizeRecognitions(records)
   };
-}
-
-function monthName(month) {
-  const names = [
-    "janeiro", "fevereiro", "março", "abril", "maio", "junho",
-    "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
-  ];
-  return names[month - 1] || String(month);
 }
 
 async function fetchTocantinsBurnedArea() {
-  const yearsResponse = await fetch(`${MAPBIOMAS_FIRE_API}/statistics/years`);
-  if (!yearsResponse.ok) throw new Error("Anos do Monitor do Fogo indisponiveis");
-  const years = await yearsResponse.json();
-  const latestYear = Math.max(...years);
-  const monthsResponse = await fetch(`${MAPBIOMAS_FIRE_API}/statistics/${latestYear}/months`);
-  if (!monthsResponse.ok) throw new Error("Meses do Monitor do Fogo indisponiveis");
-  const months = await monthsResponse.json();
-  const latestMonth = Math.max(...months);
-  const query = `year=${latestYear}&monthStart=1&monthEnd=${latestMonth}`;
-  const [areaResponse, rasterResponse] = await Promise.all([
-    fetch(`${MAPBIOMAS_FIRE_API}/statistics/area/state/17/city?${query}`),
-    fetch(`${MAPBIOMAS_FIRE_API}/maps/fire/monthly?territoryType=state&territoryCode=17&${query}`)
-  ]);
-  if (!areaResponse.ok || !rasterResponse.ok) throw new Error("Area queimada do Monitor do Fogo indisponivel");
-  const area = await areaResponse.json();
-  const raster = await rasterResponse.json();
-
-  return {
-    fonte: "MapBiomas Monitor do Fogo",
-    fonte_url: "https://plataforma.monitorfogo.mapbiomas.org/api/docs/",
-    ano_referencia: latestYear,
-    mes_final: latestMonth,
-    periodo: `Janeiro a ${monthName(latestMonth)} de ${latestYear}`,
-    area_queimada_ha: Number(area.areaHa),
-    raster_url: raster.url,
-    unidade: "ha",
-    natureza: "Cicatrizes de área queimada mapeadas pelo Monitor do Fogo."
-  };
+  return collectBurnedProduct(fetch,MAPBIOMAS_FIRE_API);
 }
 
 function buildStatuses(data) {
@@ -748,7 +714,10 @@ await updateAvailableSource("s2id", fetchTocantinsS2id, (s2id) => {
   data.resumo.municipios_s2id_ecp = s2id.resumo.ecp;
 });
 await updateAvailableSource("area_queimada_mapbiomas", fetchTocantinsBurnedArea, (burnedArea) => {
-  data.area_queimada = burnedArea;
+  applyBurnedProduct(data,burnedArea);
+}, () => {
+  // Keep the historical summary consistent without marking a failed query as fresh.
+  applyBurnedProduct(data,data.area_queimada);
 });
 data.atualizado_em = new Date().toISOString();
 data.status = buildStatuses(data);

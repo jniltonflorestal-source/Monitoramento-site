@@ -1,0 +1,51 @@
+import assert from 'node:assert/strict';
+import {createServer} from 'node:http';
+import {selectLatestInpeFile,summarizeRecognitions,collectBurnedProduct,applyBurnedProduct} from '../scripts/source-products.mjs';
+import {fetchSource} from '../scripts/source-fetch.mjs';
+import {officialMunicipalityCodes} from '../frontend/src/services/officialMunicipalityCodes.js';
+const now=Date.parse('2026-10-11T12:00:00Z');
+assert.equal(selectLatestInpeFile('focos_diario_br_20261010.csv focos_diario_br_20261009.csv focos_diario_br_20261012.csv',now),'focos_diario_br_20261010.csv');
+assert.throws(()=>selectLatestInpeFile('focos_diario_br_20261331.csv',now));
+assert.throws(()=>selectLatestInpeFile('focos_diario_br_20261001.csv',now),/antigo/);
+const records=[{geocodigo:'1721000',situacao:'Situação de Emergência (SE)'},{geocodigo:'1721000',situacao:'Situação de Emergência (SE)'},{geocodigo:'1702109',situacao:'Estado de Calamidade Pública (ECP)'}];
+assert.equal(summarizeRecognitions(records).federal,2);
+assert.equal(summarizeRecognitions(records).se,1);
+assert.equal(summarizeRecognitions([...records,{geocodigo:'1700151',situacao:'Reconhecimento federal vigente'}]).se,null);
+assert.equal(summarizeRecognitions([]).federal,0);
+assert.equal(summarizeRecognitions([{}]).federal,null);
+assert.equal(summarizeRecognitions([{geocodigo:'1721000',situacao:'ECP não confirmada'}]).ecp,null);
+const codes=officialMunicipalityCodes('1721000,1702109,1721000,5200050',new Set(['1721000','1702109']));
+assert.deepEqual(codes.codes,['1721000','1702109']);
+assert.equal(codes.complete,true);
+assert.equal(officialMunicipalityCodes('Palmas, 1721000').complete,false);
+let rasterFails=true;
+const fetcher=async url=>new Response(JSON.stringify(url.endsWith('/years')?[2026]:url.endsWith('/months')?[8]:url.includes('/area/')?{areaHa:123.45}:rasterFails?{}:{url:'https://example.test/raster.png'}),{status:url.includes('/maps/')&&rasterFails?503:200});
+const area=await collectBurnedProduct(fetcher,'https://example.test/api',now);
+assert.equal(area.area_queimada_ha,123.45);
+assert.equal(area.raster_url,null);
+const data={resumo:{area_queimada_ano_ha:999}};applyBurnedProduct(data,area);
+assert.equal(data.resumo.area_queimada_ano_ha,123.45);
+assert.equal(data.area_queimada.periodo,'Janeiro a agosto de 2026');
+const retained={area_queimada:area,resumo:{area_queimada_ano_ha:999},qualidade_fontes:{area_queimada_mapbiomas:{status:'erro'}}};
+applyBurnedProduct(retained,retained.area_queimada);
+assert.equal(retained.resumo.area_queimada_ano_ha,123.45);
+assert.equal(retained.qualidade_fontes.area_queimada_mapbiomas.status,'erro');
+applyBurnedProduct(retained,{area_queimada_ha:null});
+assert.equal(retained.area_queimada,area,'An invalid product must not replace the last valid canonical area');
+assert.equal(retained.resumo.area_queimada_ano_ha,123.45);
+const pending=new Set();
+const server=createServer((request,response)=>{
+  const answer=()=>{response.setHeader('Content-Type','application/json');response.end(JSON.stringify(request.url.endsWith('/years')?[2026]:request.url.endsWith('/months')?[8]:request.url.includes('/area/')?{areaHa:123.45}:{url:'https://example.test/raster.png'}));};
+  if(request.url.includes('/maps/')){const timer=setTimeout(()=>{pending.delete(timer);answer();},600);pending.add(timer);}else answer();
+});
+try{
+  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+  const api=`http://127.0.0.1:${server.address().port}`;
+  const product=await collectBurnedProduct(url=>fetchSource(url,{signal:AbortSignal.timeout(200)}),api,now);
+  assert.equal(product.area_queimada_ha,123.45,'Raster timeout must not expire an unconsumed statistics body');
+  assert.equal(product.raster_status,'indisponivel');
+}finally{
+  for(const timer of pending)clearTimeout(timer);
+  server.closeAllConnections();await new Promise(resolve=>server.close(resolve));
+}
+console.log('Source products: actual file order, distinct cities, unknown categories, official codes and independent raster passed.');
