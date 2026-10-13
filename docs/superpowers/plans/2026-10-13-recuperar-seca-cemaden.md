@@ -11,6 +11,8 @@
 - [x] Remover consulta antiga de `scripts/update-monitoring.mjs`; adicionar passo de seca no workflow atual com dependência instalada previamente.
 - [x] Ajustar referência/atualização no parser e completar a legenda existente com seca excepcional e tendência municipal.
 - [x] Executar regressões, teste de navegador card/mapa/município/PDF/mobile e build/PWA.
-- [ ] Publicar apenas código/bundles; executar Actions com dados oficiais; verificar resultado no site.
+- [x] Publicar apenas código/bundles; executar Actions com dados oficiais; verificar resultado no site.
+
+Produção verificada: commit de código 056c4d02dc5af5da61b31dbcaf600c763d49d4cd, coleta 38415230255 concluída, sucesso de seca em 13/10/2026 14:40:16 UTC. JSON público e navegador confirmaram setembro/2026, 139 municípios, 88 com seca, card/mapa/boletim/mobile sem regressão ou erro crítico de JavaScript. S2ID permanece com HTTP 403, independente da seca.
 
 Validações: somente links oficiais HTTPS dentro da área CEMADEN; período do arquivo igual à edição descoberta; 139 códigos únicos e presentes na malha; categoria ausente não é Normal; legenda 1=Excepcional, 2=Extrema, 3=Severa, 4=Moderada, 5=Fraca, 6=Normal. Tendência compara apenas o mês anterior e categorias válidas. Falha preserva último produto, não renova sucesso e nunca publica dados de testes.

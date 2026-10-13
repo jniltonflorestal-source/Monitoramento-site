@@ -60,6 +60,14 @@ node tests/cemaden-drought.mjs
 
 ## Limites
 
+### Verificação publicada
+
+Código publicado no commit `056c4d02dc5af5da61b31dbcaf600c763d49d4cd`. A [coleta no GitHub Actions](https://github.com/jniltonflorestal-source/Monitoramento-site/actions/runs/38415230255) concluiu com sucesso em 13/10/2026; `qualidade_fontes.seca_iis3` registrou OK e último sucesso às 14:40:16 UTC (11:40:16 em Brasília), sem erro de seca no JSON.
+
+Conferência do JSON público confirmou os 139 códigos únicos e a distribuição da tabela acima. Teste de navegador em produção confirmou card, cores municipais no canvas Leaflet, legenda completa, resumo municipal/PDF, celular sem overflow e nenhum erro crítico de JavaScript. Os testes de regressão do dashboard, mapa estadual e boletim também passaram; build Vite/PWA concluído.
+
+### Periodicidade e fontes independentes
+
 O arquivo é mensal e pode conter histórico desde 2021; só a referência publicada é exibida como produto mais recente. O collector consulta a edição publicada, não inventa o mês corrente. Pode haver revisão posterior da fonte, atraso de publicação ou indisponibilidade do gov.br; nesses casos a referência e a qualidade continuam explícitas.
 
 A condição de seca não equivale a decreto ou reconhecimento no S2ID. O erro 403 do S2ID no runner é independente desta correção. Nenhuma credencial nova foi usada ou exposta.
