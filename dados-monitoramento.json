@@ -1,10 +1,10 @@
 {
-  "atualizado_em": "2026-10-13T13:09:06.101Z",
+  "atualizado_em": "2026-10-13T14:40:16Z",
   "resumo": {
     "alertas_cemaden_to": 0,
     "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
     "estacoes_fluviometricas_ana": null,
-    "focos_calor_24h": 125,
+    "focos_calor_24h": 182,
     "area_queimada_ano_ha": 1023369.62,
     "chuva_24h_mm": 0.4,
     "estacoes_operando": 35,
@@ -111,7 +111,7 @@
     {
       "icon": "flame",
       "label": "Focos de calor",
-      "description": "125 focos registrados no arquivo diário do INPE",
+      "description": "182 focos registrados no arquivo diário do INPE",
       "value": "Ativo"
     },
     {
@@ -129,13 +129,13 @@
     "area_queimada": "MapBiomas Fogo / INPE AQ",
     "alertas_geo": "Cemaden",
     "avisos_meteorologicos": "INMET",
-    "seca": "Cemaden / Alerta-Secas - IIS3",
+    "seca": "CEMADEN/MCTI · IIS-3 municipal",
     "s2id": "S2ID / SEDEC-MIDR"
   },
   "automacao": {
     "alertas_cemaden": "automatico_horario",
     "avisos_inmet": "automatico_horario",
-    "seca_iis3": "automatico_mensal_consultado_horariamente",
+    "seca_iis3": "automatico_boletim_mensal_cemaden",
     "s2id": "automatico_portal_publico",
     "focos_calor": "automatico_inpe_diario",
     "chuva": "automatico_cemaden_inmet_ana_com_fallback",
@@ -144,1714 +144,1441 @@
   },
   "seca": {
     "produto": "IIS3",
-    "fonte": "Cemaden / Alerta-Secas - IIS3",
-    "referencia": "2026-05-01T00:00:00",
-    "referencia_anterior": "2026-04-01T00:00:00",
-    "situacao_geral": "Severa",
-    "tendencia": "Agravamento",
+    "fonte": "CEMADEN/MCTI · IIS-3 municipal",
+    "fonte_url": "https://www.gov.br/cemaden/pt-br/assuntos/monitoramento/impactos-seca/monitoramento-de-seca-para-o-brasil/monitoramento-de-secas-e-impactos-no-brasil-2013-setembro-2026",
+    "arquivo_url": "https://www.gov.br/cemaden/pt-br/assuntos/monitoramento/impactos-seca/monitoramento-de-seca-para-o-brasil/monitoramento-de-secas-e-impactos-no-brasil-2013-setembro-2026/IIS_Brasil_2026_09.xlsx",
+    "atualizado_em": "2026-10-13T14:40:16Z",
+    "referencia": "2026-09-01T00:00:00Z",
+    "referencia_anterior": "2026-08-01T00:00:00Z",
+    "situacao_geral": "Moderada",
+    "tendencia": "Melhora",
+    "cobertura_completa": true,
+    "metodo": "Categorias oficiais do IIS-3 publicadas no boletim mensal; não é alerta ou declaração de emergência.",
     "resumo": {
-      "com_seca": 118,
-      "moderada_ou_superior": 60,
-      "severa_ou_extrema": 8,
+      "total_municipios": 139,
+      "com_seca": 88,
+      "sem_seca": 51,
+      "moderada_ou_superior": 12,
+      "severa_ou_extrema": 0,
       "municipios_criticos": [
-        "Aliança do Tocantins",
-        "Cristalândia",
-        "Crixás do Tocantins",
-        "Dueré",
-        "Lagoa da Confusão",
-        "Lajeado",
-        "Miranorte",
-        "Santa Rita do Tocantins"
+        "Dianópolis",
+        "Lagoa do Tocantins",
+        "Lizarda",
+        "Mateiros",
+        "Novo Acordo",
+        "Novo Jardim",
+        "Ponte Alta do Bom Jesus",
+        "Ponte Alta do Tocantins",
+        "Rio da Conceição",
+        "Santa Tereza do Tocantins",
+        "São Félix do Tocantins",
+        "Taguatinga"
       ],
-      "melhoraram": 7,
-      "agravaram": 28,
-      "estaveis": 104
+      "melhoraram": 74,
+      "agravaram": 1,
+      "estaveis": 64,
+      "comparados": 139
     },
     "municipios": [
       {
+        "codigoIbge": "1700251",
         "nome": "Abreulândia",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "ABREULÂNDIA",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1700301",
         "nome": "Aguiarnópolis",
+        "nome_fonte": "AGUIARNÓPOLIS",
         "nivel": 6,
         "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1700350",
         "nome": "Aliança do Tocantins",
-        "nivel": 3,
-        "classe": "Severa",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "ALIANÇA DO TOCANTINS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1700400",
         "nome": "Almas",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "ALMAS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1700707",
         "nome": "Alvorada",
+        "nome_fonte": "ALVORADA",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1701002",
         "nome": "Ananás",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "ANANÁS",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1701051",
         "nome": "Angico",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "ANGICO",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1701101",
         "nome": "Aparecida do Rio Negro",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "APARECIDA DO RIO NEGRO",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1701309",
         "nome": "Aragominas",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "ARAGOMINAS",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1701903",
         "nome": "Araguacema",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "ARAGUACEMA",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1702000",
         "nome": "Araguaçu",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "ARAGUAÇU",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1702109",
         "nome": "Araguaína",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "ARAGUAÍNA",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1702158",
         "nome": "Araguanã",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "ARAGUANÃ",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1702208",
         "nome": "Araguatins",
+        "nome_fonte": "ARAGUATINS",
         "nivel": 6,
         "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1702307",
         "nome": "Arapoema",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "ARAPOEMA",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1702406",
         "nome": "Arraias",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "ARRAIAS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1702554",
         "nome": "Augustinópolis",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "AUGUSTINÓPOLIS",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1702703",
         "nome": "Aurora do Tocantins",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "AURORA DO TOCANTINS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1702901",
         "nome": "Axixá do Tocantins",
+        "nome_fonte": "AXIXÁ DO TOCANTINS",
         "nivel": 6,
         "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1703008",
         "nome": "Babaçulândia",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "BABAÇULÂNDIA",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1703057",
         "nome": "Bandeirantes do Tocantins",
+        "nome_fonte": "BANDEIRANTES DO TOCANTINS",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1703073",
         "nome": "Barra do Ouro",
+        "nome_fonte": "BARRA DO OURO",
         "nivel": 6,
         "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1703107",
         "nome": "Barrolândia",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "BARROLÂNDIA",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1703206",
         "nome": "Bernardo Sayão",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "BERNARDO SAYÃO",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1703305",
         "nome": "Bom Jesus do Tocantins",
+        "nome_fonte": "BOM JESUS DO TOCANTINS",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1703602",
         "nome": "Brasilândia do Tocantins",
+        "nome_fonte": "BRASILÂNDIA DO TOCANTINS",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1703701",
         "nome": "Brejinho de Nazaré",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "BREJINHO DE NAZARÉ",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1703800",
         "nome": "Buriti do Tocantins",
+        "nome_fonte": "BURITI DO TOCANTINS",
         "nivel": 6,
         "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1703826",
         "nome": "Cachoeirinha",
+        "nome_fonte": "CACHOEIRINHA",
         "nivel": 6,
         "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1703842",
         "nome": "Campos Lindos",
+        "nome_fonte": "CAMPOS LINDOS",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1703867",
         "nome": "Cariri do Tocantins",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "CARIRI DO TOCANTINS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1703883",
         "nome": "Carmolândia",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "CARMOLÂNDIA",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1703891",
         "nome": "Carrasco Bonito",
+        "nome_fonte": "CARRASCO BONITO",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Agravamento"
       },
       {
+        "codigoIbge": "1703909",
         "nome": "Caseara",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "CASEARA",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1704105",
         "nome": "Centenário",
-        "nivel": 6,
-        "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "CENTENÁRIO",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1704600",
         "nome": "Chapada de Areia",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "CHAPADA DE AREIA",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1705102",
         "nome": "Chapada da Natividade",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "CHAPADA DA NATIVIDADE",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1705508",
         "nome": "Colinas do Tocantins",
+        "nome_fonte": "COLINAS DO TOCANTINS",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1705557",
         "nome": "Combinado",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "COMBINADO",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1705607",
         "nome": "Conceição do Tocantins",
+        "nome_fonte": "CONCEIÇÃO DO TOCANTINS",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1706001",
         "nome": "Couto Magalhães",
+        "nome_fonte": "COUTO MAGALHÃES",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1706100",
         "nome": "Cristalândia",
-        "nivel": 3,
-        "classe": "Severa",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "CRISTALÂNDIA",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1706258",
         "nome": "Crixás do Tocantins",
-        "nivel": 3,
-        "classe": "Severa",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "CRIXÁS DO TOCANTINS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1706506",
         "nome": "Darcinópolis",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "DARCINÓPOLIS",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1707009",
         "nome": "Dianópolis",
+        "nome_fonte": "DIANÓPOLIS",
         "nivel": 4,
         "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Moderada",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1707108",
         "nome": "Divinópolis do Tocantins",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "DIVINÓPOLIS DO TOCANTINS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1707207",
         "nome": "Dois Irmãos do Tocantins",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "DOIS IRMÃOS DO TOCANTINS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1707306",
         "nome": "Dueré",
-        "nivel": 3,
-        "classe": "Severa",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "DUERÉ",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1707405",
         "nome": "Esperantina",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "ESPERANTINA",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1707553",
         "nome": "Fátima",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "FÁTIMA",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1707652",
         "nome": "Figueirópolis",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "FIGUEIRÓPOLIS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1707702",
         "nome": "Filadélfia",
+        "nome_fonte": "FILADÉLFIA",
         "nivel": 6,
         "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1708205",
         "nome": "Formoso do Araguaia",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "FORMOSO DO ARAGUAIA",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1708254",
         "nome": "Tabocão",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "FORTALEZA DO TABOCÃO",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1708304",
         "nome": "Goianorte",
+        "nome_fonte": "GOIANORTE",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1709005",
         "nome": "Goiatins",
-        "nivel": 6,
-        "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "GOIATINS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1709302",
         "nome": "Guaraí",
+        "nome_fonte": "GUARAÍ",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1709500",
         "nome": "Gurupi",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "GURUPI",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1709807",
         "nome": "Ipueiras",
+        "nome_fonte": "IPUEIRAS",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1710508",
         "nome": "Itacajá",
+        "nome_fonte": "ITACAJÁ",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1710706",
         "nome": "Itaguatins",
+        "nome_fonte": "ITAGUATINS",
         "nivel": 6,
         "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1710904",
         "nome": "Itapiratins",
+        "nome_fonte": "ITAPIRATINS",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1711100",
         "nome": "Itaporã do Tocantins",
+        "nome_fonte": "ITAPORÃ DO TOCANTINS",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1711506",
         "nome": "Jaú do Tocantins",
+        "nome_fonte": "JAÚ DO TOCANTINS",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1711803",
         "nome": "Juarina",
+        "nome_fonte": "JUARINA",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1711902",
         "nome": "Lagoa da Confusão",
-        "nivel": 3,
-        "classe": "Severa",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "LAGOA DA CONFUSÃO",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1711951",
         "nome": "Lagoa do Tocantins",
-        "nivel": 6,
-        "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "LAGOA DO TOCANTINS",
+        "nivel": 4,
+        "classe": "Moderada",
+        "classe_oficial": "Seca Moderada",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1712009",
         "nome": "Lajeado",
-        "nivel": 3,
-        "classe": "Severa",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "LAJEADO",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1712157",
         "nome": "Lavandeira",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "LAVANDEIRA",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1712405",
         "nome": "Lizarda",
-        "nivel": 6,
-        "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "LIZARDA",
+        "nivel": 4,
+        "classe": "Moderada",
+        "classe_oficial": "Seca Moderada",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1712454",
         "nome": "Luzinópolis",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "LUZINÓPOLIS",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1712504",
         "nome": "Marianópolis do Tocantins",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "MARIANÓPOLIS DO TOCANTINS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1712702",
         "nome": "Mateiros",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "MATEIROS",
+        "nivel": 4,
+        "classe": "Moderada",
+        "classe_oficial": "Seca Moderada",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1712801",
         "nome": "Maurilândia do Tocantins",
+        "nome_fonte": "MAURILÂNDIA DO TOCANTINS",
         "nivel": 6,
         "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1713205",
         "nome": "Miracema do Tocantins",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "MIRACEMA DO TOCANTINS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1713304",
         "nome": "Miranorte",
-        "nivel": 3,
-        "classe": "Severa",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "MIRANORTE",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1713601",
         "nome": "Monte do Carmo",
+        "nome_fonte": "MONTE DO CARMO",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1713700",
         "nome": "Monte Santo do Tocantins",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "MONTE SANTO DO TOCANTINS",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1713809",
         "nome": "Palmeiras do Tocantins",
+        "nome_fonte": "PALMEIRAS DO TOCANTINS",
         "nivel": 6,
         "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1713957",
         "nome": "Muricilândia",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "MURICILÂNDIA",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1714203",
         "nome": "Natividade",
+        "nome_fonte": "NATIVIDADE",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1714302",
         "nome": "Nazaré",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "NAZARÉ",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1714880",
         "nome": "Nova Olinda",
+        "nome_fonte": "NOVA OLINDA",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1715002",
         "nome": "Nova Rosalândia",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "NOVA ROSALÂNDIA",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1715101",
         "nome": "Novo Acordo",
-        "nivel": 6,
-        "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "NOVO ACORDO",
+        "nivel": 4,
+        "classe": "Moderada",
+        "classe_oficial": "Seca Moderada",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1715150",
         "nome": "Novo Alegre",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "NOVO ALEGRE",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1715259",
         "nome": "Novo Jardim",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "NOVO JARDIM",
+        "nivel": 4,
+        "classe": "Moderada",
+        "classe_oficial": "Seca Moderada",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1715507",
         "nome": "Oliveira de Fátima",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "OLIVEIRA DE FÁTIMA",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1715705",
         "nome": "Palmeirante",
+        "nome_fonte": "PALMEIRANTE",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1715754",
         "nome": "Palmeirópolis",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "PALMEIRÓPOLIS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1716109",
         "nome": "Paraíso do Tocantins",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "PARAÍSO DO TOCANTINS",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1716208",
         "nome": "Paranã",
+        "nome_fonte": "PARANÃ",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1716307",
         "nome": "Pau D'Arco",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "PAU D'ARCO",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1716505",
         "nome": "Pedro Afonso",
+        "nome_fonte": "PEDRO AFONSO",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1716604",
         "nome": "Peixe",
+        "nome_fonte": "PEIXE",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1716653",
         "nome": "Pequizeiro",
+        "nome_fonte": "PEQUIZEIRO",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1716703",
         "nome": "Colméia",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "COLMÉIA",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1717008",
         "nome": "Pindorama do Tocantins",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "PINDORAMA DO TOCANTINS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1717206",
         "nome": "Piraquê",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "PIRAQUÊ",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1717503",
         "nome": "Pium",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "PIUM",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1717800",
         "nome": "Ponte Alta do Bom Jesus",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "PONTE ALTA DO BOM JESUS",
+        "nivel": 4,
+        "classe": "Moderada",
+        "classe_oficial": "Seca Moderada",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1717909",
         "nome": "Ponte Alta do Tocantins",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "PONTE ALTA DO TOCANTINS",
+        "nivel": 4,
+        "classe": "Moderada",
+        "classe_oficial": "Seca Moderada",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1718006",
         "nome": "Porto Alegre do Tocantins",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "PORTO ALEGRE DO TOCANTINS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1718204",
         "nome": "Porto Nacional",
+        "nome_fonte": "PORTO NACIONAL",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1718303",
         "nome": "Praia Norte",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "PRAIA NORTE",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1718402",
         "nome": "Presidente Kennedy",
+        "nome_fonte": "PRESIDENTE KENNEDY",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1718451",
         "nome": "Pugmil",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "PUGMIL",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1718501",
         "nome": "Recursolândia",
-        "nivel": 6,
-        "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "RECURSOLÂNDIA",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1718550",
         "nome": "Riachinho",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "RIACHINHO",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1718659",
         "nome": "Rio da Conceição",
+        "nome_fonte": "RIO DA CONCEIÇÃO",
         "nivel": 4,
         "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Moderada",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1718709",
         "nome": "Rio dos Bois",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "RIO DOS BOIS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1718758",
         "nome": "Rio Sono",
+        "nome_fonte": "RIO SONO",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1718808",
         "nome": "Sampaio",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "SAMPAIO",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1718840",
         "nome": "Sandolândia",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "SANDOLÂNDIA",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1718865",
         "nome": "Santa Fé do Araguaia",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "SANTA FÉ DO ARAGUAIA",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1718881",
         "nome": "Santa Maria do Tocantins",
+        "nome_fonte": "SANTA MARIA DO TOCANTINS",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1718899",
         "nome": "Santa Rita do Tocantins",
-        "nivel": 3,
-        "classe": "Severa",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "SANTA RITA DO TOCANTINS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1718907",
         "nome": "Santa Rosa do Tocantins",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "SANTA ROSA DO TOCANTINS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1719004",
         "nome": "Santa Tereza do Tocantins",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "SANTA TEREZA DO TOCANTINS",
+        "nivel": 4,
+        "classe": "Moderada",
+        "classe_oficial": "Seca Moderada",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1720002",
         "nome": "Santa Terezinha do Tocantins",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "SANTA TEREZINHA DO TOCANTINS",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1720101",
         "nome": "São Bento do Tocantins",
+        "nome_fonte": "SÃO BENTO DO TOCANTINS",
         "nivel": 6,
         "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1720150",
         "nome": "São Félix do Tocantins",
-        "nivel": 6,
-        "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "SÃO FÉLIX DO TOCANTINS",
+        "nivel": 4,
+        "classe": "Moderada",
+        "classe_oficial": "Seca Moderada",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1720200",
         "nome": "São Miguel do Tocantins",
+        "nome_fonte": "SÃO MIGUEL DO TOCANTINS",
         "nivel": 6,
         "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1720259",
         "nome": "São Salvador do Tocantins",
+        "nome_fonte": "SÃO SALVADOR DO TOCANTINS",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1720309",
         "nome": "São Sebastião do Tocantins",
+        "nome_fonte": "SÃO SEBASTIÃO DO TOCANTINS",
         "nivel": 6,
         "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1720499",
         "nome": "São Valério",
+        "nome_fonte": "SÃO VALÉRIO",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1720655",
         "nome": "Silvanópolis",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "SILVANÓPOLIS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1720804",
         "nome": "Sítio Novo do Tocantins",
+        "nome_fonte": "SÍTIO NOVO DO TOCANTINS",
         "nivel": 6,
         "classe": "Sem seca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1720853",
         "nome": "Sucupira",
+        "nome_fonte": "SUCUPIRA",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1720903",
         "nome": "Taguatinga",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "TAGUATINGA",
+        "nivel": 4,
+        "classe": "Moderada",
+        "classe_oficial": "Seca Moderada",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1720937",
         "nome": "Taipas do Tocantins",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "TAIPAS DO TOCANTINS",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1720978",
         "nome": "Talismã",
+        "nome_fonte": "TALISMÃ",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1721000",
         "nome": "Palmas",
+        "nome_fonte": "PALMAS",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1721109",
         "nome": "Tocantínia",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "TOCANTÍNIA",
+        "nivel": 5,
+        "classe": "Fraca",
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1721208",
         "nome": "Tocantinópolis",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "TOCANTINÓPOLIS",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1721257",
         "nome": "Tupirama",
+        "nome_fonte": "TUPIRAMA",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       },
       {
+        "codigoIbge": "1721307",
         "nome": "Tupiratins",
+        "nome_fonte": "TUPIRATINS",
         "nivel": 5,
         "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "classe_oficial": "Seca Fraca",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1722081",
         "nome": "Wanderlândia",
-        "nivel": 5,
-        "classe": "Fraca",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "WANDERLÂNDIA",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Estabilidade"
       },
       {
+        "codigoIbge": "1722107",
         "nome": "Xambioá",
-        "nivel": 4,
-        "classe": "Moderada",
-        "referencia": "2026-05-01T03:00:00Z",
-        "s2id": {
-          "situacao": "Consultar S2ID",
-          "desastre": null,
-          "cobrade": null,
-          "decreto": null
-        }
+        "nome_fonte": "XAMBIOÁ",
+        "nivel": 6,
+        "classe": "Sem seca",
+        "classe_oficial": "Normal",
+        "referencia": "2026-09-01T00:00:00Z",
+        "tendencia": "Melhora"
       }
-    ],
-    "s2id": {
-      "fonte": "S2ID / SEDEC-MIDR",
-      "vigentes": null,
-      "ultima_base_aberta_identificada": "2022",
-      "status": "Consulta oficial necessária para reconhecimentos vigentes",
-      "url": "https://s2id.mi.gov.br/paginas/series/"
-    }
+    ]
   },
   "focos_calor": {
     "status": "ok",
-    "quantidade24h": 125,
-    "quantidadeMapa": 125,
+    "quantidade24h": 182,
+    "quantidadeMapa": 182,
     "periodo": "Arquivo diario INPE",
     "fonte": "INPE Queimadas",
-    "atualizadoEm": "2026-10-13T13:08:48.932Z",
+    "atualizadoEm": "2026-10-13T14:39:49.462Z",
     "referenciaArquivo": "20261013",
     "csv_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/focos_diario_br_20261013.csv",
     "observacao": "Dados filtrados para o Tocantins a partir do arquivo diario Brasil do INPE Queimadas.",
@@ -2854,6 +2581,462 @@
         "municipio": "CONCEIÇÃO DO TOCANTINS",
         "satelite": "GOES-19",
         "data_hora_gmt": "2026-10-13 12:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8986,
+        "longitude": -47.3195,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3439,
+        "longitude": -47.0112,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3631,
+        "longitude": -47.0085,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8798,
+        "longitude": -47.2997,
+        "municipio": "ALMAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8794,
+        "longitude": -47.322,
+        "municipio": "ALMAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 12:50:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3631,
+        "longitude": -47.0085,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8986,
+        "longitude": -47.3195,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8794,
+        "longitude": -47.322,
+        "municipio": "ALMAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3627,
+        "longitude": -47.031,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8798,
+        "longitude": -47.2997,
+        "municipio": "ALMAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3435,
+        "longitude": -47.0337,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.221,
+        "longitude": -47.4764,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2401,
+        "longitude": -47.4738,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3439,
+        "longitude": -47.0112,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:00:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.551,
+        "longitude": -47.2287,
+        "municipio": "ARRAIAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8794,
+        "longitude": -47.322,
+        "municipio": "ALMAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3439,
+        "longitude": -47.0112,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8798,
+        "longitude": -47.2997,
+        "municipio": "ALMAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.5321,
+        "longitude": -47.2089,
+        "municipio": "ARRAIAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3435,
+        "longitude": -47.0337,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.5514,
+        "longitude": -47.2062,
+        "municipio": "ARRAIAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3627,
+        "longitude": -47.031,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3631,
+        "longitude": -47.0085,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:10:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.551,
+        "longitude": -47.2287,
+        "municipio": "ARRAIAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3435,
+        "longitude": -47.0337,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3247,
+        "longitude": -47.0139,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.5514,
+        "longitude": -47.2062,
+        "municipio": "ARRAIAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3627,
+        "longitude": -47.031,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8794,
+        "longitude": -47.322,
+        "municipio": "ALMAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3439,
+        "longitude": -47.0112,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.899,
+        "longitude": -47.2971,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2589,
+        "longitude": -47.4935,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8798,
+        "longitude": -47.2997,
+        "municipio": "ALMAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.5321,
+        "longitude": -47.2089,
+        "municipio": "ARRAIAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3631,
+        "longitude": -47.0085,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:20:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3631,
+        "longitude": -47.0085,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2589,
+        "longitude": -47.4935,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3435,
+        "longitude": -47.0337,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2401,
+        "longitude": -47.4738,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.8798,
+        "longitude": -47.2997,
+        "municipio": "ALMAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.5317,
+        "longitude": -47.2314,
+        "municipio": "ARRAIAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3627,
+        "longitude": -47.031,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3439,
+        "longitude": -47.0112,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.551,
+        "longitude": -47.2287,
+        "municipio": "ARRAIAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3247,
+        "longitude": -47.0139,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2398,
+        "longitude": -47.4961,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:30:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3627,
+        "longitude": -47.031,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3435,
+        "longitude": -47.0337,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3439,
+        "longitude": -47.0112,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3247,
+        "longitude": -47.0139,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.5702,
+        "longitude": -47.2259,
+        "municipio": "ARRAIAS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2589,
+        "longitude": -47.4935,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2593,
+        "longitude": -47.4711,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3631,
+        "longitude": -47.0085,
+        "municipio": "TAIPAS DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.6098,
+        "longitude": -47.4694,
+        "municipio": "NATIVIDADE",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.2401,
+        "longitude": -47.4738,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:40:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.0507,
+        "longitude": -47.3658,
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "satelite": "GOES-19",
+        "data_hora_gmt": "2026-10-13 13:40:00",
         "bioma": "Cerrado"
       }
     ],
@@ -5107,11 +5290,1036 @@
           "data_hora_gmt": "2026-10-13 12:40:00",
           "bioma": "Cerrado"
         }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.3195,
+            -11.8986
+          ]
+        },
+        "properties": {
+          "latitude": -11.8986,
+          "longitude": -47.3195,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0112,
+            -12.3439
+          ]
+        },
+        "properties": {
+          "latitude": -12.3439,
+          "longitude": -47.0112,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0085,
+            -12.3631
+          ]
+        },
+        "properties": {
+          "latitude": -12.3631,
+          "longitude": -47.0085,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.2997,
+            -11.8798
+          ]
+        },
+        "properties": {
+          "latitude": -11.8798,
+          "longitude": -47.2997,
+          "municipio": "ALMAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.322,
+            -11.8794
+          ]
+        },
+        "properties": {
+          "latitude": -11.8794,
+          "longitude": -47.322,
+          "municipio": "ALMAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 12:50:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0085,
+            -12.3631
+          ]
+        },
+        "properties": {
+          "latitude": -12.3631,
+          "longitude": -47.0085,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.3195,
+            -11.8986
+          ]
+        },
+        "properties": {
+          "latitude": -11.8986,
+          "longitude": -47.3195,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.322,
+            -11.8794
+          ]
+        },
+        "properties": {
+          "latitude": -11.8794,
+          "longitude": -47.322,
+          "municipio": "ALMAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.031,
+            -12.3627
+          ]
+        },
+        "properties": {
+          "latitude": -12.3627,
+          "longitude": -47.031,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.2997,
+            -11.8798
+          ]
+        },
+        "properties": {
+          "latitude": -11.8798,
+          "longitude": -47.2997,
+          "municipio": "ALMAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0337,
+            -12.3435
+          ]
+        },
+        "properties": {
+          "latitude": -12.3435,
+          "longitude": -47.0337,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4764,
+            -12.221
+          ]
+        },
+        "properties": {
+          "latitude": -12.221,
+          "longitude": -47.4764,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4738,
+            -12.2401
+          ]
+        },
+        "properties": {
+          "latitude": -12.2401,
+          "longitude": -47.4738,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0112,
+            -12.3439
+          ]
+        },
+        "properties": {
+          "latitude": -12.3439,
+          "longitude": -47.0112,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:00:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.2287,
+            -12.551
+          ]
+        },
+        "properties": {
+          "latitude": -12.551,
+          "longitude": -47.2287,
+          "municipio": "ARRAIAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.322,
+            -11.8794
+          ]
+        },
+        "properties": {
+          "latitude": -11.8794,
+          "longitude": -47.322,
+          "municipio": "ALMAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0112,
+            -12.3439
+          ]
+        },
+        "properties": {
+          "latitude": -12.3439,
+          "longitude": -47.0112,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.2997,
+            -11.8798
+          ]
+        },
+        "properties": {
+          "latitude": -11.8798,
+          "longitude": -47.2997,
+          "municipio": "ALMAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.2089,
+            -12.5321
+          ]
+        },
+        "properties": {
+          "latitude": -12.5321,
+          "longitude": -47.2089,
+          "municipio": "ARRAIAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0337,
+            -12.3435
+          ]
+        },
+        "properties": {
+          "latitude": -12.3435,
+          "longitude": -47.0337,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.2062,
+            -12.5514
+          ]
+        },
+        "properties": {
+          "latitude": -12.5514,
+          "longitude": -47.2062,
+          "municipio": "ARRAIAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.031,
+            -12.3627
+          ]
+        },
+        "properties": {
+          "latitude": -12.3627,
+          "longitude": -47.031,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0085,
+            -12.3631
+          ]
+        },
+        "properties": {
+          "latitude": -12.3631,
+          "longitude": -47.0085,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:10:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.2287,
+            -12.551
+          ]
+        },
+        "properties": {
+          "latitude": -12.551,
+          "longitude": -47.2287,
+          "municipio": "ARRAIAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0337,
+            -12.3435
+          ]
+        },
+        "properties": {
+          "latitude": -12.3435,
+          "longitude": -47.0337,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0139,
+            -12.3247
+          ]
+        },
+        "properties": {
+          "latitude": -12.3247,
+          "longitude": -47.0139,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.2062,
+            -12.5514
+          ]
+        },
+        "properties": {
+          "latitude": -12.5514,
+          "longitude": -47.2062,
+          "municipio": "ARRAIAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.031,
+            -12.3627
+          ]
+        },
+        "properties": {
+          "latitude": -12.3627,
+          "longitude": -47.031,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.322,
+            -11.8794
+          ]
+        },
+        "properties": {
+          "latitude": -11.8794,
+          "longitude": -47.322,
+          "municipio": "ALMAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0112,
+            -12.3439
+          ]
+        },
+        "properties": {
+          "latitude": -12.3439,
+          "longitude": -47.0112,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.2971,
+            -11.899
+          ]
+        },
+        "properties": {
+          "latitude": -11.899,
+          "longitude": -47.2971,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4935,
+            -12.2589
+          ]
+        },
+        "properties": {
+          "latitude": -12.2589,
+          "longitude": -47.4935,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.2997,
+            -11.8798
+          ]
+        },
+        "properties": {
+          "latitude": -11.8798,
+          "longitude": -47.2997,
+          "municipio": "ALMAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.2089,
+            -12.5321
+          ]
+        },
+        "properties": {
+          "latitude": -12.5321,
+          "longitude": -47.2089,
+          "municipio": "ARRAIAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0085,
+            -12.3631
+          ]
+        },
+        "properties": {
+          "latitude": -12.3631,
+          "longitude": -47.0085,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:20:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0085,
+            -12.3631
+          ]
+        },
+        "properties": {
+          "latitude": -12.3631,
+          "longitude": -47.0085,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4935,
+            -12.2589
+          ]
+        },
+        "properties": {
+          "latitude": -12.2589,
+          "longitude": -47.4935,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0337,
+            -12.3435
+          ]
+        },
+        "properties": {
+          "latitude": -12.3435,
+          "longitude": -47.0337,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4738,
+            -12.2401
+          ]
+        },
+        "properties": {
+          "latitude": -12.2401,
+          "longitude": -47.4738,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.2997,
+            -11.8798
+          ]
+        },
+        "properties": {
+          "latitude": -11.8798,
+          "longitude": -47.2997,
+          "municipio": "ALMAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.2314,
+            -12.5317
+          ]
+        },
+        "properties": {
+          "latitude": -12.5317,
+          "longitude": -47.2314,
+          "municipio": "ARRAIAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.031,
+            -12.3627
+          ]
+        },
+        "properties": {
+          "latitude": -12.3627,
+          "longitude": -47.031,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0112,
+            -12.3439
+          ]
+        },
+        "properties": {
+          "latitude": -12.3439,
+          "longitude": -47.0112,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.2287,
+            -12.551
+          ]
+        },
+        "properties": {
+          "latitude": -12.551,
+          "longitude": -47.2287,
+          "municipio": "ARRAIAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0139,
+            -12.3247
+          ]
+        },
+        "properties": {
+          "latitude": -12.3247,
+          "longitude": -47.0139,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4961,
+            -12.2398
+          ]
+        },
+        "properties": {
+          "latitude": -12.2398,
+          "longitude": -47.4961,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:30:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.031,
+            -12.3627
+          ]
+        },
+        "properties": {
+          "latitude": -12.3627,
+          "longitude": -47.031,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0337,
+            -12.3435
+          ]
+        },
+        "properties": {
+          "latitude": -12.3435,
+          "longitude": -47.0337,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0112,
+            -12.3439
+          ]
+        },
+        "properties": {
+          "latitude": -12.3439,
+          "longitude": -47.0112,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0139,
+            -12.3247
+          ]
+        },
+        "properties": {
+          "latitude": -12.3247,
+          "longitude": -47.0139,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.2259,
+            -12.5702
+          ]
+        },
+        "properties": {
+          "latitude": -12.5702,
+          "longitude": -47.2259,
+          "municipio": "ARRAIAS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4935,
+            -12.2589
+          ]
+        },
+        "properties": {
+          "latitude": -12.2589,
+          "longitude": -47.4935,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4711,
+            -12.2593
+          ]
+        },
+        "properties": {
+          "latitude": -12.2593,
+          "longitude": -47.4711,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.0085,
+            -12.3631
+          ]
+        },
+        "properties": {
+          "latitude": -12.3631,
+          "longitude": -47.0085,
+          "municipio": "TAIPAS DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4694,
+            -11.6098
+          ]
+        },
+        "properties": {
+          "latitude": -11.6098,
+          "longitude": -47.4694,
+          "municipio": "NATIVIDADE",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.4738,
+            -12.2401
+          ]
+        },
+        "properties": {
+          "latitude": -12.2401,
+          "longitude": -47.4738,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:40:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.3658,
+            -12.0507
+          ]
+        },
+        "properties": {
+          "latitude": -12.0507,
+          "longitude": -47.3658,
+          "municipio": "CONCEIÇÃO DO TOCANTINS",
+          "satelite": "GOES-19",
+          "data_hora_gmt": "2026-10-13 13:40:00",
+          "bioma": "Cerrado"
+        }
       }
     ]
   },
   "erros_atualizacao": {
-    "seca_iis3": "Metadados do Alerta-Secas indisponíveis (HTTP 404)",
     "s2id": "Portal S2ID indisponível (HTTP 403)"
   },
   "s2id": {
@@ -5188,7 +6396,7 @@
     "mes_final": 8,
     "periodo": "Janeiro a agosto de 2026",
     "area_queimada_ha": 1023369.62,
-    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/a74807356775dae161a0d614a99a642d-5904f4d75b1fd64287d754456f0b28f0/tiles/{z}/{x}/{y}",
+    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/a74807356775dae161a0d614a99a642d-f65ad975a493978886fa83963a5b42c5/tiles/{z}/{x}/{y}",
     "raster_status": "ok",
     "unidade": "ha",
     "natureza": "Cicatrizes de área queimada mapeadas pelo Monitor do Fogo."
@@ -5197,7 +6405,7 @@
     "status": "ok",
     "periodo": "ultimas 24h",
     "fonte": "CEMADEN",
-    "atualizadoEm": "2026-10-13T13:09:00.963Z",
+    "atualizadoEm": "2026-10-13T14:40:02.165Z",
     "maiorAcumulado": 0.4,
     "estacaoMaiorAcumulado": "G2-171620801A",
     "municipioMaiorAcumulado": "PARANÃ",
@@ -5216,7 +6424,7 @@
         "estacoesCadastradas": 35,
         "estacoesConsultadas": 35,
         "estacoesComLeitura": 35,
-        "atualizadoEm": "2026-10-13 13:08:42 UTC",
+        "atualizadoEm": "2026-10-13 14:38:42 UTC",
         "estacoes": [
           {
             "id": "CEMADEN-170730601A",
@@ -5227,7 +6435,7 @@
             "latitude": -11.34296,
             "longitude": -49.26664,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5241,7 +6449,7 @@
             "latitude": -5.36527,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5255,7 +6463,7 @@
             "latitude": -12.035,
             "longitude": -48.539,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5269,7 +6477,7 @@
             "latitude": -5.3956,
             "longitude": -47.8114,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5283,7 +6491,7 @@
             "latitude": -5.25903,
             "longitude": -48.20147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5297,7 +6505,7 @@
             "latitude": -6.58226,
             "longitude": -48.64368,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5311,7 +6519,7 @@
             "latitude": -7.18755,
             "longitude": -48.23527,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5325,7 +6533,7 @@
             "latitude": -7.15587,
             "longitude": -48.1888,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5339,7 +6547,7 @@
             "latitude": -7.19408,
             "longitude": -48.19586,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5353,7 +6561,7 @@
             "latitude": -7.22806,
             "longitude": -48.24461,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5367,7 +6575,7 @@
             "latitude": -5.65762,
             "longitude": -48.11147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5381,7 +6589,7 @@
             "latitude": -11.8055,
             "longitude": -49.5275,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5395,7 +6603,7 @@
             "latitude": -7.71295,
             "longitude": -47.3093,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5409,7 +6617,7 @@
             "latitude": -6.41126,
             "longitude": -48.53374,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5423,7 +6631,7 @@
             "latitude": -10.71611,
             "longitude": -48.39972,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5437,7 +6645,7 @@
             "latitude": -6.36614,
             "longitude": -48.07425,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5451,7 +6659,7 @@
             "latitude": -6.38166,
             "longitude": -48.06247,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5465,7 +6673,7 @@
             "latitude": -5.464,
             "longitude": -47.8968,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5479,7 +6687,7 @@
             "latitude": -5.47538,
             "longitude": -47.8894,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5493,7 +6701,7 @@
             "latitude": -5.43003,
             "longitude": -47.85794,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5507,7 +6715,7 @@
             "latitude": -5.31875,
             "longitude": -48.03931,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5521,7 +6729,7 @@
             "latitude": -5.32428,
             "longitude": -48.03409,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5535,7 +6743,7 @@
             "latitude": -9.27346,
             "longitude": -49.95341,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5549,7 +6757,7 @@
             "latitude": -9.28222,
             "longitude": -49.95326,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5563,7 +6771,7 @@
             "latitude": -5.7713,
             "longitude": -47.48039,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5577,7 +6785,7 @@
             "latitude": -5.77459,
             "longitude": -47.47793,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5591,7 +6799,7 @@
             "latitude": -10.79377,
             "longitude": -49.62398,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5605,7 +6813,7 @@
             "latitude": -10.78287,
             "longitude": -49.61681,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5619,7 +6827,7 @@
             "latitude": -12.61455,
             "longitude": -47.88209,
             "chuva24h": 0.4,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5633,7 +6841,7 @@
             "latitude": -12.62006,
             "longitude": -47.86848,
             "chuva24h": 0.4,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5647,7 +6855,7 @@
             "latitude": -10.44846,
             "longitude": -49.16758,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5661,7 +6869,7 @@
             "latitude": -10.44163,
             "longitude": -49.181,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5675,7 +6883,7 @@
             "latitude": -6.32722,
             "longitude": -47.42812,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5689,7 +6897,7 @@
             "latitude": -6.33796,
             "longitude": -47.4185,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -5703,7 +6911,7 @@
             "latitude": -6.31512,
             "longitude": -47.42296,
             "chuva24h": 0,
-            "atualizadoEm": "2026-10-13 13:08:42 UTC",
+            "atualizadoEm": "2026-10-13 14:38:42 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -6037,7 +7245,7 @@
         "estacoesConsultadas": 0,
         "estacoesComLeitura": 0,
         "atualizadoEm": null,
-        "ultimaTentativa": "2026-10-13T13:09:00.963Z",
+        "ultimaTentativa": "2026-10-13T14:40:02.165Z",
         "estacoes": [],
         "todasEstacoes": [
           {
@@ -8684,38 +9892,38 @@
   "qualidade_fontes": {
     "focos_calor_inpe": {
       "status": "ok",
-      "ultimaTentativa": "2026-10-13T13:08:46.382Z",
-      "ultimoSucesso": "2026-10-13T13:08:48.932Z"
+      "ultimaTentativa": "2026-10-13T14:39:46.258Z",
+      "ultimoSucesso": "2026-10-13T14:39:49.462Z"
     },
     "alertas_cemaden": {
       "status": "ok",
-      "ultimaTentativa": "2026-10-13T13:08:48.932Z",
-      "ultimoSucesso": "2026-10-13T13:08:50.547Z"
+      "ultimaTentativa": "2026-10-13T14:39:49.462Z",
+      "ultimoSucesso": "2026-10-13T14:39:50.966Z"
     },
     "avisos_inmet": {
       "status": "ok",
-      "ultimaTentativa": "2026-10-13T13:08:50.547Z",
-      "ultimoSucesso": "2026-10-13T13:08:52.710Z"
+      "ultimaTentativa": "2026-10-13T14:39:50.966Z",
+      "ultimoSucesso": "2026-10-13T14:39:53.180Z"
     },
     "chuva_observada": {
       "status": "ok",
-      "ultimaTentativa": "2026-10-13T13:08:52.710Z",
-      "ultimoSucesso": "2026-10-13T13:09:00.963Z"
+      "ultimaTentativa": "2026-10-13T14:39:53.180Z",
+      "ultimoSucesso": "2026-10-13T14:40:02.165Z"
     },
     "seca_iis3": {
-      "status": "erro",
-      "ultimaTentativa": "2026-10-13T13:09:00.963Z",
-      "erro": "Metadados do Alerta-Secas indisponíveis (HTTP 404)"
+      "status": "ok",
+      "ultimaTentativa": "2026-10-13T14:40:04Z",
+      "ultimoSucesso": "2026-10-13T14:40:16Z"
     },
     "s2id": {
       "status": "erro",
-      "ultimaTentativa": "2026-10-13T13:09:04.230Z",
+      "ultimaTentativa": "2026-10-13T14:40:02.165Z",
       "erro": "Portal S2ID indisponível (HTTP 403)"
     },
     "area_queimada_mapbiomas": {
       "status": "ok",
-      "ultimaTentativa": "2026-10-13T13:09:05.284Z",
-      "ultimoSucesso": "2026-10-13T13:09:06.101Z"
+      "ultimaTentativa": "2026-10-13T14:40:03.210Z",
+      "ultimoSucesso": "2026-10-13T14:40:04.471Z"
     }
   }
 }
