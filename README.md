@@ -2,6 +2,10 @@
 
 Site público para acompanhamento de alertas, chuva, rios, focos de calor, seca, boletins e relatórios técnicos.
 
+## Atualização da seca municipal
+
+A seca utiliza o IIS-3 da planilha pública dos boletins mensais CEMADEN/MCTI, coletada por `scripts/cemaden_drought.py` no workflow de dados existente. A referência mensal aparece no card e no mapa. O endereço legado que retornava 404 não é mais utilizado. Veja [fonte, validações e limites](docs/SECA-CEMADEN.md). Para conferir sem alterar dados locais: `python scripts/cemaden_drought.py --preview` (dependências em `scripts/requirements-drought.txt`).
+
 ## Biblioteca de publicações
 
 A seção `#boletins` funciona como uma biblioteca pública da Defesa Civil, separando dois tipos de documentos:

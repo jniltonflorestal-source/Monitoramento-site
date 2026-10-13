@@ -34,8 +34,8 @@ export function TechnicalPanelsSection({ drought }) {
         informações complementares. Um município pode apresentar condição de seca sem ter decreto
         registrado, assim como pode haver decreto vigente relacionado a evento anterior.
       </p>
-      <a className="official-inline" href="https://mapasecas.cemaden.gov.br/" target="_blank" rel="noreferrer">
-        Consultar Monitor de Secas oficial <ExternalLink aria-hidden="true" />
+      <a className="official-inline" href="https://www.gov.br/cemaden/pt-br/assuntos/monitoramento/impactos-seca/monitoramento-de-seca-para-o-brasil" target="_blank" rel="noreferrer">
+        Consultar IIS-3 do CEMADEN <ExternalLink aria-hidden="true" />
       </a>
     </section>
   );

@@ -937,12 +937,16 @@ export function PublicMapSection({
                   <dd>{droughtCounts.Moderada || 0}</dd>
                 </div>
                 <div>
-                  <dt>Seca grave</dt>
+                  <dt>Seca severa</dt>
                   <dd>{droughtCounts.Severa || 0}</dd>
                 </div>
                 <div>
                   <dt>Seca extrema</dt>
                   <dd>{droughtCounts.Extrema || 0}</dd>
+                </div>
+                <div>
+                  <dt>Seca excepcional</dt>
+                  <dd>{droughtCounts.Excepcional || 0}</dd>
                 </div>
               </dl>
               <small>
@@ -954,6 +958,8 @@ export function PublicMapSection({
                 Fonte: {droughtSummary.source} | referência{" "}
                 {formatDate(droughtSummary.reference)}
               </small>
+              <small>Última consulta: {droughtSummary.updatedAt || "Horário não confirmado"}</small>
+              {droughtSummary.sourceUrl && <a href={droughtSummary.sourceUrl} target="_blank" rel="noreferrer">Consultar boletim mensal CEMADEN</a>}
             </>
           ) : (
             <p>Dados municipais de seca ainda não disponíveis.</p>
@@ -1417,7 +1423,7 @@ export function PublicMapSection({
                   <strong>${title}</strong><br/>
                   ${droughtSummary?.quality?.status !== 'current' ? 'Referência histórica; condição atual não confirmada.<br/>' : ''}
                   Grau de seca: ${city?.classe || "Dados municipais de seca ainda não disponíveis"}<br/>
-                  Tendência: ${droughtSummary?.summary?.agravaram ? "Consultar resumo estadual" : "Não informada"}<br/>
+                  Tendência: ${city?.tendencia || "Não informada"}<br/>
                   Referência: ${city?.referencia ? formatDate(city.referencia) : formatDate(droughtSummary?.reference)}<br/>
                   Fonte: ${droughtSummary?.source || "Monitor de Secas / CEMADEN"}
                 `);

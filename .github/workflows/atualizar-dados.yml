@@ -25,11 +25,25 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Configurar Python para boletins CEMADEN
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements-drought.txt
+
+      - name: Instalar leitor da planilha oficial de seca
+        run: python -m pip install --disable-pip-version-check -r scripts/requirements-drought.txt
+
       - name: Atualizar dados do INPE e alertas CEMADEN
         env:
           INMET_API_ID: ${{ secrets.INMET_API_ID }}
           INMET_API_TOKEN: ${{ secrets.INMET_API_TOKEN }}
         run: node scripts/update-monitoring.mjs
+
+      - name: Atualizar seca municipal do boletim mensal CEMADEN
+        timeout-minutes: 3
+        run: python scripts/cemaden_drought.py
 
       - name: Atualizar historico de focos do INPE
         run: python scripts/update-fire-history.py

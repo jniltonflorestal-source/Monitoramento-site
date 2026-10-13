@@ -103,7 +103,7 @@ export function buildStateDashboard(snapshot) {
   if(snapshot.drought?.state==='ready') {
     drought.value=snapshot.drought.value;
     drought.statusLabel='Índice de seca';
-    drought.description='Condição informada pelo índice técnico no período de referência.';
+    drought.description='Categoria mais intensa identificada no índice municipal, no período de referência.';
     drought.facts=[{label:'Municípios com seca',value:number(snapshot.drought.summary?.com_seca)===null?absent:String(snapshot.drought.summary.com_seca)},{label:'Severa ou extrema',value:number(snapshot.drought.summary?.severa_ou_extrema)===null?absent:String(snapshot.drought.summary.severa_ou_extrema)}];
   }
   const emergency=base('emergency','Emergência e calamidade',snapshot.emergency);

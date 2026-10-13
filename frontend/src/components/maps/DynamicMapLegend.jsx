@@ -24,8 +24,9 @@ const legends = {
     ["normal", "Sem seca"],
     ["attention", "Seca fraca"],
     ["alert", "Seca moderada"],
-    ["danger", "Seca grave"],
-    ["drought-extreme", "Seca extrema"]
+    ["danger", "Seca severa"],
+    ["drought-extreme", "Seca extrema"],
+    ["drought-exceptional", "Seca excepcional"]
   ]
 };
 

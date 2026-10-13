@@ -22,8 +22,6 @@ const INMET_AUTH_ENABLED = Boolean(INMET_API_ID && INMET_API_TOKEN);
 let inmetAuthLastError = "";
 const ANA_RAIN_INVENTORY_URL = "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroInventario?codEstDE=&codEstATE=&tpEst=2&nmEst=&nmRio=&codSubBacia=&codBacia=&nmMunicipio=&nmEstado=Tocantins&sgResp=&sgOper=&telemetrica=1";
 const ANA_READINGS_URL = "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/DadosHidrometeorologicos";
-const CEMADEN_DROUGHT_META_URL = "https://mapasecas.cemaden.gov.br/rest/product/meta/iis3";
-const CEMADEN_DROUGHT_WFS_URL = "https://secaswms.cemaden.gov.br/produtos/wfs";
 const S2ID_PORTAL_URL = "https://s2id.mi.gov.br/paginas/index.xhtml";
 const S2ID_RECOGNITIONS_URL = "https://s2id.mi.gov.br/rest/portal/reconhecimentos";
 const S2ID_DETAIL_URL = "https://s2id.mi.gov.br/rest/portal/detalhareconhecimento";
@@ -464,96 +462,6 @@ async function fetchTocantinsRain24h() {
   };
 }
 
-function droughtClassification(level) {
-  if (level <= 2) return "Extrema";
-  if (level === 3) return "Severa";
-  if (level === 4) return "Moderada";
-  if (level === 5) return "Fraca";
-  return "Sem seca";
-}
-
-async function fetchDroughtMonth(viewparams) {
-  const params = new URLSearchParams({
-    service: "wfs",
-    version: "2.0.0",
-    request: "GetFeature",
-    typeName: "produtos:iis3",
-    outputFormat: "application/json",
-    viewparams,
-    CQL_FILTER: "sigla_uf='TO'",
-    propertyName: "nm_mun,sigla_uf,nivel,referencia"
-  });
-  const response = await fetch(`${CEMADEN_DROUGHT_WFS_URL}?${params}`);
-  if (!response.ok) throw new Error("Indice Integrado de Seca do CEMADEN indisponivel");
-  const body = await response.json();
-  return (body.features || []).map((feature) => ({
-    nome: feature.properties.nm_mun,
-    nivel: Number(feature.properties.nivel),
-    classe: droughtClassification(Number(feature.properties.nivel)),
-    referencia: feature.properties.referencia,
-    s2id: {
-      situacao: "Consultar S2ID",
-      desastre: null,
-      cobrade: null,
-      decreto: null
-    }
-  }));
-}
-
-async function fetchTocantinsDrought() {
-  const response = await fetch(CEMADEN_DROUGHT_META_URL);
-  if (!response.ok) throw new Error(`Metadados do Alerta-Secas indisponíveis (HTTP ${response.status})`);
-  const metadata = await response.json();
-  const dates = Object.keys(metadata.timesteps || {}).sort().reverse();
-  if (dates.length < 2) throw new Error("Serie IIS3 sem referencias suficientes");
-
-  const currentDate = dates[0];
-  const previousDate = dates[1];
-  const current = await fetchDroughtMonth(metadata.timesteps[currentDate].viewparams);
-  const previous = await fetchDroughtMonth(metadata.timesteps[previousDate].viewparams);
-  const previousByName = new Map(previous.map((city) => [city.nome, city.nivel]));
-  let improved = 0;
-  let worsened = 0;
-  let stable = 0;
-
-  current.forEach((city) => {
-    const oldLevel = previousByName.get(city.nome);
-    if (!Number.isFinite(oldLevel) || oldLevel === city.nivel) stable += 1;
-    else if (city.nivel > oldLevel) improved += 1;
-    else worsened += 1;
-  });
-
-  const worstLevel = Math.min(...current.map((city) => city.nivel));
-  const critical = current.filter((city) => city.nivel === worstLevel).map((city) => city.nome);
-  const trend = improved > worsened ? "Melhora" : worsened > improved ? "Agravamento" : "Estabilidade";
-
-  return {
-    produto: "IIS3",
-    fonte: "Cemaden / Alerta-Secas - IIS3",
-    referencia: currentDate,
-    referencia_anterior: previousDate,
-    situacao_geral: droughtClassification(worstLevel),
-    tendencia: trend,
-    resumo: {
-      com_seca: current.filter((city) => city.nivel <= 5).length,
-      moderada_ou_superior: current.filter((city) => city.nivel <= 4).length,
-      severa_ou_extrema: current.filter((city) => city.nivel <= 3).length,
-      municipios_criticos: critical,
-      melhoraram: improved,
-      agravaram: worsened,
-      estaveis: stable
-    },
-    municipios: current,
-    s2id: {
-      fonte: "S2ID / SEDEC-MIDR",
-      vigentes: null,
-      ultima_base_aberta_identificada: "2022",
-      status: "Consulta oficial necessária para reconhecimentos vigentes",
-      url: "https://s2id.mi.gov.br/paginas/series/"
-    }
-  };
-}
-
 async function fetchTocantinsS2id() {
   const portalResponse = await fetch(S2ID_PORTAL_URL);
   if (!portalResponse.ok) throw new Error(`Portal S2ID indisponível (HTTP ${portalResponse.status})`);
@@ -704,9 +612,7 @@ await updateAvailableSource("chuva_observada", fetchTocantinsRain24h, (rainSumma
     observacao: `Nao foi possivel atualizar chuva observada nesta execucao: ${error.message}`
   };
 });
-await updateAvailableSource("seca_iis3", fetchTocantinsDrought, (drought) => {
-  data.seca = drought;
-});
+// Monthly drought is collected by cemaden_drought.py in the same workflow.
 await updateAvailableSource("s2id", fetchTocantinsS2id, (s2id) => {
   data.s2id = s2id;
   data.resumo.municipios_s2id_vigentes = s2id.resumo.federal;
@@ -723,12 +629,12 @@ data.atualizado_em = new Date().toISOString();
 data.status = buildStatuses(data);
 data.fontes.alertas_geo = "Cemaden";
 data.fontes.avisos_meteorologicos = "INMET";
-data.fontes.seca = "Cemaden / Alerta-Secas - IIS3";
+data.fontes.seca = "CEMADEN/MCTI · IIS-3 municipal";
 data.fontes.s2id = "S2ID / SEDEC-MIDR";
 data.automacao = {
   alertas_cemaden: "automatico_horario",
   avisos_inmet: "automatico_horario",
-  seca_iis3: "automatico_mensal_consultado_horariamente",
+  seca_iis3: "automatico_boletim_mensal_cemaden",
   s2id: "automatico_portal_publico",
   focos_calor: "automatico_inpe_diario",
   chuva: "automatico_cemaden_inmet_ana_com_fallback",

@@ -162,12 +162,14 @@ export function parseDroughtIndicator(data, fallback) {
     return { ...fallback, state: "error", value: "Dados indisponíveis" };
   }
 
-  const tones = { "Sem seca": "normal", Fraca: "attention", Moderada: "alert", Severa: "emergency", Extrema: "emergency" };
+  const tones = { "Sem seca": "normal", Fraca: "attention", Moderada: "alert", Severa: "emergency", Extrema: "emergency", Excepcional: "emergency" };
   const count = safeCount(drought.resumo.com_seca);
   const reference = /^\d{4}-\d{2}-\d{2}/.test(drought.referencia || '') ? `${drought.referencia.slice(0,10)}T00:00:00Z` : null;
   const quality = assessFreshness(reference, FRESHNESS_HOURS.drought);
-  const consultation = publishedQuality(data, ['seca_iis3'], 48);
-  if (consultation.status === 'error') Object.assign(quality, consultation);
+  const consultation = data?.qualidade_fontes?.seca_iis3
+    ? publishedQuality(data, ['seca_iis3'], 48)
+    : {status:'unknown',observedAt:null,message:'Última consulta do IIS-3 não confirmada'};
+  if (consultation.status !== 'current') Object.assign(quality, consultation);
   return {
     ...fallback,
     state: quality.status === 'current' ? 'ready' : 'error',
@@ -177,10 +179,11 @@ export function parseDroughtIndicator(data, fallback) {
     quality,
     observedAt: reference,
     source: drought.fonte || "CEMADEN / Alerta-Secas - IIS3",
+    sourceUrl: drought.fonte_url || null,
     summary: drought.resumo,
     reference: drought.referencia,
     municipalities: drought.municipios || [],
-    updatedAt: formatUpdate(data.atualizado_em)
+    updatedAt: formatUpdate(consultation.observedAt)
   };
 }
 

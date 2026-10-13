@@ -28,7 +28,8 @@ const legends = {
       ["attention", "Fraca"],
       ["alert", "Moderada"],
       ["danger", "Severa"],
-      ["drought-extreme", "Extrema"]
+      ["drought-extreme", "Extrema"],
+      ["drought-exceptional", "Excepcional"]
     ]
   }
 };

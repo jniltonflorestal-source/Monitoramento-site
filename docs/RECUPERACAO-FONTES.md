@@ -21,7 +21,7 @@ Em 07/10 foi identificado e corrigido outro erro: `DataHora` da ANA usa espaço 
 
 ANA continua dependente do serviço legado e/ou acesso institucional à API moderna. Não foram inventadas leituras, cotas ou fusos. SEMARH e IDAP continuam sem integração pública configurada.
 
-A nova [plataforma Alerta Secas](https://alertasecas.cemaden.gov.br/) apresenta API diferente e condições de divulgação que requerem avaliação institucional. A base antiga não será apresentada como seca atual. A migração precisa validar classificação, referência, cobertura municipal e autorização aplicável antes de substituir o contrato antigo.
+A nova [plataforma Alerta Secas](https://alertasecas.cemaden.gov.br/) apresenta API diferente e condições de divulgação que requerem avaliação institucional. A base antiga não será apresentada como seca atual. Em 13/10 foi implementada uma alternativa usando a planilha pública dos boletins mensais oficiais do CEMADEN, sem utilizar essa API: [recuperação da seca municipal](SECA-CEMADEN.md).
 
 ## Testes
 
