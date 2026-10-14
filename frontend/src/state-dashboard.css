@@ -5,10 +5,20 @@
 .state-dashboard .hero-heading .lead { font-size:17px; line-height:1.5; max-width:850px; }
 .state-dashboard .public-note { margin:14px 0; font-size:14px; }
 .state-dashboard .state-cards { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); grid-auto-rows:1fr; gap:14px; }
-.state-dashboard .state-card { padding:16px; min-height:270px; height:auto; display:flex; flex-direction:column; gap:8px; border-top:4px solid #537487; }
-.state-dashboard .state-card header { display:grid; grid-template-columns:30px minmax(0,1fr); gap:5px 8px; font-size:13px; }
-.state-dashboard .state-card .status-icon { grid-row:span 2; }
-.state-dashboard .state-card .status-chip { grid-column:2; justify-self:start; font-size:10px; }
+.state-dashboard .state-card {
+  --card-accent:#537487;
+  --card-tint:#edf3f6;
+  --card-icon-bg:#dce8ef;
+  --card-ink:#3c596d;
+  padding:16px; min-height:270px; height:auto; display:flex; flex-direction:column; gap:8px;
+  border-top:4px solid var(--card-accent);
+  background:linear-gradient(180deg,var(--card-tint) 0,#fff 64%);
+}
+.state-dashboard .state-card header { display:grid; grid-template-columns:44px minmax(0,1fr); gap:6px 12px; font-size:18px; line-height:1.25; color:var(--card-ink); }
+.state-dashboard .state-card header > span:not(.status-icon) { min-width:0; overflow-wrap:anywhere; }
+.state-dashboard .state-card .status-icon { grid-row:span 2; align-self:center; width:44px; height:44px; background:var(--card-icon-bg); }
+.state-dashboard .state-card header .status-icon svg { width:25px; height:25px; color:var(--card-ink); }
+.state-dashboard .state-card .status-chip { grid-column:2; justify-self:start; font-size:11px; }
 .state-dashboard .state-card > strong { font-size:27px; line-height:1.2; overflow-wrap:anywhere; }
 .state-dashboard .state-card .card-description { font-size:13px; line-height:1.4; margin:0; color:#40566b; }
 .state-dashboard .state-card .card-source { font-size:11px; line-height:1.35; color:#526577; }
@@ -16,12 +26,12 @@
 .state-card-facts { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:2px 0; }
 .state-card-facts dt { font-size:11px; color:#526577; }
 .state-card-facts dd { margin:3px 0 0; font-size:12px; font-weight:700; color:#102d45; }
-.state-dashboard .theme-rain { border-top-color:#2284b3; }
-.state-dashboard .theme-rivers { border-top-color:#087b7a; }
-.state-dashboard .theme-fire,.state-dashboard .theme-burned { border-top-color:#dc741a; }
-.state-dashboard .theme-drought { border-top-color:#ac8615; }
-.state-dashboard .theme-alerts { border-top-color:#e88919; }
-.state-dashboard .theme-emergency { border-top-color:#a84956; }
+.state-dashboard .theme-rain { --card-accent:#2284b3; --card-tint:#e9f5fd; --card-icon-bg:#d3eafa; --card-ink:#175c80; }
+.state-dashboard .theme-rivers { --card-accent:#087b7a; --card-tint:#e8f7f5; --card-icon-bg:#cfece7; --card-ink:#09625e; }
+.state-dashboard .theme-fire,.state-dashboard .theme-burned { --card-accent:#dc741a; --card-tint:#fff1e5; --card-icon-bg:#ffe0bd; --card-ink:#964a0b; }
+.state-dashboard .theme-drought { --card-accent:#ac8615; --card-tint:#fff8d9; --card-icon-bg:#fff0ab; --card-ink:#725b06; }
+.state-dashboard .theme-alerts { --card-accent:#e88919; --card-tint:#fff1df; --card-icon-bg:#ffe0b6; --card-ink:#97510b; }
+.state-dashboard .theme-emergency { --card-accent:#a84956; --card-tint:#fcecef; --card-icon-bg:#f8dce2; --card-ink:#91384b; }
 .state-card-navigation { display:none; }
 @media (max-width:1199px) { .state-dashboard .state-cards { grid-template-columns:repeat(2,minmax(0,1fr)); } .state-dashboard .hero-heading { grid-template-columns:minmax(0,1fr) 330px; } .state-dashboard .hero-heading h1 { font-size:40px; } }
 @media (max-width:700px) { .state-dashboard.situation-hero { padding:24px 18px; min-height:0; } .state-dashboard .hero-heading { grid-template-columns:1fr; gap:20px; } .state-dashboard .hero-heading h1 { font-size:34px; } .state-dashboard .state-cards { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; padding:6px 4px 12px; } .state-dashboard .state-card { flex:0 0 92%; min-height:295px; scroll-snap-align:start; } .state-dashboard .state-card .card-description { font-size:14px; } .state-dashboard .state-card .card-source { font-size:12px; } .state-dashboard .state-card:hover { transform:none; } .state-card-navigation { display:flex; gap:8px; justify-content:flex-end; margin:8px 0; } .state-card-navigation button { display:grid; place-items:center; width:44px; height:44px; color:white; background:#24445c; border:1px solid #8097aa; border-radius:4px; } }
