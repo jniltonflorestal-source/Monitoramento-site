@@ -1,7 +1,8 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { finiteValue, nonNegativeValue, sumHourlyRain24h, assessFreshness } from '../frontend/src/services/dataQuality.js';
 import { fetchSource } from './source-fetch.mjs';
-import {selectLatestInpeFile,summarizeRecognitions,collectBurnedProduct,applyBurnedProduct} from './source-products.mjs';
+import {selectLatestInpeFile,collectBurnedProduct,applyBurnedProduct} from './source-products.mjs';
+import { collectS2id, applyS2idProduct } from './s2id-source.mjs';
 import {officialMunicipalityCodes} from '../frontend/src/services/officialMunicipalityCodes.js';
 
 // The signal also bounds body consumption; credentials remain server-side.
@@ -22,9 +23,6 @@ const INMET_AUTH_ENABLED = Boolean(INMET_API_ID && INMET_API_TOKEN);
 let inmetAuthLastError = "";
 const ANA_RAIN_INVENTORY_URL = "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroInventario?codEstDE=&codEstATE=&tpEst=2&nmEst=&nmRio=&codSubBacia=&codBacia=&nmMunicipio=&nmEstado=Tocantins&sgResp=&sgOper=&telemetrica=1";
 const ANA_READINGS_URL = "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/DadosHidrometeorologicos";
-const S2ID_PORTAL_URL = "https://s2id.mi.gov.br/paginas/index.xhtml";
-const S2ID_RECOGNITIONS_URL = "https://s2id.mi.gov.br/rest/portal/reconhecimentos";
-const S2ID_DETAIL_URL = "https://s2id.mi.gov.br/rest/portal/detalhareconhecimento";
 const MAPBIOMAS_FIRE_API = "https://plataforma.monitorfogo.mapbiomas.org/api";
 const DATA_FILE = new URL("../dados-monitoramento.json", import.meta.url);
 
@@ -462,46 +460,6 @@ async function fetchTocantinsRain24h() {
   };
 }
 
-async function fetchTocantinsS2id() {
-  const portalResponse = await fetch(S2ID_PORTAL_URL);
-  if (!portalResponse.ok) throw new Error(`Portal S2ID indisponível (HTTP ${portalResponse.status})`);
-  const portalHtml = await portalResponse.text();
-  const token = portalHtml.match(/var token = "([^"]+)"/)?.[1];
-  if (!token) throw new Error("Token publico do S2ID nao encontrado");
-
-  const headers = { "auth-token": token };
-  const response = await fetch(S2ID_RECOGNITIONS_URL, { headers });
-  if (!response.ok) throw new Error(`Reconhecimentos do S2ID indisponíveis (HTTP ${response.status})`);
-  const collection = await response.json();
-  if(!Array.isArray(collection.features))throw new Error('Resposta S2ID sem lista válida de reconhecimentos');
-  const features = (collection.features || []).filter((feature) => feature.properties?.uf === "TO");
-  const records = await Promise.all(features.map(async (feature) => {
-    const protocol = feature.properties.protocolo;
-    const detailResponse = await fetch(`${S2ID_DETAIL_URL}?protocolo=${encodeURIComponent(protocol)}`, { headers });
-    const details = detailResponse.ok ? await detailResponse.json() : {};
-    return {
-      municipio: feature.properties.municipio,
-      geocodigo: feature.properties.geocodigo,
-      protocolo: protocol,
-      cobrade: String(details.cobrade?.cobrade || feature.properties.cobrade || ""),
-      desastre: details.cobrade?.tipo || null,
-      situacao: details.seEcp || "Reconhecimento federal vigente",
-      decreto: details.numeroDecreto || null,
-      data_decreto: details.dataDecreto || null,
-      portaria: details.numeroPortaria || null,
-      vigencia: details.vigenciaPortaria || null,
-      latitude: finiteValue(feature.geometry?.coordinates?.[1]),
-      longitude: finiteValue(feature.geometry?.coordinates?.[0])
-    };
-  }));
-  return {
-    fonte: "S2ID / SEDEC-MIDR",
-    consulta: S2ID_RECOGNITIONS_URL,
-    reconhecimentos_vigentes: records,
-    resumo: summarizeRecognitions(records)
-  };
-}
-
 async function fetchTocantinsBurnedArea() {
   return collectBurnedProduct(fetch,MAPBIOMAS_FIRE_API);
 }
@@ -613,12 +571,7 @@ await updateAvailableSource("chuva_observada", fetchTocantinsRain24h, (rainSumma
   };
 });
 // Monthly drought is collected by cemaden_drought.py in the same workflow.
-await updateAvailableSource("s2id", fetchTocantinsS2id, (s2id) => {
-  data.s2id = s2id;
-  data.resumo.municipios_s2id_vigentes = s2id.resumo.federal;
-  data.resumo.municipios_s2id_se = s2id.resumo.se;
-  data.resumo.municipios_s2id_ecp = s2id.resumo.ecp;
-});
+await updateAvailableSource("s2id", collectS2id, (s2id) => applyS2idProduct(data, s2id));
 await updateAvailableSource("area_queimada_mapbiomas", fetchTocantinsBurnedArea, (burnedArea) => {
   applyBurnedProduct(data,burnedArea);
 }, () => {

@@ -1126,8 +1126,9 @@ export function PublicMapSection({
       {activeLayer === "emergency" && (
         <>
           <p>
-            Municípios com reconhecimento federal vigente na consulta pública do
-            S2ID.
+            {emergencySummary?.state === 'ready'
+              ? 'Municípios com reconhecimento federal vigente na consulta pública do S2ID.'
+              : 'Não foi possível confirmar os reconhecimentos vigentes na última tentativa. Consulte o S2ID.'}
           </p>
           <dl className="map-summary">
             <div>
@@ -1143,10 +1144,12 @@ export function PublicMapSection({
               <dd>{emergencySummary?.state === 'ready' ? emergencySummary.ecp ?? 'Não disponível' : 'Não disponível'}</dd>
             </div>
           </dl>
-          <strong>Fonte integrada: S2ID / SEDEC-MIDR</strong>
+          {emergencySummary?.lastConfirmed && <p>{emergencySummary.lastConfirmed.federal} município(s) na última consulta válida. A vigência atual não foi reconfirmada; registros anteriores não são exibidos como ativos no mapa.</p>}
+          <strong>Fonte: S2ID / SEDEC-MIDR</strong>
           {emergencySummary?.updatedAt && (
-            <small>Atualização: {emergencySummary.updatedAt}</small>
+            <small>{emergencySummary?.state === 'ready' ? 'Consulta confirmada' : 'Última confirmação'}: {emergencySummary.updatedAt}</small>
           )}
+          <a href="https://s2id.mi.gov.br/paginas/index.xhtml" target="_blank" rel="noopener noreferrer">Consultar reconhecimentos no S2ID</a>
         </>
       )}
     </>

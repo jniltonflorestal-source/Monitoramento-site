@@ -48,8 +48,10 @@ export function OfficialAlertsSection({ alerts, emergency }) {
       status:
         emergency?.state === "ready"
           ? `${emergency.federal} reconhecimento${emergency.federal === 1 ? "" : "s"} vigente${emergency.federal === 1 ? "" : "s"}`
-          : "Dados indisponíveis no momento",
-      href: "https://s2id.mi.gov.br/paginas/series/",
+          : emergency?.lastConfirmed
+            ? `${emergency.lastConfirmed.federal} município(s) na última consulta válida; atualização pendente`
+            : "Não foi possível atualizar o S2ID no momento",
+      href: "https://s2id.mi.gov.br/paginas/index.xhtml",
       action: "Ver municípios"
     }
   ];

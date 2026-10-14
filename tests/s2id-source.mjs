@@ -1,0 +1,46 @@
+import assert from 'node:assert/strict';
+
+await assert.doesNotReject(import('../scripts/s2id-source.mjs'), 'The scheduled and targeted collectors must share the S2ID public reader');
+const { collectS2id, applyS2idProduct } = await import('../scripts/s2id-source.mjs');
+const feature = (code, protocol, situation) => ({ type: 'Feature', properties: { uf: 'TO', geocodigo: code, municipio: 'Município de teste', protocolo: protocol, situation }, geometry: { type: 'Point', coordinates: [-48, -10] } });
+let calls = 0;
+const reader = async url => {
+  calls++;
+  if (url.endsWith('index.xhtml')) return new Response('var token = "anonymous-public-test-value";');
+  if (url.endsWith('reconhecimentos')) return Response.json({ type: 'FeatureCollection', features: [feature('1715705', 'one'), feature('1715705', 'two')] });
+  return Response.json({ seEcp: 'Situação de Emergência (SE)', vigenciaPortaria: '27/03/2027', cobrade: { tipo: 'Estiagem', cobrade: 14110 } });
+};
+const product = await collectS2id(reader);
+assert.equal(product.resumo.federal, 1, 'Two protocols for one municipality are not two municipalities');
+assert.equal(product.resumo.se, 1);
+assert.equal(product.reconhecimentos_vigentes.length, 2);
+assert.equal(calls, 4);
+assert.ok(product.atualizadoEm.endsWith('Z'));
+assert.doesNotMatch(JSON.stringify(product), /anonymous-public-test-value/);
+const data = { resumo: { chuva_24h_mm: 12 }, seca: { referencia: '2026-09-01' }, qualidade_fontes: { s2id: { status: 'erro' } }, erros_atualizacao: { s2id: '403', outra: 'timeout' } };
+applyS2idProduct(data, product);
+assert.equal(data.s2id.resumo.federal, 1);
+assert.equal(data.resumo.municipios_s2id_se, 1);
+assert.equal(data.resumo.chuva_24h_mm, 12);
+assert.equal(data.seca.referencia, '2026-09-01');
+assert.equal(data.qualidade_fontes.s2id.status, 'ok');
+assert.equal(data.qualidade_fontes.s2id.ultimoSucesso, product.atualizadoEm);
+assert.equal(data.erros_atualizacao.s2id, undefined);
+assert.equal(data.erros_atualizacao.outra, 'timeout');
+
+calls = 0;
+await assert.rejects(collectS2id(async () => { calls++; return new Response('Forbidden', { status: 403 }); }), /HTTP 403/);
+assert.equal(calls, 1, 'Do not retry or bypass a denied public request');
+await assert.rejects(collectS2id(async url => url.endsWith('index.xhtml') ? new Response('var token = "test";') : Response.json({ message: 'not a collection' })), /lista válida/);
+await assert.rejects(collectS2id(async url => url.endsWith('index.xhtml') ? new Response('var token = "test";') : Response.json({ features: [{}] })), /registro inválido/);
+const nullDetail = await collectS2id(async url => url.includes('protocolo=') ? Response.json(null) : reader(url));
+assert.equal(nullDetail.resumo.federal, 1);
+assert.equal(nullDetail.resumo.se, null);
+assert.equal(nullDetail.reconhecimentos_vigentes[0].detalhe_status, 'indisponivel');
+const partial = await collectS2id(async url => url.endsWith('detalhareconhecimento?protocolo=one') || url.includes('protocolo=two') ? new Response('Unavailable', { status: 503 }) : reader(url));
+assert.equal(partial.resumo.federal, 1);
+assert.equal(partial.resumo.se, null, 'Missing detail is not proof of SE or ECP zero');
+assert.equal(partial.resumo.ecp, null);
+const none = await collectS2id(async url => url.endsWith('index.xhtml') ? new Response('var token = "test";') : Response.json({ features: [] }));
+assert.equal(none.resumo.federal, 0);
+console.log('S2ID source: real contract, duplicates, schema, anonymous token isolation, denied requests, partial details and selective update passed.');

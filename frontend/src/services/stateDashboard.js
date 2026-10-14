@@ -111,6 +111,22 @@ export function buildStateDashboard(snapshot) {
     emergency.statusLabel='Reconhecimento';
     emergency.description='Reconhecimentos federais vigentes consultados no S2ID.';
     emergency.facts=[{label:'Situação de Emergência',value:snapshot.emergency.se ?? absent},{label:'Calamidade Pública',value:snapshot.emergency.ecp ?? absent}];
+  } else if (snapshot.emergency?.lastConfirmed) {
+    const previous = snapshot.emergency.lastConfirmed;
+    emergency.value = `${fmt(previous.federal)} na última consulta`;
+    emergency.statusLabel = 'Atualização pendente';
+    emergency.description = 'Nova consulta ao S2ID indisponível. Confirme a vigência na fonte oficial; os números abaixo são da última consulta válida.';
+    emergency.stampLabel = 'Última confirmação';
+    emergency.stamp = indicatorTime({ observedAt: previous.observedAt });
+    emergency.facts = [
+      { label: 'SE · última confirmação', value: previous.se ?? absent },
+      { label: 'ECP · última confirmação', value: previous.ecp ?? absent },
+      { label: 'Última tentativa', value: indicatorTime({ observedAt: snapshot.emergency.attemptedAt }) }
+    ];
+  } else if (snapshot.emergency?.attemptedAt) {
+    emergency.description = snapshot.emergency.description;
+    emergency.stampLabel = 'Última tentativa';
+    emergency.stamp = indicatorTime({ observedAt: snapshot.emergency.attemptedAt });
   }
   const healthCard=base('health','Saúde dos dados',{state:snapshot.attemptedAt?'ready':'loading',source:'Diagnóstico das integrações',updatedAt:snapshot.attemptedAt});
   healthCard.value=snapshot.attemptedAt?`${health.available} de ${health.total}`:'Consultando';

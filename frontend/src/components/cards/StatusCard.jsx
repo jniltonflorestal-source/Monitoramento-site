@@ -51,7 +51,7 @@ export function StatusCard({ icon: Icon, title, indicator, children, className }
       <p className="card-description">{indicator.description}</p>
       {indicator.facts?.length > 0 && <dl className="state-card-facts">{indicator.facts.map(fact => <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>}
       <small className="card-source">{sourceLabel}: {indicator.source}</small>
-      {(indicator.stamp || stampLabel) && <small className="card-source">{indicator.reference ? 'Referência' : 'Atualização'}: {indicator.stamp || stampLabel}</small>}
+      {(indicator.stamp || stampLabel) && <small className="card-source">{indicator.stampLabel || (indicator.reference ? 'Referência' : 'Atualização')}: {indicator.stamp || stampLabel}</small>}
       {children}
       <span className="card-link" aria-hidden="true">
         {indicator.actionLabel}

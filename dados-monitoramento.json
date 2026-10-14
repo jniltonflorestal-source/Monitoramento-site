@@ -402,8 +402,8 @@
         "sourceId": 28494
       }
     ],
-    "municipios_s2id_vigentes": 4,
-    "municipios_s2id_se": 4,
+    "municipios_s2id_vigentes": 2,
+    "municipios_s2id_se": 2,
     "municipios_s2id_ecp": 0
   },
   "status": [
@@ -7566,74 +7566,52 @@
       }
     ]
   },
-  "erros_atualizacao": {
-    "s2id": "Portal S2ID indisponível (HTTP 403)"
-  },
+  "erros_atualizacao": {},
   "s2id": {
     "fonte": "S2ID / SEDEC-MIDR",
     "consulta": "https://s2id.mi.gov.br/rest/portal/reconhecimentos",
+    "portal": "https://s2id.mi.gov.br/paginas/index.xhtml",
+    "ultimaTentativa": "2026-10-14T12:36:32.432Z",
+    "atualizadoEm": "2026-10-14T12:36:33.785Z",
     "reconhecimentos_vigentes": [
       {
-        "municipio": "Esperantina",
-        "geocodigo": "1707405",
-        "protocolo": "TO-F-1707405-13214-20260316",
-        "cobrade": "13214",
-        "desastre": "Tempestade Local/Convectiva - Chuvas Intensas",
+        "municipio": "Filadélfia",
+        "geocodigo": "1707702",
+        "protocolo": "TO-F-1707702-14110-20260928",
+        "cobrade": "14110",
+        "desastre": "Estiagem",
         "situacao": "Situação de Emergência (SE)",
-        "decreto": "035/2026",
-        "data_decreto": "16/03/2026",
-        "portaria": "1260",
-        "vigencia": "12/09/2026",
-        "latitude": -5.343,
-        "longitude": -48.511
+        "decreto": "033/2026",
+        "data_decreto": "28/09/2026",
+        "portaria": "3481",
+        "vigencia": "27/03/2027",
+        "latitude": -7.336,
+        "longitude": -47.49,
+        "detalhe_status": "ok"
       },
       {
-        "municipio": "Monte do Carmo",
-        "geocodigo": "1713601",
-        "protocolo": "TO-F-1713601-13214-20260305",
-        "cobrade": "13214",
-        "desastre": "Tempestade Local/Convectiva - Chuvas Intensas",
+        "municipio": "Formoso do Araguaia",
+        "geocodigo": "1708205",
+        "protocolo": "TO-F-1708205-23120-20260919",
+        "cobrade": "23120",
+        "desastre": "Incêndios em aglomerados residenciais",
         "situacao": "Situação de Emergência (SE)",
-        "decreto": "29/2026",
-        "data_decreto": "11/03/2026",
-        "portaria": "1095",
-        "vigencia": "07/09/2026",
-        "latitude": -10.763,
-        "longitude": -48.109
-      },
-      {
-        "municipio": "Sandolândia",
-        "geocodigo": "1718840",
-        "protocolo": "TO-F-1718840-12200-20260301",
-        "cobrade": "12200",
-        "desastre": "Enxurradas",
-        "situacao": "Situação de Emergência (SE)",
-        "decreto": "46/2026",
-        "data_decreto": "10/03/2026",
-        "portaria": "911",
-        "vigencia": "06/09/2026",
-        "latitude": -12.537,
-        "longitude": -49.925
-      },
-      {
-        "municipio": "Talismã",
-        "geocodigo": "1720978",
-        "protocolo": "TO-F-1720978-13214-20260301",
-        "cobrade": "13214",
-        "desastre": "Tempestade Local/Convectiva - Chuvas Intensas",
-        "situacao": "Situação de Emergência (SE)",
-        "decreto": "  012/2026",
-        "data_decreto": "23/03/2026",
-        "portaria": "1128",
-        "vigencia": "19/09/2026",
-        "latitude": -12.795,
-        "longitude": -49.093
+        "decreto": "267",
+        "data_decreto": "21/09/2026",
+        "portaria": "3257",
+        "vigencia": "20/03/2027",
+        "latitude": -11.797,
+        "longitude": -49.529,
+        "detalhe_status": "ok"
       }
     ],
     "resumo": {
-      "se": 4,
+      "federal": 2,
+      "se": 2,
       "ecp": 0,
-      "federal": 4
+      "registros": 2,
+      "classificacao_nao_confirmada": 0,
+      "municipios_nao_identificados": 0
     }
   },
   "area_queimada": {
@@ -11163,9 +11141,9 @@
       "ultimoSucesso": "2026-10-14T12:24:35Z"
     },
     "s2id": {
-      "status": "erro",
-      "ultimaTentativa": "2026-10-14T12:24:23.202Z",
-      "erro": "Portal S2ID indisponível (HTTP 403)"
+      "status": "ok",
+      "ultimaTentativa": "2026-10-14T12:36:32.432Z",
+      "ultimoSucesso": "2026-10-14T12:36:33.785Z"
     },
     "area_queimada_mapbiomas": {
       "status": "ok",

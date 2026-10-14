@@ -2,6 +2,9 @@
 
 Revisão complementar de 13/10: [integridade dos produtos e abrangência municipal dos alertas](INTEGRIDADE-FONTES.md).
 
+Recuperação assistida do S2ID e transparência da última confirmação em 14/10:
+[diagnóstico, procedimento e limitação do runner](S2ID-RECUPERACAO.md).
+
 ## Diagnóstico
 
 O JSON de produção registrava sucesso de INPE, INMET e MapBiomas, mas erros de CEMADEN (alertas), seca e S2ID. O frontend descartava todos os alertas quando apenas um emissor falhava. A consulta direta confirmou chuva CEMADEN operacional; o endereço legado de metadados de seca retornou HTTP 404. S2ID e alertas CEMADEN responderam em nova tentativa, indicando indisponibilidade transitória.

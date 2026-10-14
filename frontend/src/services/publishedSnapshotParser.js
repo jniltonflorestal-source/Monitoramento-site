@@ -188,10 +188,22 @@ export function parseDroughtIndicator(data, fallback) {
 }
 
 export function parseEmergencyIndicator(data, fallback) {
-  const quality = publishedQuality(data, ['s2id'], FRESHNESS_HOURS.emergency);
-  if (quality.status !== 'current') return unavailableIndicator(fallback, quality);
+  const metadata = data?.qualidade_fontes?.s2id;
+  const quality = metadata
+    ? publishedQuality(data, ['s2id'], FRESHNESS_HOURS.emergency)
+    : { status: 'unknown', observedAt: null, message: 'Última consulta do S2ID não confirmada.' };
   const summary = data?.s2id?.resumo;
   const count = safeCount(summary?.federal);
+  if (quality.status !== 'current') {
+    const item = unavailableIndicator(fallback, quality);
+    item.attemptedAt = quality.attemptedAt || null;
+    item.description = 'Não foi possível atualizar o S2ID. Consulte os reconhecimentos no portal oficial.';
+    // A failed recheck does not erase provenance, but never confirms current validity.
+    if (quality.status === 'error' && count !== null && assessFreshness(metadata?.ultimoSucesso, FRESHNESS_HOURS.emergency).status === 'current') {
+      item.lastConfirmed = { federal: count, se: safeCount(summary?.se), ecp: safeCount(summary?.ecp), observedAt: metadata.ultimoSucesso };
+    }
+    return item;
+  }
   if (count === null) return unavailableIndicator(fallback, { ...quality, status: 'unknown', message: 'Contagem de reconhecimentos não informada.' });
 
   const points = (data.s2id.reconhecimentos_vigentes || [])
