@@ -1,20 +1,20 @@
 {
-  "atualizado_em": "2026-11-10T10:00:37.420Z",
+  "atualizado_em": "2026-11-10T17:55:50.668Z",
   "resumo": {
     "alertas_cemaden_to": 0,
     "alertas_cemaden_to_nivel_maximo": "Sem alerta vigente",
     "estacoes_fluviometricas_ana": null,
-    "focos_calor_24h": 19,
-    "area_queimada_ano_ha": 1513153.8,
-    "chuva_24h_mm": 65,
+    "focos_calor_24h": 44,
+    "area_queimada_ano_ha": 1716639.37,
+    "chuva_24h_mm": 71.18,
     "estacoes_operando": 35,
     "avisos_inmet_to_hoje": 1,
-    "avisos_inmet_to_futuro": 1,
+    "avisos_inmet_to_futuro": 2,
     "avisos_inmet_to_severidade_maxima": "Perigo Potencial",
     "avisos_inmet_detalhes": [
       {
-        "title": "Vigente hoje: Tempestade",
-        "detail": "Perigo Potencial | 2026-11-10 00:00 até 2026-11-10 23:59",
+        "title": "Vigente hoje: Chuvas Intensas",
+        "detail": "Perigo Potencial | 2026-11-10 10:58 até 2026-11-10 23:59",
         "location": "Abreulândia, Aguiarnópolis, Aliança do Tocantins, Almas, Alvorada, Ananás e mais 133 municipio(s).",
         "municipalityCodes": [
           "1700251",
@@ -158,19 +158,54 @@
           "1722107"
         ],
         "municipalityCoverageComplete": true,
-        "sourceId": 28673
+        "sourceId": 28681
+      },
+      {
+        "title": "Previsto: Tempestade",
+        "detail": "Perigo Potencial | 2026-11-12 00:00 até 2026-11-12 23:59",
+        "location": "Alvorada, Araguaçu, Cariri do Tocantins, Crixás do Tocantins, Dueré, Figueirópolis e mais 12 municipio(s).",
+        "municipalityCodes": [
+          "1700707",
+          "1702000",
+          "1703867",
+          "1706258",
+          "1707306",
+          "1707652",
+          "1708205",
+          "1709500",
+          "1711506",
+          "1711902",
+          "1715754",
+          "1716604",
+          "1717503",
+          "1718840",
+          "1718899",
+          "1720259",
+          "1720853",
+          "1720978"
+        ],
+        "municipalityCoverageComplete": true,
+        "sourceId": 28680
       },
       {
         "title": "Previsto: Tempestade",
         "detail": "Perigo Potencial | 2026-11-11 00:00 até 2026-11-11 23:59",
-        "location": "Araguaçu, Formoso do Araguaia, Sandolândia.",
+        "location": "Alvorada, Araguaçu, Cariri do Tocantins, Dueré, Figueirópolis, Formoso do Araguaia e mais 5 municipio(s).",
         "municipalityCodes": [
+          "1700707",
           "1702000",
+          "1703867",
+          "1707306",
+          "1707652",
           "1708205",
-          "1718840"
+          "1711902",
+          "1717503",
+          "1718840",
+          "1718899",
+          "1720978"
         ],
         "municipalityCoverageComplete": true,
-        "sourceId": 28674
+        "sourceId": 28678
       }
     ],
     "municipios_s2id_vigentes": 2,
@@ -181,7 +216,7 @@
     {
       "icon": "cloud-rain",
       "label": "Chuvas",
-      "description": "65 mm acumulados nas últimas 24h",
+      "description": "71,18 mm acumulados nas últimas 24h",
       "value": "Monitoramento"
     },
     {
@@ -193,7 +228,7 @@
     {
       "icon": "flame",
       "label": "Focos de calor",
-      "description": "19 focos registrados no arquivo diário do INPE",
+      "description": "44 focos registrados no arquivo diário do INPE",
       "value": "Ativo"
     },
     {
@@ -1656,11 +1691,11 @@
   },
   "focos_calor": {
     "status": "ok",
-    "quantidade24h": 19,
-    "quantidadeMapa": 19,
+    "quantidade24h": 44,
+    "quantidadeMapa": 44,
     "periodo": "Arquivo diario INPE",
     "fonte": "INPE Queimadas",
-    "atualizadoEm": "2026-11-10T10:00:21.926Z",
+    "atualizadoEm": "2026-11-10T17:55:37.885Z",
     "referenciaArquivo": "20261110",
     "csv_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/focos_diario_br_20261110.csv",
     "observacao": "Dados filtrados para o Tocantins a partir do arquivo diario Brasil do INPE Queimadas.",
@@ -1815,6 +1850,206 @@
         "municipio": "GURUPI",
         "satelite": "METOP-C",
         "data_hora_gmt": "2026-11-10 01:06:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.94987,
+        "longitude": -49.56277,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.79343,
+        "longitude": -49.10754,
+        "municipio": "TALISMÃ",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.79067,
+        "longitude": -49.10338,
+        "municipio": "TALISMÃ",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.79009,
+        "longitude": -49.10699,
+        "municipio": "TALISMÃ",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.84274,
+        "longitude": -49.80884,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.79401,
+        "longitude": -49.10393,
+        "municipio": "TALISMÃ",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.91908,
+        "longitude": -47.83523,
+        "municipio": "NOVO ACORDO",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.91633,
+        "longitude": -47.83119,
+        "municipio": "NOVO ACORDO",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.91964,
+        "longitude": -47.83172,
+        "municipio": "NOVO ACORDO",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.9202,
+        "longitude": -47.82822,
+        "municipio": "NOVO ACORDO",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.94692,
+        "longitude": -49.13556,
+        "municipio": "SANTA RITA DO TOCANTINS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.38948,
+        "longitude": -49.49781,
+        "municipio": "FIGUEIRÓPOLIS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.92295,
+        "longitude": -47.83226,
+        "municipio": "NOVO ACORDO",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.39009,
+        "longitude": -49.49411,
+        "municipio": "FIGUEIRÓPOLIS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -11.46207,
+        "longitude": -49.70701,
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.95677,
+        "longitude": -49.8092,
+        "municipio": "LAGOA DA CONFUSÃO",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.79285,
+        "longitude": -49.11116,
+        "municipio": "TALISMÃ",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.3861,
+        "longitude": -49.49725,
+        "municipio": "FIGUEIRÓPOLIS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -9.92239,
+        "longitude": -47.83576,
+        "municipio": "NOVO ACORDO",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -12.78951,
+        "longitude": -49.11061,
+        "municipio": "TALISMÃ",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.94354,
+        "longitude": -49.13501,
+        "municipio": "SANTA RITA DO TOCANTINS",
+        "satelite": "NOAA-21",
+        "data_hora_gmt": "2026-11-10 04:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.94107,
+        "longitude": -49.13799,
+        "municipio": "SANTA RITA DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-11-10 05:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.94704,
+        "longitude": -49.13882,
+        "municipio": "SANTA RITA DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-11-10 05:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.94402,
+        "longitude": -49.14049,
+        "municipio": "SANTA RITA DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-11-10 05:27:00",
+        "bioma": "Cerrado"
+      },
+      {
+        "latitude": -10.94457,
+        "longitude": -49.13618,
+        "municipio": "SANTA RITA DO TOCANTINS",
+        "satelite": "NOAA-20",
+        "data_hora_gmt": "2026-11-10 05:27:00",
         "bioma": "Cerrado"
       }
     ],
@@ -2160,6 +2395,456 @@
           "data_hora_gmt": "2026-11-10 01:06:00",
           "bioma": "Cerrado"
         }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.56277,
+            -11.94987
+          ]
+        },
+        "properties": {
+          "latitude": -11.94987,
+          "longitude": -49.56277,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.10754,
+            -12.79343
+          ]
+        },
+        "properties": {
+          "latitude": -12.79343,
+          "longitude": -49.10754,
+          "municipio": "TALISMÃ",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.10338,
+            -12.79067
+          ]
+        },
+        "properties": {
+          "latitude": -12.79067,
+          "longitude": -49.10338,
+          "municipio": "TALISMÃ",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.10699,
+            -12.79009
+          ]
+        },
+        "properties": {
+          "latitude": -12.79009,
+          "longitude": -49.10699,
+          "municipio": "TALISMÃ",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.80884,
+            -11.84274
+          ]
+        },
+        "properties": {
+          "latitude": -11.84274,
+          "longitude": -49.80884,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.10393,
+            -12.79401
+          ]
+        },
+        "properties": {
+          "latitude": -12.79401,
+          "longitude": -49.10393,
+          "municipio": "TALISMÃ",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.83523,
+            -9.91908
+          ]
+        },
+        "properties": {
+          "latitude": -9.91908,
+          "longitude": -47.83523,
+          "municipio": "NOVO ACORDO",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.83119,
+            -9.91633
+          ]
+        },
+        "properties": {
+          "latitude": -9.91633,
+          "longitude": -47.83119,
+          "municipio": "NOVO ACORDO",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.83172,
+            -9.91964
+          ]
+        },
+        "properties": {
+          "latitude": -9.91964,
+          "longitude": -47.83172,
+          "municipio": "NOVO ACORDO",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.82822,
+            -9.9202
+          ]
+        },
+        "properties": {
+          "latitude": -9.9202,
+          "longitude": -47.82822,
+          "municipio": "NOVO ACORDO",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.13556,
+            -10.94692
+          ]
+        },
+        "properties": {
+          "latitude": -10.94692,
+          "longitude": -49.13556,
+          "municipio": "SANTA RITA DO TOCANTINS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.49781,
+            -12.38948
+          ]
+        },
+        "properties": {
+          "latitude": -12.38948,
+          "longitude": -49.49781,
+          "municipio": "FIGUEIRÓPOLIS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.83226,
+            -9.92295
+          ]
+        },
+        "properties": {
+          "latitude": -9.92295,
+          "longitude": -47.83226,
+          "municipio": "NOVO ACORDO",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.49411,
+            -12.39009
+          ]
+        },
+        "properties": {
+          "latitude": -12.39009,
+          "longitude": -49.49411,
+          "municipio": "FIGUEIRÓPOLIS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.70701,
+            -11.46207
+          ]
+        },
+        "properties": {
+          "latitude": -11.46207,
+          "longitude": -49.70701,
+          "municipio": "FORMOSO DO ARAGUAIA",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.8092,
+            -10.95677
+          ]
+        },
+        "properties": {
+          "latitude": -10.95677,
+          "longitude": -49.8092,
+          "municipio": "LAGOA DA CONFUSÃO",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.11116,
+            -12.79285
+          ]
+        },
+        "properties": {
+          "latitude": -12.79285,
+          "longitude": -49.11116,
+          "municipio": "TALISMÃ",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.49725,
+            -12.3861
+          ]
+        },
+        "properties": {
+          "latitude": -12.3861,
+          "longitude": -49.49725,
+          "municipio": "FIGUEIRÓPOLIS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -47.83576,
+            -9.92239
+          ]
+        },
+        "properties": {
+          "latitude": -9.92239,
+          "longitude": -47.83576,
+          "municipio": "NOVO ACORDO",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.11061,
+            -12.78951
+          ]
+        },
+        "properties": {
+          "latitude": -12.78951,
+          "longitude": -49.11061,
+          "municipio": "TALISMÃ",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.13501,
+            -10.94354
+          ]
+        },
+        "properties": {
+          "latitude": -10.94354,
+          "longitude": -49.13501,
+          "municipio": "SANTA RITA DO TOCANTINS",
+          "satelite": "NOAA-21",
+          "data_hora_gmt": "2026-11-10 04:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.13799,
+            -10.94107
+          ]
+        },
+        "properties": {
+          "latitude": -10.94107,
+          "longitude": -49.13799,
+          "municipio": "SANTA RITA DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-11-10 05:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.13882,
+            -10.94704
+          ]
+        },
+        "properties": {
+          "latitude": -10.94704,
+          "longitude": -49.13882,
+          "municipio": "SANTA RITA DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-11-10 05:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.14049,
+            -10.94402
+          ]
+        },
+        "properties": {
+          "latitude": -10.94402,
+          "longitude": -49.14049,
+          "municipio": "SANTA RITA DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-11-10 05:27:00",
+          "bioma": "Cerrado"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.13618,
+            -10.94457
+          ]
+        },
+        "properties": {
+          "latitude": -10.94457,
+          "longitude": -49.13618,
+          "municipio": "SANTA RITA DO TOCANTINS",
+          "satelite": "NOAA-20",
+          "data_hora_gmt": "2026-11-10 05:27:00",
+          "bioma": "Cerrado"
+        }
       }
     ]
   },
@@ -2218,10 +2903,10 @@
     "fonte": "MapBiomas Monitor do Fogo",
     "fonte_url": "https://plataforma.monitorfogo.mapbiomas.org/api/docs/",
     "ano_referencia": 2026,
-    "mes_final": 9,
-    "periodo": "Janeiro a setembro de 2026",
-    "area_queimada_ha": 1513153.8,
-    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/9a141590de1721e5b7b661ada9fe8934-75459345b8b584cb379ae47e201c5d7a/tiles/{z}/{x}/{y}",
+    "mes_final": 10,
+    "periodo": "Janeiro a outubro de 2026",
+    "area_queimada_ha": 1716639.37,
+    "raster_url": "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/7eb029b854173ff0c08ba39a6e01139a-a626c28a06ed8a1bf4b6fef92c7ae704/tiles/{z}/{x}/{y}",
     "raster_status": "ok",
     "unidade": "ha",
     "natureza": "Cicatrizes de área queimada mapeadas pelo Monitor do Fogo."
@@ -2230,16 +2915,16 @@
     "status": "ok",
     "periodo": "ultimas 24h",
     "fonte": "CEMADEN",
-    "atualizadoEm": "2026-11-10T10:00:35.345Z",
-    "maiorAcumulado": 65,
-    "estacaoMaiorAcumulado": "G2-170255402A",
-    "municipioMaiorAcumulado": "AUGUSTINÓPOLIS",
+    "atualizadoEm": "2026-11-10T17:55:48.869Z",
+    "maiorAcumulado": 71.18,
+    "estacaoMaiorAcumulado": "Setor Maracanã",
+    "municipioMaiorAcumulado": "ARAGUAÍNA",
     "estacoesCadastradas": 230,
     "estacoesConsultadas": 55,
     "estacoesComLeitura": 35,
-    "acima10": 18,
-    "acima30": 14,
-    "acima50": 3,
+    "acima10": 22,
+    "acima30": 21,
+    "acima50": 10,
     "fontes": {
       "CEMADEN": {
         "source": "CEMADEN",
@@ -2249,7 +2934,7 @@
         "estacoesCadastradas": 35,
         "estacoesConsultadas": 35,
         "estacoesComLeitura": 35,
-        "atualizadoEm": "2026-11-10 09:58:41 UTC",
+        "atualizadoEm": "2026-11-10 17:54:40 UTC",
         "estacoes": [
           {
             "id": "CEMADEN-170730601A",
@@ -2259,9 +2944,9 @@
             "fonte": "CEMADEN",
             "latitude": -11.34296,
             "longitude": -49.26664,
-            "chuva24h": 0.2,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
-            "status": "fraca",
+            "chuva24h": 0,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
+            "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -2273,9 +2958,9 @@
             "fonte": "CEMADEN",
             "latitude": -5.36527,
             "longitude": -48.539,
-            "chuva24h": 48.8,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
-            "status": "forte",
+            "chuva24h": 59.2,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
+            "status": "intensa",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -2287,9 +2972,9 @@
             "fonte": "CEMADEN",
             "latitude": -12.035,
             "longitude": -48.539,
-            "chuva24h": 0.2,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
-            "status": "fraca",
+            "chuva24h": 0,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
+            "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -2301,8 +2986,8 @@
             "fonte": "CEMADEN",
             "latitude": -5.3956,
             "longitude": -47.8114,
-            "chuva24h": 35.8,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "chuva24h": 39.2,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "forte",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2315,8 +3000,8 @@
             "fonte": "CEMADEN",
             "latitude": -5.25903,
             "longitude": -48.20147,
-            "chuva24h": 35.2,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "chuva24h": 43.2,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "forte",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2329,8 +3014,8 @@
             "fonte": "CEMADEN",
             "latitude": -6.58226,
             "longitude": -48.64368,
-            "chuva24h": 0.6,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "chuva24h": 2,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2343,9 +3028,9 @@
             "fonte": "CEMADEN",
             "latitude": -7.18755,
             "longitude": -48.23527,
-            "chuva24h": 0,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
-            "status": "sem_chuva",
+            "chuva24h": 51.74,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
+            "status": "intensa",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -2357,9 +3042,9 @@
             "fonte": "CEMADEN",
             "latitude": -7.15587,
             "longitude": -48.1888,
-            "chuva24h": 0,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
-            "status": "sem_chuva",
+            "chuva24h": 71.18,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
+            "status": "intensa",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -2371,9 +3056,9 @@
             "fonte": "CEMADEN",
             "latitude": -7.19408,
             "longitude": -48.19586,
-            "chuva24h": 0,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
-            "status": "sem_chuva",
+            "chuva24h": 64.97,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
+            "status": "intensa",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -2385,9 +3070,9 @@
             "fonte": "CEMADEN",
             "latitude": -7.22806,
             "longitude": -48.24461,
-            "chuva24h": 0,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
-            "status": "sem_chuva",
+            "chuva24h": 42.89,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
+            "status": "forte",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -2400,7 +3085,7 @@
             "latitude": -5.65762,
             "longitude": -48.11147,
             "chuva24h": 0,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2414,7 +3099,7 @@
             "latitude": -11.8055,
             "longitude": -49.5275,
             "chuva24h": 0,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2427,9 +3112,9 @@
             "fonte": "CEMADEN",
             "latitude": -7.71295,
             "longitude": -47.3093,
-            "chuva24h": 0,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
-            "status": "sem_chuva",
+            "chuva24h": 2,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
+            "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -2441,8 +3126,8 @@
             "fonte": "CEMADEN",
             "latitude": -6.41126,
             "longitude": -48.53374,
-            "chuva24h": 7.87,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "chuva24h": 9.93,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2455,8 +3140,8 @@
             "fonte": "CEMADEN",
             "latitude": -10.71611,
             "longitude": -48.39972,
-            "chuva24h": 0.2,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "chuva24h": 2.4,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2469,9 +3154,9 @@
             "fonte": "CEMADEN",
             "latitude": -6.36614,
             "longitude": -48.07425,
-            "chuva24h": 13.8,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
-            "status": "moderada",
+            "chuva24h": 35,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
+            "status": "forte",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -2483,9 +3168,9 @@
             "fonte": "CEMADEN",
             "latitude": -6.38166,
             "longitude": -48.06247,
-            "chuva24h": 16.6,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
-            "status": "moderada",
+            "chuva24h": 48,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
+            "status": "forte",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -2497,8 +3182,8 @@
             "fonte": "CEMADEN",
             "latitude": -5.464,
             "longitude": -47.8968,
-            "chuva24h": 65,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "chuva24h": 71,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "intensa",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2511,8 +3196,8 @@
             "fonte": "CEMADEN",
             "latitude": -5.47538,
             "longitude": -47.8894,
-            "chuva24h": 54.2,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "chuva24h": 61.2,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "intensa",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2525,9 +3210,9 @@
             "fonte": "CEMADEN",
             "latitude": -5.43003,
             "longitude": -47.85794,
-            "chuva24h": 49.4,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
-            "status": "forte",
+            "chuva24h": 55.2,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
+            "status": "intensa",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -2539,8 +3224,8 @@
             "fonte": "CEMADEN",
             "latitude": -5.31875,
             "longitude": -48.03931,
-            "chuva24h": 55.6,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "chuva24h": 63.8,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "intensa",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2553,9 +3238,9 @@
             "fonte": "CEMADEN",
             "latitude": -5.32428,
             "longitude": -48.03409,
-            "chuva24h": 43.8,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
-            "status": "forte",
+            "chuva24h": 50.8,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
+            "status": "intensa",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -2568,7 +3253,7 @@
             "latitude": -9.27346,
             "longitude": -49.95341,
             "chuva24h": 35,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "forte",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2582,7 +3267,7 @@
             "latitude": -9.28222,
             "longitude": -49.95326,
             "chuva24h": 38.2,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "forte",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2595,8 +3280,8 @@
             "fonte": "CEMADEN",
             "latitude": -5.7713,
             "longitude": -47.48039,
-            "chuva24h": 1.2,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "chuva24h": 1.4,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2609,8 +3294,8 @@
             "fonte": "CEMADEN",
             "latitude": -5.77459,
             "longitude": -47.47793,
-            "chuva24h": 38.4,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "chuva24h": 40.2,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "forte",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2624,7 +3309,7 @@
             "latitude": -10.79377,
             "longitude": -49.62398,
             "chuva24h": 0,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2638,7 +3323,7 @@
             "latitude": -10.78287,
             "longitude": -49.61681,
             "chuva24h": 0,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2651,8 +3336,8 @@
             "fonte": "CEMADEN",
             "latitude": -12.61455,
             "longitude": -47.88209,
-            "chuva24h": 31,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "chuva24h": 33,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "forte",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2665,8 +3350,8 @@
             "fonte": "CEMADEN",
             "latitude": -12.62006,
             "longitude": -47.86848,
-            "chuva24h": 19.4,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "chuva24h": 21.2,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "moderada",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2680,7 +3365,7 @@
             "latitude": -10.44846,
             "longitude": -49.16758,
             "chuva24h": 0,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "sem_chuva",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2693,8 +3378,8 @@
             "fonte": "CEMADEN",
             "latitude": -10.44163,
             "longitude": -49.181,
-            "chuva24h": 0.2,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "chuva24h": 0.4,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "fraca",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -2707,9 +3392,9 @@
             "fonte": "CEMADEN",
             "latitude": -6.32722,
             "longitude": -47.42812,
-            "chuva24h": 31.8,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
-            "status": "forte",
+            "chuva24h": 51,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
+            "status": "intensa",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -2721,9 +3406,9 @@
             "fonte": "CEMADEN",
             "latitude": -6.33796,
             "longitude": -47.4185,
-            "chuva24h": 27,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
-            "status": "moderada",
+            "chuva24h": 38.4,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
+            "status": "forte",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
           },
@@ -2735,8 +3420,8 @@
             "fonte": "CEMADEN",
             "latitude": -6.31512,
             "longitude": -47.42296,
-            "chuva24h": 30.2,
-            "atualizadoEm": "2026-11-10 09:58:41 UTC",
+            "chuva24h": 44.2,
+            "atualizadoEm": "2026-11-10 17:54:40 UTC",
             "status": "forte",
             "statusLeitura": "valida",
             "observacao": "Acumulado 24h informado pelo CEMADEN."
@@ -3070,7 +3755,7 @@
         "estacoesConsultadas": 0,
         "estacoesComLeitura": 0,
         "atualizadoEm": null,
-        "ultimaTentativa": "2026-11-10T10:00:35.344Z",
+        "ultimaTentativa": "2026-11-10T17:55:48.868Z",
         "estacoes": [],
         "todasEstacoes": [
           {
@@ -5717,40 +6402,40 @@
   "qualidade_fontes": {
     "focos_calor_inpe": {
       "status": "ok",
-      "ultimaTentativa": "2026-11-10T10:00:20.028Z",
-      "ultimoSucesso": "2026-11-10T10:00:21.927Z"
+      "ultimaTentativa": "2026-11-10T17:55:35.947Z",
+      "ultimoSucesso": "2026-11-10T17:55:37.885Z"
     },
     "alertas_cemaden": {
       "status": "ok",
-      "ultimaTentativa": "2026-11-10T10:00:21.927Z",
-      "ultimoSucesso": "2026-11-10T10:00:23.505Z"
+      "ultimaTentativa": "2026-11-10T17:55:37.885Z",
+      "ultimoSucesso": "2026-11-10T17:55:38.900Z"
     },
     "avisos_inmet": {
       "status": "ok",
-      "ultimaTentativa": "2026-11-10T10:00:23.505Z",
-      "ultimoSucesso": "2026-11-10T10:00:25.415Z"
+      "ultimaTentativa": "2026-11-10T17:55:38.900Z",
+      "ultimoSucesso": "2026-11-10T17:55:40.663Z"
     },
     "chuva_observada": {
       "status": "ok",
-      "ultimaTentativa": "2026-11-10T10:00:25.415Z",
-      "ultimoSucesso": "2026-11-10T10:00:35.345Z"
+      "ultimaTentativa": "2026-11-10T17:55:40.663Z",
+      "ultimoSucesso": "2026-11-10T17:55:48.869Z"
     },
     "seca_iis3": {
       "status": "erro",
-      "ultimaTentativa": "2026-11-10T10:00:37Z",
+      "ultimaTentativa": "2026-11-10T17:55:50Z",
       "ultimoSucesso": "2026-11-05T15:35:15Z",
       "erro": "Planilha IIS do período publicado não encontrada"
     },
     "s2id": {
       "status": "erro",
-      "ultimaTentativa": "2026-11-10T10:00:35.345Z",
+      "ultimaTentativa": "2026-11-10T17:55:48.869Z",
       "ultimoSucesso": "2026-10-14T12:36:33.785Z",
       "erro": "Portal S2ID indisponível (HTTP 403)"
     },
     "area_queimada_mapbiomas": {
       "status": "ok",
-      "ultimaTentativa": "2026-11-10T10:00:36.307Z",
-      "ultimoSucesso": "2026-11-10T10:00:37.420Z"
+      "ultimaTentativa": "2026-11-10T17:55:49.646Z",
+      "ultimoSucesso": "2026-11-10T17:55:50.668Z"
     }
   }
 }
