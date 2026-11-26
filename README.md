@@ -157,3 +157,7 @@ O mapa também oferece [navegação por tema e painel municipal](docs/PAINEL-MUN
 O mapa permite combinar camadas, filtrar deteccoes do INPE por periodo, satelite e municipio, consultar o raster mensal do MapBiomas e visualizar series hidrologicas da ANA. A meteorologia usa previsao GFS via Open-Meteo, carregada sob demanda, com animacao ilustrativa do vento.
 
 Consulte [fontes, limites e operacao do WebGIS](docs/WEBGIS-OPERACIONAL.md). O coletor `scripts/update-fire-history.py` alimenta `data/fire-history.json` no workflow horario existente. Dados ausentes nao representam ausencia de risco. As chaves privadas permanecem nos secrets do GitHub Actions, nunca no navegador.
+
+## Levantamento municipal de estiagem
+
+O [painel público de estiagem](https://jniltonflorestal-source.github.io/Monitoramento-site/estiagem/) apresenta os indicadores do formulário municipal após validação técnica. Consulte [operação e limites](docs/PAINEL-ESTIAGEM.md).

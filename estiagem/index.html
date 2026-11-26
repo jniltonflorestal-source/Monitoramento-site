@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#112e49">
+  <title>Monitoramento da Estiagem | Defesa Civil Tocantins</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="cabecalho">
+    <div class="marca">
+      <svg class="simbolo" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 43 10v14c0 10-9 17-19 22C14 41 5 34 5 24V10Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m24 12 13 23H11Z" fill="#ef8c35"/><path d="m24 21 6 10H18Z" fill="#112e49"/></svg>
+      <div><strong>DEFESA CIVIL</strong><span>TOCANTINS</span></div>
+    </div>
+    <div class="orgao">Governo do Estado do Tocantins<span>Centro de Monitoramento</span></div>
+    <span class="restrito">Consulta pública</span>
+  </header>
+  <section class="hero" aria-labelledby="titulo">
+    <div><p class="sobretitulo">SEGURANÇA HÍDRICA · MONITORAMENTO ESTADUAL</p><h1 id="titulo">Monitoramento da <em>estiagem</em></h1><p class="subtitulo">Situação do abastecimento e capacidade de resposta municipal.</p></div>
+    <div class="situacao-conexao"><span class="ponto" id="ponto-conexao"></span><span id="conexao">Aguardando conexão</span><small id="ultima-atualizacao">Atualização automática a cada 60 segundos</small></div>
+  </section>
+  <nav class="navegacao" aria-label="Navegação"><a href="../">Portal de monitoramento</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSdtiMd4kW575Wvp6rxp6CW_4OblwpcLB7O2OekeafQZNve8AQ/viewform" target="_blank" rel="noopener">Preencher levantamento municipal</a></nav><main id="conteudo">
+    <div id="aviso-conexao" class="aviso aviso-conexao" role="status" aria-live="polite">Conectando ao levantamento institucional…</div>
+    <div class="barra-secao"><div><span class="eyebrow">VISÃO ESTADUAL</span><h2>Panorama do levantamento</h2></div><div class="acoes"><button id="atualizar" class="botao botao-claro" type="button" disabled>Atualizar</button><button id="exportar-csv" class="botao botao-claro" type="button" disabled>Exportar CSV</button><button id="exportar-pdf" class="botao botao-escuro" type="button" disabled>Relatório / PDF</button></div></div>
+    <section class="kpis" id="indicadores-kpis" aria-label="Indicadores estaduais de respostas atuais validadas">
+      <article class="kpi principal"><div class="kpi-rotulo">Municípios monitorados</div><strong id="kpi-total">—</strong><small>Universo do levantamento</small></article>
+      <article class="kpi"><div class="kpi-rotulo" id="rotulo-respondentes">Com resposta validada</div><strong id="kpi-respondentes">—</strong><small id="cobertura-respostas">Cobertura ainda indisponível</small></article>
+      <article class="kpi"><div class="kpi-rotulo">Com escassez hídrica</div><strong id="kpi-afetados">—</strong><small id="base-afetados">Somente respostas atuais validadas</small></article>
+      <article class="kpi destaque"><div class="kpi-rotulo">Famílias sem atendimento</div><strong id="kpi-sem-atendimento">—</strong><small id="cobertura-sem-atendimento">Cobertura ainda indisponível</small></article>
+    </section>
+    <section class="metricas metricas-complementares" aria-label="População, frota, apoio e cobertura de resposta">
+      <article><span>Pessoas afetadas</span><strong id="valor-q14">—</strong><small id="cobertura-q14">NI · não informado</small></article>
+      <article><span>Caminhões-pipa · frota total</span><strong id="valor-frotaTotal">—</strong><small id="cobertura-frotaTotal">Próprios, alugados e cedidos</small></article>
+      <article><span>Municípios com decreto vigente</span><strong id="valor-q43">—</strong><small id="cobertura-q43">Cobertura ainda indisponível</small></article>
+      <article><span>Municípios que necessitam de apoio</span><strong id="valor-q45">—</strong><small id="cobertura-q45">Cobertura ainda indisponível</small></article>
+      <article><span>Municípios pendentes</span><strong id="kpi-pendentes">—</strong><small id="rotulo-pendentes">Sem resposta validada elegível</small></article>
+    </section>
+    <section class="metricas" aria-label="Impactos e recursos informados">
+      <article><span>Famílias afetadas</span><strong id="valor-q13">—</strong><small id="cobertura-q13">NI · não informado</small></article>
+      <article><span>Comunidades afetadas</span><strong id="valor-q12">—</strong><small id="cobertura-q12">NI · não informado</small></article>
+      <article><span>Pipas operacionais</span><strong id="valor-q23">—</strong><small id="cobertura-q23">NI · não informado</small></article>
+      <article><span>Déficit de caminhões-pipa</span><strong id="valor-q31">—</strong><small id="cobertura-q31">NI · não informado</small></article>
+      <article><span>Demanda alimentar · famílias</span><strong id="valor-q38">—</strong><small id="cobertura-q38">NI · não informado</small></article>
+    </section>
+    <p id="resumo-validacao" class="nota-base">Aguardando dados de recebimento e validação técnica.</p>
+    <section class="aviso-metodo"><span class="icone-aviso" aria-hidden="true">i</span><p id="aviso-metodologia"><strong>Classificação preliminar de prioridade.</strong> Instrumento interno sujeito à validação técnica da Defesa Civil. Não representa classificação oficial de intensidade de desastre. NI significa informação não levantada; zero indica ausência informada.</p></section>
+    <div class="barra-secao territorial"><div><span class="eyebrow">ANÁLISE TERRITORIAL</span><h2>Prioridade e situação municipal</h2></div><span class="ajuda">Selecione um município no mapa ou na lista.</span></div>
+    <div class="filtros">
+      <label class="campo-busca">Buscar município<input id="busca" type="search" placeholder="Nome ou código IBGE" autocomplete="off"></label>
+      <label>Prioridade<select id="filtro-prioridade"><option value="todas">Todas as prioridades</option><option value="critica">Crítica</option><option value="alta">Alta</option><option value="moderada">Moderada</option><option value="controlada">Monitoramento</option><option value="cinza">Sem informação atual validada</option></select></label>
+      <button id="limpar-filtros" class="limpar" type="button">Limpar filtros</button><span id="contagem-filtro" class="contagem" aria-live="polite">—</span>
+    </div>
+    <div class="grade-territorial">
+      <section class="painel painel-mapa" aria-label="Mapa de prioridade por município">
+        <div class="titulo-painel"><h3>Mapa de prioridades</h3><span>Tocantins · limites municipais</span></div>
+        <div id="mapa" aria-label="Mapa municipal do Tocantins; alternativa acessível na lista de municípios"><div id="mapa-vazio" class="vazio-mapa"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m6 13 12-5 12 5 12-5v27l-12 5-12-5-12 5Zm12-5v27m12-22v27" fill="none" stroke="currentColor" stroke-width="2"/></svg><strong>Mapa aguardando conexão</strong><span>As prioridades aparecerão após a leitura dos dados validados.</span></div></div>
+        <div class="legenda" aria-label="Legenda de prioridades"><span><i class="critica"></i>Crítica</span><span><i class="alta"></i>Alta</span><span><i class="moderada"></i>Moderada</span><span><i class="controlada"></i>Monitoramento</span><span><i class="cinza"></i>Sem informação atual</span></div>
+        <p class="fonte-mapa">Malha municipal: <a href="https://servicodados.ibge.gov.br/api/docs/malhas?versao=3" target="_blank" rel="noopener">IBGE</a>. Base cartográfica: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>.</p>
+      </section>
+      <aside class="painel detalhe" aria-labelledby="titulo-detalhe">
+        <div class="titulo-painel"><h3 id="titulo-detalhe">Consulta municipal</h3><span>Dados saneados</span></div>
+        <div class="detalhe-conteudo"><label>Município<select id="seletor-municipio"><option value="">Selecione um município</option></select></label><div id="detalhe-municipio" class="vazio-detalhe"><span aria-hidden="true">◎</span><h4>Acompanhe cada município</h4><p>Selecione no mapa ou na lista para consultar a situação, os quantitativos e as categorias de apoio.</p></div></div>
+      </aside>
+    </div>
+    <section class="painel lista" aria-labelledby="titulo-lista">
+      <div class="titulo-painel"><h3 id="titulo-lista">Situação dos municípios</h3><span>Mesma seleção exibida no mapa</span></div>
+      <div class="tabela-rolagem"><table><caption class="sr-only">Municípios filtrados por nome e prioridade. Acione o nome para detalhar.</caption><thead><tr><th scope="col">Município</th><th scope="col">Prioridade</th><th scope="col">Referência</th><th scope="col" class="numero">Famílias afetadas</th><th scope="col" class="numero">Sem atendimento</th><th scope="col" class="numero">Pipas operacionais</th><th scope="col" class="numero">Déficit de pipas</th></tr></thead><tbody id="lista-municipios"><tr><td colspan="7" class="tabela-vazia">Aguardando conexão com o levantamento.</td></tr></tbody></table></div>
+    </section>
+    <div class="grade-inferior">
+      <section class="painel evolucao" aria-labelledby="titulo-evolucao"><div class="titulo-painel"><div><h3 id="titulo-evolucao">Evolução da cobertura e dos impactos</h3><span>Últimos 12 meses · posição disponível em cada fechamento</span></div><label class="sr-only" for="metrica-serie">Indicador da evolução</label><select id="metrica-serie"><option value="afetados">Municípios com escassez</option><option value="respondentes" id="serie-respondentes">Municípios com resposta validada</option><option value="q13">Famílias afetadas</option><option value="q16">Famílias sem atendimento</option></select></div><div id="grafico" class="grafico"><p>O histórico será reconstruído a partir dos registros validados.</p></div><details class="dados-grafico"><summary>Consultar dados do gráfico em tabela</summary><table><thead><tr><th>Mês</th><th>Valor informado</th><th>Cobertura</th></tr></thead><tbody id="tabela-serie"></tbody></table></details><p class="nota-grafico">Cada fechamento considera a última resposta válida recebida até aquela data. Quantitativos utilizam apenas respostas atuais; atualizações não são somadas como novos municípios.</p></section>
+      <section class="painel leitura" aria-labelledby="titulo-leitura"><div class="titulo-painel"><h3 id="titulo-leitura">Como interpretar</h3></div><ol><li><strong>Cobertura por campo</strong><span>O total usa apenas os municípios que informaram aquele quantitativo.</span></li><li><strong>Informação atual</strong><span id="regra-elegibilidade">Respostas vencidas ou sem validação ficam em cinza e não entram nos agregados.</span></li><li><strong>Acompanhamento contínuo</strong><span>Atualize o levantamento para apoiar decisões sobre recursos e assistência.</span></li></ol></section>
+    </div>
+  </main>
+  <footer><div><strong>DEFESA CIVIL · TOCANTINS</strong><span>Monitoramento estadual dos impactos da estiagem</span></div><p>Consulta pública · Indicadores municipais após validação técnica.</p></footer>
+  <noscript><p class="aviso">Ative o JavaScript para consultar o painel. O preenchimento municipal está disponível no link do formulário.</p></noscript>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="./config.js"></script><script src="./public-api.js"></script><script src="./app.js"></script>
+</body>
+</html>
