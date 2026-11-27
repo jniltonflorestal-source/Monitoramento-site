@@ -7,7 +7,7 @@ A página [Monitoramento da estiagem](https://jniltonflorestal-source.github.io/
 - Arquivos publicados: `estiagem/`. A cópia em `frontend/public/estiagem/` preserva a página em futuras reconstruções do frontend.
 - O workflow `pages.yml` inclui essa pasta no artefato do GitHub Pages. O service worker da home exclui `/estiagem/` do fallback de navegação da aplicação.
 - O endereço público da fonte está em `config.js`; não contém token nem credenciais.
-- A página consulta o feed JSONP a cada 60 segundos enquanto estiver visível. O backend tem cache de 60 segundos. O botão Atualizar tenta uma nova consulta.
+- A página consulta o feed JSON sem credenciais do visitante a cada 60 segundos enquanto estiver visível. O backend tem cache de 60 segundos. O botão Atualizar tenta uma nova consulta.
 - A malha IBGE local contém os 139 municípios oficiais do Tocantins.
 
 ## Dados publicados

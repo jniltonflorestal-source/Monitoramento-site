@@ -5,7 +5,7 @@
   if(root&&root.document){root.PainelPublico=api;root.google={script:{run:api.runner()}};}
 })(typeof window!=='undefined'?window:null,function(root){
   'use strict';
-  var ultimo=null,sequencia=0;
+  var ultimo=null;
   var ids=['q12','q13','q14','q15','q16','q20','q21','q22','q23','q24','q25','q26','q27','q31','q37','q38','q39','q40','q07','q08','q09','q11','q18','q19','q28','q29','q30','q32','q33','q34','q35','q36','q41','q42','q43','q44','q45','q46','q47','q48'];
   function endpointValido(valor){var url=new URL(valor);if(url.protocol!=='https:'||url.hostname!=='script.google.com'||!/^\/(?:a\/macros\/[^/]+\/s|macros\/s)\/[^/]+\/exec$/.test(url.pathname))throw new Error('Endpoint público inválido.');return url;}
   function validarDados(d){
@@ -13,15 +13,16 @@
     var vistos=new Set();d.municipios.forEach(function(m){if(!m||!/^17\d{5}$/.test(String(m.codigo))||vistos.has(String(m.codigo))||typeof m.nome!=='string'||!m.prioridade||!['critica','alta','moderada','controlada','cinza'].includes(m.prioridade.nivel)||!m.q)throw new Error('Catálogo municipal inválido.');vistos.add(String(m.codigo));});
     return d;
   }
-  function jsonp(){return new Promise(function(resolve,reject){
-    var nome='estiagem_feed_'+Date.now()+'_'+(++sequencia),script=root.document.createElement('script'),timer,url;
-    function limpar(){root.clearTimeout(timer);script.remove();delete root[nome];}
-    try{url=endpointValido(root.PAINEL_PUBLICO_CONFIG&&root.PAINEL_PUBLICO_CONFIG.endpoint);}catch(e){reject(e);return;}
-    root[nome]=function(d){limpar();try{ultimo=validarDados(d);resolve(ultimo);}catch(e){reject(e);}};
-    script.onerror=function(){limpar();reject(new Error('A fonte pública está temporariamente indisponível.'));};
-    timer=root.setTimeout(function(){limpar();reject(new Error('A consulta ao levantamento excedeu o tempo de espera.'));},30000);
-    url.searchParams.set('recurso','publico');url.searchParams.set('callback',nome);url.searchParams.set('_',Math.floor(Date.now()/60000));script.src=url.href;script.async=true;script.referrerPolicy='no-referrer';root.document.head.appendChild(script);
-  });}
+  function consultarPublico(){
+    var url=endpointValido(root.PAINEL_PUBLICO_CONFIG&&root.PAINEL_PUBLICO_CONFIG.endpoint),controle=new root.AbortController(),expirou=false;
+    url.searchParams.set('recurso','publico');url.searchParams.delete('callback');url.searchParams.set('_',Math.floor(Date.now()/60000));
+    var timer=root.setTimeout(function(){expirou=true;controle.abort();},30000);
+    return root.fetch(url.href,{credentials:'omit',redirect:'follow',cache:'no-store',mode:'cors',signal:controle.signal}).then(function(resposta){
+      if(!resposta.ok)throw new Error('Fonte indisponível.');return resposta.json();
+    }).then(function(dados){ultimo=validarDados(dados);return ultimo;}).catch(function(){
+      throw new Error(expirou?'A consulta ao levantamento excedeu o tempo de espera.':'A fonte pública está temporariamente indisponível. Tente atualizar novamente.');
+    }).finally(function(){root.clearTimeout(timer);});
+  }
   function csvCelula(valor){var s=valor===null||valor===undefined?'':String(valor);if(/^\s*[=+\-@]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"';}
   function exportarCSV(d){
     var linhas=[['Código IBGE','Município','Referência','Recebido em','Prioridade'].concat(ids)];
@@ -40,7 +41,7 @@
   function imprimir(){if(!ultimo)throw new Error('Atualize o levantamento antes de imprimir.');var janela=root.open('','_blank');if(!janela)throw new Error('Permita abrir a janela do relatório para salvar o PDF.');janela.opener=null;janela.document.open();janela.document.write(relatorioHtml(ultimo));janela.document.close();janela.focus();}
   function runner(sucesso,falha){
     function executar(acao){Promise.resolve().then(acao).then(function(r){if(sucesso)sucesso(r);},function(e){if(falha)falha(e);});}
-    return {withSuccessHandler:function(fn){return runner(fn,falha);},withFailureHandler:function(fn){return runner(sucesso,fn);},obterDadosDashboard:function(){executar(jsonp);},obterMalhaMunicipal:function(){executar(function(){return root.fetch('./municipios.geojson',{cache:'force-cache'}).then(function(r){if(!r.ok)throw new Error('Malha indisponível.');return r.json();}).then(function(m){if(m.type!=='FeatureCollection'||!Array.isArray(m.features)||m.features.length!==139)throw new Error('Malha municipal incompleta.');return m;});});},exportarCSV:function(){executar(function(){if(!ultimo)throw new Error('Nenhum levantamento disponível.');return exportarCSV(ultimo);});}};
+    return {withSuccessHandler:function(fn){return runner(fn,falha);},withFailureHandler:function(fn){return runner(sucesso,fn);},obterDadosDashboard:function(){executar(consultarPublico);},obterMalhaMunicipal:function(){executar(function(){return root.fetch('./municipios.geojson',{cache:'force-cache'}).then(function(r){if(!r.ok)throw new Error('Malha indisponível.');return r.json();}).then(function(m){if(m.type!=='FeatureCollection'||!Array.isArray(m.features)||m.features.length!==139)throw new Error('Malha municipal incompleta.');return m;});});},exportarCSV:function(){executar(function(){if(!ultimo)throw new Error('Nenhum levantamento disponível.');return exportarCSV(ultimo);});}};
   }
   return {endpointValido:endpointValido,validarDados:validarDados,csvCelula:csvCelula,exportarCSV:exportarCSV,relatorioHtml:relatorioHtml,imprimir:imprimir,runner:runner};
 });

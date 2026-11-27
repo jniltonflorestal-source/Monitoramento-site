@@ -21,10 +21,11 @@
       texto('ultima-atualizacao','Atualizado em '+data(dados.geradoEm,true)+' · automático a cada 60 s');
       mensagem('');['atualizar','exportar-csv','exportar-pdf'].forEach(function(id){el(id).disabled=false;});
       preencherIndicadores();preencherSeletor();filtrar();desenharGrafico();carregarMalha();
-    }).withFailureHandler(function(){
+    }).withFailureHandler(function(erro){
       estado.carregando=false;el('atualizar').disabled=false;estado.proximaAtualizacao=Date.now()+60000;
       el('ponto-conexao').className='ponto erro';texto('conexao','Não foi possível atualizar');
-      mensagem('Não foi possível consultar o levantamento. Tente novamente em instantes. Os dados anteriores, quando disponíveis, conservam o horário exibido.',true);
+      var motivo=erro&&typeof erro.message==='string'&&/^(A fonte pública está temporariamente indisponível\.|A consulta ao levantamento excedeu o tempo de espera\.|Endpoint público inválido\.)/.test(erro.message)?erro.message:'Não foi possível consultar o levantamento. Tente novamente em instantes.';
+      mensagem(motivo+' Os dados anteriores, quando disponíveis, conservam o horário exibido.',true);
     }).obterDadosDashboard();
   }
   function preencherIndicadores(){

@@ -3,34 +3,43 @@ const assert=require('node:assert/strict');
 const api=require('../estiagem/public-api.js');
 const vm=require('node:vm');
 const fs=require('node:fs');
-function navegadorFalso(){
- const scripts=[];const timers=[];
- const janela={document:{createElement:()=>({remove(){this.removido=true;}}),head:{appendChild(s){scripts.push(s);}}},PAINEL_PUBLICO_CONFIG:{endpoint:'https://script.google.com/macros/s/ABC/exec'},setTimeout(fn){timers.push(fn);return timers.length;},clearTimeout(){}};
+function navegadorFalso(fetch){
+ const scripts=[];const timers=[];const cancelados=[];
+ const janela={document:{createElement:()=>({remove(){this.removido=true;}}),head:{appendChild(s){scripts.push(s);}}},PAINEL_PUBLICO_CONFIG:{endpoint:'https://script.google.com/macros/s/ABC/exec'},fetch,AbortController,setTimeout(fn){timers.push(fn);return timers.length;},clearTimeout(id){cancelados.push(id);}};
  vm.runInNewContext(fs.readFileSync(require.resolve('../estiagem/public-api.js'),'utf8'),{window:janela,URL,Promise,Set});
- return {janela,scripts,timers};
+ return {janela,scripts,timers,cancelados};
 }
-test('transporte JSONP usa callback seguro e remove recurso após falha de rede',async()=>{
- const {janela,scripts}=navegadorFalso();
- const final=new Promise(resolve=>janela.google.script.run.withFailureHandler(resolve).obterDadosDashboard());
- await Promise.resolve();
- const script=scripts[0],url=new URL(script.src),callback=url.searchParams.get('callback');
- assert.equal(url.searchParams.get('recurso'),'publico');
- assert.match(callback,/^estiagem_[A-Za-z0-9_]{1,64}$/);
- assert.equal(typeof janela[callback],'function');
- script.onerror();
- const erro=await final;
- assert.match(erro.message,/indisponível/);
- assert.equal(script.removido,true);
- assert.equal(janela[callback],undefined);
+function dadosPublicos(){return {geradoEm:'2026-11-26T12:00:00Z',configPublica:{validacaoTecnicaObrigatoria:true},municipios:Array.from({length:139},(_,i)=>({codigo:String(1700000+i),nome:'Município',prioridade:{nivel:'cinza'},q:{}})),indicadores:{campos:{},categorias:{}},serie:[]};}
+test('fetch público consulta sem cookies, segue redirect e libera timeout no sucesso',async()=>{
+ let chamada;const dados=dadosPublicos();
+ const {janela,scripts,cancelados}=navegadorFalso(async(url,options)=>{chamada={url,options};return {ok:true,json:async()=>dados};});
+ const final=new Promise((resolve,reject)=>janela.google.script.run.withSuccessHandler(resolve).withFailureHandler(reject).obterDadosDashboard());
+ assert.equal(await final,dados);
+ assert.equal(new URL(chamada.url).searchParams.get('recurso'),'publico');
+ assert.equal(new URL(chamada.url).searchParams.get('callback'),null);
+ assert.equal(chamada.options.credentials,'omit');
+ assert.equal(chamada.options.redirect,'follow');
+ assert.equal(chamada.options.cache,'no-store');
+ assert.equal(chamada.options.mode,'cors');
+ assert.equal(chamada.options.signal.aborted,false);
+ assert.equal(scripts.length,0);
+ assert.deepEqual(cancelados,[1]);
 });
-test('transporte JSONP libera a interface após tempo limite',async()=>{
- const {janela,scripts,timers}=navegadorFalso();
+test('fetch público sanitiza falha de rede e limpa timeout',async()=>{
+ const {janela,cancelados}=navegadorFalso(async()=>{throw new Error('DETALHE_NAO_PUBLICO');});
+ const erro=await new Promise(resolve=>janela.google.script.run.withFailureHandler(resolve).obterDadosDashboard());
+ assert.match(erro.message,/indisponível/);assert.ok(!erro.message.includes('DETALHE_NAO_PUBLICO'));
+ assert.deepEqual(cancelados,[1]);
+});
+test('fetch público aborta consulta e libera a interface após tempo limite',async()=>{
+ let sinal;
+ const {janela,timers,cancelados}=navegadorFalso((url,options)=>new Promise((resolve,reject)=>{sinal=options.signal;sinal.addEventListener('abort',()=>reject(Object.assign(new Error('abortado'),{name:'AbortError'})));}));
  const final=new Promise(resolve=>janela.google.script.run.withFailureHandler(resolve).obterDadosDashboard());
  await Promise.resolve();
  timers[0]();
  const erro=await final;
  assert.match(erro.message,/tempo de espera/);
- assert.equal(scripts[0].removido,true);
+ assert.equal(sinal.aborted,true);assert.deepEqual(cancelados,[1]);
 });
 test('CSV público conserva NI e zero e neutraliza fórmulas',()=>{
   const d={geradoEm:'2026-11-26T12:00:00Z',municipios:[{codigo:'1721000',nome:'=PERIGO',referencia:null,recebidoEm:null,prioridade:{rotulo:'Sem informação'},q:{q13:0,q16:null,q02:'PESSOA_PRIVADA',q46:['Sim.','Apoio']}}]};
