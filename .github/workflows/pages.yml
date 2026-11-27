@@ -32,6 +32,7 @@ jobs:
           mkdir site
           cp .nojekyll index.html manifest.webmanifest registerSW.js sw.js workbox-9c191d2f.js dados-monitoramento.json boletim_serie_historica_infografico.pdf site/
           cp -r assets data docs icons estiagem site/
+          test -s site/estiagem/index.html
 
       - name: Enviar artefato
         uses: actions/upload-pages-artifact@v3
